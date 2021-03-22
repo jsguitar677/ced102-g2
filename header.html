@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/fontawesome-free-5.15.2-web/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -196,19 +196,25 @@
             let signRegF = document.getElementById('signRegFake');
             let title = document.getElementById('signUpFConTitle');
             if(signRegF.innerHTML == "建立帳號"){
-                document.getElementById('logCarousel').style.right = ((100)/1.6)+'%';
+                // document.getElementById('logCarousel').style.right = ((100)/1.6)+'%';
+                document.getElementById('logCarousel').style.left = '-60%';
+                // document.getel
                 signRegF.innerHTML = "進行登入";
                 title.innerHTML = "登入會員";
             }else if(signRegF.innerHTML == "進行登入"){
-                document.getElementById('logCarousel').style.right = 0;
+                document.getElementById('logCarousel').style.left = 0;
                 signRegF.innerHTML = "建立帳號";
                 title.innerHTML = "註冊會員";
             }
         };
+        // window.resize(function(){
+
+        // })
         //離開登入註冊燈箱
         function exitLogReg(){
             document.getElementById('lightbox').style.display='none';
-            document.getElementById('logCarousel').style.right = 0;
+            // document.getElementById('logCarousel').style.right = 0;
+            document.getElementById('logCarousel').style.left = 0;
             document.getElementById('memId').value = "";
             document.getElementById('memPsw').value = "";
             document.getElementById('regName').value = "";
