@@ -174,8 +174,10 @@
         // nav顯示的登入狀態
         function showModal(){
             let logStatus = document.getElementById('logStat').innerHTML;
+            document.getElementById('signRegFake').innerHTML = "建立帳號";
+            document.getElementById('signUpFConTitle').innerHTML = "註冊會員"; 
             if(logStatus == "登入/註冊"){
-                document.getElementById('lightbox').style.display="";
+                document.getElementById('lightbox').style.display="block";
             }else{
                 document.getElementById('lightbox').style.display='';
             }
