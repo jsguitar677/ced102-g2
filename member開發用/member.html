@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心</title>
+    <!-- stylecss -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 共用屬性 -->
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+
+</head>
+<body>
+    <h5>會員中心</h5>
+    <main>
+        <div class="genInfor">
+            <!-- 上block -->
+            <div class="personBlock comShape">
+                <div class="proTopBlock">
+                    <img src="https://fakeimg.pl/135x135/" alt="">
+                    <button>
+                        <i class="fas fa-camera-retro fa-2x"></i>
+                    </button>
+                    <span>
+                        <h7>Carman Li</h7>
+                        <p>生日:1993/01/01</p>
+                    </span>
+                </div>
+                <div class="proBtnBlock">
+                    <!-- <input class="comInput" type="text" placeholder="輸入自我介紹吧!"> -->
+                    <textarea class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5"></textarea>
+                    <button>
+                        <i class="far fa-edit fa-2x"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 下block -->
+            <div class="cumulativeBlcok comShape">
+                <div class="cumulText">
+                    <ul>
+                        <li>會員等級</li>
+                        <li>累計經驗值</li>
+                        <li>累計環保幣</li>
+                        <li>贊助次數</li>
+                        <li>贊助累計金額</li>
+                        <li>參與活動次數</li>
+                        <li>活動發起次數</li>
+                    </ul>
+                </div>
+                <div class="cumulValue">
+                    <form action="">
+                        <ul>
+                            <li>資深會員</li>
+                            <li>150 exp</li>
+                            <li>50P </li>
+                            <li>3次</li>
+                            <li>1300$</li>
+                            <li>3次</li>
+                            <li>1次</li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!-- ---------------------------------------------- -->
+
+        <div class="memberContent comShape">
+            <div class="tab">
+                <button class="tabLinks " onclick="openPage(event, 'memExp')" >經驗值兌換</button>
+
+                <button class="tabLinks " onclick="openPage(event, 'memExp')" >經驗值兌換</button>
+                <button class="tabLinks " onclick="openPage(event, 'orderRecord')" id="defaultOpen">商城消費紀錄</button>
+                <button class="tabLinks " onclick="openPage(event, 'participateRecord')">參與募款與志工紀錄</button>
+                <button class="tabLinks " onclick="openPage(event, 'eventManagement')">活動發起管理</button>
+                <button class="tabLinks " onclick="openPage(event, 'eventSave')">活動收藏</button>
+            </div>
+            <div id="memExp" class="tabContent ">
+                <div class="expContent">
+                    <div class="expDescription">
+                        <h3>累計經驗值兌換說明</h3>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, ipsam? Est cum ipsam quidem nihil beatae cumque fugiat reprehenderit, nemo ratione facere aliquam facilis sequi impedit labore! Eius, quasi expedita!
+                    </div>
+                    <div class="expExchange">
+                        <div class="excBlcok">
+                            <div class="expPart expRight">
+                                
+                                <p>累積100經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                                
+                            </div>
+                            <div class="expPart expRight">
+                                
+                                <p>累積200經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                              
+                            </div>
+                            <div class="expPart expRight">
+                              
+                                <p>累積300經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                          
+                            </div>
+                            <div class="expPart expRight">
+                        
+                                <p>累積400經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                          
+                            </div>
+                            <div class="expPart expRight">
+                              
+                                <p>累積500經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                        
+                            </div>
+                            <div class="expPart expRight">
+                          
+                                <p>累積600經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                         
+                            </div>
+                            <div class="expPart expRight">
+                    
+                                <p>累積700經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                           
+                            </div>
+                            <div class="expPart expRight">
+                               
+                                <p>累積800經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                       
+                            </div>
+                            <div class="expPart expRight">
+                       
+                                <p>累積900經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                         
+                            </div>
+                            <div class="expPart expRight">
+                   
+                                <p>累積1000經驗值</p>
+                                <button class="comBtn2">領取50環保幣</button>
+                    
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            
+            <div id="orderRecord" class="tabContent">
+                <div class="orderBlock">
+                    <h3>商城消費紀錄</h3>
+                    選擇日期
+                    <div></div>
+                    <form action="">
+                        <select>
+                            <option>請選擇訂單日期</option>
+                            <option></option>
+                            <option></option>
+                            <option></option>
+                            <option></option>
+                        </select>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>活動日期</th>
+                                    <th>訂單編號</th>
+                                    <th>訂單狀態</th>
+                                    <th>送貨狀態</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2013/03/24</td>
+                                    <td>#332345</td>
+                                    <td>已取貨</td>
+                                    <td>備貨中</td>
+                                </tr>
+                            </tbody>
+    
+                            <thead>
+                                <tr>
+                                    <th>商品圖片</th>
+                                    <th>商品名稱</th>
+                                    <th>數量</th>
+                                    <th>商品單價</th>
+                                </tr>
+                            </thead>
+                            <tbody class="proItemDetail">
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                                <tr>
+                                    <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
+                                    <td>客製化</td>
+                                    <td>1</td>
+                                    <td>100$</td>
+                                </tr>
+                            </tbody>
+                            <thead class="thead">
+                                <tr><th colspan="4">商品總金額 300$</th></tr>
+                                <tr><th colspan="4">使用環保幣折扣 -30$</th></tr>
+                                <tr><th colspan="4">總價270$</th></tr>
+                            </thead>
+                        </table> 
+                    </form>
+                </div>
+                 
+            </div>
+            <div id="participateRecord" class="tabContent">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div> 
+            <div id="eventManagement" class="tabContent">
+                <h3>Paris</h3>
+                <p>Paris is the capital of France.</p> 
+            </div>
+            <div id="eventSave" class="tabContent">
+                <h3>Tokyo</h3>
+                <p>Tokyo is the capital of Japan.</p>
+            </div>
+        </div>
+    </main>
+    
+
+    <script src="./member.js"></script>
+</body>
+</html>
