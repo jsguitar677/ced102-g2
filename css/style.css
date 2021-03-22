@@ -4,6 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-size: 0;
+  position: relative;
 }
 
 body header {
@@ -119,6 +120,7 @@ body header i.fwIcon {
 
 body div#page1 {
   height: calc(100vh - 66px);
+  position: absolute;
 }
 
 body div#page1 div#lightbox {
@@ -340,6 +342,16 @@ body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanTwo {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body div#page2 {
+  height: 100vh;
+  background-color: chartreuse;
+}
+
+body div#page3 {
+  background-color: cornflowerblue;
+  height: 100vh;
 }
 
 body footer {
