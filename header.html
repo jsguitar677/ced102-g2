@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fontawesome-free-5.15.2-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ===================== Header ======================-->
+    <header>
+        <nav>
+            <div id="lftUl">
+                <ul>
+                    <li><a href="#">活動募款參加平台</a><img src="./img/composting.png" alt=""></li>
+                    <li><a href="#">活動說明</a><img src="./img/composting.png" alt=""></li>
+                    <li><a href="#">歷年活動</a><img src="./img/composting.png" alt=""></li>
+                    <li><a href="#">商城</a><img src="./img/composting.png" alt=""></li>
+                </ul>
+            </div>
+            <div id="navlogo">
+                <a href="#"><img src="./img/logoWhite.svg" alt=""></a>
+            </div>
+            <div id="rgtUl">
+                <ul>
+                    <li id="logRegiCli">
+                        <a href="#">
+                            <span id="logStat">登入/註冊</span>
+                            <i class="fas fa-sign-in-alt fwIcon"></i>
+                        </a>    
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-shopping-cart fwIcon"></i>
+                        </a>    
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="far fa-bell fwIcon"></i>
+                        </a>    
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===================== Page1 ======================-->
+
+    <div id="page1">
+        <div id="lightbox"><!--燈箱背後陰影-->
+            <div id="logWrapper"><!--燈箱顯示區-->
+                <div id="logCarousel"><!--燈箱輪播-->
+                    <div id="signInCon"><!--登入-->
+                        <h3>登入</h3>
+                        <form action="#" id="logForm">
+                            <label for="memIdCol">
+                                <span>輸入帳號</span><br>
+                                <input type="email" placeholder="Email" id="memId" required autocomplete="off" name="memId"><br>
+                            </label>
+                            <label for="memPswCol">
+                                <span>輸入密碼<br></span> 
+                                <input type="password" placeholder="6-15位的英數混和，英文需區分大小寫" id="memPsw" maxlength="15" required autocomplete="off" name="memPsw"><br>
+                            </label>
+                            
+                            <label for="remMem" id="remember"><input type="checkbox" name="remMem" id="remMem" required>記住我的帳號</label><br>
+                            <button type="submit" form="logForm">登入</button>
+                        </form>
+                        <a href="#" class="forgetPsw">忘記密碼?</a>
+                    </div>
+                    <div id="signUpFCon"><!--登入註冊變化-->
+                        <h3 id="signUpFConTitle">註冊會員</h3>
+                        <ul>
+                            <li>加入會員即享更多福利</li>
+                            <li>優點1XXXXXXXXXX</li>
+                            <li>優點2XXXXXXXXXX</li>
+                            <li>優點3XXXXXXXXXX</li>
+                        </ul>
+                        <button id="signRegFake">建立帳號</button>
+                    </div>
+                    <div id="signUpCon"><!--註冊區-->
+                        <h3>註冊</h3>
+                        <form action="#" id="regForm">
+                            <div id="regNameCol">
+                                <label for="regName">姓名</label>
+                                <input type="text" placeholder="請輸入真實姓名" id="regName" name="regName" required>
+                            </div>
+                            <div id="regBirthCol">
+                                <label for="regBirth">出生日期</label>
+                                <input type="date" id="regBirth" name="regBirth" required>
+                            </div>
+                            <div id="regIdCol">
+                                <label for="regId">建立帳號</label>
+                                <input type="email" name="regId" id="regId" autocomplete="off" required placeholder="請填寫有效email">
+                            </div>
+                            <div id="regPswCol">
+                                <label for="regPsw">建立密碼</label>
+                                <input type="password" name="regPsw" id="regPsw" autocomplete="off" required placeholder="6-15位的英數混和，英文需區分大小寫">
+                            </div>
+                            <div id="regConPswCol">
+                                <label for="regConPsw">確認密碼</label>
+                                <input type="password" name="regConPsw" id="regConPsw" autocomplete="off" required placeholder="請再次輸入密碼">
+                            </div>
+                            <div id="regVerifiCol">
+                                <label for="regVerifi">確認驗證碼</label>
+                                <input type="password" name="regVerifi" id="regVerifi" autocomplete="off" required placeholder="請輸入驗證碼">
+                            </div>
+                        </form>
+                        <div id="regBtn">
+                            <label for="regAgree" id="regAgreeCheck" form="regForm"><input type="checkbox" id="regAgree" name="regAgree" required>我同意淨下塑湲客戶服務條款與客戶隱私政策</label><br>
+                            <button type="submit" id="createAcc" form="regForm">建立新帳號</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="closeBtn">
+                    <span id="closeSpanOne"></span>
+                    <span id="closeSpanTwo"></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- ===================== Footer ======================-->
+
+    <footer>
+        <div class="frontFooter">
+            <div id="footerSide"></div>
+            <div class="divLine"></div>
+            <ol class="footerOl">
+                <li class="footerOl">
+                    <span class="footerRotate">01</span>
+                    <span>
+                        <a href="#">活動募款參與平台</a>
+                    </span>
+                </li>
+                <li class="footerOl">
+                    <span class="footerRotate">02</span>
+                    <span>
+                        <a href="#">商城</a>
+                    </span>
+                </li>
+                <li class="footerOl">
+                    <span class="footerRotate">03</span>
+                    <span>
+                        <a href=#>歷史活動</a>
+                    </span>
+                </li>
+            </ol>
+            <div class="social">
+                <span><a href="#"><i class="fab fa-facebook"></i></a></span>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <p>淨下塑湲是台灣推廣環保募資品牌。從設計再生材質商品到推廣環保淨灘，希望能藉由這些推廣「一切從簡而起」的理念，將來也提供更多元改變台灣環境的活動募款平台</p>
+            </div>    
+        </div>
+        <h2 id="footerMenu" class="footerBg">MENU</h2>
+        <h3 id="footerBrand" class="footerBg">淨下塑湲</h3>
+        <h2 id="socialMedia" class="footerBg">SOCIAL MEDIA</h2>
+        <p id="footerOri" class="footerBg">品牌起源</p>
+        <p id="copyRight" class="footerBg">Copyright &#169; 2021 淨下塑湲</p>
+    </footer>
+    <script>//================  Log / Register 
+    // 先抓到每個物件參考
+        function logRegi(){
+            document.getElementById('logRegiCli').onclick = showModal;
+            document.getElementById('signRegFake').onclick = signRegChange;
+            document.getElementById('closeBtn').onclick = exitLogReg;
+        };
+        // nav顯示的登入狀態
+        function showModal(){
+            let logStatus = document.getElementById('logStat').innerHTML;
+            if(logStatus == "登入/註冊"){
+                document.getElementById('lightbox').style.display="";
+            }else{
+                document.getElementById('lightbox').style.display='';
+            }
+        };
+        //切換登入/註冊
+        function signRegChange(){
+            let signRegF = document.getElementById('signRegFake');
+            let title = document.getElementById('signUpFConTitle');
+            if(signRegF.innerHTML == "建立帳號"){
+                document.getElementById('logCarousel').style.right = ((100)/1.6)+'%';
+                signRegF.innerHTML = "進行登入";
+                title.innerHTML = "登入會員";
+            }else if(signRegF.innerHTML == "進行登入"){
+                document.getElementById('logCarousel').style.right = 0;
+                signRegF.innerHTML = "建立帳號";
+                title.innerHTML = "註冊會員";
+            }
+        };
+        //離開登入註冊燈箱
+        function exitLogReg(){
+            document.getElementById('lightbox').style.display='none';
+            document.getElementById('logCarousel').style.right = 0;
+            document.getElementById('memId').value = "";
+            document.getElementById('memPsw').value = "";
+            document.getElementById('regName').value = "";
+            document.getElementById('regBirth').value = "";
+            document.getElementById('regId').value = "";
+            document.getElementById('regPsw').value = "";
+            document.getElementById('regConPsw').value = "";
+            document.getElementById('regVerifi').value = "";
+        }
+        window.addEventListener('load',logRegi,false);
+    </script>
+</body>
+</html>
