@@ -1,189 +1,111 @@
-const {
-    src,
-    dest,
-    series,
-    parallel,
-    watch
-} = require('gulp');
+const { src, series, dest, parallel, watch } = require('gulp');
 
-
-
-
-//======  1 . console.log
-function defaultTask(cb) {
-    //任務
-    console.log('hello gulp4');
-    cb();
-}
-//輸出任務
-exports.do = defaultTask;
-
-
-// ====== 2. 任務流程
-
-// 任務a
-function funcA(cb){
-    //任務a
-    console.log('任務a');
-    cb();
-}
-
-// 任務b
-function funcB(cb){
-    //任務b
-    console.log('任務b');
-    cb();
-}
-
-exports.doA =  series(funcA , funcB); // 任務串連
-exports.doB =  parallel(funcA , funcB); // 任務並行
-
-
-// ========== 3. 打包 src / dest
-
-// js
-function movefile() {
-   return src('js/main.js').pipe(dest('output'));  // src -> dest
-} 
-// css
-function movefile_css(){
-    return src('css/style.css').pipe(dest('output/css'));  // src -> dest
- } 
-
-// exports.cp = movefile; // 輸出任務
-
-
-// ========== 4. watch  監看 
-
-function watchTask(){
-   watch('js/main.js' , movefile);  // 當main.js 有變動 -> 執行movefile任務 
-   watch('css/style.css' , movefile_css);  // css 變動 
-}
-
-exports.dowatch = watchTask; //輸出任務
-
-
-
- 
-//====== 5.壓縮 js
-//  套件引入
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
-
-
-
-function uglify_js() {
-    return src('js/main.js')
-    .pipe(uglify()) // 去執行uglify函式
-    .pipe(rename({
-        //extname : '.min.js' //修改副檔名
-        basename : 'scripts' // 改檔名
-    }))
-    .pipe(dest('output/mini'));
-}
-
-// exports.js = uglify_js;
-
-// ==== 6. css 壓縮
-
-const cleanCSS = require('gulp-clean-css'); // 1. 
-
-function mini_css() {
-    return src('css/style.css')
-    .pipe(cleanCSS({compatibility: 'ie10'})) // 
-    .pipe(rename({
-        extname : '.min.css' //修改副檔名
-        //basename : 'scripts' // 改檔名
-    }))
-    .pipe(dest('output/css'))
-}
-
-// exports.css = mini_css; // 
-
-function watchall(){
-   watch(['css/style.css','js/main.js'] , parallel(mini_css ,uglify_js)) // css js 同時監看
-}
-// 
-exports.doall = watchall;
-
-
-
-//合併程式碼
 const concat = require('gulp-concat');
-
-function cssconcat() {
-    return src(['css/*.css' , '!css/style.css'])
-    .pipe(concat('all.css')) //合併
-    .pipe(cleanCSS({compatibility: 'ie10'})) // 壓縮
-    .pipe(dest('output/css'))
-}
-
-exports.concat = cssconcat;
-
-
-// sass 編譯 與 sourcemap 使用
-
+const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass');
+const sourceMap = require('source-map');
 const sourcemaps = require('gulp-sourcemaps');
+const clean = require('gulp-clean');
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload; //browser的方法 更新後~
 
-function styleSass() {
-     return src('sass/*.scss')
-     .pipe(sourcemaps.init())
-     .pipe(sass({
-         outputStyle : 'expanded' // nested 巢狀 | expanded  | compressed 壓縮
-     }).on('error', sass.logError))
-     .pipe(sourcemaps.write())
-     .pipe(dest('output/css'))
+function moveImg() {
+    return src('dev/img/**').pipe(dest('dist/img/'));
 }
 
-exports.style = styleSass;
+function concatJSAndMove() {
+    return src('dev/js/*.js').pipe(concat('all.js')).pipe(dest('dist/js/'));
+}
 
-// html template
+function moveJS() {
+    return src('dev/js/*.js').pipe(dest('dist/js/'));
+}
 
-const fileinclude = require('gulp-file-include');
+function commonStyle() {
+    return src('./dev/sass/all.scss')
+        .pipe(sourcemaps.init())
+        .pipe(
+            sass({
+                outputStyle: 'expanded', // nested巢狀  // compressed壓縮  //expanded 原本
+            }).on('error', sass.logError)
+        )
+        .pipe(sourcemaps.write())
+        .pipe(dest('dist/css/'));
+}
 
-function htmlTemplate() {
+function pageStyle() {
+    return src('dev/sass/pages/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(
+            sass({
+                outputStyle: 'nested',
+            }).on('error', sass.logError)
+        )
+        .pipe(sourcemaps.write())
+        .pipe(dest('dist/css/pages/'));
+}
+
+function includeHTML() {
     return src('dev/*.html')
-    .pipe(fileinclude({
-        prefix: '@@',
-        basepath: '@file'
-      }))
-    .pipe(dest('./'))
+        .pipe(
+            fileInclude({
+                prefix: '@@',
+                basepath: '@file',
+            })
+        )
+        .pipe(dest('dist/'));
 }
 
-exports.html = htmlTemplate;
+function killDist() {
+    return src('dist', { read: false, allowEmpty: true }).pipe(
+        clean({
+            force: true,
+        })
+    );
+}
+
+exports.kill = killDist;
+exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML));
+
+exports.browser = function browsersync() {
+    browserSync.init({
+        // files: "**",
+        // port: 3001,
+        // notify: false, //禁用瀏覽器的通知元素
+        // browser: "chrome",
+        server: {
+            baseDir: './dist', //跟目錄設定
+            index: 'act_hist.html', //需更改成自己頁面的名稱
+            injectChanges: false,
+        },
+    });
+    //與browser同步
+    watch(['./dev/sass/**/*.scss', '!dev/sass/pages/*.scss'], commonStyle).on('change', reload);
+    watch('./dev/sass/pages/*.scss', pageStyle).on('change', reload);
+    watch('./dev/**/*.html', includeHTML).on('change', reload);
+    watch('./dev/img/*', moveImg).on('change', reload);
+    watch('./dev/js/*.js', moveJS).on('change', reload);
+};
+
+exports.w = function watchFiles() {
+    watch(['./dev/sass/**/*.scss', '!dev/sass/pages/*.scss'], commonStyle);
+    watch('./dev/sass/pages/*.scss', pageStyle);
+    watch('./dev/**/*.html', includeHTML);
+    watch('./dev/img/*', moveImg);
+    watch('./dev/js/*.js', moveJS);
+};
 
 
 
+//----package
+// const cleanCSS = require('gulp-clean-css');
+// const imagemin = require('gulp-imagemin');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// exports.img = function compressImg() {
+//     return src('dev/img/**/*')
+//         .pipe(imagemin())
+//         .pipe(rename(function (path) {
+//             path.basename += "-mini"
+//         }))
+//         .pipe(dest('images'))
+// }

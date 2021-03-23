@@ -94,7 +94,7 @@ var isWindow = function isWindow( obj ) {
 
 
 var document = window.document;
-
+var a = 10;
 
 
 	var preservedScriptAttributes = {
