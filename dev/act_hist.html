@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <!-- 歷史紀錄頁面 -->
+    <div class="intro">
+        <!-- <script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script> -->
+
+        <input type="radio" name="scene" id="scene-1" value="1" checked />
+        <input type="radio" name="scene" id="scene-2" value="2" />
+        <input type="radio" name="scene" id="scene-3" value="3" />
+        <input type="radio" name="scene" id="scene-4" value="4" />
+
+        <main id="site">
+
+            <div class="ocean">
+                <div class="ocean-text">歷史活動</div>
+            </div>
+            <div class="left-side">
+                <div class="page-numbers" data-total="04">
+                    <div class="page-number -tens">0</div>
+                    <div class="page-number -ones">
+                        1<br />2<br />3<br />4
+                    </div>
+                </div>
+            </div>
+            <div class="hero">
+                <div class="layer_top" data-scene="1">
+                    <h1 class="heading">
+                        We can help<br /> to save<br /> the oceans
+                    </h1>
+
+                </div>
+                <div class="layer_top" data-scene="2">
+                    <h1 class="heading">
+                        Saving nature,<br /> we save our<br /> future
+                    </h1>
+
+                </div>
+                <div class="layer_top" data-scene="3">
+                    <h1 class="heading">
+                        Only you<br /> can prevent<br /> ocean fires
+                    </h1>
+
+                </div>
+                <div class="layer_top" data-scene="4">
+                    <h1 class="heading">
+                        Do not<br /> litter on<br /> the beach
+                    </h1>
+
+                </div>
+            </div>
+
+            <div class="left-content">
+                <div class="layer_top" data-scene="1">
+                    <div class="fact subtitle">More than</div>
+                    <div class="fact number">1 000 000</div>
+                    <div class="fact description">seabirds die yearly due to plastic debris</div>
+                </div>
+                <div class="layer_top" data-scene="2">
+                    <div class="fact subtitle">The largest garbage patch is</div>
+                    <div class="fact number">1 760 000 m<sup>2</sup></div>
+                    <div class="fact description">and is 10m deep</div>
+                </div>
+                <div class="layer_top" data-scene="3">
+                    <div class="fact subtitle">More than</div>
+                    <div class="fact number">700 000</div>
+                    <div class="fact description">species call the ocean their home</div>
+                </div>
+                <div class="layer_top" data-scene="4">
+                    <div class="fact subtitle">There is an estimated</div>
+                    <div class="fact number">12 000 000</div>
+                    <div class="fact description">metric tons of plastic in the ocean</div>
+                </div>
+            </div>
+            <div class="right-content">
+
+                <nav class="slide-nav">
+                    <div class="nav-button -prev">
+                        &lt;
+
+                        <label class="nav-toggle" for="scene-1">1</label>
+                        <label class="nav-toggle" for="scene-2">2</label>
+                        <label class="nav-toggle" for="scene-3">3</label>
+                        <label class="nav-toggle" for="scene-4">4</label>
+
+                    </div>
+                    <div class="nav-button -next">
+                        Next &gt;
+
+                        <label class="nav-toggle" for="scene-1">1</label>
+                        <label class="nav-toggle" for="scene-2">2</label>
+                        <label class="nav-toggle" for="scene-3">3</label>
+                        <label class="nav-toggle" for="scene-4">4</label>
+                    </div>
+                </nav>
+
+                <div class="layer_top" data-scene="1">
+                    <h2 class="heading">
+                        It's not late. It's time to save the ocean.
+                    </h2>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae accusantium est autem amet minus, atque consequatur iure dolor id inventore sit magnam sint, voluptates deserunt beatae? Error eveniet quam dicta!
+                    </p>
+                </div>
+
+                <div class="layer_top" data-scene="2">
+                    <h2 class="heading">
+                        Facts and Stats on Ocean Pollution
+                    </h2>
+                    <p class="paragraph">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, amet hic provident ipsa placeat ad. Excepturi distinctio consectetur voluptatibus rem deleniti ducimus officia natus, magnam aut architecto sint reprehenderit provident?
+                    </p>
+                </div>
+
+                <div class="layer_top" data-scene="3">
+                    <h2 class="heading">
+                        Learn more about how you can help.
+                    </h2>
+                    <p class="paragraph">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, amet hic provident ipsa placeat ad. Excepturi distinctio consectetur voluptatibus rem deleniti ducimus officia natus, magnam aut architecto sint reprehenderit provident?
+                    </p>
+                </div>
+
+                <div class="layer_top" data-scene="4">
+                    <h2 class="heading">
+                        Join the fight to defend our oceans.
+                    </h2>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi temporibus explicabo aspernatur dignissimos veritatis. Voluptate quis quia sed totam quasi placeat, odio quam fuga consectetur voluptatibus praesentium tempore vel molestiae?
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- showoff---------------------------------------------------------------------- -->
+    <!-- cards------------------------------------------------------------------------ -->
+    <main class="page-content">
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Mountain View</h2>
+                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">To The Beach</h2>
+                <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Desert Destinations</h2>
+                <p class="copy">It's the desert you've always dreamed of</p>
+                <button class="btn">Book Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Explore The Galaxy</h2>
+                <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+                <button class="btn">Book Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Mountain View</h2>
+                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Mountain View</h2>
+                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Mountain View</h2>
+                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Mountain View</h2>
+                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Mountain View</h2>
+                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                <button class="btn">View Trips</button>
+            </div>
+        </div>
+    </main>
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
