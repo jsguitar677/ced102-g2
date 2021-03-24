@@ -1,0 +1,63 @@
+main {
+  background-color: #e0e0e0;
+}
+
+main nav {
+  height: 60px;
+  background-color: #1D1E4C;
+}
+
+main nav h4 {
+  color: white;
+  text-align: right;
+  line-height: 60px;
+  padding-right: 30px;
+}
+
+main .mainContent {
+  display: flex;
+}
+
+main .mainContent .changeBlock {
+  height: calc(100vh - 60px);
+  width: 20%;
+  display: flex;
+  border: 2px solid #1D1E4C;
+  background-color: #9090a0;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main .mainContent .changeBlock button {
+  border: 1px solid #1D1E4C;
+}
+
+main .mainContent .container {
+  background-color: #eeeeee;
+  height: calc(100vh - 60px);
+  padding: 30px;
+}
+
+.Form1 form {
+  margin-top: 30px;
+}
+
+.Form1 form button {
+  border-radius: 15px;
+  border: 1px solid #1D1E4C;
+}
+
+.Form1 form table {
+  margin-top: 30px;
+  text-align: left;
+  width: 100%;
+}
+
+.Form1 form table tr {
+  height: 60px;
+}
+
+.Form1 form table tr button {
+  border: none;
+}
+/*# sourceMappingURL=backend.css.map */
