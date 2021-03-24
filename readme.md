@@ -15,6 +15,8 @@
 
 5.為了減少衝突，大家在命名class或是id的時候可以把自己頁面的縮寫加進去，拿我的葉面當例子就是class = "header" --> ah_header，主要防止自己頁面的css跟別人的吃到同一個class 或 id，因為最後會合成一大支CSS檔案(all.css)
 
+6.已發現問題，若無法執行npm u的話，請先執行node -v查看版本是否為14.16.0，不是的話可以砍掉然後去官網下載，確定為14.16.0版本後把package-lock.json還有node_modules的資料夾刪除，然後在終端機執行 npm cache clear --force，重開編輯器，在終端機執行npm install
+
 最後~
 PULL 跟 PUSH 都是要用dev分支!!!!<br>
 PULL 跟 PUSH 都是要用dev分支!!!!<br>
