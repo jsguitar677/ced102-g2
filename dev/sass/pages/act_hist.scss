@@ -357,54 +357,67 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
 * {
     box-sizing: border-box;
 }
-
+body{
+    background: rgba(163, 163, 163, 0.103);
+}
 div.ah_card_section {
-    height: 1500px;
-}
-
-ah_main.page-content {
-    /* border: 1px solid red; */
-    box-shadow: #00000067 0px 0px 25px 1px;
-    background-color: white;
-    width: 85%;
+    height: 100%;
+    width: 1200px;
+    // border: 1px solid red;
     margin: 0 auto;
-    margin-top: 10px;
     border-radius: 15px;
+    background-color: white;
     margin-bottom: 50px;
-    height: 1450px;
-}
-
-.page-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-gap: 2rem;
-    // padding: 2rem;
-    padding-left: 6rem;
-    /* width: 100%; */
-    text-align: center;
-    font-family: var(--font-sans);
-    justify-content: center;
-}
-
-.card {
     margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    margin-right: 70px;
+    padding: 50px;
+    box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ah_page-content{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  padding: 1rem;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+
+}
+
+@media (min-width: 600px) {
+    .ah_page-content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  
+
+//   @media (min-width: 600px) {
+//     .page-content {
+//       grid-template-columns: repeat(2, 1fr);
+//     }
+//   }
+//   @media (min-width: 800px) {
+//     .page-content {
+//       grid-template-columns: repeat(4, 1fr);
+//     }
+//   }
+  .card {
+      border-radius: 15px;
     position: relative;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    padding: rem;
-    width: 300px;
+    padding: 1rem;
+    width: 100%;
     height: 400px;
+    width: 300px;
     text-align: center;
     color: whitesmoke;
     background-color: whitesmoke;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
-
+  }
 @media (min-width: 600px) {
     .card {
         height: 400px;
