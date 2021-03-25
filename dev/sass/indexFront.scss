@@ -1,0 +1,25 @@
+@import 'var';
+@import 'all.scss';
+
+.homeAllPage{
+    width: 100%;
+    background-color: map-get($color_regulation, 'white-bg');
+    .homeBlock{
+        margin: 0 auto;
+        width: 1200px;
+        padding: 0 30px;
+        .homePage1{
+            color: map-get($color_regulation, 'blue');
+            padding-top: 66px;
+            height: 100vh;
+            .page1Left{
+                font-size: 15px;
+
+                width: 30%;
+            }
+            .page1Right{
+                width: 70%;
+            }
+        }
+    }
+}

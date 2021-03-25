@@ -1,0 +1,59 @@
+@import 'var';
+
+main{
+    background-color: rgb(224, 224, 224);
+
+    nav{
+        height: 60px;
+        background-color: #1D1E4C;
+        h4{
+            color: white;
+            text-align: right;
+            line-height: 60px;
+            padding-right: 30px;
+        }
+    }
+    .mainContent{
+        display: flex;
+        .changeBlock{
+            height: calc(100vh - 60px);
+            width: 20%;
+            display: flex;
+            border: 2px solid #1D1E4C;
+            background-color: #9090a0;
+            flex-direction: column;
+            justify-content: space-around;
+            button{
+                border: 1px solid #1D1E4C;
+            }
+        }
+        .container{
+            background-color: rgb(238, 238, 238);
+            height: calc(100vh - 60px);
+            padding: 30px;
+        }
+    }
+}
+
+.Form1{
+    form{
+        margin-top: 30px;
+        button{
+            border-radius: 15px;
+            border: 1px solid #1D1E4C;
+        }
+        table{
+            margin-top: 30px;
+            text-align: left;
+            width: 100%;
+            tr{
+                
+                height: 60px;
+                button{
+                    border:none;
+                }
+            }
+        }
+    }
+    
+}

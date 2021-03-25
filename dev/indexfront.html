@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/indexFront.css">
+
+</head>
+
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    
+    <div class="homeAllPage">
+        <div class="homeBlock">
+            <div class="homePage1">
+                <div class="page1Left">
+                    <p>行動帶來改變</p>
+                    <h5>加入守護海洋環境的行列</h5>
+                    <img src="./img/indexFront/indexfont-img.png"alt="">
+                </div>
+                <div class="page1Right"></div>
+            </div>
+            <div class="homePage2"></div>
+            <div class="homePage3"></div>
+            <div class="homePage4"></div>
+            <div class="homePage5"></div>
+        </div>
+    </div>
+
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

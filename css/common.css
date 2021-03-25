@@ -1,0 +1,122 @@
+/* width */
+::-webkit-scrollbar {
+width: 12px;
+}
+::-webkit-scrollbar-track {
+box-shadow:  0 0 5px #00000081; 
+border-radius: 15px;
+width: 10px;
+}
+::-webkit-scrollbar-thumb {
+background: #1D1E4C; 
+border-radius: 15px;
+width: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #EF4325;
+border-radius: 15px;
+width: 10px;
+}
+
+*{  
+    font-family: "Noto Sans TC";
+    color: #1D1C4C;
+    margin: 0;
+    line-height:30px;
+    letter-spacing:2px;
+}
+
+
+button{
+    cursor: pointer;
+}
+.comShape{
+    background-color: #fff;
+    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+    border-radius: 15px;
+}
+.comInput{
+    border:1px solid #1D1E4C;
+    border-radius: 15px;
+}
+
+.comBtn{
+    cursor: pointer;
+    outline: none;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    border:none!important;
+    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+    font-size: 15px;
+    background-color: #EF4325;
+    padding: 0 15px;
+}
+
+.comBtn2{
+    cursor: pointer;
+    outline: none;
+    color: white;
+    border-radius: 15px;
+    height: 30px;
+    border:none!important;
+    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+    font-size: 15px;
+    background-color: #1D1E4C;
+    padding: 0 15px;
+}
+
+
+/* 切換按鈕 原+方 參考https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+

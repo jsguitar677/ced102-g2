@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /* ::content-------------------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,800");
@@ -556,6 +557,14 @@ body {
 
 body header {
   background-color: #424f5f;
+=======
+body {
+  margin: 0px;
+}
+
+body header {
+  background-color: #0D1017;
+>>>>>>> dev
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   position: fixed;
   top: 0;

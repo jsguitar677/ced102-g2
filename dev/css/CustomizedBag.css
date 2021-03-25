@@ -6,18 +6,11 @@ body {
 }
 
 h5.title {
-<<<<<<< HEAD
-  margin-top: 66px;
-=======
->>>>>>> dev
   position: absolute;
   top: 0;
   left: 0;
   margin: 0;
-<<<<<<< HEAD
-=======
   border: 1px solid red;
->>>>>>> dev
   font-size: 28px;
   display: inline-block;
   white-space: nowrap;
@@ -34,10 +27,6 @@ h5.title span {
 }
 
 section {
-<<<<<<< HEAD
-  margin-top: 66px;
-=======
->>>>>>> dev
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0px;
@@ -51,14 +40,11 @@ section div.title-block {
 }
 
 section div.content_costomizedBag {
-<<<<<<< HEAD
-=======
   border: 2px solid blue;
->>>>>>> dev
   text-align: left;
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 30px*2);
+  width: calc(100% - $reserveSide*2);
   margin: 0 30px;
 }
 
