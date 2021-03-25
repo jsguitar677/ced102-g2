@@ -110,8 +110,6 @@ section {
     margin:0 auto;
     font-size: 0px;
     text-align: center;
-    position: relative;
-    z-index: 1;
     div.title-block {
         display: inline-block;
         vertical-align: top;
@@ -135,13 +133,14 @@ section {
 }
 
 //header下方背景圖(毛玻璃效果)，此div不占位
-section div.content {
+section div.content_costomizedBag {
     border:2px solid blue;
     text-align: left;
     display: inline-block;
     vertical-align: top;
-    width: 100%;
-    padding: 0 30px;
+    width: calc(100% - $reserveSide*2);
+    // padding: 0 $reserveSide;
+    margin: 0 $reserveSide;
     div.top_back_img_1 {
         position:relative;
         width:100%;
@@ -164,7 +163,7 @@ section div.content {
 }
 
 //標題:客製商品-產品名稱
-section div.content h5.title_2 {
+section div.content_costomizedBag h5.title_2 {
     font-size: $h5;
     color: map-get($color_regulation,'blue');
     margin:0;
@@ -172,7 +171,7 @@ section div.content h5.title_2 {
     text-align: center;
 }
 
-section div.content{
+section div.content_costomizedBag{
     //頁面上半部:左圖 右購物
     div.all{
         width:100%;
@@ -198,7 +197,7 @@ section div.content{
                   }
                   div.explain{
                       font-size: $p;
-                      width:100px;
+                      width:36%;
                       height:33px;
                       line-height: 33px;
                       text-align: center;
@@ -209,8 +208,9 @@ section div.content{
                       background-color: map-get($color_regulation,'white-bg' );
                       color:map-get($color_regulation,'blue');
                       //font-weight: 900;
-                      box-shadow: $box-shadow;
-                      background: hsla(0,0%,100%,.3); 
+                      //box-shadow: $box-shadow;
+                      background: hsla(0,0%,100%,.8); 
+                      //filter: blur(4px); 
                   }
                 } 
               //左側 最上方 第一區 右邊
@@ -229,19 +229,20 @@ section div.content{
                     }
                     div.explain{
                         font-size: $p;
-                        width:100px;
+                        width:75%;
                         height:33px;
                         line-height: 33px;
                         text-align: center;
                         border-radius: $borderRadius;
                         position:absolute;
                         bottom:15px;
-                        right:15px;
+                        left:50%;
+                        transform: translateX(-50%);
                         background-color:map-get($color_regulation,'white-bg');
                         color:map-get($color_regulation,'blue');
-                        //font-weight: 900; 
-                        box-shadow: $box-shadow;
-                        background: hsla(0,0%,100%,.3); 
+                        //box-shadow: $box-shadow;
+                        background: hsla(0,0%,100%,.8); 
+                        //filter: blur(.2px); 
                     }
                 }
                 div.leftarea_blockA_R11{
@@ -257,9 +258,9 @@ section div.content{
                 overflow: hidden;
                 border-radius: $borderRadius;
                 box-shadow: $box-shadow;
-                padding:40px;
+                padding:20px;
                 // text-align: center;
-                p.urstyle{
+                h6.urstyle{
                         font-size: $h6;
                         color:map-get($color_regulation,'blue');
                         //font-weight: 900;
@@ -310,7 +311,7 @@ section div.content{
                     }    
                 }
                 //左側 上方 第三區 (商品簡介區)
-                p.aboutProducts{
+                h6.aboutProducts{
                     font-size: $h6;
                     color:map-get($color_regulation,'blue');
                     //font-weight: 900;
@@ -319,7 +320,7 @@ section div.content{
 
                 }
                 div.leftarea_blockC{
-                    margin-top: 20px;
+                    margin-top: 10px;
                     width:100%;
                     // border-radius: $borderRadius;
                     // box-shadow: $box-shadow;
@@ -382,8 +383,8 @@ section div.content{
                                 height:68%;
                                 font-size: $p;
                                 color:map-get($color_regulation,'blue');
-                                .circleBtn{
-                                    margin-top: 105%;
+                                input.circleBtn{
+                                    margin-top: 95%;
                                     display:inline-block;
                                 }
                             }
@@ -486,6 +487,7 @@ section div.content{
                         color:map-get($color_regulation,'white');
                         position:relative;
                         padding-right: 10%;
+                        margin-top:10%;
                         cursor: pointer;
                         img{
                             height:90%;
@@ -521,54 +523,56 @@ section div.content{
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content:space-around;
-            div.recommendProduct{
-                width:22%;
-                // display:inline-flex;
-                border-radius: $borderRadius;
-                box-shadow: $box-shadow;
-                margin:0 auto;
-                overflow: hidden;
-                position:relative;
-                img{
-                    width:100%;
-                }
-                div.productInfo{
-                    width:100%;
-                    height:43%;
-                    position:absolute;
-                    bottom:0;
-                    left:0;
-                    background-color: map-get($color_regulation,'white-bg' );
-                    background: hsla(0,0%,100%,.4);
-                    padding:5%; 
-                    p.NameAndPrice{
-                        font-size: $p;
-                        //font-weight: 900; 
-                        color:map-get($color_regulation,'blue');
-                        display:inline-block;
-                        margin:3% 10% 3% 0;
+            cursor: pointer;
+            a.goToProductPage{
+                width:23.5%;
+                div.recommendProduct{
+                    // display:inline-flex;
+                    border-radius: $borderRadius;
+                    box-shadow: $box-shadow;
+                    margin:0 auto;
+                    overflow: hidden;
+                    position:relative;
+                    img{
+                        width:100%;
                     }
-                    p.text{
-                        font-size: $p;
-                        color:map-get($color_regulation,'blue'); 
-                        margin-top: 0;
-                        overflow: hidden;        //內容溢出處理
-                        text-overflow: ellipsis; //文字溢出處理
-                        white-space:nowrap;      //文字超出時不換行
-                    }
-                    img.cart{
+                    div.productInfo{
+                        width:100%;
+                        height:43%;
                         position:absolute;
-                        bottom:15px;
-                        right:15px;
-                        width:33px;
-                        height:33px;
-                        border-radius: 50%;
-                        box-shadow: $box-shadow;
+                        bottom:0;
+                        left:0;
+                        background-color: map-get($color_regulation,'white-bg' );
+                        background: hsla(0,0%,100%,.7);
+                        padding:5%; 
+                        p.NameAndPrice{
+                            font-size: $p;
+                            //font-weight: 900; 
+                            color:map-get($color_regulation,'blue');
+                            display:inline-block;
+                            margin:3% 10% 3% 0;
+                        }
+                        p.text{
+                            font-size: $p;
+                            color:map-get($color_regulation,'blue'); 
+                            margin-top: 0;
+                            overflow: hidden;        //內容溢出處理
+                            text-overflow: ellipsis; //文字溢出處理
+                            white-space:nowrap;      //文字超出時不換行
+                        }
+                        img.cart{
+                            position:absolute;
+                            bottom:8px;
+                            right:8px;
+                            width:11.75%;
+                            border-radius: 50%;
+                            box-shadow: $box-shadow;
+                        }
                     }
                 }
-            }
-            div.B{
-                margin-left: 1.33%;
+                div.B{
+                    margin-left: 1.33%;
+                }
             }
         }
     }
