@@ -1,0 +1,435 @@
+body main {
+  margin: 0;
+  background-color: #F6F6F6;
+  overflow-y: hidden;
+  margin-top: 5%;
+}
+
+body h5 {
+  position: absolute;
+  transform: rotate(90deg);
+  font-weight: bold;
+  font-size: 38px;
+}
+
+body main {
+  padding: 60px;
+  display: flex;
+  height: 100%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+body main .genInfor {
+  width: 30%;
+}
+
+body main .genInfor .personBlock {
+  height: 40vh;
+  margin-right: 13px;
+  margin-bottom: 13px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+body main .genInfor .personBlock .proTopBlock {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  position: relative;
+  margin-top: 25px;
+}
+
+body main .genInfor .personBlock .proTopBlock img {
+  margin: 10px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+body main .genInfor .personBlock .proTopBlock button {
+  position: absolute;
+  bottom: 0px;
+  left: 110px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+
+body main .genInfor .personBlock .proTopBlock button:hover {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+body main .genInfor .personBlock .proTopBlock span {
+  font-size: 18px;
+}
+
+body main .genInfor .personBlock .proTopBlock span p {
+  font-size: 15px;
+}
+
+body main .genInfor .personBlock .proBtnBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+body main .genInfor .personBlock .proBtnBlock textarea {
+  overflow: auto;
+  height: 100px;
+  width: 250px;
+  padding: 5px;
+  margin-right: 10%;
+  outline: none;
+  resize: none;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+}
+
+body main .genInfor .personBlock .proBtnBlock button {
+  border: none;
+  appearance: none;
+  background-color: #ffffff00;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #f0f0f0;
+}
+
+body main .genInfor .personBlock .proBtnBlock button:hover {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+body main .genInfor .cumulativeBlcok {
+  padding: 0 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 40vh;
+  margin-right: 13px;
+}
+
+body main .genInfor .cumulativeBlcok button {
+  margin-right: 5px;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+  padding: 0 5px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+body main .memberContent {
+  padding: 30px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+body main .memberContent .tab {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #BEBEBE;
+  padding-bottom: 30px;
+}
+
+body main .memberContent .tab button {
+  margin-right: 5px;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+  padding: 0 15px;
+  height: 30px;
+  outline: none;
+}
+
+body main .memberContent .expContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+body main .memberContent .expContent .expDescription {
+  width: 30%;
+  margin-right: 30px;
+}
+
+body main .memberContent .expContent .expExchange {
+  width: 60%;
+  height: 450px;
+  margin-top: 5%;
+  padding-right: 10px;
+  border-radius: 15px;
+}
+
+body main .memberContent .expContent .expExchange .excBlcok {
+  background-color: #A2A2A2;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body main .memberContent .expContent .expExchange .excBlcok::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  margin-left: -3px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+body main .memberContent .expContent .expExchange .excBlcok .expPart {
+  padding: 1px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #EF4325;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+.expRight {
+  left: 20%;
+}
+
+.expRight::after {
+  left: -16px;
+}
+
+@media screen and (max-width: 600px) {
+  .excBlcok::after {
+    left: 31px;
+  }
+  .expPart {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .expPart::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  .expRight::after {
+    left: 15px;
+  }
+  .expRight {
+    left: 0%;
+  }
+}
+
+#orderRecord .orderBlock {
+  height: calc(80vh - 120px);
+  overflow: auto;
+  padding-right: 10px;
+}
+
+#orderRecord .orderBlock select {
+  border: 1px solid #1D1E4C;
+  border-radius: 5px;
+  outline: none;
+}
+
+#orderRecord .orderBlock table {
+  margin-top: 30px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#orderRecord .orderBlock table .thead {
+  text-align: center;
+}
+
+#orderRecord .orderBlock table .proItemDetail {
+  height: 300px;
+  overflow: hidden;
+}
+
+#memInfo div.memInfoContent {
+  display: block;
+  height: 100%;
+  font-size: 15px;
+}
+
+#memInfo div.memInfoContent h3 {
+  text-align: center;
+  color: #fafafa;
+  font-size: 28px;
+  padding: 10px 0px 0px 10px;
+}
+
+#memInfo div.memInfoContent div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#memInfo div.memInfoContent div ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#memInfo div.memInfoContent div ul li {
+  color: #fafafa;
+}
+
+button.tabLinks div.btnDisCon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1%;
+}
+
+button.tabLinks span {
+  line-height: 30px;
+}
+
+button.tabLinks span:active {
+  color: #fafafa;
+}
+
+button.tabLinks span:first-child {
+  flex-grow: 0;
+}
+
+button.tabLinks span i {
+  background-color: black;
+  color: #fafafa;
+  padding: 5px 4px 4px 7px;
+  border-radius: 10px;
+}
+
+button.active {
+  background-color: #EF4325;
+}
+
+button.active span {
+  color: #fafafa;
+  line-height: 30px;
+}
+
+#btnDisCon1 span i {
+  background-color: #FF9898;
+}
+
+#btnDisCon2 span i {
+  background-color: #1654FF;
+}
+
+#btnDisCon3 span i {
+  background-color: #FF498C;
+}
+
+#btnDisCon4 span i {
+  background-color: #FFA123;
+}
+
+#btnDisCon5 span i {
+  background-color: #EF4325;
+}
+
+#btnDisCon6 span i {
+  background-color: #09E4C7;
+}
+
+#underNoBorder {
+  box-shadow: none;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.btnDisCon2Sty {
+  background-image: url("../../dist/img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 35%, 100%;
+}
+
+div#memExp div.expContent div.expDescription {
+  color: #fafafa;
+  font-size: 15px;
+}
+
+div#memExp div.expContent div.expDescription h3 {
+  color: #fafafa;
+  font-size: 1.17em;
+}
+
+.btnConMemInfo {
+  background-image: url("../../dist/img/member-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div#memInfo div.memInfoContent ul#memInfoContentLft {
+  padding: 0 20%;
+}
+
+div#memInfo div.memInfoContent ul#memInfoContentLft li {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  margin-bottom: 5%;
+  padding: 2% 3%;
+  position: relative;
+}
+
+div#memInfo div.memInfoContent ul#memInfoContentLft li div {
+  color: #fafafa;
+}
+
+div#memPage {
+  padding-top: 60px;
+}
+
+button.tabLinks {
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border: none !important;
+}
+
+.cumulativeBlcok {
+  padding: 0 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 40vh;
+  margin-right: 13px;
+}
+
+.cumulativeBlcok button {
+  margin-right: 5px;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+  padding: 0 5px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=member.css.map */
