@@ -22,6 +22,8 @@ $navTxt:15px;//導覽列文字
 $line-height:30px;//文字行高
 $padding-hint:10px;//頁面提示字padding
 $letter-Spacing:2px;//文字間距
+$paddingSide:50px;  //文字邊框內距
+$lineHeight:30px;//文字行高
 
 //others
 $pageW:1200px;//網頁寬
@@ -31,6 +33,9 @@ $reserveSide:30px;//左右預留寬度
 $borderRadius:15px;
 $btnRadius:15px;
 $inputRadius:5px;
+$borderBtnRadius:10px;
+$btnRadius:15px;
+
 
 //box-shadow
 $box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
@@ -54,9 +59,17 @@ $color_regulation:(
     'gray':#C6C6C6,// 頁面提示字顏色(灰色)
     'blackGray':#0D1017,//footer背景: 黑灰色
     'footerGray':#2A323D,//footer背景字體色、nav顏色(黑灰色)
+    'lightGray':#bebebe,//提示色淡灰(直線顏色)
+    'gray2':#424f5f,//footer背景字體色
+
 
     'footerSide':#161c24,//footer旁邊顏色
     'footerGray2':rgba(66, 79, 95,.1),
+    'btnPeach': #FF498C,
+    'btnYellow': #FFA123,
+    'btnTiffanyGreen':#09E4C7,
+    'orange1':#EF4325,
+
 
 );
 
