@@ -1,14 +1,33 @@
-@charset "UTF-8";
 body {
   box-sizing: border-box;
   margin: 0;
   font-size: 0;
-  font-family: "Arial", "微軟正黑體";
-  background-color: #f2f2f2;
+  font-family: "Palatino Linotype", "noto sans tc";
+  background-color: #F6F6F6;
+}
+
+h5.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: 1px solid red;
+  font-size: 28px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 0;
+  transform: rotate(90deg) translateX(-60px);
+  transform-origin: 0% 100%;
+  /* transform: rotate(270deg) translateX(-100%); */
+  /* transform-origin: 0% 0%; */
+  color: #1D1E4C;
+}
+
+h5.title span {
+  color: #C6C6C6;
 }
 
 section {
-  z-index: -4;
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0px;
@@ -18,79 +37,64 @@ section {
 section div.title-block {
   display: inline-block;
   vertical-align: top;
-  width: 60px;
+  width: 30px;
 }
 
-section div.title-block h5.title {
-  font-size: 28px;
-  display: inline-block;
-  white-space: nowrap;
-  padding: 10px 0;
-  transform: rotate(90deg) translateX(-60px);
-  transform-origin: 0% 100%;
-  /* transform: rotate(270deg) translateX(-100%); */
-  /* transform-origin: 0% 0%; */
-  color: #1d1e4c;
-}
-
-section div.title-block h5.title span {
-  color: #c6c6c6;
-}
-
-section div.content {
+section div.content_costomizedBag {
+  border: 2px solid blue;
   text-align: left;
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 60px);
-  padding-right: 60px;
+  width: calc(100% - $reserveSide*2);
+  margin: 0 30px;
 }
 
-section div.content div.top_back_img_1 {
+section div.content_costomizedBag div.top_back_img_1 {
   position: relative;
   width: 100%;
   z-index: -5;
 }
 
-section div.content div.top_back_img_1 div.top_back_img_2 {
+section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
   width: 100%;
-  height: 431px;
+  height: 421px;
   position: absolute;
-  top: -10px;
+  top: 0;
   left: 0;
   border-radius: 0 0 15px 15px;
   overflow: hidden;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-section div.content div.top_back_img_1 div.top_back_img_2 img {
+section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 img {
   width: 105%;
   filter: blur(4px);
 }
 
-section div.content h5.title_2 {
+section div.content_costomizedBag h5.title_2 {
   font-size: 28px;
-  color: #1d1e4c;
+  color: #1D1E4C;
   margin: 0;
   padding: 60px;
   text-align: center;
 }
 
-section div.content div.all {
+section div.content_costomizedBag div.all {
   width: 100%;
   padding: 0 53px;
   display: flex;
 }
 
-section div.content div.all div.leftarea {
+section div.content_costomizedBag div.all div.leftarea {
   width: 65%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA {
   display: flex;
   width: 100%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L {
   width: 50%;
   overflow: hidden;
   border-radius: 15px;
@@ -98,13 +102,13 @@ section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L img {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L img {
   width: 100%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L div.explain {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L div.explain {
   font-size: 15px;
-  width: 100px;
+  width: 36%;
   height: 33px;
   line-height: 33px;
   text-align: center;
@@ -112,18 +116,16 @@ section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA
   position: absolute;
   bottom: 15px;
   right: 15px;
-  background-color: #f2f2f2;
-  color: #1d1e4c;
-  font-weight: 900;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background: rgba(255, 255, 255, 0.3);
+  background-color: #F6F6F6;
+  color: #1D1E4C;
+  background: rgba(255, 255, 255, 0.8);
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
   width: 50%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 {
   display: inline-block;
   width: 48%;
   overflow: hidden;
@@ -133,49 +135,47 @@ section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 img {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 img {
   width: 100%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 div.explain {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 div.explain {
   font-size: 15px;
-  width: 100px;
+  width: 75%;
   height: 33px;
   line-height: 33px;
   text-align: center;
   border-radius: 15px;
   position: absolute;
   bottom: 15px;
-  right: 15px;
-  background-color: #f2f2f2;
-  color: #1d1e4c;
-  font-weight: 900;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background: rgba(255, 255, 255, 0.3);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F6F6F6;
+  color: #1D1E4C;
+  background: rgba(255, 255, 255, 0.8);
 }
 
-section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R11 {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R11 {
   margin-top: 3.2%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB {
   margin-top: 25px;
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  padding: 40px;
+  padding: 20px;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB p.urstyle {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB h6.urstyle {
   font-size: 22px;
-  color: #1d1e4c;
-  font-weight: 900;
+  color: #1D1E4C;
   margin: 0;
   padding-top: 10px;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.customized_area {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area {
   position: relative;
   border-radius: 15px;
   width: 98%;
@@ -187,11 +187,11 @@ section div.content div.all div.leftarea div.leftarea_blockB div.customized_area
   overflow: hidden;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.customized_area img.customized_img {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area img.customized_img {
   width: 100%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.customized_area div.image_front {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area div.image_front {
   width: 26%;
   height: 35%;
   position: absolute;
@@ -199,7 +199,7 @@ section div.content div.all div.leftarea div.leftarea_blockB div.customized_area
   left: 16.5%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.customized_area div.image_back {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area div.image_back {
   width: 13%;
   height: 17%;
   position: absolute;
@@ -207,178 +207,227 @@ section div.content div.all div.leftarea div.leftarea_blockB div.customized_area
   left: 66%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.customized_area p.front {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area p.front {
   font-size: 15px;
-  color: #1d1e4c;
+  color: #1D1E4C;
   display: inline-block;
   margin: 0 12% 10px auto;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.customized_area p.back {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area p.back {
   font-size: 15px;
-  color: #1d1e4c;
+  color: #1D1E4C;
   display: inline-block;
   margin: 0 auto 10px 12%;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB p.aboutProducts {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB h6.aboutProducts {
   font-size: 22px;
-  color: #1d1e4c;
-  font-weight: 900;
+  color: #1D1E4C;
   margin: 0;
   padding-top: 40px;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.leftarea_blockC {
-  margin-top: 20px;
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.leftarea_blockC {
+  margin-top: 10px;
   width: 100%;
   padding: 10px;
 }
 
-section div.content div.all div.leftarea div.leftarea_blockB div.leftarea_blockC p.textaboutProducts {
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.leftarea_blockC p.textaboutProducts {
   font-size: 15px;
-  color: #1d1e4c;
+  color: #1D1E4C;
 }
 
-section div.content div.all div.rightarea {
+section div.content_costomizedBag div.all div.rightarea {
   width: 34%;
   margin-left: 1%;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background-color: #f2f2f2;
+  background-color: #F6F6F6;
   background: rgba(255, 255, 255, 0.6);
 }
 
-section div.content div.all div.rightarea h5 {
+section div.content_costomizedBag div.all div.rightarea h5 {
   font-size: 28px;
-  color: #1d1e4c;
+  color: #1D1E4C;
   margin: 0;
   padding: 30px;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm {
   width: 80%;
   height: 300px;
   margin: 0 10%;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block {
   width: 100%;
-  border: 1px solid #1d1e4c;
-  margin-bottom: 50px;
+  border-bottom: 1px solid #C6C6C6;
+  margin-bottom: 30px;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block p.stepExplain {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block p.stepExplain {
   font-size: 15px;
   font-weight: 900;
-  color: #1d1e4c;
+  color: #1D1E4C;
   display: block;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
   width: 30%;
   height: 105px;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   overflow: hidden;
   margin-bottom: 18px;
+  margin-right: 3%;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor {
   width: 100%;
   height: 68%;
   font-size: 15px;
-  color: #1d1e4c;
+  color: #1D1E4C;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor .circleBtn {
-  margin-top: 105%;
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor input.circleBtn {
+  margin-top: 95%;
   display: inline-block;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor1 {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor1 {
   background-color: lightyellow;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor2 {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor2 {
   background-color: lightblue;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor3 {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor3 {
   background-color: lightgreen;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor4 {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor4 {
   background-color: pink;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
-  background-color: #1d1e4c;
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
+  background-color: #1D1E4C;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block {
   width: 100%;
-  border: 1px solid #1d1e4c;
+  border-bottom: 1px solid #C6C6C6;
   font-size: 15px;
-  color: #1d1e4c;
-  font-weight: 800;
-  margin-bottom: 50px;
+  color: #1D1E4C;
+  margin-bottom: 30px;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
-  color: #d71212;
-  font-weight: 550;
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
+  color: #EF4325;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 {
-  border: 1px solid red;
-  margin: 50px auto;
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 {
+  margin: 0px auto;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
-  width: 90%;
-  border: 1px solid blue;
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
+  width: 98%;
+  margin: 0 auto;
   padding: 10px;
-  margin-top: 25px;
-  background-color: #424f5f;
-  color: #f2f2f2;
-  border-radius: 15px;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput {
+  height: 35px;
+  line-height: 35px;
+  background-color: #C2C2C2;
+  color: #F6F6F6;
+  border-radius: 5px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.qty_block {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput input.theFileBtn {
   width: 100%;
-  border: 1px solid #1d1e4c;
-  font-size: 15px;
-  color: #1d1e4c;
-  font-weight: 800;
-  margin-bottom: 50px;
+  margin-left: 3%;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.qty_block select.select_qty_pcs {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block {
+  width: 100%;
+  font-size: 15px;
+  border-bottom: 1px solid #C6C6C6;
+  margin-bottom: 30px;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
+  width: 98%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
   width: 100px;
   height: 30px;
-  padding-left: 20px;
+  padding-left: 30px;
+  border-radius: 5px;
 }
 
-section div.content div.all div.rightarea form.inforOfTheForm div.tal_block {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block {
   width: 100%;
-  border: 1px solid #1d1e4c;
   font-size: 15px;
-  color: #1d1e4c;
-  font-weight: 800;
-  margin-bottom: 50px;
+  color: #1D1E4C;
+  margin-bottom: 30px;
 }
 
-section div.content div.bottomarea {
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
+  width: 98%;
+  text-align: right;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
+  margin-right: 10%;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.placeOfSubmit {
+  text-align: center;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 5px;
+  width: 145px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #1D1E4C;
+  color: #fafafa;
+  position: relative;
+  padding-right: 10%;
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart img {
+  height: 90%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+
+section div.content_costomizedBag div.bottomarea {
   margin-bottom: 112px;
   width: 100%;
   border-radius: 15px;
@@ -387,17 +436,21 @@ section div.content div.bottomarea {
   padding-bottom: 25px;
 }
 
-section div.content div.bottomarea div.recommendProductBox {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox {
   width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  cursor: pointer;
 }
 
-section div.content div.bottomarea div.recommendProductBox div.recommendProduct {
-  width: 22%;
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage {
+  width: 23.5%;
+}
+
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct {
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   margin: 0 auto;
@@ -405,55 +458,47 @@ section div.content div.bottomarea div.recommendProductBox div.recommendProduct 
   position: relative;
 }
 
-section div.content div.bottomarea div.recommendProductBox div.recommendProduct img {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct img {
   width: 100%;
 }
 
-section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo {
   width: 100%;
   height: 43%;
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: #f2f2f2;
-  background: rgba(255, 255, 255, 0.4);
+  background-color: #F6F6F6;
+  background: rgba(255, 255, 255, 0.7);
   padding: 5%;
 }
 
-section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo p.NameAndPrice {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
   font-size: 15px;
-  font-weight: 900;
-  color: #1d1e4c;
+  color: #1D1E4C;
   display: inline-block;
   margin: 3% 10% 3% 0;
 }
 
-section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo p.text {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo p.text {
   font-size: 15px;
-  color: #1d1e4c;
+  color: #1D1E4C;
   margin-top: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo img.cart {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo img.cart {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
-  width: 33px;
-  height: 33px;
+  bottom: 8px;
+  right: 8px;
+  width: 11.75%;
   border-radius: 50%;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-section div.content div.bottomarea div.recommendProductBox div.B {
+section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.B {
   margin-left: 1.33%;
-}
-
-footer {
-  width: 100%;
-  height: 500px;
-  background-color: #161c24;
 }
 /*# sourceMappingURL=CustomizedBag.css.map */
