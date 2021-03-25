@@ -1,7 +1,7 @@
 {
   "name": "ced102",
   "version": "1.0.0",
-  "description": "",
+  "description": "打摳說明\r 起手式:",
   "main": "index.js",
   "script comment": {
     "dev": "安裝套件有更新套件時",
@@ -38,5 +38,6 @@
     "gulp-uglify": "^3.0.2",
     "node-sass": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "keywords": []
 }
