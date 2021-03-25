@@ -349,7 +349,7 @@ div.ah_card_section {
   height: 1500px;
 }
 
-main.page-content {
+ah_main.page-content {
   /* border: 1px solid red; */
   box-shadow: #00000067 0px 0px 25px 1px;
   background-color: white;

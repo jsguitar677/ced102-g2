@@ -1,7 +1,6 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  font-size: 0;
   font-family: "Palatino Linotype", "noto sans tc";
   background-color: #F6F6F6;
 }
@@ -25,7 +24,6 @@ h5.title {
 
 h5.title span {
   color: #C6C6C6;
-<<<<<<< HEAD
 }
 
 section {
@@ -42,37 +40,12 @@ section div.title-block {
 }
 
 section div.content_costomizedBag {
-=======
-}
-
-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  font-size: 0px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-section div.title-block {
-  display: inline-block;
-  vertical-align: top;
-  width: 30px;
-}
-
-section div.content {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   border: 2px solid blue;
   text-align: left;
   display: inline-block;
   vertical-align: top;
-<<<<<<< HEAD
-  width: calc(100% - $reserveSide*2);
+  width: calc(100% - 30px*2);
   margin: 0 30px;
-=======
-  width: 100%;
-  padding: 0 30px;
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
 }
 
 section div.content_costomizedBag div.top_back_img_1 {
@@ -144,12 +117,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   right: 15px;
   background-color: #F6F6F6;
   color: #1D1E4C;
-<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.8);
-=======
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background: rgba(255, 255, 255, 0.3);
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
@@ -179,19 +147,11 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   border-radius: 15px;
   position: absolute;
   bottom: 15px;
-<<<<<<< HEAD
   left: 50%;
   transform: translateX(-50%);
   background-color: #F6F6F6;
   color: #1D1E4C;
   background: rgba(255, 255, 255, 0.8);
-=======
-  right: 15px;
-  background-color: #F6F6F6;
-  color: #1D1E4C;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background: rgba(255, 255, 255, 0.3);
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R11 {
@@ -359,11 +319,7 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   background-color: pink;
 }
 
-<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
-=======
-section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   background-color: #1D1E4C;
 }
 
@@ -375,7 +331,6 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
   color: #EF4325;
 }
@@ -385,27 +340,12 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
-=======
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
-  color: #EF4325;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 {
-  margin: 0px auto;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 98%;
   margin: 0 auto;
   padding: 10px;
 }
 
-<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput {
-=======
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   height: 35px;
   line-height: 35px;
   background-color: #C2C2C2;
@@ -414,11 +354,7 @@ section div.content div.all div.rightarea form.inforOfTheForm div.picture_block 
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput input.theFileBtn {
-=======
-section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput input.theFileBtn {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   margin-left: 3%;
   height: 32px;
@@ -427,16 +363,11 @@ section div.content div.all div.rightarea form.inforOfTheForm div.picture_block 
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block {
-=======
-section div.content div.all div.rightarea form.inforOfTheForm div.qty_block {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   font-size: 15px;
   border-bottom: 1px solid #C6C6C6;
   margin-bottom: 30px;
-<<<<<<< HEAD
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
@@ -446,17 +377,6 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
-=======
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
-  width: 98%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100px;
   height: 30px;
   padding-left: 30px;
@@ -470,45 +390,9 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   margin-bottom: 30px;
 }
 
-<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
   width: 98%;
   text-align: right;
-=======
-section div.content div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
-  width: 98%;
-  text-align: right;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
-  margin-right: 10%;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.placeOfSubmit {
-  text-align: center;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 5px;
-  width: 145px;
-  height: 35px;
-  line-height: 35px;
-  background-color: #1D1E4C;
-  color: #fafafa;
-  position: relative;
-  padding-right: 10%;
-  cursor: pointer;
-}
-
-section div.content div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart img {
-  height: 90%;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  right: 8%;
-  transform: translateY(-50%);
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
@@ -584,11 +468,7 @@ section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToP
   bottom: 0;
   left: 0;
   background-color: #F6F6F6;
-<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.7);
-=======
-  background: rgba(255, 255, 255, 0.4);
->>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   padding: 5%;
 }
 
