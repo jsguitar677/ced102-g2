@@ -1,9 +1,10 @@
+@import 'var';
 body {
     margin: 0px;
 }
 
 body header {
-    background-color: map-get($map: $color_regulation, $key:'blackGray');
+    background-color: map-get($map: $color_regulation, $key: 'blackGray');
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     position: fixed;
     top: 0;
