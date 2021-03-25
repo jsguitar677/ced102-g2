@@ -153,6 +153,33 @@
     </div>
     <!-- showoff---------------------------------------------------------------------- -->
     <!-- cards------------------------------------------------------------------------ -->
+    
+    <div class="ah_picker">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22.032" height="18.572" viewBox="0 0 22.032 18.572" class="feather_icon">
+         <g id="Icon_feather-sliders" data-name="Icon feather-sliders" transform="translate(0 -3)">
+           <path id="Path_29" data-name="Path 29" d="M6,27.056V21" transform="translate(-1.905 -6.984)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_30" data-name="Path 30" d="M6,10.556V4.5" transform="translate(-1.905 0)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_31" data-name="Path 31" d="M18,25.786V18" transform="translate(-6.984 -5.714)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_32" data-name="Path 32" d="M18,8.826V4.5" transform="translate(-6.984 0)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_33" data-name="Path 33" d="M30,28.326V24" transform="translate(-12.063 -8.254)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_34" data-name="Path 34" d="M30,12.286V4.5" transform="translate(-12.063 0)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_35" data-name="Path 35" d="M1.5,21H6.691" transform="translate(0 -6.984)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_36" data-name="Path 36" d="M13.5,12h5.191" transform="translate(-5.079 -3.174)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+           <path id="Path_37" data-name="Path 37" d="M25.5,24h5.191" transform="translate(-10.158 -8.254)" fill="none" stroke="#1d1e4c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+         </g>
+       </svg>
+
+       <h1>篩選器:<h1>
+       <ul class="ah_picklist">
+         <li><a href="#" class="item">日期(遞增)<i class="fa fa-chevron-down"></i></a>
+           <span class="accent"></span>
+           <ul class="drop-down">
+             <li><a href="#">日期(遞減)</a></li>
+           </ul>
+         </li>
+       </ul>
+     </div> 
+     <div class="ah_card_section">
     <main class="page-content">
         <div class="card">
             <div class="content">
@@ -218,9 +245,20 @@
             </div>
         </div>
     </main>
+</div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>$("li").mouseover(function(){
+        $(this).find('.drop-down').slideDown(300);
+        $(this).find(".accent").addClass("animate");
+        $(this).find(".item").css("color","#FFF");
+       }).mouseleave(function(){
+         $(this).find(".drop-down").slideUp(300);
+          $(this).find(".accent").removeClass("animate");
+          $(this).find(".item").css("color","#000");
+       });</script>
 </body>
 
 </html>

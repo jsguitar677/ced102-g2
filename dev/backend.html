@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 後臺css -->
+    <link rel="stylesheet" href="./css/backend.css">
+    <!-- 格線系統 -->
+    <link rel="stylesheet" href="./css/plugin/bootstrap-grid.min.css">
+    <!-- 共同css -->
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+</head>
+<body>
+    
+    <main>
+        <nav>
+            <h4>帳號</h4>
+        </nav>
+        <div class="mainContent">
+            <div class="changeBlock">
+                <button class="tabLinks" onclick="openPage(event, 'adMag')" >管理員管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'memberMag')"id="defaultOpen" >會員管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'norPorMag')">一般商品管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'cusProMag')">客製化商品管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'ordMag')">訂單管理管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'reportMag')">檢舉留言管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'actVerifyMag')">活動審核管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'actHistoryMag')">活動花絮管理</button>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="adMag" class="tabContent">
+                            <h3>管理員管理</h3>
+                            <div class="Form1">
+                                <form action="">
+                                    <button>
+                                        <i class="fas fa-plus fa-1x"></i>
+                                        新增管理員</button>
+                                    <table>
+                                        <tr>
+                                            <th>管理員帳號</th>
+                                            <th>姓名</th>
+                                            <th>帳號</th>
+                                            <th>刪除</th>
+                                        </tr>
+                                        <tr>
+                                            <td>G001</td>
+                                            <td>Eva</td>
+                                            <td>Eva0909</td>
+                                            <td>
+                                                <button id="delete"><i class="far fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>G002</td>
+                                            <td>BlackCuba</td>
+                                            <td>BlackCuba0309</td>
+                                            <td>
+                                                <button id="delete"><i class="far fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="memberMag" class="tabContent">
+                            <h3>會員管理</h3>
+                            <div class="Form1">
+                                <input type="search">
+                                <form action="">
+                                    <table>
+                                        <tr>
+                                            <th>會員編號</th>
+                                            <th>會員狀態</th>
+                                            <th>違規停權</th>
+                                            <th>姓名</th>
+                                            <th>等級</th>
+                                            <th>生日</th>
+                                            <th>帳號(信箱)</th>
+                                            <th>電話</th>
+                                            <th>環保幣</th>
+                                            <th>經驗值</th>
+                                            <th>刪除</th>
+                                        </tr>
+                                        <tr>
+                                            <td>M12345</td>
+                                            <td>正常</td>
+                                            <td>
+                                                <label class="switch">
+                                                    <input type="checkbox" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </td>
+                                            <td>魯夫</td>
+                                            <td>進階會員</td>
+                                            <td>1995/06/31</td>
+                                            <td>a4927763@gmail.com</td>
+                                            <td>0975753772</td>
+                                            <td>30P</td>
+                                            <td>130Exp</td>
+                                            <td>
+                                                <button id="delete"><i class="far fa-trash-alt fa-2x"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>M12345</td>
+                                            <td>正常</td>
+                                            <td>
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </td>
+                                            <td>魯夫</td>
+                                            <td>進階會員</td>
+                                            <td>1995/06/31</td>
+                                            <td>a4927763@gmail.com</td>
+                                            <td>0975753772</td>
+                                            <td>30P</td>
+                                            <td>130Exp</td>
+                                            <td>
+                                                <button id="delete"><i class="far fa-trash-alt fa-2x"></i></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="norPorMag" class="tabContent">
+                            <h3>一般商品管理</h3>
+                            <h1>興建中...請稍後</h1>
+                        </div> 
+                        <div id="cusProMag" class="tabContent">
+                            <h3>客製化商品管理</h3>
+                            <h1>興建中...請稍後</h1>
+
+                        </div>
+                        <div id="ordMag" class="tabContent">
+                            <h3>訂單管理管理</h3>
+                            <h1>興建中...請稍後</h1>
+                        </div>
+                        <div id="reportMag" class="tabContent">
+                            <h3>檢舉留言管理</h3>
+                            <h1>興建中...請稍後</h1>
+                        </div>
+                        <div id="actVerifyMag" class="tabContent">
+                            <h3>活動審核管理</h3>
+                            <h1>興建中...請稍後</h1>
+                        </div>
+                        <div id="actHistoryMag" class="tabContent">
+                            <h3>活動花絮管理</h3>
+                            <h1>興建中...請稍後</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </main>
+    
+
+    
+</body>
+
+<script src="./js/backend.js"></script>
+
+</html>

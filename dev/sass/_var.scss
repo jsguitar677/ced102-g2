@@ -1,0 +1,72 @@
+// Font-Family
+$english: 'Palatino Linotype';
+$chinese: 'noto sans tc';
+
+// Font Size
+$p:15px;
+$h1:72px;
+$h2:60px;
+$h3:48px;
+$h4:38px;
+$h5:28px;
+$h6:22px;
+$h7:18px;
+$p:15px;
+
+
+$contentTxt:15px;   //內文字體大小
+$btnTxt:15px;   //按鈕字體大小
+$regionTxt:28px;//區域性字體
+$contentSubTit:22px;//內文副標題
+$navTxt:15px;//導覽列文字
+$line-height:30px;//文字行高
+$padding-hint:10px;//頁面提示字padding
+$letter-Spacing:2px;//文字間距
+
+//others
+$pageW:1200px;//網頁寬
+$reserveSide:30px;//左右預留寬度
+
+//radius
+$borderRadius:15px;
+$btnRadius:15px;
+$inputRadius:5px;
+
+//box-shadow
+$box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+
+//color
+$color_regulation:(
+    'btnPink': #FF9898,
+    'btnBlue': #1654FF,
+    'btnRed': #EF4325,
+    'orange':#FFAE41,
+    'pink':#FF498C,
+    'lake':#09E4C7,
+    'black':#1E1E1E,
+    'blue':#1D1E4C,//主要色
+    'white':#fafafa,//需要(白色)統一用這一個
+    'white-bg':#F6F6F6,//背景為暗色需改成白色(背景底色)
+    'red':#EF4325,//警示色
+    'green':#0e6d41,//環保幣顏色
+    'gray-input-hintText':#C2C2C2,//input的提示顏色
+    'blue-input-border':#1D1E4C,//input的邊框顏色
+    'gray':#C6C6C6,// 頁面提示字顏色(灰色)
+    'blackGray':#0D1017,//footer背景: 黑灰色
+    'footerGray':#2A323D,//footer背景字體色、nav顏色(黑灰色)
+
+    'footerSide':#161c24,//footer旁邊顏色
+    'footerGray2':rgba(66, 79, 95,.1),
+
+);
+
+
+
+//敬航
+$closeBtn:27px;//關閉紐大小
+// header
+$navH:66px;
+$logoW:50px;
+
+//Footer
+$footerH:500px;
