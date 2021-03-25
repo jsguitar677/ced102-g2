@@ -1,12 +1,14 @@
 @import'./act_hist.scss';
 @import'./CustomizedBag.scss';
+@import'./member.scss';
+
 body {
     margin: 0px;
     font-size: 0px;
 }
 
 body header {
-    background-color: #424f5f;
+    background-color: map-get($map: $color_regulation, $key:'blackGray');
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     position: fixed;
     top: 0;

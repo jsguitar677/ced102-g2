@@ -700,6 +700,11 @@ section {
   margin: 0 auto;
   font-size: 0px;
   text-align: center;
+<<<<<<< HEAD
+=======
+  position: relative;
+  z-index: 1;
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
 }
 
 section div.title-block {
@@ -708,22 +713,38 @@ section div.title-block {
   width: 30px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag {
+=======
+section div.content {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   border: 2px solid blue;
   text-align: left;
   display: inline-block;
   vertical-align: top;
+<<<<<<< HEAD
   width: calc(100% - $reserveSide*2);
   margin: 0 30px;
 }
 
 section div.content_costomizedBag div.top_back_img_1 {
+=======
+  width: 100%;
+  padding: 0 30px;
+}
+
+section div.content div.top_back_img_1 {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   position: relative;
   width: 100%;
   z-index: -5;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
+=======
+section div.content div.top_back_img_1 div.top_back_img_2 {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   height: 421px;
   position: absolute;
@@ -734,12 +755,20 @@ section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 img {
+=======
+section div.content div.top_back_img_1 div.top_back_img_2 img {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 105%;
   filter: blur(4px);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag h5.title_2 {
+=======
+section div.content h5.title_2 {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 28px;
   color: #1D1E4C;
   margin: 0;
@@ -747,22 +776,38 @@ section div.content_costomizedBag h5.title_2 {
   text-align: center;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all {
+=======
+section div.content div.all {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   padding: 0 53px;
   display: flex;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea {
   width: 65%;
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA {
+=======
+section div.content div.all div.leftarea {
+  width: 65%;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockA {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   display: flex;
   width: 100%;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L {
+=======
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 50%;
   overflow: hidden;
   border-radius: 15px;
@@ -770,6 +815,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L img {
   width: 100%;
 }
@@ -777,6 +823,15 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L div.explain {
   font-size: 15px;
   width: 36%;
+=======
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L img {
+  width: 100%;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L div.explain {
+  font-size: 15px;
+  width: 100px;
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   height: 33px;
   line-height: 33px;
   text-align: center;
@@ -786,6 +841,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   right: 15px;
   background-color: #F6F6F6;
   color: #1D1E4C;
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.8);
 }
 
@@ -794,6 +850,17 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 {
+=======
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
+  width: 50%;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   display: inline-block;
   width: 48%;
   overflow: hidden;
@@ -803,6 +870,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 img {
   width: 100%;
 }
@@ -810,12 +878,22 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 div.explain {
   font-size: 15px;
   width: 75%;
+=======
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 img {
+  width: 100%;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 div.explain {
+  font-size: 15px;
+  width: 100px;
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   height: 33px;
   line-height: 33px;
   text-align: center;
   border-radius: 15px;
   position: absolute;
   bottom: 15px;
+<<<<<<< HEAD
   left: 50%;
   transform: translateX(-50%);
   background-color: #F6F6F6;
@@ -828,22 +906,47 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB {
+=======
+  right: 15px;
+  background-color: #F6F6F6;
+  color: #1D1E4C;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+section div.content div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R11 {
+  margin-top: 3.2%;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockB {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   margin-top: 25px;
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+<<<<<<< HEAD
   padding: 20px;
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB h6.urstyle {
+=======
+  padding: 40px;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockB p.urstyle {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 22px;
   color: #1D1E4C;
   margin: 0;
   padding-top: 10px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.customized_area {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   position: relative;
   border-radius: 15px;
   width: 98%;
@@ -855,11 +958,19 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.c
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area img.customized_img {
   width: 100%;
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area div.image_front {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.customized_area img.customized_img {
+  width: 100%;
+}
+
+section div.content div.all div.leftarea div.leftarea_blockB div.customized_area div.image_front {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 26%;
   height: 35%;
   position: absolute;
@@ -867,7 +978,11 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.c
   left: 16.5%;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area div.image_back {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.customized_area div.image_back {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 13%;
   height: 17%;
   position: absolute;
@@ -875,39 +990,64 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.c
   left: 66%;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area p.front {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.customized_area p.front {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 15px;
   color: #1D1E4C;
   display: inline-block;
   margin: 0 12% 10px auto;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area p.back {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.customized_area p.back {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 15px;
   color: #1D1E4C;
   display: inline-block;
   margin: 0 auto 10px 12%;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB h6.aboutProducts {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB p.aboutProducts {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 22px;
   color: #1D1E4C;
   margin: 0;
   padding-top: 40px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.leftarea_blockC {
   margin-top: 10px;
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.leftarea_blockC {
+  margin-top: 20px;
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   padding: 10px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.leftarea_blockC p.textaboutProducts {
+=======
+section div.content div.all div.leftarea div.leftarea_blockB div.leftarea_blockC p.textaboutProducts {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 15px;
   color: #1D1E4C;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea {
+=======
+section div.content div.all div.rightarea {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 34%;
   margin-left: 1%;
   border-radius: 15px;
@@ -916,33 +1056,53 @@ section div.content_costomizedBag div.all div.rightarea {
   background: rgba(255, 255, 255, 0.6);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea h5 {
+=======
+section div.content div.all div.rightarea h5 {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 28px;
   color: #1D1E4C;
   margin: 0;
   padding: 30px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 80%;
   height: 300px;
   margin: 0 10%;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   border-bottom: 1px solid #C6C6C6;
   margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block p.stepExplain {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block p.stepExplain {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 15px;
   font-weight: 900;
   color: #1D1E4C;
   display: block;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -950,7 +1110,11 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   justify-content: flex-start;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 30%;
   height: 105px;
   border-radius: 15px;
@@ -960,13 +1124,18 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   margin-right: 3%;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   height: 68%;
   font-size: 15px;
   color: #1D1E4C;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor input.circleBtn {
   margin-top: 95%;
   display: inline-block;
@@ -993,6 +1162,34 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor .circleBtn {
+  margin-top: 105%;
+  display: inline-block;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor1 {
+  background-color: lightyellow;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor2 {
+  background-color: lightblue;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor3 {
+  background-color: lightgreen;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor4 {
+  background-color: pink;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
+  background-color: #1D1E4C;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.picture_block {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   border-bottom: 1px solid #C6C6C6;
   font-size: 15px;
@@ -1000,6 +1197,7 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
   color: #EF4325;
 }
@@ -1009,12 +1207,27 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
+  color: #EF4325;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 {
+  margin: 0px auto;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 98%;
   margin: 0 auto;
   padding: 10px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   height: 35px;
   line-height: 35px;
   background-color: #C2C2C2;
@@ -1023,7 +1236,11 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput input.theFileBtn {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput input.theFileBtn {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   margin-left: 3%;
   height: 32px;
@@ -1032,38 +1249,59 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.qty_block {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   font-size: 15px;
   border-bottom: 1px solid #C6C6C6;
   margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 98%;
   margin: 0 auto;
   padding: 10px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100px;
   height: 30px;
   padding-left: 30px;
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.tal_block {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   font-size: 15px;
   color: #1D1E4C;
   margin-bottom: 30px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 98%;
   text-align: right;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
   margin-right: 10%;
 }
@@ -1073,6 +1311,17 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart {
+=======
+section div.content div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
+  margin-right: 10%;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.placeOfSubmit {
+  text-align: center;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   border-radius: 5px;
   width: 145px;
@@ -1082,11 +1331,18 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   color: #fafafa;
   position: relative;
   padding-right: 10%;
+<<<<<<< HEAD
   margin-top: 10%;
   cursor: pointer;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart img {
+=======
+  cursor: pointer;
+}
+
+section div.content div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart img {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   height: 90%;
   border-radius: 50%;
   position: absolute;
@@ -1095,7 +1351,11 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
   transform: translateY(-50%);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.bottomarea {
+=======
+section div.content div.bottomarea {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   margin-bottom: 112px;
   width: 100%;
   border-radius: 15px;
@@ -1104,13 +1364,18 @@ section div.content_costomizedBag div.bottomarea {
   padding-bottom: 25px;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.bottomarea div.recommendProductBox {
+=======
+section div.content div.bottomarea div.recommendProductBox {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+<<<<<<< HEAD
   cursor: pointer;
 }
 
@@ -1119,6 +1384,12 @@ section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToP
 }
 
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct {
+=======
+}
+
+section div.content div.bottomarea div.recommendProductBox div.recommendProduct {
+  width: 22%;
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   margin: 0 auto;
@@ -1126,29 +1397,49 @@ section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToP
   position: relative;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct img {
   width: 100%;
 }
 
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo {
+=======
+section div.content div.bottomarea div.recommendProductBox div.recommendProduct img {
+  width: 100%;
+}
+
+section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   width: 100%;
   height: 43%;
   position: absolute;
   bottom: 0;
   left: 0;
   background-color: #F6F6F6;
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.7);
   padding: 5%;
 }
 
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
+=======
+  background: rgba(255, 255, 255, 0.4);
+  padding: 5%;
+}
+
+section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo p.NameAndPrice {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 15px;
   color: #1D1E4C;
   display: inline-block;
   margin: 3% 10% 3% 0;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo p.text {
+=======
+section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo p.text {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   font-size: 15px;
   color: #1D1E4C;
   margin-top: 0;
@@ -1157,16 +1448,29 @@ section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToP
   white-space: nowrap;
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.recommendProduct div.productInfo img.cart {
   position: absolute;
   bottom: 8px;
   right: 8px;
   width: 11.75%;
+=======
+section div.content div.bottomarea div.recommendProductBox div.recommendProduct div.productInfo img.cart {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 33px;
+  height: 33px;
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   border-radius: 50%;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
 section div.content_costomizedBag div.bottomarea div.recommendProductBox a.goToProductPage div.B {
+=======
+section div.content div.bottomarea div.recommendProductBox div.B {
+>>>>>>> 8c208d11dcc86f9a0f4b2d178df0b97a45fc7d0b
   margin-left: 1.33%;
 }
 

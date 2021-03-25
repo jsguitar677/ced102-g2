@@ -209,7 +209,6 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     overflow: hidden;
     color: #8CAAB7;
     border-radius: 10px;
-    
 }
 
 .nav-button.-next {
@@ -346,8 +345,6 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
 }
 
 
-
-
 /* 卡片清單 */
 
 @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
@@ -361,10 +358,12 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
 * {
     box-sizing: border-box;
 }
-div.ah_card_section{
+
+div.ah_card_section {
     height: 1500px;
 }
-main.page-content {
+
+ah_main.page-content {
     /* border: 1px solid red; */
     box-shadow: #00000067 0px 0px 25px 1px;
     background-color: white;
@@ -569,20 +568,22 @@ main.page-content {
 }
 
 // 篩選器
-  ul.ah_picklist {
+ul.ah_picklist {
     width: 620px;
     margin: 0 auto;
     position: absolute;
     left: 60px;
     padding: 0px;
-  }
-  ul.ah_picklist li {
+}
+
+ul.ah_picklist li {
     float: left;
     list-style: none;
     margin-right: 10px;
     position: relative;
-  }
-  ul.ah_picklist li a {
+}
+
+ul.ah_picklist li a {
     padding-left: 10px;
     padding-top: 1px;
     padding-bottom: 2px;
@@ -598,41 +599,49 @@ main.page-content {
     display: block;
     width: 150px;
     z-index: 30;
-  }
-  ul.ah_picklist li a i {
+}
+
+ul.ah_picklist li a i {
     font-size: 12px !important;
     position: absolute;
     right: 10px;
     top: 14px;
-  }
-  ul.ah_picklist li .drop-down {
+}
+
+ul.ah_picklist li .drop-down {
     position: absolute;
     padding: 0;
     display: none;
     margin: 0;
     left: 0;
     z-index: 0;
-  }
-  ul.ah_picklist li .drop-down li {
+}
+
+ul.ah_picklist li .drop-down li {
     position: relative;
     float: none;
-  }
-  ul.ah_picklist li .drop-down li a {
+}
+
+ul.ah_picklist li .drop-down li a {
     border-top: none;
     width: 150px;
-  }
-  ul.ah_picklist li .drop-down li a:hover {
+}
+
+ul.ah_picklist li .drop-down li a:hover {
     background: #000000;
     color: #ffffff;
-  }
-  ul.ah_picklist li .drop-down li:nth-of-type(1) a {
+}
+
+ul.ah_picklist li .drop-down li:nth-of-type(1) a {
     border-top: none;
-  }
-  i.fa.fa-chevron-down{
-    position:absolute ;
+}
+
+i.fa.fa-chevron-down {
+    position: absolute;
     top: 19%;
-  }
-  .accent {
+}
+
+.accent {
     top: 0;
     left: 0;
     width: 0%;
@@ -641,36 +650,37 @@ main.page-content {
     position: absolute;
     transition: 0.3s ease;
     border-radius: 20px;
-  }
-  
-  .animate {
+}
+
+.animate {
     width: 100%;
     transition: 0.3s ease;
-  }
-  
-  .item:hover {
+}
+
+.item:hover {
     color: #ffffff;
-  }
-  div.ah_picker{
-      position: relative;
-      height: 50px;
+}
+
+div.ah_picker {
+    position: relative;
+    height: 50px;
     //   text-align: left;
-      width: 30%;
-      margin-left: 6%;
-      margin-top: 20px;   
-      
-  }
-  svg.feather_icon{
+    width: 30%;
+    margin-left: 6%;
+    margin-top: 20px;
+}
+
+svg.feather_icon {
     // border: 1px solid red;
     position: absolute;
     top: 15%;
-  }
+}
 
-  div.ah_picker>h1{
-  font-size: 1rem;
-  margin: 0px;
-  width: 60px;
-  position: absolute;
-  left:30px;
-  top: 10%;
-  }
+div.ah_picker>h1 {
+    font-size: 1rem;
+    margin: 0px;
+    width: 60px;
+    position: absolute;
+    left: 30px;
+    top: 10%;
+}
