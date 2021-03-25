@@ -62,7 +62,6 @@ $footerH:500px;
 body {
     box-sizing: border-box;
     margin: 0;
-    font-size: 0;
     font-family: $english, $chinese;
     background-color: map-get($color_regulation, 'white-bg');
 }
