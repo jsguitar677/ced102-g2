@@ -744,7 +744,7 @@ p {
   justify-content: center;
   width: 30%;
   height: calc(100vh - 66px);
-  background-image: url(../../dist/img/indexFront/indexfont-img.png);
+  background-image: url(../../img/indexFront/indexfont-img.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -783,7 +783,7 @@ p {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background-image: url("../../dist/img/indexFront/indexImg5.jpg");
+  background-image: url("../../img/indexFront/indexImg5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -808,7 +808,7 @@ p {
   left: 0;
   right: 0;
   opacity: 1;
-  background-image: url("../../dist/img/indexFront/indexImg5.jpg");
+  background-image: url("../../img/indexFront/indexImg5.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -931,23 +931,96 @@ p {
 }
 
 .homeBotLayer4 .homePage4__generalBlock .pro1 {
-  background-image: url(../../dist/img/indexFront/bag1.jpg);
+  background-image: url(../../img/indexFront/bag1.jpg);
   border-radius: 15px;
   overflow: hidden;
   background-size: cover;
 }
 
 .homeBotLayer4 .homePage4__generalBlock .pro2 {
-  background-image: url(../../dist/img/indexFront/bag1.jpg);
+  background-image: url(../../img/indexFront/bag1.jpg);
   border-radius: 15px;
   overflow: hidden;
   background-size: cover;
 }
 
 .homeBotLayer4 .homePage4__generalBlock .pro3 {
-  background-image: url(../../dist/img/indexFront/bag1.jpg);
+  background-image: url(../../img/indexFront/bag1.jpg);
   border-radius: 15px;
   overflow: hidden;
   background-size: cover;
+}
+
+.homeBotLayer5 {
+  color: #fafafa;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../img/indexFront/indexImg7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.homeBotLayer5 .frontBlur {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 50vh;
+}
+
+.homeBotLayer5 .frontBlur::before {
+  margin: auto;
+  position: absolute;
+  z-index: -1;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  background-image: url("../../img/indexFront/indexImg7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(5px);
+}
+
+.homePage5 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homePage5 .homePage5Left {
+  width: 40%;
+}
+
+.homePage5 .homePage5Right {
+  width: 60%;
+}
+
+.homeBotLayer6 {
+  height: 35vh;
+}
+
+.homeBotLayer6 .homePage6 {
+  display: flex;
+}
+
+.homeBotLayer6 .homePage6__left {
+  padding: 0 30px;
+  height: 100%;
+  width: 50%;
+  background-color: #242d38;
+  color: #fafafa;
+}
+
+.homeBotLayer6 .homePage6__right {
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
 }
 /*# sourceMappingURL=indexFront.css.map */
