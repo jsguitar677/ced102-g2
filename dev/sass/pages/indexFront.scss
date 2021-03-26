@@ -1,0 +1,260 @@
+@import '../var';
+@import '../all.scss';
+// ------自訂文字大小------------------------------
+h1{font-size: 72px;}
+h2{font-size: 60px;}
+h3{font-size: 48px;}
+h4{font-size: 38px;}
+h5{font-size: 28px;}
+h6{font-size: 22px;}
+h7{font-size: 18px;
+    font-weight: bold;}
+p{font-size: 15px;}
+
+
+// ------套件class------------------------------
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+// ---------------------------------------
+.homeBlock{
+    margin: 0 auto;
+    width: 1200px;
+    padding: 0 30px;
+}
+
+
+.homeAllPage{
+    color: #1D1C4C;
+    line-height:30px;
+    letter-spacing:2px;
+    width: 100%;
+    background-color:map-get($color_regulation, 'white-bg');
+    margin-top: 66px;
+    .homeBotLayer1{
+        .homeBlock{
+            .homePage1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: map-get($color_regulation, 'blue');
+                .page1Left{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 30%;
+                    height: calc(100vh - 66px);
+                    background-image:url(../../dist/img/indexFront/indexfont-img.png);
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    h5{
+                        margin: 0;
+                        margin-bottom: 15px;
+                    }
+                }
+                .page1Right{
+                    margin-left: 5%;
+                    border-radius: 15px;
+                    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+                    background-color:#FFFFFF;
+                    width: 65%;
+                    height: 450px;
+                    overflow: hidden;
+                    padding: 15px;
+                    .swiper-wrapper{
+                        .swiper-slide{
+                            .page1RightCard{
+                                border-radius: 15px;
+                                overflow: hidden;
+                                width: 310px;
+                                height: 380px;
+                            }
+                            .page1RightText{
+                                margin-left: 20px;
+                                width: 45%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin bgImg ($url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.homeBotLayer2{
+    color: map-get($color_regulation, 'white');
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    @include bgImg('../../dist/img/indexFront/indexImg5.jpg');
+    .frontBlur{
+        position: relative;
+        z-index: 1; // 不讓毛玻璃掉到最底層
+        overflow: hidden; // 超出的毛玻璃裁切掉
+        height: 100vh;
+        // box-shadow:inset 0 0 20px #fff, 0px 0px 20px rgba(#000,0.5);
+        &::before{
+            margin: auto;
+            position: absolute;
+            z-index: -1;
+            content:"";
+            width: 100vw;
+            height: 100vh;
+            top: 0; // 要比原本的div大
+            bottom: 0; // 毛玻璃邊才不會內縮
+            left: 0;
+            right: 0;
+            opacity: 1; // 透光可控制內部陰影
+            @include bgImg('../../dist/img/indexFront/indexImg5.jpg');
+            // background-attachment: fixed;
+            
+            filter: blur(5px);
+        }
+        .homeBlock{
+            color: map-get($color_regulation,'blue');
+            .homePage2{
+                height: 100vh;
+                .homePage2Top{
+                    margin-bottom: 50px;
+                }
+                .homePage2Data{
+                    display: flex;
+                    justify-content: space-around;
+                    
+                }
+            }
+        }
+    } 
+}
+
+.homeBotLayer3{
+    height: 50vh;
+    background-color:map-get($color_regulation, 'white-bg');
+    .homePage3{
+        display: flex;
+        padding: 5% 0;
+        &__left{
+            width: 45%;
+            padding-right: 50px;
+        }
+        &__right{
+            padding: 30px;
+            background: #FFFFFF;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+            h5{
+                margin: 0;
+                margin-bottom: 10px;
+            }
+            .rank{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            &__no1{
+                margin-bottom: 15px;
+                border-radius: 15px;
+                height: 80px;
+                width: 95%;
+                background-color:map-get($color_regulation, 'orange');
+            }
+            &__no2{
+                margin-bottom: 10px;
+                border-radius: 15px;
+                height: 50px;
+                width: 90%;
+                background-color:map-get($color_regulation, 'pink');
+            }
+            &__no3{
+                border-radius: 15px;
+                width: 90%;
+                height: 50px;
+                background-color:map-get($color_regulation, 'lake');
+            }
+        }
+    }
+}
+
+@mixin borbox(){
+    border-radius: 15px;
+    overflow: hidden;
+}
+.homeBotLayer4{
+    height: 100vh;
+    background-color:map-get($color_regulation, 'white-bg');
+    .homePage4{
+        @include borbox();
+        background: #FFFFFF;
+        box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+        height: 95%;
+        padding: 30px;
+        padding-bottom: 0;
+        h5{
+            margin: 0;
+            text-align: center;
+            &:nth-child(2) {
+                margin-top:30px;
+            }
+        }
+        h6{
+            margin: 0;
+        }
+        &__generalBlock{
+            display: flex;
+            justify-content: space-around;
+            .proDetail{
+                width:250px;
+                height:280px;
+            }
+            .pro1{
+                background-image: url(../../dist/img/indexFront/bag1.jpg);
+                @include borbox();
+                background-size: cover;
+            }
+            .pro2{
+                background-image: url(../../dist/img/indexFront/bag1.jpg);
+                @include borbox();
+                background-size: cover;
+            }
+            .pro3{
+                background-image: url(../../dist/img/indexFront/bag1.jpg);
+                @include borbox();
+                background-size: cover;
+            }
+        }
+    }
+}
+

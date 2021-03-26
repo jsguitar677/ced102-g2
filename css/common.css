@@ -19,53 +19,7 @@ border-radius: 15px;
 width: 10px;
 }
 
-*{  
-    font-family: "Noto Sans TC";
-    color: #1D1C4C;
-    margin: 0;
-    line-height:30px;
-    letter-spacing:2px;
-}
 
-
-button{
-    cursor: pointer;
-}
-.comShape{
-    background-color: #fff;
-    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-    border-radius: 15px;
-}
-.comInput{
-    border:1px solid #1D1E4C;
-    border-radius: 15px;
-}
-
-.comBtn{
-    cursor: pointer;
-    outline: none;
-    color: white;
-    border-radius: 15px;
-    height: 30px;
-    border:none!important;
-    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-    font-size: 15px;
-    background-color: #EF4325;
-    padding: 0 15px;
-}
-
-.comBtn2{
-    cursor: pointer;
-    outline: none;
-    color: white;
-    border-radius: 15px;
-    height: 30px;
-    border:none!important;
-    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-    font-size: 15px;
-    background-color: #1D1E4C;
-    padding: 0 15px;
-}
 
 
 /* 切換按鈕 原+方 參考https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
