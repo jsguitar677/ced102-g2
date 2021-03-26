@@ -45,6 +45,18 @@ function pageStyle() {
         .pipe(dest('dist/css/pages/'));
 }
 
+function pageStyle() {
+    return src('dev/plugin/**')
+        .pipe(sourcemaps.init())
+        .pipe(
+            sass({
+                outputStyle: 'nested',
+            }).on('error', sass.logError)
+        )
+        .pipe(sourcemaps.write())
+        .pipe(dest('dist/plugin/'));
+}
+
 function includeHTML() {
     return src('dev/*.html')
         .pipe(
