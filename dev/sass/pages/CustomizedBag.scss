@@ -113,6 +113,7 @@ section {
     margin:0 auto;
     font-size: 0px;
     text-align: center;
+    padding-top:$navH;
 }
 
 //header下方背景圖(毛玻璃效果)，此div不占位
@@ -230,7 +231,10 @@ section div.content_costomizedBag{
             //左側 上方 第二區 (客製商品區)
             div.leftarea_blockB{
                 background-color: rgba(0, 0, 0, .9);
-                background-image: url(../img/mall/bgimg_01.jpg);
+                //本機端img用這個:
+                //background-image: url(./img/mall/bgimg_01.jpg);
+                //Git img用這個:
+                background-image: url(./img/mall/bgimg_01.jpg);
                 //backdrop-filter: blur(5px);
                 background-size: cover;
                 background-repeat: no-repeat;
