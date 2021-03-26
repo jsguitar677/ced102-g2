@@ -110,7 +110,7 @@ h5.title {
 
 section {
     border:1px solid blue;
-    margin-top:$navH;
+    //margin-top:$navH;
     max-width:$pageW;
     margin:0 auto;
     font-size: 0px;
@@ -125,7 +125,7 @@ section {
 //header下方背景圖(毛玻璃效果)，此div不占位
 section div.content_costomizedBag {
     border:1px solid red;
-    margin-top: $navH;
+    padding-top: $navH;
     text-align: left;
     display: inline-block;
     vertical-align: top;
