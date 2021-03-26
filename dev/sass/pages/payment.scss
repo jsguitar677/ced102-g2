@@ -1,0 +1,271 @@
+@import '../var';
+@import '../all.scss';
+*{
+    box-sizing: border-box;
+    letter-spacing: $letter-Spacing;
+    line-height: $lineHeight;
+    font-family: $chinese,$english;
+    position: relative;
+
+}
+
+// 流程// 
+div.product-mb{ 
+border: 1px solid red;
+text-align: center;
+margin: 10px auto;
+   a{
+    text-decoration:none;
+    color: #B0B0B0;
+    font-size: 28px;
+    margin: 10px 20px;
+   }
+   .active{
+     color: #1d1e4c;
+     font-weight:bold;
+   }   
+ }
+
+section{
+   // max-width: 1280px;
+   margin: 0;
+   // font-size: 0;
+   div.title-block{
+   display: inline-block;
+   vertical-align: top;
+   width: $reserveSide*2;
+
+   h1.title{
+   font-size: 28px;
+   color:#1d1e4c ;
+   display: inline-block;
+   white-space: nowrap;
+   padding: 10px 0;
+   writing-mode: vertical-rl;
+   text-orientation: sideways;
+    }  
+   }
+   
+   div.content{
+      border: 1px solid red;
+      text-align: left;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      // width: 100%;
+      // padding-right: 60px;
+      div.card{
+         // border: 1px solid ;
+         box-shadow: $box-shadow;
+         border-radius: $borderRadius;
+
+         .card-header{
+             button.btn-link{
+               background-color: #1d1e4c ;
+               border-radius: 15px;
+               // margin-top: 20px ;
+               margin-bottom: 20px;
+               width: 100%;
+               height: 88px;
+               text-align: center;
+               align-items: center;
+               outline:none;
+               h5.btntext{
+                   margin-top: 0;
+                   padding: 10px auto;
+               }
+            
+            } 
+         
+         }
+         
+         #collapseOne{
+        border:1px solid #1d1e4c ;
+        border-radius: 15px;
+        margin: 20px ;
+        width: 60%;
+      //   height: 88px;
+        align-items: center;
+        div.item_container{
+           .item_header{
+              display: flex;
+              // width: 1000px;
+              margin: 0 auto;
+              height: 30px;
+            //   border-bottom:1px solid #1d1e4c ;
+            //   background-color: #fff; 
+            //   padding-left: 10px;
+          }
+          .item_header div{
+              width: 150px;
+              color:#1d1e4c;
+              line-height: $lineHeight;
+          }
+          .item_header .item_detail{
+              width: 60%;
+              display: inline-block;
+            //   margin: 10px;
+        
+          }
+          .item_body{
+            //   border-bottom:1px solid #1d1e4c ;
+            //   border-radius: 10px;
+            //   margin-top: 20px ;
+            //   margin-bottom: 20px;
+            //   width: 255px;
+              height: $line-height*2;
+              align-items: center;   
+        
+          }
+         //  .item_detail img{
+         //      width: 80px;
+         //      height: 80px;
+         //      border-radius: 3px;
+         //      /* margin-top: 10px; */
+         //      float: left;
+         //  }
+          .item_detail .name , .item_detail .size {
+              margin-left: 30px;
+              margin-top: 10px;
+              display: inline-block;
+          }
+          
+          button.round{
+              border-radius: 50%;
+              width: 25px;
+              height: 25px;
+              outline: 0;
+              border: 0;
+              color: #fff;
+              font-size: 18px;
+              background: #c3c3c3;
+              border-radius: 50%;
+              cursor: pointer;
+          }
+        //   button.add{
+        //      background-color: #1d1e4c;
+        //      font-size: 20px;
+        //   }
+        //   button.less{
+        //    background-color: white;
+        //    color:#1d1e4c ;
+        //    font-size: 24px;
+        // }
+        button.round-cxl{
+           border-radius: 50%;
+           width: 28px;
+           height: 28px;
+           outline: 0;
+           border: 0;
+           color: #fff;
+           font-size: 18px;
+           background: #1d1e4c;
+           border-radius: 50%;
+           cursor: pointer;
+          }
+        }
+        }
+        div.payment-totalbody{
+         display: inline-block;
+         width: 30%;
+         // border: 1px solid red;
+         position: absolute;
+         right: 40;
+         top: 130px;
+         div.row {
+                  clear:both;
+                  padding:10px;
+                  margin: 5px auto;
+                  
+                  span.label {float:left;width:160px;text-align:left;}
+                  div.formw{float:right;width:100px;text-align:right;}
+                  input.formw {float:right;width:100px;text-align:right;}
+               }
+      }
+      }
+      form.paymentForm{
+         display: inline;
+         position: relative;
+         // border: 1px solid red;
+         width: 100%;
+         div.creditCardForm{
+            // border: 1px solid red;
+            margin: 20px;
+            width: 40%;
+            padding: 20px;
+            box-shadow: $box-shadow;
+            border-radius: $borderRadius;
+            h5.writeForm{
+               font-size: $h5;
+               margin: 20px 0px;
+            }
+
+         div.row {
+            clear:both;
+            padding:10px;
+            margin: 5px auto;
+            font-size: 28px;
+            
+            span.labell {
+               float:left;
+               width:300px;
+               text-align:left;
+
+               
+            }
+            select.formm{float:right;width:100px;text-align:right;}
+            input.formm {
+               float:right;
+               width:100px;
+               text-align:right;
+               border-radius: $inputRadius;
+            }
+         }
+       }
+
+         div.consignee{
+            width: 40%;         
+            border: 1px solid red;
+            margin: 20px;
+            width: 50%;
+            padding: 20px;
+            box-shadow: $box-shadow;
+            border-radius: $borderRadius;
+            
+            h5.writeForm{
+               font-size: $h5;
+               margin: 20px 0px;
+            }
+            div.row {
+               clear:both;
+               padding:10px;
+               margin: 5px auto;
+               font-size: 28px;
+               
+               span.labell {
+                  float:left;
+                  width:300px;
+                  text-align:left;
+   
+               }
+               select.formm{
+                  float:right;
+                  width:100%;
+                  text-align:right;
+               }
+               input.formm {
+                  float:right;
+                  width:100%;
+                  text-align:right;
+                  border-radius: $inputRadius;
+               }
+            }
+         }
+         button.cfmpay{
+            background-color: #EF4325;
+            font-size: $btnTxt;
+         }
+      }
+
+   }
+}
