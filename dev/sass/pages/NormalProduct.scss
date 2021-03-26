@@ -1,3 +1,5 @@
+@import '../var';
+@import '../all.scss';
 //=============共用規格設定如下=============
 //font-family
 //$font-family:'Arial', '微軟正黑體';
@@ -65,10 +67,10 @@ $color_regulation:(
 );
 
 //敬航
-$closeBtn:27px;//關閉紐大小
+//$closeBtn:27px;//關閉紐大小
 // header
-$navH:66px;
-$logoW:50px;
+//$navH:66px;
+//$logoW:50px;
 
 //Footer
 $footerH:500px;
@@ -87,8 +89,10 @@ body {
 h5.title {
     margin-top:$navH;
     position:absolute;
-    //top: $navH;
+    //top:$navH;
     top: calc( #{$navH} + 20px);
+    left:0;
+    margin:0;
     left:0;
     margin:0;
     font-size: $h5;
@@ -116,6 +120,21 @@ section {
         display: inline-block;
         vertical-align: top;
         width: $reserveSide;
+        // h5.title {
+        //     border:1px solid red;
+        //     font-size: $h5;
+        //     display: inline-block;
+        //     white-space: nowrap;
+        //     padding: 10px 0;
+        //     // transform: rotate(90deg) translateX(-60px);
+        //     // transform-origin: 0% 100%;
+        //     /* transform: rotate(270deg) translateX(-100%); */
+        //     /* transform-origin: 0% 0%; */
+        //     color:map-get($color_regulation,'blue');
+        //     span {
+        //         color:map-get($color_regulation,'gray' );
+        //     }
+        // }
     }
 }
 
@@ -124,7 +143,7 @@ section div.content_costomizedBag {
     text-align: left;
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - #{$reserveSide}*2);
+    width: calc(100% - $reserveSide*2);
     // padding: 0 $reserveSide;
     margin: 0 $reserveSide;
     div.top_back_img_1 {
@@ -173,6 +192,7 @@ section div.content_costomizedBag{
               width:100%;
               //左側 最上方 第一區 左邊
               div.leftarea_blockA_L{
+                  cursor: pointer;
                   width:50%;
                   overflow: hidden;
                   border-radius: $borderRadius;
@@ -201,6 +221,7 @@ section div.content_costomizedBag{
                 } 
               //左側 最上方 第一區 右邊
               div.leftarea_blockA_R{
+                cursor: pointer;
                 width:50%;
                 div.leftarea_blockA_R1{
                     display:inline-block;
@@ -246,56 +267,7 @@ section div.content_costomizedBag{
                 box-shadow: $box-shadow;
                 padding:20px;
                 // text-align: center;
-                h6.urstyle{
-                        font-size: $h6;
-                        color:map-get($color_regulation,'blue');
-                        //font-weight: 900;
-                        margin:0;
-                        padding-top: 10px;
-                }
-                div.customized_area{
-                    position: relative;
-                    border-radius: $borderRadius;
-                    // box-shadow: $box-shadow;
-                    width:98%;
-                    margin:0 auto;
-                    margin-bottom: 25px;
-                    margin-top:20px;
-                    border:2px solid lightgray;
-                    text-align: center;
-                    overflow: hidden;
-                    img.customized_img{
-                        width:100%;
-                    }
-                    //上傳正面圖案
-                    div.image_front{
-                        width:26%;
-                        height:35%;
-                        position:absolute;
-                        top:45%;
-                        left:16.5%;
-                    }
-                    //上傳背面圖案
-                    div.image_back{
-                        width:13%;
-                        height:17%;
-                        position:absolute;
-                        top:45%;
-                        left:66%;
-                    }
-                    p.front{
-                        font-size: 15px;
-                        color:map-get($color_regulation,'blue');
-                        display:inline-block;
-                        margin:0 12% 10px auto;
-                    }
-                    p.back{
-                        font-size: 15px;
-                        color:map-get($color_regulation,'blue');
-                        display:inline-block;
-                        margin:0 auto 10px 12%;
-                    }    
-                }
+
                 //左側 上方 第三區 (商品簡介區)
                 h6.aboutProducts{
                     font-size: $h6;
@@ -560,6 +532,35 @@ section div.content_costomizedBag{
                     margin-left: 1.33%;
                 }
             }
+        }
+    }
+}
+//燈箱
+section div.NP_showBox_bg{
+    display:none;
+    position: fixed;
+    top:$navH;
+    left:0;
+    width:100%;
+    height: calc(100vh - #{$navH});
+    background: rgba(0, 0, 0, .75);
+    div.NP_showBox{
+        width:35%;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        img.NP_showHere{
+            width:100%;
+            overflow: hidden;
+            border-radius: $borderRadius;
+            box-shadow: $box-shadow;
+        }
+        img.NP_turnOffBtn{
+            width:35px;
+            position:absolute;
+            top:-30px;
+            right:-30px;
         }
     }
 }
