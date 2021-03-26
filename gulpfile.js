@@ -45,17 +45,17 @@ function pageStyle() {
         .pipe(dest('dist/css/pages/'));
 }
 
-function plugIn() {
-    return src('dev/plugin/**')
-        .pipe(sourcemaps.init())
-        .pipe(
-            sass({
-                outputStyle: 'nested',
-            }).on('error', sass.logError)
-        )
-        .pipe(sourcemaps.write())
-        .pipe(dest('dist/plugin/'));
-}
+// function plugIn() {
+//     return src('dev/plugin/**')
+//         .pipe(sourcemaps.init())
+//         .pipe(
+//             sass({
+//                 outputStyle: 'nested',
+//             }).on('error', sass.logError)
+//         )
+//         .pipe(sourcemaps.write())
+//         .pipe(dest('dist/plugin/'));
+// }
 
 function includeHTML() {
     return src('dev/*.html')
@@ -77,7 +77,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
+exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML));
 
 exports.browser = function browsersync() {
     browserSync.init({
