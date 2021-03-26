@@ -1,3 +1,5 @@
+//@import '../var';
+//@import '../all.scss';
 //=============共用規格設定如下=============
 //font-family
 //$font-family:'Arial', '微軟正黑體';
@@ -107,6 +109,7 @@ h5.title {
 
 
 section {
+    border:1px solid blue;
     margin-top:$navH;
     max-width:$pageW;
     margin:0 auto;
@@ -121,6 +124,8 @@ section {
 
 //header下方背景圖(毛玻璃效果)，此div不占位
 section div.content_costomizedBag {
+    border:1px solid red;
+    margin-top: $navH;
     text-align: left;
     display: inline-block;
     vertical-align: top;
