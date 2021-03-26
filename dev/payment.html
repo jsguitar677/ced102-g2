@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../dist/css/pages/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/indexFront.css">
+</head>
+
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <!-- ------------------------------------------------------- -->
+    <section  >
+        <div class="product-mb col-lg-12">
+          <a  href="#" >1.確認訂單明細</a>
+          <span >/</span>&nbsp;
+          <a class="active"  >2.填寫付款資料</a>&nbsp;
+          <span>/</span>&nbsp;
+          <a href="#" >3.訂單完成</a>       
+        </div>
+        <div class="title-block col-1">
+          <h1 class="title">購物車</h1>
+        </div>
+        <div class="content col-10" >
+          <!-- <button class="accordion"><span>訂單總金額</span>{{item.price * item.count}}}</button> -->
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              
+              <!-- <button class="accordion"><span>訂單總金額</span>{{item.price * item.count}}}</button> -->
+              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h5 class="btntext" style="color: white;">訂單總金額</h5>
+              </button>
+              
+            </div>
+            <table  class="table"> 
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              
+                <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
+                      <div class="item_header item_body">
+                              <div class="item_detail">
+                                  <!-- <img v-bind:src="item.imgUrl" alt=""> -->
+                                  <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
+                                  <!-- <div class="name">{{item.itemName}}</div> -->
+                                  <div class="name"><span>品名:</span>優質短袖白T</div>
+                                  <div class="size"><span>尺寸:</span>F</div>
+                              </div>
+                              
+                              <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
+                              <!-- <div class="price"><span>$</span>500</div> -->
+                              <div class="count">
+                                  <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
+                                  1
+                                  <!-- {{item.count}} -->
+                                  <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
+                              </div> 
+                              <!-- <div class="amount">{{item.price * item.count}}</div> -->
+                              <div class="amount">500</div>
+                              <div class="operate">
+                                  <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
+                              </div>
+                      </div>
+                </div>
+                <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
+                  <div class="item_header item_body">
+                          <div class="item_detail">
+                              <!-- <img v-bind:src="item.imgUrl" alt=""> -->
+                              <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
+                              <!-- <div class="name">{{item.itemName}}</div> -->
+                              <div class="name"><span>品名:</span>優質短袖白T</div>
+                              <div class="size"><span>尺寸:</span>F</div>
+                          </div>
+                          
+                          <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
+                          <!-- <div class="price"><span>$</span>500</div> -->
+                          <div class="count">
+                              <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
+                              1
+                              <!-- {{item.count}} -->
+                              <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
+                          </div> 
+                          <!-- <div class="amount">{{item.price * item.count}}</div> -->
+                          <div class="amount">500</div>
+                          <div class="operate">
+                              <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
+                          </div>
+                  </div>
+                </div>
+                <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
+                 <div class="item_header item_body">
+                      <div class="item_detail">
+                          <!-- <img v-bind:src="item.imgUrl" alt=""> -->
+                          <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
+                          <!-- <div class="name">{{item.itemName}}</div> -->
+                          <div class="name"><span>品名:</span>優質短袖白T</div>
+                          <div class="size"><span>尺寸:</span>F</div>
+                      </div>
+                      
+                      <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
+                      <!-- <div class="price"><span>$</span>500</div> -->
+                      <div class="count">
+                          <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
+                          1
+                          <!-- {{item.count}} -->
+                          <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
+                      </div> 
+                      <!-- <div class="amount">{{item.price * item.count}}</div> -->
+                      <div class="amount">500</div>
+                      <div class="operate">
+                          <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
+                      </div>
+                 </div>
+                </div>            
+              </div>
+              <div class="payment-totalbody">
+                <div class="row">
+                  <span class="label">商品總金額:</span>
+                  <!-- <div class="formw totalAmount"><span>$</span>{{item.price * item.count}}</div> -->
+                  <div class="formw totalAmount"><span>$</span>1600</div>
+                  <!-- <span class="formw"><input type="text" size="25" /></span> -->
+                </div>
+                <div class="row">
+                  <span class="label">使用環保幣折扣:</span>
+                  <!-- <input class="formw discount" value="$0" readonly > -->
+                  <div class="formw discount" ><span>$</span>0</div>
+                </div>
+                <div class="row">
+                  <span class="label">總計：</span>
+                  <!-- <input class="formw discount" value="$0" readonly > -->
+                  <div class="formw subtotal"><span>$</span>1600</div>
+                </div>
+              </div>
+            </table> 
+          </div>
+          
+          <form class="paymentForm">
+            <div class="creditCardForm ">
+              <h5 class="writeForm">填寫付款資料</h5>
+              <div class="formGroup owner row">
+                  <label class="labell" for="owner">持卡人姓名：</label>
+                  <input type="text" class="formControl empty formm" id="owner">
+              </div>
+              <div class="creditInfo1 row" id="card-number-field">
+                  <label class="labell" for="cardNumber">信用卡卡號：</label>
+                  <input  type="text" name="creditCard" class="creditCard formm" maxlength="20"
+                      id="cardNumber">
+              </div>
+              <div class="creditInfo2">
+                  <div class="formGroup row" id="expirationDate">
+                      <label class="labell labell">有 效 日 期：</label>
+                      <select class="expMonth formm">
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                      </select>
+                      <label class="labell">月</label>
+                      <select class="expYear formm">
+                          <option value="20"> 2021</option>
+                          <option value="21"> 2022</option>
+                          <option value="22"> 2023</option>
+                          <option value="23"> 2024</option>
+                          <option value="24"> 2025</option>
+                          <option value="25"> 2026</option>
+                          <option value="26"> 2027</option>
+                          <option value="27"> 2028</option>
+                          <option value="28"> 2029</option>
+                          <option value="29"> 2030</option>
+                          <option value="30"> 2031</option>
+                      </select>
+                      <label class="labell">年</label>
+                  </div>
+              </div>
+              <div id="securityCodeBlock" class="formGroup CVV row">
+                      <label class="labell" for="cvv" class="securityCode">背面末三碼：</label>
+                      <input  type="text" name="securityCode" class="securityCode1 empty formm" maxlength="3"
+                          id="cvv">
+              </div>
+                  <!-- <div class="formGroup" id="creditCards">
+                      <img src="../img/16/VISA_300x200.png" id="visa">
+                      <img src="../img/16/Master_300x200.png" id="mastercard">
+                      <img src="../img/16/AE_300x200.png" id="amex">
+                  </div> -->
+            </div>
+            
+          <div class="consignee">
+            <h5 class="writeForm">收貨人資料</h5>
+              <div><input type="radio">同會員資料
+                <div class="formGroup owner row">
+                  <label class="labell" for="owner">收件人姓名：</label>
+                  <input type="text" class="formControl empty formm" id="owner">
+               </div>
+               <div class="row" id="card-number-field">
+                  <label class="labell" for="cellPhone">手機號碼：</label>
+                  <input type="text" name="cellPhone" class="cellPhone formm" maxlength="20"
+                      id="cellPhone">
+               </div>
+               <div class="row" >
+                <label class="labell" for="phone">市話：</label>
+                <input  type="text" name="creditCard" class="phone formm" maxlength="20"
+                    id="phone">
+               </div>
+               <div class="row" >
+                <label class="labell" for="add">地址：</label>
+                <input  type="text" name="creditCard" class="add formm" maxlength="20"
+                    id="cellPhone">
+               </div>
+    
+              </div>
+              <div><input type="radio">新增收件人資訊
+                <div class="formGroup owner row">
+                  <label class="labell" for="owner">收件人姓名：</label>
+                  <input type="text" class="formControl empty formm" id="owner">
+               </div>
+               <div class="row" id="card-number-field">
+                  <label class="labell" for="cellPhone">手機號碼：</label>
+                  <input  type="text" name="cellPhone" class="cellPhone formm" maxlength="20"
+                      id="cellPhone">
+               </div>
+               <div class="row" >
+                <label class="labell" for="Phone">市話：</label>
+                <input  type="text" name="creditCard" class="Phone formm" maxlength="20"
+                    id="cellPhone">
+               </div>
+               <div class="row" >
+                <label class="address" for="add">地址：</label>
+                <!-- <span v-if="receiverRoad.remind!==''" class="form__text form__text--warning"
+                                  >{{receiverRoad.remind}}</span> -->
+                  <input  type="text" name="creditCard" class="Phone formm" maxlength="20"
+                  id="cellPhone">
+               </div>
+    
+              </div>
+          </div>
+          <button class="cfmpay"><text class="cfmpay">確認付款</text></button>
+  
+          
+  
+  
+          </form>
+      </div>
+        
+    </section>
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
