@@ -274,17 +274,105 @@
                 </div>
             </div>
             <div class="homeBotLayer5">
-                <div class="homePage5"></div>
+                <div class="frontBlur">
+                    <div class="homeBlock">
+                        <div class="homePage5">
+                            <div class="homePage5Left">
+                            <h5>最新活動推薦</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, tenetur, voluptatum officia voluptatem neque cum impedit odit quis consequuntur repellat maxime libero iste, quaerat recusandae consectetur? Culpa repellendus deleniti exercitationem?</p>
+                            </div>
+                            <div class="homePage5Right">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="page1RightCard">
+                                                <img src="./img/indexFront/indexImg1.jpeg" alt="">
+                                            </div>
+                                            <div class="page1RightText">
+                                                <h5>參予活動</h5>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                                <button class="comBtn2">我是按鈕1</button>
+                                            </div>
+                                        </div> 
+                                        <div class="swiper-slide">
+                                            <div class="page1RightCard">
+                                                <img src="./img/indexFront/indexImg2.jpg" alt="">
+                                            </div>
+                                            <div class="page1RightText">
+                                                <h5>客製化商品</h5>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                                <button class="comBtn2">我是按鈕2</button>
+                                            
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="page1RightCard">
+                                                <img src="./img/indexFront/indexImg3.jpg" alt="">
+                                            </div>
+                                            <div class="page1RightText">
+                                                <h5>發起活動募款</h5>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                                <button class="comBtn2">我是按鈕3</button>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="page1RightCard">
+                                                <img src="./img/indexFront/indexImg4.jpg" alt="">
+                                            </div>
+                                            <div class="page1RightText">
+                                                <h5>歷史活動花絮</h5>
+                                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                                <button class="comBtn2">我是按鈕4</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Add Arrows -->
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="homeBotLayer6">
-                <div class="homePage6"></div>
+                <div class="homePage6">
+                    <div class="homePage6__left">
+                        <h5>標題廢話</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, tenetur, voluptatum officia voluptatem neque cum impedit odit quis consequuntur repellat maxime libero iste, quaerat recusandae consectetur? Culpa repellendus deleniti exercitationem?</p>
+                    </div>
+                    <div class="homePage6__right">
+                        <button id="myBtn" onclick="myFunction()">Pause</button>
+                        <video autoplay id="myVideo">
+                            <source src="./img/indexFront/indexVideo1.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
+    
 
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        
+        function myFunction() {
+          if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+          } else {
+            video.pause();
+            btn.innerHTML = "Play";
+          }
+        }
+    </script>
+
+
     <script src="./js/login.js"></script>
 
     <!-- Swiper JS -->

@@ -66,7 +66,7 @@ p{font-size: 15px;}
                     justify-content: center;
                     width: 30%;
                     height: calc(100vh - 66px);
-                    background-image:url(../../dist/img/indexFront/indexfont-img.png);
+                    background-image:url(../../img/indexFront/indexfont-img.png);
                     background-size: 100%;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -115,7 +115,7 @@ p{font-size: 15px;}
     height: 100vh;
     align-items: center;
     justify-content: center;
-    @include bgImg('../../dist/img/indexFront/indexImg5.jpg');
+    @include bgImg('../../img/indexFront/indexImg5.jpg');
     .frontBlur{
         position: relative;
         z-index: 1; // 不讓毛玻璃掉到最底層
@@ -134,7 +134,7 @@ p{font-size: 15px;}
             left: 0;
             right: 0;
             opacity: 1; // 透光可控制內部陰影
-            @include bgImg('../../dist/img/indexFront/indexImg5.jpg');
+            @include bgImg('../../img/indexFront/indexImg5.jpg');
             // background-attachment: fixed;
             
             filter: blur(5px);
@@ -240,17 +240,17 @@ p{font-size: 15px;}
                 height:280px;
             }
             .pro1{
-                background-image: url(../../dist/img/indexFront/bag1.jpg);
+                background-image: url(../../img/indexFront/bag1.jpg);
                 @include borbox();
                 background-size: cover;
             }
             .pro2{
-                background-image: url(../../dist/img/indexFront/bag1.jpg);
+                background-image: url(../../img/indexFront/bag1.jpg);
                 @include borbox();
                 background-size: cover;
             }
             .pro3{
-                background-image: url(../../dist/img/indexFront/bag1.jpg);
+                background-image: url(../../img/indexFront/bag1.jpg);
                 @include borbox();
                 background-size: cover;
             }
@@ -258,3 +258,66 @@ p{font-size: 15px;}
     }
 }
 
+
+.homeBotLayer5{
+    color: map-get($color_regulation, 'white');
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+    @include bgImg('../../img/indexFront/indexImg7.jpg');
+    .frontBlur{
+        position: relative;
+        z-index: 1; // 不讓毛玻璃掉到最底層
+        overflow: hidden; // 超出的毛玻璃裁切掉
+        height: 50vh;
+        // box-shadow:inset 0 0 20px #fff, 0px 0px 20px rgba(#000,0.5);
+        &::before{
+            margin: auto;
+            position: absolute;
+            z-index: -1;
+            content:"";
+            width: 100vw;
+            height: 100vh;
+            top: 0; // 要比原本的div大
+            bottom: 0; // 毛玻璃邊才不會內縮
+            left: 0;
+            right: 0;
+            opacity: 1; // 透光可控制內部陰影
+            @include bgImg('../../img/indexFront/indexImg7.jpg');
+            background-attachment: fixed;
+            filter: blur(5px);
+        }
+    }
+}
+
+.homePage5{
+    display: flex;
+    justify-content: space-between;
+    .homePage5Left{
+        width: 40%;
+    }
+    .homePage5Right{
+        width: 60%;
+
+    }
+}
+
+.homeBotLayer6{
+    height: 35vh;
+    .homePage6{
+        display: flex;
+        
+        &__left{
+            padding: 0 30px;
+            height: 100%;
+            width: 50%;
+            background-color: #242d38;
+            color: map-get($color_regulation, 'white');
+        }
+        &__right{
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+    }
+}
