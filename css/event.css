@@ -1,0 +1,1284 @@
+body {
+  margin: 0px;
+}
+
+body header {
+  background-color: #0D1017;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  position: fixed;
+  top: 0;
+  font-family: "Palatino Linotype", "Noto Sans TC";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+body header nav {
+  height: 66px;
+  padding-left: 60px;
+  position: relative;
+}
+
+body header nav div#lftUl {
+  width: calc((100% - 66px)/2);
+  display: inline-block;
+  vertical-align: top;
+  line-height: 66px;
+}
+
+body header nav div#lftUl ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+}
+
+body header nav div#lftUl ul li {
+  display: inline-block;
+  font-size: 15px;
+  vertical-align: bottom;
+  transition: all 1s ease;
+}
+
+body header nav div#lftUl ul li:nth-child(n+1) {
+  margin-left: 40px;
+}
+
+body header nav div#lftUl ul li:hover img {
+  opacity: 1;
+}
+
+body header nav div#lftUl ul li a {
+  margin-right: 5px;
+  color: #f2f2f2;
+}
+
+body header nav div#lftUl ul li img {
+  opacity: 0;
+  transition: all 1s ease;
+  width: 20px;
+}
+
+body header nav div#lftUl ul li:first-child {
+  margin-left: 0;
+}
+
+body header div#navlogo {
+  display: inline-block;
+  height: 66px;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body header div#navlogo img {
+  height: 66px;
+  vertical-align: center;
+}
+
+body header div#rgtUl {
+  width: calc((100% - 66px)/2);
+  display: inline-block;
+  line-height: 66px;
+  vertical-align: top;
+}
+
+body header div#rgtUl ul {
+  display: flex;
+  flex: row nowrap;
+  list-style: none;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+body header div#rgtUl ul li {
+  font-size: 15px;
+  align-content: center;
+  padding-right: 30px;
+}
+
+body header div#rgtUl ul li:nth-child(3) {
+  padding-right: 60px;
+}
+
+body header div#rgtUl ul li i.fwIcon {
+  vertical-align: baseline;
+}
+
+body header a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #f2f2f2;
+}
+
+body header i.fwIcon {
+  vertical-align: text-top;
+}
+
+body div#page1 {
+  height: calc(100vh - 66px);
+  position: fixed;
+  z-index: 100;
+}
+
+body div#page1 div#lightbox {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  font-size: 0;
+}
+
+body div#page1 div#lightbox div#logWrapper {
+  font-size: 0;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  vertical-align: top;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  color: #1d1e4c;
+  background-color: #f2f2f2;
+  background-image: linear-gradient(#ccb0ac, #8b7b5d);
+  overflow: hidden;
+}
+
+body div#page1 div#lightbox div#logWrapper button:focus {
+  outline: 0;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel {
+  width: 160%;
+  height: 100%;
+  position: relative;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
+  display: inline-block;
+  padding: 10px auto;
+  width: calc(100%*0.6/1.6);
+  margin: 0 auto;
+  height: 100%;
+  font-size: 0;
+  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-position: center center, center center;
+  background-size: 35%, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
+  text-align: center;
+  font-size: 22px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
+  font-size: 18px;
+  padding: 0% 15%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label input {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember {
+  width: 100%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember input {
+  width: auto;
+  margin: 10% 5px 10% 0px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm button {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon a {
+  display: block;
+  text-align: center;
+  color: #d71212;
+  font-size: 15px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
+  display: inline-block;
+  height: 100%;
+  width: calc(100%*0.4/1.6);
+  font-size: 0;
+  vertical-align: top;
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #1d1e4c;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
+  font-size: 22px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
+  font-size: 22px;
+  margin-bottom: 3%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon button#signRegFake {
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  margin-top: 10%;
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid #f2f2f2;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
+  font-size: 0;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  width: calc(100%*0.6/1.6);
+  text-align: center;
+  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-position: center center, center center;
+  background-size: 35%, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
+  font-size: 22px;
+  margin-bottom: 1%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
+  padding: 0% 15%;
+  font-size: 18px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div label {
+  display: block;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div input {
+  width: 100%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn {
+  width: 100%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
+  font-size: 15px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
+  display: inline-block;
+  margin: 3% auto;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
+  border-radius: 15px;
+  color: #f2f2f2;
+  background-color: #EF4325;
+  font-size: 15px;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn {
+  width: 27px;
+  height: 27px;
+  background-color: #f2f2f2;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanOne {
+  width: calc(27px - 2px);
+  height: 2px;
+  display: inline-block;
+  background-color: #2c2b2b;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  position: absolute;
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanTwo {
+  width: calc(27px - 2px);
+  height: 2px;
+  display: inline-block;
+  background-color: #2c2b2b;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body div#page2 {
+  height: 100vh;
+  background-color: chartreuse;
+}
+
+body div#page3 {
+  background-color: cornflowerblue;
+  height: 100vh;
+}
+
+body footer {
+  overflow: hidden;
+  position: relative;
+  background-color: #0e1018;
+  z-index: 1;
+  height: 500px;
+}
+
+body footer div.frontFooter div#footerSide {
+  width: 60px;
+  background-color: #424f5f;
+  height: 500px;
+  display: inline-block;
+}
+
+body footer div.frontFooter div.divLine {
+  background-color: #bebebe;
+  height: 500px;
+  width: 5px;
+  display: inline-block;
+}
+
+body footer div.frontFooter ol {
+  list-style: none;
+  padding: 0;
+  color: #f2f2f2;
+  font-size: 48px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10%;
+}
+
+body footer div.frontFooter ol li.footerOl span.footerRotate {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  border-bottom: 3px solid white;
+  margin-right: 150px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+}
+
+body footer div.frontFooter div.social {
+  font-size: 48px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: calc(38px + 93px - 45px);
+  margin-left: 10%;
+  width: 30%;
+}
+
+body footer div.frontFooter div.social span {
+  cursor: pointer;
+}
+
+body footer div.frontFooter div.social a {
+  font-weight: 100;
+  display: inline-block;
+  margin-bottom: 15%;
+  cursor: pointer;
+}
+
+body footer div.frontFooter div.social a:nth-child(2n) {
+  margin-left: 10%;
+}
+
+body footer div.frontFooter div.social a:nth-child(n+3) {
+  margin-bottom: 20%;
+  margin-left: 10%;
+}
+
+body footer div.frontFooter div.social p {
+  letter-spacing: 7px;
+  font-size: 15px;
+  text-align: justify;
+  color: #f2f2f2;
+  width: 80%;
+}
+
+body footer h2#footerMenu {
+  font-size: calc(72px*2);
+  writing-mode: vertical-lr;
+  left: 16%;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+body footer h3#footerBrand {
+  font-size: calc(60px*2);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body footer h2#socialMedia {
+  font-size: 60px;
+  top: 5%;
+  right: 13%;
+}
+
+body footer p#footerOri {
+  font-size: 38px;
+  bottom: 30%;
+  right: 35%;
+  transform: rotate(270deg);
+}
+
+body footer p#copyRight {
+  font-size: 15px;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  color: #424f5f;
+  font-weight: 800;
+}
+
+body footer .footerBg {
+  position: absolute;
+  color: #424f5f;
+  z-index: -1;
+  margin: 0;
+}
+
+body a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+body div#page2 {
+  height: 100vh;
+  background-color: burlywood;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Palatino Linotype';
+}
+
+body {
+  margin: 0;
+}
+
+div.banner {
+  margin-top: 66px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+}
+
+div.banner img {
+  max-width: 100%;
+}
+
+div.banner ul {
+  margin: 0;
+  padding: 0;
+}
+
+div.banner li {
+  list-style: none;
+}
+
+div.banner a {
+  text-decoration: none;
+}
+
+div.banner div, div.banner a, div.banner p, div.banner ul, div.banner li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+div.banner div.bg {
+  width: 105%;
+  height: 110%;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.banner div.bg img {
+  filter: blur(30px);
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+div.banner div.bg img {
+  filter: blur(10px);
+}
+
+div.banner div.slider-block {
+  max-width: 1200px;
+  margin: 0px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  font-size: 28px;
+}
+
+div.banner div.slider-block div.slider-btn {
+  width: 40px;
+  height: 40px;
+}
+
+div.banner div.slider-block div.flexslider {
+  width: calc(100% - 80px);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+div.banner div.slider-block div.flexslider ul.slides {
+  position: relative;
+  left: 0;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+div.banner div.slider-block div.flexslider ul.slides li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around;
+  font-weight: bolder;
+}
+
+div.banner div.slider-block div.flexslider ul.slides li div.description {
+  width: 50%;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background-color: rgba(255, 255, 255, 0.212);
+}
+
+div.banner div.slider-block div.flexslider ul.slides li div.description p.text {
+  margin: 15px;
+  line-height: 20px;
+}
+
+div.banner div.slider-block div.flexslider ul.slides li div.img {
+  width: 30%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+div.banner div.slider-block div.flexslider ul.slides li div.img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  height: 100%;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  div.banner div.slider-block div.flexslider ul.slides li div.img {
+    width: 45%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  div.banner div.slider-block {
+    width: 95%;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li div.description {
+    width: 45%;
+    padding: 10px;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li div.img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 575px) {
+  div.banner div.slider-block {
+    width: 95%;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li {
+    position: relative;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li div.description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.377);
+    color: #fafafa;
+    z-index: 1;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li div.description p.text {
+    color: #fafafa;
+    font-size: 12px;
+    font-weight: lighter;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li div.img {
+    width: 100%;
+    height: 270px;
+  }
+  div.banner div.slider-block div.flexslider ul.slides li div.img img {
+    min-width: 100%;
+  }
+}
+
+div.menu-div img {
+  max-width: 100%;
+}
+
+div.menu-div ul {
+  margin: 0;
+  padding: 0;
+}
+
+div.menu-div li {
+  list-style: none;
+}
+
+div.menu-div a {
+  text-decoration: none;
+}
+
+div.menu-div div, div.menu-div a, div.menu-div p, div.menu-div ul, div.menu-div li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+div.menu-div ul.menu {
+  font-size: 0px;
+  height: 60px;
+  text-align: center;
+  background-color: #24324B;
+}
+
+div.menu-div ul.menu li {
+  color: #fafafa;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 60px;
+  margin: 0px 120px;
+  cursor: pointer;
+}
+
+div.menu-div ul.menu li:hover {
+  font-weight: bolder;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  div.menu-div ul.menu li {
+    margin: 0px 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.menu-div ul.menu li {
+    margin: 0px 60px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  div.menu-div ul.menu li {
+    margin: 0px 40px;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 575px) {
+  div.menu-div ul.menu li {
+    margin: 0px 15px;
+  }
+}
+
+@media (max-width: 349px) {
+  div.menu-div ul.menu li {
+    margin: 0px 10px;
+  }
+}
+
+main.event {
+  background-color: #F6F6F6;
+  width: 100%;
+  position: relative;
+}
+
+main.event img {
+  max-width: 100%;
+}
+
+main.event ul {
+  margin: 0;
+  padding: 0;
+}
+
+main.event li {
+  list-style: none;
+}
+
+main.event a {
+  text-decoration: none;
+}
+
+main.event div, main.event a, main.event p, main.event ul, main.event li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+main.event div.bread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: 0 0;
+}
+
+main.event div.bread ul {
+  padding: 10px;
+}
+
+main.event div.bread ul li {
+  font-size: 28px;
+  font-weight: bolder;
+  color: #C6C6C6;
+  display: inline-block;
+}
+
+main.event div.bread ul li::after {
+  content: " / ";
+}
+
+main.event div.bread ul li:last-child {
+  color: #1D1E4C;
+}
+
+main.event div.bread ul li:last-child::after {
+  content: "";
+}
+
+@media (max-width: 575px) {
+  main.event div.bread ul li {
+    font-size: 18px;
+  }
+}
+
+main.event div.content {
+  max-width: 1200px;
+  background-color: #F6F6F6;
+  margin: 0 auto;
+}
+
+main.event div.content section {
+  width: calc(100% - $padding-web);
+  margin: 0 30px;
+}
+
+main.event div.content #section3 div.container div.row {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+main.event div.content #section3 div.container div.row div.toggle {
+  margin-top: 30px;
+}
+
+main.event div.content #section3 div.container div.row div.toggle div.toggle-block {
+  width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #1D1E4C;
+  margin: 0px auto 30px auto;
+  position: relative;
+  font-size: 0;
+  text-align: center;
+}
+
+main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.toggle-btn {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.text {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 50%;
+  font-size: 22px;
+}
+
+main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.text2 {
+  left: 75%;
+}
+
+main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.toggle-text-effect {
+  color: #fafafa;
+  cursor: pointer;
+}
+
+@media (min-width: 430px) and (max-width: 575px) {
+  main.event div.content #section3 div.container div.row div.toggle div.toggle-block {
+    width: 300px;
+  }
+  main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 429px) {
+  main.event div.content #section3 div.container div.row div.toggle div.toggle-block {
+    width: 220px;
+    height: 30px;
+  }
+  main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.text {
+    font-size: 12px;
+  }
+}
+
+main.event div.content #section3 div.container div.row #rank {
+  width: 100%;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card {
+  background-color: #FFAE41;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  margin-bottom: 30px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-left div.pic {
+  margin: 40px auto;
+  width: 172px;
+  height: 172px;
+  border-radius: 128px;
+  overflow: hidden;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-left div.pic img {
+  width: 100%;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-left p {
+  color: #fff;
+  margin: 0;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-left p.description {
+  width: 140%;
+  padding-left: 35px;
+  font-weight: bolder;
+  line-height: 30px;
+  padding-bottom: 90px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right {
+  text-align: right;
+  padding-right: 30px;
+  font-weight: bolder;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-title h3, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-title h3 {
+  font-size: 28px;
+  color: #fafafa;
+  margin: 20px 0 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-title div.img, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-title div.img {
+  width: 35px;
+  margin: 20px 15px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-total, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-number {
+  color: #fafafa;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right p.text {
+  color: #fafafa;
+  margin: 0;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right p.text:nth-child(2n) {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card {
+    display: none;
+  }
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card {
+  background-color: #fafafa;
+  padding: 43px 40px 50px 40px;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.thanks-title {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.text p {
+  margin: 0;
+  line-height: 30px;
+  text-align: right;
+}
+
+@media (min-width: 460px) and (max-width: 575px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card {
+    padding: 30px;
+    flex-wrap: wrap;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.thanks-title {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 28px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.text {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.text p {
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 459px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card {
+    padding: 20px 15px;
+    flex-wrap: wrap;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.thanks-title {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 22px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.text {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.text p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card {
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  margin-bottom: 16px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  padding: 25px 0px 20px 0px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.TOP {
+  color: #1D1E4C;
+  font-size: 48px;
+  padding: 30px 30px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.pic {
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.pic img {
+  width: 100%;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.text p {
+  color: #1D1E4C;
+  padding: 0 25px;
+}
+
+@media (min-width: 380px) and (max-width: 575px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.TOP {
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+    font-size: 28px;
+    padding: 0px 30px 20px 30px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.pic {
+    width: 30%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.text {
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.text p {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 379px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.TOP {
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+    font-size: 28px;
+    padding: 0px 30px 20px 30px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.pic {
+    width: 30%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.text {
+    flex-shrink: 0;
+    width: 100%;
+    text-align: center;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.text p {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.detail {
+  display: none;
+  margin: 0px 25px;
+  padding: 15px 2px 20px 2px;
+  border-top: 2px solid #1d1e4c4b;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text {
+  color: #1D1E4C;
+  margin: 0;
+  font-weight: bolder;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text span {
+  color: #1D1E4C;
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: bolder;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.more {
+  display: none;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.detail {
+    display: block;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.detail {
+    display: block;
+    margin: 0 15px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text {
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: lighter;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text span {
+    font-size: 12px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.more {
+    display: block;
+    margin: 3px 5px 10px 0;
+    text-align: right;
+    cursor: pointer;
+    font-family: Arial;
+  }
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 {
+  background-color: #FFAE41;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.flex div.TOP {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.flex div.text p {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.detail {
+  border-top: 2px solid rgba(255, 255, 255, 0.452);
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.detail p.text {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.detail p.text span {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 {
+  background-color: #FF498C;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.flex div.TOP {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.flex div.text p {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.detail {
+  border-top: 2px solid rgba(255, 255, 255, 0.452);
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.detail p.text {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.detail p.text span {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 {
+  background-color: #09E4C7;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.flex div.TOP {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.flex div.text p {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.detail {
+  border-top: 2px solid rgba(255, 255, 255, 0.452);
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.detail p.text {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.detail p.text span {
+  color: #fafafa;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.TOP {
+  padding: 55px 30px;
+}
+
+main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.text p:nth-child(2n) {
+  font-size: 22px;
+}
+
+main.event div.content #section3 div.container div.row #rank #money-rank {
+  position: relative;
+  top: 0;
+  left: 0%;
+}
+
+main.event div.content #section3 div.container div.row #rank #people-rank {
+  position: absolute;
+  top: 0;
+  padding: 0px 15px;
+  left: 100%;
+}
+/*# sourceMappingURL=event.css.map */

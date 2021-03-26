@@ -2,12 +2,20 @@ body main {
   margin: 0;
   background-color: #F6F6F6;
   overflow-y: hidden;
+<<<<<<< HEAD
+=======
+  margin-top: 5%;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 body h5 {
   position: absolute;
   transform: rotate(90deg);
   font-weight: bold;
+<<<<<<< HEAD
+=======
+  font-size: 38px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 body main {
@@ -27,6 +35,11 @@ body main .genInfor .personBlock {
   margin-right: 13px;
   margin-bottom: 13px;
   padding: 10px;
+<<<<<<< HEAD
+=======
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 body main .genInfor .personBlock .proTopBlock {
@@ -59,6 +72,17 @@ body main .genInfor .personBlock .proTopBlock button:hover {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
+=======
+body main .genInfor .personBlock .proTopBlock span {
+  font-size: 18px;
+}
+
+body main .genInfor .personBlock .proTopBlock span p {
+  font-size: 15px;
+}
+
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 body main .genInfor .personBlock .proBtnBlock {
   display: flex;
   justify-content: center;
@@ -75,6 +99,10 @@ body main .genInfor .personBlock .proBtnBlock textarea {
   outline: none;
   resize: none;
   border: 1px solid #1D1E4C;
+<<<<<<< HEAD
+=======
+  border-radius: 15px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 body main .genInfor .personBlock .proBtnBlock button {
@@ -116,6 +144,10 @@ body main .genInfor .cumulativeBlcok button {
 body main .memberContent {
   padding: 30px;
   width: 100%;
+<<<<<<< HEAD
+=======
+  border-radius: 15px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 body main .memberContent .tab {
@@ -258,11 +290,20 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
 #memInfo div.memInfoContent {
   display: block;
   height: 100%;
+<<<<<<< HEAD
+=======
+  font-size: 15px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 #memInfo div.memInfoContent h3 {
   text-align: center;
   color: #fafafa;
+<<<<<<< HEAD
+=======
+  font-size: 28px;
+  padding: 10px 0px 0px 10px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 #memInfo div.memInfoContent div {
@@ -286,6 +327,13 @@ button.tabLinks div.btnDisCon {
   padding: 0 1%;
 }
 
+<<<<<<< HEAD
+=======
+button.tabLinks span {
+  line-height: 30px;
+}
+
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 button.tabLinks span:active {
   color: #fafafa;
 }
@@ -307,6 +355,10 @@ button.active {
 
 button.active span {
   color: #fafafa;
+<<<<<<< HEAD
+=======
+  line-height: 30px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 #btnDisCon1 span i {
@@ -349,10 +401,18 @@ button.active span {
 
 div#memExp div.expContent div.expDescription {
   color: #fafafa;
+<<<<<<< HEAD
+=======
+  font-size: 15px;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 div#memExp div.expContent div.expDescription h3 {
   color: #fafafa;
+<<<<<<< HEAD
+=======
+  font-size: 1.17em;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 }
 
 .btnConMemInfo {
@@ -370,7 +430,11 @@ div#memInfo div.memInfoContent ul#memInfoContentLft li {
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
+<<<<<<< HEAD
   margin-bottom: 2%;
+=======
+  margin-bottom: 5%;
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
   padding: 2% 3%;
   position: relative;
 }
@@ -378,4 +442,37 @@ div#memInfo div.memInfoContent ul#memInfoContentLft li {
 div#memInfo div.memInfoContent ul#memInfoContentLft li div {
   color: #fafafa;
 }
+<<<<<<< HEAD
+=======
+
+div#memPage {
+  padding-top: 60px;
+}
+
+button.tabLinks {
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border: none !important;
+}
+
+.cumulativeBlcok {
+  padding: 0 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 40vh;
+  margin-right: 13px;
+}
+
+.cumulativeBlcok button {
+  margin-right: 5px;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+  padding: 0 5px;
+  height: 30px;
+  outline: none;
+  cursor: pointer;
+}
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 /*# sourceMappingURL=member.css.map */

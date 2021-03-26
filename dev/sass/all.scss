@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 以下為自訂共用組件-john新增---------------------------------------
 ::-webkit-scrollbar {
     width: 12px;
@@ -57,12 +58,15 @@
 // -----------------------------------------------------------------
 
 
+=======
+@import 'var';
+>>>>>>> 933814bf5cadecdd733eb1438d0da497b7597926
 body {
     margin: 0px;
 }
 
 body header {
-    background-color: map-get($map: $color_regulation, $key:'blackGray');
+    background-color: map-get($map: $color_regulation, $key: 'blackGray');
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     position: fixed;
     top: 0;

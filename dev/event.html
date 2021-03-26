@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
+    <link rel="stylesheet" href="../css/plugin/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css"> -->
+    <link rel="stylesheet" href="./css/pages/event.css">
+    <!-- <link rel="stylesheet" href="./css/test.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="./js/event.js"></script>
+    <style>
+        .shorten{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        .shorten2{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <div class="banner">
+        <div class="bg">
+            <img src="./img/event/background_binner.png">
+        </div>
+        <div class="slider-block">
+            <div class="slider-btn" id="btn-left"><img src="./img/event/icon/btn-left.png"></div>
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <div class="description">
+                            <p class="text">地點：桃園永安漁港</p>
+                            <p class="text">日期：2021/04/09</p>
+                            <p class="text shorten">活動簡述：雖然說只需要一個文字輸入框，就可在裡面自行的編輯HTML語法，但當輸入的語法一多時，就會看到一堆密密碼碼文字，除了不易辨視外，再來也不易編輯，所以許多線上平台，都會提供一個即見即所得的編輯器，讓使用者方便在編輯的同時，還能即時的預覽畫面。</p>
+                            <p class="text">目前活動狀態：參與率60% / 募款率40%</p>
+                        </div>
+                        <div class="img">
+                            <img src="./img/event/Rectangle.png" />
+                        </div>
+                    </li>
+                </ul>
+                <ul class="slides">
+                    <li>
+                        <div class="description">
+                            <p class="text">地點：苗栗外澳漁港</p>
+                            <p class="text">日期：2021/04/12</p>
+                            <p class="text shorten">活動簡述：雖然說只需要一個文字輸入框，就可在裡面自行的編輯HTML語法，但當輸入的語法一多時，就會看到一堆密密碼碼文字，除了不易辨視外，再來也不易編輯，所以許多線上平台，都會提供一個即見即所得的編輯器，讓使用者方便在編輯的同時，還能即時的預覽畫面。</p>
+                            <p class="text">目前活動狀態：參與率60% / 募款率40%</p>
+                        </div>
+                        <div class="img">
+                            <img src="./img/event/Rectangle.png" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="slider-btn" id="btn-right"><img src="./img/event/icon/btn-right.png"></div>
+        </div>
+    </div>
+    <div class="menu-div">
+        <ul class="menu">
+            <li>助環境一力 ( 參與活動 )</li>
+            <li>與我們一起 ( 發起活動 )</li>
+            <li>感謝有你</li>
+        </ul>
+    </div>
+    <main class="event">
+        <div class="bread">
+            <ul>
+                <li>首頁</li>
+                <li class="current">活動募款參加平台</li>
+            </ul>
+        </div>
+        <div class="content">
+            <section id="section1">
+
+            </section>
+            <section id="section2">
+
+            </section>
+            <section id="section3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 toggle">
+                            <div class="toggle-block">
+                                <div class="toggle-btn" id="toggle-btn"></div>
+                                <div class="text" id="money-rank-btn">捐款人排行榜</div>
+                                <div class="text text2 toggle-text-effect" id="people-rank-btn">志工次數排行榜</div>
+                            </div>
+                        </div>
+                        <div class="col-12" id="rank">
+                            <div class="row" id="money-rank">
+                                <div class="col-lg-6 col-12 order-2 order-lg-1 left">
+                                    <div class="big-card">
+                                        <div class="row">
+                                            <div class="col-6 big-card-left">
+                                                <div class="pic"><img src="./img/event/pic2.png"></div>
+                                                <p class="description">簡介：Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, labore deb.</p>
+                                            </div>
+                                            <div class="col-6 big-card-right">
+                                                <div class="donation-title">
+                                                    <div class="img">
+                                                        <img src="./img/event/icon/icon_chart-dots.png">
+                                                    </div>
+                                                    <h3>捐款累計金額</h3>
+                                                </div>
+                                                <div class="donation-total">$1432</div>
+                                                <p class="text">贊助活動次數</p>
+                                                <p class="text donation-number">3次</p>
+                                                <p class="text">活動志工參與次數</p>
+                                                <p class="text volunteer-number">1次</p>
+                                                <p class="text">活動募款發起次數</p>
+                                                <p class="text initiation-number">2次</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="thanks-card">
+                                        <div class="thanks-title">感謝支持</div>
+                                        <div class="text">
+                                            <p> 改變環境<br>
+                                                便是讓大家一起參與<br>
+                                                讓自然去感動他<br>
+                                                由衷感謝每個人的支持與鼓勵<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 order-1 order-lg-2 right">
+                                    <div class="small-card TOP1 effect">
+                                        <div class="flex">
+                                            <div class="TOP">1</div>
+                                            <div class="pic"><img src="./img/event/pic.png"></div>
+                                            <div class="text">
+                                                <p>捐款人</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計金額</p>
+                                                <p class="donation-total">$1453</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">活動志工參與次數<span class="volunteer-number">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card TOP2">
+                                        <div class="flex">
+                                            <div class="TOP">2</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>捐款人</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計金額</p>
+                                                <p class="donation-total">$1453</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">活動志工參與次數<span class="volunteer-number">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card TOP3">
+                                        <div class="flex">
+                                            <div class="TOP">3</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>捐款人</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計金額</p>
+                                                <p class="donation-total">$1453</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">活動志工參與次數<span class="volunteer-number">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card">
+                                        <div class="flex">
+                                            <div class="TOP">4</div>
+                                            <div class="pic"><img src="./img/event/pic.png"></div>
+                                            <div class="text">
+                                                <p>捐款人</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計金額</p>
+                                                <p class="donation-total">$1453</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, labore deb.</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">活動志工參與次數<span class="volunteer-number">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card">
+                                        <div class="flex">
+                                            <div class="TOP">5</div>
+                                            <div class="pic"><img src="./img/event/pic.png"></div>
+                                            <div class="text">
+                                                <p>捐款人</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計金額</p>
+                                                <p class="donation-total">$1453</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, labore deb.</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">活動志工參與次數<span class="volunteer-number">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="people-rank">
+                                <div class="col-lg-6 col-12 order-2 order-lg-1 left">
+                                    <div class="big-card">
+                                        <div class="row">
+                                            <div class="col-6 big-card-left">
+                                                <div class="pic"><img src="./img/event/pic.png"></div>
+                                                <p class="description">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            </div>
+                                            <div class="col-6 big-card-right">
+                                                <div class="donation-title">
+                                                    <div class="img">
+                                                        <img src="./img/event/icon/icon_chart-dots.png">
+                                                    </div>
+                                                    <h3>捐款累計金額</h3>
+                                                </div>
+                                                <div class="donation-total">$1432</div>
+                                                <p class="text">贊助活動次數</p>
+                                                <p class="text donation-number">3次</p>
+                                                <p class="text">活動志工參與次數</p>
+                                                <p class="text volunteer-number">1次</p>
+                                                <p class="text">活動募款發起次數</p>
+                                                <p class="text initiation-number">2次</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="thanks-card">
+                                        <div class="thanks-title">感謝支持</div>
+                                        <div class="text">
+                                            <p> 改變環境<br>
+                                                便是讓大家一起參與<br>
+                                                讓自然去感動他<br>
+                                                由衷感謝每個人的支持與鼓勵<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 order-1 order-lg-2 right">
+                                    <div class="small-card TOP1 effect">
+                                        <div class="flex">
+                                            <div class="TOP">1</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>志工</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計次數</p>
+                                                <p class="volunteer-number">7次</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-number">3次</span></p>
+                                            <p class="text">捐款累計金額<span class="donation-total">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card TOP2">
+                                        <div class="flex">
+                                            <div class="TOP">2</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>志工</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計次數</p>
+                                                <p class="volunteer-number">7次</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, labore deb.</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-number">3次</span></p>
+                                            <p class="text">捐款累計金額<span class="donation-total">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card TOP3">
+                                        <div class="flex">
+                                            <div class="TOP">3</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>志工</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計次數</p>
+                                                <p class="volunteer-number">7次</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, labore deb.</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">捐款累計金額<span class="donation-total">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card">
+                                        <div class="flex">
+                                            <div class="TOP">4</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>志工</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計次數</p>
+                                                <p class="volunteer-number">7次</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">捐款累計金額<span class="donation-total">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="small-card">
+                                        <div class="flex">
+                                            <div class="TOP">5</div>
+                                            <div class="pic"><img src="./img/event/pic2.png"></div>
+                                            <div class="text">
+                                                <p>志工</p>
+                                                <p id="name">環保王是我</p>
+                                            </div>
+                                            <div class="text">
+                                                <p>累計次數</p>
+                                                <p class="volunteer-number">7次</p>
+                                            </div>
+                                        </div>
+                                        <div class="detail">
+                                            <p class="text description shorten2">簡介：另設桃園鎮，為桃園縣治所在，民國60年4月21日升格改制為「桃園市」，民國103年12月25日升格改制為「桃園區」。</p>
+                                            <p class="text more">more</p>
+                                            <p class="text">贊助活動次數<span class="donation-total">3次</span></p>
+                                            <p class="text">捐款累計金額<span class="donation-total">1次</span></p>
+                                            <p class="text">活動募款發起次數<span class="initiation-number">2次</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+</html>
