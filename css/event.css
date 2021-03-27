@@ -678,11 +678,11 @@ body {
 }
 
 div.banner {
-  margin-top: 66px;
   height: 300px;
   overflow: hidden;
   position: relative;
   overflow: hidden;
+  margin-top: 66px;
 }
 
 div.banner img {
@@ -1005,9 +1005,293 @@ main.event div.content section {
   margin: 0 30px;
 }
 
+main.event div.content #section2 div.initiation div.row div.col-12 {
+  text-align: center;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 h2.initiation-title {
+  font-size: 28px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 h2.initiation-title {
+    font-size: 22px;
+  }
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex {
+  padding: 30px 80px 30px 60px;
+  margin: 0 auto;
+  width: 70%;
+  background-color: #fafafa;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.step {
+  padding-right: 30px;
+  width: 15%;
+  font-size: 48px;
+  font-weight: bolder;
+  line-height: 80px;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content {
+  text-align: left;
+  width: 85%;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #fafafa;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content:first-child {
+  text-align: center;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content:first-child span.red {
+  color: #EF4325;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content3 {
+  width: calc(100% - 15% - 108px);
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
+  border-radius: 15px;
+  display: inline-block;
+  overflow: hidden;
+  background-color: #EF4325;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn a {
+  font-weight: bolder;
+  font-size: 15px;
+  color: #fafafa;
+  padding: 10px 20px;
+  width: 100%;
+  display: inline-block;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
+  background-color: #1D1E4C;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
+  width: 108px;
+  position: relative;
+  left: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex {
+    width: 90%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex {
+    width: 100%;
+    padding: 30px 50px 30px 50px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.step {
+    font-size: 38px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex {
+    width: 95%;
+    padding: 20px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.step {
+    width: 100%;
+    padding-right: 0px;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content {
+    width: 100%;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content3 {
+    width: 100%;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
+    left: 5px;
+    width: 100px;
+    margin-top: 10px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn a {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block {
+  position: relative;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.76);
+  opacity: 0;
+  display: none;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 80px;
+  background-color: #1D1E4C;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card h3 {
+  font-size: 18px;
+  font-weight: bolder;
+  color: #fafafa;
+  margin-bottom: 30px;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.standard-content {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #fafafa;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.closebtn {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card {
+    width: 60%;
+    padding: 30px 60px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card {
+    padding: 30px 50px;
+    width: 70%;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.standard-content {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card {
+    width: 95%;
+    padding: 20px 30px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.standard-content {
+    font-size: 15px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.closebtn {
+    position: absolute;
+    top: -40px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 399px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card {
+    width: 95%;
+    padding: 20px 30px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.standard-content {
+    font-size: 12px;
+    line-height: 22px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.closebtn {
+    position: absolute;
+    top: -40px;
+    right: 5px;
+  }
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.btn {
+  border-radius: 15px;
+  display: inline-block;
+  overflow: hidden;
+  background-color: #EF4325;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.btn a {
+  font-weight: bolder;
+  font-size: 15px;
+  color: #fafafa;
+  padding: 10px 20px;
+  width: 100%;
+  display: inline-block;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.start-btn {
+  margin: 20px 0 60px 0;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.start-btn a {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section2 div.initiation div.row div.col-12 div.start-btn {
+    left: 5px;
+    width: 100px;
+    margin-top: 10px;
+  }
+  main.event div.content #section2 div.initiation div.row div.col-12 div.start-btn a {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
 main.event div.content #section3 div.container div.row {
   overflow: hidden;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 main.event div.content #section3 div.container div.row div.toggle {
@@ -1119,14 +1403,14 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-title h3, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-title h3 {
   font-size: 28px;
   color: #fafafa;
-  margin: 20px 0 0 0;
+  margin: 30px 0 0 0;
   display: inline-block;
   vertical-align: middle;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-title div.img, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-title div.img {
   width: 35px;
-  margin: 20px 15px 0 0;
+  margin: 30px 15px 0 0;
   display: inline-block;
   vertical-align: middle;
 }
@@ -1218,7 +1502,7 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card {
-  margin: 10px;
+  margin: 0px 10px 20px 10px;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   margin-bottom: 16px;
@@ -1348,7 +1632,6 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
   main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text {
     line-height: 20px;
     font-size: 12px;
-    font-weight: lighter;
   }
   main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text span {
     font-size: 12px;
@@ -1359,6 +1642,7 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
     text-align: right;
     cursor: pointer;
     font-family: Arial;
+    font-weight: lighter;
   }
 }
 

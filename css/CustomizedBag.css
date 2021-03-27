@@ -154,7 +154,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB {
   background-color: rgba(0, 0, 0, 0.9);
-  background-image: url(./img/mall/bgimg_01.jpg);
+  background-image: url(../../img/mall/bgimg_01.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top right;
@@ -425,7 +425,7 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.bottomarea {
-  margin-bottom: 112px;
+  margin-bottom: 70px;
   width: 100%;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);

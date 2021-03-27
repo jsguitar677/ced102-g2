@@ -1,0 +1,333 @@
+@charset "UTF-8";
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Palatino Linotype", "noto sans tc";
+  background-color: #F6F6F6;
+}
+
+div.title-block h5.title {
+  margin-top: 66px;
+  position: absolute;
+  top: calc( 66px + 10px);
+  left: 0;
+  margin: 0;
+  font-size: 28px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 0;
+  transform: rotate(90deg) translateX(-60px);
+  transform-origin: 0% 100%;
+  color: #1D1E4C;
+}
+
+div.title-block h5.title span {
+  color: #C6C6C6;
+}
+
+section {
+  letter-spacing: 1px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0px;
+  text-align: center;
+  padding-top: 66px;
+  margin-bottom: 70px;
+}
+
+section div.content_Mall {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+section div.content_Mall div.top_back_img_1 {
+  position: relative;
+  width: 100%;
+  z-index: -5;
+}
+
+section div.content_Mall div.top_back_img_1 div.top_back_img_2 {
+  width: 100%;
+  height: 421px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section div.content_Mall div.top_back_img_1 div.top_back_img_2 img {
+  width: 105%;
+  filter: blur(4px);
+}
+
+section div.content_Mall h5.title_2 {
+  font-size: 28px;
+  color: #1D1E4C;
+  margin: 0;
+  padding-top: 60px;
+  text-align: center;
+}
+
+section div.content_Mall h6.title_h6 {
+  font-size: 22px;
+  color: #1D1E4C;
+  margin: 0;
+  padding: 15px 0 25px 0;
+  text-align: center;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block {
+  margin: 0 30px;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized {
+  text-decoration: none;
+  width: 23.5%;
+  position: relative;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon {
+  height: 12%;
+  background: rgba(43, 6, 6, 0.25);
+  border-radius: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon img.design {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon p.designYrStyle {
+  font-size: 15px;
+  font-weight: 550;
+  color: #1D1E4C;
+  display: inline-block;
+  line-height: 3;
+  margin: 0;
+  vertical-align: top;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea {
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  overflow: hidden;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea img {
+  width: 100%;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo {
+  width: 100%;
+  height: 33%;
+  background: rgba(43, 6, 6, 0.2);
+  padding: 2% 8%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.NameAndPrice {
+  font-size: 15px;
+  font-weight: 550;
+  color: #1D1E4C;
+}
+
+section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.text {
+  font-size: 15px;
+  color: #1D1E4C;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 0 25px 0;
+}
+
+section div.content_Mall div.all div.ProductArea_Block {
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  margin-top: 50px;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.theWayOfSort {
+  text-align: right;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.theWayOfSort select.select_sort_way {
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 33px;
+  display: inline-block;
+  width: 165px;
+  height: 33px;
+  border: 1.5px solid #1D1E4C;
+  border-radius: 5px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  vertical-align: center;
+  text-align: center;
+}
+
+section div.content_Mall div.all div.ProductArea_Block h5.title {
+  font-size: 28px;
+  color: #1D1E4C;
+  margin: 0;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.allProduct {
+  font-size: 15px;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin {
+  width: 49%;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  position: relative;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA img {
+  width: 100%;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo {
+  width: 87%;
+  padding: 3%;
+  position: absolute;
+  bottom: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.NameAndPrice {
+  font-size: 15px;
+  font-weight: 550;
+  color: #1D1E4C;
+  display: inline-block;
+  margin: 0 20% 1% 0;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.text1 {
+  font-size: 15px;
+  color: #1D1E4C;
+  margin-top: 1%;
+  width: 85%;
+  height: 50%;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo img.cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal {
+  width: 32%;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  position: relative;
+  margin-bottom: 25px;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA img {
+  width: 100%;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo {
+  width: 87%;
+  padding: 3%;
+  position: absolute;
+  bottom: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fafafa;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo p.NameAndPrice {
+  font-size: 15px;
+  font-weight: 550;
+  color: #1D1E4C;
+  display: inline-block;
+  margin: 0 10% 0 0;
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo p.text2 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1D1E4C;
+  margin: 2% 0 2% 0;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+}
+
+section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo img.cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+/*# sourceMappingURL=Mall2.css.map */
