@@ -25,12 +25,9 @@ $btnTxt:15px;   //按鈕字體大小
 $regionTxt:28px;//區域性字體
 $contentSubTit:22px;//內文副標題
 $navTxt:15px;//導覽列文字
-//$paddingSide:50px;  //文字邊框內距(舊)
-//$lineHeight:30px;//文字行高(舊)
 $line-height:30px;//文字行高
-$padding-hint:10px;//頁面提示字padding
 $letter-Spacing:2px;//文字間距
-
+$padding-hint:10px;//頁面提示字padding
 //Others
 $pageW:1200px;//網頁寬
 $reserveSide:30px;//左右預留寬度
@@ -38,9 +35,16 @@ $reserveSide:30px;//左右預留寬度
 $borderRadius:15px;
 $btnRadius:15px;
 $inputRadius:5px;
-
 //box-shadow
 $box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+
+//敬航
+$closeBtn:27px;//關閉紐大小
+// header
+$navH:66px;
+$logoW:50px;
+//Footer
+$footerH:500px;
 
 //new color
 $color_regulation:(
@@ -65,21 +69,12 @@ $color_regulation:(
     'footerGray2':rgba(66, 79, 95,.1),
 );
 
-//敬航
-$closeBtn:27px;//關閉紐大小
-// header
-$navH:66px;
-$logoW:50px;
-
-//Footer
-$footerH:500px;
 //=============共用規格設定如上=============
 //=========================================
 
 body {
     box-sizing: border-box;
     margin: 0;
-    //font-size: 0;
     font-family: $english, $chinese;
     background-color: map-get($color_regulation,'white-bg' );
 }
@@ -93,6 +88,7 @@ h5.title {
     left:0;
     margin:0;
     font-size: $h5;
+    font-weight: normal;
     display: inline-block;
     white-space: nowrap;
     padding: 10px 0;
@@ -108,7 +104,7 @@ h5.title {
 
 
 section {
-    letter-spacing:1px;
+    letter-spacing:$letter-Spacing;
     max-width:$pageW;
     margin:0 auto;
     font-size: 0px;
@@ -128,16 +124,16 @@ section div.content_costomizedBag {
         z-index: -5;
         div.top_back_img_2{    
             width: 100%;
-            height:421px;
+            height:426px;
             position:absolute;
-            top:0;
+            top:-5px;
             left:0;    
             border-radius: 0 0 $borderRadius $borderRadius;
             overflow: hidden;
             box-shadow: $box-shadow;
             img{
                 width: 105%;
-                filter: blur(4px); 
+                filter: blur(7px); 
             }
         }
     }
@@ -230,21 +226,20 @@ section div.content_costomizedBag{
             // ===================================================================
             //左側 上方 第二區 (客製商品區)
             div.leftarea_blockB{
-                background-color: rgba(0, 0, 0, .9);
-                //本機端img用這個:
-                //background-image: url(./img/mall/bgimg_01.jpg);
-                //Git img用這個:
-                background-image: url(../../img/mall/bgimg_01.jpg);
-                //backdrop-filter: blur(5px);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: top right;
+                position:relative;
                 width:100%;
                 overflow: hidden;
                 border-radius: $borderRadius;
                 box-shadow: $box-shadow;
                 padding:20px;
-                // text-align: center;
+                img.customizedBg_img{
+                    width:100%;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    z-index:-1;
+                    filter: blur(5px); 
+                }
                 h6.urstyle{
                         font-size: $h6;
                         color:map-get($color_regulation,'blue');
@@ -287,12 +282,14 @@ section div.content_costomizedBag{
                         color:map-get($color_regulation,'blue');
                         display:inline-block;
                         margin:0 12% 10px auto;
+                        font-weight: 550;
                     }
                     p.back{
                         font-size: 15px;
                         color:map-get($color_regulation,'blue');
                         display:inline-block;
                         margin:0 auto 10px 12%;
+                        font-weight: 550;
                     }    
                 }
                 //左側 上方 第三區 (商品簡介區)
@@ -371,24 +368,24 @@ section div.content_costomizedBag{
                                 font-size: $p;
                                 color:map-get($color_regulation,'blue');
                                 input.circleBtn{
-                                    margin-top: 95%;
+                                    margin-top: 85%;
                                     display:inline-block;
                                 }
                             }
                             div.theColor1{
-                                background-color: lightyellow;
+                                background-color:#f5f5dc;
                             }
                             div.theColor2{
-                                background-color: lightblue;
+                                background-color: #add8e6;
                             }
                             div.theColor3{
-                                background-color: lightgreen;
+                                background-color: #66cdaa;
                             }
                             div.theColor4{
-                                background-color: pink;
+                                background-color: #ffb6c1;
                             }
                             div.theColor5{
-                                background-color: map-get($color_regulation,'blue');
+                                background-color: #483d8b;
                             }
                         }
                     }

@@ -87,6 +87,7 @@ body {
 
 //左側 直向 麵包條
 h5.title {
+    font-weight: normal;
     margin-top:$navH;
     position:absolute;
     //top:$navH;
@@ -117,12 +118,6 @@ section {
     font-size: 0px;
     text-align: center;
     $letter-Spacing:$letter-Spacing;
-    // max-width:$pageW;
-    // margin:0 auto;
-    // font-size: 0px;
-    // text-align: center;
-    // padding-top:$navH;
-
 
     div.title-block {
         display: inline-block;
@@ -157,16 +152,16 @@ section div.content_costomizedBag {
         z-index: -5;
         div.top_back_img_2{    
             width: 100%;
-            height:421px;
+            height:426px;
             position:absolute;
-            top:0;
+            top:-5;
             left:0;    
             border-radius: 0 0 $borderRadius $borderRadius;
             overflow: hidden;
             box-shadow: $box-shadow;
             img{
                 width: 105%;
-                filter: blur(4px); 
+                filter: blur(7px); 
             }
         }
     }
@@ -216,11 +211,10 @@ section div.content_costomizedBag{
                       position:absolute;
                       bottom:15px;
                       right:15px;
-                      background-color: map-get($color_regulation,'white-bg' );
+                      background-color: map-get($color_regulation,'gray' );
                       color:map-get($color_regulation,'blue');
-                      //font-weight: 900;
-                      //box-shadow: $box-shadow;
-                      background: hsla(0,0%,100%,.8); 
+                      box-shadow: $box-shadow;
+                      background: hsla(0,0%,100%,.6); 
                       //filter: blur(4px); 
                   }
                 } 
@@ -250,10 +244,10 @@ section div.content_costomizedBag{
                         bottom:15px;
                         left:50%;
                         transform: translateX(-50%);
-                        background-color:map-get($color_regulation,'white-bg');
+                        background-color: map-get($color_regulation,'gray' );
                         color:map-get($color_regulation,'blue');
-                        //box-shadow: $box-shadow;
-                        background: hsla(0,0%,100%,.8); 
+                        box-shadow: $box-shadow;
+                        background: hsla(0,0%,100%,.6); 
                         //filter: blur(.2px); 
                     }
                 }
@@ -412,7 +406,6 @@ section div.content_costomizedBag{
                         padding:5%; 
                         p.NameAndPrice{
                             font-size: $p;
-                            //font-weight: 900; 
                             color:map-get($color_regulation,'blue');
                             display:inline-block;
                             margin:3% 10% 3% 0;
