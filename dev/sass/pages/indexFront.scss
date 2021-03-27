@@ -1,5 +1,6 @@
 @import '../var';
 @import '../all.scss';
+
 // ------自訂文字大小------------------------------
 h1{font-size: 72px;}
 h2{font-size: 60px;}
@@ -12,6 +13,19 @@ h7{font-size: 18px;
 p{font-size: 15px;}
 
 
+// -----------------------------------------------
+@mixin bgImg ($url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin borbox(){
+    border-radius: 15px;
+    overflow: hidden;
+}
+
 // ------套件class------------------------------
 
 .swiper-container {
@@ -21,7 +35,7 @@ p{font-size: 15px;}
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    // background: #fff;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -104,12 +118,7 @@ p{font-size: 15px;}
     }
 }
 
-@mixin bgImg ($url){
-    background-image: url($url);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+
 .homeBotLayer2{
     color: map-get($color_regulation, 'white');
     height: 100vh;
@@ -142,7 +151,7 @@ p{font-size: 15px;}
         .homeBlock{
             color: map-get($color_regulation,'blue');
             .homePage2{
-                height: 100vh;
+                height: 100%;
                 .homePage2Top{
                     margin-bottom: 50px;
                 }
@@ -208,18 +217,16 @@ p{font-size: 15px;}
     }
 }
 
-@mixin borbox(){
-    border-radius: 15px;
-    overflow: hidden;
-}
+
 .homeBotLayer4{
     height: 100vh;
     background-color:map-get($color_regulation, 'white-bg');
     .homePage4{
+        margin-bottom: calc(100vh - 95vh - 30px);
         @include borbox();
         background: #FFFFFF;
         box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-        height: 95%;
+        height: 95vh;
         padding: 30px;
         padding-bottom: 0;
         h5{
@@ -259,7 +266,17 @@ p{font-size: 15px;}
 }
 
 
+// --------------------------------------------------------------
+
+:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: "Rubik", sans-serif;
+    --font-serif: "Cardo", serif;
+}
+
 .homeBotLayer5{
+    
     color: map-get($color_regulation, 'white');
     height: 50vh;
     align-items: center;
@@ -277,7 +294,7 @@ p{font-size: 15px;}
             z-index: -1;
             content:"";
             width: 100vw;
-            height: 100vh;
+            // height: 100vh;
             top: 0; // 要比原本的div大
             bottom: 0; // 毛玻璃邊才不會內縮
             left: 0;
@@ -293,31 +310,222 @@ p{font-size: 15px;}
 .homePage5{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 50vh;
     .homePage5Left{
         width: 40%;
+        height: 80%;
     }
     .homePage5Right{
         width: 60%;
-
+        height: 80%;
+        
     }
 }
+
+.page5Card{
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    padding: 1rem;
+    width: 100%;
+    height: 350px;
+    width: 300px;
+    text-align: center;
+    color:map-get( $color_regulation, 'blue');
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+.page5Card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-size: cover;
+    background-position: 0 0;
+    transition: transform calc(var(--d) * 1.5) var(--e);
+    pointer-events: none;
+}
+.page5Card:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+    transform: translateY(-50%);
+    transition: transform calc(var(--d) * 2) var(--e);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(1)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach1.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(2)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach2.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(3)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach4.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(4)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach3.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(5)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach1.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(6)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach2.jpg);
+}
+
+
+.page5Card{
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        transition: transform var(--d) var(--e);
+        z-index: 1;
+        .title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        .copy {
+            font-family: var(--font-serif);
+            font-size: 1.125rem;
+            font-style: italic;
+            line-height: 1.35;
+        }
+        
+        .btn {
+            cursor: pointer;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 0.025rem;
+            text-transform: uppercase;
+            color: white;
+            background-color: black;
+            border: none;
+        }
+        .btn:hover {
+            background-color: #0d0d0d;
+        }
+        .btn:focus {
+            outline: 1px dashed yellow;
+            outline-offset: 3px;
+        }        
+    }
+    .content>*+* {
+        margin-top: 1rem;
+    }
+}
+
+@media (hover: hover) and (min-width: 600px) {
+    .page5Card:after {
+        transform: translateY(0);
+    }
+    .content {
+        transform: translateY(calc(100% - 4.5rem));
+    }
+    .content>*:not(.title) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+    }
+    .page5Card:hover,
+    .page5Card:focus-within {
+        align-items: center;
+    }
+    .page5Card:hover:before,
+    .page5Card:focus-within:before {
+        transform: translateY(-4%);
+    }
+    .page5Card:hover:after,
+    .page5Card:focus-within:after {
+        transform: translateY(-50%);
+    }
+    .page5Card:hover .content,
+    .page5Card:focus-within .content {
+        transform: translateY(0);
+    }
+    .page5Card:hover .content>*:not(.title),
+    .page5Card:focus-within .content>*:not(.title) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--d) / 8);
+    }
+    .page5Card:focus-within:before,
+    .page5Card:focus-within:after,
+    .page5Card:focus-within .content,
+    .page5Card:focus-within .content>*:not(.title) {
+        transition-duration: 0.3s;
+    }
+}
+
 
 .homeBotLayer6{
-    height: 35vh;
-    .homePage6{
-        display: flex;
-        
-        &__left{
-            padding: 0 30px;
-            height: 100%;
-            width: 50%;
-            background-color: #242d38;
-            color: map-get($color_regulation, 'white');
-        }
-        &__right{
-            height: 100%;
-            width: 50%;
-            overflow: hidden;
+    height: 50vh;
+    .homeBlock{
+        .homePage6{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            &__left{
+                
+                h5{
+                    margin: 0;
+                    
+                }
+                padding: 0 20px;
+                // height: 50vh;
+                width: 50%;
+                background-color:map-get($color_regulation, 'white-bg');
+                color: map-get($color_regulation, 'blue');
+            }
+            &__right{
+                cursor: pointer;
+                border-radius: 15px;
+                box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                height: 30vh;
+                width: 50%;
+                overflow: hidden;
+                position: relative;
+                border:none;
+                #myVideo{
+                    height: 120%;
+                    width: 100%;
+                    //poster裡面的照片填滿
+                    object-fit: cover;
+                }
+
+                #myBtn{
+                    cursor: pointer;
+                    outline: none;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    background-color: rgba(255, 255, 255, 0);
+                    border:none;
+                }
+            }
         }
     }
+    
 }
+

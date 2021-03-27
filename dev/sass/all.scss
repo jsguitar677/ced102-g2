@@ -63,7 +63,6 @@ body {
 }
 
 body header {
-    background-color: map-get($map: $color_regulation, $key: 'blackGray');
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     position: fixed;
     top: 0;
@@ -74,6 +73,7 @@ body header {
     font-size: 0;
     width: 100%;
     z-index: 50;
+    background-color: rgba(255, 255, 255, 0.144);
 }
 
 body header nav {
@@ -113,7 +113,7 @@ body header nav div#lftUl ul li:hover img {
 
 body header nav div#lftUl ul li a {
     margin-right: 5px;
-    color: #f2f2f2;
+    color: map-get($color_regulation, 'blue' );
 }
 
 body header nav div#lftUl ul li img {
@@ -173,7 +173,7 @@ body header div#rgtUl ul li i.fwIcon {
 body header a {
     text-decoration: none;
     cursor: pointer;
-    color: #f2f2f2;
+    color:map-get($color_regulation, 'blue');
 }
 
 body header i.fwIcon {
@@ -422,133 +422,117 @@ body div#page3 {
     height: 100vh;
 }
 
-body footer {
-    overflow: hidden;
-    position: relative;
-    background-color: #0e1018;
-    z-index: 1;
-    height: 500px;
+// -----------footer--------------------------------------------------------------
+
+footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 30px 0;
+    color: map-get($color_regulation, 'blue' );
+    width: 100%;
+    background-color: map-get($color_regulation, 'white-bg' );
+    .footerWrapper{
+        margin: 0 auto;
+        width: 90%;
+        height: 90%;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+        .footerBlockTop{
+            display: flex;
+            padding: 30;
+            .footerBox1{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 40%;
+                padding: 20px;
+                .footerTOP{
+                    font-size: 100px;
+                    font-weight: bold;
+                    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                }
+                .footerBottom{
+                    font-size: 45px;
+                    ul{
+                        list-style-type: circle;
+                        margin: 0;
+                    }
+                }
+            }
+            .footerBox2{
+                width: 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .footerTitle{
+                    font-size: 60px;
+                    font-weight: bold;
+                    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                }
+                .goTop{
+                    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                    width: 230px;
+                    height: 50px;
+                    font-size: 30px;
+                    border: 2px solid #1D1E4C;
+                    border-radius: 30px;
+                    background-color: #fff;
+                    color: #1D1E4C;
+                }
+            }
+            .footerBox3{
+                width: 40%;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                .social{
+                    width: 70%;
+                    padding: 30px 50px;
+                    span{
+                        font-weight: bold;
+                        font-size: 40px;
+                        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                    }
+                    &__Icon{
+                        margin-top: 20px;
+                        display: flex;
+                        justify-content: space-around;
+                    }
+                }
+                .orignate{
+                    padding: 30px 50px;
+                    span{
+                        font-size: 40px;
+                        font-weight: bold;
+                        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                    }
+                    p{
+                       width: 80%;
+                   }
+                }
+            }
+            
+        }
+        .footerBlockbottom{
+            text-align: center;
+            font-weight: bold;
+            padding: 15px;
+        }
+    }
+}
+.fa-facebook,.fa-twitter,.fa-instagram{
+    font-size: 40px;
 }
 
-body footer div.frontFooter div#footerSide {
-    width: 60px;
-    background-color: #424f5f;
-    height: 500px;
-    display: inline-block;
-}
-
-body footer div.frontFooter div.divLine {
-    background-color: #bebebe;
-    height: 500px;
-    width: 5px;
-    display: inline-block;
-}
-
-body footer div.frontFooter ol {
-    list-style: none;
-    padding: 0;
-    color: #f2f2f2;
-    font-size: 48px;
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 10%;
-}
-
-body footer div.frontFooter ol li.footerOl span.footerRotate {
-    writing-mode: vertical-lr;
-    transform: rotate(180deg);
-    border-bottom: 3px solid white;
-    margin-right: 150px;
-    padding-top: 5px;
-    padding-bottom: 15px;
-    margin-top: 10px;
-}
-
-body footer div.frontFooter div.social {
-    font-size: 48px;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: calc(38px + 93px - 45px);
-    margin-left: 10%;
-    width: 30%;
-}
-
-body footer div.frontFooter div.social span {
-    cursor: pointer;
-}
-
-body footer div.frontFooter div.social a {
-    font-weight: 100;
-    display: inline-block;
-    margin-bottom: 15%;
-    cursor: pointer;
-}
-
-body footer div.frontFooter div.social a:nth-child(2n) {
-    margin-left: 10%;
-}
-
-body footer div.frontFooter div.social a:nth-child(n+3) {
-    margin-bottom: 20%;
-    margin-left: 10%;
-}
-
-body footer div.frontFooter div.social p {
-    letter-spacing: 7px;
-    font-size: 15px;
-    text-align: justify;
-    color: #f2f2f2;
-    width: 80%;
-}
-
-body footer h2#footerMenu {
-    font-size: calc(72px*2);
-    writing-mode: vertical-lr;
-    left: 16%;
-    top: 50%;
-    transform: translateY(-50%) rotate(180deg);
-}
-
-body footer h3#footerBrand {
-    font-size: calc(60px*2);
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-body footer h2#socialMedia {
-    font-size: 60px;
-    top: 5%;
-    right: 13%;
-}
-
-body footer p#footerOri {
-    font-size: 38px;
-    bottom: 30%;
-    right: 35%;
-    transform: rotate(270deg);
-}
-
-body footer p#copyRight {
-    font-size: 15px;
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    transform: translateX(-50%);
-    color: #424f5f;
-    font-weight: 800;
-}
-
-body footer .footerBg {
-    position: absolute;
-    color: #424f5f;
-    z-index: -1;
-    margin: 0;
-}
+// -----------footer--------------------------------------------------------------
 
 body a {
     text-decoration: none;
-    color: #f2f2f2;
+    color: #1D1E4C;
 }
 
 body div#page2 {
