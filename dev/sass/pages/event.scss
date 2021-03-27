@@ -31,6 +31,8 @@ $text-fontSize-subtitle: 22px;  //內文副標題
 $text-fontSize-region: 28px;    //區塊性文字
 $text-fontSize-hint-575:18px;   //提示字(bread)575以下
 
+$width-close-btn:27px;
+
 $max-width: 1200px;
 $padding-web: 30px;
 $padding-btn: 10px 20px;
@@ -140,7 +142,6 @@ $web-color:(
 }
 // =====================================================banner=================================================================
 div.banner {
-  margin-top: 66px;
   img{
     max-width: 100%;
   }
@@ -163,6 +164,7 @@ div.banner {
   height: 300px;
   overflow: hidden;
   @include bg-module();
+  margin-top: 66px;
 
   div.bg {
     img {
@@ -451,13 +453,239 @@ main.event {
 
 // =====================================================發起活動=================================================================
 
-// main.event {
-//   div.content{
-//     #section2{
+main.event {
+  div.content{
+    #section2{
+      div.initiation{
+        div.row{
+          div.col-12{
+            text-align: center;
+            h2.initiation-title{
+              font-size: $text-fontSize-region;
+              text-align: center;
+              margin: 50px 0;
+            }
+            @media (max-width:575px){
+              h2.initiation-title{
+                font-size: $text-fontSize-subtitle;
+              }
+            }
+            div.flex{
+              padding: 30px 80px 30px 60px;
+              margin: 0 auto;
+              width: 70%;
+              background-color: map-get($web-color,'white');
+              box-shadow: $box-shadow;
+              border-radius: $border-radius;
+              @include flex();
+              flex-wrap: wrap;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 20px;
+              div.step{
+                padding-right: 30px;
+                width: 15%;
+                font-size: $h3;
+                font-weight: bolder;
+                line-height: 80px;
+              }
+              div.content{
+                text-align: left;
+                width: 85%;
+                font-size: $h7;
+                font-weight: bolder;
+                background-color: map-get($web-color,'white');
+                &:first-child{
+                  text-align: center;
+                  span.red{
+                    color: map-get($web-color,'red');
+                  }
+                }
+              }
+              div.content3{
+                width: calc(100% - 15% - 108px);
+              }
+              @include btn-module-blue();
+              div.btn{
+                width: 108px;
+                position: relative;
+                left: 20px; 
+                margin: 0;   
+                cursor: pointer;  
+              }
+            }
+            @media (min-width:768px) and (max-width:991px){
+              div.flex{
+                width: 90%;
+              }
+            }
+            @media (min-width:576px) and (max-width:767px){
+              div.flex{
+                width: 100%;
+                padding: 30px 50px 30px 50px;
+                div.step{
+                  font-size: $h4;
+                }
+                div.content{
+                  font-size: $text-fontSize;
+                }
+              }
+            }
+            @media (max-width:575px){
+              div.flex{
+                width: 95%;
+                padding: 20px;
+                div.step{
+                  width: 100%;
+                  padding-right: 0px;
+                  font-size: $h6;
+                  line-height: $h6;
+                  margin-bottom: 10px;
 
-//     }
-//   }
-// }
+                }
+                div.content{
+                  width: 100%;
+                  font-size: $text-fontSize-575;
+                  line-height: 20px;
+                }
+                div.content3{
+                  width: 100%;
+                }
+                div.btn{
+                  left: 5px; 
+                  width: 100px;
+                  margin-top: 10px;
+                  a{
+                    font-size: $text-fontSize-575;
+                    padding: 5px;
+                  }
+                }
+              }
+            }
+            div.standard-block{
+              position: relative;
+              #standard{
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.76);
+                opacity: 0;
+                display: none;
+                div.standard-card{
+                  position: fixed;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  padding: 40px 80px;
+                  background-color: map-get($web-color,'blue');
+                  box-shadow: $box-shadow;
+                  border-radius: $border-radius;
+                  h3{
+                    font-size: $h7;
+                    font-weight: bolder;
+                    color: map-get($web-color,'white');
+                    margin-bottom: 30px;
+                  }
+                  div.standard-content{
+                    text-align: left;
+                    font-size: $h7;
+                    font-weight: bolder;
+                    color: map-get($web-color,'white');
+                  }
+                  div.closebtn{
+                    width: $width-close-btn;
+                    height: $width-close-btn;
+                    position: absolute;
+                    top: -30px;
+                    right: -30px;
+                    cursor: pointer;
+                  }
+                }
+                @media (min-width:768px) and (max-width:991px){
+                  div.standard-card{
+                    width: 60%;
+                    padding: 30px 60px;
+                  }
+                }
+                @media (min-width:576px) and (max-width:767px){
+                  div.standard-card{
+                    padding: 30px 50px;
+                    width: 70%;
+                    h3{
+                      font-size: 16px;
+                      margin-bottom: 20px;
+                    }
+                    div.standard-content{
+                      font-size: 16px;
+                    }
+                  }
+                }
+                @media (min-width:400px) and (max-width:575px){
+                  div.standard-card{
+                    width: 95%;
+                    padding: 20px 30px;
+                    h3{
+                      font-size: $text-fontSize;
+                      margin-bottom: 10px;
+                    }
+                    div.standard-content{
+                      font-size: $text-fontSize;
+                    }
+                    div.closebtn{
+                      position: absolute;
+                      top: -40px;
+                      right: 5px;
+                    }
+                  } 
+                }
+                @media (max-width:399px){
+                  div.standard-card{
+                    width: 95%;
+                    padding: 20px 30px;
+                    h3{
+                      font-size: $text-fontSize;
+                      margin-bottom: 10px;
+                    }
+                    div.standard-content{
+                      font-size: $text-fontSize-575;
+                      line-height: 22px;
+                    }
+                    div.closebtn{
+                      position: absolute;
+                      top: -40px;
+                      right: 5px;
+                    }
+                  } 
+                }
+              }
+            }
+            @include btn-module-red();
+            div.start-btn{
+              margin: 20px 0 60px 0;
+              a{
+                padding-left: 40px;
+                padding-right: 40px;
+              }
+            }
+            @media (max-width:575px) {
+              div.start-btn{
+                left: 5px; 
+                width: 100px;
+                margin-top: 10px;
+                a{
+                  font-size: $text-fontSize-575;
+                  padding: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // =====================================================感謝有你=================================================================
 
@@ -467,7 +695,7 @@ main.event {
       div.container{
         div.row {
           overflow: hidden;
-          margin-bottom: 40px;
+          padding-bottom: 40px;
           div.toggle{
             margin-top: 30px;
             div.toggle-block{
@@ -566,13 +794,13 @@ main.event {
                         h3{
                         font-size: $text-fontSize-region;
                         color: map-get($web-color,'white');
-                        margin: 20px 0 0 0;
+                        margin: 30px 0 0 0;
                         display: inline-block;
                         vertical-align: middle;
                         }
                         div.img{
                           width: 35px;
-                          margin: 20px 15px 0 0;
+                          margin: 30px 15px 0 0;
                           display: inline-block;
                           vertical-align: middle;
                         }
@@ -662,7 +890,7 @@ main.event {
               }
               div.right{
                 div.small-card{
-                  margin: 10px;
+                  margin: 0px 10px 20px 10px;
                   border-radius: $border-radius;
                   box-shadow: $box-shadow;
                   margin-bottom: 16px;
@@ -778,7 +1006,6 @@ main.event {
                     p.text{
                       line-height: 20px;
                       font-size: $text-fontSize-575;
-                      font-weight: lighter;
                       span{
                         font-size: $text-fontSize-575;
                       }
@@ -789,6 +1016,7 @@ main.event {
                       text-align: right;
                       cursor: pointer;
                       font-family: Arial;
+                      font-weight: lighter;
                     }
                   }
                 }
