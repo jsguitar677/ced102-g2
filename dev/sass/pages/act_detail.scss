@@ -1,0 +1,74 @@
+div.ad_container{
+    margin-top: 20px;
+    font-size: 0px;
+}
+
+div.ad_content{
+// border: 1px solid red;
+height: 300px;
+font-family: 'noto sans tc';
+}
+
+.ad_block{
+    height: 300px;
+    background-color: black;
+    box-sizing: border-box;
+    width: 100%;
+     position: absolute;
+     z-index: -1;
+}
+
+.ad_inner_content>h1{
+    margin: 0;
+    margin-left: 10px;
+    font-size: 50px;
+    color: white;
+    width: 300px;
+   padding-top: 10px ;
+}
+.ad_inner_content>p{
+    color: white;
+    font-size: 15px;
+    width:70%;
+    margin-left: 30%;
+    margin-top: 3%;
+    line-height:30px;
+    letter-Spacing:2px;
+}
+.ad_block>img{
+    margin-left: 15%;
+    width:200px;
+    margin-top: 8%;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+div.ad_inner_content{
+// border: 1px solid green;
+width: 1200px;
+margin: 0 auto;
+// margin-top: 50px;
+}
+
+div.ad_grid_content{
+    margin: 0 auto;
+    display: grid;
+    // border: 1px solid orange;
+    width: 1200px;
+    height: 900px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 120px;
+    color:#1D1E4C
+}
+
+div.ad_grid_content>h1{
+    width: 100px;
+}
+
+div.ad_grid_content>div.ad_box4{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 500px;
+}
