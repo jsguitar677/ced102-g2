@@ -1,0 +1,230 @@
+div.ad_container{
+    margin-top: 20px;
+    font-size: 0px;
+}
+
+div.ad_content{
+// border: 1px solid red;
+height: 300px;
+font-family: 'noto sans tc';
+}
+
+.ad_block{
+    height: 300px;
+    background-color: black;
+    box-sizing: border-box;
+    width: 100%;
+     position: absolute;
+     z-index: -1;
+}
+
+.ad_inner_content>h1{
+    margin: 0;
+    margin-left: 10px;
+    font-size: 50px;
+    color: white;
+    width: 300px;
+   padding-top: 10px ;
+}
+.ad_inner_content>p{
+    color: white;
+    font-size: 15px;
+    width:70%;
+    margin-left: 30%;
+    margin-top: 3%;
+    line-height:30px;
+    letter-Spacing:2px;
+}
+.ad_block>img{
+    margin-left: 15%;
+    width:200px;
+    margin-top: 8%;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+div.ad_inner_content{
+// border: 1px solid green;
+width: 1200px;
+margin: 0 auto;
+// margin-top: 50px;
+}
+
+div.ad_grid_content{
+    margin: 0 auto;
+    display: grid;
+    // border: 1px solid orange;
+    width: 1200px;
+    height: 550px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 150px;
+    color:#1D1E4C;
+}
+
+div.ad_grid_content>h1{
+    width: 100px;
+}
+
+div.ad_grid_content>div.ad_box4{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 340px;
+    text-align: center;
+    // border: 1px solid red;
+    position: relative;
+}
+
+button.join{
+    border: none;
+    background-color: #EF4325;
+    border-radius:15px;
+    color: white;
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin-top: 50px;
+    outline:0;
+}
+button.share{
+    border: none;
+    background-color: #1D1E4C;
+    border-radius:15px;
+    color: white;
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin-top: 40px;
+    outline:0;
+}
+
+div.founder{
+    // border: 1px solid green;
+    display: inline-block;
+    position: absolute;
+    width: 300px;
+    right: 8%;
+    bottom: 8%;
+    margin: 0;
+}
+div.founder>h1>img{
+    width: 20%;
+    vertical-align: middle;
+}
+// 進度條-------------------------------------------------------------------
+.progress-bg {
+	margin: 0 auto;
+    margin-top: 40px;
+	width: 65%;
+	height: 50px;
+	border-radius: 10px;
+    border: 3px solid #1D1E4C;
+  text-align: center;
+	-moz-box-shadow:    inset 0 0 10px #ccc;
+	-webkit-box-shadow: inset 0 0 10px #ccc;
+	box-shadow:         inset 0 0 10px #ccc;
+}
+
+.progress-bar {
+	height: 50px;
+	border-radius: 8px;
+	float: left;
+	width: 50%;
+	/* fallback */ 
+	background-color: #09E4C7; 
+	
+	
+	
+	/* Safari 5.1, Chrome 10+ */ 
+	// background: -webkit-linear-gradient(top, #1c314a, #27425f); 
+	
+	// /* Firefox 3.6+ */ 
+	// background: -moz-linear-gradient(top, #1c314a, #27425f); 
+	
+	// /* IE 10 */ 
+	// background: -ms-linear-gradient(top, #1c314a, #27425f); 
+	
+	// /* Opera 11.10+ */ 
+	// background: -o-linear-gradient(top, #1c314a, #27425f);	
+}
+
+.progress-bg h3.goal, .progress-bg h3.raised {
+	font-family: Arial,sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+	line-height: 52px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	display: inline;
+}
+
+
+.progress-bg h3.raised {
+	color: #fff;
+	padding: 0 25px 0 0;
+    padding-bottom: 20px;
+    height: 20px;
+}
+
+.progress-bg h3.goal {
+	color: #b2b2b2;
+  text-align: center;
+}
+
+body .progress-bg h3.raised {
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+       -moz-animation: fadein 4s; /* Firefox */
+        -ms-animation: fadein 4s; /* Internet Explorer */
+         -o-animation: fadein 4s; /* Opera */
+            animation: fadein 4s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+.progress-bg h3.goal {
+	float: right;
+	display: inline;
+	padding: 0 25px 0 0;
+  text-align: center;
+  height: 40px;
+}
+
+body .progress-bg div {
+	-webkit-animation: progress-bar 2s ease forwards;
+	-moz-animation: progress-bar 2s ease forwards;
+	-o-animation: progress-bar 2s ease forwards;
+	animation: progress-bar 2s ease forwards;
+}
+
+@-webkit-keyframes progress-bar {
+    from { width: 0%; }
+    to { width: 50%; }
+}
+
+@-moz-keyframes progress-bar {
+    from { width: 0%; }
+    to { width: 50%; }
+}
+
+@-o-keyframes progress-bar {
+    from { width: 0%; }
+    to { width: 50%; }
+}
+
+@keyframes progress-bar {
+    from { width: 0%; }
+    to { width: 50%; }
+}
+
+// 進度條-------------------------------------------------------------------

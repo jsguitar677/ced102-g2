@@ -33,7 +33,6 @@ $letter-Spacing:2px;//文字間距
 
 //Others
 $pageW:1200px;//網頁寬
-//$reserveSide:60px;//左右預留寬度(舊)
 $reserveSide:30px;//左右預留寬度
 //Radius
 $borderRadius:15px;
@@ -90,7 +89,7 @@ h5.title {
     margin-top:$navH;
     position:absolute;
     //top: $navH;
-    top: calc( #{$navH} + 20px);
+    top: calc( #{$navH} + 10px);
     left:0;
     margin:0;
     font-size: $h5;
@@ -109,29 +108,20 @@ h5.title {
 
 
 section {
-    border:1px solid blue;
-    //margin-top:$navH;
+    letter-spacing:1px;
     max-width:$pageW;
     margin:0 auto;
     font-size: 0px;
     text-align: center;
-    div.title-block {
-        display: inline-block;
-        vertical-align: top;
-        width: $reserveSide;
-    }
+    padding-top:$navH;
 }
 
 //header下方背景圖(毛玻璃效果)，此div不占位
 section div.content_costomizedBag {
-    border:1px solid red;
-    padding-top: $navH;
     text-align: left;
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - #{$reserveSide}*2);
-    // padding: 0 $reserveSide;
-    margin: 0 $reserveSide;
+    width: 100%;
     div.top_back_img_1 {
         position:relative;
         width:100%;
@@ -166,7 +156,7 @@ section div.content_costomizedBag{
     //頁面上半部:左圖 右購物
     div.all{
         width:100%;
-        padding:0 53px;
+        padding:0 $reserveSide;
         display: flex;
         //左側圖片與商品解說區
         div.leftarea{
@@ -198,8 +188,6 @@ section div.content_costomizedBag{
                       right:15px;
                       background-color: map-get($color_regulation,'white-bg' );
                       color:map-get($color_regulation,'blue');
-                      //font-weight: 900;
-                      //box-shadow: $box-shadow;
                       background: hsla(0,0%,100%,.8); 
                       //filter: blur(4px); 
                   }
@@ -231,9 +219,7 @@ section div.content_costomizedBag{
                         transform: translateX(-50%);
                         background-color:map-get($color_regulation,'white-bg');
                         color:map-get($color_regulation,'blue');
-                        //box-shadow: $box-shadow;
                         background: hsla(0,0%,100%,.8); 
-                        //filter: blur(.2px); 
                     }
                 }
                 div.leftarea_blockA_R11{
@@ -244,7 +230,15 @@ section div.content_costomizedBag{
             // ===================================================================
             //左側 上方 第二區 (客製商品區)
             div.leftarea_blockB{
-                margin-top: 25px;
+                background-color: rgba(0, 0, 0, .9);
+                //本機端img用這個:
+                //background-image: url(./img/mall/bgimg_01.jpg);
+                //Git img用這個:
+                background-image: url(../../img/mall/bgimg_01.jpg);
+                //backdrop-filter: blur(5px);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: top right;
                 width:100%;
                 overflow: hidden;
                 border-radius: $borderRadius;
@@ -266,7 +260,7 @@ section div.content_costomizedBag{
                     margin:0 auto;
                     margin-bottom: 25px;
                     margin-top:20px;
-                    border:2px solid lightgray;
+                    //border:2px solid lightgray;
                     text-align: center;
                     overflow: hidden;
                     img.customized_img{
@@ -319,7 +313,9 @@ section div.content_costomizedBag{
                     // text-align: center;
                     p.textaboutProducts{
                         font-size: 15px;
+                        font-weight: 550;
                         color:map-get($color_regulation,'blue');
+                        //color:map-get($color_regulation,'white');
                     }
                 }
             }
@@ -342,7 +338,7 @@ section div.content_costomizedBag{
             }
             form.inforOfTheForm{
                 width:80%;
-                height:300px;
+                // height:300px;
                 margin: 0 10%;
                 // 選色區
                 div.color_block{
@@ -468,6 +464,7 @@ section div.content_costomizedBag{
                 }
                 div.placeOfSubmit{
                     text-align: center;
+                    margin-bottom: 30px;
                     button.btn_shopping_cart{
                         box-shadow: $box-shadow;
                         border-radius: $inputRadius;
@@ -501,7 +498,7 @@ section div.content_costomizedBag{
 
     //頁面下半部:推薦商品區
     div.bottomarea{
-        margin-bottom: 112px;
+        margin-bottom: 70px;
         width:100%;
         border-radius: $borderRadius;
         box-shadow: $box-shadow;

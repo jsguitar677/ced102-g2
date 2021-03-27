@@ -1,5 +1,5 @@
-@import '../var';
-@import '../all.scss';
+//@import '../var';
+//@import '../all.scss';
 //=============共用規格設定如下=============
 //font-family
 //$font-family:'Arial', '微軟正黑體';
@@ -67,10 +67,10 @@ $color_regulation:(
 );
 
 //敬航
-//$closeBtn:27px;//關閉紐大小
+$closeBtn:27px;//關閉紐大小
 // header
-//$navH:66px;
-//$logoW:50px;
+$navH:66px;
+$logoW:50px;
 
 //Footer
 $footerH:500px;
@@ -90,7 +90,7 @@ h5.title {
     margin-top:$navH;
     position:absolute;
     //top:$navH;
-    top: calc( #{$navH} + 20px);
+    top: calc( #{$navH} + 10px);
     left:0;
     margin:0;
     left:0;
@@ -111,11 +111,19 @@ h5.title {
 
 
 section {
-    margin-top:$navH;
-    max-width:$pageW;
+    padding-top: $navH;
+    width:$pageW;
     margin:0 auto;
     font-size: 0px;
     text-align: center;
+    $letter-Spacing:$letter-Spacing;
+    // max-width:$pageW;
+    // margin:0 auto;
+    // font-size: 0px;
+    // text-align: center;
+    // padding-top:$navH;
+
+
     div.title-block {
         display: inline-block;
         vertical-align: top;
@@ -140,12 +148,9 @@ section {
 
 //header下方背景圖(毛玻璃效果)，此div不占位
 section div.content_costomizedBag {
-    text-align: left;
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - $reserveSide*2);
-    // padding: 0 $reserveSide;
-    margin: 0 $reserveSide;
+    width: 100%;
     div.top_back_img_1 {
         position:relative;
         width:100%;
@@ -180,7 +185,7 @@ section div.content_costomizedBag{
     //頁面上半部:左圖 右購物
     div.all{
         width:100%;
-        padding:0 53px;
+        padding:0 $reserveSide;
         display: flex;
         //左側圖片與商品解說區
         div.leftarea{
@@ -266,24 +271,18 @@ section div.content_costomizedBag{
                 border-radius: $borderRadius;
                 box-shadow: $box-shadow;
                 padding:20px;
-                // text-align: center;
-
                 //左側 上方 第三區 (商品簡介區)
                 h6.aboutProducts{
                     font-size: $h6;
                     color:map-get($color_regulation,'blue');
-                    //font-weight: 900;
                     margin:0;
                     padding-top: 40px;
-
                 }
                 div.leftarea_blockC{
                     margin-top: 10px;
                     width:100%;
-                    // border-radius: $borderRadius;
-                    // box-shadow: $box-shadow;
                     padding:10px;
-                    // text-align: center;
+                    text-align: left;
                     p.textaboutProducts{
                         font-size: 15px;
                         color:map-get($color_regulation,'blue');
@@ -309,103 +308,11 @@ section div.content_costomizedBag{
             }
             form.inforOfTheForm{
                 width:80%;
-                height:300px;
                 margin: 0 10%;
-                // 選色區
-                div.color_block{
-                    width:100%;
-                    border-bottom: 1px solid map-get($color_regulation,'gray');
-                    margin-bottom: 30px;
-                    p.stepExplain{
-                        font-size: $p;
-                        font-weight: 900;
-                        color:map-get($color_regulation,'blue');
-                        display:block;
-                    }
-                    div.color_block1{
-                        width:100%;
-                        display:flex;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        justify-content: flex-start;
-                        div.ProductColor{
-                            width:30%;
-                            height:105px;
-                            border-radius: $borderRadius;
-                            box-shadow: $box-shadow;
-                            overflow: hidden;
-                            margin-bottom: 18px;
-                            margin-right:3%;
-                            div.theColor{
-                                width:100%;
-                                height:68%;
-                                font-size: $p;
-                                color:map-get($color_regulation,'blue');
-                                input.circleBtn{
-                                    margin-top: 95%;
-                                    display:inline-block;
-                                }
-                            }
-                            div.theColor1{
-                                background-color: lightyellow;
-                            }
-                            div.theColor2{
-                                background-color: lightblue;
-                            }
-                            div.theColor3{
-                                background-color: lightgreen;
-                            }
-                            div.theColor4{
-                                background-color: pink;
-                            }
-                            div.theColor5{
-                                background-color: map-get($color_regulation,'blue');
-                            }
-                        }
-                    }
-                }
-                //上傳圖片區
-                div.picture_block{
-                    width:100%;
-                    border-bottom: 1px solid map-get($color_regulation,'gray');
-                    font-size: $p;
-                    color:map-get($color_regulation,'blue');
-                    //font-weight: 800;
-                    margin-bottom: 30px;
-                    p.stepExplain1{
-                        color:map-get($color_regulation,'red');
-                    }
-                    div.picture_block2{
-                        margin: 0px auto;
-                        div.placement_of_product{
-                            width:98%;
-                            margin:0 auto;
-                            padding:10px;
-                            // margin-top: 20px;
-                            div.placememtOfInput{
-                                height:35px;
-                                line-height: 35px;
-                                background-color: map-get($color_regulation,'gray-input-hintText' );
-                                color:map-get($color_regulation,'white-bg' );
-                                border-radius: $inputRadius;
-                                box-shadow: $box-shadow;
-                                input.theFileBtn{
-                                    width:100%;
-                                    margin-left: 3%;
-                                    height:32px;
-                                    line-height: 32px;
-                                    border-radius: $inputRadius;
-                                    cursor: pointer;
-                                }
-                            }
-                        }
-                    }
-                }
-                //========================
+                text-align: left;
                 div.qty_block{
                     width:100%;
                     font-size: $p;
-                    border-bottom: 1px solid map-get($color_regulation,'gray');
                     margin-bottom: 30px;
                     div.placememtOfQty{
                         width:98%;
@@ -468,7 +375,7 @@ section div.content_costomizedBag{
 
     //頁面下半部:推薦商品區
     div.bottomarea{
-        margin-bottom: 112px;
+        margin-bottom: 70px;
         width:100%;
         border-radius: $borderRadius;
         box-shadow: $box-shadow;
@@ -557,10 +464,10 @@ section div.NP_showBox_bg{
             box-shadow: $box-shadow;
         }
         img.NP_turnOffBtn{
-            width:35px;
+            width:$closeBtn;
             position:absolute;
-            top:-30px;
-            right:-30px;
+            top: #{-$closeBtn};
+            right:#{-$closeBtn};
         }
     }
 }

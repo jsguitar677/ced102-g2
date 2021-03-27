@@ -87,7 +87,11 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
+<<<<<<< HEAD
             index: 'indexfront.html', //需更改成自己頁面的名稱
+=======
+            index: 'act_detail.html', //需更改成自己頁面的名稱
+>>>>>>> f2614e7a946d9552bf43ff89d53c515e2700ea68
             injectChanges: false,
         },
     });

@@ -1,8 +1,8 @@
 $('document').ready(function(){
     //預設
     $('section').css('display','none');
-    $(`#section3`).css('display','');
-    $('ul.menu >li:nth-child(3)').css('fontWeight','bolder');
+    $(`#section2`).css('display','');
+    $('ul.menu >li:nth-child(2)').css('fontWeight','bolder');
 
     //點擊選單，切換畫面
     for(let i=1; i<=3; i++){
@@ -92,6 +92,23 @@ $('document').ready(function(){
     $('p.more').click(function(){
         $(this).text('');
         $(this).parent().children("p:first-child").removeClass('shorten2');
+    })
+
+
+
+
+    //close btn
+    $('#standard-btn').click(function(){
+        TweenMax.to('#standard',1,{
+            display: 'block',
+            opacity: 0.9,
+        })
+    })
+    $('div.closebtn').click(function(){
+        TweenMax.to('#standard',1,{
+            opacity: 0,
+            display: 'none',
+        })
     })
     
 })
