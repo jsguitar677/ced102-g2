@@ -19,6 +19,7 @@
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    
 </head>
 
 <body>
@@ -102,35 +103,35 @@
                     <h5>最新活動推薦</h5>
                     <div class="homePage2Top">
                         <div class="swiper-container" id="swiper2">
-                            <div class="swiper-wrapper">
+                            <div class="swiper-wrapper" id="AlltargetData">
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img id="pre2Img1" src="./img/indexFront/indexImg5.jpg" alt="">
+                                        <img class="targetData" id="pre2Img1" src="./img/indexFront/indexImg5.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img id="pre2Img2" src="./img/indexFront/indexImg7.jpg" alt="">
+                                        <img class="targetData"  id="pre2Img2" src="./img/indexFront/indexImg7.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img id="pre2Img3" src="./img/indexFront/indexImg9.jpeg" alt="">
+                                        <img class="targetData"  id="pre2Img3" src="./img/indexFront/indexImg9.jpeg" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img id="pre2Img4" src="./img/indexFront/indexImg10.jpg" alt="">
+                                        <img class="targetData"  id="pre2Img4" src="./img/indexFront/indexImg10.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img id="pre2Img5" src="./img/indexFront/indexImg11.jpg" alt="">
+                                        <img class="targetData"  id="pre2Img5" src="./img/indexFront/indexImg11.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img id="pre2Img6" src="./img/indexFront/indexImg12.jpg" alt="">
+                                        <img class="targetData"  id="pre2Img6" src="./img/indexFront/indexImg12.jpg" alt="">
                                     </div>
                                 </div>
                                 
@@ -143,17 +144,17 @@
                     <div class="homePage2Data">
                         <div class="data1">
                             <i class="fas fa-users fa-2x"></i><br>
-                            <h7 id="personTarget">需求志工人數 30人</h7><br>
-                            <h7 id="personNow">已報名志工人數 30人</h7>
+                            <h7 id="personTarget">需求志工人數 人</h7><br>
+                            <h7 id="personNow">已報名志工人數 人</h7>
                         </div>
                         <div class="data2">
                             <i class="fas fa-file-invoice-dollar fa-2x"></i><br>
-                            <h7 id="moneyTarget">目標募款金額 100,000萬</h7><br>
-                            <h7 id="moneyNow">已達募款金額 50,000</h7>
+                            <h7 id="moneyTarget">目標募款金額 萬</h7><br>
+                            <h7 id="moneyNow">已達募款金額 </h7>
                         </div>
                         <div class="data3">
                             <i class="far fa-clock fa-2x"></i>
-                            <h7 id="deadline">活動截止日 10天</h7>
+                            <h7 id="deadline">活動截止日 天</h7>
                         </div>
                         <div class="data4">
                             <i class="fas fa-exclamation-circle fa-2x"></i>
@@ -557,6 +558,7 @@
 
     <script src="./js/login.js"></script>
 
+    <script src="./js/indexfront.js"></script>
     <!-- Swiper JS -->
     <script src="./js/swiper-bundle.js"></script>
     <!-- Initialize Swiper -->
@@ -630,27 +632,27 @@
                 $('#img_color').attr('src', './img/indexFront/shopImg/cusBag5.png');
             });
 
-            $('#pre2Img1').mousemove(function(){
+            $('#pre2Img1').click(function(){
                 var imageUrl="./img/indexFront/indexImg5.jpg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });
-            $('#pre2Img2').mousemove(function(){
+            $('#pre2Img2').click(function(){
                 var imageUrl="./img/indexFront/indexImg7.jpg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });
-            $('#pre2Img3').mousemove(function(){
+            $('#pre2Img3').click(function(){
                 var imageUrl="./img/indexFront/indexImg9.jpeg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });
-            $('#pre2Img4').mousemove(function(){
+            $('#pre2Img4').click(function(){
                 var imageUrl="./img/indexFront/indexImg10.jpg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });
-            $('#pre2Img5').mousemove(function(){
+            $('#pre2Img5').click(function(){
                 var imageUrl="./img/indexFront/indexImg11.jpg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });
-            $('#pre2Img6').mousemove(function(){
+            $('#pre2Img6').click(function(){
                 var imageUrl="./img/indexFront/indexImg12.jpg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });

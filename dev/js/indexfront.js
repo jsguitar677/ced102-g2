@@ -57,9 +57,6 @@ const moneyTarget = document.getElementById("moneyTarget");
 const moneyNow = document.getElementById("moneyNow");
 const deadline = document.getElementById("deadline");
 
-// 按鈕
-// const pre2 = document.getElementById("pre2");
-// const naxt2 = document.getElementById("naxt2");
 var targetData = document.querySelector(".targetData");
 
 
@@ -78,27 +75,16 @@ function showData(){
     deadline.textContent = item.deadline;
 }
 
-function getTargetDataIndex(){
-
+var g = document.getElementById('AlltargetData');
+for (var i = 0, len = g.children.length; i < len; i++){
+    (function(index){
+        g.children[i].onclick = function(){
+            currentItem = index + 1;
+            showData();
+            currentItem = 0;
+        }    
+    })(i);
 }
 
-for(var i=0 ; i<targetData.length; i++){
-    targetDatas[i].setAttribute("index",i+1);
-    targetDatas[i].onclick = function(){
-    console.log("我是第"+this.getAttribute("index")+"个div");
-}
-}
-
-// targetData.addEventListener("click",function(){
-//     var a = targetData.index(this);
-//     console.log(a);
-// });
 
 
-// targetData.addEventListener("click",function(){
-//     currentItem++;
-//     if(currentItem > reviews.length -1){
-//         currentItem = 0;
-//     }
-//     showData();
-// });
