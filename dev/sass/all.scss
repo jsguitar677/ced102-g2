@@ -73,7 +73,7 @@ body header {
     font-size: 0;
     width: 100%;
     z-index: 50;
-    background-color: rgba(255, 255, 255, 0.144);
+    background-color: rgb(255, 255, 255);
 }
 
 body header nav {
@@ -481,6 +481,16 @@ footer{
                     border-radius: 30px;
                     background-color: #fff;
                     color: #1D1E4C;
+                    outline: none;
+                    cursor: pointer;
+                    transition: .3s ease-in-out;
+
+                    &:hover{
+                        background-color: #1D1E4C;
+                        color: #fff;
+                    transition: .3s ease-in-out;
+
+                    }
                 }
             }
             .footerBox3{
