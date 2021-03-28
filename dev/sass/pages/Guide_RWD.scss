@@ -128,13 +128,9 @@ section {
         color:map-get($color_regulation,'blue');
         //display:flex;
         //justify-content: space-between;
-        @media (min-width:320px) and (max-width:575px){
-            padding:10px;
-        }
 
         div.leftOfGuide{
             font-size: $h6;
-            margin-top: calc( 10px + #{$navH});
 
             div.titleOfGuide{
                 width:100%;
