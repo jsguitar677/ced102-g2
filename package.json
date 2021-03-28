@@ -39,6 +39,7 @@
     "node-sass": "^5.0.0"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "vue": "^2.6.12"
   }
 }

@@ -230,3 +230,19 @@ body .progress-bg div {
 
 // 進度條-------------------------------------------------------------------
 
+div.fixed_pic{
+    box-sizing: border-box;
+    width: 100%;
+    height: 26vw;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    background-image: url("../../img/act_detail/thalassophobia.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+    vertical-align: bottom;
+    z-index: -1;
+}
