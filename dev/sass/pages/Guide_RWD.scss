@@ -105,6 +105,7 @@ h5.title {
     }
     @media (min-width:320px) and (max-width:575px){
         font-size: $h6;
+        top: calc( #{$navH} + 15px);
     }
 }
 
