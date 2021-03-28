@@ -232,6 +232,7 @@ p{font-size: 15px;}
         h5{
             margin: 0;
             text-align: center;
+            margin-bottom: 30px;
             &:nth-child(2) {
                 margin-top:30px;
             }
@@ -239,7 +240,221 @@ p{font-size: 15px;}
         h6{
             margin: 0;
         }
+        &__customerBlock{
+            background-size: cover;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+            .frontBlur{
+                padding: 0 30px;
+                position: relative;
+                z-index: 1; // 不讓毛玻璃掉到最底層
+                overflow: hidden; // 超出的毛玻璃裁切掉
+                background-image: url(../../img/indexFront/indexImg8.jpg);
+                &::before{
+                    margin: auto;
+                    position: absolute;
+                    z-index: -1;
+                    content:"";
+                    width: 100vw;
+                    height: 35vh;
+                    top: 0; // 要比原本的div大
+                    bottom: 0; // 毛玻璃邊才不會內縮
+                    left: 0;
+                    right: 0;
+                    opacity: 1; // 透光可控制內部陰影
+                    background-image: url(../../img/indexFront/indexImg8.jpg);
+                    background-size: cover;
+                    background-position: bottom;
+                    filter: blur(10px);
+                }
+            
+            }
+            .page4LeftCard{
+                font-size: 0;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 15px;
+                height: 310px;
+                width: 300px;
+
+                img{
+                    height: 310px;
+                    width: 300px;
+                    border-radius: 15px;
+                    transition: .5s ease-in-out;
+                    
+                }
+                .cusBlock{
+                        position: absolute;
+                        left: 10px;
+                        top: 10px;
+                        display: flex;
+                        background-color: rgba(255, 255, 255, 0.774);
+                        overflow: hidden;
+                        line-height: 40px;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        transition: .5s ease-in-out;
+
+                    .cusIcon{
+                        margin: auto 8px;
+                        padding-left: 0;
+                        
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .cusText{  
+                        margin: 0;
+                        display: none;
+
+                    }
+                }
+                .page4CardCont{
+                    opacity: 0;
+                    transition: .5s ease-in-out;
+
+                    overflow: hidden;
+                    position: absolute;
+                    bottom: 0px;
+                    border-radius: 0 0 15px 15px;
+                    left: 0;
+                    padding: 10px;
+                    background-color: rgba(255, 255, 255, 0.774);
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        
+                        h6{
+                            font-size: 18px;
+                        }
+                    }
+                    p{  
+                        overflow:hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        white-space: normal;
+                    }
+                    
+                }
+                &:hover{
+                    // transition: .3s ease-in-out;
+                    img{
+                        transform: scale(1.2);
+                        transition: .5s ease-in-out;
+                    }
+                    .cusBlock{
+                        border-radius: 20px;
+                        width: 165px;
+                        transition: .3s ease-in-out;
+                    }
+                    .cusText{
+                        display: block;
+                     
+                    }
+                    .page4CardCont{
+                        opacity: 1;
+                        
+                        transition: .5s ease-in-out;
+
+                    }
+                }
+                
+                
+                
+            }
+            .page4RightText{
+               
+                padding: 30px;
+                width: 60%;
+                text-align: left;
+                h5{
+                text-align: left;
+                }
+                a{  
+                    height: 30px;
+                    padding: 0 30px;
+                    float: right;
+                }
+                .colorAll{
+                    margin-top: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    border-radius: 15px;
+                    height: 200px;
+                    width: 80%;
+                    .colorBox{
+                        border-radius: 15px;
+                        overflow: hidden;
+                        width: 80px;
+                        height: 110px;
+                        position: relative;
+                        &__text{
+                          
+                            input{
+                                cursor: pointer;
+                                line-height: 40px;
+                                margin-left: 0;
+                                label{
+                         
+                                    line-height: 40px;
+                                    // cursor: pointer!important;
+                                }
+                            }
+                            position: absolute;
+                            line-height: 40px;
+                            height: 40px;
+                            width: 80px;
+                            bottom: 0;
+                            text-align: center;
+                            background-color: #fff;
+                        }
+                        &__Blue{
+                            background-color:#94B1EC;
+                            position: absolute;
+                            height: 70px;
+                            width: 80px;
+                        }
+                        &__Red{
+                            background-color: #E4634E;
+                            position: absolute;
+                            height: 70px;
+                            width: 80px;
+                        }
+                        &__Green{
+                            background-color: #40E09F;
+                            position: absolute;
+                            height: 70px;
+                            width: 80px;
+                        }
+                        &__Black{
+                            background-color:#393D49 ;
+                            position: absolute;
+                            height: 70px;
+                            width: 80px;
+                        }
+                        &__Yellow{
+                            background-color: #F9B861;
+                            position: absolute;
+                            height: 70px;
+                            width: 80px;
+                        }
+                        
+                        
+                    }
+                }
+            }
+            
+
+        }
         &__generalBlock{
+            margin-top: 30px;
             display: flex;
             justify-content: space-around;
             .proDetail{
@@ -395,6 +610,7 @@ p{font-size: 15px;}
         padding: 1rem;
         transition: transform var(--d) var(--e);
         z-index: 1;
+        color: map-get($color_regulation, 'white' );
         .title {
             font-size: 1.3rem;
             font-weight: bold;

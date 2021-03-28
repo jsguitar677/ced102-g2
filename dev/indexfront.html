@@ -97,7 +97,7 @@
                     <div class="homePage2">
                         <h5>最新活動推薦</h5>
                         <div class="homePage2Top">
-                            <div class="swiper-container">
+                            <div id="swiper2" class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="page1RightCard">
@@ -142,8 +142,8 @@
                                     </div>
                                 </div>
                                 <!-- Add Arrows -->
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next" id="pre2"></div>
+                                <div class="swiper-button-prev" id="next2"></div>
                             </div>
                         </div>
                         <div class="homePage2Data">
@@ -206,54 +206,89 @@
             <div class="homePage4 homeBlock">
                 <h5>客製化商品</h5>
                 <div class="homePage4__customerBlock">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="page1RightCard">
-                                    <img src="./img/indexFront/indexImg1.jpeg" alt="">
+                    <div class="frontBlur">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="page4LeftCard">
+                                        <img src="./img/indexFront/indexImg2.jpg" alt="">
+                                        <div class="cusBlock">
+                                            <img class="cusIcon"  src="./img/indexFront/customerIcon.png" alt="">
+                                            <p class="cusText">由你來設計吧</p>
+                                        </div>
+                                        <div class="page4CardCont">
+                                            <div>
+                                                <h6>客製化-環保袋</h6>
+                                                <h6>$300</h6>
+                                            </div>
+                                            <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                        </div>
+                                    </div>
+                                    <div class="page4RightText">
+                                        <h5>挑選你喜愛的顏色吧</h5>
+                                        <div class="colorAll">
+                                            <div class="colorBox">
+                                                <div class="colorBox__Blue"></div>
+                                                <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlue"><label for="cusBlue">天空藍</label></div>
+                                            </div>
+                                            <div class="colorBox">
+                                                <div class="colorBox__Red"></div>
+                                                <div class="colorBox__text"><input type="radio" name="cusColor" id="cusRed"><label for="cusRed">落葉紅</label></div>
+                                            </div>
+                                            <div class="colorBox">
+                                                <div class="colorBox__Green"></div>
+                                                <div class="colorBox__text"><input type="radio" name="cusColor" id="cusGreen"><label for="cusGreen">環保綠</label></div>
+                                            </div>
+                                            <div class="colorBox">
+                                                <div class="colorBox__Black"></div>
+                                                <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlack"><label for="cusBlack">銀河黑</label></div>
+                                            </div>
+                                            <div class="colorBox">
+                                                <div class="colorBox__Yellow"></div>
+                                                <div class="colorBox__text"><input type="radio" name="cusColor" id="cusYellow"><label for="cusYellow">夕陽黃</label></div>
+                                            </div>
+                                        </div>
+                                        <a class="comBtn2" href="">前往客製化更多</a>
+                                    </div>
                                 </div>
-                                <div class="page1RightText">
-                                    <h5>參予活動</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                                    <button class="comBtn2">我是按鈕1</button>
+                                <div class="swiper-slide">
+                                    <div class="page4LeftCard">
+                                        <img src="./img/indexFront/indexImg2.jpg" alt="">
+                                    </div>
+                                    <div class="page4RightText">
+                                        <h5>客製化商品</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                        <button class="comBtn2">我是按鈕2</button>
+    
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page4LeftCard">
+                                        <img src="./img/indexFront/indexImg3.jpg" alt="">
+                                    </div>
+                                    <div class="page4RightText">
+                                        <h5>發起活動募款</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                        <button class="comBtn2">我是按鈕3</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page4LeftCard">
+                                        <img src="./img/indexFront/indexImg4.jpg" alt="">
+                                    </div>
+                                    <div class="page4RightText">
+                                        <h5>歷史活動花絮</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                        <button class="comBtn2">我是按鈕4</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="page1RightCard">
-                                    <img src="./img/indexFront/indexImg2.jpg" alt="">
-                                </div>
-                                <div class="page1RightText">
-                                    <h5>客製化商品</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                                    <button class="comBtn2">我是按鈕2</button>
-
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="page1RightCard">
-                                    <img src="./img/indexFront/indexImg3.jpg" alt="">
-                                </div>
-                                <div class="page1RightText">
-                                    <h5>發起活動募款</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                                    <button class="comBtn2">我是按鈕3</button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="page1RightCard">
-                                    <img src="./img/indexFront/indexImg4.jpg" alt="">
-                                </div>
-                                <div class="page1RightText">
-                                    <h5>歷史活動花絮</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
-                                    <button class="comBtn2">我是按鈕4</button>
-                                </div>
-                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
                     </div>
+                    
                 </div>
                 <h5>熱門推薦商品</h5>
                 <div class="homePage4__generalBlock">
@@ -295,52 +330,52 @@
                                     <div class="swiper-slide">
                                         <div class="page5Card">
                                             <div class="content">
-                                                <h2 class="title">Mountain View</h2>
+                                                <h2 class="title">桃園-永安漁港</h2>
                                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                                <button class="btn">View Trips</button>
+                                                <button class="btn">See More</button>
                                             </div>
                                         </div>
                                     </div> 
                                     <div class="swiper-slide">
                                         <div class="page5Card">
                                             <div class="content">
-                                                <h2 class="title">Mountain View</h2>
+                                                <h2 class="title">新北-三芝區潛水灣</h2>
                                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                                <button class="btn">View Trips</button>
+                                                <button class="btn">See More</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="page5Card">
                                             <div class="content">
-                                                <h2 class="title">Mountain View</h2>
+                                                <h2 class="title">宜蘭-外澳海灘</h2>
                                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                                <button class="btn">View Trips</button>
+                                                <button class="btn">See More</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="page5Card">
                                             <div class="content">
-                                                <h2 class="title">Mountain View</h2>
+                                                <h2 class="title">台中-高美濕地</h2>
                                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                                <button class="btn">View Trips</button>
+                                                <button class="btn">See More</button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="page5Card">
                                             <div class="content">
-                                                <h2 class="title">Mountain View</h2>
+                                                <h2 class="title">南投-日月潭</h2>
                                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                                <button class="btn">View Trips</button>
+                                                <button class="btn">See More</button>
                                             </div>
                                         </div>
                                     </div> 
                                     <div class="swiper-slide">
                                         <div class="page5Card">
                                             <div class="content">
-                                                <h2 class="title">Mountain View</h2>
+                                                <h2 class="title">澎湖-隘門沙灘</h2>
                                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
                                                 <button class="btn">View Trips</button>
                                             </div>
@@ -405,6 +440,14 @@
     <script src="./js/swiper-bundle.js"></script>
     <!-- Initialize Swiper -->
     <script>
+        var imgarr=[
+            "./img/indexFront/indexImg1.jpeg",
+            "./img/indexFront/indexImg2.jpg",
+            "./img/indexFront/indexImg3.jpg",
+            "./img/indexFront/indexImg4.jpg",
+        ];
+
+
         var swiper = new Swiper('.swiper-container', {
             mousewheel: true,
 
@@ -432,6 +475,31 @@
             
         });
     </script>
+
+    <!-- <script>
+        window.onload = function(){
+            var btn1 = document.getElementById('#pre1');
+            var btn2 = document.getElementById('#next2');
+          
+
+            btn1.onclick = function(){
+                index--;
+                if(index < 0)
+                {
+                    index = imgarr.length-1;//目的是可以實現迴圈切換
+                }
+            }
+            btn2.onclick = function(){
+                index++;
+                if(index > imgarr.length-1)
+                {
+                    index=0;
+                }
+                img.src=imgarr[index];
+            }
+        }
+
+    </script> -->
 </body>
 
 </html>
