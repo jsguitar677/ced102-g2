@@ -33,7 +33,7 @@
         <ah_main id="site">
 
             <div class="ocean">
-                <div class="ocean-text">歷史活動</div>
+                <div class="ocean-text">歷年活動</div>
             </div>
             <div class="left-side">
                 <div class="page-numbers" data-total="04">
@@ -181,8 +181,15 @@
                     </li>
                 </ul>
     </div>
+<div class="outer_card_section">
+    <div class="ah_bread">
+        <ul>
+            <li>首頁</li>
+            <li class="current">歷年活動</li>
+        </ul>
+    </div>
     <div class="ah_card_section">
-        <ah_main class="page-content">
+        <div class="ah_page-content">
             <div class="card">
                 <div class="content">
                     <h2 class="title">Mountain View</h2>
@@ -245,9 +252,24 @@
                     <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
                     <button class="btn">View Trips</button>
                 </div>
-            </div>
-        </ah_main>
+            </div>        
+        </div>
+        <!-- pagination -->
+        <ul class="pagination modal-3">
+            <li><a href="#" class="prev">&laquo</a></li>
+            <li><a href="#" class="active">1</a></li>
+            <li> <a href="#">2</a></li>
+            <li> <a href="#">3</a></li>
+            <li> <a href="#">4</a></li>
+            <li> <a href="#">5</a></li>
+            <li> <a href="#">6</a></li>
+            <li> <a href="#">7</a></li>
+            <li> <a href="#">8</a></li>
+            <li> <a href="#">9</a></li>
+            <li><a href="#" class="next">&raquo;</a></li>
+          </ul>
     </div>
+</div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>

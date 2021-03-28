@@ -1,0 +1,402 @@
+//@import '../var';
+//@import '../all.scss';
+//=============共用規格設定如下=============
+//font-family
+//$font-family:'Arial', '微軟正黑體';
+$english: 'Palatino Linotype';
+$chinese: 'noto sans tc';
+//Header
+$navH:66px;
+$logoW:50px;
+//Footer
+$footerH:500px;
+// Font Size
+$p:15px;
+$h1:72px;
+$h2:60px;
+$h3:48px;
+$h4:38px;
+$h5:28px;
+$h6:22px;
+$h7:18px;
+
+$letter-Spacing:2px;//文字間距
+$padding-hint:10px;//頁面提示字padding
+//Others
+$pageW:1200px;//網頁寬
+$reserveSide:30px;//左右預留寬度
+//Radius
+$contentTxt:15px;   //內文字體大小
+$btnTxt:15px;   //按鈕字體大小
+$regionTxt:28px;//區域性字體
+$contentSubTit:22px;//內文副標題
+$navTxt:15px;//導覽列文字
+$lineHeight:30px;//文字行高
+$borderRadius:15px;
+$btnRadius:15px;
+$inputRadius:5px;
+//box-shadow
+$box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+
+//敬航
+$closeBtn:27px;//關閉紐大小
+// header
+$navH:66px;
+$logoW:50px;
+//Footer
+$footerH:500px;
+
+//new color
+$color_regulation:(
+    'btnPink': #FF9898,
+    'btnBlue': #1654FF,
+    'btnRed': #EF4325,
+    'orange':#FFAE41,
+    'pink':#FF498C,
+    'lake':#09E4C7,
+    'black':#1E1E1E,
+    'blue':#1D1E4C,//主要色
+    'white':#fafafa,//需要(白色)統一用這一個
+    'white-bg':#F6F6F6,//背景為暗色需改成白色(背景底色)
+    'red':#EF4325,//警示色
+    'green':#0e6d41,//環保幣顏色
+    'gray-input-hintText':#C2C2C2,//input的提示顏色
+    'blue-input-border':#1D1E4C,//input的邊框顏色
+    'gray':#C6C6C6,// 頁面提示字顏色(灰色)
+    'blackGray':#0D1017,//footer背景: 黑灰色
+    'footerGray':#2A323D,//footer背景字體色、nav顏色(黑灰色)
+    'footerSide':#161c24,//footer旁邊顏色
+    'footerGray2':rgba(66, 79, 95,.1),
+);
+
+//=============共用規格設定如上=============
+//=========================================
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: $english, $chinese;
+    background-color: map-get($color_regulation,'white-bg');
+}
+
+//左側 直向 麵包條
+div.title-block{
+    h5.title {
+        margin-top:$navH;
+        position:absolute;
+        //top: $navH;
+        top: calc( #{$navH} + 10px);
+        left:0;
+        margin:0;
+        font-size: $h5;
+        font-weight: normal;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px 0;
+        transform: rotate(90deg) translateX(-60px);
+        transform-origin: 0% 100%;
+        color:map-get($color_regulation,'blue');
+        span {
+            color:map-get($color_regulation,'gray' );
+        }
+    }
+}
+
+section {
+    letter-spacing:1px;
+    max-width:$pageW;
+    margin:0 auto;
+    font-size: 0px;
+    text-align: center;
+    padding-top:$navH;
+    margin-bottom:70px;
+}
+
+//header下方背景圖(毛玻璃效果)，此div不占位
+section div.content_Mall {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    div.top_back_img_1 {
+        position:relative;
+        width:100%;
+        z-index: -5;
+        div.top_back_img_2{    
+            width: 100%;
+            height:426px;
+            position:absolute;
+            top:-5px;
+            left:0;    
+            border-radius: 0 0 $borderRadius $borderRadius;
+            overflow: hidden;
+            box-shadow: $box-shadow;
+            img{
+                width: 105%;
+                filter: blur(7px); 
+            }
+        }
+    }
+}
+
+//客製商品區塊
+section div.content_Mall{
+    h5.title_2 {
+        font-size: $h5;
+        color:map-get($color_regulation,'blue');
+        margin:0;
+        padding-top:60px;
+        text-align: center;
+    }
+    h6.title_h6{
+        font-size: $h6;
+        color:map-get($color_regulation,'blue');
+        margin:0;
+        padding: 15px 0 25px 0;
+        text-align: center;
+    }
+    div.all{
+        div.CustomizedArea_Block{
+            margin:0 $reserveSide;
+            div.CustomizedAreaBox{
+                display:flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content:space-between;
+                margin:0 auto;
+                padding-top: 60px;
+                a.customized{
+                    text-decoration:none;
+                    width:23.5%;
+                    position:relative;
+                    div.DesignIcon{
+                        height:12%;
+                        background: rgba(43, 6, 6, 0.25);
+                        //border-radius: 50%;
+                        border-radius: 50px;
+                        overflow: hidden;
+                        position: absolute;
+                        top:7px;
+                        left:7px;
+                        img.design{
+                            height:100%;
+                            display:inline-block;
+                            vertical-align: top;
+                        }
+                        p.designYrStyle{
+                            font-size: $p;
+                            font-weight: 550;
+                            color: map-get($color_regulation,'blue');
+                            display:inline-block;
+                            line-height:3;
+                            margin:0;
+                            vertical-align: top;
+                            //display:none;
+                        }
+                    }
+                    div.CustomizedArea{
+                        border-radius: $borderRadius;
+                        box-shadow: $box-shadow;
+                        overflow: hidden;
+                        img{
+                            width:100%;
+                        }
+                        div.productInfo{
+                            width:100%;
+                            height:33%;
+                            background: rgba(43, 6, 6, 0.2);
+                            padding:2% 8%;
+                            display:flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            p.NameAndPrice{
+                                font-size: $p;
+                                font-weight: 550; 
+                                color:map-get($color_regulation,'blue');
+                            }
+                            p.text{
+                                font-size: $p;
+                                color:map-get($color_regulation,'blue');
+                                overflow: hidden;        //內容溢出處理
+                                text-overflow: ellipsis; //文字溢出處理
+                                white-space:nowrap;      //文字超出時不換行
+                                margin:0;
+                                padding: 0 0 25px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//一般商品區塊
+section div.content_Mall div.all div.ProductArea_Block{
+    border-radius: $borderRadius;
+    box-shadow: $box-shadow;
+    margin-top:50px;
+    div.theWayOfSort{
+        text-align: right;
+        padding:$reserveSide;
+        margin-top:30px;
+        select.select_sort_way{
+            font-size: $p;
+            font-weight: 550;
+            line-height:33px;
+            display:inline-block;
+            width:165px;
+            height:33px;
+            border:1.5px solid map-get($color_regulation,'blue');
+            border-radius: $inputRadius;
+            box-shadow: $box-shadow;
+            vertical-align: center;
+            text-align: center;
+            option.sortWay{
+                div.sort_0{
+                } 
+            }
+        }
+    }
+    h5.title{
+        font-size: $h5;
+        color:map-get($color_regulation,'blue');
+        margin:0;
+        padding-bottom:60px;
+        text-align: center; 
+    }
+    div.allProduct{
+        font-size: $p;
+    }
+    
+    // 放大顯示區
+    div.SpecialBlack{
+        width:95%;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin:0 auto;
+        margin-bottom:25px;
+        a.zoomin{
+            width:49%;
+            div.CustomizedAreaA{
+                overflow: hidden;
+                border-radius: $borderRadius;
+                box-shadow: $box-shadow;
+                position: relative;
+                img{
+                    width:100%;
+                }
+                div.productInfo{
+                    width:87%;
+                    padding:3%;
+                    position:absolute;
+                    bottom:9%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color:map-get($color_regulation,'white');
+                    border-radius: $borderRadius;
+                    box-shadow: $box-shadow;
+                    background: hsla(0,0%,100%,.8); 
+                    p.NameAndPrice{
+                        font-size: $p;
+                        font-weight: 550; 
+                        color: map-get($color_regulation,'blue');
+                        display:inline-block;
+                        margin:0 20% 1% 0;
+                    }
+                    p.text1{
+                        font-size: $p;
+                        color: map-get($color_regulation,'blue');
+                        margin-top: 1%;
+                        width:85%;
+                        height: 50%;
+                        //以下改寫在原html檔 的<style>裡!!
+                        //overflow: hidden;        //內容溢出處理
+                        //text-overflow: ellipsis; //文字溢出處理
+                        //display: -webkit-box;
+                        //-webkit-line-clamp: 2;   //顯示行數）
+                        //-webkit-box-orient: vertical;
+                    }
+                    img.cart{
+                        position:absolute;
+                        bottom:10px;
+                        right:10px;
+                        width:33px;
+                        height:33px;
+                        border-radius: 50%;
+                        box-shadow: $box-shadow;
+                    }
+                }
+            }
+        }
+    }
+
+    // 一般顯示區
+    div.NormalBlack{
+        width:95%;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin:0 auto;
+        a.normal{
+            width:32%;
+            div.CustomizedAreaA{
+                overflow: hidden;
+                border-radius: $borderRadius;
+                box-shadow: $box-shadow;
+                position: relative;
+                margin-bottom: 25px;
+                img{
+                    width:100%;
+                }
+                div.productInfo{
+                    width:87%;
+                    //height:22%;
+                    padding:3%;
+                    position:absolute;
+                    bottom:9%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color:map-get($color_regulation,'white');
+                    border-radius: $borderRadius;
+                    box-shadow: $box-shadow;
+                    background: hsla(0,0%,100%,.8); 
+                    p.NameAndPrice{
+                        font-size: $p;
+                        font-weight: 550; 
+                        color:map-get($color_regulation,'blue');
+                        display:inline-block;
+                        margin:0 10% 0 0;
+                    }
+                    p.text2{
+                        font-size: $p;
+                        font-weight: 500;
+                        color:map-get($color_regulation,'blue');
+                        margin: 2% 0 2% 0;
+                        width:80%;
+                        overflow: hidden;        //內容溢出處理
+                        text-overflow: ellipsis; //文字溢出處理
+                        white-space:nowrap;      //文字超出時不換行
+                        // display: -webkit-box;
+                        //-webkit-line-clamp: 2;   //顯示行數）
+                        /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+                        //-webkit-box-orient: vertical;
+                        //-webkit-box-orient: horizontal;
+                    }
+                    img.cart{
+                        position:absolute;
+                        bottom:10px;
+                        right:10px;
+                        width:33px;
+                        height:33px;
+                        border-radius: 50%;
+                        box-shadow: $box-shadow;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/pages/cart.css">
+    <link rel="stylesheet" href="./plugin/bootstrap-grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/indexFront.css">
+</head>
+
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <!-- ------------------------------------------------------- -->
+    <section>
+        <div class="product-mb col-lg-12">
+            <a class="active">1.確認訂單明細</a>
+            <span>/</span>&nbsp;
+            <a href="#">2.填寫付款資料</a>&nbsp;
+            <span>/</span>&nbsp;
+            <a href="#">3.訂單完成</a>
+        </div>
+        <div class="title-block col-1">
+            <h1 class="title">購物車</h1>
+        </div>
+        <div class="content col-10">
+            <div class="sub-title-block ">
+                <h2 class="sub-title">確認訂單明細</h1>
+            </div>
+            <form id="app">
+                <table class="table">
+                    <div class="item_container" v-for="(item, index) in itemList" :key="item.id">
+                        <div class="item_header item_body">
+                            <div class="item_detail">
+                                <!-- <img v-bind:src="item.imgUrl" alt=""> -->
+                                <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+                                <!-- <div class="name">{{item.itemName}}</div> -->
+                                <div class="name"><span>品名:</span>優質短袖白T</div>
+                                <div class="size"><span>尺寸:</span>F</div>
+                            </div>
+
+                            <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
+                            <div class="price"><span>$</span>500</div>
+                            <div class="count">
+                                <button class="round less" @click="handleSub(item)">-</button>1
+                                <!-- {{item.count}} -->
+                                <button class="round add" @click="handlePlus(item)">+</button>
+                            </div>
+                            <!-- <div class="amount">{{item.price * item.count}}</div> -->
+                            <div class="amount">500</div>
+                            <div class="operate">
+                                <button class="round-cxl add  @click=" handledelete(index) " ><i class="fas fa-trash fa-1x "></i></button>
+                                </div>
+                        </div>
+                  </div>
+                  <div class="item_container " v-for="(item, index) in itemList " :key="item.id " >
+                    <div class="item_header item_body ">
+                            <div class="item_detail ">
+                                <!-- <img v-bind:src="item.imgUrl " alt=" "> -->
+                                <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80 " alt=" ">
+                                <!-- <div class="name ">{{item.itemName}}</div> -->
+                                <div class="name "><span>品名:</span>優質短袖白T</div>
+                                <div class="size "><span>尺寸:</span>F</div>
+                            </div>
+                            
+                            <!-- <div class="price "><span>$</span>{{item.price}}</div> -->
+                            <div class="price "><span>$</span>500</div>
+                            <div class="count ">
+                                <button class="round less "  @click="handleSub(item) ">-</button>1
+                                <!-- {{item.count}} -->
+                                <button class="round add "  @click="handlePlus(item) ">+</button>
+                            </div> 
+                            <!-- <div class="amount ">{{item.price * item.count}}</div> -->
+                            <div class="amount ">500</div>
+                            <div class="operate ">
+                              <button class="round-cxl add @click="handledelete(index)"><i class="fas fa-trash fa-1x "></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_container" v-for="(item, index) in itemList" :key="item.id">
+                        <div class="item_header item_body">
+                            <div class="item_detail">
+                                <!-- <img v-bind:src="item.imgUrl" alt=""> -->
+                                <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+                                <!-- <div class="name">{{item.itemName}}</div> -->
+                                <div class="name">優質短袖白T</div>
+                                <div class="size"><span>尺寸:</span>F</div>
+                            </div>
+
+                            <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
+                            <div class="price"><span>$</span>500</div>
+                            <div class="count">
+                                <button class="round less" @click="handleSub(item)">-</button>1
+                                <!-- {{item.count}} -->
+                                <button class="round add" @click="handlePlus(item)">+</button>
+                            </div>
+                            <!-- <div class="amount">{{item.price * item.count}}</div> -->
+                            <div class="amount">500</div>
+                            <div class="operate">
+                                <button class="round-cxl add @click=" handledelete(index)><i class="fas fa-trash fa-1x "></i></button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </table>
+            </form>
+            <div class="total_body">
+                <div class="total-title">
+                    <h7 class="detail">結帳明細</h7>
+                </div>
+                <div class="row">
+                    <span class="label">商品總金額:</span>
+                    <!-- <div class="formw totalAmount"><span>$</span>{{item.price * item.count}}</div> -->
+                    <div class="formw totalAmount"><span>$</span>1600</div>
+                    <!-- <span class="formw"><input type="text" size="25" /></span> -->
+                </div>
+                <div class="row">
+                    <span class="label">使用環保幣折扣:</span>
+                    <!-- <input class="formw discount" value="$0" readonly > -->
+                    <input class="formw discount" value="$0" readonly>
+                </div>
+                <hr>
+                <div class="orderCount">
+                    <!-- <p>總計：${{subtotal[index]}}</p> -->
+                    <p class="orderCount-subtotal">總計：$1600</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- <button class="nextButton"><text class="next">填寫付款資訊</text></button> -->
+
+
+        </div>
+
+    </section>
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

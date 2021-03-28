@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/indexFront.css">
+
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/pages/indexFront.css">
+
+    <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
 
 </head>
 
@@ -20,27 +22,416 @@
     @@include('./layout/header.html')
     <!-- 會員登入 -->
     @@include('./layout/login.html')
-    
+
     <div class="homeAllPage">
-        <div class="homeBlock">
-            <div class="homePage1">
-                <div class="page1Left">
-                    <p>行動帶來改變</p>
-                    <h5>加入守護海洋環境的行列</h5>
-                    <img src="./img/indexFront/indexfont-img.png"alt="">
+        <div class="homeBotLayer1">
+            <div class="homeBlock">
+                <div class="homePage1">
+                    <div class="page1Left">
+                        <h5>行動帶來改變</h5>
+                        <h7>加入守護海洋環境的行列</h7>
+                        <form action="">
+                            <h7>總募款金額:3333333元</h7><br>
+                            <h7>總發起活動場次:3333333元</h7><br>
+                            <h7>總參與人數:3333333元</h7>
+                        </form>
+                        <h7>由衷感謝您的參與</h7>
+                    </div>
+                    <div class="page1Right">
+                        <!-- Swiper -->
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="page1RightCard">
+                                        <img src="./img/indexFront/indexImg1.jpeg" alt="">
+                                    </div>
+                                    <div class="page1RightText">
+                                        <h5>參予活動</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                        <button class="comBtn2">我是按鈕1</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page1RightCard">
+                                        <img src="./img/indexFront/indexImg2.jpg" alt="">
+                                    </div>
+                                    <div class="page1RightText">
+                                        <h5>客製化商品</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                        <button class="comBtn2">我是按鈕2</button>
+
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page1RightCard">
+                                        <img src="./img/indexFront/indexImg3.jpg" alt="">
+                                    </div>
+                                    <div class="page1RightText">
+                                        <h5>發起活動募款</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                        <button class="comBtn2">我是按鈕3</button>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page1RightCard">
+                                        <img src="./img/indexFront/indexImg4.jpg" alt="">
+                                    </div>
+                                    <div class="page1RightText">
+                                        <h5>歷史活動花絮</h5>
+                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                        <button class="comBtn2">我是按鈕4</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="page1Right"></div>
             </div>
-            <div class="homePage2"></div>
-            <div class="homePage3"></div>
-            <div class="homePage4"></div>
-            <div class="homePage5"></div>
+        </div>
+        <div class="homeBotLayer2">
+            <div class="frontBlur">
+                <div class="homeBlock">
+                    <div class="homePage2">
+                        <h5>最新活動推薦</h5>
+                        <div class="homePage2Top">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="page1RightCard">
+                                            <img src="./img/indexFront/indexImg1.jpeg" alt="">
+                                        </div>
+                                        <div class="page1RightText">
+                                            <h5>參予活動</h5>
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                            <button class="comBtn2">我是按鈕1</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="page1RightCard">
+                                            <img src="./img/indexFront/indexImg2.jpg" alt="">
+                                        </div>
+                                        <div class="page1RightText">
+                                            <h5>客製化商品</h5>
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                            <button class="comBtn2">我是按鈕2</button>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="page1RightCard">
+                                            <img src="./img/indexFront/indexImg3.jpg" alt="">
+                                        </div>
+                                        <div class="page1RightText">
+                                            <h5>發起活動募款</h5>
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                            <button class="comBtn2">我是按鈕3</button>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="page1RightCard">
+                                            <img src="./img/indexFront/indexImg4.jpg" alt="">
+                                        </div>
+                                        <div class="page1RightText">
+                                            <h5>歷史活動花絮</h5>
+                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
+                                            <button class="comBtn2">我是按鈕4</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <div class="homePage2Data">
+                            <div class="data1">
+                                <i class="fas fa-users fa-2x"></i><br>
+                                <h7>需求志工人數 30人</h7><br>
+                                <h7>已報名志工人數 30人</h7>
+                            </div>
+                            <div class="data2">
+                                <i class="fas fa-file-invoice-dollar fa-2x"></i><br>
+                                <h7>目標募款金額 100,000萬</h7><br>
+                                <h7>已達募款金額 50,000</h7>
+                            </div>
+                            <div class="data3">
+                                <i class="far fa-clock fa-2x"></i>
+                                <h7>活動截止日 10天</h7>
+                            </div>
+                            <div class="data4">
+                                <i class="fas fa-exclamation-circle fa-2x"></i>
+                                <h7>提醒</h7>
+                                <p style="color: red;">80%</p>
+                                <p>贈送官方紀念品</p>
+                                <p style="color: red;">60%</p>
+                                <p>活動確定成行</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeBotLayer3">
+            <div class="homePage3  homeBlock">
+                <div class="homePage3__left">
+                    <h5>標題廢話</h5>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, tenetur, voluptatum officia voluptatem neque cum impedit odit quis consequuntur repellat maxime libero iste, quaerat recusandae consectetur? Culpa repellendus deleniti
+                        exercitationem?</p>
+                </div>
+                <div class="homePage3__right">
+                    <h5>排行榜</h5>
+                    <div class="homePage3__right__no1 rank">
+                        <div>1</div>
+                        <img width="60px" height="60px" src="./img/indexFront/indexImg6.jpg" alt="">
+                        <div>a4927763</div>
+                        <div>900$</div>
+                    </div>
+                    <div class="homePage3__right__no2 rank">
+                        <div>1</div> <img width="40px" height="40px" src="./img/indexFront/indexImg6.jpg" alt="">
+                        <div>a4927763</div>
+                        <div>900$</div>
+                    </div>
+                    <div class="homePage3__right__no3 rank">
+                        <div>1</div> <img width="40px" height="40px" src="./img/indexFront/indexImg6.jpg" alt="">
+                        <div>a4927763</div>
+                        <div>900$</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeBotLayer4">
+            <div class="homePage4 homeBlock">
+                <h5>客製化商品</h5>
+                <div class="homePage4__customerBlock">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="page1RightCard">
+                                    <img src="./img/indexFront/indexImg1.jpeg" alt="">
+                                </div>
+                                <div class="page1RightText">
+                                    <h5>參予活動</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                    <button class="comBtn2">我是按鈕1</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="page1RightCard">
+                                    <img src="./img/indexFront/indexImg2.jpg" alt="">
+                                </div>
+                                <div class="page1RightText">
+                                    <h5>客製化商品</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                    <button class="comBtn2">我是按鈕2</button>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="page1RightCard">
+                                    <img src="./img/indexFront/indexImg3.jpg" alt="">
+                                </div>
+                                <div class="page1RightText">
+                                    <h5>發起活動募款</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                    <button class="comBtn2">我是按鈕3</button>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="page1RightCard">
+                                    <img src="./img/indexFront/indexImg4.jpg" alt="">
+                                </div>
+                                <div class="page1RightText">
+                                    <h5>歷史活動花絮</h5>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                                    <button class="comBtn2">我是按鈕4</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <h5>熱門推薦商品</h5>
+                <div class="homePage4__generalBlock">
+                    <div class="pro1">
+                        <div class="proDetail">
+                            <h6>環保袋</h6>
+                            <h6>300</h6><br>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                        </div>
+                    </div>
+                    <div class="pro2">
+                        <div class="proDetail">
+                            <h6>環保袋</h6>
+                            <h6>300</h6><br>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                        </div>
+                    </div>
+                    <div class="pro3">
+                        <div class="proDetail">
+                            <h6>環保袋</h6>
+                            <h6>300</h6><br>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeBotLayer5">
+            <div class="frontBlur">
+                <div class="homeBlock">
+                    <div class="homePage5">
+                        <div class="homePage5Left">
+                        <h5>熱門歷史活動回顧</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, tenetur, voluptatum officia voluptatem neque cum impedit odit quis consequuntur repellat maxime libero iste, quaerat recusandae consectetur? Culpa repellendus deleniti exercitationem?</p>
+                        </div>
+                        <div class="homePage5Right">
+                            <div id="swiper4" class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="page5Card">
+                                            <div class="content">
+                                                <h2 class="title">Mountain View</h2>
+                                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                                <button class="btn">View Trips</button>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="swiper-slide">
+                                        <div class="page5Card">
+                                            <div class="content">
+                                                <h2 class="title">Mountain View</h2>
+                                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                                <button class="btn">View Trips</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="page5Card">
+                                            <div class="content">
+                                                <h2 class="title">Mountain View</h2>
+                                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                                <button class="btn">View Trips</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="page5Card">
+                                            <div class="content">
+                                                <h2 class="title">Mountain View</h2>
+                                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                                <button class="btn">View Trips</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="page5Card">
+                                            <div class="content">
+                                                <h2 class="title">Mountain View</h2>
+                                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                                <button class="btn">View Trips</button>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="swiper-slide">
+                                        <div class="page5Card">
+                                            <div class="content">
+                                                <h2 class="title">Mountain View</h2>
+                                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                                <button class="btn">View Trips</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homeBotLayer6">
+            <div class="homeBlock">
+                <div class="homePage6">
+                    <div class="homePage6__left">
+                        <h5>標題廢話</h5>
+                        <p>全世界每年海洋平均多出約1,270萬噸的塑膠垃圾，對海洋生物造成嚴重的威脅，包括被窒息的海龜和中毒的鯨魚。聯合國指出，如果依照目前產生的塑膠廢棄物的速度，到了2050年、海洋中的塑膠垃圾總重將會大於所有魚類的重量。</p>
+                        <p>2018年台灣生產了974萬噸廢棄物(含水)，塑膠大約占166-205萬噸(約占17-21%)，其中回收再利用的只有49％，有高達1半以上的垃圾是被掩埋以及焚燒，對於環境造成顯著的影響。</p>
+                        <i>--資料來源環保署環境資源資料庫--</i>
+                    </div>
+                    <div class="homePage6__right">
+                        <video id="myVideo" preload="none" poster="./img/indexFront/videoThumbnail.jpg">
+                            <source  src="./img/indexFront/indexVideo1.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <button id="myBtn" onclick="myFunction()"></button>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    </div>
+    
 
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+        function myFunction() {
+          if (video.paused) {
+            video.play();
+            // btn.innerHTML = "Pause";
+          } else {
+            video.pause();
+            // btn.innerHTML = "Play";
+          }
+        }
+    </script>
+
+
     <script src="./js/login.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="./js/swiper-bundle.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            mousewheel: true,
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                effect: 'fade',
+            },
+        });
+  
+        var swiper4 = new Swiper('#swiper4', {
+            slidesPerView:2.3,
+            mousewheel: true,
+            keyboard: true,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                effect: 'fade',
+            },
+            
+        });
+    </script>
 </body>
 
 </html>

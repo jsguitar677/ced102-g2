@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  letter-spacing: 5px;
+}
+
+div.product-mb {
+  border: 1px solid red;
+  text-align: center;
+  margin: 10px auto;
+}
+
+div.product-mb a {
+  text-decoration: none;
+  color: #B0B0B0;
+  font-size: 28px;
+  margin: 10px 20px;
+}
+
+div.product-mb .active {
+  color: #1d1e4c;
+  font-weight: bold;
+}
+
+section {
+  border: 1px solid red;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: 10px;
+}
+
+section div.title-block {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+section div.title-block h1.title {
+  font-size: 28px;
+  color: #1d1e4c;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 0;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
+
+section div.content {
+  border: 1px solid red;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+section div.content div.sub-title-block {
+  text-align: center;
+}
+
+section div.content div.sub-title-block h2.sub-title {
+  font-size: 28px;
+}
+
+section div.content #app {
+  margin: 0 auto;
+  font-size: 18px;
+  color: #1d1e4c;
+}
+
+section div.content #app .item_header {
+  display: flex;
+  margin: 0 auto;
+  height: 30px;
+  background-color: #fff;
+  padding-left: 10px;
+}
+
+section div.content #app .item_header div {
+  width: 200px;
+  color: #1d1e4c;
+  line-height: 30px;
+}
+
+section div.content #app .item_header .item_detail {
+  width: 70%;
+  display: inline-block;
+}
+
+section div.content #app .item_body {
+  border: 1px solid #1d1e4c;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 88px;
+  align-items: center;
+}
+
+section div.content #app .item_detail img {
+  width: 80px;
+  height: 80px;
+  border-radius: 3px;
+  /* margin-top: 10px; */
+  float: left;
+}
+
+section div.content #app .item_detail .name,
+section div.content #app .item_detail .size {
+  margin-left: 100px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+section div.content #app button.round {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  outline: 0;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  background: #c3c3c3;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+section div.content #app button.add {
+  background-color: #1d1e4c;
+  font-size: 20px;
+}
+
+section div.content #app button.less {
+  background-color: white;
+  color: #1d1e4c;
+  font-size: 24px;
+}
+
+section div.content #app button.round-cxl {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  outline: 0;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  background: #1d1e4c;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+section div.content .total_body {
+  border: 1px solid #1d1e4c;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  position: relative;
+  margin-left: 80%;
+  text-align: center;
+  display: inline-block;
+  right: 0;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section div.content .total_body .total-title {
+  width: 100%;
+  height: 30px;
+  background-color: #1d1e4c;
+  border-radius: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+section div.content .total_body .total-title .detail {
+  color: white;
+  font-size: 18px;
+}
+
+section div.content .total_body div.row {
+  clear: both;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+section div.content .total_body div.row span.label {
+  float: left;
+  width: 160px;
+  text-align: left;
+}
+
+section div.content .total_body div.row div.formw {
+  float: right;
+  width: 100px;
+  text-align: right;
+}
+
+section div.content .total_body div.row input.formw {
+  float: right;
+  width: 100px;
+  text-align: right;
+}
+
+section div.content .total_body input.discount {
+  border: 1px solid #CACACA;
+}
+
+section div.content .total_body div.orderCount p {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=cart.css.map */

@@ -21,7 +21,11 @@ body main {
 }
 
 body main .genInfor {
+<<<<<<< HEAD
   min-width: 30%;
+=======
+  width: 30%;
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 body main .genInfor .personBlock {
@@ -156,12 +160,17 @@ body main .memberContent .expContent {
 }
 
 body main .memberContent .expContent .expDescription {
+<<<<<<< HEAD
   font-size: 15px;
   line-height: 30px;
   width: 30%;
   margin-top: 10%;
   margin-right: 30px;
   align-self: flex-start;
+=======
+  width: 30%;
+  margin-right: 30px;
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 body main .memberContent .expContent .expExchange {
@@ -177,7 +186,10 @@ body main .memberContent .expContent .expExchange .excBlcok {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+<<<<<<< HEAD
   border-radius: 15px;
+=======
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 body main .memberContent .expContent .expExchange .excBlcok::after {
@@ -213,6 +225,7 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
+<<<<<<< HEAD
 body main .memberContent .expContent .expExchange .excBlcok .expPart button.comBtn2 {
   background-color: #1D1E4C;
   color: #fafafa;
@@ -221,6 +234,8 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart button.comB
   cursor: pointer;
 }
 
+=======
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 .expRight {
   left: 20%;
 }
@@ -256,6 +271,7 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart button.comB
   height: calc(80vh - 120px);
   overflow: auto;
   padding-right: 10px;
+<<<<<<< HEAD
   color: #1D1E4C;
 }
 
@@ -266,6 +282,8 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart button.comB
 
 #orderRecord .orderBlock p {
   margin-bottom: 5px;
+=======
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 #orderRecord .orderBlock select {
@@ -275,6 +293,7 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart button.comB
 }
 
 #orderRecord .orderBlock table {
+<<<<<<< HEAD
   margin-top: 10px;
   width: 100%;
   text-align: left;
@@ -286,6 +305,18 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart button.comB
 #orderRecord .orderBlock table th, #orderRecord .orderBlock table td {
   text-align: center;
   vertical-align: center;
+=======
+  margin-top: 30px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#orderRecord .orderBlock table .thead {
+  text-align: center;
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 #orderRecord .orderBlock table .proItemDetail {
@@ -300,8 +331,15 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart button.comB
 }
 
 #memInfo div.memInfoContent h3 {
+<<<<<<< HEAD
   color: #fafafa;
   font-size: 22px;
+=======
+  text-align: center;
+  color: #fafafa;
+  font-size: 28px;
+  padding: 10px 0px 0px 10px;
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 #memInfo div.memInfoContent div {
@@ -340,7 +378,11 @@ button.tabLinks span:first-child {
 button.tabLinks span i {
   background-color: black;
   color: #fafafa;
+<<<<<<< HEAD
   padding: 5px 7px 4px 7px;
+=======
+  padding: 5px 4px 4px 7px;
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
   border-radius: 10px;
 }
 
@@ -384,6 +426,7 @@ button.active span {
 }
 
 .btnDisCon2Sty {
+<<<<<<< HEAD
   background-image: url("../../img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -394,12 +437,22 @@ button.active span {
 div#memExp h3 {
   color: #fafafa;
   font-size: 22px;
+=======
+  background-image: url("../../dist/img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 35%, 100%;
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 div#memExp div.expContent div.expDescription {
   color: #fafafa;
   font-size: 15px;
+<<<<<<< HEAD
   align-self: flex-start;
+=======
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 div#memExp div.expContent div.expDescription h3 {
@@ -408,7 +461,11 @@ div#memExp div.expContent div.expDescription h3 {
 }
 
 .btnConMemInfo {
+<<<<<<< HEAD
   background-image: url("../../img/member-1.jpg");
+=======
+  background-image: url("../../dist/img/member-1.jpg");
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -460,6 +517,7 @@ button.tabLinks {
   outline: none;
   cursor: pointer;
 }
+<<<<<<< HEAD
 
 .comShape {
   border-radius: 15px;
@@ -738,4 +796,6 @@ button:disabled {
 div#appMemberBriefIntro p {
   white-space: pre-wrap;
 }
+=======
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 /*# sourceMappingURL=member.css.map */

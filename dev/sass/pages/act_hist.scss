@@ -28,7 +28,7 @@ div.intro {
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
     background-color: #fff;
     color: #000;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Palatino Linotype';
     overflow: hidden;
 }
 
@@ -357,54 +357,70 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
 * {
     box-sizing: border-box;
 }
-
+body{
+    background-color: #F6F6F6;
+    font-family: 'Palatino Linotype';
+}
 div.ah_card_section {
-    height: 1500px;
-}
-
-ah_main.page-content {
-    /* border: 1px solid red; */
-    box-shadow: #00000067 0px 0px 25px 1px;
-    background-color: white;
-    width: 85%;
+    height: 100%;
+    width: 1200px;
+    // border: 1px solid red;
     margin: 0 auto;
-    margin-top: 10px;
     border-radius: 15px;
+    background-color: white;
     margin-bottom: 50px;
-    height: 1450px;
-}
-
-.page-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-gap: 2rem;
-    // padding: 2rem;
-    padding-left: 6rem;
-    /* width: 100%; */
+    margin-top: 15px;
+    padding: 50px;
+    padding-bottom: 20px;
+    box-shadow: 1px 1px 10px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-family: var(--font-sans);
-    justify-content: center;
 }
 
-.card {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    margin-right: 70px;
+.ah_page-content{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    padding: 1rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    font-family: var(--font-sans);
+
+}
+
+@media (min-width: 600px) {
+    .ah_page-content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  
+
+//   @media (min-width: 600px) {
+//     .page-content {
+//       grid-template-columns: repeat(2, 1fr);
+//     }
+//   }
+//   @media (min-width: 800px) {
+//     .page-content {
+//       grid-template-columns: repeat(4, 1fr);
+//     }
+//   }
+  .card {
+      border-radius: 15px;
     position: relative;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    padding: rem;
-    width: 300px;
+    padding: 1rem;
+    width: 100%;
     height: 400px;
+    width: 300px;
     text-align: center;
     color: whitesmoke;
     background-color: whitesmoke;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
-
+  }
 @media (min-width: 600px) {
     .card {
         height: 400px;
@@ -683,3 +699,75 @@ div.ah_picker>h1 {
     left: 30px;
     top: 10%;
 }
+
+div.ah_bread{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: 0 0;
+}
+
+div.ah_bread>ul{
+    padding: 10px;
+}
+
+div.ah_bread>ul>li{
+    font-size: 28px;
+        font-weight: bolder;
+        color: #C6C6C6;
+        display: inline-block;
+}
+div.ah_bread ul li::after {
+    content: " / "; }
+  div.ah_bread ul li:last-child {
+    color: #1D1E4C; }
+  div.ah_bread ul li:last-child::after {
+    content: ""; }
+@media (max-width: 575px) {
+  div.ah_bread ul li {
+    font-size: 18px; } }
+
+    // pagination
+    .pagination {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        // border: 1px solid red;
+      }
+      .pagination li {
+        display: inline;
+        text-align: center;
+      }
+      .pagination a {
+        display: inline-block;
+        font-size: 14px;
+        text-decoration: none;
+        padding: 5px 12px;
+        color: #1D1E4C;
+        margin-left: -1px;
+        border: 1px solid transparent;
+        line-height: 1.5;
+        transition: all 0.4s;
+      }
+      .pagination a.active {
+        cursor: default;
+      }
+      .pagination a:active {
+        outline: none;
+      }
+      
+      
+      .modal-3 a {
+        margin-left: 3px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
+      .modal-3 a:hover {
+       color: #FFAE41;
+      }
+      .modal-3 a.active, .modal-3 a:active {
+       color: #FFAE41;
+      }
