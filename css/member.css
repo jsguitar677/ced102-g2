@@ -21,7 +21,7 @@ body main {
 }
 
 body main .genInfor {
-  width: 30%;
+  min-width: 30%;
 }
 
 body main .genInfor .personBlock {
@@ -156,8 +156,12 @@ body main .memberContent .expContent {
 }
 
 body main .memberContent .expContent .expDescription {
+  font-size: 15px;
+  line-height: 30px;
   width: 30%;
+  margin-top: 10%;
   margin-right: 30px;
+  align-self: flex-start;
 }
 
 body main .memberContent .expContent .expExchange {
@@ -173,6 +177,7 @@ body main .memberContent .expContent .expExchange .excBlcok {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
+  border-radius: 15px;
 }
 
 body main .memberContent .expContent .expExchange .excBlcok::after {
@@ -206,6 +211,14 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
   border-radius: 50%;
   z-index: 1;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+body main .memberContent .expContent .expExchange .excBlcok .expPart button.comBtn2 {
+  background-color: #1D1E4C;
+  color: #fafafa;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
 }
 
 .expRight {
@@ -243,6 +256,16 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
   height: calc(80vh - 120px);
   overflow: auto;
   padding-right: 10px;
+  color: #1D1E4C;
+}
+
+#orderRecord .orderBlock h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#orderRecord .orderBlock p {
+  margin-bottom: 5px;
 }
 
 #orderRecord .orderBlock select {
@@ -252,16 +275,17 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
 }
 
 #orderRecord .orderBlock table {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
   text-align: left;
-  border: 1px solid #1D1E4C;
   border-radius: 15px;
-  padding: 10px;
+  padding: 20px;
+  border-collapse: collapse;
 }
 
-#orderRecord .orderBlock table .thead {
+#orderRecord .orderBlock table th, #orderRecord .orderBlock table td {
   text-align: center;
+  vertical-align: center;
 }
 
 #orderRecord .orderBlock table .proItemDetail {
@@ -276,10 +300,8 @@ body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
 }
 
 #memInfo div.memInfoContent h3 {
-  text-align: center;
   color: #fafafa;
-  font-size: 28px;
-  padding: 10px 0px 0px 10px;
+  font-size: 22px;
 }
 
 #memInfo div.memInfoContent div {
@@ -318,7 +340,7 @@ button.tabLinks span:first-child {
 button.tabLinks span i {
   background-color: black;
   color: #fafafa;
-  padding: 5px 4px 4px 7px;
+  padding: 5px 7px 4px 7px;
   border-radius: 10px;
 }
 
@@ -362,16 +384,22 @@ button.active span {
 }
 
 .btnDisCon2Sty {
-  background-image: url("../../dist/img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
+  background-image: url("../../img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
   background-origin: border-box;
   background-repeat: no-repeat;
-  background-position: left;
-  background-size: 35%, 100%;
+  background-position: left bottom;
+  background-size: 40%, 100%;
+}
+
+div#memExp h3 {
+  color: #fafafa;
+  font-size: 22px;
 }
 
 div#memExp div.expContent div.expDescription {
   color: #fafafa;
   font-size: 15px;
+  align-self: flex-start;
 }
 
 div#memExp div.expContent div.expDescription h3 {
@@ -380,7 +408,7 @@ div#memExp div.expContent div.expDescription h3 {
 }
 
 .btnConMemInfo {
-  background-image: url("../../dist/img/member-1.jpg");
+  background-image: url("../../img/member-1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -431,5 +459,283 @@ button.tabLinks {
   height: 30px;
   outline: none;
   cursor: pointer;
+}
+
+.comShape {
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+tr#memberTableRowBorder {
+  border-top: 1px solid #C6C6C6;
+}
+
+tr#memberTableRowBorder th {
+  padding: 2% 0 0;
+}
+
+tbody#memberTableTopBorder tr td {
+  padding: 0 0 2%;
+}
+
+thead#memberTableLowBlock {
+  border-top: 1px solid #C6C6C6;
+}
+
+thead#memberTableLowBlock tr:first-child th {
+  padding: 3% 0 0;
+}
+
+div#participateRecord {
+  color: #1D1E4C;
+}
+
+div#participateRecord h3 {
+  font-size: 22px;
+}
+
+div#participateRecord p {
+  font-size: 15px;
+  text-align: center;
+}
+
+div#participateRecord table.participateRecordTable {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid #1D1E4C;
+}
+
+div#participateRecord table.participateRecordTable th, div#participateRecord table.participateRecordTable td {
+  height: 50px;
+  text-align: center;
+}
+
+div.participateRecordCon {
+  display: flex;
+  justify-content: center;
+}
+
+div#eventManagement {
+  color: #1D1E4C;
+}
+
+div#eventManagement h3 {
+  font-size: 22px;
+}
+
+div#eventManagement p {
+  font-size: 15px;
+  text-align: center;
+}
+
+div#eventManagement table.eventManagementTable {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid #1D1E4C;
+}
+
+div#eventManagement table.eventManagementTable th, div#eventManagement table.eventManagementTable td {
+  height: 50px;
+  text-align: center;
+  width: 20%;
+}
+
+div#eventManagement table.eventManagementTable td button {
+  border-radius: 10px;
+  color: #fafafa;
+  background-color: #1D1E4C;
+  cursor: pointer;
+}
+
+div#memPage {
+  position: relative;
+}
+
+div#memPage div#eventManagementCancelModalCon {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal {
+  background-color: #fafafa;
+  color: #1D1E4C;
+  border-radius: 15px;
+  font-size: 15px;
+  width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2%;
+}
+
+div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form label {
+  vertical-align: top;
+}
+
+div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form div#eventManagementBtnCon {
+  align-self: flex-end;
+  justify-content: space-around;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form div#eventManagementBtnCon button#eventManagementCancel {
+  display: inline-block;
+  margin-right: 15%;
+  border: 1px solid #1D1E4C;
+  border-radius: 10px;
+  outline: none;
+  color: #1D1E4C;
+  background-color: #fafafa;
+  cursor: pointer;
+  padding: 5%;
+}
+
+div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form div#eventManagementBtnCon button#eventManagementSubmit {
+  display: inline-block;
+  border: 1px solid #1D1E4C;
+  outline: none;
+  border-radius: 10px;
+  padding-right: 5%;
+  color: #fafafa;
+  background-color: #1D1E4C;
+  cursor: pointer;
+  padding: 5%;
+}
+
+div#eventManagementCancelModalCloseBtn {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #1D1E4C;
+  background-color: #fafafa;
+  right: 3%;
+  top: 5%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 1%;
+}
+
+div#eventManagementCancelModalCloseBtn span {
+  background-color: #1D1E4C;
+  display: inline-block;
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: #1D1E4C;
+}
+
+div#eventManagementCancelModalCloseBtn span:last-child {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+
+div#eventSave h3 {
+  font-size: 22px;
+}
+
+div#eventSave div.owl-theme div.item div.memberCollection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+div#eventSave div.owl-theme div.item div.memberCollection div.memberCollectionPic {
+  height: 60%;
+  margin-bottom: 20px;
+}
+
+div#eventSave div.owl-theme div.item div.memberCollection div.memberCollectionPic img {
+  border-radius: 15px;
+}
+
+div#eventSave div.owl-theme div.item div.memberCollection button.memberCollectionCancel {
+  border-radius: 10px;
+  background-color: #fafafa;
+  color: #1D1E4C;
+  padding: 0 2%;
+  outline: none;
+  cursor: pointer;
+}
+
+div#eventSave div.owl-theme div.item div.memberCollection button.memberCollectionCancel i {
+  color: red;
+}
+
+div#memberContentId {
+  width: 70%;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid #fafafa;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D1E4C;
+  border-radius: 5px;
+}
+
+#memExp .expContent .expExchange .excBlcok .expPartReceived {
+  padding: 1px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+#memExp .expContent .expExchange .excBlcok .expPartReceived::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #EF4325;
+  border: 4px solid #EF4325;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+button:disabled {
+  background-color: rgba(250, 250, 250, 0.3);
+  color: rgba(29, 30, 76, 0.3);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.MemberCollectionHide {
+  display: none;
+}
+
+div#appMemberBriefIntro p {
+  white-space: pre-wrap;
 }
 /*# sourceMappingURL=member.css.map */

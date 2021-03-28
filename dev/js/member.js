@@ -54,4 +54,116 @@ function loadBtnMem(){
 window.addEventListener('load',loadBtnMem);
 //
 
+// document.getElementsByClassName('eventManagementCancelBtn').onclick = function(){
+//     document.getElementById('eventManagementCancelModalCon').style.display = 'block';
+// }
 
+
+function eventManagementModal(){
+    var a = document.getElementsByClassName('eventManagementCancelBtn');
+    for(let i = 0; i < a.length ; i++){
+        a[i].onclick = function(){
+            document.getElementById('eventManagementCancelModalCon').style.display = 'block';
+        }
+    }
+    document.getElementById('eventManagementCancelModalCloseBtn').onclick = function(){
+        document.getElementById('eventManagementCancelModalCon').style.display = '';
+    }
+    document.getElementById('eventManagementCancel').onclick = function(){
+        document.getElementById('eventManagementCancelModalCon').style.display = '';
+    }
+    
+}
+
+
+
+window.addEventListener('load', eventManagementModal);
+
+
+//owl carousel 輪播
+
+
+$(".owl-one").owlCarousel({
+    loop:true,
+    nav:false,
+    margin:35,
+    // autoplayTimeout: 2300,
+    // autoplay:false,
+    autoWidth:false,
+    dots:true,
+    // navText:[
+    //     prevIcon,
+    //     nextIcon
+    // ],
+    slideTransition:"linear",
+    responsive:{
+        500:{
+            items:3.5
+        },
+        // 600:{
+        //     items:3
+        // },
+        // 1000:{
+        //     items:5
+        // }
+    }
+});
+
+
+var owlClearItem = $('.owl-carousel');
+owlClearItem.owlCarousel();
+$('.memberCollectionCancel').click(function(){
+    owlClearItem.trigger('remove.owl.carousel',$('.memberCollectionCancel').index(this));
+    console.log($('.memberCollectionCancel').index(this));
+
+})
+
+
+
+
+
+
+//
+
+function ReceiveCoin(){
+    let rBtn = document.getElementsByClassName('comBtn2');
+    let receiveCoinMileStone = document.getElementsByClassName('expPart');
+    for(let i = 0; i<rBtn.length; i++){
+        rBtn[i].onclick = function(){
+            receiveCoinMileStone[0].classList.add('expPartReceived');
+            receiveCoinMileStone[0].classList.remove('expPart');
+            rBtn[i].disabled = true;
+        }
+    }
+}
+
+
+window.addEventListener('load',ReceiveCoin);
+
+
+
+// function cancelCollection(){
+//     let cancelCollectBtn = document.getElementsByClassName('memberCollectionCancel');
+//     let carouselItem = document.getElementsByClassName('item');
+//     // for(let i = 0; i < cancelCollectBtn.length; i++){
+//     //     cancelCollectBtn[i].onclick = function(){
+//     //         carouselItem[i].remove();
+//     //     }
+//     // }
+//         cancelCollectBtn[0].onclick = function(){
+//             // carouselItem[0].remove();
+//             carouselItem[0].classList.add('see');
+
+//         }
+// }
+
+
+
+// window.addEventListener('load',cancelCollection)
+
+new Vue({
+    el:'#appMemberBriefIntro',
+    data:{
+        MemberBriefIntroMessage:'',
+    },
+});

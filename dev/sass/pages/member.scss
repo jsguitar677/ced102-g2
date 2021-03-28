@@ -23,7 +23,7 @@ body{
         max-width: 1280px;
         margin: auto;
         .genInfor{
-            width:30%;
+            min-width:30%;
             .personBlock{
                 height:40vh;
                 margin-right: 13px;
@@ -123,7 +123,7 @@ body{
             padding: 30px;
             width:100%;
             border-radius: $borderRadius;
-    //         background-image: url('../img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
+            // background-image: url('./img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
     // background-origin: border-box;
             .tab{
                 display: flex;
@@ -146,8 +146,12 @@ body{
                 align-items: center;
                 overflow: auto;
                 .expDescription{
+                    font-size: $p;
+                    line-height: $lineHeight;
                     width:30%;
+                    margin-top: 10%;
                     margin-right: 30px;
+                    align-self: flex-start;
                 }
                 .expExchange{
                     width: 60%;
@@ -162,7 +166,7 @@ body{
                         position: relative;
                         max-width: 800px;
                         margin: 0 auto;
-
+                        border-radius: $borderRadius;
                         // 直線
                             &::after{
                                 content: '';
@@ -193,6 +197,13 @@ body{
                                 border-radius: 50%;
                                 z-index: 1;
                                 box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+                            }
+                            button.comBtn2{
+                                background-color: map-get($map: $color_regulation, $key: 'blue');
+                                color: map-get($map: $color_regulation, $key: 'white');
+                                border-radius: $borderBtnRadius;
+                                outline: none;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -236,25 +247,37 @@ body{
         height: calc(80vh - 120px);
         overflow: auto;
         padding-right: 10px;
+        color: map-get($map: $color_regulation, $key: 'blue');
+        h3{
+            font-size: $h6;
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 5px;
+        }
         select{
             border:1px solid #1D1E4C;
             border-radius: 5px;
             outline: none;
         }
         table{
-            margin-top: 30px;
+            margin-top: 10px;
             width: 100%;
             text-align: left;
-            border:1px solid#1D1E4C;
+            // border:1px solid#1D1E4C;
             border-radius: 15px;
-            padding: 10px;
-            .thead{
+            padding: 20px;
+            border-collapse: collapse;
+            th,td{
                 text-align: center;
+                vertical-align: center;
+                // border:1px solid#1D1E4C;
             }
             .proItemDetail{
                 height: 300px;
                 overflow: hidden;
             }
+
         }
     }
     
@@ -266,10 +289,10 @@ body{
         height: 100%;
         font-size: $p;
         h3{
-            text-align: center;
+            // text-align: center;
             color: map-get($map: $color_regulation, $key: 'white');
-            font-size: $h5;
-            padding: 10px 0px 0px 10px;
+            font-size: $h6;
+            // padding: 10px 0px 0px 10px;
         }
         div{
             display: flex;
@@ -302,7 +325,7 @@ button.tabLinks{
         i{
             background-color: black;
             color: map-get($map: $color_regulation, $key: 'white');
-            padding: 5px 4px 4px 7px;
+            padding: 5px 7px 4px 7px;
             border-radius: $borderBtnRadius;
         }
        line-height: $lineHeight;
@@ -370,17 +393,23 @@ button.active{
 }
 
 .btnDisCon2Sty{
-    background-image: url('../../dist/img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
+    background-image: url('../../img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
     background-origin: border-box;
     background-repeat: no-repeat;
-    background-position: left;
-    background-size: 35%, 100%;
+    background-position: left bottom;
+    background-size: 40%, 100%;
 }
 div#memExp{
+    h3{
+        color: map-get($map: $color_regulation, $key: 'white');
+        font-size: $h6;
+    }
     div.expContent{
+        
         div.expDescription{
             color: map-get($map: $color-regulation, $key: 'white');
             font-size: $p;
+            align-self: flex-start;
 
             h3{
                 color: map-get($map: $color-regulation, $key: 'white');
@@ -388,9 +417,10 @@ div#memExp{
                 }
             }
     }
+    
 }
 .btnConMemInfo{
-    background-image: url('../../dist/img/member-1.jpg');
+    background-image: url('../../img/member-1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -437,5 +467,278 @@ button.tabLinks{
         height: 30px;
         outline: none;
         cursor: pointer;
+    }
+}
+.comShape{
+    border-radius: $borderRadius;
+    box-shadow: $box-shadow;
+}
+
+tr#memberTableRowBorder{
+    border-top:1px solid map-get($map: $color_regulation, $key: 'gray');
+    th{
+        padding: 2% 0 0;
+    }
+}
+
+tbody#memberTableTopBorder{
+    tr{
+        td{
+            padding: 0 0 2%;
+        }
+    }
+}
+
+thead#memberTableLowBlock{
+    border-top:1px solid map-get($map: $color_regulation, $key: 'gray');
+    tr{
+        &:first-child{
+            th{
+                padding: 3% 0 0;
+            }
+        }
+    }
+}
+
+div#participateRecord{
+    color: map-get($map: $color_regulation, $key: 'blue');
+    h3{
+        font-size: $h6;
+    }
+    p{
+        font-size: $p;
+        text-align: center;
+    }
+    table.participateRecordTable{
+        // display: block;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: $borderRadius;
+        border: 1px solid map-get($map: $color_regulation, $key: 'blue');
+        th,td{
+            height: 50px;
+            text-align: center;
+        }
+    }
+}
+
+div.participateRecordCon{
+    display: flex;
+    justify-content: center;
+}
+
+div#eventManagement{
+    color: map-get($map: $color_regulation, $key: 'blue');
+    h3{
+        font-size: $h6;
+    }
+    p{
+        font-size: $p;
+        text-align: center;
+    }
+    table.eventManagementTable{
+        // display: block;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: $borderRadius;
+        border: 1px solid map-get($map: $color_regulation, $key: 'blue');
+        th,td{
+            height: 50px;
+            text-align: center;
+            width: 20%;
+        }
+        td{
+            button{
+                border-radius: $borderBtnRadius;
+                color: map-get($map: $color_regulation, $key: 'white');
+                background-color: map-get($map: $color_regulation, $key: 'blue');
+                cursor: pointer;
+            }
+        }
+    }
+}
+div#memPage{
+    position: relative;
+    div#eventManagementCancelModalCon{
+        display: none;
+        position: absolute;
+        background-color: rgba(0,0,0,.6);
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        div#eventManagementCancelModal{
+            background-color: map-get($map: $color_regulation, $key: 'white');
+            color: map-get($map: $color_regulation, $key: 'blue');
+            border-radius: $borderRadius;
+            font-size: $p;
+            width: 650px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2%;
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                label{
+                    vertical-align: top;
+                }
+                textarea{}
+                div#eventManagementBtnCon{
+                    align-self: flex-end;
+                    justify-content: space-around;
+                    width: 20%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    button#eventManagementCancel{
+                        display: inline-block;
+                        margin-right: 15%;
+                        border:1px solid map-get($map: $color_regulation, $key: 'blue');
+                        border-radius: $borderBtnRadius;
+                        outline: none;
+                        color: map-get($map: $color_regulation, $key: 'blue');
+                        background-color: map-get($map: $color_regulation, $key: 'white');
+                        cursor: pointer;
+                        padding: 5%;
+                    }
+                    button#eventManagementSubmit{
+                        display: inline-block;
+                        border:1px solid map-get($map: $color_regulation, $key: 'blue');
+                        outline: none;
+                        border-radius: $borderBtnRadius;
+                        padding-right: 5%;
+                        color: map-get($map: $color_regulation, $key: 'white');
+                        background-color: map-get($map: $color_regulation, $key: 'blue');
+                        cursor: pointer;
+                        padding: 5%;
+
+                    }
+                }
+            }
+        }
+    }
+}
+div#eventManagementCancelModalCloseBtn{
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid map-get($map: $color_regulation, $key: 'blue');
+    background-color: map-get($map: $color_regulation, $key: 'white');
+    right: 3%;
+    top: 5%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 1%;
+    span{
+        background-color: map-get($map: $color_regulation, $key: 'blue');
+        display: inline-block;
+        width: 25px;
+        height: 3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        color: map-get($map: $color_regulation, $key: 'blue');
+        &:last-child{
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(315deg);
+        }
+    }
+}
+
+div#eventSave{
+    h3{
+        font-size: $h6;
+    }
+    div.owl-theme{
+        div.item{
+            div.memberCollection{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                div.memberCollectionPic{
+                    height: 60%;
+                    img{
+                        border-radius: $borderRadius;
+                    }
+                    margin-bottom: 20px;
+                }
+                button.memberCollectionCancel{
+                    border-radius: $borderBtnRadius;
+                    background-color: map-get($map: $color_regulation, $key: 'white');
+                    color: map-get($map: $color_regulation, $key: 'blue');
+                    padding: 0 2%;
+                    outline: none;
+                    cursor: pointer;
+                    i{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+div#memberContentId{
+    width: 70%;
+    overflow: hidden;
+}
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    border: 1px solid map-get($map: $color_regulation, $key: 'white'); 
+    background-color: map-get($map: $color_regulation, $key: 'white');
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1D1E4C; 
+    border-radius: 5px;
+  }
+#memExp{
+    .expContent{
+        .expExchange{
+            .excBlcok{
+                .expPartReceived{
+                    padding: 1px 40px;
+                    position: relative;
+                    background-color: inherit;
+                    width: 50%;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 25px;
+                        height: 25px;
+                        right: -17px;
+                        background-color: #EF4325;
+                        border: 4px solid #EF4325;
+                        top: 15px;
+                        border-radius: 50%;
+                        z-index: 1;
+                        box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+                    }
+                }
+            }
+        }
+    }
+}
+button:disabled {
+    background-color: rgba(250,250,250,.3);
+    color: rgba(29,30,76,.3);
+    border-radius: $borderBtnRadius;
+    outline: none;
+    cursor: pointer;
+}
+.MemberCollectionHide{
+    display: none;
+}
+div#appMemberBriefIntro{
+    p{
+        white-space: pre-wrap;
     }
 }
