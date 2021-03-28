@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities</title>
+    <link rel="stylesheet" href="./plugin/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css"> -->
+    <link rel="stylesheet" href="./css/pages/initiation_agreement.css">
+    <!-- <link rel="stylesheet" href="./css/test.css"> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+</head>
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <main class="event">
+        <div class="bread">
+            <ul>
+                <li>首頁</li>
+                <li>活動募款參加平台</li>
+                <li class="current">發起活動上傳平台</li>
+            </ul>
+        </div>
+        <div class="content">
+            <section id="section1">
+                <form>
+                    <div class="container">
+                        <div class="row  justify-content-center">
+                            <div class="col-lg-6 col-md-8 col-sm-10 col-11 part">
+                                <div class="description">
+                                    <h2>發起活動事前須知：<span>請詳讀事前須知</span></h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique eligendi et dolor, cumque maxime reprehenderit? Temporibus minima impedit voluptates repudiandae itaque delectus ipsum? Aliquid illo, veniam dignissimos eum nam quo.</p>
+                                    <div class="checkbox-block">
+                                        <input type="checkbox" name="agreement" id="agreement"><label for="agreement">已瞭解說明(點選視同同意)</label>
+                                    </div>
+                                    <div class="btn"><a href="./initiation_info.html">已詳閱並同意</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+</html>

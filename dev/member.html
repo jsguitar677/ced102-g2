@@ -8,9 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/member.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
 </head>
 
 <body>
@@ -20,6 +23,27 @@
     @@include('./layout/login.html')
     <!-- 會員頁面 -->
     <div id="memPage">
+        <div id="eventManagementCancelModalCon">
+            <div id="eventManagementCancelModal">
+                <div id="eventManagementCancelModalCloseBtn">
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>如需取消活動，須經由官方審核說明原因</p>
+                <form action="#">
+                    <div>
+                        <label for="eventManagementCancelReason">
+                            理由
+                        </label>
+                        <textarea name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
+                    </div>
+                    <div id="eventManagementBtnCon">
+                        <button id="eventManagementCancel">取消</button>
+                        <button id="eventManagementSubmit">提交審核</button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <h5>會員中心</h5>
         <main>
             <div class="genInfor">
@@ -36,11 +60,14 @@
                         </span>
                     </div>
                     <div class="proBtnBlock">
-                        <!-- <input class="comInput" type="text" placeholder="輸入自我介紹吧!"> -->
-                        <textarea class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5"></textarea>
-                        <button>
-                            <i class="far fa-edit fa-2x"></i>
-                        </button>
+                        <div id="appMemberBriefIntro">
+                            <!-- <input class="comInput" type="text" placeholder="輸入自我介紹吧!"> -->
+                            <p>{{MemberBriefIntroMessage}}</p>
+                            <textarea class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5" v-model="MemberBriefIntroMessage"></textarea>
+                            <button>
+                                <i class="far fa-edit fa-2x"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- 下block -->
@@ -151,6 +178,7 @@
             
                 <div id="memInfo" class="tabContent ">
                     <div class="memInfoContent">
+                        <h3>會員資訊</h3>
                         <!-- <div>
                             <ul id="memInfoContentLft">
                                 <li>會員等級</li>
@@ -205,7 +233,7 @@
                 <div id="memExp" class="tabContent ">
                     <div class="expContent">
                         <div class="expDescription">
-                            <h3>累計經驗值兌換說明</h3>
+                            
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, ipsam? Est cum ipsam quidem nihil beatae cumque fugiat reprehenderit, nemo ratione facere aliquam facilis sequi impedit labore! Eius, quasi expedita!
                         </div>
                         <div class="expExchange">
@@ -278,7 +306,7 @@
                 <div id="orderRecord" class="tabContent">
                     <div class="orderBlock">
                         <h3>商城消費紀錄</h3>
-                        選擇日期
+                        <p>選擇日期</p>
                         <div></div>
                         <form action="">
                             <select>
@@ -297,7 +325,7 @@
                                         <th>送貨狀態</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="memberTableTopBorder">
                                     <tr>
                                         <td>2013/03/24</td>
                                         <td>#332345</td>
@@ -307,7 +335,7 @@
                                 </tbody>
         
                                 <thead>
-                                    <tr>
+                                    <tr id="memberTableRowBorder">
                                         <th>商品圖片</th>
                                         <th>商品名稱</th>
                                         <th>數量</th>
@@ -370,7 +398,7 @@
                                         <td>100$</td>
                                     </tr>
                                 </tbody>
-                                <thead class="thead">
+                                <thead class="thead" id="memberTableLowBlock">
                                     <tr><th colspan="4">商品總金額 300$</th></tr>
                                     <tr><th colspan="4">使用環保幣折扣 -30$</th></tr>
                                     <tr><th colspan="4">總價270$</th></tr>
@@ -381,24 +409,180 @@
                     
                 </div>
                 <div id="participateRecord" class="tabContent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
+                    <h3>參與募款</h3>
+                    <p>感謝您的支持</p>
+                    <div class="participateRecordCon">
+                        <table class="participateRecordTable">
+                            <tr id="participateRecordRow1">
+                                <th>活動日期</th>
+                                <th>活動名稱</th>
+                                <th>活動地點</th>
+                                <th>贊助金額</th>
+                                <th>活動編號</th>
+                            </tr>
+                            <tr id="participateRecordCont">
+                                <td>2013/03/30</td>
+                                <td>一起去打寶</td>
+                                <td>桃園永安漁港</td>
+                                <td>$400</td>
+                                <td>@313313</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <h3>志工紀錄</h3>
+                    <div class="participateRecordCon">
+                        <table class="participateRecordTable">
+                            <tr id="participateRecordRow1">
+                                <th>活動日期</th>
+                                <th>活動名稱</th>
+                                <th>活動地點</th>
+                                <th>活動編號</th>
+                            </tr>
+                            <tr id="participateRecordCont" class="participateRecordContent">
+                                <td>2013/03/30</td>
+                                <td>一起去打寶</td>
+                                <td>桃園永安漁港</td>
+                                <td>@313313</td>
+                            </tr>
+                            <tr class="participateRecordContent">
+                                <td>2013/03/30</td>
+                                <td>我只想撿回收</td>
+                                <td>新金山海灣</td>
+                                <td>@313313</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div> 
                 <div id="eventManagement" class="tabContent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p> 
+                    <h3>活動發起紀錄</h3>
+                    <div class="participateRecordCon">
+                        <table class="eventManagementTable">
+                            <tr class="eventManagementRow1">
+                                <th>活動日期</th>
+                                <th>活動編號</th>
+                                <th>活動狀態</th>
+                                <th>管理</th>
+                            </tr>
+                            <tr class="eventManagementContent">
+                                <td>2021/01/21 13:00</td>
+                                <td>編號#2222222活動由系統下架!</td>
+                                <td>延期中</td>
+                                <td><button class="eventManagementCancelBtn">取消</button></td>
+                            </tr>
+                            <tr class="eventManagementContent">
+                                <td>2021/01/21 13:00</td>
+                                <td>編號#2222222活動由系統下架!</td>
+                                <td>進行中</td>
+                                <td><button class="eventManagementCancelBtn">取消</button></td>
+                            </tr>
+                            <tr class="eventManagementContent">
+                                <td>2021/01/21 13:00</td>
+                                <td>編號#2222222活動由系統下架!</td>
+                                <td>失敗</td>
+                                <td><button class="eventManagementCancelBtn">取消</button></td>
+                            </tr>
+                            <tr class="eventManagementContent">
+                                <td>2021/01/21 13:00</td>
+                                <td>編號#2222222活動由系統下架!</td>
+                                <td>成功</td>
+                                <td><button class="eventManagementCancelBtn">取消</button></td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    
                 </div>
                 <div id="eventSave" class="tabContent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
+                    <h3>您收藏的活動</h3>
+                    <div class="owl-one owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach1.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏1
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach2.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏2
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach3.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏3
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach4.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏4
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach5.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏5
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach6.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏6
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="memberCollection">
+                                <div class="memberCollectionPic">
+                                    <img src="./img/act_hist/beach7.jpg" alt="">
+                                </div>
+                                <button class="memberCollectionCancel">
+                                    取消收藏7
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
     
     
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./js/member.js"></script>
+
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>

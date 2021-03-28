@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 @charset "UTF-8";
 ::-webkit-scrollbar {
   width: 12px;
@@ -59,6 +61,7 @@
   padding: 0 15px;
 }
 
+>>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 body {
   margin: 0px;
 }
