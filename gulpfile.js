@@ -1,4 +1,5 @@
 const { src, series, dest, parallel, watch } = require('gulp');
+const index_path = require('./indexpath.js');
 
 const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');
@@ -88,6 +89,7 @@ exports.browser = function browsersync() {
         server: {
             baseDir: './dist', //跟目錄設定
             index: 'act_detail.html', //需更改成自己頁面的名稱
+
             injectChanges: false,
         },
     });

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css' />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/indexFront.css">
+    <!-- 本機端css連結用下列: -->
+    <!-- <link rel="stylesheet" href="./css/CustomizedBag_RWD.css"> -->
+    <!-- git css連結用下列: -->
+    <link rel="stylesheet" href="./css/pages/CustomizedBag.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/CustomizedBag.js"></script>
+    <title>R客製商品</title>
+</head>
+
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+
+    <div class="title-block">
+        <h5 class="title"><span>首頁/商城/</span>客製化商品</h5>
+    </div>
+
+    <section class="CustomizedBagPage">
+        <div class="content_costomizedBag">
+
+            <div class="top_back_img_1">
+                <div class="top_back_img_2">
+                    <img src="./img/mall/banner_005(1).jpg">
+                </div>
+            </div>
+
+            <h5 class="title_2">客製化 - 購物袋</h5>
+
+            <!-- 頁面上半部:左側圖區  右側購物選單 -->
+            <div class="container">
+                <div class="row all">
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 leftarea">
+                    <!-- ====================================左上側 客製商品區==================================== -->
+                    <!-- ====================================左上側 客製商品區==================================== -->
+                    <!-- ====================================左上側 客製商品區==================================== -->
+                        
+                        <div class="leftarea_block">
+                            <!-- ============空白圖片區============ -->
+                            <!-- ============空白圖片區============ -->
+                            <!-- ============空白圖片區============ -->
+                            <img src="./img/mall/bgimg_02.jpg" class="customizedBg_img">
+                            <h6 class="urstyle">印上個人風格吧!</h6>
+
+                            <div class="customized_area">
+                                <img src="./img/mall/bag_white.png" class="customized_img" id="img_color">
+    
+                                <!-- 放置上傳客製圖的div:前面 -->
+                                <div class="image_front">
+                                    <image id="image1"></image>
+                                </div>
+    
+                                <!-- 放置上傳客製圖的div:背面 -->
+                                <div class="image_back">
+                                    <image id="image2"></image>
+                                </div>
+    
+                                <p class="front">FRONT</p>
+                                <p class="back">BACK</p>
+                            </div>
+                            <!-- ============商品簡介區============ -->
+                            <!-- ============商品簡介區============ -->
+                            <!-- ============商品簡介區============ -->
+                            <h6 class="aboutProducts">商品簡介</h6>
+                            <img src="./img/mall/bottom.png" id="showInfo">
+                            <div class="leftarea_block" id="showInforHere">
+                                <p class="textaboutProducts">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae consequuntur doloremque minus, aperiam doloribus mollitia facere fuga est excepturi hic suscipit veniam iste atque esse ab eum ratione ipsam ea soluta quos
+                                    voluptas corrupti nesciunt! Soluta eveniet consequatur aliquam repellat animi, porro sed, totam inventore laudantium officiis praesentium in cumque possimus explicabo odit. Culpa ex perspiciatis impedit soluta dolorum voluptatibus
+                                    earum quo eum eveniet animi sunt enim placeat eligendi error rerum ad, corporis accusantium beatae in praesentium architecto possimus alias fuga. Illo provident et deleniti aliquam sed voluptates minus quod sequi. Corporis
+                                    neque, alias ut quis aperiam enim explicabo quod.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ====================================右上側 選色選圖區==================================== -->
+                    <!-- ====================================右上側 選色選圖區==================================== -->
+                    <!-- ====================================右上側 選色選圖區==================================== -->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 rightarea">
+                        <h6>訂製個人專屬商品吧!</h6>
+                        <form action="" method="get" class="inforOfTheForm">
+                            <!-- ==============選色區============== -->
+                            <!-- ==============選色區============== -->
+                            <!-- ==============選色區============== -->
+                            <div class="color_block">
+                                
+                                <p class="stepExplain">STEP.1 - 請選擇商品顏色</p>
+                                <p class="stepExplain">( 選色不需加價 )</p>
+                                <div class="color_block1">
+                                    <!-- 顏色色塊 -->
+                                    <div class="ProductColor" id="color_btn_1">
+                                        <div class="theColor theColor1"></div>
+                                        <input type="radio" name="choiceTheColor" class="circleBtn" value="white">米白
+                                    </div>
+    
+                                    <div class="ProductColor" id="color_btn_2">
+                                        <div class="theColor theColor2"></div>
+                                        <input type="radio" name="choiceTheColor" class="circleBtn" value="blue">天空藍
+                                    </div>
+    
+                                    <div class="ProductColor" id="color_btn_3">
+                                        <div class="theColor theColor3"></div>
+                                        <input type="radio" name="choiceTheColor" class="circleBtn" value="green">環保綠
+                                    </div>
+    
+                                    <div class="ProductColor" id="color_btn_4">
+                                        <div class="theColor theColor4"></div>
+                                        <input type="radio" name="choiceTheColor" class="circleBtn" value="pink">甜心粉
+                                    </div>
+    
+                                    <div class="ProductColor" id="color_btn_5">
+                                        <div class="theColor theColor5"></div>
+                                        <input type="radio" name="choiceTheColor" class="circleBtn" value="navy">深海藍
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ==============傳圖區============== -->
+                            <!-- ==============傳圖區============== -->
+                            <!-- ==============傳圖區============== -->
+                            <div class="picture_block">
+                                <p class="stepExplain">STEP.2 - 上傳圖片至指定位置</p>
+                                <p class="stepExplain stepExplain1">* 每個指定位置只能上一張圖片</p>
+                                <p class="stepExplain stepExplain1">* 每上傳一張圖片需加價NT$100</p>
+    
+                                <div class="picture_block2">
+                                    <div class="placement_of_product">
+                                        <label class="placement">正面位置(+NT$100) :</lable>
+                                        <div class="placememtOfInput">
+                                            <input type="file" id="theFile1" class="theFileBtn">
+                                        </div>
+                                    </div>
+    
+                                    <div class="placement_of_product">
+                                        <label class="placement">背面位置(+NT$100) :</lable>
+                                        <div class="placememtOfInput">
+                                            <input type="file" id="theFile2" class="theFileBtn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- ===========選擇數量區============= -->
+                            <!-- ===========選擇數量區============= -->
+                            <!-- ===========選擇數量區============= -->
+                            <div class="qty_block">
+                                <p class="stepExplain">STEP.3 - 請選擇購買數量</p>
+                                <div class="placememtOfQty">
+                                    <label class="style_qty">數量-</label>
+                                        <select class="select_qty_pcs" name="select_qty_pcs">
+                                        <option value="1" selected>1</option>
+                                        <option value="2" >2</option>
+                                        <option value="3" >3</option>
+                                        <option value="4" >4</option>
+                                        <option value="5" >5</option>
+                                        <option value="6" >6</option>
+                                        <option value="7" >7</option>
+                                        <option value="8" >8</option>
+                                        <option value="9" >9</option>
+                                        <option value="10" >10</option>
+                                        <option value="11" >11</option>
+                                        <option value="12" >12</option>
+                                        <option value="13" >13</option>
+                                        <option value="14" >14</option>
+                                        <option value="15" >15</option>
+                                        <option value="16" >16</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                    </select>
+                                    </div>
+                                </div>
+                            <!-- =============小計區=============== -->
+                            <!-- =============小計區=============== -->
+                            <!-- =============小計區=============== -->
+                            <div class="tal_block">
+                                    <p class="stepExplain">小計</p>
+                                    <div class="placementOfTal">
+                                        <label class="thePrice">商品價格</label><label>NT$500</label>
+                                        <br>
+                                        <label class="thePrice">圖片加價</label><label>NT$200</label>
+                                        <br>
+                                        <label class="thePrice">小計金額</label><label>NT$700</label>
+                                    </div>
+                                </div>
+    
+                                <div class="placeOfSubmit">
+                                    <button type="submit" name="shopping_cart" class="btn_shopping_cart">加入購物車
+                                    <img src="./img/mall/cart.JPG" alt="">
+                                </button>
+                                </div>
+                        </form>
+                        <!-- </div> -->
+                    </div>
+                    <!-- =====================================下側 推薦商品區===================================== -->
+                    <!-- =====================================下側 推薦商品區===================================== -->
+                    <!-- =====================================下側 推薦商品區===================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 bottomarea">
+                        <h5 class="title_2">熱門推薦商品</h5>
+                        <div class="bottomareaBox">
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct">
+                                    <img src="./img/mall/bag2.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保購物袋</p>
+                                        <p class="NameAndPrice">NT$500</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct B">
+                                    <img src="./img/mall/mask1.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保口罩</p>
+                                        <p class="NameAndPrice B">NT$150</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct B">
+                                    <img src="./img/mall/phone1.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保手機殼</p>
+                                        <p class="NameAndPrice B">NT$1290</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct B">
+                                    <img src="./img/mall/cup1.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保杯套</p>
+                                        <p class="NameAndPrice B">NT$190</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>            
+    </section>
+
+
+    <script>
+        //切換衣服顏色
+        $(document).ready(function() {
+            $('#color_btn_1').click(function() {
+                $('#img_color').attr('src', './img/mall/bag_white.png');
+            });
+
+            $('#color_btn_2').click(function() {
+                $('#img_color').attr('src', './img/mall/bag_blue.png');
+            });
+
+            $('#color_btn_3').click(function() {
+                $('#img_color').attr('src', './img/mall/bag_green.png');
+            });
+
+            $('#color_btn_4').click(function() {
+                $('#img_color').attr('src', './img/mall/bag_pink.png');
+            });
+
+            $('#color_btn_5').click(function() {
+                $('#img_color').attr('src', './img/mall/bag_navy.png');
+            });
+        });
+
+        //商品簡介 切換:
+        $(document).ready(function(){
+           $('#showInfo').click(function(){
+                $('#showInforHere').slideToggle();
+                // $('.right_04').fadeToggle();
+          })
+      });
+
+    </script>
+
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
