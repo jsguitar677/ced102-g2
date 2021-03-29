@@ -33,14 +33,16 @@
             <div class="homeBlock">
                 <div class="homePage1">
                     <div class="page1Left">
-                        <h5>行動帶來改變</h5>
-                        <h7>加入守護海洋環境的行列</h7>
-                        <form action="">
-                            <h7>總募款金額:3333333元</h7><br>
-                            <h7>總發起活動場次:3333333元</h7><br>
-                            <h7>總參與人數:3333333元</h7>
-                        </form>
-                        <h7>由衷感謝您的參與</h7>
+                        <div>
+                            <h5>行動帶來改變</h5>
+                            <h7>加入守護海洋環境的行列</h7>
+                            <form action="">
+                                <h7>總募款金額:3333333元</h7><br>
+                                <h7>總發起活動場次:3333333元</h7><br>
+                                <h7>總參與人數:3333333元</h7>
+                            </form>
+                            <h7>由衷感謝您的參與</h7>
+                        </div>
                     </div>
                     <div class="page1Right">
                         <!-- Swiper -->
@@ -48,7 +50,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="page1RightCard">
-                                        <img src="./img/indexFront/indexImg1.jpeg" alt="">
+                                        <img src="./img/indexFront/indexImg1.jpeg" width="auto" height="auto" alt="">
                                     </div>
                                     <div class="page1RightText">
                                         <h5>參予活動</h5>
@@ -153,7 +155,7 @@
                             <h7 id="moneyNow">已達募款金額 </h7>
                         </div>
                         <div class="data3">
-                            <i class="far fa-clock fa-2x"></i>
+                            <i class="far fa-clock fa-2x"></i><br>
                             <h7 id="deadline">活動截止日 天</h7>
                         </div>
                         <div class="data4">
@@ -198,8 +200,8 @@
                 </div>
             </div>
         </div>
-        <div class="homeBotLayer4">
-            <div class="homePage4 homeBlock">
+        <div class="homeBotLayer4 homeBlock">
+            <div class="homePage4 ">
                 <h5>客製化商品</h5>
                 <div class="homePage4__customerBlock">
                     <div class="frontBlur2" id="bgchange1">
@@ -398,6 +400,7 @@
                                     <h6>$300</h6>
                                 </div>
 
+
                                 <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
                                 <button onclick="location.href='./NormalProdcut.html'"><p>查看商品</p><i class="fas fa-info-circle"></i></button>
                                 <button ><p>加入購物車</p><i class="fas fa-shopping-cart" fa-2x></i></button>
@@ -593,12 +596,18 @@
                 effect: 'fade',
             },
         });
-  
-        var swiper4 = new Swiper('#swiper4', {
-            slidesPerView:2.3,
+        
+        
+        var swiper4 = new Swiper('#swiper4', {          
+            slidesPerView:3,
             mousewheel: true,
             keyboard: true,
             spaceBetween: 30,
+            breakpoints:{
+                768: {
+                    slidesPerView:2.3,
+                },
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -610,6 +619,9 @@
             },
             
         });
+        
+        
+       
     </script>
 
     

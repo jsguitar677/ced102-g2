@@ -25,7 +25,7 @@ body{
         .genInfor{
             min-width:30%;
             .personBlock{
-                height:40vh;
+                height:45vh;
                 margin-right: 13px;
                 margin-bottom:13px;
                 padding: 10px;
@@ -65,13 +65,12 @@ body{
                     }
                 }
                 .proBtnBlock{
-                
-
+                    width: 317px;
+                    position: relative;
                     // background-color:coral;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 50%;
                     textarea{
                         overflow: auto;
                         height:100px;
@@ -94,6 +93,9 @@ body{
                         height:40px;
                         // border: 1px solid #1D1E4C;
                         background-color: rgb(240, 240, 240);
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
                         &:hover{
                             box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
                         }
@@ -160,7 +162,7 @@ body{
                     margin-top: 5%;
                     padding-right: 10px;
                     border-radius: 15px;
-
+                    overflow: auto;
                     .excBlcok{
                         background-color: #A2A2A2;
                         position: relative;
@@ -339,7 +341,7 @@ button.active{
     }
 }
 
-#btnDisCon1{
+#btnDisCon1, #btnDisCon11{
     span{
         i{
             background-color: map-get($map: $color_regulation, $key: 'btnPink');
@@ -347,7 +349,7 @@ button.active{
     }
 }
 
-#btnDisCon2{
+#btnDisCon2, #btnDisCon22{
     span{
         i{
             background-color: map-get($map: $color_regulation, $key: 'btnBlue');
@@ -685,6 +687,9 @@ div#eventSave{
 div#memberContentId{
     width: 70%;
     overflow: hidden;
+    div.tab2{
+        display: none;
+    }
 }
 ::-webkit-scrollbar {
     width: 9px;
@@ -738,7 +743,99 @@ button:disabled {
     display: none;
 }
 div#appMemberBriefIntro{
-    p{
-        white-space: pre-wrap;
+    span{
+        display: none;
+    }
+}
+
+
+@media all and (max-width: 1496px){
+    div#memPage h5{
+        display: none;
+    }
+}
+
+@media all and (max-width: 1190px){
+    ul#memInfoContentLft{
+        padding: 0 10% !important;
+    }
+}
+
+//開始變橫
+@media all and (max-width: 1295px){
+    main{
+        display: flex;
+        flex-direction: column;
+        padding: 60px;
+        div#memInfo div.memInfoContent h3{
+            display: none;
+        }
+        div#memInfo{
+            flex-grow: 1;
+        }
+        div.genInfor{
+            width: 100%;
+        }
+        div#memberContentId{
+            width: 100%;
+            box-sizing: border-box;
+        }
+        div.personBlock {
+            display: flex;
+            justify-content: center;
+            height: 40vh !important;
+            margin-top: 35px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        div.proBtnBlock{
+            align-self: flex-start;
+        }
+        div.proTopBlock{
+            span{
+                display: none;
+            }
+        }
+        div.cumulativeBlcok{
+            display: none !important;
+        }
+        div#appMemberBriefIntro{
+            span{
+                display: inline-block;
+                h6{
+                    font-size: $h7;
+                }
+                p{
+                    font-size:$p;
+                }   
+            }
+            p{
+                white-space: pre-wrap;
+            }
+        }
+        div#memberContentId{
+            display: flex;
+            div.tab2{
+                display: flex;
+                justify-content: space-between;
+                // border-bottom: 1px solid #BEBEBE;
+                flex-direction: column;
+                button{
+                    margin-right: 5px;
+                    // appearance: none;
+                    border-radius: 15px;
+                    padding: 0 15px;
+                    height: 30px;
+                    outline: none;
+                    min-width: 185px;
+                }
+        }
+        }
+    }
+}
+
+@media all and (max-width: 891px){
+    main div#memberContentId div.tab2 button{
+        min-width: 85px;
     }
 }

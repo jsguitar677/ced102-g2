@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="137" height="137" viewBox="0 0 137 137">
+  <g id="day-clear" transform="translate(1.5 1.085)">
+    <circle id="Oval" cx="42" cy="42" r="42" transform="translate(25 25.415)" fill="#efcc00"/>
+    <path id="Path" d="M1,0V15" transform="translate(66 0.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-2" data-name="Path" d="M1,0V15" transform="translate(66 119.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-3" data-name="Path" d="M15,1H0" transform="translate(119 66.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-4" data-name="Path" d="M15,1H0" transform="translate(0 66.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-5" data-name="Path" d="M11,0,0,11" transform="translate(104 19.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-6" data-name="Path" d="M11,0,0,11" transform="translate(19 103.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-7" data-name="Path" d="M11,11,0,0" transform="translate(104 103.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-8" data-name="Path" d="M11,11,0,0" transform="translate(19 19.415)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+</svg>
