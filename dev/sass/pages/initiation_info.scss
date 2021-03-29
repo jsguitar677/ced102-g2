@@ -303,10 +303,16 @@ main.event{
                                     select.location{
                                         width: 78px;
                                     }
+                                    input[type=date]{
+                                        width: 163px;
+                                    }
                                 }
                                 @media (max-width:575px){
                                     select.location{
                                         width: 40%;
+                                    }
+                                    input[type=date]{
+                                        width: 100%;
                                     }
                                 }
                                 input,textarea,select{
