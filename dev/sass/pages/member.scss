@@ -1,7 +1,44 @@
 //====================  Import   var
 @import '../var';
+@import '../all.scss';
 
+h1{font-size: 72px;}
+h2{font-size: 60px;}
+h3{font-size: 48px;}
+h4{font-size: 38px;}
+h5{font-size: 28px;}
+h6{font-size: 22px;}
+.h7{font-size: 18px;
+    font-weight: bold;}
+p{font-size: 15px;}
+
+// -----------------------------------------
+@mixin pc{
+    @media(max-width:1024px){
+      @content;
+    }
+}
+@mixin pad{
+    @media(max-width:768px){
+      @content;
+    }
+}
+@mixin mobileL{
+    @media(max-width:576px){
+        @content;
+    }
+}
+@mixin mobileS{
+    @media(max-width:375px){
+        @content;
+    }
+}
+
+
+// -----------------------------------------
 body{
+    background-color: map-get($color_regulation, 'white-bg' );
+    color: map-get($color-regulation, 'blue' );
     main{
         margin: 0;
         background-color: #F6F6F6;
@@ -11,16 +48,22 @@ body{
     }
     
     h5{
+        z-index: 2;
+        color: map-get($color-regulation, 'blue' );
+        top: 125px;
+        left: -50px;
         position: absolute;
         transform: rotate(90deg); 
         font-weight: bold;
         font-size: $h4;
+        margin-top: 0;
+        margin-bottom: 0;
     }
     main{
-        padding: 60px;
+        padding: 30px;
         display: flex;
         height: 100%;
-        max-width: 1280px;
+        max-width: 1200px;
         margin: auto;
         .genInfor{
             min-width:30%;
@@ -246,8 +289,8 @@ body{
 
 #orderRecord{
     .orderBlock{
-        height: calc(80vh - 120px);
-        overflow: auto;
+        // height: calc(80vh - 120px);
+        // overflow: auto;
         padding-right: 10px;
         color: map-get($map: $color_regulation, $key: 'blue');
         h3{
@@ -286,6 +329,7 @@ body{
 }
 
 #memInfo{
+    
     div.memInfoContent{
         display: block;
         height: 100%;
@@ -421,11 +465,11 @@ div#memExp{
     }
     
 }
-.btnConMemInfo{
-    background-image: url('../../img/member-1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+// .bg1img{
+//     background-image: url('../../img/member-1.jpg');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
 div#memInfo{
     div.memInfoContent{
         ul#memInfoContentLft{
@@ -587,7 +631,6 @@ div#memPage{
                 label{
                     vertical-align: top;
                 }
-                textarea{}
                 div#eventManagementBtnCon{
                     align-self: flex-end;
                     justify-content: space-around;
@@ -685,8 +728,9 @@ div#eventSave{
     }
 }
 div#memberContentId{
+    color: map-get($color-regulation, 'blue' );
     width: 70%;
-    overflow: hidden;
+    // overflow: hidden;
     div.tab2{
         display: none;
     }
@@ -749,93 +793,93 @@ div#appMemberBriefIntro{
 }
 
 
-@media all and (max-width: 1496px){
-    div#memPage h5{
-        display: none;
-    }
-}
+// @media all and (max-width: 1496px){
+//     div#memPage h5{
+//         display: none;
+//     }
+// }
 
-@media all and (max-width: 1190px){
-    ul#memInfoContentLft{
-        padding: 0 10% !important;
-    }
-}
+// @media all and (max-width: 1190px){
+//     ul#memInfoContentLft{
+//         padding: 0 10% !important;
+//     }
+// }
 
-//開始變橫
-@media all and (max-width: 1295px){
-    main{
-        display: flex;
-        flex-direction: column;
-        padding: 60px;
-        div#memInfo div.memInfoContent h3{
-            display: none;
-        }
-        div#memInfo{
-            flex-grow: 1;
-        }
-        div.genInfor{
-            width: 100%;
-        }
-        div#memberContentId{
-            width: 100%;
-            box-sizing: border-box;
-        }
-        div.personBlock {
-            display: flex;
-            justify-content: center;
-            height: 40vh !important;
-            margin-top: 35px;
-            box-sizing: border-box;
-            width: 100%;
-        }
-        div.proBtnBlock{
-            align-self: flex-start;
-        }
-        div.proTopBlock{
-            span{
-                display: none;
-            }
-        }
-        div.cumulativeBlcok{
-            display: none !important;
-        }
-        div#appMemberBriefIntro{
-            span{
-                display: inline-block;
-                h6{
-                    font-size: $h7;
-                }
-                p{
-                    font-size:$p;
-                }   
-            }
-            p{
-                white-space: pre-wrap;
-            }
-        }
-        div#memberContentId{
-            display: flex;
-            div.tab2{
-                display: flex;
-                justify-content: space-between;
-                // border-bottom: 1px solid #BEBEBE;
-                flex-direction: column;
-                button{
-                    margin-right: 5px;
-                    // appearance: none;
-                    border-radius: 15px;
-                    padding: 0 15px;
-                    height: 30px;
-                    outline: none;
-                    min-width: 185px;
-                }
-        }
-        }
-    }
-}
+// //開始變橫
+// @media all and (max-width: 1295px){
+//     main{
+//         display: flex;
+//         flex-direction: column;
+//         padding: 60px;
+//         div#memInfo div.memInfoContent h3{
+//             display: none;
+//         }
+//         div#memInfo{
+//             flex-grow: 1;
+//         }
+//         div.genInfor{
+//             width: 100%;
+//         }
+//         div#memberContentId{
+//             width: 100%;
+//             box-sizing: border-box;
+//         }
+//         div.personBlock {
+//             display: flex;
+//             justify-content: center;
+//             height: 40vh !important;
+//             margin-top: 35px;
+//             box-sizing: border-box;
+//             width: 100%;
+//         }
+//         div.proBtnBlock{
+//             align-self: flex-start;
+//         }
+//         div.proTopBlock{
+//             span{
+//                 display: none;
+//             }
+//         }
+//         div.cumulativeBlcok{
+//             display: none !important;
+//         }
+//         div#appMemberBriefIntro{
+//             span{
+//                 display: inline-block;
+//                 h6{
+//                     font-size: $h7;
+//                 }
+//                 p{
+//                     font-size:$p;
+//                 }   
+//             }
+//             p{
+//                 white-space: pre-wrap;
+//             }
+//         }
+//         div#memberContentId{
+//             display: flex;
+//             div.tab2{
+//                 display: flex;
+//                 justify-content: space-between;
+//                 // border-bottom: 1px solid #BEBEBE;
+//                 flex-direction: column;
+//                 button{
+//                     margin-right: 5px;
+//                     // appearance: none;
+//                     border-radius: 15px;
+//                     padding: 0 15px;
+//                     height: 30px;
+//                     outline: none;
+//                     min-width: 185px;
+//                 }
+//         }
+//         }
+//     }
+// }
 
-@media all and (max-width: 891px){
-    main div#memberContentId div.tab2 button{
-        min-width: 85px;
-    }
-}
+// @media all and (max-width: 891px){
+//     main div#memberContentId div.tab2 button{
+//         min-width: 85px;
+//     }
+// }

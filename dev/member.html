@@ -23,6 +23,7 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
     <!-- 會員頁面 -->
+    <h5>會員中心</h5>
     <div id="memPage">
         <div id="eventManagementCancelModalCon">
             <div id="eventManagementCancelModal">
@@ -45,7 +46,7 @@
                 </form>
             </div>
         </div>
-        <h5>會員中心</h5>
+        
         <main>
             <div class="genInfor">
                 <!-- 上block -->
@@ -77,31 +78,7 @@
                 </div>
                 <!-- 下block -->
                 <div class="cumulativeBlcok comShape" id="underNoBorder">
-                    <!-- <div class="cumulText">
-                        <ul>
-                            <li>會員等級</li>
-                            <li>累計經驗值</li>
-                            <li>累計環保幣</li>
-                            <li>贊助次數</li>
-                            <li>贊助累計金額</li>
-                            <li>參與活動次數</li>
-                            <li>活動發起次數</li>
-                        </ul>
-                    </div>
-                    <div class="cumulValue">
-                        <form action="">
-                            <ul>
-                                <li>資深會員</li>
-                                <li>150 exp</li>
-                                <li>50P </li>
-                                <li>3次</li>
-                                <li>1300$</li>
-                                <li>3次</li>
-                                <li>1次</li>
-                            </ul>
-                        </form>
-                    </div> -->
-                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" id="defaultOpen">
+                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" >
                         <div class="btnDisCon" id="btnDisCon1">
                             <span>
                                 <i class="fas fa-user-alt"></i>
@@ -113,7 +90,7 @@
                         </div>
                     </button>
                     <button class="tabLinks " onclick="openPage(event, 'memExp')" id="expExch">
-                        <div class="btnDisCon" id="btnDisCon2">
+                        <div class="btnDisCon" id="btnDisCon2 defaultOpen">
                             <span>
                                 <i class="fas fa-exchange-alt"></i>
                                 經驗值兌換
@@ -227,27 +204,6 @@
                 <div id="memInfo" class="tabContent ">
                     <div class="memInfoContent">
                         <h3>會員資訊</h3>
-                        <!-- <div>
-                            <ul id="memInfoContentLft">
-                                <li>會員等級</li>
-                                <li>累計經驗值</li>
-                                <li>累計環保幣</li>
-                                <li>贊助次數</li>
-                                <li>贊助累計金額</li>
-                                <li>參與活動次數</li>
-                                <li>活動發起次數</li>
-                            </ul>
-                            <ul id="memInfoContentRgt">
-                                <li>資深會員</li>
-                                <li>150 exp</li>
-                                <li>50P </li>
-                                <li>3次</li>
-                                <li>1300$</li>
-                                <li>3次</li>
-                                <li>1次</li>
-                            </ul>
-                            
-                        </div>     -->
                         <ul id="memInfoContentLft">
                             <li>
                                 <div>會員等級</div>
