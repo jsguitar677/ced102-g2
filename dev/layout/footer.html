@@ -5,16 +5,16 @@
                 <div class="footerTOP">MENU</div>
                 <div class="footerBottom">
                     <ul>
-                        <li><a href="">活動說明</a></li>
-                        <li><a href="">活動募款平台</a></li>
-                        <li><a href="">活動花絮</a></li>
-                        <li><a href="">商城</a></li>
+                        <li><a href="../Guide.html">活動說明</a></li>
+                        <li><a href="#">活動募款平台</a></li>
+                        <li><a href="../act_hist.html">歷史活動花絮</a></li>
+                        <li><a href="../Mall2.html">商城</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footerBox2">
                 <div class="footerTitle">淨下塑湲</div>
-                <button class="goTop">GO TOP</button>
+                <button id="goTop" class="goTop">GO TOP</button>
             </div>
             <div class="footerBox3">
                 <div class="social">
@@ -40,3 +40,15 @@
 
 
 </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#goTop").on("click", function(e){
+            e.preventDefault();
+            $('html, body').animate({
+            scrollTop: 0
+            }, 750);
+        });
+    });
+</script>

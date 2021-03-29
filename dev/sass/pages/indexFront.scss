@@ -8,10 +8,31 @@ h3{font-size: 48px;}
 h4{font-size: 38px;}
 h5{font-size: 28px;}
 h6{font-size: 22px;}
-h7{font-size: 18px;
+.h7{font-size: 18px;
     font-weight: bold;}
 p{font-size: 15px;}
 
+// -----------------------------------------------
+@mixin pc{
+    @media(max-width:1024px){
+      @content;
+    }
+}
+@mixin pad{
+    @media(max-width:768px){
+      @content;
+    }
+}
+@mixin mobileL{
+    @media(max-width:576px){
+        @content;
+    }
+}
+@mixin mobileS{
+    @media(max-width:375px){
+        @content;
+    }
+}
 
 // -----------------------------------------------
 @mixin bgImg ($url){
@@ -55,7 +76,7 @@ p{font-size: 15px;}
 // ---------------------------------------
 .homeBlock{
     margin: 0 auto;
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 30px;
 }
 
@@ -68,22 +89,44 @@ p{font-size: 15px;}
     background-color:map-get($color_regulation, 'white-bg');
     margin-top: 66px;
     .homeBotLayer1{
+        @include pad{
+            padding: 30px 0;
+        }
         .homeBlock{
             .homePage1{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 color: map-get($color_regulation, 'blue');
+                @include pad{
+                    flex-direction: column;
+                }
                 .page1Left{
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    width: 30%;
+                    width: 35%;
                     height: calc(100vh - 66px);
                     background-image:url(../../img/indexFront/indexfont-img.png);
-                    background-size: 100%;
+                    background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
+                    position: relative;
+                    @include pad{
+                        // height:100%;
+                        // padding: 120px 0;
+                        width: 100%;
+                        height:300px;
+                    }
+                    div{
+                        position: absolute;
+                        margin: auto 0;
+                        // left:50%
+                        @include pad{
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
                     h5{
                         margin: 0;
                         margin-bottom: 15px;
@@ -95,20 +138,86 @@ p{font-size: 15px;}
                     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
                     background-color:#FFFFFF;
                     width: 65%;
-                    height: 450px;
                     overflow: hidden;
                     padding: 15px;
+                    @include pad{
+                        height: auto;
+                        width: calc(100% - 20px);
+                        margin-left:0;
+                        padding: 10px;
+                    }
                     .swiper-wrapper{
                         .swiper-slide{
+                            @include mobileS{
+                                flex-direction: column;
+                            }
                             .page1RightCard{
                                 border-radius: 15px;
                                 overflow: hidden;
                                 width: 310px;
                                 height: 380px;
+                                @include pad{
+                                    width: calc( 310px * 0.7);
+                                    height: calc( 380px * 0.7);
+                                }
+                                @include mobileL{
+                                    width: calc( 310px * 0.5);
+                                    height: calc( 380px * 0.5);
+                                }
+                                // @include mobileS{
+                                //     width: calc( 310px * 0.25);
+                                //     height: calc( 380px * 0.25);
+                                // }
+                                img{
+                                    @include pad{
+                                        width: calc( 310px * 0.7);
+                                        height: calc( 380px * 0.7);
+                                    }
+                                    @include mobileL{
+                                        width: calc( 310px * 0.5);
+                                        height: calc( 380px * 0.5);
+                                    }
+                                    // @include mobileS{
+                                    //     width: calc( 310px * 0.25);
+                                    //     height: calc( 380px * 0.25);
+                                    // }
+                                }
                             }
                             .page1RightText{
                                 margin-left: 20px;
                                 width: 45%;
+                                @include mobileS{
+                                width: 100%;
+                                margin-left: 0px;
+
+                                }
+                                h5{
+                                    margin: 0;
+                                    @include mobileL(){
+                                        margin-top: 10px;
+                                    }
+                                    @include mobileS{
+                                        margin: 0;
+                                        margin-top: 10px;
+                                    }
+                                }
+                                p{
+                                    display: block; // 如果不是區塊元素的話，要加這一行
+                                    overflow: hidden;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    -webkit-line-clamp: 4;
+                                    @include mobileL(){
+                                        margin: 0px;
+                                        margin-bottom: 10px;
+                                    }
+                                   
+                                }
+                                button{
+                                    @include mobileS{
+                                        margin-bottom: 10px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -118,72 +227,121 @@ p{font-size: 15px;}
     }
 }
 
+// #pre2Img{
+//     cursor: pointer;
+// }
+#homeBotLayer2{
+    .page1RightCard{
+        img{
+            cursor: pointer;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 260px;
+            height: 300px;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+            // filter: blur(5px);
+            @include pc{
+                width: 180px;
+                height: 240px;
+            }
+            @include pad{
+                width: 135px;
+                height: 180px;
+            }
+            @include mobileL{
+                width: 90px;
+                height: 120px;
+            }
+            @include mobileS(){
+                width: 60px;
+                height: 90px;
+            }
+        }
+    }
 
-.homeBotLayer2{
     color: map-get($color_regulation, 'white');
-    height: 100vh;
+    // height: 100vh;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed;
     @include bgImg('../../img/indexFront/indexImg5.jpg');
-    .frontBlur{
-        position: relative;
-        z-index: 1; // 不讓毛玻璃掉到最底層
-        overflow: hidden; // 超出的毛玻璃裁切掉
-        height: 100vh;
-        // box-shadow:inset 0 0 20px #fff, 0px 0px 20px rgba(#000,0.5);
-        &::before{
-            margin: auto;
-            position: absolute;
-            z-index: -1;
-            content:"";
-            width: 100vw;
-            height: 100vh;
-            top: 0; // 要比原本的div大
-            bottom: 0; // 毛玻璃邊才不會內縮
-            left: 0;
-            right: 0;
-            opacity: 1; // 透光可控制內部陰影
-            @include bgImg('../../img/indexFront/indexImg5.jpg');
-            // background-attachment: fixed;
-            
-            filter: blur(5px);
-        }
-        .homeBlock{
-            color: map-get($color_regulation,'blue');
-            .homePage2{
-                height: 100%;
-                .homePage2Top{
-                    margin-bottom: 50px;
-                }
-                .homePage2Data{
-                    display: flex;
-                    justify-content: space-around;
-                    
+    
+    .homeBlock{
+        color: map-get($color_regulation,'blue');
+        .homePage2{
+            // color: map-get($color_regulation, 'color' );
+            padding: 30px 0;
+            height: 100%;
+            .homePage2Top{
+                margin-bottom: 50px;
+            }
+            .homePage2Data{
+                display: flex;
+                justify-content: space-around;
+                .data4{
+                    p{
+                        margin: 0;
+                    }
                 }
             }
         }
-    } 
+    }
+    
 }
 
 .homeBotLayer3{
     height: 50vh;
     background-color:map-get($color_regulation, 'white-bg');
+    margin: 30px 0;
+    display: flex;
+    @include mobileL{
+        height: 100%;
+
+    }
     .homePage3{
         display: flex;
-        padding: 5% 0;
+        @include mobileL{
+            flex-direction: column;
+            align-items: center;
+        }
         &__left{
-            width: 45%;
+            width: 50%;
             padding-right: 50px;
+            @include mobileL{
+                padding-right: 0px;
+                margin-bottom: 20px;
+                width: calc(100% - 60px);
+            }
+            p{
+                display: block; // 如果不是區塊元素的話，要加這一行
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4; 
+            }
+            h5{
+                @include mobileL{
+                    margin: 10px;
+                }
+            }
         }
         &__right{
+            justify-content: center;
             padding: 30px;
             background: #FFFFFF;
-            width: 45%;
+            width: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
             border-radius: 15px;
             box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+            @include mobileL{
+                width: calc(100% - 20px);
+                
+            }
+            @include pad{
+                padding: 10px;
+            }
             h5{
                 margin: 0;
                 margin-bottom: 10px;
@@ -219,16 +377,17 @@ p{font-size: 15px;}
 
 
 .homeBotLayer4{
-    height: 100vh;
     background-color:map-get($color_regulation, 'white-bg');
     .homePage4{
-        margin-bottom: calc(100vh - 95vh - 30px);
+        margin-bottom: 30px;
         @include borbox();
         background: #FFFFFF;
         box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-        height: 95vh;
+        // height: 95vh;
         padding: 30px;
-        padding-bottom: 0;
+        @include pad{
+            padding: 10px;
+        }
         h5{
             margin: 0;
             text-align: center;
@@ -246,7 +405,7 @@ p{font-size: 15px;}
             border-radius: 15px;
             overflow: hidden;
             box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-            .frontBlur{
+            .frontBlur2{
                 padding: 0 30px;
                 position: relative;
                 z-index: 1; // 不讓毛玻璃掉到最底層
@@ -390,21 +549,19 @@ p{font-size: 15px;}
                     height: 200px;
                     width: 80%;
                     .colorBox{
+                        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
                         border-radius: 15px;
                         overflow: hidden;
                         width: 80px;
                         height: 110px;
                         position: relative;
                         &__text{
-                          
                             input{
                                 cursor: pointer;
                                 line-height: 40px;
                                 margin-left: 0;
                                 label{
-                         
                                     line-height: 40px;
-                                    // cursor: pointer!important;
                                 }
                             }
                             position: absolute;
@@ -416,31 +573,31 @@ p{font-size: 15px;}
                             background-color: #fff;
                         }
                         &__Blue{
-                            background-color:#94B1EC;
+                            background-color:#f5f5dc;
                             position: absolute;
                             height: 70px;
                             width: 80px;
                         }
                         &__Red{
-                            background-color: #E4634E;
+                            background-color: #add8e6;
                             position: absolute;
                             height: 70px;
                             width: 80px;
                         }
                         &__Green{
-                            background-color: #40E09F;
+                            background-color: #66cdaa;
                             position: absolute;
                             height: 70px;
                             width: 80px;
                         }
                         &__Black{
-                            background-color:#393D49 ;
+                            background-color:#ffb6c1;
                             position: absolute;
                             height: 70px;
                             width: 80px;
                         }
                         &__Yellow{
-                            background-color: #F9B861;
+                            background-color:  #483d8b;
                             position: absolute;
                             height: 70px;
                             width: 80px;
@@ -453,33 +610,146 @@ p{font-size: 15px;}
             
 
         }
+        @mixin card(){
+            width:260px;
+            height:300px;
+            position: relative;
+            background-size: cover;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+            @include pc{
+                width: 180px;
+                height: 240px;
+            }
+            @include pad{
+                width: 135px;
+                height: 180px;
+            }
+            @include mobileL{
+                width: 90px;
+                height: 120px;
+                margin-right: 5px;
+            }
+            @include mobileS(){
+                width: 60px;
+                height: 90px;
+            }
+        }
         &__generalBlock{
             margin-top: 30px;
             display: flex;
             justify-content: space-around;
+            @include pad{
+                margin-bottom: 30px;
+
+            }
             .proDetail{
-                width:250px;
-                height:280px;
+                .page4Pro1{
+                    background-image: url("../../img/indexFront/bag1.jpg");
+                    @include borbox();
+                    @include card();
+                    
+                }
+                .page4Pro2{
+                    background-image: url("../../img/indexFront/bag1.jpg");
+                    @include borbox();
+                    @include card();
+                }
+                .page4Pro3{
+                    background-image: url("../../img/indexFront/bag1.jpg");
+                    @include borbox();
+                    @include card();
+                }
+               
+                &:hover{
+                    // cursor: pointer;
+                    .page4CardCont{
+                        opacity: 1;
+                        transition: .5s ease-in-out;
+                    }
+                }
+                .page4CardCont{
+                    // width:250px;
+                    // height:280px;
+                    opacity: 0;
+                    transition: .5s ease-in-out;
+                    overflow: hidden;
+                    position: absolute;
+                    bottom: 0px;
+                    border-radius: 0 0 15px 15px;
+                    left: 0;
+                    padding: 10px;
+                    background-color: rgba(255, 255, 255, 0.774);
+                    @include pad(){
+                        width: 100%;
+                        padding: 0px;
+
+                    }
+                    
+                    div{
+                        display: flex;
+                        justify-content: space-between;
+                        @include pad{
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        @include mobileL{
+                            display: none;
+                        }
+                        h6{
+                            font-size: 18px;
+                            @include pad{
+                                font-size: 15px;
+                            }
+                            
+                        }
+                    }
+                    p{  
+                        overflow:hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        white-space: normal;
+                        @include pad(){
+                            display: none;
+                        }
+                    }
+                    button{
+                        font-size: 15px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+                        border:none;
+                        background-color:#1D1E4C;
+                        color:#FFFFFF;
+                        width: 150px;
+                        height: 30px;
+                        // width: 30px;
+                        border-radius: 15px;
+                        margin: 0 auto ;
+                        margin-bottom: 10px;
+                        @include pad(){
+                            width: 90%;
+                        }
+                        p{
+                            margin: 0 10px;
+                        }
+                        &:focus{
+                            outline: 0;
+                        }
+                        
+                    }
+                    
+                }
+               
             }
-            .pro1{
-                background-image: url(../../img/indexFront/bag1.jpg);
-                @include borbox();
-                background-size: cover;
-            }
-            .pro2{
-                background-image: url(../../img/indexFront/bag1.jpg);
-                @include borbox();
-                background-size: cover;
-            }
-            .pro3{
-                background-image: url(../../img/indexFront/bag1.jpg);
-                @include borbox();
-                background-size: cover;
-            }
+            
         }
     }
 }
-
 
 // --------------------------------------------------------------
 
@@ -491,18 +761,22 @@ p{font-size: 15px;}
 }
 
 .homeBotLayer5{
-    
+    @include pad{
+        height: auto;
+    }
     color: map-get($color_regulation, 'white');
     height: 50vh;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
     @include bgImg('../../img/indexFront/indexImg7.jpg');
     .frontBlur{
         position: relative;
         z-index: 1; // 不讓毛玻璃掉到最底層
         overflow: hidden; // 超出的毛玻璃裁切掉
         height: 50vh;
-        // box-shadow:inset 0 0 20px #fff, 0px 0px 20px rgba(#000,0.5);
+        @include pad{
+            height: auto;
+        }
         &::before{
             margin: auto;
             position: absolute;
@@ -524,83 +798,96 @@ p{font-size: 15px;}
 
 .homePage5{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
     align-items: center;
-    height: 50vh;
+    margin-top: 30px;
+    @include pad{
+        flex-direction: column;
+    }
     .homePage5Left{
         width: 40%;
-        height: 80%;
+        height: 50%;
+        @include pad{
+            width: 100%;
+        }
+        h5{
+            @include pad{
+                margin: 0;
+            }
+        }
+        p{
+            display: block;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+        }
     }
     .homePage5Right{
         width: 60%;
-        height: 80%;
+        height: 50%;
+        @include pad{
+            width: 100%;
+        }
         
     }
 }
-
 .page5Card{
-    border-radius: 15px;
     position: relative;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    padding: 1rem;
+    border-radius: 15px;
+    // padding: 1rem;
     width: 100%;
-    height: 350px;
+    height: 260px;
     width: 300px;
+    @include pc{
+        width: 180px;
+        height: 240px;
+    }
+    @include pad{
+        width: 135px;
+        height: 180px;
+    }
+    @include mobileL{
+        width: 90px;
+        height: 120px;
+        margin-right: 5px;
+    }
+    @include mobileS(){
+        width: 60px;
+        height: 90px;
+    }
     text-align: center;
     color:map-get( $color_regulation, 'blue');
     background-color: whitesmoke;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
-
-
-.page5Card:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110%;
-    background-size: cover;
-    background-position: 0 0;
-    transition: transform calc(var(--d) * 1.5) var(--e);
-    pointer-events: none;
-}
-.page5Card:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    pointer-events: none;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
-    transform: translateY(-50%);
-    transition: transform calc(var(--d) * 2) var(--e);
-}
-#swiper4>.swiper-wrapper>.swiper-slide:nth-child(1)>.page5Card:before {
-    background-image: url(../../img/act_hist/beach1.jpg);
-}
-#swiper4>.swiper-wrapper>.swiper-slide:nth-child(2)>.page5Card:before {
-    background-image: url(../../img/act_hist/beach2.jpg);
-}
-#swiper4>.swiper-wrapper>.swiper-slide:nth-child(3)>.page5Card:before {
-    background-image: url(../../img/act_hist/beach4.jpg);
-}
-#swiper4>.swiper-wrapper>.swiper-slide:nth-child(4)>.page5Card:before {
-    background-image: url(../../img/act_hist/beach3.jpg);
-}
-#swiper4>.swiper-wrapper>.swiper-slide:nth-child(5)>.page5Card:before {
-    background-image: url(../../img/act_hist/beach1.jpg);
-}
-#swiper4>.swiper-wrapper>.swiper-slide:nth-child(6)>.page5Card:before {
-    background-image: url(../../img/act_hist/beach2.jpg);
-}
-
-
-.page5Card{
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        background-size: cover;
+        background-position: 0 0;
+        transition: transform calc(var(--d) * 1.5) var(--e);
+        pointer-events: none;
+    }
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+        transform: translateY(-50%);
+        transition: transform calc(var(--d) * 2) var(--e);
+    }
     .content {
         position: relative;
         display: flex;
@@ -627,17 +914,16 @@ p{font-size: 15px;}
         .btn {
             cursor: pointer;
             margin-top: 1.5rem;
-            padding: 0.75rem 1.5rem;
+            height: 30px;
+            padding: 0 30px;
             font-size: 0.65rem;
             font-weight: bold;
             letter-spacing: 0.025rem;
             text-transform: uppercase;
             color: white;
-            background-color: black;
+            background-color: map-get($color_regulation, 'blue' );
             border: none;
-        }
-        .btn:hover {
-            background-color: #0d0d0d;
+            border-radius: 15px;
         }
         .btn:focus {
             outline: 1px dashed yellow;
@@ -648,6 +934,28 @@ p{font-size: 15px;}
         margin-top: 1rem;
     }
 }
+
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(1)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach1.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(2)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach2.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(3)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach4.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(4)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach3.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(5)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach1.jpg);
+}
+#swiper4>.swiper-wrapper>.swiper-slide:nth-child(6)>.page5Card:before {
+    background-image: url(../../img/act_hist/beach2.jpg);
+}
+
+
+
 
 @media (hover: hover) and (min-width: 600px) {
     .page5Card:after {
@@ -706,6 +1014,13 @@ p{font-size: 15px;}
                     margin: 0;
                     
                 }
+                p{
+                    display: block;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+                }
                 padding: 0 20px;
                 // height: 50vh;
                 width: 50%;
@@ -722,7 +1037,7 @@ p{font-size: 15px;}
                 position: relative;
                 border:none;
                 #myVideo{
-                    height: 120%;
+                    height: 100%;
                     width: 100%;
                     //poster裡面的照片填滿
                     object-fit: cover;
@@ -731,17 +1046,25 @@ p{font-size: 15px;}
                 #myBtn{
                     cursor: pointer;
                     outline: none;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
+                    bottom: 10PX;
+                    left: 10PX;
+                    height: 34px;
+                    width: 34px;
                     position: absolute;
+                    border: none;
                     background-color: rgba(255, 255, 255, 0);
-                    border:none;
+                    // border:none;
+                    border-radius: 50%;
+                    color: map-get($color_regulation, 'blue' );
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 0;
+                    color: white;
                 }
             }
         }
     }
     
 }
+
 

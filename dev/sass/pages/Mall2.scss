@@ -1,5 +1,5 @@
-//@import '../var';
-//@import '../all.scss';
+@import '../var';
+@import '../all.scss';
 //=============共用規格設定如下=============
 //font-family
 //$font-family:'Arial', '微軟正黑體';
@@ -93,11 +93,16 @@ div.title-block{
         display: inline-block;
         white-space: nowrap;
         padding: 10px 0;
-        transform: rotate(90deg) translateX(-60px);
+        transform: rotate(90deg) translateX(-50px);
         transform-origin: 0% 100%;
         color:map-get($color_regulation,'blue');
         span {
             color:map-get($color_regulation,'gray' );
+        }
+    }
+    @media (max-width:575px){
+        h5.title {
+            font-size: $h7;
         }
     }
 }
@@ -124,17 +129,23 @@ section div.content_Mall {
         z-index: -5;
         div.top_back_img_2{    
             width: 100%;
-            height:426px;
+            max-height:426px;
             position:absolute;
-            top:-5px;
+            top:0px;
             left:0;    
             border-radius: 0 0 $borderRadius $borderRadius;
             overflow: hidden;
             box-shadow: $box-shadow;
             img{
                 width: 105%;
-                filter: blur(7px); 
+                filter: blur(17px); 
             }
+        }
+        
+    }
+    @media (max-width:575px){
+        div.top_back_img_1 {
+            display: none;
         }
     }
 }
@@ -148,6 +159,12 @@ section div.content_Mall{
         padding-top:60px;
         text-align: center;
     }
+    @media (max-width:575px){
+        h5.title_2 {
+            font-size: $h6;
+            padding-top: 30px;
+        }
+    }
     h6.title_h6{
         font-size: $h6;
         color:map-get($color_regulation,'blue');
@@ -156,12 +173,13 @@ section div.content_Mall{
         text-align: center;
     }
     div.all{
+        padding: 0 30px;
         div.CustomizedArea_Block{
             margin:0 $reserveSide;
             div.CustomizedAreaBox{
                 display:flex;
                 flex-direction: row;
-                flex-wrap: nowrap;
+                flex-wrap: wrap;
                 justify-content:space-between;
                 margin:0 auto;
                 padding-top: 60px;
@@ -192,6 +210,11 @@ section div.content_Mall{
                             margin:0;
                             vertical-align: top;
                             //display:none;
+                        }
+                        @media (max-width:991px){
+                            p.designYrStyle{
+                                display:none;
+                            }
                         }
                     }
                     div.CustomizedArea{
@@ -227,6 +250,90 @@ section div.content_Mall{
                         }
                     }
                 }
+                @media (min-width:992px) and (max-width:1199px){
+
+                }
+                @media (min-width:768px) and (max-width:991px){
+                    a.customized{
+                        div.CustomizedArea{
+                            div.productInfo{
+                                p.NameAndPrice{
+                                    &:first-child{
+                                        margin-bottom: 0;
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (min-width:576px) and (max-width:767px){
+                    a.customized{
+                        width: calc(50% - 30px);
+                        margin: 15px 15px;
+                        div.CustomizedArea{
+                            div.productInfo{
+                                p.NameAndPrice{
+                                    &:first-child{
+                                        margin-bottom: 0;
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (min-width:476px) and (max-width:575px){
+                    a.customized{
+                        width: calc(50% - 30px);
+                        margin: 15px 15px;
+                        div.CustomizedArea{
+                            div.productInfo{
+                                p.NameAndPrice{
+                                    &:first-child{
+                                        margin-bottom: 0;
+                                        margin-right: 5px;
+                                    }
+                                }
+                                p.text{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+                @media (max-width:475px){
+                    a.customized{
+                        width: 60%;
+                        min-width: 200px;
+                        margin: 15px;
+                        div.CustomizedArea{
+                            div.productInfo{
+                                p.NameAndPrice{
+                                    &:first-child{
+                                        margin-bottom: 0;
+                                        margin-right: 5px;
+                                    }
+                                }
+                                p.text{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @media (min-width:576px) and (max-width:767px){
+                div.CustomizedAreaBox{
+                    justify-content: center;
+                    padding: 40px 40px;
+                }
+            }
+            @media (max-width:575px){
+                div.CustomizedAreaBox{
+                    justify-content: center;
+                    padding: 10px 0px;
+                }
             }
         }
     }
@@ -253,9 +360,18 @@ section div.content_Mall div.all div.ProductArea_Block{
             box-shadow: $box-shadow;
             vertical-align: center;
             text-align: center;
-            option.sortWay{
-                div.sort_0{
-                } 
+            // option.sortWay{
+            //     div.sort_0{
+            //     } 
+            // }
+        }
+    }
+    @media (max-width:767px){
+        div.theWayOfSort{
+            padding: 20px 20px 10px 0;
+            select.select_sort_way{
+                font-size: 12px;
+                width: 110px;
             }
         }
     }
@@ -266,6 +382,17 @@ section div.content_Mall div.all div.ProductArea_Block{
         padding-bottom:60px;
         text-align: center; 
     }
+    @media (min-width:576px) and (max-width:767px){
+        h5.title{
+            padding-bottom:40px;
+        }
+    }
+    @media (max-width:575px){
+        h5.title{
+            padding-bottom:40px;
+            font-size: $h6;
+        }
+    }
     div.allProduct{
         font-size: $p;
     }
@@ -274,6 +401,7 @@ section div.content_Mall div.all div.ProductArea_Block{
     div.SpecialBlack{
         width:95%;
         display:flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-between;
         margin:0 auto;
@@ -306,6 +434,14 @@ section div.content_Mall div.all div.ProductArea_Block{
                         display:inline-block;
                         margin:0 20% 1% 0;
                     }
+                    @media(max-width:767px){
+                        p.NameAndPrice{
+                            display:block;
+                            &:nth-child(2){
+                                margin-right: 0;
+                            }
+                        }
+                    }
                     p.text1{
                         font-size: $p;
                         color: map-get($color_regulation,'blue');
@@ -319,6 +455,11 @@ section div.content_Mall div.all div.ProductArea_Block{
                         //-webkit-line-clamp: 2;   //顯示行數）
                         //-webkit-box-orient: vertical;
                     }
+                    @media (max-width:575px){
+                        p.text1{
+                            font-size: 12px;
+                        }
+                    }
                     img.cart{
                         position:absolute;
                         bottom:10px;
@@ -328,9 +469,23 @@ section div.content_Mall div.all div.ProductArea_Block{
                         border-radius: 50%;
                         box-shadow: $box-shadow;
                     }
+                    @media (max-width:575px){
+                        img.cart{
+                            bottom:calc(100% - 43px);
+                        }
+                    }
                 }
             }
         }
+        @media (max-width:575px){
+            justify-content: center;
+            a.zoomin{
+                width: 60%;
+                min-width: 210px;
+                margin-bottom: 20px;
+            }
+        }
+        
     }
 
     // 一般顯示區
@@ -371,6 +526,12 @@ section div.content_Mall div.all div.ProductArea_Block{
                         display:inline-block;
                         margin:0 10% 0 0;
                     }
+                    @media (max-width:767px){
+                        p.NameAndPrice{
+                            display:block;
+
+                        }
+                    }
                     p.text2{
                         font-size: $p;
                         font-weight: 500;
@@ -386,6 +547,12 @@ section div.content_Mall div.all div.ProductArea_Block{
                         //-webkit-box-orient: vertical;
                         //-webkit-box-orient: horizontal;
                     }
+                    @media (max-width:767px){
+                        p.text2{
+                            font-size: 12px;
+
+                        }
+                    }
                     img.cart{
                         position:absolute;
                         bottom:10px;
@@ -395,6 +562,27 @@ section div.content_Mall div.all div.ProductArea_Block{
                         border-radius: 50%;
                         box-shadow: $box-shadow;
                     }
+                    @media (min-width:576px) and (max-width:767px){
+                        img.cart{
+                            bottom:calc(100% - 43px);
+                        }
+                    }
+                    @media (max-width:575px){
+                        img.cart{
+                            bottom:calc(100% - 43px);
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width:575px){
+            justify-content: center;
+            a.normal{
+                width: 40%;
+                min-width: 170px;
+                margin: 0 10px 20px 10px;
+                div.CustomizedAreaA{
+                    margin: 0;
                 }
             }
         }
