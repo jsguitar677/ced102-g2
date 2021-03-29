@@ -37,7 +37,7 @@
                         <label for="eventManagementCancelReason">
                             理由
                         </label>
-                        <textarea name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
+                        <textarea id="textarea2" name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
                     </div>
                     <div id="eventManagementBtnCon">
                         <button id="eventManagementCancel">取消</button>
@@ -78,7 +78,7 @@
                 </div>
                 <!-- 下block -->
                 <div class="cumulativeBlcok comShape" id="underNoBorder">
-                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" >
+                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" id="defaultOpen">
                         <div class="btnDisCon" id="btnDisCon1">
                             <span>
                                 <i class="fas fa-user-alt"></i>
@@ -90,7 +90,7 @@
                         </div>
                     </button>
                     <button class="tabLinks " onclick="openPage(event, 'memExp')" id="expExch">
-                        <div class="btnDisCon" id="btnDisCon2 defaultOpen">
+                        <div class="btnDisCon" id="btnDisCon2">
                             <span>
                                 <i class="fas fa-exchange-alt"></i>
                                 經驗值兌換
@@ -150,7 +150,7 @@
         <!-- ---------------------------------------------- -->
 
             <div class="memberContent comShape" id="memberContentId">
-                <div class="tab2">
+                <!-- <div class="tab2">
                     <button class="tabLinks " onclick="openPage(event, 'memInfo')" id="defaultOpen">
                         <div class="btnDisCon" id="btnDisCon11">
                             <span>
@@ -168,7 +168,7 @@
                         </button>
                     </button>
                     <button class="tabLinks " onclick="openPage(event, 'orderRecord')" >
-                        <div class="btnDisCon" id="btnDisCon3">
+                        <div class="btnDisCon" id="btnDisCon33">
                             <span>
                                 <i class="fas fa-shopping-bag"></i>
                                 商城消費紀錄
@@ -176,7 +176,7 @@
                         </div>
                     </button>
                     <button class="tabLinks " onclick="openPage(event, 'participateRecord')">
-                        <div class="btnDisCon" id="btnDisCon4">
+                        <div class="btnDisCon" id="btnDisCon44">
                             <span>
                                 <i class="fas fa-chart-bar"></i>
                                 參與募款與志工紀錄
@@ -184,7 +184,7 @@
                         </div>
                     </button>
                     <button class="tabLinks " onclick="openPage(event, 'eventManagement')">
-                        <div class="btnDisCon" id="btnDisCon5">
+                        <div class="btnDisCon" id="btnDisCon55">
                             <span>
                                     <i class="fas fa-fist-raised"></i>
                                 活動發起管理
@@ -192,7 +192,7 @@
                         </div>
                     </button>
                     <button class="tabLinks " onclick="openPage(event, 'eventSave')">
-                        <div class="btnDisCon" id="btnDisCon6">
+                        <div class="btnDisCon" id="btnDisCon66">
                             <span>
                                 <i class="far fa-heart"></i>
                                 活動收藏
@@ -200,7 +200,7 @@
                         </div>
                     </button>
                 </div>
-            
+             -->
                 <div id="memInfo" class="tabContent ">
                     <div class="memInfoContent">
                         <h3>會員資訊</h3>
