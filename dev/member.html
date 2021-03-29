@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/member.css">
+    <!-- 引用owl & jQuery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
@@ -61,10 +62,14 @@
                     </div>
                     <div class="proBtnBlock">
                         <div id="appMemberBriefIntro">
+                            <span>
+                                <h6>Carman Li</h6>
+                                <p>生日:1993/01/01</p>
+                            </span>
                             <!-- <input class="comInput" type="text" placeholder="輸入自我介紹吧!"> -->
                             <p>{{MemberBriefIntroMessage}}</p>
                             <textarea class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5" v-model="MemberBriefIntroMessage"></textarea>
-                            <button>
+                            <button id="editBreifIntro">
                                 <i class="far fa-edit fa-2x"></i>
                             </button>
                         </div>
@@ -168,12 +173,55 @@
         <!-- ---------------------------------------------- -->
 
             <div class="memberContent comShape" id="memberContentId">
-                <div class="tab">
-                    <button class="tabLinks " onclick="openPage(event, 'memExp')" >經驗值兌換</button>
-                    <button class="tabLinks " onclick="openPage(event, 'orderRecord')" >商城消費紀錄</button>
-                    <button class="tabLinks " onclick="openPage(event, 'participateRecord')">參與募款與志工紀錄</button>
-                    <button class="tabLinks " onclick="openPage(event, 'eventManagement')">活動發起管理</button>
-                    <button class="tabLinks " onclick="openPage(event, 'eventSave')">活動收藏</button>
+                <div class="tab2">
+                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" id="defaultOpen">
+                        <div class="btnDisCon" id="btnDisCon11">
+                            <span>
+                                <i class="fas fa-user-alt"></i>
+                                會員資訊
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="openPage(event, 'memExp')" >
+                        <div class="btnDisCon" id="btnDisCon22">
+                            <span>
+                                <i class="fas fa-exchange-alt"></i>
+                                經驗值兌換
+                            </span>
+                        </button>
+                    </button>
+                    <button class="tabLinks " onclick="openPage(event, 'orderRecord')" >
+                        <div class="btnDisCon" id="btnDisCon3">
+                            <span>
+                                <i class="fas fa-shopping-bag"></i>
+                                商城消費紀錄
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="openPage(event, 'participateRecord')">
+                        <div class="btnDisCon" id="btnDisCon4">
+                            <span>
+                                <i class="fas fa-chart-bar"></i>
+                                參與募款與志工紀錄
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="openPage(event, 'eventManagement')">
+                        <div class="btnDisCon" id="btnDisCon5">
+                            <span>
+                                    <i class="fas fa-fist-raised"></i>
+                                活動發起管理
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="openPage(event, 'eventSave')">
+                        <div class="btnDisCon" id="btnDisCon6">
+                            <span>
+                                <i class="far fa-heart"></i>
+                                活動收藏
+                            </span>
+                        </div>
+                    </button>
                 </div>
             
                 <div id="memInfo" class="tabContent ">
