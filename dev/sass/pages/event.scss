@@ -74,6 +74,7 @@ $web-color:(
       padding: $padding-btn;
       width: 100%;
       display: inline-block;
+      cursor: pointer;
       }
   }
 }
@@ -90,7 +91,6 @@ $web-color:(
       width: 105%;
       height: 110%;
       position: absolute;
-      z-index: -1;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -142,6 +142,7 @@ $web-color:(
 }
 // =====================================================banner=================================================================
 div.banner {
+  margin-top: 66px;
   img{
     max-width: 100%;
   }
@@ -164,7 +165,6 @@ div.banner {
   height: 300px;
   overflow: hidden;
   @include bg-module();
-  margin-top: 66px;
 
   div.bg {
     img {
@@ -434,22 +434,924 @@ main.event {
     margin: 0 auto;
     section{
       width: calc(100% - $padding-web);
-      // border: 1px solid red;
-      // padding: $padding-web;
-      margin: 0 $padding-web;
+      margin: 0 30px;
+      padding-bottom: 60px;
     }
   }
 }
 
 // =====================================================參與活動=================================================================
 
-// main.event {
-//   div.content{
-//     #section1{
+main.event {
+  div.content{
+    #section1{
+      padding-bottom: 60px;
+      div.block{
+        text-align: center;
+        padding: 60px 0px 30px 20px;
+        width: 100%;
+        position: relative;
+        div.map-card{
+          display: inline-block;
+          vertical-align: top;
+          position: sticky;
+          top: 10px;
+          left: 0px;
+          background-color: map-get($web-color,'white');
+          box-shadow: $box-shadow;
+          border-radius: $border-radius;
+          width: 500px;
+          padding: 50px 0 20px 0;
+          h2{
+            font-size: $h2;
+            text-align: center;
+            margin:0;
+          }
+          h3{
+            margin: 40px 0 20px 0;
+            font-size: $text-fontSize-region;
+            text-align: center;
+          }
+          div.map-block{
+            margin: 0px;
+            position: relative;
+            div.bg{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              // background-image: url('../img/E.svg');
+              // background-size: 3000px 500px;
+              // background-position: center center;
+              // background-repeat: no-repeat;
+            }
+            #taiwan-bg{
+              max-height: 500px;
+              .st0{fill:#2E3D5A;}
+              .st1{fill:#2E3D5A;stroke:#616D72;stroke-miterlimit:10;}
+            }
+            #svg2606{
+              max-height: 500px;
+              position: absolute;
+              top: 0px;
+              left: 0;
+              fill: #2e3d5a00;
+              .north{
+                fill:#599dca;
+                  filter: drop-shadow(3px 3px 5px rgba(255, 255, 255, 0.541));
+                    transform: translate(-7px,-10px);
+                    transition: 0.5s;
+                }
+              .central{
+                  fill:#D6995B;
+                  filter: drop-shadow(3px 3px 5px rgba(255, 255, 255, 0.541));
+                  transform: translate(-10px,-10px);
+                  transition: 0.5s;
+              }
+              .south{
+                  fill:#52a87d;
+                  filter: drop-shadow(3px 3px 5px rgba(255, 255, 255, 0.541));
+                  transform: translate(-1px,5px);
+                  transition: 0.5s;
+              }
+              .east{
+                  fill:#C76175;
+                  filter: drop-shadow(3px 3px 5px rgba(255, 255, 255, 0.541));
+                  transform: translate(7px,10px);
+                  transition: 0.5s;
+              }
+              .outlying{
+                  fill:#cf17b7;
+                  filter: drop-shadow(3px 3px 5px rgba(255, 255, 255, 0.541));
+                  transform: translate(5px,5px);
+                  transition: 0.5s;
+              }
+              @include city(21);
+            }
+          }
+        }
+        div.event-info{
+          width: calc(100% - 510px);
+          display: inline-block;
+          vertical-align: top;
+          padding-left: 20px;
+          div.info-card{
+            div.search-and-filter {
+              margin-bottom: 15px;
 
-//     }
-//   }
-// }
+              input[name=filter] {
+                line-height: 18px;
+              }
+              label {
+                font-size: $text-fontSize;
+                line-height: 18px;
+                margin-right: 15px;
+                margin-left: 5px;
+              }
+            }
+            div.list {
+              padding: 0;
+              ul {
+                font-size: $text-fontSize;
+                display: flex;
+                flex-wrap: wrap;
+                li {
+                  @include bg-module();
+                  width: calc((100% - 20px) / 3);
+                  margin-left: 10px;
+                  margin-bottom: 10px;
+                  box-shadow: $box-shadow;
+                  height: 70px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: $border-radius;
+                  cursor: pointer;
+                  p.text{
+                    z-index: 0;
+                    margin: 0;
+                  }
+
+                  &:nth-child(3n+1) {
+                    margin-left: 0px;
+                  }
+
+                  &:nth-child(1) {
+                    opacity: 1;
+                    font-weight: bolder;
+                    div.bg {
+                      img {
+                        filter: blur(15px);
+                      }
+                    }
+                  }
+                  &:hover {
+                    font-weight: bolder;
+                    div.bg {
+                      img {
+                        filter: blur(15px);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            div.card {
+              font-weight: bolder;
+              box-shadow: $box-shadow;
+              border-radius: $border-radius;
+              position: relative;
+              overflow: hidden;
+              div.opacity {
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0.7;
+                img {
+                  filter: blur(20px);
+                  z-index: -1;
+                  height: 100%;
+                  max-width: none;
+                }
+              }
+
+              div.block {
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 30px;
+                div.flex {
+                  display: flex;
+                  flex-wrap: wrap;
+                  padding: 0px;
+                  div.left {
+                    text-align: left;
+                    width: 60%;
+                    padding-left: 5px;
+                    h2 {
+                      font-size: $text-fontSize-subtitle;
+                      color: map-get($web-color, 'blue');
+                      margin: 0;
+                    }
+
+                    p {
+                      padding-right: 20px;
+                      font-size: $text-fontSize;
+                      margin: 12px 0px;
+                      color: map-get($web-color, 'blue');
+                    }
+                    // p#instructions{
+                    //   margin-bottom: 0;
+                    // }
+                    // p#instructions-more{
+                    //   line-height: 12px;
+                    //   padding-right: 30px;
+                    //   margin: 0 0 10px 0;
+                    //   text-align: right;
+                    // }
+                  }
+
+                  div.right {
+                    width: 40%;
+                    text-align: center;
+
+                    div.img {
+                      border-radius: $border-radius;
+                      overflow: hidden;
+                      margin-bottom: 15px;
+                      height: 190px;
+
+                      img {
+                        position: relative;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        max-width: none;
+                        height: 100%;
+                      }
+                    }
+                    @include btn-module-red();
+                    #weather-btn{
+                      display: none;
+                      a{
+                        background-color: map-get($web-color,'blue');
+                      }
+                    }
+                  }
+                }
+
+                div.goals {
+                  div.goal {
+                    padding-top: 10px;
+                    width: 100%;
+
+                    // text-align: right;
+                    span {
+                      font-size: 12px;
+                      margin-left: 5px;
+                      line-height: 22px;
+
+                      img {
+                        width: 13px;
+                      }
+                    }
+
+                    div.progress-bar {
+                      width: 100%;
+                      height:20px;
+                      box-shadow: $box-shadow;
+                      // overflow: hidden;
+                      position: relative;
+
+                      div.icon {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 30%;
+                        border-right: 1px solid map-get($web-color, 'black');
+
+                        &::after {
+                          content: '';
+                          position: absolute;
+                          top: -22px;
+                          right: -8px;
+                          font-size: $text-fontSize;
+                          width: 15px;
+                          height: 22px;
+                          background-repeat: no-repeat;
+                          background-size: 100%;
+                        }
+                      }
+
+                      div.gift {
+                        width: 80%;
+
+                        &::after {
+                          background-image: url('../img/icon/black_gift.png');
+                        }
+                      }
+
+                      div.check-money {
+                        width: 60%;
+
+                        &::after {
+                          width: 22px;
+                          right: -14px;
+                          background-image: url('../img/icon/black_checkcoin.png');
+                        }
+                      }
+
+                      div.check-people {
+                        width: 60%;
+
+                        &::after {
+                          width: 20px;
+                          right: -14px;
+                          background-image: url('../img/icon/black_checkpeople.png');
+                        }
+                      }
+
+                      div.timer {
+                        width: 40%;
+
+                        &::after {
+                          background-image: url('../img/icon/black_timer.png');
+                        }
+                      }
+
+                      div.currect-progress {
+                        height: 100%;
+                      }
+                      div.text-left,div.text-right{
+                        font-size: $text-fontSize-575;
+                        position: absolute;
+                        top: 0;
+                        line-height: 20px;
+                      }
+                      div.text-left{
+                        color: map-get($web-color,'white');
+                        left: 5px;
+                      }
+                      div.text-right{
+                        color: map-get($web-color,'black');
+                        right: 5px;
+                      }
+
+                      #money {
+                        background-color: map-get($web-color,'blue');
+                        // opacity: 0.7;
+
+                      }
+
+                      #people {
+                        background-color: map-get($web-color,'red');
+                        // opacity: 0.7;
+                      }
+                    }
+                  }
+                }
+
+                p.instructions{
+                  font-size: 12px;
+                  text-align: left;
+                  line-height: 20px;
+                  margin: 10px 0 0 0;
+                }
+
+                div.weather-div {
+                  font-weight: lighter;
+                  background-color: #181239c2;
+                  background-image: url('#');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  background-position: center center;
+                  color: map-get($web-color, 'white');
+                  box-shadow: 0px 0px 10px rgba(22, 21, 21, 0.253);
+                  border-radius: $border-radius;
+                  margin-top: 15px;
+                  padding: 16px;
+                  font-size: 12px;
+                  overflow: hidden;
+                  position: relative;
+                  div.update-text{
+                    line-height: 15px;
+                    font-size: $text-fontSize-575;
+                    color: map-get($web-color,'white');
+                    text-align: center;
+                  }
+                  div.title {
+                    position: absolute;
+                    top: 15px;
+                    left: 20px;
+                    font-size: $text-fontSize-subtitle;
+                    color: map-get($web-color, 'white');
+                  }
+
+                  div.today {
+                    text-align: center;
+
+                    p.location,
+                    p.date,
+                    p.description {
+                      color: map-get($web-color, 'white');
+                      margin: 0;
+                      font-size: 18px;
+                      text-align: center;
+                    }
+                    div{
+                      margin-top: 10px;
+                      p.date,p.location{
+                        display: inline-block;
+                      }
+                    }
+
+                    div.icon,
+                    div.temperature {
+                      display: inline-block;
+                      vertical-align: middle;
+                      margin: 5px 0px;
+                    }
+
+                    div.icon {
+                      width: 40px;
+                    }
+
+                    div.temperature {
+                      margin-left: 10px;
+
+                      p {
+                        color: map-get($web-color, 'white');
+                        display: inline-block;
+                        margin: 0;
+
+                        &:nth-child(1) {
+                          margin-right: 7px;
+                          font-size: $text-fontSize-region;
+                        }
+
+                        &:nth-child(2) {
+                          font-size: $text-fontSize;
+                        }
+                      }
+
+                    }
+                  }
+
+                  div.flex {
+                    display: flex;
+                    flex-wrap: wrap;
+                    padding-top: 10px;
+
+                    p.date {
+                      margin: 4px 0px;
+                      color: map-get($web-color, 'white');
+                    }
+
+                    div.weather {
+                      width: calc(100%/6);
+                      text-align: center;
+
+                      div.temperature {
+                        p {
+                          display: inline-block;
+                          vertical-align: text-bottom;
+                          color: map-get($web-color, 'white');
+                          letter-spacing: 1px;
+                          margin: 0;
+
+                          &:nth-child(1) {
+                            margin-right: 5px;
+                            font-size: 12px;
+                            line-height: 12px;
+                          }
+
+                          &:nth-child(2) {
+                            font-size: 8px;
+                            line-height: 8px;
+                          }
+                        }
+                      }
+
+
+                      div.icon {
+                        width: 28px;
+                        height: 35px;
+                        margin: 0 auto;
+                        position: relative;
+                        overflow: hidden;
+
+                        img {
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          transform: translate(-50%, -50%);
+                        }
+                      }
+                    }
+
+                    p.description {
+                      margin: 0;
+                      color: map-get($web-color, 'white');
+                      font-size: 10px;
+                    }
+                  }
+                  #weather-div-btn{
+                    display: none;
+                  }
+                }
+              }
+              div.closebtn{
+                width: $width-close-btn;
+                height: $width-close-btn;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                cursor: pointer;
+                display: none;
+              }
+            }
+            @media (min-width:700px) and (max-width:1140px){
+              div.card{
+                display: none;
+                @include center();
+                width: 600px;
+                background-color: map-get($web-color,'white');
+                div.closebtn{
+                  display: block;
+                }
+              }
+            }
+            @media (min-width:490px) and (max-width:699px){
+              div.card{
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 50%;
+                transform: translatex(-50%);
+                width: 400px;
+                background-color: map-get($web-color,'white');
+                div.closebtn{
+                  display: block;
+                }
+                div.block{
+                  div.flex{
+                    div.left{
+                      width: 100%;
+                      h2{
+                        font-size: $h7;
+                      }
+                      p{
+                        font-size: $text-fontSize-575;
+                        line-height: 20px;
+                        margin: 5px 0;
+                      }
+                    }
+                    div.right{
+                      width: 100%;
+                      text-align: right;
+                      div.img{
+                        display: none;
+                      }
+                      div.btn{
+                        position: relative;
+                        margin-top: 10px;
+                        width: 100px;
+                        a{
+                          font-size: $text-fontSize-575;
+                          padding: 5px;
+                        }
+                      }
+                    }
+                  }
+                  div.weather-div{
+                    padding: 10px;
+                    div.title{
+                      font-size: $text-fontSize;
+                    }
+                    div.today{
+                      div{
+                        p.location,p.date{
+                          font-size: $text-fontSize;
+                        }
+                      }
+                      div.icon{
+                        width: 30px;
+                        margin: 0;
+                      }
+                      div.temperature{
+                        margin: 0px 5px;
+                        p.hight{
+                          font-size: $text-fontSize;
+                          margin-right: 0;
+                        }
+                        p.low{
+                          font-size: $text-fontSize-575;
+                        }
+                      }
+                      p.description{
+                        font-size: $text-fontSize;
+                      }
+                    }
+                    div.flex{
+                      div.weather{
+                        p.date{
+                          font-size: $text-fontSize-575;
+                          line-height: 20px;
+                          margin: 0;
+                        }
+                        div.icon{
+                          width: 20px;
+                          line-height: 20px;
+                        }
+                        div.temperature{
+                          line-height: 10px;
+                        }
+                        p.description{
+                          margin: 5px 0;
+                          line-height: 20px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            @media (max-width:489px){
+              div.card{
+                display: none;
+                position: absolute;
+                top: 55px;
+                left: 50%;
+                transform: translatex(-50%);
+                width: 260px;
+                background-color: map-get($web-color,'white');
+                div.closebtn{
+                  display: block;
+                }
+                div.block{
+                  padding: 15px;
+                  div.flex{
+                    div.left{
+                      width: 100%;
+                      h2{
+                        font-size: $text-fontSize;
+                      }
+                      p{
+                        font-size: $text-fontSize-575;
+                        line-height: 18px;
+                        margin: 5px 0;
+                      }
+                      p.shorten3{
+                        display: none;
+                      }
+                    }
+                    div.right{
+                      position: relative;
+                      width: 100%;
+                      text-align: center;
+                      div.img{
+                        display: none;
+                      }
+                      div.btn{
+                        margin-top: 10px;
+                        width: 100px;
+                        a{
+                          text-align: center;
+                          font-size: $text-fontSize-575;
+                          padding: 5px;
+                        }
+                      }
+                      #weather-btn{
+                        display: inline-block;
+                      }
+                    }
+                  }
+                  div.goals{
+                    div.goal{
+                      div.progress-bar{
+                        height: 10px;
+                        margin-top: 15px;
+                        div.text-left{
+                          top: -20px;
+                          color: map-get($web-color,'blue');
+                        }
+                        div.text-right{
+                          display: none;
+                        }
+                      }
+                    }
+                  }
+                  position: relative;
+                  div.weather-div{
+                    display: none;
+                    z-index: 2;
+                    padding: 10px 10px;
+                    width: 240px;
+                    @include center();
+                    height: 100%;
+                    margin: 0;
+                    text-align: left;
+                    div.title{
+                      display: inline-block;
+                      position: relative;
+                      top: 0;
+                      left: 0;
+                      text-align: left;
+                      font-size: $text-fontSize;
+                    }
+                    div.today{
+                      div{
+                        margin: 0;
+                        p.location,p.date{
+                          font-size: $text-fontSize;
+                        }
+                      }
+                      div.icon{
+                        width: 30px;
+                        margin: 0;
+                      }
+                      div.temperature{
+                        margin: 0px 5px;
+                        p.hight{
+                          font-size: $text-fontSize;
+                          margin-right: 0;
+                        }
+                        p.low{
+                          font-size: $text-fontSize-575;
+                        }
+                      }
+                      p.description{
+                        font-size: $text-fontSize;
+                      }
+                    }
+                    div.flex{
+                      div.weather{
+                        width: calc(100% / 3);
+                        p.date{
+                          font-size: $text-fontSize-575;
+                          line-height: 20px;
+                          margin: 0;
+                        }
+                        div.icon{
+                          width: 20px;
+                          line-height: 20px;
+                        }
+                        div.temperature{
+                          line-height: 10px;
+                        }
+                        p.description{
+                          margin: 5px 0;
+                          line-height: 20px;
+                        }
+                      }
+                    }
+                    #weather-div-btn{
+                      display: inline-block;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        @media (min-width:650px) and (max-width:1140px){
+          div.map-card {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+          }
+          div.event-info{
+            margin-bottom: 720px;
+            width: 500px;
+            padding: 0;
+          }
+        }
+        @media (min-width:490px) and (max-width:649px){
+          div.map-card {
+            position: absolute;
+            top: 96%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+            width: 400px;
+            h2{
+              font-size: $h4;
+            }
+            h3{
+              margin: 20px 0 10px 0;
+              font-size: $h7;;
+            }
+          }
+          div.event-info{
+            margin-bottom: 690px;
+            width: 350px;
+            padding: 0;
+            div.info-card{
+              div.search-and-filter {
+                margin-bottom: 10px;
+                label {
+                  margin-right: 3px;
+                  margin-left: 2px;
+                  letter-spacing: 1px;
+                }
+              }
+              div.list {
+                ul {
+                  li {
+                    height: 50px;
+                    p.text{
+                      font-size: $text-fontSize-575;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        @media (max-width:489px){
+          div.map-card {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%,-100%);
+            width: 260px;
+            box-shadow: none;
+            background-color: map-get($web-color,'white-bg');
+            padding-top: 10px;
+            h2{
+              font-size: $h4;
+            }
+            h3{
+              margin: 20px 0px 10px 0px;
+              font-size: $h7;
+            }
+          }
+          div.event-info{
+            margin-bottom: 550px;
+            width: 240px;
+            padding: 0;
+            div.info-card{
+              div.search-and-filter {
+                margin-bottom: 10px;
+                label {
+                  font-size: $text-fontSize-575;
+                  margin-right: 0px;
+                  margin-left: 3px;
+                  letter-spacing: 0px;
+                  line-height: 15px;
+                }
+              }
+              div.list {
+                ul {
+                  li {
+                    height: 50px;
+                    width: calc((100% - 20px) / 2);
+                    &:first-child{
+                      margin-left: 10px;
+                    }
+                    &:nth-child(3n+1) {
+                      margin-left: 10px;
+                    }
+                    p.text{
+                      font-size: $text-fontSize-575;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      @media (max-width:489px) {
+        div.block{
+          padding: 20px 0;
+        }
+      }
+      div.problem{
+        background-color: map-get($web-color, 'white');
+        box-shadow: $box-shadow;
+        padding: 30px 0;
+        text-align: center;
+        border-radius: $border-radius;
+        @include btn-module-blue();
+        div.btn{
+          margin-top: 10px;
+        }
+      }
+      @media (min-width:650px) and (max-width:1140px){
+        div.problem{
+          width: 500px;
+          margin: 0 auto;
+        }
+      }
+      @media (min-width:490px) and (max-width:649px){
+        div.problem{
+          width: 400px;
+          margin: 0 auto;
+        }
+      }
+      @media (max-width:489px){
+        div.problem{
+          width: 95%;
+          margin: 0 auto;
+          h2{
+            font-size: $h7;
+          }
+          div.btn{
+            width: 100px;
+            a{
+              font-size: $text-fontSize-575;
+              padding: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // =====================================================發起活動=================================================================
 
@@ -467,7 +1369,8 @@ main.event {
             }
             @media (max-width:575px){
               h2.initiation-title{
-                font-size: $text-fontSize-subtitle;
+                font-size: $h7;
+                margin: 30px 0 20px 0;
               }
             }
             div.flex{
@@ -565,6 +1468,7 @@ main.event {
             div.standard-block{
               position: relative;
               #standard{
+                z-index: 1000;
                 width: 100vw;
                 height: 100vh;
                 position: fixed;
@@ -695,7 +1599,7 @@ main.event {
       div.container{
         div.row {
           overflow: hidden;
-          padding-bottom: 40px;
+          margin-bottom: 40px;
           div.toggle{
             margin-top: 30px;
             div.toggle-block{
@@ -771,7 +1675,8 @@ main.event {
                         border-radius: 128px;
                         overflow: hidden;
                         img{
-                          width: 100%;
+                          min-width: 100%;
+                          min-height: 100%;
                         }
                       }
                       p{
@@ -905,11 +1810,13 @@ main.event {
                       padding: 30px 30px;
                     }
                     div.pic{
-                      width: 100px;
-                      border-radius: 50px;
+                      border-radius: 50%;
                       overflow: hidden;
+                      width: 100px;
+                      height: 100px;
                       img{
-                        width: 100%;
+                        min-width: 100%;
+                        min-height: 100%;
                       }
                     }
                     div.text{
@@ -929,7 +1836,8 @@ main.event {
                         padding: 0px 30px 20px 30px;
                       }
                       div.pic{
-                        width: 30%;
+                        width: 100px;
+                        height: 100px;
                         flex-shrink: 0;
                         margin-bottom: 20px;
 
@@ -956,7 +1864,8 @@ main.event {
                         padding: 0px 30px 20px 30px;
                       }
                       div.pic{
-                        width: 30%;
+                        width: 100px;
+                        height: 100px;
                         flex-shrink: 0;
                         margin-bottom: 20px;
 

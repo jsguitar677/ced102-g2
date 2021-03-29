@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="141.965" height="119.5" viewBox="0 0 141.965 119.5">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.245" y1="1.043" x2="0.637" y2="0.262" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#cfcfcf"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.726" y1="0.649" x2="0.084" y2="0.227" gradientUnits="objectBoundingBox">
+      <stop offset="0.02" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="rainy" transform="translate(0 -2.474)">
+    <path id="Path" d="M1,0V17" transform="translate(65 103.474)" fill="none" stroke="#0baeff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-2" data-name="Path" d="M1,0V17" transform="translate(50 98.474)" fill="none" stroke="#0baeff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-3" data-name="Path" d="M1,0V17" transform="translate(80 98.474)" fill="none" stroke="#0baeff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-4" data-name="Path" d="M43.785,0a43.657,43.657,0,0,1,38.6,23.167A34.22,34.22,0,1,1,99.52,86.851L43.66,87a43.5,43.5,0,1,1,0-87Z" transform="translate(0 2.474)" fill="url(#linear-gradient)"/>
+    <ellipse id="Oval" cx="34.171" cy="34.248" rx="34.171" ry="34.248" transform="translate(57.606 78.592) rotate(-74.39)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

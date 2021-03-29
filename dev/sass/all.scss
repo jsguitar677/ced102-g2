@@ -233,15 +233,17 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
     margin: 0 auto;
     height: 100%;
     font-size: 0;
-    background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
 }
 
+
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
     text-align: center;
     font-size: 22px;
+    padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
@@ -293,6 +295,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
     font-size: 22px;
+    padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
@@ -301,8 +304,8 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
-    font-size: 22px;
-    margin-bottom: 3%;
+    font-size: $h7;
+    margin-bottom: 5%;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon button#signRegFake {
@@ -322,7 +325,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
     height: 100%;
     width: calc(100%*0.6/1.6);
     text-align: center;
-    background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
@@ -331,6 +334,8 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
     font-size: 22px;
     margin-bottom: 1%;
+    padding-top: 30px;
+
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
@@ -382,19 +387,22 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
 body div#page1 div#lightbox div#logWrapper div#closeBtn {
     width: 27px;
     height: 27px;
-    background-color: #f2f2f2;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 8px;
     border-radius: 50%;
     cursor: pointer;
+    &:hover svg{
+        transform: rotate(180deg);
+    }
+    // background-image: url(../img/closeBtnBorder.svg);
 }
 
 body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanOne {
-    width: calc(27px - 2px);
+    width: calc(27px - 9px);
     height: 2px;
     display: inline-block;
-    background-color: #2c2b2b;
+    background-color: #f2f2f2;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
@@ -402,10 +410,10 @@ body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanOne {
 }
 
 body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanTwo {
-    width: calc(27px - 2px);
+    width: calc(27px - 9px);
     height: 2px;
     display: inline-block;
-    background-color: #2c2b2b;
+    background-color: #f2f2f2;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -421,6 +429,265 @@ body div#page3 {
     background-color: cornflowerblue;
     height: 100vh;
 }
+svg#closeBtnBorderSvg{
+    transition: all .5s;
+}
+
+//-------------lightBox2
+
+body div#page1 div#lightbox2 {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    font-size: 0;
+    opacity: 0;
+    transition: all .8s;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 {
+    font-size: 0;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    vertical-align: top;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    color: #1d1e4c;
+    background-color: #f2f2f2;
+    background-image: linear-gradient(#ccb0ac, #8b7b5d);
+    overflow: hidden;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 button:focus {
+    outline: 0;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 {
+    width: 160%;
+    height: 100%;
+    position: relative;
+    font-size: 0;
+    top: 0;
+    left: 0;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
+    display: inline-block;
+    padding: 10px auto;
+    width: calc(100%*0.6/1.6);
+    margin: 0 auto;
+    height: 100%;
+    font-size: 0;
+    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-position: center center, center center;
+    background-size: 35%, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
+    text-align: center;
+    font-size: 22px;
+    padding-top: 30px;
+
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
+    font-size: 18px;
+    padding: 0% 15%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label input {
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label#remember2 {
+    width: 100%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label#remember2 input {
+    width: auto;
+    margin: 10% 5px 10% 0px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 button {
+    width: 100%;
+    border-radius: 15px;
+    background-color: #1d1e4c;
+    color: #f2f2f2;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 a {
+    display: block;
+    text-align: center;
+    color: #d71212;
+    font-size: 15px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
+    display: inline-block;
+    height: 100%;
+    width: calc(100%*0.4/1.6);
+    font-size: 0;
+    vertical-align: top;
+    text-align: center;
+    color: #f2f2f2;
+    background-color: #1d1e4c;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
+    padding-top: 30px;
+    font-size: 22px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
+    font-size: $h7;
+    margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 button#signRegFake2 {
+    border-radius: 15px;
+    background-color: #1d1e4c;
+    color: #f2f2f2;
+    margin-top: 10%;
+    width: 50%;
+    cursor: pointer;
+    border: 1px solid #f2f2f2;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
+    font-size: 0;
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: calc(100%*0.6/1.6);
+    text-align: center;
+    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-position: center center, center center;
+    background-size: 35%, cover;
+    background-repeat: no-repeat, no-repeat;
+    p{
+        color: red;
+        font-size: $h7;
+    }
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
+    font-size: 22px;
+    margin-bottom: 1%;
+    padding-top: 30px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
+    padding: 0% 15%;
+    font-size: 18px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div label {
+    display: block;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div input {
+    width: 100%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 {
+    width: 100%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 label#regAgreeCheck2 {
+    font-size: 15px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 label#regAgreeCheck2 {
+    display: inline-block;
+    margin: 3% auto;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 button {
+    border-radius: 15px;
+    color: #f2f2f2;
+    background-color: #EF4325;
+    font-size: 15px;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    // background-image: url(../img/closeBtnBorder.svg);
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 span#closeSpanOne2 {
+    width: calc(27px - 9px);
+    height: 2px;
+    display: inline-block;
+    background-color: #f2f2f2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 span#closeSpanTwo2 {
+    width: calc(27px - 9px);
+    height: 2px;
+    display: inline-block;
+    background-color: #f2f2f2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body div#page2 {
+    height: 100vh;
+    background-color: chartreuse;
+}
+
+body div#page3 {
+    background-color: cornflowerblue;
+    height: 100vh;
+}
+svg#closeBtnBorderSvg2{
+    transition: all .5s;
+    &:hover{
+        transform: rotate(180deg);
+    }
+}
+
 
 // -----------footer--------------------------------------------------------------
 
@@ -434,7 +701,7 @@ footer{
     background-color: map-get($color_regulation, 'white-bg' );
     .footerWrapper{
         margin: 0 auto;
-        width: 90%;
+        width: calc(100% - 60px);
         height: 90%;
         background-color: #fff;
         border-radius: 15px;
@@ -654,5 +921,14 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+button#createAcc2 {
+    width: 100%;
+    border-radius: 15px;
+    background-color: #1d1e4c;
+    color: #f2f2f2;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
 /*# sourceMappingURL=style.css.map */
 

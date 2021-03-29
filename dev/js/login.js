@@ -50,3 +50,62 @@ function exitLogReg() {
     document.getElementById('regVerifi').value = "";
 }
 window.addEventListener('load', logRegi, false);
+
+
+
+
+
+
+
+//-------Modal2 Modify Code
+
+// 先抓到每個物件參考
+function logRegi2() {
+    document.getElementById('logForgetCode').onclick = showModal2;
+    document.getElementById('sendCodeBack').onclick = signRegChange2;
+    document.getElementById('closeBtn2').onclick = exitLogReg2;
+    document.getElementById('signRegFake2').onclick = turnBackToReg;
+};
+
+//回到註冊燈箱
+function turnBackToReg(){
+    document.getElementById('logCarousel2').style.left = 0;
+    document.getElementById('lightbox2').style.display = 'none';
+    document.getElementById('lightbox').style.display = 'block';
+}
+
+
+// nav顯示的登入狀態
+function showModal2() {
+    let aa = document.getElementById('logForgetCode');
+    aa.onclick = function(){
+        document.getElementById('lightbox').style.display = 'none';
+        document.getElementById('lightbox2').style.display = 'block';
+        document.getElementById('lightbox2').style.opacity = 1;
+    };
+};
+//切換登入/註冊
+function signRegChange2() {
+    let signRegF = document.getElementById('signRegFake2');
+    let title = document.getElementById('signUpFConTitle2');
+    if (signRegF.innerHTML == "建立帳號") {
+        document.getElementById('logCarousel2').style.left = '-60%';
+
+    }
+};
+// window.resize(function(){
+
+// })
+//離開登入註冊燈箱
+function exitLogReg2() {
+    document.getElementById('lightbox2').style.display = 'none';
+    document.getElementById('logCarousel2').style.left = 0;
+    document.getElementById('memId2').value = "";
+    document.getElementById('memPsw2').value = "";
+    document.getElementById('regName2').value = "";
+    document.getElementById('regBirth2').value = "";
+    document.getElementById('regId2').value = "";
+    document.getElementById('regConPsw2').value = "";
+    document.getElementById('regVerifi2').value = "";
+}
+window.addEventListener('load', logRegi2, false);
