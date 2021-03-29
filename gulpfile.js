@@ -89,11 +89,19 @@ exports.browser = function browsersync() {
         server: {
             baseDir: './dist', //跟目錄設定
 <<<<<<< HEAD
+<<<<<<< HEAD
             index: index_path, //需更改成自己頁面的名稱
 =======
             index: 'act_detail.html', //需更改成自己頁面的名稱
 
 >>>>>>> 9bfdccff3bf3c6221e8e710682bcd4db0b250b93
+=======
+            index: 'act_detail.html', //需更改成自己頁面的名稱
+
+=======
+            index: index_path, //需更改成自己頁面的名稱
+>>>>>>> dev
+>>>>>>> kay
             injectChanges: false,
         },
     });
