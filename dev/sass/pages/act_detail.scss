@@ -30,10 +30,13 @@ div.ad_bread ul li::after {
 @media (max-width: 575px) {
   div.ad_bread ul li {
     font-size: 18px; } }
+
+    
 div.ad_content{
-// border: 1px solid red;
-height: 300px;
-font-family: 'noto sans tc';
+    // border: 1px solid red;
+    height: 300px;
+    font-family: 'noto sans tc';
+    overflow:hidden;
 }
 
 .ad_block{
@@ -44,13 +47,15 @@ font-family: 'noto sans tc';
      position: absolute;
      z-index: -1;
 }
-
+.ad_inner_content{
+    width: 100%;
+}
 .ad_inner_content>h1{
     margin: 0;
     margin-left: 10px;
     font-size: 50px;
     color: white;
-    width: 300px;
+    // width: 100%;
    padding-top: 10px ;
 }
 .ad_inner_content>p{
@@ -438,7 +443,7 @@ body .progress-bg div {
 div.fixed_pic{
     box-sizing: border-box;
     width: 100%;
-    height: 24vw;
+    height: 50vh;
     /* border: 1px solid red; */
     overflow: hidden;
     background-image: url("../../img/act_detail/thalassophobia.jpg");
@@ -472,6 +477,46 @@ div.fixed_pic>p{
     margin: 0 auto;
 }
 
+@media (max-width: 1516px){
+    div.fixed_pic>h1{
+        margin-top:20px;
+    }
+    div.fixed_pic{
+        height: 55vh;
+    }
+}
+@media (max-width: 1156px){
+    div.fixed_pic>h1{
+        margin-top:10px;
+    }
+    div.fixed_pic{
+        height: 55vh;
+    }
+}
+@media (max-width: 931px){
+    
+    div.fixed_pic{
+        height: 60vh;
+    }
+}
+
+@media (max-width: 776px){
+    div.fixed_pic>h1{
+        margin-top:5px;
+    }
+    div.fixed_pic{
+        height: 70vh;
+    }
+}
+@media (max-width: 600px){
+    div.fixed_pic>h1{
+        margin-top:0px;
+    }
+    div.fixed_pic{
+        height: 80vh;
+    }
+}
+
 // 留言板-------------------------------------
 div.outer_board{
     // border: 1px solid red;
@@ -487,7 +532,7 @@ div.ad_board{
     margin: 0 auto;
     display: grid;
     // border: 1px solid orange;
-    width: 75%;
+    width: 80%;
     height: 1050px;
     grid-auto-rows: 200px;
     font-size: 12px;
@@ -496,6 +541,7 @@ div.ad_board{
     background-color:#1D1E4C;
     border-radius: 15px;
     padding-top: 50px;
+    grid-auto-rows: 200px;
 }
 
 div.message_box{
@@ -517,21 +563,25 @@ div.message_box>h2{
     color:#C2C2C2 ;
     margin-left: 20px;
 }
-div.message_box>p{
-    width: 500px;
+div.message_box>h3{
+    width: 80%;
     margin-left: 100px;
 }
 
 div.chat>img{
     width: 50px;
-    margin-left: 20px;
+    margin-right: 20px;
+    vertical-align: top;
+    float: right;
 }
+
+
 
 #tt_board{
     
     margin-bottom:10px;
      padding:5px; 
-     width:900px; 
+     width:80%; 
      height:300px; 
      border:1px #d1d1d1 solid; 
      border-radius:15px; 
@@ -566,7 +616,34 @@ button.submmit{
     bottom: 0;
     right: 7%;
 }
+@media (max-width: 1233px){
+    div.ad_board{
+        grid-auto-rows: 300px;
+        height: 1350px;
+    }
+    div.message_box{
+        height: 200px
+    }
+}
 
+@media (max-width: 813px){
+    div.message_box>h3{
+        margin-left: 50px;
+    }
+}
+@media (max-width: 518px){
+    div.message_box{
+        height: 250px   
+    }
+
+    #tt_board{
+    
+        margin-bottom:10px;
+         padding:5px; 
+         width:70%; 
+         height:300px; 
+    }
+}
 // linker------------------------------------------------
 
 @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
@@ -577,40 +654,32 @@ button.submmit{
   --font-serif: "Cardo", serif;
 }
 
-
+* {
+  box-sizing: border-box;
+}
 
 div.linker{
   display: grid;
   place-items: center;
-  box-sizing: border-box;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-div.linker>h1{
-    color:#1D1E4C;
-    font-size: 40px;
+  
 }
 .page-content {
   display: grid;
   grid-gap: 1rem;
   padding: 1rem;
-  max-width: 1200px;
+  max-width: 1024px;
   margin: 0 auto;
   font-family: var(--font-sans);
+  grid-template-columns: repeat(3, 1fr);
 }
-@media (min-width: 600px) {
+@media (max-width: 1076px) {
   .page-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 800px) {
-  .page-content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 .card {
-    border-radius: 15px;
+  border-radius: 15px;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -625,7 +694,7 @@ div.linker>h1{
 @media (min-width: 600px) {
   .card {
     height: 400px;
-    width: 300px;
+    
   }
 }
 .card:before {
@@ -662,9 +731,7 @@ div.linker>h1{
 .card:nth-child(3):before {
   background-image: url(../../img/act_detail/diving.jpg);
 }
-.card:nth-child(4):before {
-  background-image: url(../../img/act_detail/river.jpg);
-}
+
 
 .content {
   position: relative;
@@ -704,17 +771,17 @@ div.linker>h1{
   color: white;
   background-color: black;
   border: none;
-  
+  outline: none;
 }
 .btn:hover {
   background-color: #0d0d0d;
 }
 .btn:focus {
-  outline: none;
+  
   outline-offset: 3px;
 }
 
-@media (hover: hover) and (min-width: 600px) {
+@media (hover: hover) and (min-width: 1076px) {
   .card:after {
     transform: translateY(0);
   }
