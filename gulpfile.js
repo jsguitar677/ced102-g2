@@ -1,4 +1,5 @@
 const { src, series, dest, parallel, watch } = require('gulp');
+const index_path = require('./indexpath.js');
 
 const concat = require('gulp-concat');
 const fileInclude = require('gulp-file-include');

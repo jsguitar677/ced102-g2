@@ -74,7 +74,7 @@ body header {
   font-size: 0;
   width: 100%;
   z-index: 50;
-  background-color: rgba(255, 255, 255, 0.144);
+  background-color: white;
 }
 
 body header nav {
@@ -698,7 +698,7 @@ footer {
 
 footer .footerWrapper {
   margin: 0 auto;
-  width: 90%;
+  width: calc(100% - 60px);
   height: 90%;
   background-color: #fff;
   border-radius: 15px;
@@ -756,6 +756,15 @@ footer .footerWrapper .footerBlockTop .footerBox2 .goTop {
   border-radius: 30px;
   background-color: #fff;
   color: #1D1E4C;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox2 .goTop:hover {
+  background-color: #1D1E4C;
+  color: #fff;
+  transition: .3s ease-in-out;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 {
@@ -937,5 +946,46 @@ button#createAcc2 {
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 10%;
+}
+
+header nav div#lftUl div#navBurgerBtn {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+header nav div#lftUl div#navBurgerBtn div {
+  background-color: #1D1E4C;
+  width: 40px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+}
+
+header nav div#lftUl div#navBurgerBtn div:first-child {
+  transform: translateY(10px);
+}
+
+header nav div#lftUl div#navBurgerBtn div:last-child {
+  transform: translateY(-10px);
+}
+
+header nav div#lftUl ul {
+  display: none;
+}
+
+@media all and (max-width: 1312px) {
+  body header nav div#lftUl ul {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    justify-content: flex-end;
+  }
+  body header nav div#lftUl ul li {
+    border-bottom: 1px solid red;
+    margin-left: 0px !important;
+  }
 }
 /*# sourceMappingURL=all.css.map */
