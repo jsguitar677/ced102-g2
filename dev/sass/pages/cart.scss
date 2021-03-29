@@ -2,12 +2,27 @@
 @import '../all.scss';
 * {
     box-sizing: border-box;
+    // font-family: $chinese;
     
 }
+@media (min-width:992px) and (max-width:1199px){
+
+}
+@media (min-width:768px) and (max-width:991px){
+    
+}
+@media (min-width:576px) and (max-width:767px){
+    
+}
+@media (max-width:575px){
+    
+}
+
 
 // 流程// 
 div.progress__bar{
     margin-top: 70px ;
+    
     margin-bottom: 0px;
     box-shadow: $box-shadow;
     position: relative;
@@ -15,7 +30,7 @@ div.progress__bar{
     flex: 0 0 83.33333%;
     width: 100%;
     height: 60px;
-    justify-content: flex-start !important;
+    // justify-content: center;
     background-color: #fafafa;
     // border: 1px solid red;
     
@@ -25,14 +40,16 @@ div.progress__bar{
     
     
     .progress{
+        margin: 0 auto;
         list-style: none;
         display: flex ;
+        justify-content: center;
         text-align: center;
         color: #ffffff;
         text-align: center;
         position: relative;
         font-size: 24px;
-        text-align: center;
+        width: auto;
         // margin: 0 auto;
         
     
@@ -41,13 +58,13 @@ div.progress__bar{
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        margin: 0 100px;
+        // margin: 0 100px;
         position: relative;
-        background-color: #D8D8D8;
+        background-color: #1D1E4C;
         line-height: 30px;
         letter-spacing: 0px;
-        margin: 0 auto;
-        background-color:#1D1E4C ;
+        margin: 0 ;
+        // background-color:#1D1E4C ;
         color: #fafafa;
  
         p.progress__text{
@@ -57,41 +74,15 @@ div.progress__bar{
             left: -200%;
             color: #1D1E4C;
             font-size: $h7;
+            font-family: $chinese;
         
         
         }
-        .progress__item--active{
-            background-color: #1D1E4C;
+        // .progress__item--active{
+        //     background-color: #1D1E4C;
     
-            }
-        .progress_group_bar {
-            height: 12px;
-            -webkit-box-flex: 1;
-            -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-            margin: auto -5px;
-            z-index: 0;
-            .progress-bar {
-                display: flex;
-                // -webkit-box-orient: vertical;
-                // -webkit-box-direction: normal;
-                // -ms-flex-direction: column;
-                flex-direction: column;
-                // -webkit-box-pack: center;
-                // -ms-flex-pack: center;
-                justify-content: center;
-                color: #1D1E4C;
-                text-align: center;
-                white-space: nowrap;
-                background-color: #007bff;
-                // -webkit-transition: width .6s ease;
-                // -o-transition: width .6s ease;
-                transition: width .6s ease;
-                width: 30px;
-                height: 10px;
-            }
+        //     }
         
-       }
     // width:100%;
     // margin: 0 auto;
     // padding-left:16px;
@@ -101,6 +92,73 @@ div.progress__bar{
     
     /* border: 1px solid red; */
      }  
+     .progress_group_bar {
+        height: 12px;
+        // -webkit-box-flex: 1;
+        // -ms-flex: 1 1 100%;
+        // flex: 1 1 100%;
+        margin: 10px -5px;
+        z-index: 0;
+        .progress-bar {
+            // display: flex;
+            // -webkit-box-orient: vertical;
+            // -webkit-box-direction: normal;
+            // -ms-flex-direction: column;
+            flex-direction: column;
+            // -webkit-box-pack: center;
+            // -ms-flex-pack: center;
+            justify-content: center;
+            color: #1D1E4C;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #1D1E4C;
+            // -webkit-transition: width .6s ease;
+            // -o-transition: width .6s ease;
+            transition: width .6s ease;
+            width: 500px;
+            height: 10px;
+        }
+        @media (min-width:992px) and (max-width:1199px){
+            .progress-bar{
+                width: 400px;
+            }
+        }
+        @media (min-width:768px) and (max-width:991px){
+            .progress-bar{
+                width: 300px;
+            }  
+        }
+        @media (min-width:576px) and (max-width:767px){
+            .progress-bar{
+                width: 200px;
+            }  
+        }
+        @media (max-width:575px){
+            .progress-bar{
+                width: 150px;
+            }
+        }
+    
+   }
+    }
+}
+
+div.title-block {
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    width: $reserveSide;
+    //    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    h1.title {
+        font-size: 28px;
+        color: #1d1e4c;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px 0;
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
     }
 }
 // .progress__item &:after {
@@ -135,8 +193,20 @@ div.progress__bar{
     padding-right: 20px;
     // flex: 0 0 83.33333%;
     max-width: $pageW;
-#new {
-    z-index: 5000;
+    @media (min-width:992px) and (max-width:1199px){
+
+    }
+    @media (min-width:768px) and (max-width:991px){
+        
+    }
+    @media (min-width:576px) and (max-width:767px){
+        
+    }
+    @media (max-width:575px){
+        
+    }
+ #new {
+    z-index: 1;
     // border: 1px solid red;
     // max-width: $pageW;
     // margin: 0 auto;
@@ -144,22 +214,22 @@ div.progress__bar{
     width: 100%;
     margin-left: 10px;
     letter-spacing: $letter-Spacing;
-    div.title-block {
-        display: inline-block;
-        vertical-align: top;
-        width: $reserveSide;
-        //    position: absolute;
-        margin-top: 10px;
-        margin-left: 10px;
-        h1.title {
-            font-size: 28px;
-            color: #1d1e4c;
-            display: inline-block;
-            white-space: nowrap;
-            padding: 10px 0;
-            writing-mode: vertical-rl;
-            text-orientation: sideways;
-        }
+    // div.title-block {
+    //     display: inline-block;
+    //     vertical-align: top;
+    //     width: $reserveSide;
+    //     //    position: absolute;
+    //     margin-top: 10px;
+    //     margin-left: 10px;
+    //     h1.title {
+    //         font-size: 28px;
+    //         color: #1d1e4c;
+    //         display: inline-block;
+    //         white-space: nowrap;
+    //         padding: 10px 0;
+    //         writing-mode: vertical-rl;
+    //         text-orientation: sideways;
+    //     }
     }
     div.content {
         // border: 1px solid red;
@@ -200,6 +270,20 @@ div.progress__bar{
                     width: 400px;
                     color: #1d1e4c;
                     line-height: $lineHeight;
+                    @media (min-width:992px) and (max-width:1199px){
+                       
+                    }
+                    @media (min-width:768px) and (max-width:991px){
+                        
+                    }
+                    @media (min-width:576px) and (max-width:767px){
+                        font-size: $p;
+                    }
+                    @media (max-width:575px){
+                        font-size: $p;
+                    }
+                    
+
                 }
                 
                     .item_detail {
@@ -221,6 +305,25 @@ div.progress__bar{
                             float: left;
                             margin: 10px 30px 10px 30px;
                             background-size: contain;
+                            @media (min-width:992px) and (max-width:1199px){
+
+                            }
+                            @media (min-width:768px) and (max-width:991px){
+                                width: 80px;
+                                height: 80px;
+                                margin: 10px 30px 10px 30px;
+                            }
+                            @media (min-width:576px) and (max-width:767px){
+                                width: 70px;
+                                height: 70px;
+                                font-size: $p;
+                                margin: 10px 20px 10px 20px;
+                            }
+                            @media (max-width:575px){
+                                width: 65px;
+                                height: 65px;
+                                margin: 10px 5px 10px 5px;
+                            }
                             
                         }
                         .name,.size {
@@ -229,6 +332,25 @@ div.progress__bar{
                             // margin-left: 10px;
                             // margin-top: 20px;
                             // display: inline-block;
+                            @media (min-width:992px) and (max-width:1199px){
+                                margin: 20px auto;
+                                padding: 0px 50px 0 200px;
+                            }
+                            @media (min-width:768px) and (max-width:991px){
+                                margin: 20px auto;
+                                padding: 0px 40px 0 150px;
+                            }
+                            @media (min-width:576px) and (max-width:767px){
+                                margin: 10px auto;
+                                padding: 0px 5px 0 10px;
+                                font-size: $p;
+                            }
+                            @media (max-width:575px){
+                                margin: 10px auto;
+                                padding: 0px 5px 0 10px;
+                                font-size: $p;
+                                
+                            }
                         }
                     }
 
@@ -240,10 +362,23 @@ div.progress__bar{
                 // height: 30px;
                 // background-color: #fff;
                 padding: 0px 20px;
+                @media (min-width:992px) and (max-width:1199px){
+                    margin: 15px;
+                }
+                @media (min-width:768px) and (max-width:991px){
+                    margin: 15px;
+                }
+                @media (min-width:576px) and (max-width:767px){
+                    margin: 0px;
+                    padding: 0px 10px;
+                }
+                @media (max-width:575px){
+                    margin: 0px;
+                    padding: 0px 5px;
+                }
             }
             
-            
-            
+ 
             button.round {
                 border-radius: 50%;
                 width: 25px;
@@ -253,8 +388,27 @@ div.progress__bar{
                 color: #fff;
                 font-size: 18px;
                 background: #c3c3c3;
-                border-radius: 50%;
                 cursor: pointer;
+                @media (min-width:992px) and (max-width:1199px){
+
+                }
+                @media (min-width:768px) and (max-width:991px){
+                    
+                }
+                @media (min-width:576px) and (max-width:767px){
+                    width: 20px;
+                    height: 20px;
+                    font-size: $p; 
+                    padding: 0px;
+                }
+                @media (max-width:575px){
+                    width: 20px;
+                    height: 20px;
+                    font-size: $p;
+                    padding: 0px;
+                    
+                }
+
             }
             button.add {
                 background-color: #1d1e4c;
@@ -276,6 +430,25 @@ div.progress__bar{
                 background: #1d1e4c;
                 border-radius: 50%;
                 cursor: pointer;
+                @media (min-width:992px) and (max-width:1199px){
+
+                }
+                @media (min-width:768px) and (max-width:991px){
+                    
+                }
+                @media (min-width:576px) and (max-width:767px){
+                    font-size: 15px;  
+                    padding: 0px;
+                    width: 23px;
+                    height: 23px;
+                }
+                @media (max-width:575px){
+                    font-size: 15px;
+                    padding: 0px;
+                    width: 23px;
+                    height: 23px;
+                }
+
             }
             } 
         
@@ -289,6 +462,22 @@ div.progress__bar{
             text-align: center;
             right: 0;
             box-shadow: $box-shadow;
+            @media (min-width:992px) and (max-width:1199px){
+
+            }
+            @media (min-width:768px) and (max-width:991px){
+                
+            }
+            @media (min-width:576px) and (max-width:767px){
+                width: 100%;
+                margin: 20px auto;
+            }
+            @media (max-width:575px){
+                width: 100%;
+                margin: 20px auto;
+                
+            }
+
             .total-title {
                 width: 100%;
                 height: 30px;
@@ -350,12 +539,43 @@ div.progress__bar{
                 font-size: $btnTxt;
                 box-shadow: $box-shadow;
                 line-height: $lineHeight;
-                margin: 0 50px;
+                margin: 20px 50px;
                 padding: 10px 30px;
+                // background-color: #1D1E4C;
+                border: none;
+                outline: none;
+                @media (min-width:992px) and (max-width:1199px){
+
+                }
+                @media (min-width:768px) and (max-width:991px){
+                    
+                }
+                @media (min-width:576px) and (max-width:767px){
+                    margin: 20px ;
+                }
+                @media (max-width:575px){
+                    margin: 10px ;
+                    
+                }
+                
+            }
+            .button-buy{
+                border-radius: $btnRadius;
+                background-color: #1D1E4C; 
+                color:#fafafa
 
             }
+            .button-pay{
+                border-radius: $btnRadius;
+                background-color: #EF4325; 
+                color:#fafafa
+
+            }
+
         }
+      }
     }
-    }
-}
-}
+ }
+
+
+
