@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activities</title>
-    <link rel="stylesheet" href="./plugin/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap/bootstrap-grid.min.css"> -->
     <!-- <link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css"> -->
+    <!-- <link rel="stylesheet" href="./css/initiation_agreement.css"> -->
+    <link rel="stylesheet" href="./plugin/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./css/pages/initiation_agreement.css">
     <!-- <link rel="stylesheet" href="./css/test.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <!-- <script src="./js/event.js"></script> -->
 </head>
 <body>
+
     <!-- 樣板 header   -->
     @@include('./layout/header.html')
     <!-- 會員登入 -->
     @@include('./layout/login.html')
+
     <main class="event">
         <div class="bread">
             <ul>
@@ -26,7 +32,7 @@
         </div>
         <div class="content">
             <section id="section1">
-                <form>
+                <form action="./initiation_info.html">
                     <div class="container">
                         <div class="row  justify-content-center">
                             <div class="col-lg-6 col-md-8 col-sm-10 col-11 part">
@@ -36,7 +42,7 @@
                                     <div class="checkbox-block">
                                         <input type="checkbox" name="agreement" id="agreement"><label for="agreement">已瞭解說明(點選視同同意)</label>
                                     </div>
-                                    <div class="btn"><a href="./initiation_info.html">已詳閱並同意</a></div>
+                                    <button type="submit" class="btn" id="agree-btn">已詳閱並同意</button>
                                 </div>
                             </div>
                         </div>
@@ -49,5 +55,16 @@
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
+
+
+    <script>
+        $('#agree-btn').click(function(e){
+            if($('#agreement').prop("checked") == false){
+                $('label').css('color','red');
+                e.preventDefault();
+                return;
+            }
+        })
+    </script>
 </body>
 </html>

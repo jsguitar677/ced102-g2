@@ -62,7 +62,7 @@ $web-color:(
 );
 
 @mixin btn-module-red() {
-    div.btn{
+    .btn{
         border-radius: $border-radius;
         display: inline-block;
         overflow: hidden;
@@ -79,7 +79,7 @@ $web-color:(
 }
 @mixin btn-module-blue() {
     @include btn-module-red();
-    div.btn{
+    .btn{
         background-color: map-get( $web-color , 'blue' );
     }
 }
@@ -136,14 +136,14 @@ $web-color:(
         vertical-align: top;
     }
     input[type=checkbox]:checked {
-        background-image: url('../img/icon/icon-checkbox.png');
+        background-image: url('../../img/event/icon/icon-checkbox.png');
         background-size: cover;
     }
 }
 // ==================================================================================================================
 main.event {
-    margin-top: 60px;
     background-color: map-get($web-color, 'white-bg');
+    margin-top: 66px;
     img{
       max-width: 100%;
     }
@@ -202,7 +202,7 @@ main.event {
       margin: 0 auto;
       section{
         width: calc(100% - $padding-web);
-        margin: 60px 30px 0 30px;
+        margin: 0 30px;
         padding-bottom: 60px;
       }
     }
@@ -281,7 +281,15 @@ main.event{
                                     }
                                     @include checkbox();
                                 }
-                                @include btn-module_blue();
+                                button.btn{
+                                    border-radius: $border-radius;
+                                    outline: none;
+                                    color: map-get( $web-color ,'white');
+                                    background-color: map-get( $web-color ,'blue');
+                                    font-weight: bolder;
+                                    font-size: $text-fontSize;
+                                    padding: $padding-btn;
+                                }
                                 
                             }
                             @media (min-width:576px) and (max-width:767px){
@@ -307,13 +315,11 @@ main.event{
                                             margin: 15px 5px 25px 0;
                                         }
                                     }
-                                    div.btn{
+                                    button.btn{
                                         width: 100px;
-                                        a{
-                                          font-size: $text-fontSize-575;
-                                          padding: 5px;
-                                        }
-                                      }
+                                        font-size: $text-fontSize-575;
+                                        padding: 5px;
+                                    }
                                 }
                             }
                             @media (max-width:575px){
@@ -324,6 +330,10 @@ main.event{
                                         font-size: 16px;
                                         margin: 0 0 10px 0;
                                     }
+                                    span{
+                                        display: block;
+                                        font-size: 14px;
+                                    }
                                     h2{
                                         padding: 0 30px;
                                     }
@@ -331,7 +341,7 @@ main.event{
                                         margin: 0;
                                         font-size: $text-fontSize-575;
                                         line-height: 25px;
-                                        padding: 0 30px;
+                                        padding: 0 10px;
                                     }
                                     div.checkbox-block{
                                         label{
@@ -343,13 +353,11 @@ main.event{
                                             margin: 15px 5px 25px 0;
                                         }
                                     }
-                                    div.btn{
+                                    button.btn{
                                         width: 100px;
-                                        a{
-                                          font-size: $text-fontSize-575;
-                                          padding: 5px;
-                                        }
-                                      }
+                                        font-size: $text-fontSize-575;
+                                        padding: 5px;
+                                    }
                                 }
                             }
                         }

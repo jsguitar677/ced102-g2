@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="140.582" height="94.932" viewBox="0 0 140.582 94.932">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.756" y1="1.043" x2="0.363" y2="0.262" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#cfcfcf"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.351" y1="0.273" x2="0.773" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0.02" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="cloudy" transform="translate(-2.418 -2.042)">
+    <path id="Path" d="M89.626,0A43.333,43.333,0,0,0,51.283,23.167,34.146,34.146,0,1,0,34.131,86.851L89.626,87a43.5,43.5,0,0,0,0-87Z" transform="translate(10 2.042)" fill="url(#linear-gradient)"/>
+    <ellipse id="Oval" cx="34.14" cy="34.162" rx="34.14" ry="34.162" transform="translate(2.418 31.171) rotate(-15.61)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

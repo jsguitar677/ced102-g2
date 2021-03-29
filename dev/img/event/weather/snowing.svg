@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="141.965" height="117" viewBox="0 0 141.965 117">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.245" y1="1.043" x2="0.637" y2="0.262" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#cfcfcf"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.727" y1="0.649" x2="0.085" y2="0.227" gradientUnits="objectBoundingBox">
+      <stop offset="0.02" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="snowing" transform="translate(0 -1.906)">
+    <path id="Path" d="M43.785,0a43.657,43.657,0,0,1,38.6,23.167A34.22,34.22,0,1,1,99.52,86.851L43.66,87a43.5,43.5,0,1,1,0-87Z" transform="translate(0 1.906)" fill="url(#linear-gradient)"/>
+    <ellipse id="Oval" cx="34.171" cy="34.248" rx="34.171" ry="34.248" transform="translate(57.606 78.592) rotate(-74.39)" fill="url(#linear-gradient-2)"/>
+    <path id="Path-2" data-name="Path" d="M1,0V25" transform="translate(64 44.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-3" data-name="Path" d="M6,0,3.013,4,0,0" transform="translate(62 41.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-4" data-name="Path" d="M0,4,3.013,0,6,4" transform="translate(62 69.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-5" data-name="Path" d="M22,0,0,13" transform="translate(54 50.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-6" data-name="Path" d="M5,5,0,4.289,1.828,0" transform="translate(76 46.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-7" data-name="Path" d="M0,0,5,.686,3.172,5" transform="translate(50 62.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-8" data-name="Path" d="M22,13,0,0" transform="translate(54 50.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-9" data-name="Path" d="M1.828,5,0,.686,5,0" transform="translate(76 62.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-10" data-name="Path" d="M3.172,0,5,4.289,0,5" transform="translate(50 46.906)" fill="none" stroke="#9c9fa0" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+    <circle id="Oval-2" data-name="Oval" cx="5" cy="5" r="5" transform="translate(46 102.906)" fill="#c4c4c4"/>
+    <circle id="Oval-3" data-name="Oval" cx="3.5" cy="3.5" r="3.5" transform="translate(72 111.906)" fill="#e0e0e0"/>
+    <circle id="Oval-4" data-name="Oval" cx="3.5" cy="3.5" r="3.5" transform="translate(28 94.906)" fill="#e0e0e0"/>
+    <circle id="Oval-5" data-name="Oval" cx="2.5" cy="2.5" r="2.5" transform="translate(64 95.906)" fill="#fff"/>
+    <circle id="Oval-6" data-name="Oval" cx="2.5" cy="2.5" r="2.5" transform="translate(98 112.906)" fill="#fff"/>
+    <circle id="Oval-7" data-name="Oval" cx="2.5" cy="2.5" r="2.5" transform="translate(26 112.906)" fill="#fff"/>
+    <circle id="Oval-8" data-name="Oval" cx="5" cy="5" r="5" transform="translate(86 95.906)" fill="#c4c4c4"/>
+  </g>
+</svg>
