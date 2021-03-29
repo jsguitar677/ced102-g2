@@ -78,40 +78,44 @@ body {
 }
 
 //左側 直向 麵包條
-div.title-block
+div.title-block{
     h5.title {
-        margin-top:$navH;
         position:absolute;
-        top: calc( #{$navH} + 10px);
+        top: 66px;
         left:0;
         margin:0;
-        font-size: $h5;
+        font-size: 20px;
         font-weight: normal;
         display: inline-block;
         white-space: nowrap;
-        padding: 10px 0;
-        transform: rotate(90deg) translateX(-60px);
-        transform-origin: 0% 100%;
+        padding: 10px;
+
+        transform: rotate(90deg) translateY(-100%);
+        transform-origin: 0 0;
+        // transform: rotate(90deg) translateX(-60px);
+        // transform-origin: 0% 100%;
         color:map-get($color_regulation,'blue');
         @media (max-width:576px){
-            font-size: $h6;
+            font-size: $h7;
         }
-    span {
-        color:map-get($color_regulation,'gray' );
-    }
-    @media (min-width:320px) and (max-width:575px){
-        font-size: $h6;
-        top: calc( #{$navH} + 15px);
+        span {
+            color:map-get($color_regulation,'gray' );
+        }
+        @media (min-width:320px) and (max-width:575px){
+            font-size: $h7;
+            top: calc( #{$navH} + 15px);
+        }
     }
 }
 
 section.CustomizedBagPage {
     letter-spacing:$letter-Spacing;
-    max-width:$pageW;
+    max-width: calc( #{$pageW} - 60px );
     margin:0 auto;
     font-size: 0px;
     text-align: center;
-    padding-top:$navH;
+    margin-top:$navH;
+    position: relative;
 }
 
 //header下方背景圖(毛玻璃效果)，此div不占位
@@ -122,11 +126,14 @@ section.CustomizedBagPage div.content_costomizedBag {
     width: 100%;
     div.top_back_img_1 {
         position:relative;
-        width:100%;
+        margin: 0 auto;
         z-index: -5;
+        @media (max-width:1200px){
+            width:calc(100% - 60px);
+        }
         div.top_back_img_2{    
             width: 100%;
-            height:426px;
+            max-height:426px;
             position:absolute;
             top:-5px;
             left:0;    
@@ -152,6 +159,7 @@ section.CustomizedBagPage{
             text-align: center;
             @media (max-width:576px){
                 font-size: $h6;
+                padding:20px;
             }
         }
     }
@@ -166,8 +174,7 @@ section.CustomizedBagPage{
             div.all{
                 margin:0 auto;
                 width:100%;
-                padding:0;
-                //display: flex;
+                padding:0 30px;
                 //左側圖片與商品解說區==================================================================
                 //左側圖片與商品解說區==================================================================
                 //左側圖片與商品解說區==================================================================
@@ -237,6 +244,9 @@ section.CustomizedBagPage{
                                 color:map-get($color_regulation,'blue');
                                 display:inline-block;
                                 font-weight: 550;
+                                @media (max-width:576px) {
+                                    font-size: $p;
+                                }
                             }
                             p.front{
                                 margin:0 12% 10px auto;
@@ -252,6 +262,9 @@ section.CustomizedBagPage{
                             margin:0;
                             padding-top: 40px;
                             display:inline-block;
+                            @media (max-width:992px){
+                                padding:0;
+                            }
                             @media (max-width:576px){
                                 font-size: $h7;
                             }
@@ -311,7 +324,6 @@ section.CustomizedBagPage{
                         // 選色區=================================
                         div.color_block{
                             width:100%;
-                            //border-bottom: 1px solid map-get($color_regulation,'gray');
                             margin-bottom: 50px;
                             p.stepExplain{
                                 font-size: $p;
@@ -319,6 +331,9 @@ section.CustomizedBagPage{
                                 color:map-get($color_regulation,'blue');
                                 display:block;
                                 margin:0;
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                             }
                             div.color_block1{
                                 width:100%;
@@ -348,6 +363,12 @@ section.CustomizedBagPage{
                                     @media (max-width:575px) {
                                         width:30%;
                                         margin-bottom: 10px;
+                                        font-size: 12px;
+                                    }
+                                    @media (max-width:400px) {
+                                        width:45%;
+                                        margin-bottom: 10px;
+                                        font-size: 10px;
                                     }
                                     div.theColor{
                                         width:100%;
@@ -355,6 +376,9 @@ section.CustomizedBagPage{
                                     }
                                     input.circleBtn{
                                         margin-top: 10%;
+                                        @media (max-width:576px) {
+                                            font-size: 14px; 
+                                        }
                                     }
                                     div.theColor1{
                                         background-color:#f5f5dc;
@@ -384,17 +408,25 @@ section.CustomizedBagPage{
                             @media (max-width:991px) {
                                 padding-bottom: 0;
                             }
-                            //border-bottom: 1px solid map-get($color_regulation,'gray');
                             p.stepExplain{
                                 margin:0;
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                             }
                             p.stepExplain1{
                                 color:map-get($color_regulation,'red');
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                             }
                             div.picture_block2{
                                 margin: 0px auto;
                                 label.placement{
                                     font-weight: normal;
+                                    @media (max-width:576px) {
+                                        font-size: 12px; 
+                                    }
                                 }
                                 div.placement_of_product{
                                     width:98%;
@@ -422,7 +454,6 @@ section.CustomizedBagPage{
                         div.qty_block{
                             width:100%;
                             font-size: $p;
-                            //border-bottom: 1px solid map-get($color_regulation,'gray');
                             padding-bottom: 50px;
                             p.stepExplain{
                                 font-size: $p;
@@ -430,15 +461,24 @@ section.CustomizedBagPage{
                                 margin:0;
                                 padding-top:50px;
                                 padding-bottom:10px;
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                             }
                             div.placememtOfQty{
                                 width:98%;
                                 margin:0 auto;
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                                 select.select_qty_pcs{
                                     width:100px;
                                     height: 35px;
                                     padding-left: 30px;
                                     border-radius: $inputRadius;
+                                    @media (max-width:576px) {
+                                        font-size: 12px; 
+                                    }
                                 }
                             }
                         }
@@ -450,10 +490,16 @@ section.CustomizedBagPage{
                             p.stepExplain{
                                 font-weight: 550;
                                 margin:0;
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                             }
                             div.placementOfTal{
                                 width:98%;
                                 text-align: right;
+                                @media (max-width:576px) {
+                                    font-size: 12px; 
+                                }
                                 label.thePrice{
                                     margin-right: 10%;
                                 }
@@ -486,6 +532,11 @@ section.CustomizedBagPage{
                         }
                     }
                 }
+            }
+            div.all2{
+                margin:0 auto;
+                width:100%;
+                //padding:0 30px;
                 //底部 推薦商品區======================================================================
                 //底部 推薦商品區======================================================================
                 //底部 推薦商品區======================================================================
@@ -493,7 +544,6 @@ section.CustomizedBagPage{
                     border-radius: $borderRadius;
                     box-shadow: $box-shadow;
                     margin:0 atuo;
-                    padding:0 20px;
                     padding-bottom: 40px;
                     margin-bottom:70px;
                     margin-top:25px;
@@ -531,13 +581,13 @@ section.CustomizedBagPage{
                                     width:100%;
                                 }
                                 div.productInfo{
+                                    width: 100%;
                                     position:absolute;
                                     bottom:0;
                                     left:0;
                                     background-color: map-get($color_regulation,'white-bg' );
                                     background: hsla(0,0%,100%,.7);
                                     padding:5% 5% 15% 5%;
-                                    //padding-bottom: 15%;
                                     p.NameAndPrice{
                                         font-size: $p;
                                         font-weight: 550;
@@ -546,6 +596,7 @@ section.CustomizedBagPage{
                                         margin:3% 7% 3% 0;
                                     }
                                     p.text{
+                                        width: 100%;
                                         font-size: $p;
                                         color:map-get($color_regulation,'blue'); 
                                         margin-top: 0;
@@ -557,7 +608,6 @@ section.CustomizedBagPage{
                                         position:absolute;
                                         bottom:7px;
                                         right:7px;
-                                        //width:11.75%;
                                         width:27.9px;
                                         border-radius: 50%;
                                         box-shadow: $box-shadow;
