@@ -2,10 +2,11 @@ div.ad_container{
     margin-top: 20px;
     font-size: 0px;
     position: relative;
+    // border: 1px solid red;
 }
 div.ad_bread{
     position: absolute;
-    top: 22.8%;
+    top: 25%;
     left: 2%;
     transform: rotate(90deg) translateY(-100%);
     transform-origin: 0 0;
@@ -27,7 +28,13 @@ div.ad_bread ul li::after {
     color: #1D1E4C; }
   div.ad_bread ul li:last-child::after {
     content: ""; }
-@media (max-width: 575px) {
+    @media (max-width: 1400px){
+        div.ad_bread{
+            top:20%;
+        }
+    }
+
+    @media (max-width: 575px) {
   div.ad_bread ul li {
     font-size: 18px; } }
 
@@ -114,9 +121,7 @@ div.ad_content{
     .ad_block{
         height: 500px;
     }
-    div.ad_bread{
-        top: 25%;
-    }
+    
 
     .ad_block>img{
         right: 3%;
@@ -323,7 +328,7 @@ div.founder>h1>img{
 	margin: 0 auto;
     margin-top: 40px;
 	width: 65%;
-	height: 50px;
+	height: 55.5px;
 	border-radius: 10px;
     border: 3px solid #1D1E4C;
   text-align: center;
@@ -613,7 +618,7 @@ button.submmit{
     padding-bottom: 5px;
     position: absolute;
     outline:0; 
-    bottom: 0;
+    bottom: 6%;
     right: 7%;
 }
 @media (max-width: 1233px){
@@ -661,7 +666,12 @@ button.submmit{
 div.linker{
   display: grid;
   place-items: center;
-  
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+div.linker>h1{
+    font-size: 40px;
+    color:#1D1E4C;
 }
 .page-content {
   display: grid;
