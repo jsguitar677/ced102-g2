@@ -4,35 +4,47 @@
    box-sizing: border-box;
    
 }
+@media (min-width:992px) and (max-width:1199px){
 
-// 流程// 
+}
+@media (min-width:768px) and (max-width:991px){
+    
+}
+@media (min-width:576px) and (max-width:767px){
+    
+}
+@media (max-width:575px){
+    
+}
+
 div.progress__bar{
    margin-top: 70px ;
+   
    margin-bottom: 0px;
    box-shadow: $box-shadow;
    position: relative;
    // padding: 10px 20px 20px 20px;
    flex: 0 0 83.33333%;
    width: 100%;
-   height: 60PX;
-   justify-content: flex-start !important;
+   height: 60px;
+   // justify-content: center;
    background-color: #fafafa;
    // border: 1px solid red;
    
    // margin: 10px auto;
    
    // display: flex !important;
-   
-   
    .progress{
+       margin: 0 auto;
        list-style: none;
        display: flex ;
+       justify-content: center;
        text-align: center;
        color: #ffffff;
        text-align: center;
        position: relative;
        font-size: 24px;
-       text-align: center;
+       width: auto;
        // margin: 0 auto;
        
    
@@ -41,13 +53,13 @@ div.progress__bar{
        width: 30px;
        height: 30px;
        border-radius: 50%;
-       margin: 0 100px;
+       // margin: 0 100px;
        position: relative;
-       background-color: #D8D8D8;
+       background-color: #1D1E4C;
        line-height: 30px;
        letter-spacing: 0px;
-       margin: 0 auto;
-       background-color:#1D1E4C ;
+       margin: 0 ;
+       // background-color:#1D1E4C ;
        color: #fafafa;
 
        p.progress__text{
@@ -57,41 +69,15 @@ div.progress__bar{
            left: -200%;
            color: #1D1E4C;
            font-size: $h7;
+           font-family: $chinese;
        
        
        }
-       .progress__item--active{
-           background-color: #1D1E4C;
+       // .progress__item--active{
+       //     background-color: #1D1E4C;
    
-           }
-       .progress_group_bar {
-           height: 12px;
-           -webkit-box-flex: 1;
-           -ms-flex: 1 1 100%;
-           flex: 1 1 100%;
-           margin: auto -5px;
-           z-index: 0;
-           .progress-bar {
-               display: flex;
-               // -webkit-box-orient: vertical;
-               // -webkit-box-direction: normal;
-               // -ms-flex-direction: column;
-               flex-direction: column;
-               // -webkit-box-pack: center;
-               // -ms-flex-pack: center;
-               justify-content: center;
-               color: #1D1E4C;
-               text-align: center;
-               white-space: nowrap;
-               background-color: #007bff;
-               // -webkit-transition: width .6s ease;
-               // -o-transition: width .6s ease;
-               transition: width .6s ease;
-               width: 30px;
-               height: 10px;
-           }
+       //     }
        
-      }
    // width:100%;
    // margin: 0 auto;
    // padding-left:16px;
@@ -101,37 +87,57 @@ div.progress__bar{
    
    /* border: 1px solid red; */
     }  
+    .progress_group_bar {
+       height: 12px;
+       // -webkit-box-flex: 1;
+       // -ms-flex: 1 1 100%;
+       // flex: 1 1 100%;
+       margin: 10px -5px;
+       z-index: 0;
+       .progress-bar {
+           // display: flex;
+           // -webkit-box-orient: vertical;
+           // -webkit-box-direction: normal;
+           // -ms-flex-direction: column;
+           flex-direction: column;
+           // -webkit-box-pack: center;
+           // -ms-flex-pack: center;
+           justify-content: center;
+           color: #1D1E4C;
+           text-align: center;
+           white-space: nowrap;
+           background-color: #1D1E4C;
+           // -webkit-transition: width .6s ease;
+           // -o-transition: width .6s ease;
+           transition: width .6s ease;
+           width: 500px;
+           height: 10px;
+       }
+       @media (min-width:992px) and (max-width:1199px){
+           .progress-bar{
+               width: 400px;
+           }
+       }
+       @media (min-width:768px) and (max-width:991px){
+           .progress-bar{
+               width: 300px;
+           }  
+       }
+       @media (min-width:576px) and (max-width:767px){
+           .progress-bar{
+               width: 200px;
+           }  
+       }
+       @media (max-width:575px){
+           .progress-bar{
+               width: 150px;
+           }
+       }
+   
+  }
    }
 }
-// .progress__item &:after {
-//     content: "";
-//     width: 500%;
-//     height: 3px;
-//     position: absolute;
-//     background-color: #D8D8D8;
-//     top: 50%;
-//     left: -478%;
-//     z-index: 1;
-// }
-
-   
-   
-   // a {
-   //     text-decoration: none;
-   //     color: #B0B0B0;
-   //     font-size: 28px;
-   //     margin: 10px 20px;
-   // }
-   // .active {
-   //     color: #1d1e4c;
-   //     font-weight: bold;
-   // }
-
-.paymentSection{
-   // max-width: 1280px;
-   margin: 0;
-   // font-size: 0;
-   div.title-block{
+div.title-block{
    display: inline-block;
    vertical-align: top;
    background-color: #F6F6F6;
@@ -146,9 +152,17 @@ div.progress__bar{
    text-orientation: sideways;
     }  
    }
+
+.paymentSection{
+   // max-width: 1280px;
+   margin: 0 auto;
+   display: inline-block;
+   
+   // font-size: 0;
    
    div.paymentContent{
       width: $pageW;
+      
       max-width: 100%;
       margin: 0 auto;
       border: 1px solid red;
