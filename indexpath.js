@@ -1,2 +1,2 @@
-var index_path = 'member.html'
+var index_path = 'payment.html'
 module.exports = index_path;
