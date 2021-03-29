@@ -1,39 +1,140 @@
 @import '../var';
-@import '../all.scss';
-*{
-    box-sizing: border-box;
-    letter-spacing: $letter-Spacing;
-    line-height: $lineHeight;
-    font-family: $chinese,$english;
-    position: relative;
-
+// @import '../all.scss';
+* {
+   box-sizing: border-box;
+   
 }
 
 // 流程// 
-div.product-mb{ 
-border: 1px solid red;
-text-align: center;
-margin: 10px auto;
-   a{
-    text-decoration:none;
-    color: #B0B0B0;
-    font-size: 28px;
-    margin: 10px 20px;
-   }
-   .active{
-     color: #1d1e4c;
-     font-weight:bold;
-   }   
- }
+div.progress__bar{
+   margin-top: 70px ;
+   margin-bottom: 0px;
+   box-shadow: $box-shadow;
+   position: relative;
+   // padding: 10px 20px 20px 20px;
+   flex: 0 0 83.33333%;
+   width: 100%;
+   height: 60PX;
+   justify-content: flex-start !important;
+   background-color: #fafafa;
+   // border: 1px solid red;
+   
+   // margin: 10px auto;
+   
+   // display: flex !important;
+   
+   
+   .progress{
+       list-style: none;
+       display: flex ;
+       text-align: center;
+       color: #ffffff;
+       text-align: center;
+       position: relative;
+       font-size: 24px;
+       text-align: center;
+       // margin: 0 auto;
+       
+   
+   
+   .progress__item{
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       margin: 0 100px;
+       position: relative;
+       background-color: #D8D8D8;
+       line-height: 30px;
+       letter-spacing: 0px;
+       margin: 0 auto;
+       background-color:#1D1E4C ;
+       color: #fafafa;
 
-section{
+       p.progress__text{
+           position: absolute;
+           width: 150px;
+           top: 50%;
+           left: -200%;
+           color: #1D1E4C;
+           font-size: $h7;
+       
+       
+       }
+       .progress__item--active{
+           background-color: #1D1E4C;
+   
+           }
+       .progress_group_bar {
+           height: 12px;
+           -webkit-box-flex: 1;
+           -ms-flex: 1 1 100%;
+           flex: 1 1 100%;
+           margin: auto -5px;
+           z-index: 0;
+           .progress-bar {
+               display: flex;
+               // -webkit-box-orient: vertical;
+               // -webkit-box-direction: normal;
+               // -ms-flex-direction: column;
+               flex-direction: column;
+               // -webkit-box-pack: center;
+               // -ms-flex-pack: center;
+               justify-content: center;
+               color: #1D1E4C;
+               text-align: center;
+               white-space: nowrap;
+               background-color: #007bff;
+               // -webkit-transition: width .6s ease;
+               // -o-transition: width .6s ease;
+               transition: width .6s ease;
+               width: 30px;
+               height: 10px;
+           }
+       
+      }
+   // width:100%;
+   // margin: 0 auto;
+   // padding-left:16px;
+   // padding-right: 16px;
+   // text-align: center;
+   // margin: 20% auto;
+   
+   /* border: 1px solid red; */
+    }  
+   }
+}
+// .progress__item &:after {
+//     content: "";
+//     width: 500%;
+//     height: 3px;
+//     position: absolute;
+//     background-color: #D8D8D8;
+//     top: 50%;
+//     left: -478%;
+//     z-index: 1;
+// }
+
+   
+   
+   // a {
+   //     text-decoration: none;
+   //     color: #B0B0B0;
+   //     font-size: 28px;
+   //     margin: 10px 20px;
+   // }
+   // .active {
+   //     color: #1d1e4c;
+   //     font-weight: bold;
+   // }
+
+.paymentSection{
    // max-width: 1280px;
    margin: 0;
    // font-size: 0;
    div.title-block{
    display: inline-block;
    vertical-align: top;
-   width: $reserveSide*2;
+   background-color: #F6F6F6;
 
    h1.title{
    font-size: 28px;
@@ -46,25 +147,29 @@ section{
     }  
    }
    
-   div.content{
+   div.paymentContent{
+      width: $pageW;
+      max-width: 100%;
+      margin: 0 auto;
       border: 1px solid red;
-      text-align: left;
-      display: inline-block;
+      // text-align: left;
+      // display: inline-block;
       vertical-align: top;
       position: relative;
-      // width: 100%;
-      // padding-right: 60px;
+      
       div.card{
          // border: 1px solid ;
+         margin: 20px auto;
          box-shadow: $box-shadow;
          border-radius: $borderRadius;
+         
 
          .card-header{
              button.btn-link{
                background-color: #1d1e4c ;
                border-radius: 15px;
                // margin-top: 20px ;
-               margin-bottom: 20px;
+               margin-bottom: 0px;
                width: 100%;
                height: 88px;
                text-align: center;
@@ -82,7 +187,7 @@ section{
          #collapseOne{
         border:1px solid #1d1e4c ;
         border-radius: 15px;
-        margin: 20px ;
+        margin: 10px ;
         width: 60%;
       //   height: 88px;
         align-items: center;
@@ -166,6 +271,8 @@ section{
         }
         }
         div.payment-totalbody{
+         position:relative ;
+         // flex-direction: column;
          display: inline-block;
          width: 30%;
          // border: 1px solid red;
@@ -183,89 +290,200 @@ section{
                }
       }
       }
-      form.paymentForm{
-         display: inline;
+      .form_wrapper {
+         vertical-align: top;
          position: relative;
-         // border: 1px solid red;
-         width: 100%;
-         div.creditCardForm{
-            // border: 1px solid red;
-            margin: 20px;
-            width: 40%;
-            padding: 20px;
-            box-shadow: $box-shadow;
-            border-radius: $borderRadius;
-            h5.writeForm{
-               font-size: $h5;
-               margin: 20px 0px;
-            }
-
-         div.row {
-            clear:both;
-            padding:10px;
-            margin: 5px auto;
-            font-size: 28px;
-            
-            span.labell {
-               float:left;
-               width:300px;
-               text-align:left;
-
-               
-            }
-            select.formm{float:right;width:100px;text-align:right;}
-            input.formm {
-               float:right;
-               width:100px;
-               text-align:right;
-               border-radius: $inputRadius;
-            }
+         width: 48%;
+         background-color: #F6F6F6;
+         border-radius: $borderRadius;
+         // -webkit-box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+         box-shadow: $box-shadow;
+         display: inline-block;
+         text-align: center;
+         margin: 10px;
+         // display: flex;
+         // flex-direction: column;
+         background-color: #ebebeb;
+         border: none;
+        }
+         .step_title{
+            margin: 10px;
+            color: #1D1E4C;
          }
-       }
-
-         div.consignee{
-            width: 40%;         
-            border: 1px solid red;
-            margin: 20px;
-            width: 50%;
-            padding: 20px;
-            box-shadow: $box-shadow;
-            border-radius: $borderRadius;
-            
-            h5.writeForm{
-               font-size: $h5;
-               margin: 20px 0px;
+         .creadDetail,.consignee{
+            .creadCardimg img{
+               width: 100px;
+               height: 70px;
             }
             div.row {
                clear:both;
                padding:10px;
                margin: 5px auto;
-               font-size: 28px;
                
-               span.labell {
+               .label {
+                     float:left;
+                     width:130px;text-align:right;}
+               .form{
                   float:left;
-                  width:300px;
-                  text-align:left;
-   
-               }
-               select.formm{
-                  float:right;
-                  width:100%;
-                  text-align:right;
-               }
-               input.formm {
-                  float:right;
-                  width:100%;
-                  text-align:right;
+                  width:100px;
+                  text-align:left; 
+                  margin: 3px;
+                  border: none;
                   border-radius: $inputRadius;
+                  background-color: #C2C2C2;
+                  border-color: #1D1E4C;
+                  line-height: $lineHeight;
+                  
+               }
+               
+            }
+            
+
+            // .form-row>.col, .form-row>[class*=col-] {
+            //       padding-right: 5px;
+            //       padding-left: 5px;
+            //    }
+            .input-group {
+               position: relative;
+               display: -webkit-box;
+               display: -ms-flexbox;
+               display: flex;
+               // -ms-flex-wrap: wrap;
+               flex-wrap: wrap;
+               -webkit-box-align: stretch;
+               -ms-flex-align: stretch;
+               // align-items: stretch;
+               width: 100%;
+               .form-control{
+                  border: none;
                }
             }
          }
-         button.cfmpay{
-            background-color: #EF4325;
-            font-size: $btnTxt;
+         .consignee{ 
+            .member.addAddress{
+              padding: 20px 0;
+            
+            div.row {
+               clear:both;
+               padding:10px;
+               margin: 5px auto;
+               
+               .label {float:left;
+                     width:130px;text-align:right;}
+               .form{
+                  float:left;
+                  width:100px;
+                  text-align:left; 
+                  margin: 3px;
+                  border: none;
+                  border-radius: $inputRadius;
+                  background-color: #C2C2C2;
+                  border-color: #1D1E4C;
+                  line-height: $lineHeight;
+               }
+            
+            }
+           
+         
          }
+         }
+
       }
 
+      // form.paymentForm{
+      //    display: inline;
+      //    position: relative;
+      //    // border: 1px solid red;
+      //    width: 100%;
+      //    div.creditCardForm{
+      //       // border: 1px solid red;
+      //       margin: 20px;
+      //       width: 40%;
+      //       padding: 20px;
+      //       box-shadow: $box-shadow;
+      //       border-radius: $borderRadius;
+      //       h5.writeForm{
+      //          font-size: $h5;
+      //          margin: 20px 0px;
+      //       }
+
+      //    div.row {
+      //       clear:both;
+      //       padding:10px;
+      //       margin: 5px auto;
+      //       font-size: 28px;
+            
+      //       span.labell {
+      //          float:left;
+      //          width:300px;
+      //          text-align:left;
+
+               
+      //       }
+      //       select.formm{float:right;width:100px;text-align:right;}
+      //       input.formm {
+      //          float:right;
+      //          width:100px;
+      //          text-align:right;
+      //          border-radius: $inputRadius;
+      //       }
+      //    }
+      //  }
+   .btn_group{
+      display: flex;
+      padding: 20px;
+      width: 100%;
+      margin: 10px auto;
+      .btn{
+      display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    font-size: $btnTxt;
+   //  background-color: #1D1E4C;
+    border: 1px solid #1D1E4C;
+    border-radius: $btnRadius;
+    padding: 5px;
+    line-height: $lineHeight;
+    font-family: $chinese;
+    padding: 5px 30px;
+    margin: 5px auto;
+    outline: none;
+      button.cfmpay{
+         background-color: #EF4325;
+         font-size: $btnTxt;
+         color:#1D1E4C;
+         color: #fafafa;
+
+      }
    }
+   }
+   #finsh_wrapper {
+      padding: 60px;
+      background-color: #fff;
+      border-radius: 15px;
+      margin: 20px auto;
+      width: 50%;
+      text-align: center;
+         .btn{
+            display: inline-block;
+          font-weight: 400;
+          color: #212529;
+          text-align: center;
+          vertical-align: middle;
+          font-size: $btnTxt;
+         //  background-color: #1D1E4C;
+          border: 1px solid #1D1E4C;
+          border-radius: $btnRadius;
+          padding: 5px;
+          line-height: $lineHeight;
+          font-family: $chinese;
+          padding: 5px 30px;
+          margin: 20px ;
+          outline: none;
+      }
+
+      
+} 
 }
