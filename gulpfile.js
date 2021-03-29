@@ -88,7 +88,7 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
-            index:'indexfront.html',
+            index:index_path,
             injectChanges: false,
         },
     });
