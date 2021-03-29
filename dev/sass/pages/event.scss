@@ -1675,7 +1675,8 @@ main.event {
                         border-radius: 128px;
                         overflow: hidden;
                         img{
-                          width: 100%;
+                          min-width: 100%;
+                          min-height: 100%;
                         }
                       }
                       p{
@@ -1809,11 +1810,13 @@ main.event {
                       padding: 30px 30px;
                     }
                     div.pic{
-                      width: 100px;
-                      border-radius: 50px;
+                      border-radius: 50%;
                       overflow: hidden;
+                      width: 100px;
+                      height: 100px;
                       img{
-                        width: 100%;
+                        min-width: 100%;
+                        min-height: 100%;
                       }
                     }
                     div.text{
@@ -1833,7 +1836,8 @@ main.event {
                         padding: 0px 30px 20px 30px;
                       }
                       div.pic{
-                        width: 30%;
+                        width: 100px;
+                        height: 100px;
                         flex-shrink: 0;
                         margin-bottom: 20px;
 
@@ -1860,7 +1864,8 @@ main.event {
                         padding: 0px 30px 20px 30px;
                       }
                       div.pic{
-                        width: 30%;
+                        width: 100px;
+                        height: 100px;
                         flex-shrink: 0;
                         margin-bottom: 20px;
 
