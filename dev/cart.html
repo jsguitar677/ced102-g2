@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>購物車</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/cart.css">
     <!-- <link rel="stylesheet" href="./plugin/bootstrap-grid.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
+   
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
 </head>
 
@@ -27,14 +27,24 @@
               <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}">1
                 <p class="progress__text ">確認訂單</p>
               </li>
+              <li class="progress progress_group_bar">
+                <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
+              </li>
               <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 1}">2
                 <p class="progress__text ">填寫訂購資料</p>
+              </li>
+              <li class="progress progress_group_bar">
+                <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
               </li>
               <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 2}">3
                 <p class="progress__text ">完成訂單</p>
               </li>
             </ul>
     </div>
+    <div class="title-block ">
+        <h1 class="title">購物車</h1>
+    </div>
+    
         
     <div  class="Cart">
     <section class="section" id="new">
@@ -50,9 +60,6 @@
                 <p class="progress__text ">完成訂單</p>
               </li>
             </ul>
-        </div> -->
-        <!-- <div class="title-block ">
-            <h1 class="title">購物車</h1>
         </div> -->
         <div class="content ">
             <div class="sub-title-block ">
@@ -161,7 +168,7 @@
 
             </div>
             <div class="butSection">
-             <button href="#" class=" button button--buy">繼續購物</button>
+             <button href="#" class=" button button-buy">繼續購物</button>
             <button href="#" class="button button-pay">進行結帳</button>
             </div>
             
@@ -173,10 +180,11 @@
         </div>
 
     </section>
+</div>
 
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
-</div>
+
     <script src="./js/login.js"></script>
     
 </body>
