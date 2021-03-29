@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="141.552" height="130.862" viewBox="0 0 141.552 130.862">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.244" y1="1.043" x2="0.636" y2="0.262" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2f2f2"/>
+      <stop offset="1" stop-color="#cfcfcf"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.726" y1="0.649" x2="0.084" y2="0.227" gradientUnits="objectBoundingBox">
+      <stop offset="0.02" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="day-cloudy" transform="translate(0 1.555)">
+    <circle id="Oval" cx="31.5" cy="31.5" r="31.5" transform="translate(53 17.945)" fill="#efcc00"/>
+    <path id="Path" d="M1,0V11" transform="translate(83 -0.055)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-2" data-name="Path" d="M1,0V11" transform="translate(83 87.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-3" data-name="Path" d="M0,1H11" transform="translate(34 48.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-4" data-name="Path" d="M0,1H11" transform="translate(123 48.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-5" data-name="Path" d="M0,0,8,8" transform="translate(49 14.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-6" data-name="Path" d="M0,0,8,8" transform="translate(112 76.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-7" data-name="Path" d="M0,8,8,0" transform="translate(49 76.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-8" data-name="Path" d="M0,8,8,0" transform="translate(112 14.945)" fill="none" stroke="#efcc00" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path-9" data-name="Path" d="M43.676,0A43.675,43.675,0,0,1,82.36,23.167,34.224,34.224,0,1,1,99.631,86.851L43.676,87a43.5,43.5,0,1,1,0-87Z" transform="translate(0 34.945)" fill="url(#linear-gradient)"/>
+    <ellipse id="Oval-2" data-name="Oval" cx="34.171" cy="34.248" rx="34.171" ry="34.248" transform="translate(57.193 110.875) rotate(-74.39)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>
