@@ -76,7 +76,7 @@
                                     <div class="page1RightText">
                                         <h5>發起活動募款</h5>
                                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo aut dignissimos doloremque maiores quas natus ad vel. Expedita fuga impedit molestias fugit inventore maxime provident cum, nisi tempora dolor culpa?</p>
-                                        <button class="comBtn2" onclick="location.href='./event.html'">建立活動募款</button>
+                                        <button class="comBtn2" id="A" onclick="location.href='./event.html'">建立活動募款</button>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
@@ -668,6 +668,19 @@
                 var imageUrl="./img/indexFront/indexImg12.jpg";
                 $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
             });
+        });
+    </script>
+
+    <script>
+        let storage = sessionStorage;
+        if(storage['btnId'] == null){
+            storage['btnId'] = '';
+        }else{
+            storage['btnId'] = '';
+        };
+        document.getElementById('A').addEventListener('click',function(){
+            itemId = this.id;
+            storage['btnId'] += `${itemId}, `;
         });
     </script>
 </body>
