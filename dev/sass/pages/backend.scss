@@ -6,6 +6,7 @@ $table-padding:20px;
 
 *{
     letter-spacing: $letter-Spacing;
+    color: map-get($color_regulation,'blue');
 }
 
 main{
@@ -65,6 +66,144 @@ main{
     }
     
 }
+
+
+
+
+// 活動管理CSS
+main{
+    div.mainContent{
+        div.container{
+            div.row{
+                overflow: auto;
+                height: 100%;
+                div.col-12{
+                    div#actVerifyMag{
+                        h3{
+                            font-size: $contentSubTit;
+                        }
+                        div.A-block-list{
+                            div.search-block{
+                                font-size: 0;
+                                margin-bottom: 20px;
+                                input[name=search]{
+                                    padding: 0 5px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    vertical-align: middle;
+                                    border-top-left-radius:$inputRadius;
+                                    border-bottom-left-radius:$inputRadius;
+                                    border: 1px solid gray;
+                                    outline: none;
+                                }
+                                div.icon{
+                                    font-size: 15px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding: 0 8px;
+                                    border-top-right-radius:$inputRadius;
+                                    border-bottom-right-radius:$inputRadius;
+                                    background-color: #fff;
+                                    border: 1px solid gray;
+                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
+                                    i{
+                                        color: map-get($color_regulation,'blue');
+                                    }
+                                }
+                            }
+                            div.A-table{
+                                height: 300px;
+                                overflow: auto;
+                                border-radius: $borderBtnRadius;
+                                table{
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: $table-text;
+                                    // border: 1px solid red;
+                                    border-collapse: collapse;
+                                    border-radius: $borderBtnRadius;
+                                    box-shadow: $box-shadow;
+                                    background-color: map-get($color_regulation,'white');
+                                    tr{
+                                        
+                                        th,td{
+                                            padding: $table-padding;
+                                            border: 0px solid #fff;
+                                            div.circle{
+                                                width: 8px;
+                                                height: 8px;
+                                                border-radius: 50%;
+                                                background-color: map-get($color_regulation,'gray');
+                                            }
+                                            div.new{
+                                                background-color: map-get($color_regulation,'red');
+                                            }
+                                            div.cancel{
+                                                background-color:rgb(13, 196, 13);
+                                            }
+                                        }
+                                        &:nth-child(2n){
+                                            background-color:#ff4e8f1a;
+                                        }
+                                        &:hover{
+                                            background-color:#ff4e8f2f;
+                                            cursor: pointer;
+                                        }
+                                        &:nth-child(1){
+                                            background-color:#ff4e8f00;
+                                            cursor: default;
+                                        }
+                                    }
+                
+                                }
+                            }
+                        }
+                        div.A-block-review-new{
+                            display: flex;
+                            padding: 30px 0px;
+                            align-items: flex-end;
+                            justify-content: space-between;
+                            div.info{
+                                width: 70%;
+                                box-shadow: $box-shadow;
+                                padding: 30px;
+                                border-radius: $borderRadius;
+                                background-color: map-get($color_regulation ,'white');
+                                p{
+                                    line-height: $lineHeight;
+                                    span.red{
+                                        color: map-get($color_regulation ,'red');
+                                        font-weight: bold;
+                                        font-size: $h7;
+                                    }
+                                }
+                            }
+                            div.review{
+                                form{
+                                    div.btn-group{
+                                        button.A-btn{
+                                            padding: 10px 30px;
+                                            background-color: map-get($color_regulation ,'blue');
+                                            color:map-get($color_regulation ,'white');
+                                            border: none;
+                                            outline: none;
+                                            border-radius: $borderRadius;
+                                            margin-right: 10px;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 // 花絮管理CSS
 main{
