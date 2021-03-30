@@ -12,6 +12,7 @@ h5.title {
   left: 0;
   margin: 0;
   font-size: 28px;
+  font-weight: normal;
   display: inline-block;
   white-space: nowrap;
   padding: 10px 0;
@@ -27,7 +28,7 @@ h5.title span {
 }
 
 section {
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0px;
@@ -50,9 +51,9 @@ section div.content_costomizedBag div.top_back_img_1 {
 
 section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
   width: 100%;
-  height: 421px;
+  height: 426px;
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   border-radius: 0 0 15px 15px;
   overflow: hidden;
@@ -61,7 +62,7 @@ section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
 
 section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 img {
   width: 105%;
-  filter: blur(4px);
+  filter: blur(7px);
 }
 
 section div.content_costomizedBag h5.title_2 {
@@ -153,16 +154,21 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB {
-  background-color: rgba(0, 0, 0, 0.9);
-  background-image: url(../../img/mall/bgimg_01.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top right;
+  position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   padding: 20px;
+}
+
+section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB img.customizedBg_img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(5px);
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB h6.urstyle {
@@ -208,6 +214,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.c
   color: #1D1E4C;
   display: inline-block;
   margin: 0 12% 10px auto;
+  font-weight: 550;
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.customized_area p.back {
@@ -215,6 +222,7 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB div.c
   color: #1D1E4C;
   display: inline-block;
   margin: 0 auto 10px 12%;
+  font-weight: 550;
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockB h6.aboutProducts {
@@ -296,28 +304,28 @@ section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor input.circleBtn {
-  margin-top: 95%;
+  margin-top: 85%;
   display: inline-block;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor1 {
-  background-color: lightyellow;
+  background-color: #f5f5dc;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor2 {
-  background-color: lightblue;
+  background-color: #add8e6;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor3 {
-  background-color: lightgreen;
+  background-color: #66cdaa;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor4 {
-  background-color: pink;
+  background-color: #ffb6c1;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
-  background-color: #1D1E4C;
+  background-color: #483d8b;
 }
 
 section div.content_costomizedBag div.all div.rightarea form.inforOfTheForm div.picture_block {

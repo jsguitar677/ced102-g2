@@ -168,7 +168,7 @@ body{
             padding: 30px;
             width:100%;
             border-radius: $borderRadius;
-            // background-image: url('./img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
+            background-image: url('./img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
     // background-origin: border-box;
             .tab{
                 display: flex;
@@ -465,11 +465,11 @@ div#memExp{
     }
     
 }
-// .bg1img{
-//     background-image: url('../../img/member-1.jpg');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-// }
+.bg1img{
+    background-image: url('../../img/member-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 div#memInfo{
     div.memInfoContent{
         ul#memInfoContentLft{

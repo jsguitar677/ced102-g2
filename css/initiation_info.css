@@ -1135,796 +1135,387 @@ div.closeRotate1 {
   }
 }
 
-h1 {
-  font-size: 72px;
-}
-
-h2 {
-  font-size: 60px;
-}
-
-h3 {
-  font-size: 48px;
-}
-
-h4 {
-  font-size: 38px;
-}
-
-h5 {
-  font-size: 28px;
-}
-
-h6 {
-  font-size: 22px;
-}
-
-.h7 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-p {
-  font-size: 15px;
+* {
+  box-sizing: border-box;
+  font-family: 'Palatino Linotype';
 }
 
 body {
-  background-color: #F6F6F6;
-  color: #1D1E4C;
-}
-
-body main {
   margin: 0;
+}
+
+main.event {
   background-color: #F6F6F6;
-  overflow-y: hidden;
-  margin-top: 5%;
-}
-
-body h5 {
-  z-index: 2;
-  color: #1D1E4C;
-  top: 125px;
-  left: -50px;
-  position: absolute;
-  transform: rotate(90deg);
-  font-weight: bold;
-  font-size: 38px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-body main {
-  padding: 30px;
-  display: flex;
-  height: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-body main .genInfor {
-  min-width: 30%;
-}
-
-body main .genInfor .personBlock {
-  height: 45vh;
-  margin-right: 13px;
-  margin-bottom: 13px;
-  padding: 10px;
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-body main .genInfor .personBlock .proTopBlock {
-  display: flex;
-  align-items: center;
-  height: 50%;
-  position: relative;
-  margin-top: 25px;
-}
-
-body main .genInfor .personBlock .proTopBlock img {
-  margin: 10px;
-  margin-top: 10px;
-  border-radius: 50%;
-}
-
-body main .genInfor .personBlock .proTopBlock button {
-  position: absolute;
-  bottom: 0px;
-  left: 110px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  border: none;
-  cursor: pointer;
-  background-color: #f0f0f0;
-}
-
-body main .genInfor .personBlock .proTopBlock button:hover {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-body main .genInfor .personBlock .proTopBlock span {
-  font-size: 18px;
-}
-
-body main .genInfor .personBlock .proTopBlock span p {
-  font-size: 15px;
-}
-
-body main .genInfor .personBlock .proBtnBlock {
-  width: 317px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body main .genInfor .personBlock .proBtnBlock textarea {
-  overflow: auto;
-  height: 100px;
-  width: 250px;
-  padding: 5px;
-  margin-right: 10%;
-  outline: none;
-  resize: none;
-  border: 1px solid #1D1E4C;
-  border-radius: 15px;
-}
-
-body main .genInfor .personBlock .proBtnBlock button {
-  border: none;
-  appearance: none;
-  background-color: #ffffff00;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: #f0f0f0;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-
-body main .genInfor .personBlock .proBtnBlock button:hover {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-body main .genInfor .cumulativeBlcok {
-  padding: 0 3%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  height: 40vh;
-  margin-right: 13px;
-}
-
-body main .genInfor .cumulativeBlcok button {
-  margin-right: 5px;
-  border: 1px solid #1D1E4C;
-  border-radius: 15px;
-  padding: 0 5px;
-  height: 30px;
-  outline: none;
-  cursor: pointer;
-}
-
-body main .memberContent {
-  padding: 30px;
+  margin-top: 66px;
   width: 100%;
-  border-radius: 15px;
-  background-image: url("./img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
-}
-
-body main .memberContent .tab {
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid #BEBEBE;
-  padding-bottom: 30px;
-}
-
-body main .memberContent .tab button {
-  margin-right: 5px;
-  border: 1px solid #1D1E4C;
-  border-radius: 15px;
-  padding: 0 15px;
-  height: 30px;
-  outline: none;
-}
-
-body main .memberContent .expContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-}
-
-body main .memberContent .expContent .expDescription {
-  font-size: 15px;
-  line-height: 30px;
-  width: 30%;
-  margin-top: 10%;
-  margin-right: 30px;
-  align-self: flex-start;
-}
-
-body main .memberContent .expContent .expExchange {
-  width: 60%;
-  height: 450px;
-  margin-top: 5%;
-  padding-right: 10px;
-  border-radius: 15px;
-  overflow: auto;
-}
-
-body main .memberContent .expContent .expExchange .excBlcok {
-  background-color: #A2A2A2;
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 15px;
 }
 
-body main .memberContent .expContent .expExchange .excBlcok::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 20%;
-  margin-left: -3px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+main.event img {
+  max-width: 100%;
 }
 
-body main .memberContent .expContent .expExchange .excBlcok .expPart {
-  padding: 1px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #EF4325;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-body main .memberContent .expContent .expExchange .excBlcok .expPart button.comBtn2 {
-  background-color: #1D1E4C;
-  color: #fafafa;
-  border-radius: 10px;
-  outline: none;
-  cursor: pointer;
-}
-
-.expRight {
-  left: 20%;
-}
-
-.expRight::after {
-  left: -16px;
-}
-
-@media screen and (max-width: 600px) {
-  .excBlcok::after {
-    left: 31px;
-  }
-  .expPart {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-  .expPart::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-  .expRight::after {
-    left: 15px;
-  }
-  .expRight {
-    left: 0%;
-  }
-}
-
-#orderRecord .orderBlock {
-  padding-right: 10px;
-  color: #1D1E4C;
-}
-
-#orderRecord .orderBlock h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-#orderRecord .orderBlock p {
-  margin-bottom: 5px;
-}
-
-#orderRecord .orderBlock select {
-  border: 1px solid #1D1E4C;
-  border-radius: 5px;
-  outline: none;
-}
-
-#orderRecord .orderBlock table {
-  margin-top: 10px;
-  width: 100%;
-  text-align: left;
-  border-radius: 15px;
-  padding: 20px;
-  border-collapse: collapse;
-}
-
-#orderRecord .orderBlock table th, #orderRecord .orderBlock table td {
-  text-align: center;
-  vertical-align: center;
-}
-
-#orderRecord .orderBlock table .proItemDetail {
-  height: 300px;
-  overflow: hidden;
-}
-
-#memInfo div.memInfoContent {
-  display: block;
-  height: 100%;
-  font-size: 15px;
-}
-
-#memInfo div.memInfoContent h3 {
-  color: #fafafa;
-  font-size: 22px;
-}
-
-#memInfo div.memInfoContent div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#memInfo div.memInfoContent div ul {
-  list-style-type: none;
+main.event ul {
+  margin: 0;
   padding: 0;
 }
 
-#memInfo div.memInfoContent div ul li {
-  color: #fafafa;
+main.event li {
+  list-style: none;
 }
 
-button.tabLinks div.btnDisCon {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1%;
+main.event a {
+  text-decoration: none;
 }
 
-button.tabLinks span {
+main.event div, main.event a, main.event p, main.event ul, main.event li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
   line-height: 30px;
 }
 
-button.tabLinks span:active {
-  color: #fafafa;
+main.event div.bread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: 0 0;
 }
 
-button.tabLinks span:first-child {
-  flex-grow: 0;
+main.event div.bread ul {
+  padding: 10px;
+  white-space: nowrap;
 }
 
-button.tabLinks span i {
-  background-color: black;
-  color: #fafafa;
-  padding: 5px 7px 4px 7px;
-  border-radius: 10px;
+main.event div.bread ul li {
+  font-size: 28px;
+  font-weight: bolder;
+  color: #C6C6C6;
+  display: inline-block;
 }
 
-button.active {
-  background-color: #EF4325;
+main.event div.bread ul li::after {
+  content: " / ";
 }
 
-button.active span {
-  color: #fafafa;
+main.event div.bread ul li:last-child {
+  color: #1D1E4C;
+}
+
+main.event div.bread ul li:last-child::after {
+  content: "";
+}
+
+@media (max-width: 575px) {
+  main.event div.bread ul li {
+    font-size: 18px;
+  }
+}
+
+main.event div.content {
+  max-width: 1200px;
+  background-color: #F6F6F6;
+  margin: 0 auto;
+}
+
+main.event div.content section {
+  width: calc(100% - $padding-web);
+  margin: 0 30px;
+  padding-bottom: 60px;
+}
+
+#section1 {
+  margin: 0 30px;
+}
+
+#section1 div, #section1 a, #section1 p, #section1 ul, #section1 li, #section1 input, #section1 textarea, #section1 select, #section1 label {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
   line-height: 30px;
 }
 
-#btnDisCon1 span i, #btnDisCon11 span i {
-  background-color: #FF9898;
+main.event div.content #section1 form div.container div.row div.part {
+  margin-top: 30px;
 }
 
-#btnDisCon2 span i, #btnDisCon22 span i {
-  background-color: #1654FF;
+main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+  padding: 40px;
 }
 
-#btnDisCon3 span i {
-  background-color: #FF498C;
+@media (min-width: 992px) and (max-width: 1199px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 30px;
+  }
 }
 
-#btnDisCon4 span i {
-  background-color: #FFA123;
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 30px;
+  }
 }
 
-#btnDisCon5 span i {
-  background-color: #EF4325;
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 20px;
+  }
 }
 
-#btnDisCon6 span i {
-  background-color: #09E4C7;
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    padding: 20px 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 20px 0px;
+  }
 }
 
-#underNoBorder {
-  box-shadow: none;
-  border-radius: 0;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.btnDisCon2Sty {
-  background-image: url("../../img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 40%, 100%;
-}
-
-div#memExp h3 {
-  color: #fafafa;
-  font-size: 22px;
-}
-
-div#memExp div.expContent div.expDescription {
-  color: #fafafa;
-  font-size: 15px;
-  align-self: flex-start;
-}
-
-div#memExp div.expContent div.expDescription h3 {
-  color: #fafafa;
-  font-size: 1.17em;
-}
-
-.bg1img {
-  background-image: url("../../img/member-1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-div#memInfo div.memInfoContent ul#memInfoContentLft {
-  padding: 0 20%;
-}
-
-div#memInfo div.memInfoContent ul#memInfoContentLft li {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  margin-bottom: 5%;
-  padding: 2% 3%;
-  position: relative;
-}
-
-div#memInfo div.memInfoContent ul#memInfoContentLft li div {
-  color: #fafafa;
-}
-
-div#memPage {
-  padding-top: 60px;
-}
-
-button.tabLinks {
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border: none !important;
-}
-
-.cumulativeBlcok {
-  padding: 0 3%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  height: 40vh;
-  margin-right: 13px;
-}
-
-.cumulativeBlcok button {
-  margin-right: 5px;
-  border: 1px solid #1D1E4C;
-  border-radius: 15px;
-  padding: 0 5px;
-  height: 30px;
-  outline: none;
-  cursor: pointer;
-}
-
-.comShape {
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-tr#memberTableRowBorder {
-  border-top: 1px solid #C6C6C6;
-}
-
-tr#memberTableRowBorder th {
-  padding: 2% 0 0;
-}
-
-tbody#memberTableTopBorder tr td {
-  padding: 0 0 2%;
-}
-
-thead#memberTableLowBlock {
-  border-top: 1px solid #C6C6C6;
-}
-
-thead#memberTableLowBlock tr:first-child th {
-  padding: 3% 0 0;
-}
-
-div#participateRecord {
-  color: #1D1E4C;
-}
-
-div#participateRecord h3 {
-  font-size: 22px;
-}
-
-div#participateRecord p {
-  font-size: 15px;
+main.event div.content #section1 form div.container div.row div.part div.info {
   text-align: center;
-}
-
-div#participateRecord table.participateRecordTable {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+  font-weight: bolder;
   width: 80%;
   margin: 0 auto;
-  border-radius: 15px;
-  border: 1px solid #1D1E4C;
 }
 
-div#participateRecord table.participateRecordTable th, div#participateRecord table.participateRecordTable td {
-  height: 50px;
-  text-align: center;
-}
-
-div.participateRecordCon {
-  display: flex;
-  justify-content: center;
-}
-
-div#eventManagement {
-  color: #1D1E4C;
-}
-
-div#eventManagement h3 {
+main.event div.content #section1 form div.container div.row div.part div.info h2 {
+  margin-bottom: 25px;
   font-size: 22px;
 }
 
-div#eventManagement p {
-  font-size: 15px;
-  text-align: center;
-}
-
-div#eventManagement table.eventManagementTable {
-  width: 80%;
-  margin: 0 auto;
-  border-radius: 15px;
-  border: 1px solid #1D1E4C;
-}
-
-div#eventManagement table.eventManagementTable th, div#eventManagement table.eventManagementTable td {
-  height: 50px;
-  text-align: center;
-  width: 20%;
-}
-
-div#eventManagement table.eventManagementTable td button {
-  border-radius: 10px;
-  color: #fafafa;
-  background-color: #1D1E4C;
-  cursor: pointer;
-}
-
-div#memPage {
-  position: relative;
-}
-
-div#memPage div#eventManagementCancelModalCon {
-  display: none;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-}
-
-div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal {
-  background-color: #fafafa;
-  color: #1D1E4C;
-  border-radius: 15px;
-  font-size: 15px;
-  width: 650px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 2%;
-}
-
-div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form label {
+main.event div.content #section1 form div.container div.row div.part div.info label, main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select {
   vertical-align: top;
-}
-
-div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form div#eventManagementBtnCon {
-  align-self: flex-end;
-  justify-content: space-around;
-  width: 20%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form div#eventManagementBtnCon button#eventManagementCancel {
   display: inline-block;
-  margin-right: 15%;
-  border: 1px solid #1D1E4C;
-  border-radius: 10px;
-  outline: none;
-  color: #1D1E4C;
-  background-color: #fafafa;
-  cursor: pointer;
-  padding: 5%;
-}
-
-div#memPage div#eventManagementCancelModalCon div#eventManagementCancelModal form div#eventManagementBtnCon button#eventManagementSubmit {
-  display: inline-block;
-  border: 1px solid #1D1E4C;
-  outline: none;
-  border-radius: 10px;
-  padding-right: 5%;
-  color: #fafafa;
-  background-color: #1D1E4C;
-  cursor: pointer;
-  padding: 5%;
-}
-
-div#eventManagementCancelModalCloseBtn {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid #1D1E4C;
-  background-color: #fafafa;
-  right: 3%;
-  top: 5%;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  overflow: hidden;
-  padding: 1%;
-}
-
-div#eventManagementCancelModalCloseBtn span {
-  background-color: #1D1E4C;
-  display: inline-block;
-  width: 25px;
-  height: 3px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  color: #1D1E4C;
-}
-
-div#eventManagementCancelModalCloseBtn span:last-child {
-  position: absolute;
-  transform: translate(-50%, -50%) rotate(315deg);
-}
-
-div#eventSave h3 {
-  font-size: 22px;
-}
-
-div#eventSave div.owl-theme div.item div.memberCollection {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-div#eventSave div.owl-theme div.item div.memberCollection div.memberCollectionPic {
-  height: 60%;
   margin-bottom: 20px;
 }
 
-div#eventSave div.owl-theme div.item div.memberCollection div.memberCollectionPic img {
+main.event div.content #section1 form div.container div.row div.part div.info input[type=date] {
+  width: 200px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info label {
+  margin-right: 20px;
+  text-align: right;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info label span {
+  color: #EF4325;
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info label {
+    display: block;
+    text-align: left;
+    line-height: 12px;
+    margin-bottom: 8px;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info select {
+  height: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info select.location {
+  width: 96px;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.info select.location {
+    width: 78px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input[type=date] {
+    width: 163px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info select.location {
+    width: 40%;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input[type=date] {
+    width: 100%;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select {
+  line-height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #1D1E4C;
+  resize: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 95%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 95%;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select, main.event div.content #section1 form div.container div.row div.part div.info label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 100%;
+    text-align: left;
+    line-height: 20px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select, main.event div.content #section1 form div.container div.row div.part div.info label {
+    font-size: 12px;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description {
+  text-align: center;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   border-radius: 15px;
 }
 
-div#eventSave div.owl-theme div.item div.memberCollection button.memberCollectionCancel {
-  border-radius: 10px;
-  background-color: #fafafa;
-  color: #1D1E4C;
-  padding: 0 2%;
+main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description h2 span, main.event div.content #section1 form div.container div.row div.part div.description span span {
+  color: #EF4325;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description p {
+  margin: 0;
+  line-height: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+  display: inline-block;
+  margin-top: 24px;
+  line-height: 21px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+  margin: 25px 5px 25px 0;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border: 1px solid #1D1E4C;
+  border-radius: 3px;
   outline: none;
-  cursor: pointer;
+  vertical-align: top;
 }
 
-div#eventSave div.owl-theme div.item div.memberCollection button.memberCollectionCancel i {
-  color: red;
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox]:checked {
+  background-image: url("../../img/event/icon/icon-checkbox.png");
+  background-size: cover;
 }
 
-div#memberContentId {
-  color: #1D1E4C;
-  width: 70%;
-}
-
-div#memberContentId div.tab2 {
-  display: none;
-}
-
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  border: 1px solid #fafafa;
-  background-color: #fafafa;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1D1E4C;
-  border-radius: 5px;
-}
-
-#memExp .expContent .expExchange .excBlcok .expPartReceived {
-  padding: 1px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-#memExp .expContent .expExchange .excBlcok .expPartReceived::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: #EF4325;
-  border: 4px solid #EF4325;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-button:disabled {
-  background-color: rgba(250, 250, 250, 0.3);
-  color: rgba(29, 30, 76, 0.3);
-  border-radius: 10px;
+main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+  border-radius: 15px;
   outline: none;
-  cursor: pointer;
+  color: #fafafa;
+  background-color: #1D1E4C;
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 10px 20px;
 }
 
-.MemberCollectionHide {
-  display: none;
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    width: 95%;
+    margin: 0 auto;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 25px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+    margin-top: 15px;
+    line-height: 21px;
+    font-size: 12px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+    margin: 15px 5px 25px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
 }
 
-div#appMemberBriefIntro span {
-  display: none;
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    width: 100%;
+    margin: 0 auto;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2 {
+    padding: 0 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 25px;
+    padding: 0 10px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+    margin-top: 15px;
+    line-height: 21px;
+    font-size: 12px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+    margin: 15px 5px 25px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
 }
-/*# sourceMappingURL=member.css.map */
+
+@media (max-width: 340px) {
+  main.event div.content #section1 form div.container div.row div.part {
+    padding: 0px;
+  }
+}
+/*# sourceMappingURL=initiation_info.css.map */

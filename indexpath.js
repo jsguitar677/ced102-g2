@@ -1,6 +1,2 @@
-<<<<<<< HEAD
-var index_path = 'event.html'
-=======
-var index_path = 'Mall2.html'
->>>>>>> kay
+var index_path = 'indexfront.html';
 module.exports = index_path;
