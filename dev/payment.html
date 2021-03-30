@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>購物車結帳</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/payment.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
@@ -26,14 +26,23 @@
         <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}">1
           <p class="progress__text ">確認訂單</p>
         </li>
+        <li class="progress progress_group_bar">
+          <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
+        </li>
         <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 1}">2
           <p class="progress__text ">填寫訂購資料</p>
+        </li>
+        <li class="progress progress_group_bar">
+          <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
         </li>
         <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 2}">3
           <p class="progress__text ">完成訂單</p>
         </li>
       </ul>
     </div>
+     <div class="title-block">
+          <h1 class="title">購物車</h1>
+     </div>
     <section  class="paymentSection">
         <!-- <div class="product-mb col-lg-12">
           <a  href="#" >1.確認訂單明細</a>
@@ -42,9 +51,7 @@
           <span>/</span>&nbsp;
           <a href="#" >3.訂單完成</a>       
         </div> -->
-        <!-- <div class="title-block">
-          <h1 class="title">購物車</h1>
-        </div> -->
+       
         <div class="paymentContent " >
           <!-- <button class="accordion"><span>訂單總金額</span>{{item.price * item.count}}}</button> -->
           <div class="card">
@@ -52,7 +59,7 @@
               
               <!-- <button class="accordion"><span>訂單總金額</span>{{item.price * item.count}}}</button> -->
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h5 class="btntext" style="color: white;">訂單總金額</h5>
+                  <h2 class="btntext" style="color: white;">訂單總金額NT$1600</h2>
               </button>
               
             </div>
@@ -60,7 +67,7 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               
                 <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
-                      <div class="item_header item_body">
+                      <div class="item_header ">
                               <div class="item_detail">
                                   <!-- <img v-bind:src="item.imgUrl" alt=""> -->
                                   <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
@@ -71,21 +78,21 @@
                               
                               <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
                               <!-- <div class="price"><span>$</span>500</div> -->
-                              <div class="count">
+                              <div class="item_detail count">
                                   <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
                                   1
                                   <!-- {{item.count}} -->
                                   <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
                               </div> 
                               <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                              <div class="amount">500</div>
-                              <div class="operate">
+                              <div class="item_detail amount">500</div>
+                              <!-- <div class="operate">
                                   <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
-                              </div>
+                              </div> -->
                       </div>
                 </div>
                 <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
-                  <div class="item_header item_body">
+                  <div class="item_header ">
                           <div class="item_detail">
                               <!-- <img v-bind:src="item.imgUrl" alt=""> -->
                               <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
@@ -96,21 +103,21 @@
                           
                           <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
                           <!-- <div class="price"><span>$</span>500</div> -->
-                          <div class="count">
+                          <div class="item_detail count">
                               <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
                               1
                               <!-- {{item.count}} -->
                               <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
                           </div> 
                           <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                          <div class="amount">500</div>
-                          <div class="operate">
+                          <div class="item_detail amount">500</div>
+                          <!-- <div class="operate">
                               <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
-                          </div>
+                          </div> -->
                   </div>
                 </div>
                 <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
-                 <div class="item_header item_body">
+                 <div class="item_header ">
                       <div class="item_detail">
                           <!-- <img v-bind:src="item.imgUrl" alt=""> -->
                           <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
@@ -121,17 +128,17 @@
                       
                       <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
                       <!-- <div class="price"><span>$</span>500</div> -->
-                      <div class="count">
+                      <div class="item_detail count">
                           <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
                           1
                           <!-- {{item.count}} -->
                           <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
                       </div> 
                       <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                      <div class="amount">500</div>
-                      <div class="operate">
+                      <div class="item_detail amount">500</div>
+                      <!-- <div class="operate">
                           <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
-                      </div>
+                      </div> -->
                  </div>
                 </div>            
               </div>
@@ -155,10 +162,10 @@
               </div>
             
           </div>
-          <h4>填寫資料</h4>
+          <h2>填寫資料</h2>
           <main class="form_wrapper" v-else-if="progress.steps[progress.currentStep] === 'payment'" key="payment">
             <section class="step step2">
-              <h5 class="step_title">填寫付款資訊</h5>
+              <h2 class="step_title">填寫付款資訊</h2>
               <form class="creadDetail" novalidate @submit.prevent="validateBeforeSubmit('payment')">
                 <div class="form-group row">
                   <label class="label">持卡人:</label>
@@ -184,19 +191,19 @@
                     </div>
                   </div>
                   <div class="creadCardimg row">
-                    <img src="../dev/img/cart/JCB.png" alt="">
-                    <img src="../dev/img/cart/Mastercard.png" alt="">
-                    <img src="../dev/img/cart/VISA.png" alt="">
+                    <img src="./img/cart/Mastercard.png">
+                    <img src="./img/cart/VISA.png" >
+                    <img src="./img/cart/JCB.png" >
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="label">到期日期:</label>
                   <div class="form-row  label ">
-                    <div class="col-6 col-md-3 input-group " >
-                      <input class="form-control form" type="text" name="expiredMonth" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'">
-                      <div class="input-group-append "><span class="input-group-text">月</span></div>
-                      <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'">
-                      <div class="input-group-append"><span class="input-group-text">年</span></div>
+                    <div class="input-group " >
+                      <input class="form-control form" type="text" name="expiredMonth" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02">
+                      
+                      <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27">
+                      
                     </div>
                     <!-- <div class="col-6 col-md-3 input-group row">
                       <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'">
@@ -213,21 +220,21 @@
                     </div>
                   </div>
                 </div>
-                <div class="form_footer">
+                <!-- <div class="form_footer">
                   <div class="btn_group">
                     <button class="btn btn_normal" @click.prevent="resetForm('formPayment')">取消</button>
                     <button class="btn btn_reset" @click.prevent="resetForm('formPayment')">清空重填</button>
                   </div>
-                </div>
+                </div> -->
               </form>
             </section>
           </main>
           <main class="form_wrapper" v-else-if="progress.steps[progress.currentStep] === 'payment'" key="payment">
           <section class="step step3">
-            <h5 class="step_title">收貨人資料</h5>
+            <h2 class="step_title">收貨人資料</h2>
             <form class="consignee">
               <div class="member">
-              <input type="radio" class="memberblock" >同會員資料
+              <input type="radio" name="block" class="memberblock" >同會員資料
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
                   <input type="text" class="form-control empty form" id="owner">
@@ -250,7 +257,7 @@
               </div>
     
               <div class="addAddress">
-              <input type="radio" class="memberblock">新增收件人資訊
+              <input type="radio" name="block" class="memberblock">新增收件人資訊
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
                   <input type="text" class="form-control empty form" id="owner">
@@ -342,25 +349,35 @@
                   </div> -->
             <!-- </div> --> 
           <div class="btn_group">  
-          <button class="btn btn_primary" type="submit">回上一頁</button>
-          <button  id="finshbtn" class="cfmpay btn btn_primary"><text class="cfmpay">確認付款</text></button>
+          <button class="btn btn_primary " type="submit" >回上一頁</button>
+          <button class="finshbtn btn" type="submit">確認付款</button>
           </div>
       </div>
-      <main id="finsh_wrapper" v-else>
-        <section class="modal__text">
-          <h5 class="step_done_title step_title">您的訂單已完成付款</h5><span class="step_done_message">恭喜您成功完成訂單，稍後將寄送詳細資訊至您的E-mail。</span>
-          <button class="step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button>
-        </section>
-      </main>
-        
+      
     </section>
+
+    <section class="finsh wrapper full-screen">
+    <main id="finsh_wrapper " v-else>
+      <div class="modal__text disc">
+        <h1 class="step_done_title step_title">您的訂單已完成付款</h1><span class="step_done_message">恭喜您成功完成訂單，稍後將寄送詳細資訊至您的E-mail。</span>
+        <!-- <button class="step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button> -->
+      </div>
+    </main>
+  </section>
    
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
 </body>
-<!-- <script src="vendor/jQuery/jquery-3.5.1.min.js"></script>
+<script src="vendor/jQuery/jquery-3.5.1.min.js"></script>
 <script>
+  $('.finshbtn').click(function(){
+$('.full-screen').css('display','block');
+
+});
+ 
+</script>
+<!-- <script>
    $(document).ready(function(){
 
         // 會員登入
