@@ -109,3 +109,31 @@ function exitLogReg2() {
     document.getElementById('regVerifi2').value = "";
 }
 window.addEventListener('load', logRegi2, false);
+
+
+//彈出漢堡
+function popOutBurger(){
+    let popBtn = document.getElementById('navBurgerBtn');
+    let popList = document.getElementById('navRList');
+    let close1 = document.getElementById('navBurgerBtnClose1');
+    let close2 = document.getElementById('navBurgerBtnClose2');
+    let close3 = document.getElementById('navBurgerBtnClose3');
+    popList.style.left ='2000px';
+
+    popBtn.onclick = function(){
+        close1.classList.toggle('closeRotate1');
+        close2.classList.toggle('closeRotate2');
+        close3.classList.toggle('closeRotate3');
+        if(popList.style.left =='2000px'){
+            popList.style.left = '-30px';
+            popList.style.opacity = 1;
+            
+        }else{
+            popList.style.left = '2000px';
+            popList.style.opacity = 0;
+        }
+        
+    }
+}
+
+window.addEventListener('load',popOutBurger);

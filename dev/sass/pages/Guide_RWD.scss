@@ -97,6 +97,9 @@ h5.title {
     transform: rotate(90deg) translateY(-100%);
     transform-origin: 0 0;
     color:map-get($color_regulation,'blue');
+    @media (max-width:575px){
+        font-size: $h7;
+    }
     span {
         color:map-get($color_regulation,'gray' );
     }
@@ -122,6 +125,8 @@ section {
         width:100%;
         padding: $reserveSide;
         color:map-get($color_regulation,'blue');
+        //display:flex;
+        //justify-content: space-between;
 
         div.leftOfGuide{
             font-size: $h6;

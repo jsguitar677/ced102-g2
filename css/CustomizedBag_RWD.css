@@ -1,0 +1,587 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", "noto sans tc";
+  background-color: #F6F6F6;
+}
+
+div.title-block
+h5.title {
+  margin-top: 66px;
+  position: absolute;
+  top: calc( 66px + 10px);
+  left: 0;
+  margin: 0;
+  font-size: 28px;
+  font-weight: normal;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 0;
+  transform: rotate(90deg) translateX(-60px);
+  transform-origin: 0% 100%;
+  color: #1D1E4C;
+}
+
+@media (max-width: 576px) {
+  div.title-block
+h5.title {
+    font-size: 22px;
+  }
+}
+
+div.title-block
+h5.title span {
+  color: #C6C6C6;
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  div.title-block
+h5.title {
+    font-size: 22px;
+    top: calc( 66px + 15px);
+  }
+}
+
+section.CustomizedBagPage {
+  letter-spacing: 2px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0px;
+  text-align: center;
+  padding-top: 66px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.top_back_img_1 {
+  position: relative;
+  width: 100%;
+  z-index: -5;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
+  width: 100%;
+  height: 426px;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  border-radius: 0 0 15px 15px;
+  overflow: hidden;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 img {
+  width: 105%;
+  filter: blur(7px);
+}
+
+section.CustomizedBagPage div.content_costomizedBag h5.title_2 {
+  font-size: 28px;
+  color: #1D1E4C;
+  margin: 0;
+  padding: 60px;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  section.CustomizedBagPage div.content_costomizedBag h5.title_2 {
+    font-size: 22px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea {
+  margin: 0 auto;
+  padding: 0;
+  padding-right: 15px;
+}
+
+@media (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea {
+    padding-right: 0;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  padding: 20px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block img.customizedBg_img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(5px);
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block h6.urstyle {
+  font-size: 22px;
+  color: #1D1E4C;
+  margin: 0;
+  padding-top: 10px;
+}
+
+@media (max-width: 576px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block h6.urstyle {
+    font-size: 18px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area {
+  position: relative;
+  border-radius: 15px;
+  width: 98%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area img.customized_img {
+  width: 100%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area div.image_front {
+  width: 26%;
+  height: 35%;
+  position: absolute;
+  top: 45%;
+  left: 16.5%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area div.image_back {
+  width: 13%;
+  height: 17%;
+  position: absolute;
+  top: 45%;
+  left: 66%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area p.front, section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area p.back {
+  font-size: 18px;
+  color: #1D1E4C;
+  display: inline-block;
+  font-weight: 550;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area p.front {
+  margin: 0 12% 10px auto;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.customized_area p.back {
+  margin: 0 auto 10px 12%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block h6.aboutProducts {
+  font-size: 22px;
+  color: #1D1E4C;
+  margin: 0;
+  padding-top: 40px;
+  display: inline-block;
+}
+
+@media (max-width: 576px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block h6.aboutProducts {
+    font-size: 18px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block img#showInfo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  line-height: 28px;
+  display: inline-block;
+  display: none;
+}
+
+@media (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block img#showInfo {
+    display: block;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.leftarea_block {
+  margin: 10px auto 15px auto;
+  width: 95%;
+  padding: 20px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.leftarea_block p.textaboutProducts {
+  font-size: 15px;
+  font-weight: 550;
+  color: #1D1E4C;
+}
+
+@media (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.leftarea div.leftarea_block div.leftarea_block {
+    display: none;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea {
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background-color: #F6F6F6;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea {
+    margin-top: 25px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea h6 {
+  font-size: 22px;
+  color: #1D1E4C;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea h6 {
+    font-size: 18px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm {
+  width: 95%;
+  margin: 0 auto;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block p.stepExplain {
+  font-size: 15px;
+  font-weight: 550;
+  color: #1D1E4C;
+  display: block;
+  margin: 0;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 15px auto 30px auto;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+  font-size: 15px;
+  color: #1D1E4C;
+  width: 30%;
+  height: 120px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  overflow: hidden;
+  margin-bottom: 18px;
+  margin-right: 3%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+    width: 13%;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+    width: 17%;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor {
+  width: 100%;
+  height: 68%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor input.circleBtn {
+  margin-top: 10%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor1 {
+  background-color: #f5f5dc;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor2 {
+  background-color: #add8e6;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor3 {
+  background-color: #66cdaa;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor4 {
+  background-color: #ffb6c1;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.color_block div.color_block1 div.ProductColor div.theColor5 {
+  background-color: #483d8b;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block {
+  width: 100%;
+  font-size: 15px;
+  color: #1D1E4C;
+  font-weight: 550;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block {
+    padding-bottom: 0;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain {
+  margin: 0;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block p.stepExplain1 {
+  color: #EF4325;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 {
+  margin: 0px auto;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 label.placement {
+  font-weight: normal;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product {
+  width: 98%;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput {
+  height: 40px;
+  line-height: 40px;
+  background-color: #C2C2C2;
+  color: #F6F6F6;
+  border-radius: 5px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.picture_block div.picture_block2 div.placement_of_product div.placememtOfInput input.theFileBtn {
+  width: 100%;
+  margin-left: 3%;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.qty_block {
+  width: 100%;
+  font-size: 15px;
+  padding-bottom: 50px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.qty_block p.stepExplain {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
+  width: 98%;
+  margin: 0 auto;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
+  width: 100px;
+  height: 35px;
+  padding-left: 30px;
+  border-radius: 5px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.tal_block {
+  width: 100%;
+  font-size: 15px;
+  color: #1D1E4C;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.tal_block p.stepExplain {
+  font-weight: 550;
+  margin: 0;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
+  width: 98%;
+  text-align: right;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
+  margin-right: 10%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.placeOfSubmit {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 5px;
+  width: 145px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #1D1E4C;
+  color: #fafafa;
+  position: relative;
+  padding-right: 10%;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button.btn_shopping_cart img {
+  height: 90%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea {
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  margin: 0 atuo;
+  padding: 0 20px;
+  padding-bottom: 40px;
+  margin-bottom: 70px;
+  margin-top: 25px;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea h5.title_2 {
+  font-size: 28px;
+  color: #1D1E4C;
+}
+
+@media (max-width: 576px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea h5.title_2 {
+    font-size: 22px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  vertical-align: top;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage {
+  text-decoration: none;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct {
+  position: relative;
+  width: 23.4%;
+  margin: 0.68%;
+  margin-bottom: 2%;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct {
+    width: 47.5%;
+  }
+}
+
+@media (max-width: 575px) {
+  section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct {
+    width: 99%;
+    margin-bottom: 15px;
+  }
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct img {
+  width: 100%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct div.productInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #F6F6F6;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5% 5% 15% 5%;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0;
+  display: inline-block;
+  margin: 3% 7% 3% 0;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct div.productInfo p.text {
+  font-size: 15px;
+  color: #1D1E4C;
+  margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+section.CustomizedBagPage div.content_costomizedBag div.container div.all div.bottomarea div.bottomareaBox a.goToProductPage div.recommendProduct div.productInfo img.cart {
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  width: 27.9px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+/*# sourceMappingURL=CustomizedBag_RWD.css.map */

@@ -1,8 +1,8 @@
 $('document').ready(function(){
     //預設
-    $('section').css('display','none');
-    $(`#section1`).css('display','');
-    $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
+    // $('section').css('display','none');
+    // $(`#section1`).css('display','');
+    // $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
 
     //點擊選單，切換畫面
     for(let i=1; i<=3; i++){
@@ -13,6 +13,25 @@ $('document').ready(function(){
             $(this).css('fontWeight','bolder');
         })
     };
+
+    //首頁連接至section2
+    let storage = sessionStorage;
+    if(storage['btnId'] == null){
+        storage['btnId'] = '';
+    }
+    let itemString = storage.getItem('btnId');
+    let n1 = itemString.charAt(0);
+    if (n1 == "A"){
+        $('section').css('display','none');
+        $(`#section2`).css('display','');
+        $('ul.menu >li:nth-child(2)').css('fontWeight','bolder');
+        storage['btnId'] = '';
+    }else{
+        $('section').css('display','none');
+        $(`#section1`).css('display','');
+        $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
+    }
+
     //點擊id="section1"的發起活動按鈕
     $('#problem-btn').click(function(){
         $('section').css('display','none');

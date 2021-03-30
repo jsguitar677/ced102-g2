@@ -345,14 +345,9 @@ input[value="4"]:checked ~ * .-prev .nav-toggle:not([for=scene-3]) {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-div.ah_card_section {
-  height: 1500px;
-=======
 body {
   background-color: #F6F6F6;
   font-family: 'Palatino Linotype';
->>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 }
 
 div.ah_card_section {
@@ -362,19 +357,6 @@ div.ah_card_section {
   border-radius: 15px;
   background-color: white;
   margin-bottom: 50px;
-<<<<<<< HEAD
-  height: 1450px;
-}
-
-.page-content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  grid-gap: 2rem;
-  padding-left: 6rem;
-  /* width: 100%; */
-  text-align: center;
-=======
   margin-top: 15px;
   padding: 50px;
   padding-bottom: 20px;
@@ -390,7 +372,6 @@ div.ah_card_section {
   padding: 1rem;
   max-width: 1024px;
   margin: 0 auto;
->>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
   font-family: var(--font-sans);
 }
 
@@ -401,14 +382,7 @@ div.ah_card_section {
 }
 
 .card {
-<<<<<<< HEAD
-  margin-top: 30px;
-  margin-bottom: 30px;
   border-radius: 15px;
-  margin-right: 70px;
-=======
-  border-radius: 15px;
->>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -697,8 +671,6 @@ div.ah_picker > h1 {
   left: 30px;
   top: 10%;
 }
-<<<<<<< HEAD
-=======
 
 div.ah_bread {
   position: absolute;
@@ -783,5 +755,4 @@ div.ah_bread ul li:last-child::after {
 .modal-3 a.active, .modal-3 a:active {
   color: #FFAE41;
 }
->>>>>>> b12ab0183a1fa6a9e44f999e39ee86c7c8e39e90
 /*# sourceMappingURL=act_hist.css.map */

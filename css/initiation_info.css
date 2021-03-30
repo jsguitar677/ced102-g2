@@ -1135,520 +1135,387 @@ div.closeRotate1 {
   }
 }
 
-body {
+* {
   box-sizing: border-box;
-  margin: 0;
-  font-family: "Palatino Linotype", "noto sans tc";
-  background-color: #F6F6F6;
+  font-family: 'Palatino Linotype';
 }
 
-div.title-block h5.title {
-  margin-top: 66px;
-  position: absolute;
-  top: calc( 66px + 10px);
-  left: 0;
+body {
   margin: 0;
-  font-size: 28px;
-  font-weight: normal;
-  display: inline-block;
+}
+
+main.event {
+  background-color: #F6F6F6;
+  margin-top: 66px;
+  width: 100%;
+  position: relative;
+}
+
+main.event img {
+  max-width: 100%;
+}
+
+main.event ul {
+  margin: 0;
+  padding: 0;
+}
+
+main.event li {
+  list-style: none;
+}
+
+main.event a {
+  text-decoration: none;
+}
+
+main.event div, main.event a, main.event p, main.event ul, main.event li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+main.event div.bread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: 0 0;
+}
+
+main.event div.bread ul {
+  padding: 10px;
   white-space: nowrap;
-  padding: 10px 0;
-  transform: rotate(90deg) translateX(-50px);
-  transform-origin: 0% 100%;
+}
+
+main.event div.bread ul li {
+  font-size: 28px;
+  font-weight: bolder;
+  color: #C6C6C6;
+  display: inline-block;
+}
+
+main.event div.bread ul li::after {
+  content: " / ";
+}
+
+main.event div.bread ul li:last-child {
   color: #1D1E4C;
 }
 
-div.title-block h5.title span {
-  color: #C6C6C6;
+main.event div.bread ul li:last-child::after {
+  content: "";
 }
 
 @media (max-width: 575px) {
-  div.title-block h5.title {
+  main.event div.bread ul li {
     font-size: 18px;
   }
 }
 
-section {
-  letter-spacing: 1px;
+main.event div.content {
   max-width: 1200px;
+  background-color: #F6F6F6;
   margin: 0 auto;
-  font-size: 0px;
-  text-align: center;
-  padding-top: 66px;
-  margin-bottom: 70px;
 }
 
-section div.content_Mall {
-  text-align: left;
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
+main.event div.content section {
+  width: calc(100% - $padding-web);
+  margin: 0 30px;
+  padding-bottom: 60px;
 }
 
-section div.content_Mall div.top_back_img_1 {
-  position: relative;
-  width: 100%;
-  z-index: -5;
-}
-
-section div.content_Mall div.top_back_img_1 div.top_back_img_2 {
-  width: 100%;
-  max-height: 426px;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  border-radius: 0 0 15px 15px;
-  overflow: hidden;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-section div.content_Mall div.top_back_img_1 div.top_back_img_2 img {
-  width: 105%;
-  filter: blur(17px);
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.top_back_img_1 {
-    display: none;
-  }
-}
-
-section div.content_Mall h5.title_2 {
-  font-size: 28px;
-  color: #1D1E4C;
-  margin: 0;
-  padding-top: 60px;
-  text-align: center;
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall h5.title_2 {
-    font-size: 22px;
-    padding-top: 30px;
-  }
-}
-
-section div.content_Mall h6.title_h6 {
-  font-size: 22px;
-  color: #1D1E4C;
-  margin: 0;
-  padding: 15px 0 25px 0;
-  text-align: center;
-}
-
-section div.content_Mall div.all {
-  padding: 0 30px;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block {
+#section1 {
   margin: 0 30px;
 }
 
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding-top: 60px;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized {
-  text-decoration: none;
-  width: 23.5%;
-  position: relative;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon {
-  height: 12%;
-  background: rgba(43, 6, 6, 0.25);
-  border-radius: 50px;
-  overflow: hidden;
-  position: absolute;
-  top: 7px;
-  left: 7px;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon img.design {
-  height: 100%;
-  display: inline-block;
-  vertical-align: top;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon p.designYrStyle {
-  font-size: 15px;
-  font-weight: 550;
-  color: #1D1E4C;
-  display: inline-block;
-  line-height: 3;
-  margin: 0;
-  vertical-align: top;
-}
-
-@media (max-width: 991px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.DesignIcon p.designYrStyle {
-    display: none;
-  }
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea {
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  overflow: hidden;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea img {
-  width: 100%;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo {
-  width: 100%;
-  height: 33%;
-  background: rgba(43, 6, 6, 0.2);
-  padding: 2% 8%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.NameAndPrice {
-  font-size: 15px;
-  font-weight: 550;
-  color: #1D1E4C;
-}
-
-section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.text {
+#section1 div, #section1 a, #section1 p, #section1 ul, #section1 li, #section1 input, #section1 textarea, #section1 select, #section1 label {
   font-size: 15px;
   color: #1D1E4C;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0 0 25px 0;
+  letter-spacing: 2px;
+  line-height: 30px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.NameAndPrice:first-child {
-    margin-bottom: 0;
-    margin-right: 5px;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized {
-    width: calc(50% - 30px);
-    margin: 15px 15px;
-  }
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.NameAndPrice:first-child {
-    margin-bottom: 0;
-    margin-right: 5px;
-  }
-}
-
-@media (min-width: 476px) and (max-width: 575px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized {
-    width: calc(50% - 30px);
-    margin: 15px 15px;
-  }
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.NameAndPrice:first-child {
-    margin-bottom: 0;
-    margin-right: 5px;
-  }
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.text {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 475px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized {
-    width: 60%;
-    min-width: 200px;
-    margin: 15px;
-  }
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.NameAndPrice:first-child {
-    margin-bottom: 0;
-    margin-right: 5px;
-  }
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox a.customized div.CustomizedArea div.productInfo p.text {
-    font-size: 12px;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 767px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox {
-    justify-content: center;
-    padding: 40px 40px;
-  }
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.all div.CustomizedArea_Block div.CustomizedAreaBox {
-    justify-content: center;
-    padding: 10px 0px;
-  }
-}
-
-section div.content_Mall div.all div.ProductArea_Block {
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  margin-top: 50px;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.theWayOfSort {
-  text-align: right;
-  padding: 30px;
+main.event div.content #section1 form div.container div.row div.part {
   margin-top: 30px;
 }
 
-section div.content_Mall div.all div.ProductArea_Block div.theWayOfSort select.select_sort_way {
-  font-size: 15px;
-  font-weight: 550;
-  line-height: 33px;
-  display: inline-block;
-  width: 165px;
-  height: 33px;
-  border: 1.5px solid #1D1E4C;
-  border-radius: 5px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  vertical-align: center;
-  text-align: center;
+main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+  padding: 40px;
 }
 
-@media (max-width: 767px) {
-  section div.content_Mall div.all div.ProductArea_Block div.theWayOfSort {
-    padding: 20px 20px 10px 0;
-  }
-  section div.content_Mall div.all div.ProductArea_Block div.theWayOfSort select.select_sort_way {
-    font-size: 12px;
-    width: 110px;
+@media (min-width: 992px) and (max-width: 1199px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 30px;
   }
 }
 
-section div.content_Mall div.all div.ProductArea_Block h5.title {
-  font-size: 28px;
-  color: #1D1E4C;
-  margin: 0;
-  padding-bottom: 60px;
-  text-align: center;
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 30px;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  section div.content_Mall div.all div.ProductArea_Block h5.title {
-    padding-bottom: 40px;
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 20px;
   }
 }
 
 @media (max-width: 575px) {
-  section div.content_Mall div.all div.ProductArea_Block h5.title {
-    padding-bottom: 40px;
-    font-size: 22px;
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    padding: 20px 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 20px 0px;
   }
 }
 
-section div.content_Mall div.all div.ProductArea_Block div.allProduct {
-  font-size: 15px;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack {
-  width: 95%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0 auto;
-  margin-bottom: 25px;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin {
-  width: 49%;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA {
-  overflow: hidden;
+main.event div.content #section1 form div.container div.row div.part div.info {
+  text-align: center;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  position: relative;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA img {
-  width: 100%;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo {
-  width: 87%;
-  padding: 3%;
-  position: absolute;
-  bottom: 9%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fafafa;
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background: rgba(255, 255, 255, 0.8);
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.NameAndPrice {
-  font-size: 15px;
-  font-weight: 550;
-  color: #1D1E4C;
-  display: inline-block;
-  margin: 0 20% 1% 0;
-}
-
-@media (max-width: 767px) {
-  section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.NameAndPrice {
-    display: block;
-  }
-  section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.NameAndPrice:nth-child(2) {
-    margin-right: 0;
-  }
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.text1 {
-  font-size: 15px;
-  color: #1D1E4C;
-  margin-top: 1%;
-  width: 85%;
-  height: 50%;
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo p.text1 {
-    font-size: 12px;
-  }
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo img.cart {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin div.CustomizedAreaA div.productInfo img.cart {
-    bottom: calc(100% - 43px);
-  }
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack {
-    justify-content: center;
-  }
-  section div.content_Mall div.all div.ProductArea_Block div.SpecialBlack a.zoomin {
-    width: 60%;
-    min-width: 210px;
-    margin-bottom: 20px;
-  }
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack {
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal {
-  width: 32%;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA {
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  position: relative;
-  margin-bottom: 25px;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA img {
-  width: 100%;
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo {
-  width: 87%;
-  padding: 3%;
-  position: absolute;
-  bottom: 9%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fafafa;
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  background: rgba(255, 255, 255, 0.8);
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo p.NameAndPrice {
-  font-size: 15px;
-  font-weight: 550;
-  color: #1D1E4C;
-  display: inline-block;
-  margin: 0 10% 0 0;
-}
-
-@media (max-width: 767px) {
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo p.NameAndPrice {
-    display: block;
-  }
-}
-
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo p.text2 {
-  font-size: 15px;
-  font-weight: 500;
-  color: #1D1E4C;
-  margin: 2% 0 2% 0;
+  font-weight: bolder;
   width: 80%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  /* 用來設定一個元素是水平還是垂直方向排列其內容 */
+  margin: 0 auto;
 }
 
-@media (max-width: 767px) {
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo p.text2 {
+main.event div.content #section1 form div.container div.row div.part div.info h2 {
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info label, main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select {
+  vertical-align: top;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info input[type=date] {
+  width: 200px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info label {
+  margin-right: 20px;
+  text-align: right;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info label span {
+  color: #EF4325;
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info label {
+    display: block;
+    text-align: left;
+    line-height: 12px;
+    margin-bottom: 8px;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info select {
+  height: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info select.location {
+  width: 96px;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.info select.location {
+    width: 78px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input[type=date] {
+    width: 163px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info select.location {
+    width: 40%;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input[type=date] {
+    width: 100%;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select {
+  line-height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #1D1E4C;
+  resize: none;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 95%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 95%;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select, main.event div.content #section1 form div.container div.row div.part div.info label {
     font-size: 12px;
   }
 }
 
-section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo img.cart {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    width: 100%;
+    text-align: left;
+    line-height: 20px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.info input, main.event div.content #section1 form div.container div.row div.part div.info textarea, main.event div.content #section1 form div.container div.row div.part div.info select, main.event div.content #section1 form div.container div.row div.part div.info label {
+    font-size: 12px;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description {
+  text-align: center;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description h2 span, main.event div.content #section1 form div.container div.row div.part div.description span span {
+  color: #EF4325;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description p {
+  margin: 0;
+  line-height: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+  display: inline-block;
+  margin-top: 24px;
+  line-height: 21px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+  margin: 25px 5px 25px 0;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border: 1px solid #1D1E4C;
+  border-radius: 3px;
+  outline: none;
+  vertical-align: top;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox]:checked {
+  background-image: url("../../img/event/icon/icon-checkbox.png");
+  background-size: cover;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+  border-radius: 15px;
+  outline: none;
+  color: #fafafa;
+  background-color: #1D1E4C;
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 10px 20px;
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo img.cart {
-    bottom: calc(100% - 43px);
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    width: 95%;
+    margin: 0 auto;
   }
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA div.productInfo img.cart {
-    bottom: calc(100% - 43px);
+  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+    font-size: 16px;
+    margin: 0 0 10px 0;
   }
-}
-
-@media (max-width: 575px) {
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack {
-    justify-content: center;
-  }
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal {
-    width: 40%;
-    min-width: 170px;
-    margin: 0 10px 20px 10px;
-  }
-  section div.content_Mall div.all div.ProductArea_Block div.NormalBlack a.normal div.CustomizedAreaA {
+  main.event div.content #section1 form div.container div.row div.part div.description p {
     margin: 0;
+    font-size: 12px;
+    line-height: 25px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+    margin-top: 15px;
+    line-height: 21px;
+    font-size: 12px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+    margin: 15px 5px 25px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
   }
 }
-/*# sourceMappingURL=Mall2.css.map */
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    width: 100%;
+    margin: 0 auto;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2 {
+    padding: 0 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 25px;
+    padding: 0 10px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+    margin-top: 15px;
+    line-height: 21px;
+    font-size: 12px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+    margin: 15px 5px 25px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 340px) {
+  main.event div.content #section1 form div.container div.row div.part {
+    padding: 0px;
+  }
+}
+/*# sourceMappingURL=initiation_info.css.map */
