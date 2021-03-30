@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 格線系統 -->
+    <link rel="stylesheet" href="./plugin/bootstrap-grid.min.css">
     <!-- 後臺css -->
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/backend.css">
-    <!-- 格線系統 -->
-    <link rel="stylesheet" href="./css/plugin/bootstrap-grid.min.css">
     <!-- 共同css -->
     <link rel="stylesheet" href="../css/common.css">
     <!-- icon -->
@@ -157,7 +157,79 @@
                         </div>
                         <div id="actHistoryMag" class="tabContent">
                             <h3>活動花絮管理</h3>
-                            <h1>興建中...請稍後</h1>
+                            <div class="AH-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="AH-table">
+                                    <table>
+                                        <tr>
+                                            <th></th>
+                                            <th>活動編號</th>
+                                            <th>活動日期</th>
+                                            <th>活動名稱</th>
+                                            <th>活動地點</th>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle alert"></div></td>
+                                            <td>A5</td>
+                                            <td>2021/03/25</td>
+                                            <td>永安漁港淨灘</td>
+                                            <td>桃園市永安漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle alert"></div></td>
+                                            <td>A4</td>
+                                            <td>2021/03/15</td>
+                                            <td>外澳淨灘</td>
+                                            <td>苗栗縣外澳沙灘</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A3</td>
+                                            <td>2021/03/07</td>
+                                            <td>隘門沙灘淨灘</td>
+                                            <td>澎湖縣隘門沙灘</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A2</td>
+                                            <td>2021/02/05</td>
+                                            <td>新蘭漁港淨灘</td>
+                                            <td>台東縣新蘭漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A1</td>
+                                            <td>2021/01/15</td>
+                                            <td>南濱公園淨灘</td>
+                                            <td>花蓮縣南濱公園</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="AH-block-upload">
+                                <div class="info">
+                                    <p>活動編號：<span>A1</span></p>
+                                    <p>活動日期：<span>2021/01/15</span></p>
+                                    <p>活動名稱：<span>南濱公園淨灘</span></p>
+                                    <p>活動地點：<span>花蓮縣南濱公園</span></p>
+                                </div>
+                                <div class="upload">
+                                    <form>
+                                        <p class="article"><span class="text">文章：</span><textarea></textarea></p>
+                                        <div class="right">
+                                            <p class="text">上傳圖片1： <input type="file" name="pic1"></p>
+                                            <p class="text">上傳圖片2： <input type="file" name="pic2"></p>
+                                            <p class="text">上傳圖片3： <input type="file" name="pic3"></p>
+                                            <div class="btn-group">
+                                                <button type="submit" class="AH-btn">確認</button>
+                                                <button class="AH-btn">取消</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
