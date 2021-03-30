@@ -10,14 +10,54 @@
   <style>
     body{
         margin: 0;
+        background-color: #F6F6F6;
     }
     .login-center {
-        height: 100vh;
+        min-height: 100vh;
+    }
+    h3{
+        margin: 50px 0 10px 0;
+        text-align: center;
     }
     .show{
-        height: 600px;
+        height: 400px;
         text-align: center;
-        line-height:600px;
+        line-height:400px;
+    }
+    a{
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+        border-radius: 15px;
+        margin: 0px 30px 30px 30px;
+        text-decoration: none;
+        transition: 1s;
+        font-size: 40px;
+        background-image: url(./img/backend/MemberBgImg.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 400px;
+        color:#fafafa;
+    }
+    .front{
+        background-color: #222369;
+        /* background-color: #222369c6; */
+    }
+    .backend{
+        background-color: #222369;
+        /* background-color: #0d1017cd; */
+    }
+    .front:hover{
+        background-color: #222369ba;
+        /* background-color: #222369; */
+    }
+    .backend:hover{
+        background-color: #222369ba;
+        /* background-color: #0D1017; */
+    }
+    footer{
+        width: 100%;
+        text-align: center;
+        color:#1D1E4C;
+        padding: 30px;
     }
   </style>
 
@@ -27,15 +67,16 @@
 <body>
     <div class="container">
         <div class="row align-items-middle justify-content-around login-center">
-            <h3 style="text-align: center;margin: 0;" class="col-12">淨下塑湲</h3>
-            <a style="background-color:salmon;"class="col-5 show"href="#">前台</a>
-            <a style="background-color:rgb(114, 230, 250);"class="col-5 show"href="#">後台</a>
+            <h3 class="col-12"><img src="./img/backend/logo_blue.png"></h3>
+            <a class="col-md-5 col-10 show front" href="./indexfront.html">前台</a>
+            <a class="col-md-5 col-10 show backend" href="./backend_login.html">後台</a>
         </div>
     </div>
 </body>
 
 
-<script>
-</script>
+<footer>
+    <div class="footer">© 淨下塑湲 All Rights Reserved. 淨下塑湲版權所有不得轉載</div>
+</footer>
 
 </html>

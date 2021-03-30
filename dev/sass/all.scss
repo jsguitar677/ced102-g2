@@ -78,12 +78,13 @@ body header {
 
 body header nav {
     height: 66px;
-    padding-left: 60px;
+    padding:0px 30px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 body header nav div#lftUl {
-    width: calc((100% - 66px)/2);
     display: inline-block;
     vertical-align: top;
     line-height: 66px;
@@ -118,7 +119,7 @@ body header nav div#lftUl ul li a {
 
 body header nav div#lftUl ul li img {
     opacity: 0;
-    transition: all 1s ease;
+    transition: all .8s ease;
     width: 20px;
 }
 
@@ -142,7 +143,6 @@ body header div#navlogo img {
 }
 
 body header div#rgtUl {
-    width: calc((100% - 66px)/2);
     display: inline-block;
     line-height: 66px;
     vertical-align: top;
@@ -163,7 +163,7 @@ body header div#rgtUl ul li {
 }
 
 body header div#rgtUl ul li:nth-child(3) {
-    padding-right: 60px;
+    padding-right: 30px;
 }
 
 body header div#rgtUl ul li i.fwIcon {
@@ -178,6 +178,7 @@ body header a {
 
 body header i.fwIcon {
     vertical-align: text-top;
+    font-size: 15px;
 }
 
 body div#page1 {
@@ -200,6 +201,8 @@ body div#page1 div#lightbox div#logWrapper {
     font-size: 0;
     width: 50%;
     height: 70%;
+    min-height: 435px;
+    min-width: 320px;
     position: absolute;
     vertical-align: top;
     left: 50%;
@@ -233,7 +236,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
     margin: 0 auto;
     height: 100%;
     font-size: 0;
-    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-image: url('../../img/logo3.png'), linear-gradient(#ccb0ac, #8b7b5d);
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
@@ -242,12 +245,12 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
     text-align: center;
-    font-size: 22px;
+    font-size: $h7;
     padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
-    font-size: 18px;
+    font-size: $p;
     padding: 0% 15%;
 }
 
@@ -294,7 +297,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
-    font-size: 22px;
+    font-size: $h7;
     padding-top: 30px;
 }
 
@@ -304,7 +307,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
-    font-size: $h7;
+    font-size: $p;
     margin-bottom: 5%;
 }
 
@@ -325,14 +328,14 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
     height: 100%;
     width: calc(100%*0.6/1.6);
     text-align: center;
-    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
-    font-size: 22px;
+    font-size: $h7;
     margin-bottom: 1%;
     padding-top: 30px;
 
@@ -340,7 +343,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
     padding: 0% 15%;
-    font-size: 18px;
+    font-size: $p;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
@@ -371,6 +374,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
     display: inline-block;
     margin: 3% auto;
+    margin-bottom: $p;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
@@ -451,6 +455,8 @@ body div#page1 div#lightbox2 div#logWrapper2 {
     font-size: 0;
     width: 50%;
     height: 70%;
+    min-height: 435px;
+    min-width: 320px;
     position: absolute;
     vertical-align: top;
     left: 50%;
@@ -484,7 +490,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
     margin: 0 auto;
     height: 100%;
     font-size: 0;
-    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
@@ -493,13 +499,13 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
     text-align: center;
-    font-size: 22px;
+    font-size: $h7;
     padding-top: 30px;
 
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
-    font-size: 18px;
+    font-size: $p;
     padding: 0% 15%;
 }
 
@@ -547,7 +553,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
     padding-top: 30px;
-    font-size: 22px;
+    font-size: $h7;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
@@ -556,7 +562,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
-    font-size: $h7;
+    font-size: $p;
     margin-bottom: 5%;
 }
 
@@ -577,7 +583,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
     height: 100%;
     width: calc(100%*0.6/1.6);
     text-align: center;
-    background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+    background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
@@ -588,14 +594,18 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
-    font-size: 22px;
+    font-size: $h7;
     margin-bottom: 1%;
     padding-top: 30px;
 }
 
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
+    font-size: $p;
+}
+
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
     padding: 0% 15%;
-    font-size: 18px;
+    font-size: $p;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
@@ -702,19 +712,21 @@ footer{
     .footerWrapper{
         margin: 0 auto;
         width: calc(100% - 60px);
+        max-width: 1200px;
         height: 90%;
         background-color: #fff;
         border-radius: 15px;
         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
         .footerBlockTop{
             display: flex;
-            padding: 30;
+            padding: 0 30px;
             .footerBox1{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 40%;
                 padding: 20px;
+                padding-left: 0px;
                 .footerTOP{
                     font-size: 100px;
                     font-weight: bold;
@@ -735,7 +747,7 @@ footer{
                 align-items: center;
                 flex-direction: column;
                 .footerTitle{
-                    font-size: 60px;
+                    font-size: $h3;
                     font-weight: bold;
                     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
                 }
@@ -763,12 +775,14 @@ footer{
             .footerBox3{
                 width: 40%;
                 padding: 20px;
+                padding-right: 0px;
                 display: flex;
-                justify-content: center;
+                justify-content: space-around;
                 flex-direction: column;
+                align-items: center;
                 .social{
                     width: 70%;
-                    padding: 30px 50px;
+                    display: inline-block;
                     span{
                         font-weight: bold;
                         font-size: 40px;
@@ -781,14 +795,16 @@ footer{
                     }
                 }
                 .orignate{
-                    padding: 30px 50px;
+                    text-align: center;
+                    padding: 0 15%;
+                    padding-top: 25px;
                     span{
                         font-size: 40px;
                         font-weight: bold;
                         text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
                     }
                     p{
-                       width: 80%;
+                       width: 100%;
                    }
                 }
             }
@@ -995,3 +1011,132 @@ header nav div#lftUl{
 // }
 /*# sourceMappingURL=style.css.map */
 
+
+div.closeRotate2{
+    transform: translateY(-50%) rotate(45deg)  !important; 
+    transition: all .5s;
+    top: 27px !important;
+ }
+ div.closeRotate3{
+     transform: translateY(-50%) rotate(135deg) !important;
+     transition: all .5s;
+     bottom: 12px !important;
+ }
+div.closeRotate1{
+    display: none !important;
+}
+
+@media all and (max-width:684px){
+    span#logStat{
+        display: none;
+    }
+    nav{
+        flex-wrap: wrap;
+        div#navlogo{
+            height: 46px !important;
+            align-self: center;
+            
+            img{
+                height: 46px !important;
+            }
+        }
+    }
+    
+}
+@media all and (max-width:1247px){
+    div.footerBlockTop{
+        // flex-direction: column !important;
+        justify-content: space-between;
+        flex-wrap: wrap !important;
+        div.footerBox1{
+            order: 1 !important;
+            width: 50% !important; 
+            padding-top: 30px !important;   
+        }
+        div.footerBox2{
+            order: 0 !important;
+            width: 100% !important;
+            padding-top: 30px;
+            div.footerTitle{
+                margin-bottom: 20px;
+            }
+            button#goTop{
+                width: 100% !important;
+            }
+        }
+        div.footerBox3{
+            padding-top: 45px !important;
+            div.social{
+                text-align: center !important;
+            } 
+        }
+    }
+}
+
+@media all and (max-width:780px){
+    div.footerBlockTop{
+        // flex-wrap: wrap !important;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        div.footerBox1{
+            order: 1 !important;
+            width: 100% !important; 
+            padding-top: 30px !important;
+            padding-right: 0px !important;   
+        }
+        div.footerBox2{
+            order: 2 !important;
+            width: 100% !important;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            button#goTop{
+                width: 100% !important;
+            }
+        }
+        div.footerBox3{
+            order: 0 !important;
+            width: 100% !important;
+            padding-top: 45px !important;
+            padding-left: 0px !important;
+            div.social{
+                text-align: center !important;
+            }
+            div.orignate{
+                padding: 25px 0px 0px;
+            } 
+        }
+    }
+}
+div#logCarousel, div#logCarousel2 form{
+    input{
+        outline: 0;
+        &:focus{
+            border-color: map-get($map: $color_regulation, $key: 'blue-input-border');
+        }
+    }
+    ::-webkit-input-placeholder {
+        color: map-get($map: $color_regulation, $key: 'gray-input-hintText') !important;
+        font-size: 13px !important;
+      }
+}
+@media all and (max-width:560px){
+    div#rgtUl{
+        ul{
+            li{
+                padding-right: 20px !important;
+            }
+        }
+    }
+    body header div#navlogo{
+        width: 161px;
+        height: 30px !important;
+        img{
+            height: 30px !important;
+        }
+    }
+    div#navlogo{
+        width: 105px !important;
+    }
+}

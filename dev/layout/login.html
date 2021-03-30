@@ -11,11 +11,11 @@
                     <form action="#" id="logForm">
                         <label for="memIdCol">
                             <span>輸入帳號</span><br>
-                            <input type="email" placeholder="Email" id="memId" required autocomplete="off" name="memId"><br>
+                            <input type="email" placeholder="Email" id="memIdCol" required autocomplete="off" name="memId"><br>
                         </label>
                         <label for="memPswCol">
                             <span>輸入密碼<br></span> 
-                            <input type="password" placeholder="6-15位的英數混和，英文需區分大小寫" id="memPsw" maxlength="15" required autocomplete="off" name="memPsw"><br>
+                            <input type="password" placeholder="6-15位的英數混和，英文需區分大小寫" id="memPswCol" maxlength="15" required autocomplete="off" name="memPsw"><br>
                         </label>
 
                         <label for="remMem" id="remember"><input type="checkbox" name="remMem" id="remMem" required>記住我的帳號</label><br>
@@ -27,10 +27,10 @@
                     <!--登入註冊變化-->
                     <h3 id="signUpFConTitle">註冊會員</h3>
                     <ul>
-                        <li>加入會員即享更多福利</li>
-                        <li>優點1XXXXXXXXXX</li>
-                        <li>優點2XXXXXXXXXX</li>
-                        <li>優點3XXXXXXXXXX</li>
+                        <li>加入會員享福利</li>
+                        <li>優點1商城優惠</li>
+                        <li>優點2發起活動</li>
+                        <li>優點3參與淨灘</li>
                     </ul>
                     <button id="signRegFake">建立帳號</button>
                 </div>
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <div id="lightbox2">
+    <div id="lightbox2" style="display: none; opacity: 0;">
         <!--燈箱背後陰影-->
         <div id="logWrapper2">
             <!--燈箱顯示區-->
@@ -103,10 +103,10 @@
                     <!--登入註冊變化-->
                     <h3 id="signUpFConTitle2">註冊會員</h3>
                     <ul>
-                        <li>加入會員即享更多福利</li>
-                        <li>優點1XXXXXXXXXX</li>
-                        <li>優點2XXXXXXXXXX</li>
-                        <li>優點3XXXXXXXXXX</li>
+                        <li>加入會員享福利</li>
+                        <li>優點1商城優惠</li>
+                        <li>優點2發起活動</li>
+                        <li>優點3參與淨灘</li>
                     </ul>
                     <button id="signRegFake2">建立帳號</button>
                 </div>
@@ -117,7 +117,7 @@
                     <form action="#" id="regForm2">
                         <div id="regNameCol2">
                             <label for="regName2">輸入舊密碼</label>
-                            <input type="password" id="regName2" name="regName2" required>
+                            <input type="password" id="regName2" name="regName2" required placeholder="6-15位的英數混和，英文需區分大小寫">
                         </div>
                         <div id="regBirthCol2">
                             <label for="regBirth2">輸入新密碼</label>

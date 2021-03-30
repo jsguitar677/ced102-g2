@@ -171,11 +171,14 @@ main.event {
       left: 0;
       transform: rotate(90deg) translateY(-100%);
       transform-origin: 0 0;
+      line-height: 20px;
       ul{
         padding: $padding-hint;
         white-space: nowrap;
+        line-height: 20px;
         li{
-          font-size: $text-fontSize-region;
+          font-size: 20px;
+          line-height: 20px;
           font-weight: bolder;
           color: map-get($web-color,'gray-hint');
           display: inline-block;
@@ -190,7 +193,9 @@ main.event {
           }
         }
         @media (max-width:575px) {
+          line-height:$text-fontSize-hint-575;
           li{
+            line-height:$text-fontSize-hint-575;
             font-size: $text-fontSize-hint-575;
           }
         }

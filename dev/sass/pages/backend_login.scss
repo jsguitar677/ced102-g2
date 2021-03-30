@@ -1,0 +1,137 @@
+@import '../var';
+
+@mixin btn-module-blue() {
+    .btn{
+        border-radius: $borderRadius;
+        display: inline-block;
+        background-color: map-get($color_regulation,'blue');
+        font-weight: bolder;
+        font-size: $contentTxt;
+        color: map-get($color_regulation,'white');
+        padding: 8px 30px;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+
+*{
+    box-sizing: border-box;
+    letter-spacing: $letter-Spacing;
+    font-family: 'Palatino Linotype';
+    color:  map-get($color_regulation,'blue');
+}
+
+body{
+    margin: 0;
+    background-color: map-get($color_regulation,'white-bg');
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+        color: map-get($color_regulation,'red');
+    }
+}
+
+img{
+    max-width: 100%;
+}
+
+header{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background-color: map-get($color_regulation,'blue');
+    div.logo{
+        background-color: map-get($color_regulation,'blue');
+        width: $pageW;
+        margin: 0 auto;
+        height: 100%;
+        img{
+            max-height: 100%;
+        }
+    }
+}
+div.min-hight{
+    width: $pageW;
+    margin: 0 auto;
+    min-height:calc(100vh - 100px);
+    padding: 60px 0;   
+    background-image: url('../../img/backend/indexfont-img.png');
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: center center;
+
+    div.title{
+        text-align: center;
+        font-size: $contentSubTit;
+        margin-bottom: 15px;
+    }
+    div.login{
+        margin: 0px auto;
+        width: 360px;
+        // background-color: map-get($color_regulation,'white');
+        background-color: rgba(255, 255, 255, 0.558);
+        padding: 40px;
+        box-shadow: $box-shadow;
+        border-radius: $borderRadius;
+        form{
+            text-align: center;
+            label{
+                width: 55px;
+                line-height: $line-height;
+                margin-right: 10px;
+            }
+            input{
+                padding: 0px 8px;
+                margin: 0 0 25px 0;
+                line-height: $line-height;
+                border-radius: $inputRadius;
+                border: 1px solid map-get($color_regulation,'blue');
+                
+            }
+            input[type=submit]{
+                margin-top: 20px
+            }
+            // @media (max-width:450px){
+            //     input{
+            //         width: calc(100% - 65px);
+            //     }
+            //     input[type=submit]{
+            //         width: 100px;
+            //     }
+            // }
+            @include btn-module-blue();
+            div.forget{
+                width: 100%;
+                text-align: right;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+// @media (max-width:450px){
+//     div.min-hight{
+//         padding: 30px 10px;
+//         div.login{
+//             width: 90%;
+//             padding: 40px 30px 20px 30px;
+//         }
+//     }
+// }
+footer{
+    width: 100%;
+    font-size: 12px;
+    background-color: map-get($color_regulation,'blue');
+    div.footer{
+        text-align: center;
+        margin: 0 auto;
+        width: $pageW;
+        color: map-get($color_regulation,'white');
+        height: 40px;
+        line-height: 40px;
+        background-color: map-get($color_regulation,'blue');
+    }
+}

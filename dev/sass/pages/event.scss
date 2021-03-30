@@ -404,10 +404,13 @@ main.event {
     left: 0;
     transform: rotate(90deg) translateY(-100%);
     transform-origin: 0 0;
+    line-height: 20px;
     ul{
       padding: $padding-hint;
+      line-height: 20px;
       li{
-        font-size: $text-fontSize-region;
+        font-size: 20px;
+        line-height: 20px;
         font-weight: bolder;
         color: map-get($web-color,'gray-hint');
         display: inline-block;
@@ -422,8 +425,10 @@ main.event {
         }
       }
       @media (max-width:575px) {
+        line-height: 18px;
         li{
           font-size: $text-fontSize-hint-575;
+          line-height: 18px;
         }
       }
     }
@@ -448,7 +453,7 @@ main.event {
       padding-bottom: 60px;
       div.block{
         text-align: center;
-        padding: 60px 0px 30px 20px;
+        padding: 60px 0px 30px 5px;
         width: 100%;
         position: relative;
         div.map-card{
@@ -803,7 +808,7 @@ main.event {
 
                 div.weather-div {
                   font-weight: lighter;
-                  background-color: #181239c2;
+                  background-color: #1a1345cd;
                   background-image: url('#');
                   background-repeat: no-repeat;
                   background-size: cover;
@@ -1668,7 +1673,7 @@ main.event {
                   div.row{
                     div.big-card-left{
                       div.pic{
-                        margin: 40px auto;
+                        margin: 40px auto 40px 35px;
                         width: 172px;
                         height: 172px;
                         // background-color: gray;
@@ -1810,10 +1815,11 @@ main.event {
                       padding: 30px 30px;
                     }
                     div.pic{
-                      border-radius: 50%;
-                      overflow: hidden;
+                      flex-shrink: 0;
                       width: 100px;
                       height: 100px;
+                      border-radius: 50px;
+                      overflow: hidden;
                       img{
                         min-width: 100%;
                         min-height: 100%;
@@ -2004,6 +2010,34 @@ main.event {
                     div.text{
                       p:nth-child(2n){
                         font-size: $text-fontSize-subtitle;
+                      }
+                    }
+                  }
+                }
+                @media (min-width:576px) and (max-width:991px) {
+                  div.effect{
+                    div.flex{
+                      div.TOP{
+                        padding: 30px;
+                      }
+                      div.text{
+                        p:nth-child(2n){
+                          font-size: $text-fontSize;
+                        }
+                      }
+                    }
+                  }
+                }
+                @media (max-width:575px) {
+                  div.effect{
+                    div.flex{
+                      div.TOP{
+                        padding: 0px 30px 20px 30px;
+                      }
+                      div.text{
+                        p:nth-child(2n){
+                          font-size: $text-fontSize;
+                        }
                       }
                     }
                   }

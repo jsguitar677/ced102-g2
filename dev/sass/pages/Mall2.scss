@@ -81,28 +81,33 @@ body {
 
 //左側 直向 麵包條
 div.title-block{
+    line-height: 20px;
     h5.title {
+        line-height: 20px;
         margin-top:$navH;
         position:absolute;
         //top: $navH;
-        top: calc( #{$navH} + 10px);
+        top: 66px;
         left:0;
         margin:0;
-        font-size: $h5;
+        font-size: 20px;
         font-weight: normal;
         display: inline-block;
         white-space: nowrap;
-        padding: 10px 0;
-        transform: rotate(90deg) translateX(-50px);
-        transform-origin: 0% 100%;
+        padding: 10px;
+        transform: rotate(90deg) translateY(-100%);
+        transform-origin: 0% 0%;
         color:map-get($color_regulation,'blue');
         span {
+            line-height: 20px;
             color:map-get($color_regulation,'gray' );
         }
     }
     @media (max-width:575px){
+        line-height: 18px;
         h5.title {
-            font-size: $h7;
+            font-size: 18px;
+            line-height: 18px;
         }
     }
 }
@@ -125,7 +130,8 @@ section div.content_Mall {
     width: 100%;
     div.top_back_img_1 {
         position:relative;
-        width:100%;
+        width:calc(100% - 60px);
+        margin: 0 auto;
         z-index: -5;
         div.top_back_img_2{    
             width: 100%;
@@ -143,11 +149,11 @@ section div.content_Mall {
         }
         
     }
-    @media (max-width:575px){
-        div.top_back_img_1 {
-            display: none;
-        }
-    }
+    // @media (max-width:575px){
+    //     div.top_back_img_1 {
+    //         display: none;
+    //     }
+    // }
 }
 
 //客製商品區塊
@@ -366,13 +372,14 @@ section div.content_Mall div.all div.ProductArea_Block{
             // }
         }
     }
-    @media (max-width:767px){
+    @media (min-width:576px) and (max-width:767px){
         div.theWayOfSort{
             padding: 20px 20px 10px 0;
-            select.select_sort_way{
-                font-size: 12px;
-                width: 110px;
-            }
+        }
+    }
+    @media (max-width:575px){
+        div.theWayOfSort{
+            padding: 20px 20px 10px 0;
         }
     }
     h5.title{
@@ -476,13 +483,19 @@ section div.content_Mall div.all div.ProductArea_Block{
                     }
                 }
             }
+            @media (max-width:575px){
+                div.CustomizedAreaA{
+                    margin-bottom: 20px;
+                }
+            }
         }
         @media (max-width:575px){
+            margin-bottom:0px;
             justify-content: center;
             a.zoomin{
-                width: 60%;
-                min-width: 210px;
-                margin-bottom: 20px;
+                width: 210px;
+                // min-width: 210px;
+                margin: 0px 10px;
             }
         }
         
@@ -526,10 +539,9 @@ section div.content_Mall div.all div.ProductArea_Block{
                         display:inline-block;
                         margin:0 10% 0 0;
                     }
-                    @media (max-width:767px){
+                    @media (max-width:575px) {
                         p.NameAndPrice{
-                            display:block;
-
+                            display: block;
                         }
                     }
                     p.text2{
@@ -547,7 +559,7 @@ section div.content_Mall div.all div.ProductArea_Block{
                         //-webkit-box-orient: vertical;
                         //-webkit-box-orient: horizontal;
                     }
-                    @media (max-width:767px){
+                    @media (max-width:575px){
                         p.text2{
                             font-size: 12px;
 
@@ -562,11 +574,6 @@ section div.content_Mall div.all div.ProductArea_Block{
                         border-radius: 50%;
                         box-shadow: $box-shadow;
                     }
-                    @media (min-width:576px) and (max-width:767px){
-                        img.cart{
-                            bottom:calc(100% - 43px);
-                        }
-                    }
                     @media (max-width:575px){
                         img.cart{
                             bottom:calc(100% - 43px);
@@ -579,7 +586,7 @@ section div.content_Mall div.all div.ProductArea_Block{
             justify-content: center;
             a.normal{
                 width: 40%;
-                min-width: 170px;
+                min-width: 210px;
                 margin: 0 10px 20px 10px;
                 div.CustomizedAreaA{
                     margin: 0;

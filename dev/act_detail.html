@@ -8,6 +8,7 @@
     <title>一瓶的海岸線</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/act_detail.css">
+    <link rel="stylesheet" href="./css/pages/act_detail_eff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
@@ -21,10 +22,15 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
     <!-- ------------------------------------------------------- -->
-<div class="ad_container">
     <div class="ad_intro">
-        <img src="./img/act_detail/dark-ocean.jpg" width="100%">
+      <div class="slide-wrapper">
+        <div class="slide-item">
+          <img src="./img/act_detail/dark-ocean.jpg" class="slide-item__image">
+        </div>
+      </div>
     </div>
+    <div class="spacing_block"><h1 data-aos="fade-in" data-aos-duration="1500" data-aos-once="true" data-aos-delay="500">淨下塑源</h1></div>
+    <div class="ad_container">
     <div class="ad_content">
         <div class="ad_block"><img src="./img/act_detail/beach_bottle.jpg"></div>
           <div class="ad_inner_content">
@@ -133,6 +139,39 @@
     <script>
       AOS.init();
     </script>
+    <script src="./js/pixi.min.js"></script>
+		<script src="./js/TweenMax.min.js"></script>
+		<script src="./js/main5.js"></script>
+		<script src="./js/imagesloaded.pkgd.min.js"></script>
+		<script>	
+			var spriteImages = document.querySelectorAll( '.slide-item__image' );
+			var spriteImagesSrc = [];
+			var texts = [];
+
+			for ( var i = 0; i < spriteImages.length; i++ ) {
+				var img = spriteImages[i];
+				// Set the texts you want to display to each slide 
+				// in a sibling element of your image and edit accordingly
+				if ( img.nextElementSibling ) {
+					texts.push(img.nextElementSibling.innerHTML);
+				} else {
+					texts.push('');
+				}
+				spriteImagesSrc.push( img.getAttribute('src' ) );
+			}
+      
+			var initCanvasSlideshow = new CanvasSlideshow({
+				sprites: spriteImagesSrc,
+				displacementImage: './img/act_detail/clouds.jpg',
+				autoPlay: true,
+				autoPlaySpeed: [4, 3],
+				displaceScale: [5000, 10000],
+				interactive: true,
+				interactionEvent: 'click', // 'click', 'hover', 'both' 
+				displaceAutoFit: false,
+				dispatchPointerOver: true // restarts pointerover event after click 
+			});
+		</script>
 </body>
 
 </html>

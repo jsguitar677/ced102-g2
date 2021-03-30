@@ -38,7 +38,7 @@ $inputRadius:5px;
 $box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
 //敬航
 $closeBtn:27px;//關閉紐大小
-// header
+//header
 $navH:66px;
 $logoW:50px;
 //Footer
@@ -81,7 +81,7 @@ body {
 div.title-block{
     h5.title {
         position:absolute;
-        top: 66px;
+        top: $navH;
         left:0;
         margin:0;
         font-size: 20px;
@@ -89,81 +89,72 @@ div.title-block{
         display: inline-block;
         white-space: nowrap;
         padding: 10px;
-
         transform: rotate(90deg) translateY(-100%);
         transform-origin: 0 0;
-        // transform: rotate(90deg) translateX(-60px);
-        // transform-origin: 0% 100%;
         color:map-get($color_regulation,'blue');
-        @media (max-width:576px){
+        @media (max-width:575px){
             font-size: $h7;
         }
         span {
             color:map-get($color_regulation,'gray' );
         }
-        @media (min-width:320px) and (max-width:575px){
+        @media (max-width:575px){
             font-size: $h7;
-            top: calc( #{$navH} + 15px);
         }
     }
 }
 
 section.CustomizedBagPage {
     letter-spacing:$letter-Spacing;
-    max-width: calc( #{$pageW} - 60px );
+    max-width: calc( #{$pageW} - #{$reserveSide} * 2 );
     margin:0 auto;
     font-size: 0px;
     text-align: center;
     margin-top:$navH;
     position: relative;
-}
-
-//header下方背景圖(毛玻璃效果)，此div不占位
-section.CustomizedBagPage div.content_costomizedBag {
-    text-align: left;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    div.top_back_img_1 {
-        position:relative;
-        margin: 0 auto;
-        z-index: -5;
-        @media (max-width:1200px){
-            width:calc(100% - 60px);
-        }
-        div.top_back_img_2{    
-            width: 100%;
-            max-height:426px;
-            position:absolute;
-            top:-5px;
-            left:0;    
-            border-radius: 0 0 $borderRadius $borderRadius;
-            overflow: hidden;
-            box-shadow: $box-shadow;
-            img{
-                width: 105%;
-                filter: blur(7px); 
+    //header下方背景圖(毛玻璃效果)，此div不占位
+    div.content_costomizedBag {
+        text-align: left;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        div.top_back_img_1 {
+            position:relative;
+            margin: 0 auto;
+            z-index: -5;
+            @media (max-width:1200px){
+                width:calc(100% - #{$reserveSide} * 2);
+            }
+            div.top_back_img_2{  
+                width: 100%;
+                max-height:426px;
+                position:absolute;
+                top:-5px;
+                left:0;    
+                border-radius: 0 0 $borderRadius $borderRadius;
+                overflow: hidden;
+                box-shadow: $box-shadow;
+                img{
+                    width: 105%;
+                    filter: blur(7px); 
+                }
             }
         }
-    }
-}
-
-//次標題:客製商品-產品名稱
-section.CustomizedBagPage{ 
-    div.content_costomizedBag{ 
+        //標題:客製化 - 購物袋
         h5.title_2{
             font-size: $h5;
             color: map-get($color_regulation,'blue');
-            margin:0;
-            padding: 60px;
+            margin:0 auto;
+            padding:60px 0;
             text-align: center;
-            @media (max-width:576px){
+            @media (max-width:575px){
                 font-size: $h6;
                 padding:20px;
             }
         }
     }
 }
+
 
 section.CustomizedBagPage{
     div.content_costomizedBag{
@@ -174,7 +165,7 @@ section.CustomizedBagPage{
             div.all{
                 margin:0 auto;
                 width:100%;
-                padding:0 30px;
+                padding:0 $reserveSide;
                 //左側圖片與商品解說區==================================================================
                 //左側圖片與商品解說區==================================================================
                 //左側圖片與商品解說區==================================================================
@@ -202,12 +193,14 @@ section.CustomizedBagPage{
                             z-index:-1;
                             filter: blur(5px); 
                         }
+                        //標題:印上個人風格吧
                         h6.urstyle{
                             font-size: $h6;
+                            text-align: center;
                             color:map-get($color_regulation,'blue');
                             margin:0;
                             padding-top: 10px;
-                            @media (max-width:576px){
+                            @media (max-width:767px){
                                 font-size: $h7;
                             }
                         }
@@ -216,7 +209,7 @@ section.CustomizedBagPage{
                             border-radius: $borderRadius;
                             width:98%;
                             margin:0 auto;
-                            margin-bottom: 25px;
+                            margin-bottom: 15px;
                             margin-top:20px;
                             text-align: center;
                             overflow: hidden;
@@ -244,7 +237,7 @@ section.CustomizedBagPage{
                                 color:map-get($color_regulation,'blue');
                                 display:inline-block;
                                 font-weight: 550;
-                                @media (max-width:576px) {
+                                @media (max-width:767px) {
                                     font-size: $p;
                                 }
                             }
@@ -256,16 +249,17 @@ section.CustomizedBagPage{
                             }    
                         }
                         //左側 (商品簡介區)========================
-                        h6.aboutProducts{ //標題
+                        //標題:商品簡介
+                        h6.aboutProducts{ 
                             font-size: $h6;
                             color:map-get($color_regulation,'blue');
                             margin:0;
-                            padding-top: 40px;
+                            padding-top: 10px;
                             display:inline-block;
-                            @media (max-width:992px){
+                            @media (max-width:991px){
                                 padding:0;
                             }
-                            @media (max-width:576px){
+                            @media (max-width:767px){
                                 font-size: $h7;
                             }
                         }
@@ -281,7 +275,8 @@ section.CustomizedBagPage{
                                display:block; 
                             }
                         }
-                        div.leftarea_block{ //簡介
+                        //商品簡介內容
+                        div.leftarea_block{ 
                             margin:10px auto 15px auto;
                             width:95%;
                             padding:20px;
@@ -292,7 +287,10 @@ section.CustomizedBagPage{
                             }
                             @media (max-width:991px){
                                 display:none; 
-                             }
+                            }
+                            @media (max-width:575px){
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
@@ -308,30 +306,32 @@ section.CustomizedBagPage{
                     @media (max-width:991px) {
                         margin-top: 25px;
                     }
+                    //標題:訂製個人專屬商品吧!
                     h6{
                         font-size: $h6;
                         color:map-get($color_regulation,'blue');
                         margin:0 auto;
-                        padding: 30px;
+                        padding: 30px 0;
                         text-align: center;
-                        @media (max-width:576px){
+                        @media (max-width:767px){
                             font-size: $h7;
                         }
                     }
                     form.inforOfTheForm{
-                        width:95%;
+                        width:98%;
                         margin: 0 auto;
                         // 選色區=================================
                         div.color_block{
                             width:100%;
                             margin-bottom: 50px;
+                            //小標:請選擇商品商色
                             p.stepExplain{
                                 font-size: $p;
                                 font-weight: 550;
                                 color:map-get($color_regulation,'blue');
                                 display:block;
                                 margin:0;
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
@@ -368,7 +368,7 @@ section.CustomizedBagPage{
                                     @media (max-width:400px) {
                                         width:45%;
                                         margin-bottom: 10px;
-                                        font-size: 10px;
+                                        font-size: 12px;
                                     }
                                     div.theColor{
                                         width:100%;
@@ -408,23 +408,26 @@ section.CustomizedBagPage{
                             @media (max-width:991px) {
                                 padding-bottom: 0;
                             }
+                            //小標:請選擇上傳圖片
                             p.stepExplain{
                                 margin:0;
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
+                            //小標:加價提示
                             p.stepExplain1{
                                 color:map-get($color_regulation,'red');
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
+                            //上傳按鈕
                             div.picture_block2{
                                 margin: 0px auto;
                                 label.placement{
                                     font-weight: normal;
-                                    @media (max-width:576px) {
+                                    @media (max-width:450px) {
                                         font-size: 12px; 
                                     }
                                 }
@@ -432,6 +435,9 @@ section.CustomizedBagPage{
                                     width:98%;
                                     margin:0 auto;
                                     padding-top:12px;
+                                    @media (max-width:450px) {
+                                        font-size: 12px; 
+                                    }
                                     div.placememtOfInput{
                                         height:40px;
                                         line-height: 40px;
@@ -455,20 +461,21 @@ section.CustomizedBagPage{
                             width:100%;
                             font-size: $p;
                             padding-bottom: 50px;
+                            //小標:數量
                             p.stepExplain{
                                 font-size: $p;
                                 font-weight: 550;
                                 margin:0;
                                 padding-top:50px;
                                 padding-bottom:10px;
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
                             div.placememtOfQty{
                                 width:98%;
                                 margin:0 auto;
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                                 select.select_qty_pcs{
@@ -476,7 +483,7 @@ section.CustomizedBagPage{
                                     height: 35px;
                                     padding-left: 30px;
                                     border-radius: $inputRadius;
-                                    @media (max-width:576px) {
+                                    @media (max-width:450px) {
                                         font-size: 12px; 
                                     }
                                 }
@@ -487,17 +494,18 @@ section.CustomizedBagPage{
                             width:100%;
                             font-size: $p;
                             color:map-get($color_regulation,'blue');
+                            //小標:小計
                             p.stepExplain{
                                 font-weight: 550;
                                 margin:0;
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
                             div.placementOfTal{
                                 width:98%;
                                 text-align: right;
-                                @media (max-width:576px) {
+                                @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                                 label.thePrice{
@@ -536,7 +544,6 @@ section.CustomizedBagPage{
             div.all2{
                 margin:0 auto;
                 width:100%;
-                //padding:0 30px;
                 //底部 推薦商品區======================================================================
                 //底部 推薦商品區======================================================================
                 //底部 推薦商品區======================================================================
@@ -547,18 +554,21 @@ section.CustomizedBagPage{
                     padding-bottom: 40px;
                     margin-bottom:70px;
                     margin-top:25px;
+                    //標題:熱門推薦商品
                     h5.title_2{
                         font-size: $h5;
                         color: map-get($color_regulation,'blue' );
-                        @media (max-width:576px){
+                        @media (max-width:575px){
                             font-size: $h6;
+                            padding:20px;
                         }
                     }
-                    div.bottomareaBox{
+                    div.bottomareaBoxA{
                         width:100%;
                         margin:0 auto;
                         padding:0;
                         vertical-align: top;
+                        text-align: center;
                         a.goToProductPage{
                             text-decoration: none;
                             div.recommendProduct{
@@ -570,11 +580,12 @@ section.CustomizedBagPage{
                                 display:inline-block;
                                 border-radius: $borderRadius;
                                 box-shadow: $box-shadow;
+                                text-align: left;
                                 @media (min-width:576px) and (max-width:991px) {
-                                    width:47.5%;
+                                    width:45%;
                                 }
                                 @media (max-width:575px) {
-                                    width:99%;
+                                    width:93%;
                                     margin-bottom: 15px;
                                 }
                                 img{
@@ -594,6 +605,9 @@ section.CustomizedBagPage{
                                         margin:0;
                                         display:inline-block;
                                         margin:3% 7% 3% 0;
+                                        @media (max-width:450px) {
+                                            font-size: 12px; 
+                                        }
                                     }
                                     p.text{
                                         width: 100%;
@@ -603,6 +617,9 @@ section.CustomizedBagPage{
                                         overflow: hidden;        //內容溢出處理
                                         text-overflow: ellipsis; //文字溢出處理
                                         white-space:nowrap;      //文字超出時不換行
+                                        @media (max-width:450px) {
+                                            font-size: 12px; 
+                                        }
                                     }
                                     img.cart{
                                         position:absolute;

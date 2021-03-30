@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiation_success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./plugin/bootstrap-grid.min.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap/bootstrap-grid.min.css"> -->
+    <!-- <link rel="stylesheet" href="./css/bootstrap/bootstrap-reboot.min.css"> -->
+    <!-- <link rel="stylesheet" href="./css/initiation_success.css"> -->
+    <link rel="stylesheet" href="./css/pages/initiation_success.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script> -->
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script> -->
+</head>
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+
+    <main class="event">
+        <div class="bread">
+            <ul>
+                <li>首頁</li>
+                <li>活動募款參加平台</li>
+                <li class="current">發起活動上傳平台</li>
+            </ul>
+        </div>
+        <div class="content">
+            <section id="section1">
+                <form action="./initiation_info.html">
+                    <div class="container">
+                        <div class="row  justify-content-center">
+                            <div class="col-lg-5 col-md-7 col-sm-8 col-10 part">
+                                <div class="description">
+                                    <h2><img src="./img/event/icon/icon-check.png">已成功提交</h2>
+                                    <p>可至會員中心查詢您的提案狀態</p>
+                                    <div class="btn"><a href="./event.html">回活動平台</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+
+
+</body>
+</html>

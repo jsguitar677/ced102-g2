@@ -1,8 +1,8 @@
 $('document').ready(function(){
     //預設
-    $('section').css('display','none');
-    $(`#section1`).css('display','');
-    $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
+    // $('section').css('display','none');
+    // $(`#section1`).css('display','');
+    // $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
 
     //點擊選單，切換畫面
     for(let i=1; i<=3; i++){
@@ -13,6 +13,24 @@ $('document').ready(function(){
             $(this).css('fontWeight','bolder');
         })
     };
+    //首頁連接至section2
+    let storage = sessionStorage;
+    if(storage['btnId'] == null){
+        storage['btnId'] = '';
+    }
+    let itemString = storage.getItem('btnId');
+    let n1 = itemString.charAt(0);
+    if (n1 == "A"){
+        $('section').css('display','none');
+        $(`#section2`).css('display','');
+        $('ul.menu >li:nth-child(2)').css('fontWeight','bolder');
+        storage['btnId'] = '';
+    }else{
+        $('section').css('display','none');
+        $(`#section1`).css('display','');
+        $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
+    }
+
     //點擊id="section1"的發起活動按鈕
     $('#problem-btn').click(function(){
         $('section').css('display','none');
@@ -42,52 +60,6 @@ $('document').ready(function(){
         $('#money-rank').css({left:'0%'},"100");
     })
     
-    if($(document).width()<992){
-        $('.small-card').removeClass('effect');
-    }
-    if($(document).width()>=992){
-        $('.small-card').click(function(){
-            $('.small-card').removeClass('effect');
-            $(this).addClass('effect');
-        })
-        for(i=1;i<4;i++){
-            $(`#people-rank div.TOP${i}`).click(function(){
-                let color = $(this).css('background-color');
-                $('#people-rank div.big-card').css('background-color',`${color}`);
-                $('#people-rank div.big-card p').css('color',`#fafafa`);
-                $('#people-rank div.big-card div.donation-total').css('color',`#fafafa`);
-                $('#people-rank div.big-card h3').css('color',`#fafafa`);
-            })
-        }
-        for(i=4;i<6;i++){
-            $(`#people-rank div.TOP${i}`).click(function(){
-                let color = $(this).css('background-color');
-                $('#people-rank div.big-card').css('background-color',`${color}`);
-                $('#people-rank div.big-card p').css('color',`#1D1E4C`);
-                $('#people-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
-                $('#people-rank div.big-card h3').css('color',`#1D1E4C`);
-            })
-        }
-        for(i=1;i<4;i++){
-            $(`#money-rank div.TOP${i}`).click(function(){
-                let color = $(this).css('background-color');
-                $('#money-rank div.big-card').css('background-color',`${color}`);
-                $('#money-rank div.big-card p').css('color',`#fafafa`);
-                $('#money-rank div.big-card div.donation-total').css('color',`#fafafa`);
-                $('#money-rank div.big-card h3').css('color',`#fafafa`);
-            })
-        }
-        for(i=4;i<6;i++){
-            $(`#money-rank div.TOP${i}`).click(function(){
-                let color = $(this).css('background-color');
-                $('#money-rank div.big-card').css('background-color',`${color}`);
-                $('#money-rank div.big-card p').css('color',`#1D1E4C`);
-                $('#money-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
-                $('#money-rank div.big-card h3').css('color',`#1D1E4C`);
-            })
-        }
-    }
-
     if($(document).width()<768){
         $('ul.menu >li:nth-child(1)').text('助環境一力');
         $('ul.menu >li:nth-child(2)').text('與我們一起');
@@ -95,6 +67,54 @@ $('document').ready(function(){
         $('ul.menu >li:nth-child(1)').text('助環境一力 (參與活動)');
         $('ul.menu >li:nth-child(2)').text('與我們一起 (發起活動)');    
     }
+
+    function rankCard(){
+        if($(document).width() < 992){
+            $('.small-card').removeClass('effect');
+        }else{
+            $('.small-card').click(function(){
+                $('.small-card').removeClass('effect');
+                $(this).addClass('effect');
+            })
+            for(i=1;i<4;i++){
+                $(`#people-rank div.TOP${i}`).click(function(){
+                    let color = $(this).css('background-color');
+                    $('#people-rank div.big-card').css('background-color',`${color}`);
+                    $('#people-rank div.big-card p').css('color',`#fafafa`);
+                    $('#people-rank div.big-card div.donation-total').css('color',`#fafafa`);
+                    $('#people-rank div.big-card h3').css('color',`#fafafa`);
+                })
+            }
+            for(i=4;i<6;i++){
+                $(`#people-rank div.TOP${i}`).click(function(){
+                    let color = $(this).css('background-color');
+                    $('#people-rank div.big-card').css('background-color',`${color}`);
+                    $('#people-rank div.big-card p').css('color',`#1D1E4C`);
+                    $('#people-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
+                    $('#people-rank div.big-card h3').css('color',`#1D1E4C`);
+                })
+            }
+            for(i=1;i<4;i++){
+                $(`#money-rank div.TOP${i}`).click(function(){
+                    let color = $(this).css('background-color');
+                    $('#money-rank div.big-card').css('background-color',`${color}`);
+                    $('#money-rank div.big-card p').css('color',`#fafafa`);
+                    $('#money-rank div.big-card div.donation-total').css('color',`#fafafa`);
+                    $('#money-rank div.big-card h3').css('color',`#fafafa`);
+                })
+            }
+            for(i=4;i<6;i++){
+                $(`#money-rank div.TOP${i}`).click(function(){
+                    let color = $(this).css('background-color');
+                    $('#money-rank div.big-card').css('background-color',`${color}`);
+                    $('#money-rank div.big-card p').css('color',`#1D1E4C`);
+                    $('#money-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
+                    $('#money-rank div.big-card h3').css('color',`#1D1E4C`);
+                })
+            }
+        }
+    }
+    rankCard();
 
     function slider(){
         var isclick = true;
@@ -127,6 +147,8 @@ $('document').ready(function(){
             },800);
         })
     }
+    slider();
+
 
     $(window).resize(function(){
         if($(document).width()<=767){
@@ -136,13 +158,9 @@ $('document').ready(function(){
             $('ul.menu >li:nth-child(1)').text('助環境一力 (參與活動)');
             $('ul.menu >li:nth-child(2)').text('與我們一起 (發起活動)');    
         }
-        if($(document).width()<992){
-            $('.small-card').removeClass('effect');
-        }
         $('ul.slides').css({left:0});
-
+        rankCard();
     })
-    slider();
 
     $('p.more').click(function(){
         $(this).text('');
@@ -217,28 +235,28 @@ $('document').ready(function(){
                 let weatherIcon1 = document.getElementById(`weatherIcon1`);
                 if(iconValue == 1 || iconValue==24){
                     weatherIcon1.src = "./img/event/weather/sun.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/sun2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/sun2.jpg")');
                 }else if(iconValue == 4 || iconValue==5 || iconValue==6 || iconValue==7 || iconValue==27 || iconValue==28){
                     weatherIcon1.src = "./img/event/weather/cloudy.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/clouds2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/clouds2.jpg")');
                 }else if(iconValue == 2 || iconValue==3 || iconValue==25 || iconValue==26){
                     weatherIcon1.src = "./img/event/weather/太陽雲.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/sun2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/sun2.jpg")');
                 }else if( (iconValue =>8  && iconValue <= 14) || (iconValue =>29  && iconValue <=32) || iconValue==39 || iconValue==38 || iconValue==20){
                     weatherIcon1.src = "./img/event/weather/rainy.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/rain2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/rain2.jpg")');
                 }else if( (iconValue =>15  && iconValue <= 18) || (iconValue =>33  && iconValue <=36) || iconValue==41 || iconValue==22){
                     weatherIcon1.src = "./img/event/weather/雨雷.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/lightning2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/lightning2.jpg")');
                 }else if(iconValue == 19){
                     weatherIcon1.src = "./img/event/weather/太陽雲雨.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/rain2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/rain2.jpg")');
                 }else if(iconValue == 21){
                     weatherIcon1.src = "./img/event/weather/太陽打雷雨.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/lightning2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/lightning2.jpg")');
                 }else if(iconValue == 23 || iconValue == 37 || iconValue == 42){
                     weatherIcon1.src = "./img/event/weather/snowing.svg";
-                    $('div.weather-div').css('background-image','url("../img/event/weather/snow2.jpg")');
+                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/snow2.jpg")');
                 }
                 for(let j=2; j<=13; j=j+2){
                     if(A.location[i].weatherElement[6].time[j].elementValue[0].value != ' '){

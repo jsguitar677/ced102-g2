@@ -1,0 +1,1402 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 5px #00000081;
+  border-radius: 15px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D1E4C;
+  border-radius: 15px;
+  width: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #EF4325;
+  border-radius: 15px;
+  width: 10px;
+}
+
+.comShape {
+  background-color: #fff;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+}
+
+.comInput {
+  border: 1px solid #1D1E4C;
+  border-radius: 15px;
+}
+
+.comBtn {
+  cursor: pointer;
+  outline: none;
+  color: white;
+  border-radius: 15px;
+  height: 30px;
+  border: none !important;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  font-size: 15px;
+  background-color: #EF4325;
+  padding: 0 15px;
+}
+
+.comBtn2 {
+  cursor: pointer;
+  outline: none;
+  color: white;
+  border-radius: 15px;
+  height: 30px;
+  border: none !important;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  font-size: 15px;
+  background-color: #1D1E4C;
+  padding: 0 15px;
+}
+
+body {
+  margin: 0px;
+}
+
+body header {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  position: fixed;
+  top: 0;
+  font-family: "Palatino Linotype", "Noto Sans TC";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: white;
+}
+
+body header nav {
+  height: 66px;
+  padding-left: 30px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+body header nav div#lftUl {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 66px;
+}
+
+body header nav div#lftUl ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  justify-content: space-between;
+}
+
+body header nav div#lftUl ul li {
+  display: inline-block;
+  font-size: 15px;
+  vertical-align: bottom;
+  transition: all 1s ease;
+}
+
+body header nav div#lftUl ul li:nth-child(n+1) {
+  margin-left: 40px;
+}
+
+body header nav div#lftUl ul li:hover img {
+  opacity: 1;
+}
+
+body header nav div#lftUl ul li a {
+  margin-right: 5px;
+  color: #1D1E4C;
+}
+
+body header nav div#lftUl ul li img {
+  opacity: 0;
+  transition: all .8s ease;
+  width: 20px;
+}
+
+body header nav div#lftUl ul li:first-child {
+  margin-left: 0;
+}
+
+body header div#navlogo {
+  display: inline-block;
+  height: 66px;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body header div#navlogo img {
+  height: 66px;
+  vertical-align: center;
+}
+
+body header div#rgtUl {
+  display: inline-block;
+  line-height: 66px;
+  vertical-align: top;
+}
+
+body header div#rgtUl ul {
+  display: flex;
+  flex: row nowrap;
+  list-style: none;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+body header div#rgtUl ul li {
+  font-size: 15px;
+  align-content: center;
+  padding-right: 30px;
+}
+
+body header div#rgtUl ul li:nth-child(3) {
+  padding-right: 30px;
+}
+
+body header div#rgtUl ul li i.fwIcon {
+  vertical-align: baseline;
+}
+
+body header a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #1D1E4C;
+}
+
+body header i.fwIcon {
+  vertical-align: text-top;
+}
+
+body div#page1 {
+  height: calc(100vh - 66px);
+  position: fixed;
+  z-index: 100;
+}
+
+body div#page1 div#lightbox {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  font-size: 0;
+}
+
+body div#page1 div#lightbox div#logWrapper {
+  font-size: 0;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  vertical-align: top;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  color: #1d1e4c;
+  background-color: #f2f2f2;
+  background-image: linear-gradient(#ccb0ac, #8b7b5d);
+  overflow: hidden;
+}
+
+body div#page1 div#lightbox div#logWrapper button:focus {
+  outline: 0;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel {
+  width: 160%;
+  height: 100%;
+  position: relative;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
+  display: inline-block;
+  padding: 10px auto;
+  width: calc(100%*0.6/1.6);
+  margin: 0 auto;
+  height: 100%;
+  font-size: 0;
+  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-position: center center, center center;
+  background-size: 35%, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
+  text-align: center;
+  font-size: 22px;
+  padding-top: 30px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
+  font-size: 18px;
+  padding: 0% 15%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label input {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember {
+  width: 100%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember input {
+  width: auto;
+  margin: 10% 5px 10% 0px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm button {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon a {
+  display: block;
+  text-align: center;
+  color: #d71212;
+  font-size: 15px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
+  display: inline-block;
+  height: 100%;
+  width: calc(100%*0.4/1.6);
+  font-size: 0;
+  vertical-align: top;
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #1d1e4c;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
+  font-size: 22px;
+  padding-top: 30px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
+  font-size: 18px;
+  margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon button#signRegFake {
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  margin-top: 10%;
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid #f2f2f2;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
+  font-size: 0;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  width: calc(100%*0.6/1.6);
+  text-align: center;
+  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-position: center center, center center;
+  background-size: 35%, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
+  font-size: 22px;
+  margin-bottom: 1%;
+  padding-top: 30px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
+  padding: 0% 15%;
+  font-size: 18px;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div label {
+  display: block;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div input {
+  width: 100%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn {
+  width: 100%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
+  font-size: 15px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
+  display: inline-block;
+  margin: 3% auto;
+}
+
+body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
+  border-radius: 15px;
+  color: #f2f2f2;
+  background-color: #EF4325;
+  font-size: 15px;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn:hover svg {
+  transform: rotate(180deg);
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanOne {
+  width: calc(27px - 9px);
+  height: 2px;
+  display: inline-block;
+  background-color: #f2f2f2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  position: absolute;
+}
+
+body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanTwo {
+  width: calc(27px - 9px);
+  height: 2px;
+  display: inline-block;
+  background-color: #f2f2f2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body div#page2 {
+  height: 100vh;
+  background-color: chartreuse;
+}
+
+body div#page3 {
+  background-color: cornflowerblue;
+  height: 100vh;
+}
+
+svg#closeBtnBorderSvg {
+  transition: all .5s;
+}
+
+body div#page1 div#lightbox2 {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  font-size: 0;
+  opacity: 0;
+  transition: all .8s;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 {
+  font-size: 0;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  vertical-align: top;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  color: #1d1e4c;
+  background-color: #f2f2f2;
+  background-image: linear-gradient(#ccb0ac, #8b7b5d);
+  overflow: hidden;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 button:focus {
+  outline: 0;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 {
+  width: 160%;
+  height: 100%;
+  position: relative;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
+  display: inline-block;
+  padding: 10px auto;
+  width: calc(100%*0.6/1.6);
+  margin: 0 auto;
+  height: 100%;
+  font-size: 0;
+  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-position: center center, center center;
+  background-size: 35%, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
+  text-align: center;
+  font-size: 22px;
+  padding-top: 30px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
+  font-size: 18px;
+  padding: 0% 15%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label input {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label#remember2 {
+  width: 100%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label#remember2 input {
+  width: auto;
+  margin: 10% 5px 10% 0px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 button {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 a {
+  display: block;
+  text-align: center;
+  color: #d71212;
+  font-size: 15px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
+  display: inline-block;
+  height: 100%;
+  width: calc(100%*0.4/1.6);
+  font-size: 0;
+  vertical-align: top;
+  text-align: center;
+  color: #f2f2f2;
+  background-color: #1d1e4c;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
+  padding-top: 30px;
+  font-size: 22px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
+  font-size: 18px;
+  margin-bottom: 5%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 button#signRegFake2 {
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  margin-top: 10%;
+  width: 50%;
+  cursor: pointer;
+  border: 1px solid #f2f2f2;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
+  font-size: 0;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  width: calc(100%*0.6/1.6);
+  text-align: center;
+  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-position: center center, center center;
+  background-size: 35%, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
+  color: red;
+  font-size: 18px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
+  font-size: 22px;
+  margin-bottom: 1%;
+  padding-top: 30px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
+  padding: 0% 15%;
+  font-size: 18px;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
+  text-align: left;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div label {
+  display: block;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div input {
+  width: 100%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 {
+  width: 100%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 label#regAgreeCheck2 {
+  font-size: 15px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 label#regAgreeCheck2 {
+  display: inline-block;
+  margin: 3% auto;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 button {
+  border-radius: 15px;
+  color: #f2f2f2;
+  background-color: #EF4325;
+  font-size: 15px;
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 span#closeSpanOne2 {
+  width: calc(27px - 9px);
+  height: 2px;
+  display: inline-block;
+  background-color: #f2f2f2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  position: absolute;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 span#closeSpanTwo2 {
+  width: calc(27px - 9px);
+  height: 2px;
+  display: inline-block;
+  background-color: #f2f2f2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body div#page2 {
+  height: 100vh;
+  background-color: chartreuse;
+}
+
+body div#page3 {
+  background-color: cornflowerblue;
+  height: 100vh;
+}
+
+svg#closeBtnBorderSvg2 {
+  transition: all .5s;
+}
+
+svg#closeBtnBorderSvg2:hover {
+  transform: rotate(180deg);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  color: #1D1E4C;
+  width: 100%;
+  background-color: #F6F6F6;
+}
+
+footer .footerWrapper {
+  margin: 0 auto;
+  width: calc(100% - 60px);
+  max-width: 1200px;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+footer .footerWrapper .footerBlockTop {
+  display: flex;
+  padding: 0 30px;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding: 20px;
+  padding-left: 0px;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox1 .footerTOP {
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+footer .footerWrapper .footerBlockTop .footerBox1 .footerBottom {
+  font-size: 45px;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox1 .footerBottom ul {
+  list-style-type: circle;
+  margin: 0;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox2 {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox2 .footerTitle {
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+footer .footerWrapper .footerBlockTop .footerBox2 .goTop {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  width: 230px;
+  height: 50px;
+  font-size: 30px;
+  border: 2px solid #1D1E4C;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #1D1E4C;
+  outline: none;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox2 .goTop:hover {
+  background-color: #1D1E4C;
+  color: #fff;
+  transition: .3s ease-in-out;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 {
+  width: 40%;
+  padding: 20px;
+  padding-right: 0px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .social {
+  width: 70%;
+  display: inline-block;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .social span {
+  font-weight: bold;
+  font-size: 40px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .social__Icon {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .orignate {
+  text-align: center;
+  padding: 0 15%;
+  padding-top: 25px;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .orignate span {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .orignate p {
+  width: 100%;
+}
+
+footer .footerWrapper .footerBlockbottom {
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.fa-facebook, .fa-twitter, .fa-instagram {
+  font-size: 40px;
+}
+
+body a {
+  text-decoration: none;
+  color: #1D1E4C;
+}
+
+body div#page2 {
+  height: 100vh;
+  background-color: burlywood;
+}
+
+/* 切換按鈕 原+方 參考https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* 切換按鈕 原+方 參考https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+button#createAcc2 {
+  width: 100%;
+  border-radius: 15px;
+  background-color: #1d1e4c;
+  color: #f2f2f2;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10%;
+}
+
+@media all and (max-width: 1312px) {
+  body header nav div#lftUl div#navBurgerBtn {
+    transition: all .8s;
+    cursor: pointer;
+    width: 33px;
+    height: 43px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    top: 7px;
+  }
+  body header nav div#lftUl div#navBurgerBtn div {
+    background-color: #1D1E4C;
+    width: 33px;
+    height: 3px;
+    position: absolute;
+    border-radius: 3px;
+    transition: all .8s;
+  }
+  body header nav div#lftUl div#navBurgerBtn div:first-child {
+    top: 14px;
+  }
+  body header nav div#lftUl div#navBurgerBtn div:nth-child(2) {
+    top: 23px;
+  }
+  body header nav div#lftUl div#navBurgerBtn div:last-child {
+    bottom: 8px;
+  }
+  body header nav div#lftUl ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #EF4325;
+    justify-content: flex-end;
+    align-items: stretch;
+    color: #fafafa;
+    position: relative;
+    top: 24px;
+    left: 2000px;
+    opacity: 0;
+    transition: all .8s;
+  }
+  body header nav div#lftUl ul li {
+    text-align: center;
+    margin-left: 0px !important;
+    background-color: #1E1E1E;
+    width: 300px;
+    padding-left: 20px;
+  }
+  body header nav div#lftUl ul li:hover {
+    background-color: #EF4325;
+    cursor: pointer;
+  }
+  div#closeBtn3 {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  div#closeBtn3 span#closeSpanOne3 {
+    width: calc(27px - 9px);
+    height: 2px;
+    display: inline-block;
+    background-color: #f2f2f2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+  }
+  div#closeBtn3 span#closeSpanTwo3 {
+    width: calc(27px - 9px);
+    height: 2px;
+    display: inline-block;
+    background-color: #f2f2f2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  div#lftUl ul#navRList li a {
+    color: #fafafa;
+  }
+}
+div.closeRotate2 {
+  transform: translateY(-50%) rotate(45deg) !important;
+  transition: all .5s;
+  top: 27px !important;
+}
+
+div.closeRotate3 {
+  transform: translateY(-50%) rotate(135deg) !important;
+  transition: all .5s;
+  bottom: 12px !important;
+}
+
+div.closeRotate1 {
+  display: none !important;
+}
+
+@media all and (max-width: 684px) {
+  span#logStat {
+    display: none;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+  nav div#navlogo {
+    height: 46px !important;
+    align-self: center;
+  }
+  nav div#navlogo img {
+    height: 46px !important;
+  }
+}
+
+@media all and (max-width: 1247px) {
+  div.footerBlockTop {
+    justify-content: space-between;
+    flex-wrap: wrap !important;
+  }
+  div.footerBlockTop div.footerBox1 {
+    order: 1 !important;
+    width: 50% !important;
+    padding-top: 30px !important;
+  }
+  div.footerBlockTop div.footerBox2 {
+    order: 0 !important;
+    width: 100% !important;
+    padding-top: 30px;
+  }
+  div.footerBlockTop div.footerBox2 div.footerTitle {
+    margin-bottom: 20px;
+  }
+  div.footerBlockTop div.footerBox2 button#goTop {
+    width: 100% !important;
+  }
+  div.footerBlockTop div.footerBox3 {
+    padding-top: 45px !important;
+  }
+  div.footerBlockTop div.footerBox3 div.social {
+    text-align: center !important;
+  }
+}
+
+@media all and (max-width: 780px) {
+  div.footerBlockTop {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  div.footerBlockTop div.footerBox1 {
+    order: 1 !important;
+    width: 100% !important;
+    padding-top: 30px !important;
+    padding-right: 0px !important;
+  }
+  div.footerBlockTop div.footerBox2 {
+    order: 2 !important;
+    width: 100% !important;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+  div.footerBlockTop div.footerBox2 button#goTop {
+    width: 100% !important;
+  }
+  div.footerBlockTop div.footerBox3 {
+    order: 0 !important;
+    width: 100% !important;
+    padding-top: 45px !important;
+    padding-left: 0px !important;
+  }
+  div.footerBlockTop div.footerBox3 div.social {
+    text-align: center !important;
+  }
+  div.footerBlockTop div.footerBox3 div.orignate {
+    padding: 25px 0px 0px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Palatino Linotype';
+}
+
+body {
+  margin: 0;
+}
+
+main.event {
+  background-color: #F6F6F6;
+  margin-top: 66px;
+  width: 100%;
+  position: relative;
+}
+
+main.event img {
+  max-width: 100%;
+}
+
+main.event ul {
+  margin: 0;
+  padding: 0;
+}
+
+main.event li {
+  list-style: none;
+}
+
+main.event a {
+  text-decoration: none;
+}
+
+main.event div, main.event a, main.event p, main.event ul, main.event li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+main.event div.bread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: 0 0;
+}
+
+main.event div.bread ul {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+main.event div.bread ul li {
+  font-size: 28px;
+  font-weight: bolder;
+  color: #C6C6C6;
+  display: inline-block;
+}
+
+main.event div.bread ul li::after {
+  content: " / ";
+}
+
+main.event div.bread ul li:last-child {
+  color: #1D1E4C;
+}
+
+main.event div.bread ul li:last-child::after {
+  content: "";
+}
+
+@media (max-width: 575px) {
+  main.event div.bread ul li {
+    font-size: 18px;
+  }
+}
+
+main.event div.content {
+  max-width: 1200px;
+  background-color: #F6F6F6;
+  margin: 0 auto;
+}
+
+main.event div.content section {
+  width: calc(100% - $padding-web);
+  margin: 0 30px;
+  padding-bottom: 60px;
+}
+
+#section1 {
+  min-height: 100vh;
+  margin: 0 30px;
+}
+
+#section1 div, #section1 a, #section1 p, #section1 ul, #section1 li {
+  font-size: 15px;
+  color: #1D1E4C;
+  letter-spacing: 2px;
+  line-height: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part {
+  margin-top: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+  padding: 40px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.info {
+    padding: 20px 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 20px 0px;
+  }
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description {
+  text-align: center;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 15px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description h2 span, main.event div.content #section1 form div.container div.row div.part div.description span span {
+  color: #EF4325;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description p {
+  margin: 0;
+  line-height: 30px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+  display: inline-block;
+  margin-top: 24px;
+  line-height: 21px;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+  margin: 25px 5px 25px 0;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border: 1px solid #1D1E4C;
+  border-radius: 3px;
+  outline: none;
+  vertical-align: top;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox]:checked {
+  background-image: url("../../img/event/icon/icon-checkbox.png");
+  background-size: cover;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+  border-radius: 15px;
+  outline: none;
+  color: #fafafa;
+  background-color: #1D1E4C;
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    width: 95%;
+    margin: 0 auto;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 25px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+    margin-top: 15px;
+    line-height: 21px;
+    font-size: 12px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+    margin: 15px 5px 25px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    width: 100%;
+    margin: 0 auto;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description span {
+    display: block;
+    font-size: 14px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description h2 {
+    padding: 0 30px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 25px;
+    padding: 0 10px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+    margin-top: 15px;
+    line-height: 21px;
+    font-size: 12px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
+    margin: 15px 5px 25px 0;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+    width: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 340px) {
+  main.event div.content #section1 form div.container div.row div.part {
+    padding: 0px;
+  }
+}
+/*# sourceMappingURL=initiation_agreement.css.map */

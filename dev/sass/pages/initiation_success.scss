@@ -1,0 +1,338 @@
+@import '../var';
+@import '../all.scss';
+// ================================================================================================
+*{
+    box-sizing: border-box;
+    font-family: 'Palatino Linotype';
+}
+body{
+    margin: 0;
+}
+// Font-Family
+$english: 'Palatino Linotype';
+$chinese: 'noto sans tc';
+
+// Font-Size
+$p:15px;
+$h1:72px;
+$h2:60px;
+$h3:48px;
+$h4:38px;
+$h5:28px;
+$h6:22px;
+$h7:18px;
+
+$text-linehight: 30px;          //文字行高
+$text-letterspacing: 2px;       //文字間距
+$text-fontSize: 15px;           //一般文字
+$text-fontSize-575:12px;
+$text-fontSize-btn: 15px;       //按鈕文字
+$text-fontSize-subtitle: 22px;  //內文副標題
+$text-fontSize-region: 28px;    //區塊性文字
+$text-fontSize-hint-575:18px;   //提示字(bread)575以下
+
+$width-close-btn:27px;
+
+$max-width: 1200px;
+$padding-web: 30px;
+$padding-btn: 10px 20px;
+$padding-hint:10px;
+
+//圓角
+$border-radius: 15px;
+$border-radius-btn: 15px;
+$border-radius-input: 5px;
+
+$box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+
+$web-color:(
+    'red':#EF4325,
+    'pink':#FF498C,
+    'orange':#FFAE41,
+    'lake':#09E4C7,
+    'blue':#1D1E4C,
+    'black':#1E1E1E,
+    'white':#fafafa,
+    'white-bg':#F6F6F6,
+    'gray-hint':#C6C6C6,
+    'green-coin':#0e6d41,
+    'gray-input-hint':#C2C2C2,
+    'blue-input-border':#1D1E4C,
+    'blue-activity-nav':#24324B,
+);
+
+@mixin btn-module-red() {
+    .btn{
+        border-radius: $border-radius;
+        display: inline-block;
+        overflow: hidden;
+        background-color: map-get( $web-color , 'red' );
+        a{
+        font-weight: bolder;
+        font-size: $text-fontSize;
+        color: map-get($web-color, 'white' );
+        padding: $padding-btn;
+        width: 100%;
+        display: inline-block;
+        }
+    }
+}
+@mixin btn-module-blue() {
+    @include btn-module-red();
+    .btn{
+        background-color: map-get( $web-color , 'blue' );
+    }
+}
+@mixin bg-module() {
+    position: relative;
+    overflow: hidden;
+    div.bg {
+        width: 105%;
+        height: 110%;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img {
+            filter: blur(30px);
+            width: 100%;
+            height: 100%;
+            max-width: none;
+        }
+    }
+}
+@mixin city($num) {
+    @for $i from 0 through $num{
+        .M#{$i}{
+            cursor: pointer;
+        }
+    }
+};
+
+@mixin center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin flex() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@mixin checkbox(){
+    input[type=checkbox] {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        border: 1px solid map-get($web-color,'blue');
+        border-radius: 3px;
+        outline: none;
+        vertical-align: top;
+    }
+    input[type=checkbox]:checked {
+        background-image: url('../../img/event/icon/icon-checkbox.png');
+        background-size: cover;
+    }
+}
+// ==================================================================================================================
+main.event {
+    background-color: map-get($web-color, 'white-bg');
+    margin-top: 66px;
+    img{
+      max-width: 100%;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    div,a,p,ul,li{
+        font-size: $text-fontSize;
+        color: map-get($web-color,"blue");
+        letter-spacing: $text-letterspacing;
+        line-height: $text-linehight;
+    }
+    width: 100%;
+    position: relative;
+    div.bread {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(90deg) translateY(-100%);
+      transform-origin: 0 0;
+      line-height: 20px;
+      ul{
+        padding: $padding-hint;
+        white-space: nowrap;
+        line-height: 20px;
+        li{
+          font-size: 20px;
+          line-height: 20px;
+          font-weight: bolder;
+          color: map-get($web-color,'gray-hint');
+          display: inline-block;
+          &::after{
+            content: " / ";
+          }
+          &:last-child{
+            color: map-get($web-color,'blue');
+          }
+          &:last-child::after{
+            content: "";
+          }
+        }
+        @media (max-width:575px) {
+            line-height: $text-fontSize-hint-575;
+          li{
+            line-height:$text-fontSize-hint-575;
+            font-size: $text-fontSize-hint-575;
+          }
+        }
+      }
+    }
+    div.content{
+      max-width: $max-width;
+      background-color: map-get($web-color, 'white-bg');
+      margin: 0 auto;
+      section{
+        width: calc(100% - $padding-web);
+        margin: 0 30px;
+        padding-bottom: 60px;
+      }
+    }
+  }
+  
+// ==================================================================================================================
+#section1{
+    min-height: 100vh;
+    margin: 0 30px;
+    div,a,p,ul,li{
+        font-size: $text-fontSize;
+        color: map-get($web-color,"blue");
+        letter-spacing: $text-letterspacing;
+        line-height: $text-linehight;
+    }
+}  
+// ==================================================================================================================
+
+main.event{
+    div.content{
+        #section1{
+            form{
+                div.container{
+                    div.row{
+                        div.part{
+                            margin-top: 30px;
+                            div.info,div.description{
+                                padding: 50px 40px;
+                            }
+                            @media (min-width:992px) and (max-width:1199px){
+                                div.description{
+                                    padding: 50px 30px;
+                                }
+                            }
+                            @media (min-width:768px) and (max-width:991px){
+                                div.description{
+                                    padding: 50px 30px;
+                                }
+                            }
+                            @media (min-width:576px) and (max-width:767px){
+                                div.description{
+                                    padding: 40px 20px;
+                                }
+                            }
+                            @media (max-width:575px){
+                                div.description{
+                                    padding: 30px 0px;
+                                }
+                            }
+                            div.description{
+                                text-align: center;
+                                box-shadow: $box-shadow;
+                                border-radius: $border-radius;
+                                h2{
+                                    font-size: $h7;
+                                    margin: 0;
+                                    img{
+                                        width: 18px;
+                                        margin-right: 10px;
+                                        margin-bottom: 3px;
+                                    }
+                                }
+                                p{
+                                    margin: 30px 0 40px 0;
+                                    line-height: $text-linehight;
+                                }
+                                @include btn-module-blue();
+                                
+                            }
+                            @media (min-width:576px) and (max-width:767px){
+                                div.description{
+                                    width: 95%;
+                                    margin: 0 auto;
+                                    h2{
+                                        font-size: 16px;
+                                        margin: 0;
+                                    }
+                                    p{
+                                        margin: 0;
+                                        font-size: $text-fontSize-575;
+                                        line-height: 25px;
+                                        padding: 20px 10px 30px 10px;
+                                    }
+                                    div.btn{
+                                        width: 100px;
+                                        a{
+                                            font-size: $text-fontSize-575;
+                                            padding: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                            @media (max-width:575px){
+                                div.description{
+                                    width: 100%;
+                                    margin: 0 auto;
+                                    h2{
+                                        font-size: 16px;
+                                        margin: 0;
+                                    }
+                                    p{
+                                        margin: 0;
+                                        font-size: $text-fontSize-575;
+                                        line-height: 25px;
+                                        padding: 20px 20px 30px 20px;
+                                    }
+                                    div.btn{
+                                        width: 100px;
+                                        a{
+                                            font-size: $text-fontSize-575;
+                                            padding: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        @media (max-width:340px){
+                            div.part{
+                                padding: 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
