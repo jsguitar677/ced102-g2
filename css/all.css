@@ -236,7 +236,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url("../img/logo3.png"), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -486,7 +486,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(./img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -577,7 +577,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
   height: 100%;
   width: calc(100%*0.6/1.6);
   text-align: center;
-  background-image: url(./img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
