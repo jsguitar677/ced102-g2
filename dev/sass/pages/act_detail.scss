@@ -345,8 +345,11 @@ div.founder>h1>img{
     
 }
 
-@media (max-width: 980px){
-    
+@media (max-width: 500px){
+    div.founder>h1{
+        font-size: 15px;
+        margin: 0 auto;
+    }
 }
 
 // 進度條-------------------------------------------------------------------
@@ -547,6 +550,12 @@ div.fixed_pic>p{
     }
     div.fixed_pic{
         height: 80vh;
+    }
+}
+
+@media (max-width: 500px){
+    div.fixed_pic{
+        height: 120vh;
     }
 }
 
