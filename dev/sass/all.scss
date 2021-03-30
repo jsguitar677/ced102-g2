@@ -1,4 +1,9 @@
 @import 'var';
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+body>*{
+    font-family: "Palatino Linotype", "Noto Sans Tc";
+}
+
 // 以下為自訂共用組件-john新增---------------------------------------
 ::-webkit-scrollbar {
     width: 12px;

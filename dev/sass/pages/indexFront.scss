@@ -54,6 +54,10 @@ p{font-size: 15px;}
 
 // ------套件class------------------------------
 
+
+  
+
+
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -305,6 +309,62 @@ p{font-size: 15px;}
     }
     .homePage3{
         display: flex;
+        div.toggle{
+            margin-top: 30px;
+            div.toggle-block{
+              width: 400px;
+              height: 40px;
+              border-radius: 20px;
+              padding: 5px;
+              background-color: map-get($color-regulation,'blue');
+              margin: 0px auto 30px auto;
+              position: relative;
+              font-size: 0;
+              text-align: center;
+              div.toggle-btn{
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                border-radius: 20px;
+                background-color: map-get($color-regulation,'white');
+              }
+              div.text{
+                position: absolute;
+                top: 50%;
+                left: 25%;
+                transform: translate(-50%,-50%);
+                display: inline-block;
+                width: 50%;
+                font-size: 15px;
+              }
+              div.text2{
+                left: 75%;
+              }
+              div.toggle-text-effect{
+                color: map-get($color-regulation,'white');
+                cursor: pointer;
+              }
+            }
+            @media (min-width:430px) and (max-width:575px){
+              div.toggle-block{
+                width: 300px;
+                div.text{
+                  font-size: 15px;
+                }
+              }
+            }
+            @media (max-width:429px){
+              div.toggle-block{
+                width: 220px;
+              height: 30px;
+                div.text{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
         @include mobileL{
             flex-direction: column;
             align-items: center;

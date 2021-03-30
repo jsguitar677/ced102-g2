@@ -180,6 +180,14 @@
                     <button class="comBtn2">查看更多</button>
                 </div>
                 <div class="homePage3__right">
+                    <div class="toggle">
+                        <div class="toggle-block">
+                            <div class="toggle-btn" id="toggle-btn"></div>
+                            <div class="text" id="money-rank-btn">捐款人排行榜</div>
+                            <div class="text text2 toggle-text-effect" id="people-rank-btn">志工次數排行榜</div>
+                        </div>
+                    </div>
+                    
                     <h5>排行榜</h5>
                     <div class="homePage3__right__no1 rank">
                         <div>1</div>
@@ -558,75 +566,16 @@
         }
     </script>
 
-
+    <!-- 登入js -->
     <script src="./js/login.js"></script>
-
+    <!-- 首頁js -->
     <script src="./js/indexfront.js"></script>
     <!-- Swiper JS -->
     <script src="./js/swiper-bundle.js"></script>
     <!-- Initialize Swiper -->
-    
-    <script src="js/swiper-all.js"></script>
+    <script src="./js/swiper-all.js"></script>
 
-    
-    <script>
-        //切換衣服顏色
-        $(document).ready(function() {
-            $('#cusBlue').click(function() {
-                $('#img_color').attr('src', './img/indexFront/shopImg/cusBag1.png');
-            });
-            $('#cusRed').click(function() {
-                $('#img_color').attr('src', './img/indexFront/shopImg/cusBag2.png');
-            });
-            $('#cusGreen').click(function() {
-                $('#img_color').attr('src', './img/indexFront/shopImg/cusBag3.png');
-            });
-            $('#cusBlack').click(function() {
-                $('#img_color').attr('src', './img/indexFront/shopImg/cusBag4.png');
-            });
-            $('#cusYellow').click(function() {
-                $('#img_color').attr('src', './img/indexFront/shopImg/cusBag5.png');
-            });
-
-            $('#pre2Img1').click(function(){
-                var imageUrl="./img/indexFront/indexImg5.jpg";
-                $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
-            });
-            $('#pre2Img2').click(function(){
-                var imageUrl="./img/indexFront/indexImg7.jpg";
-                $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
-            });
-            $('#pre2Img3').click(function(){
-                var imageUrl="./img/indexFront/indexImg9.jpeg";
-                $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
-            });
-            $('#pre2Img4').click(function(){
-                var imageUrl="./img/indexFront/indexImg10.jpg";
-                $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
-            });
-            $('#pre2Img5').click(function(){
-                var imageUrl="./img/indexFront/indexImg11.jpg";
-                $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
-            });
-            $('#pre2Img6').click(function(){
-                var imageUrl="./img/indexFront/indexImg12.jpg";
-                $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
-            });
-        });
-    </script>
-
-    <script>
-        let storage = sessionStorage;
-        if(storage['btnId'] == null){
-            storage['btnId'] = '';
-        }else{
-            storage['btnId'] = '';
-        };
-        document.getElementById('A').addEventListener('click',function(){
-            itemId = this.id;
-            storage['btnId'] += `${itemId}, `;
-        });
-    </script>
+ 
 </body>
 
 </html>

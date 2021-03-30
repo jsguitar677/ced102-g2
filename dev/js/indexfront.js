@@ -1,3 +1,21 @@
+// --------page1--------------------------------------
+// --------page1-- 跳轉頁面------------------------------------
+// --------page1--------------------------------------
+
+let storage = sessionStorage;
+if(storage['btnId'] == null){
+    storage['btnId'] = '';
+}else{
+    storage['btnId'] = '';
+};
+document.getElementById('A').addEventListener('click',function(){
+    itemId = this.id;
+    storage['btnId'] += `${itemId}, `;
+});
+
+// --------page3--------------------------------------
+// --------page3--------------------------------------
+// --------page3--------------------------------------
 //data
 const reviews=[
     {
@@ -86,5 +104,68 @@ for (var i = 0, len = g.children.length; i < len; i++){
     })(i);
 }
 
+// ----------------------------------------------
+// ----------------------------------------------
+// ------排行榜按鈕切換----------------------------------------
 
+$('#people-rank-btn').click(function(){
+    $('#toggle-btn').animate({left:'50%'});
+    $('#people-rank-btn').removeClass('toggle-text-effect');
+    $('#money-rank-btn').addClass('toggle-text-effect');
+    $('#money-rank').css({left:'-105%'},"100");
+    $('#people-rank').css({left:'0%'},"100");
+})
+$('#money-rank-btn').click(function(){
+    $('#toggle-btn').animate({left:'0%'});
+    $('#money-rank-btn').removeClass('toggle-text-effect');
+    $('#people-rank-btn').addClass('toggle-text-effect');
+    $('#people-rank').css({left:'100%'},"100");
+    $('#money-rank').css({left:'0%'},"100");
+})
 
+// ----------------------------------------------
+// ----------------------------------------------
+// ------切換衣服顏色----------------------------------------
+
+$(document).ready(function() {
+    $('#cusBlue').click(function() {
+        $('#img_color').attr('src', './img/indexFront/shopImg/cusBag1.png');
+    });
+    $('#cusRed').click(function() {
+        $('#img_color').attr('src', './img/indexFront/shopImg/cusBag2.png');
+    });
+    $('#cusGreen').click(function() {
+        $('#img_color').attr('src', './img/indexFront/shopImg/cusBag3.png');
+    });
+    $('#cusBlack').click(function() {
+        $('#img_color').attr('src', './img/indexFront/shopImg/cusBag4.png');
+    });
+    $('#cusYellow').click(function() {
+        $('#img_color').attr('src', './img/indexFront/shopImg/cusBag5.png');
+    });
+
+    $('#pre2Img1').click(function(){
+        var imageUrl="./img/indexFront/indexImg5.jpg";
+        $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
+    });
+    $('#pre2Img2').click(function(){
+        var imageUrl="./img/indexFront/indexImg7.jpg";
+        $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
+    });
+    $('#pre2Img3').click(function(){
+        var imageUrl="./img/indexFront/indexImg9.jpeg";
+        $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
+    });
+    $('#pre2Img4').click(function(){
+        var imageUrl="./img/indexFront/indexImg10.jpg";
+        $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
+    });
+    $('#pre2Img5').click(function(){
+        var imageUrl="./img/indexFront/indexImg11.jpg";
+        $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
+    });
+    $('#pre2Img6').click(function(){
+        var imageUrl="./img/indexFront/indexImg12.jpg";
+        $('#homeBotLayer2').css('background-image','url(' + imageUrl + ')');
+    });
+});
