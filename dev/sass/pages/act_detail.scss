@@ -11,7 +11,7 @@ div.spacing_block{
 }
 
 div.spacing_block>h1{
-    font-size: 90px;
+    font-size: 5vw;
     position: absolute;
     z-index: 100;
     color: white;
@@ -342,6 +342,10 @@ div.founder>h1>img{
         margin: 0 auto;
         margin-top: 20px ;
     }
+    
+}
+
+@media (max-width: 980px){
     
 }
 

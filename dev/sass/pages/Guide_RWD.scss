@@ -100,7 +100,7 @@ h5.title {
     span {
         color:map-get($color_regulation,'gray' );
     }
-    @media and (max-width:575px){
+    @media (max-width:575px){
         font-size: $h7;
     }
 }
