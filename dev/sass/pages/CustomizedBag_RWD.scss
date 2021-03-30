@@ -64,8 +64,23 @@ $color_regulation:(
     'footerGray':#2A323D,//footer背景字體色、nav顏色(黑灰色)
     'footerSide':#161c24,//footer旁邊顏色
     'footerGray2':rgba(66, 79, 95,.1),
+
+    'gray3':#DCDCDC,
 );
 //=============共用規格設定如上=============
+@mixin cartIcon(){
+    color: map-get($color_regulation, 'blue');
+    float: right;
+    background-color: rgb(255, 255, 255) !important;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    border: none ;
+    outline: none;
+    cursor: pointer;
+}
 //=========================================
 
 *{
@@ -207,15 +222,16 @@ section.CustomizedBagPage{
                         div.customized_area{
                             position: relative;
                             border-radius: $borderRadius;
-                            width:98%;
+                            width:100%;
                             margin:0 auto;
-                            margin-bottom: 15px;
-                            margin-top:20px;
+                            margin: 30px 0;
+                            background-color: rgba(255, 255, 255, 0.7);
                             text-align: center;
                             overflow: hidden;
                             img.customized_img{
                                 width:100%;
                             }
+
                             //正面圖案放置的位置框
                             div.image_front{
                                 width:26%;
@@ -251,11 +267,12 @@ section.CustomizedBagPage{
                         //左側 (商品簡介區)========================
                         //標題:商品簡介
                         h6.aboutProducts{ 
+                            text-align: center;
                             font-size: $h6;
                             color:map-get($color_regulation,'blue');
                             margin:0;
                             padding-top: 10px;
-                            display:inline-block;
+                            // display:inline-block;
                             @media (max-width:991px){
                                 padding:0;
                             }
@@ -277,9 +294,11 @@ section.CustomizedBagPage{
                         }
                         //商品簡介內容
                         div.leftarea_block{ 
+                            background-color: rgba(255, 255, 255, 0.7);
                             margin:10px auto 15px auto;
-                            width:95%;
-                            padding:20px;
+                            // width:95%;
+                            padding:30px;
+                            box-shadow: unset;
                             p.textaboutProducts{
                                 font-size: $p;
                                 font-weight: 550;
@@ -441,16 +460,19 @@ section.CustomizedBagPage{
                                     div.placememtOfInput{
                                         height:40px;
                                         line-height: 40px;
-                                        background-color: map-get($color_regulation,'gray-input-hintText' );
-                                        color:map-get($color_regulation,'white-bg' );
+                                        background-color: map-get($color_regulation,'gray3' );
+                                        color:map-get($color_regulation,'blue' );
                                         border-radius: $inputRadius;
+                                        box-shadow: $box-shadow;
                                         input.theFileBtn{
                                             width:100%;
                                             margin-left: 3%;
-                                            height:32px;
+                                            height:30px;
                                             line-height: 32px;
                                             border-radius: $inputRadius;
                                             cursor: pointer;
+                                            border-color: map-get($color_regulation,'blue')!important;
+                                            color: map-get($color_regulation,'blue') !important;
                                         }
                                     }
                                 }
@@ -463,8 +485,9 @@ section.CustomizedBagPage{
                             padding-bottom: 50px;
                             //小標:數量
                             p.stepExplain{
+                                color: map-get($color_regulation, 'blue' );
                                 font-size: $p;
-                                font-weight: 550;
+                                font-weight: bold;
                                 margin:0;
                                 padding-top:50px;
                                 padding-bottom:10px;
@@ -473,15 +496,21 @@ section.CustomizedBagPage{
                                 }
                             }
                             div.placememtOfQty{
-                                width:98%;
+                                color: map-get($color_regulation, 'blue' );
+                                font-weight: bold;
+                                font-size: $p;
+                                width:100%;
                                 margin:0 auto;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                                 select.select_qty_pcs{
-                                    width:100px;
-                                    height: 35px;
-                                    padding-left: 30px;
+                                    border-color: map-get($color_regulation,'blue')!important;
+                                    color: map-get($color_regulation,'blue') !important;
+                                    outline: none;
+                                    width:60px;
+                                    height: 30px;
+                                    padding-left: 10px;
                                     border-radius: $inputRadius;
                                     @media (max-width:450px) {
                                         font-size: 12px; 
@@ -491,19 +520,23 @@ section.CustomizedBagPage{
                         }
                         //小計區==================================
                         div.tal_block{
-                            width:100%;
+                            display: flex;
+                            // width:100%;
                             font-size: $p;
                             color:map-get($color_regulation,'blue');
                             //小標:小計
                             p.stepExplain{
-                                font-weight: 550;
+                                white-space:nowrap;
+                                font-weight: bold;
                                 margin:0;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
                             div.placementOfTal{
-                                width:98%;
+                                width:100%;
+                                color: map-get($color_regulation,'blue');
+
                                 text-align: right;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
@@ -517,25 +550,29 @@ section.CustomizedBagPage{
                             text-align: center;
                             margin-bottom: 50px;
                             button.btn_shopping_cart{
+                                i{
+                                    margin-left: 5px;
+                                }
                                 box-shadow: $box-shadow;
-                                border-radius: $inputRadius;
-                                width:145px;
-                                height:35px;
-                                line-height: 35px;
+                                border-radius: $borderRadius;
+                                border: none;
+                                // width:145px;
+                                padding: 0px 30px;
+                                // height:30px;
+                                line-height: 30px;
                                 background-color:map-get($color_regulation,'blue');
                                 color:map-get($color_regulation,'white');
-                                position:relative;
-                                padding-right: 10%;
-                                margin-top:50px;
+                                // position:relative;
+                                margin-top:30px;
                                 cursor: pointer;
-                                img{
-                                    height:90%;
-                                    border-radius: 50%;
-                                    position:absolute;
-                                    top:50%;
-                                    right:8%;
-                                    transform: translateY(-50%);
-                                }
+                                // img{
+                                //     height:90%;
+                                //     border-radius: 50%;
+                                //     position:absolute;
+                                //     top:50%;
+                                //     right:8%;
+                                //     transform: translateY(-50%);
+                                // }
                             }
                         }
                     }
@@ -598,7 +635,7 @@ section.CustomizedBagPage{
                                     left:0;
                                     background-color: map-get($color_regulation,'white-bg' );
                                     background: hsla(0,0%,100%,.7);
-                                    padding:5% 5% 15% 5%;
+                                    padding:10px;
                                     p.NameAndPrice{
                                         font-size: $p;
                                         font-weight: 550;
@@ -621,13 +658,16 @@ section.CustomizedBagPage{
                                             font-size: 12px; 
                                         }
                                     }
-                                    img.cart{
-                                        position:absolute;
-                                        bottom:7px;
-                                        right:7px;
-                                        width:27.9px;
-                                        border-radius: 50%;
-                                        box-shadow: $box-shadow;
+                                    // img.cart{
+                                    //     position:absolute;
+                                    //     bottom:7px;
+                                    //     right:7px;
+                                    //     width:27.9px;
+                                    //     border-radius: 50%;
+                                    //     box-shadow: $box-shadow;
+                                    // }
+                                    button{
+                                        @include cartIcon();
                                     }
                                 }
                             }

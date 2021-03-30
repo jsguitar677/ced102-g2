@@ -35,7 +35,7 @@ $width-close-btn:27px;
 
 $max-width: 1200px;
 $padding-web: 30px;
-$padding-btn: 10px 20px;
+$padding-btn: 0px 30px;
 $padding-hint:10px;
 
 //圓角
@@ -63,17 +63,20 @@ $web-color:(
 
 @mixin btn-module-red() {
     .btn{
+        box-shadow: $box-shadow;
         border-radius: $border-radius;
         display: inline-block;
         overflow: hidden;
         background-color: map-get( $web-color , 'red' );
+        cursor: pointer;
         a{
-        font-weight: bolder;
-        font-size: $text-fontSize;
-        color: map-get($web-color, 'white' );
-        padding: $padding-btn;
-        width: 100%;
-        display: inline-block;
+            font-weight: bolder;
+            font-size: $text-fontSize;
+            color: map-get($web-color, 'white' );
+            padding: $padding-btn;
+            width: 100%;
+            display: inline-block;
+            
         }
     }
 }
@@ -315,6 +318,7 @@ main.event{
                                         padding: 20px 20px 30px 20px;
                                     }
                                     div.btn{
+                                        box-shadow: $box-shadow !important;
                                         width: 100px;
                                         a{
                                             font-size: $text-fontSize-575;

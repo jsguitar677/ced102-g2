@@ -21,23 +21,16 @@
 
 // 流程// 
 div.progress__bar{
-    margin-top: 70px ;
-    
+    margin-top: 66px ;
     margin-bottom: 0px;
-    box-shadow: $box-shadow;
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
     position: relative;
-    // padding: 10px 20px 20px 20px;
+    padding: 10px 0 40px 0;
     flex: 0 0 83.33333%;
     width: 100%;
-    height: 60px;
-    // justify-content: center;
     background-color: #fafafa;
-    // border: 1px solid red;
-    
-    // margin: 10px auto;
-    
-    // display: flex !important;
-    
     
     .progress{
         margin: 0 auto;
@@ -51,7 +44,6 @@ div.progress__bar{
         position: relative;
         font-size: 24px;
         width: auto;
-        // margin: 0 auto;
         
     
     
@@ -159,6 +151,7 @@ div.title-block {
     // margin-top: 10px;
     margin-left: 0px;
     h1.title {
+        margin: 0;
         font-size: 20px;
         color: #1d1e4c;
         display: inline-block;
@@ -388,8 +381,8 @@ div.title-block {
  
             button.round {
                 border-radius: 50%;
-                width: 25px;
-                height: 25px;
+                width: 30px;
+                height: 30px;
                 outline: 0;
                 border: 0;
                 color: #fff;
@@ -461,7 +454,7 @@ div.title-block {
         
     
         .total_body {
-            border: 1px solid #1d1e4c;
+            // border: 1px solid #1d1e4c;
             border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 50px;
@@ -486,12 +479,15 @@ div.title-block {
             }
 
             .total-title {
+            box-shadow: $box-shadow;
+
                 width: 100%;
                 height: 30px;
                 background-color: #1d1e4c;
                 border-radius: 15px;
                 text-align: center;
                 vertical-align: middle;
+                border: none;
                 .detail {
                     color: white;
                     font-size: 18px;
@@ -521,7 +517,7 @@ div.title-block {
                 input.discount {
                     // width: 30px;
                     // height: 50px;
-                    border: 1px solid #CACACA;
+                    border: 1px solid #1D1E4C; 
                     line-height: $lineHeight;
                     border-radius: $inputRadius;
 
@@ -547,7 +543,7 @@ div.title-block {
                 box-shadow: $box-shadow;
                 line-height: $lineHeight;
                 margin: 20px 50px;
-                padding: 10px 30px;
+                padding: 0px 30px;
                 // background-color: #1D1E4C;
                 border: none;
                 outline: none;

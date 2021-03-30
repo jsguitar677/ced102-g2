@@ -132,14 +132,20 @@ section {
             font-size: $h6;
 
             div.titleOfGuide{
+                line-height: 50px;
+                height: 50px;
                 width:100%;
-                padding:10% 1%;
+                // padding:10px;
                 text-align: center;
-                border-radius: $borderRadius;
+                border-radius: 30px;
                 box-shadow: $box-shadow;
                 margin-bottom: 4%;
                 cursor: pointer;
                 display:inline-block;
+                // &:hover{
+                //     background-color: map-get($color_regulation, "red" );
+                //     color: white;
+                // }
                 @media (min-width:576px) and (max-width:992px){
                     vertical-align: top;
                     width:49%;
@@ -164,7 +170,8 @@ section {
 
             div.explainOfGuide{
                 width:100%;
-                padding:15% 15%;
+                padding:30px;
+                height: 50vh;
                 text-align: left;
                 border-radius: $borderRadius;
                 box-shadow: $box-shadow;
@@ -177,9 +184,9 @@ section {
                     color: map-get($color_regulation,'gray');
                     font-size: $h3;
                     margin:0;
-                    position: absolute;
+                    // position: absolute;
                     top:7%;
-                    right:7%;
+                    // right:7%;
                     white-space: nowrap;
                     // position: absolute;
                     // top:30px;
@@ -188,15 +195,15 @@ section {
                     // transform-origin: top right;
                     @media (min-width:461px) and (max-width:1199px){
                         font-size: $h4;
-                        position: absolute;
-                        top:4%;
-                        right:5%;
+                        // position: absolute;
+                        // top:4%;
+                        // right:5%;
                     }
                     @media (max-width:460px){
                         font-size: $h6;
-                        position: absolute;
-                        top:2%;
-                        right:2%;
+                        // position: absolute;
+                        // top:2%;
+                        // right:2%;
                     }
                 }
                 p.explainSomething{

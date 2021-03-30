@@ -45,7 +45,8 @@ body>*{
     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
     font-size: 15px;
     background-color: #EF4325;
-    padding: 0 15px;
+    padding: 0px 30px;
+    line-height: 15px;
 }
 
 .comBtn2{
@@ -58,7 +59,9 @@ body>*{
     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
     font-size: 15px;
     background-color: #1D1E4C;
-    padding: 0 15px;
+    padding: 0px 30px;
+    line-height: 15px;
+
 }
 // -----------------------------------------------------------------
 
@@ -115,17 +118,24 @@ body header nav div#lftUl ul li:nth-child(n+1) {
 
 body header nav div#lftUl ul li:hover img {
     opacity: 1;
+    transform: rotate(360deg) scale(1.5);
+    // transform: ;
 }
 
 body header nav div#lftUl ul li a {
     margin-right: 5px;
     color: map-get($color_regulation, 'blue' );
 }
+body header nav div#lftUl ul li a:hover {
+    
+    color: map-get($color_regulation, 'red' );
+}
 
 body header nav div#lftUl ul li img {
+    
     opacity: 0;
-    transition: all .8s ease;
-    width: 20px;
+    transition: all .5s ease;
+    transform: translateY(20px);
 }
 
 body header nav div#lftUl ul li:first-child {
@@ -180,7 +190,10 @@ body header a {
     cursor: pointer;
     color:map-get($color_regulation, 'blue');
 }
+body header a:hover{
+    color:map-get($color_regulation, 'red');
 
+}
 body header i.fwIcon {
     vertical-align: text-top;
     font-size: 15px;
@@ -744,6 +757,12 @@ footer{
                     ul{
                         list-style-type: circle;
                         margin: 0;
+                        
+                        li{
+                            &:hover{
+                                color: map-get($color_regulation, 'red' );
+                            }
+                        }
                     }
                 }
             }
@@ -833,6 +852,9 @@ footer{
 body a {
     text-decoration: none;
     color: #1D1E4C;
+    &:hover{
+        color: map-get($color_regulation, 'red' );
+    }
 }
 
 body div#page2 {

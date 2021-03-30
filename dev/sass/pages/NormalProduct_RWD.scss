@@ -66,6 +66,32 @@ $color_regulation:(
     'footerGray2':rgba(66, 79, 95,.1),
 );
 //=============共用規格設定如上=============
+@mixin cartIcon2(){
+    color: map-get($color_regulation, 'white');
+    background-color: map-get($color_regulation, 'blue');
+    height: 30px;
+    padding: 0 30px;
+    border-radius: $borderRadius;
+    box-shadow: $box-shadow;
+    border: none ;
+    outline: none;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+@mixin cartIcon(){
+    color: map-get($color_regulation, 'blue');
+    float: right;
+    background-color: rgb(255, 255, 255) !important;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    border: none ;
+    outline: none;
+    cursor: pointer;
+}
 //=========================================
 
 *{
@@ -203,6 +229,7 @@ section.NormalProductPage{
                             }
                             img{
                                 width:100%;
+                                height: 100%;
                             }
                             div.explain{
                                 font-size: $p;
@@ -270,10 +297,9 @@ section.NormalProductPage{
                     //左側 (商品簡介區)========================
                     //標題:商品簡介
                     div.leftarea_blockB{ 
-                        margin-top:10px;
+                        margin-top:30px;
                         width:100%;
-                        margin-top:20px;
-                        padding:20px;
+                        padding:30px;
                         border-radius: $borderRadius;
                         box-shadow: $box-shadow;
 
@@ -321,10 +347,12 @@ section.NormalProductPage{
                 //右側 選擇數量區選擇區=================================================================
                 //右側 選擇數量區選擇區=================================================================
                 div.rightarea{
+                    height: 50%;
+                    color: map-get($color_regulation,'blue' );
                     margin:0 auto;
                     border-radius: $borderRadius;
                     box-shadow: $box-shadow;
-                    background-color: map-get($color_regulation,'white-bg' );
+                    // background-color: map-get($color_regulation,'white-bg' );
                     background: hsla(0,0%,100%,.6);
                     @media (max-width:991px) {
                         margin-top: 25px;
@@ -351,14 +379,18 @@ section.NormalProductPage{
                                 }
                             }
                             div.placememtOfQty{
-                                width:98%;
+                                width:100%;
                                 margin:0 auto;
+                                font-weight: bold;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                                 select.select_qty_pcs{
+                                    outline: none;
+                                    border-color: map-get($color_regulation , 'blue' )!important;
+                                    color: map-get($color_regulation,'blue')!important;
                                     width:100px;
-                                    height: 35px;
+                                    height: 30px;
                                     padding-left: 30px;
                                     border-radius: $inputRadius;
                                     @media (max-width:450px) {
@@ -396,29 +428,33 @@ section.NormalProductPage{
                         div.placeOfSubmit{
                             text-align: center;
                             margin-bottom: 50px;
-                            a{
-                                button.btn_shopping_cart{
-                                    box-shadow: $box-shadow;
-                                    border-radius: $inputRadius;
-                                    width:145px;
-                                    height:35px;
-                                    line-height: 35px;
-                                    background-color:map-get($color_regulation,'blue');
-                                    color:map-get($color_regulation,'white');
-                                    position:relative;
-                                    padding-right: 10%;
-                                    margin-top:50px;
-                                    cursor: pointer;
-                                    img{
-                                        height:90%;
-                                        border-radius: 50%;
-                                        position:absolute;
-                                        top:50%;
-                                        right:8%;
-                                        transform: translateY(-50%);
-                                    }
-                                }
+                            button{
+                                margin-top:30px;
+                                @include cartIcon2();
                             }
+                            // a{
+                            //     button.btn_shopping_cart{
+                            //         box-shadow: $box-shadow;
+                            //         border-radius: $inputRadius;
+                            //         width:145px;
+                            //         height:30px;
+                            //         line-height: 30px;
+                            //         background-color:map-get($color_regulation,'blue');
+                            //         color:map-get($color_regulation,'white');
+                            //         position:relative;
+                            //         padding-right: 10%;
+                            //         margin-top:50px;
+                            //         cursor: pointer;
+                            //         img{
+                            //             height:90%;
+                            //             border-radius: 50%;
+                            //             position:absolute;
+                            //             top:50%;
+                            //             right:8%;
+                            //             transform: translateY(-50%);
+                            //         }
+                            //     }
+                            // }
                         }
                     }
                 }
@@ -481,7 +517,10 @@ section.NormalProductPage{
                                     left:0;
                                     background-color: map-get($color_regulation,'white-bg' );
                                     background: hsla(0,0%,100%,.7);
-                                    padding:5% 5% 15% 5%;
+                                    padding:10px;
+                                    button{
+                                        @include cartIcon();
+                                    }
                                     p.NameAndPrice{
                                         font-size: $p;
                                         font-weight: 550;
@@ -504,15 +543,15 @@ section.NormalProductPage{
                                             font-size: 12px; 
                                         }
                                     }
-                                    img.cart{
-                                        position:absolute;
-                                        bottom:7px;
-                                        right:7px;
-                                        width:27.9px;
-                                        height: 27.9px;
-                                        border-radius: 50%;
-                                        box-shadow: $box-shadow;
-                                    }
+                                    // img.cart{
+                                    //     position:absolute;
+                                    //     bottom:7px;
+                                    //     right:7px;
+                                    //     width:27.9px;
+                                    //     height: 27.9px;
+                                    //     border-radius: 50%;
+                                    //     box-shadow: $box-shadow;
+                                    // }
                                 }
                             }
                         }

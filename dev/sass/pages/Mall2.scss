@@ -70,6 +70,20 @@ $color_regulation:(
 );
 
 //=============共用規格設定如上=============
+@mixin cartIcon(){
+    color: map-get($color_regulation, 'blue');
+    float: right;
+    background-color: rgb(255, 255, 255) !important;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    border: none ;
+    outline: none;
+    cursor: pointer;
+}
+
 //=========================================
 
 body {
@@ -195,13 +209,14 @@ section div.content_Mall{
                     position:relative;
                     div.DesignIcon{
                         height:12%;
-                        background: rgba(43, 6, 6, 0.25);
+                        background: rgba(255, 255, 255, 0.781);
                         //border-radius: 50%;
                         border-radius: 50px;
                         overflow: hidden;
                         position: absolute;
                         top:7px;
                         left:7px;
+                        padding: 0 10px;
                         img.design{
                             height:100%;
                             display:inline-block;
@@ -233,8 +248,8 @@ section div.content_Mall{
                         div.productInfo{
                             width:100%;
                             height:33%;
-                            background: rgba(43, 6, 6, 0.2);
-                            padding:2% 8%;
+                            background-color: rgb(255, 255, 255);
+                            padding:10px;
                             display:flex;
                             flex-direction: row;
                             flex-wrap: wrap;
@@ -253,6 +268,7 @@ section div.content_Mall{
                                 margin:0;
                                 padding: 0 0 25px 0;
                             }
+                           
                         }
                     }
                 }
@@ -345,6 +361,8 @@ section div.content_Mall{
     }
 }
 
+
+
 //一般商品區塊
 section div.content_Mall div.all div.ProductArea_Block{
     border-radius: $borderRadius;
@@ -355,6 +373,7 @@ section div.content_Mall div.all div.ProductArea_Block{
         padding:$reserveSide;
         margin-top:30px;
         select.select_sort_way{
+            color: map-get($color_regulation,'blue');
             font-size: $p;
             font-weight: 550;
             line-height:33px;
@@ -425,7 +444,7 @@ section div.content_Mall div.all div.ProductArea_Block{
                 }
                 div.productInfo{
                     width:87%;
-                    padding:3%;
+                    padding:10px;
                     position:absolute;
                     bottom:9%;
                     left: 50%;
@@ -467,14 +486,21 @@ section div.content_Mall div.all div.ProductArea_Block{
                             font-size: 12px;
                         }
                     }
-                    img.cart{
-                        position:absolute;
-                        bottom:10px;
-                        right:10px;
-                        width:33px;
-                        height:33px;
-                        border-radius: 50%;
-                        box-shadow: $box-shadow;
+                    // img.cart{
+                    //     position:absolute;
+                    //     bottom:10px;
+                    //     right:10px;
+                    //     width:33px;
+                    //     height:33px;
+                    //     border-radius: 50%;
+                    //     box-shadow: $box-shadow;
+                    // }
+                    button{
+                        @include cartIcon();
+                        i{
+                            font-size: 18px;
+                            padding-right: 1px;
+                        }
                     }
                     @media (max-width:575px){
                         img.cart{
@@ -523,7 +549,7 @@ section div.content_Mall div.all div.ProductArea_Block{
                 div.productInfo{
                     width:87%;
                     //height:22%;
-                    padding:3%;
+                    padding:10px;
                     position:absolute;
                     bottom:9%;
                     left: 50%;
@@ -565,14 +591,21 @@ section div.content_Mall div.all div.ProductArea_Block{
 
                         }
                     }
-                    img.cart{
-                        position:absolute;
-                        bottom:10px;
-                        right:10px;
-                        width:33px;
-                        height:33px;
-                        border-radius: 50%;
-                        box-shadow: $box-shadow;
+                    // .cart{
+                    //     position:absolute;
+                    //     bottom:10px;
+                    //     right:10px;
+                    //     width:33px;
+                    //     height:33px;
+                    //     border-radius: 50%;
+                    //     box-shadow: $box-shadow;
+                    // }
+                    button{
+                       @include cartIcon();
+                        i{
+                            font-size: 18px;
+                            padding-right: 1px;
+                        }
                     }
                     @media (max-width:575px){
                         img.cart{

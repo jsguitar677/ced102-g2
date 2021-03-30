@@ -1,4 +1,5 @@
 /*# sourceMappingURL=style.css.map */
+@import '../var';
 
 
 /* ::content-------------------------------------------------------------------------------------- */
@@ -162,8 +163,9 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 }
 
 .left-content .layer_top>.subtitle,
-.left-content .layer_top>.number {
-    color: #0D3D4D;
+.left-content .layer_top>.number,
+.left-content .layer_top>.description {
+    color: map-get($color-regulation, 'red' );
 }
 
 .left-content .layer_top>.number {
@@ -178,6 +180,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 }
 
 .right-content>.layer_top {
+    color: map-get($color-regulation, 'blue' );
     padding: 3rem 1rem;
     display: flex;
     flex-direction: column;
@@ -187,7 +190,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 .right-content>.layer_top>.heading {
     margin: 0;
     font-size: 1rem;
-    color: #0D3D4D;
+    color: map-get($color-regulation, 'blue' );
 }
 
 
@@ -224,7 +227,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 .nav-button .nav-toggle {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -586,9 +589,9 @@ ul.ah_picklist li a {
     font: 700 15px Open Sans;
     text-transform: uppercase;
     position: relative;
-    color: #333333;
+    color: map-get($color-regulation, 'blue' );
     text-decoration: none;
-    border: 3px solid #000000;
+    border: 1px solid map-get($color-regulation, 'blue' );
     border-radius: 20px;
     letter-spacing: 1px;
     // padding: 10px 15px 10px 25px;
@@ -624,7 +627,7 @@ ul.ah_picklist li .drop-down li a {
 }
 
 ul.ah_picklist li .drop-down li a:hover {
-    background: #000000;
+    background: map-get($color-regulation, 'blue' );
     color: #ffffff;
 }
 
@@ -642,7 +645,7 @@ i.fa.fa-chevron-down {
     left: 0;
     width: 0%;
     height: 100%;
-    background: #000;
+    background: map-get($color-regulation, 'blue' );
     position: absolute;
     transition: 0.3s ease;
     border-radius: 20px;
@@ -673,6 +676,7 @@ svg.feather_icon {
 }
 
 div.ah_picker>h1 {
+    color: map-get($color-regulation, 'blue' );
     font-size: 1rem;
     margin: 0px;
     width: 60px;
@@ -705,7 +709,7 @@ div.ah_bread ul li::after {
 }
 
 div.ah_bread ul li:last-child {
-    color: #1D1E4C;
+    color: map-get($color-regulation, 'blue' );
 }
 
 div.ah_bread ul li:last-child::after {
