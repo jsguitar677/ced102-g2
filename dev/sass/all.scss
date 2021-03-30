@@ -946,69 +946,159 @@ button#createAcc2 {
     cursor: pointer;
     margin-bottom: 10%;
 }
-header nav div#lftUl{
-    div#navBurgerBtn{
-        cursor: pointer;
-        width: 40px;
-        height: 40px;
-        overflow: hidden;
-        // background-color: map-get($map: $color_regulation, $key: 'white');
-        position: relative;
-        div{
-            background-color: map-get($map: $color_regulation, $key: 'blue');
-            width: 40px;
-            height: 5px;
-            position: absolute;
-            top: 50%;
-            // left: 0;
-            // display: none;
-            &:first-child{
-                transform: translateY(10px);
-            }
-            // &:nth-child(2){
+// header nav div#lftUl{
+//     div#navBurgerBtn{
+//         cursor: pointer;
+//         width: 40px;
+//         height: 40px;
+//         overflow: hidden;
+//         // background-color: map-get($map: $color_regulation, $key: 'white');
+//         position: relative;
+//         div{
+//             background-color: map-get($map: $color_regulation, $key: 'blue');
+//             width: 40px;
+//             height: 5px;
+//             position: absolute;
+//             // top: 50%;
+//             // left: 0;
+//             // display: none;
+//             &:first-child{
+//                 // transform: translateY(33%);
+//             }
+//             &:nth-child(2){
+//                 top: 50%;
+//             }
+//             &:last-child{
+//                 bottom: 0;
+//             }
+//         }
+//     }
+//     ul{
+//         display: none;
+//     }
+// }
 
-            // }
-            &:last-child{
-                transform: translateY(-10px);
+
+
+@media all and (max-width:1312px) {
+    body{
+        header{
+            nav{
+                div#lftUl{
+                    width: 33px;
+                    div#navBurgerBtn{
+                        transition: all .8s;
+                        cursor: pointer;
+                        width: 33px;
+                        height: 43px;
+                        overflow: hidden;
+                        position: relative;
+                        vertical-align:middle;
+                        top: 7px;
+                        div{
+                            background-color: map-get($map: $color_regulation, $key: 'blue');
+                            width: 25px;
+                            height: 3px;
+                            position: absolute;
+                            border-radius: 3px;
+                            transition: all .8s;
+                            &:first-child{
+                                top:15px;
+                            }
+                            &:nth-child(2){
+                                top: 24px;
+                            }
+                            &:last-child{
+                                bottom: 6px;
+                            }
+                        }
+                    }
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        background-color: map-get($map: $color_regulation, $key: 'btnRed');
+                        justify-content: flex-end;
+                        align-items: stretch;
+                        color: map-get($map: $color_regulation, $key: 'white');
+                        position: relative;
+                        top: 24px;
+                        left: 2000px;
+                        opacity: 0;
+                        transition: all .8s;
+                        li{
+                            text-align: center;
+                            margin-left: 0px !important;
+                            background-color: map-get($map: $color_regulation, $key: 'black');
+                            width: 300px;
+                            padding-left: 20px;
+                            &:hover{
+                                background-color: map-get($map: $color_regulation, $key: 'red');
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+    div#closeBtn3 {
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        // background-image: url(../img/closeBtnBorder.svg);
+        span#closeSpanOne3 {
+            width: calc(27px - 9px);
+            height: 2px;
+            display: inline-block;
+            background-color: #f2f2f2;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            position: absolute;
+        }
+        span#closeSpanTwo3 {
+            width: calc(27px - 9px);
+            height: 2px;
+            display: inline-block;
+            background-color: #f2f2f2;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+    div#lftUl{
+        width: 320px;
+        ul#navRList{
+            li{
+                a{
+                    color: map-get($map: $color_regulation, $key: 'white');
+                    &:hover{
+                       color: map-get($map: $color_regulation, $key: 'redBtn'); 
+                    }
+                }
             }
         }
     }
-    ul{
-        display: none;
-    }
 }
 
-// @media all and (max-width:1312px) {
-//     body{
-//         header{
-//             nav{
-//                 div#lftUl{
-//                     ul{
-//                         display: flex;
-//                         flex-direction: column;
-//                         background-color: yellow;
-//                         justify-content: flex-end;
-//                         li{
-//                             border-bottom: 1px solid red;
-//                             margin-left: 0px !important;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }    
-    
-// }
 
-// @media (min-width:992px) and (max-width:1199px){
 
-// }
-// @media(min-width:576px) and (max-width:991px){
 
-// }
-// @media(max-width:575px){
 
-// }
+@media (min-width:992px) and (max-width:1199px){
+
+}
+@media(min-width:576px) and (max-width:991px){
+
+}
+@media(max-width:575px){
+
+}
 /*# sourceMappingURL=style.css.map */
 
 
