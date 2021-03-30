@@ -383,7 +383,7 @@ div.ah_card_section {
     display: grid;
     grid-gap: 1rem;
     padding: 1rem;
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
     font-family: var(--font-sans);
     grid-template-columns: repeat(3, 1fr);
@@ -684,21 +684,27 @@ div.ah_picker>h1 {
     left: 30px;
     top: 10%;
 }
-
+div.outer_card_section{
+    width: 100%;
+    // border: 1px solid red;
+    position: relative;
+}
 div.ah_bread {
     position: absolute;
     top: 0;
     left: 0;
     transform: rotate(90deg) translateY(-100%);
     transform-origin: 0 0;
+    // border: 1px solid red;
 }
 
 div.ah_bread>ul {
     padding: 10px;
+    margin: 0;
 }
 
 div.ah_bread>ul>li {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bolder;
     color: #C6C6C6;
     display: inline-block;

@@ -1,6 +1,14 @@
 @import '../var';
 @import '../all.scss';
 
+$table-text:15px;
+$table-padding:20px;
+
+*{
+    letter-spacing: $letter-Spacing;
+    color: map-get($color_regulation,'blue');
+}
+
 main{
     background-color: rgb(224, 224, 224);
 
@@ -57,4 +65,397 @@ main{
         }
     }
     
+}
+
+
+// 檢舉留言管理CSS
+main{
+    div.mainContent{
+        div.container{
+            div.row{
+                overflow: auto;
+                height: 100%;
+                div.col-12{
+                    #reportMag{
+                        h3{
+                            font-size: $contentSubTit;
+                        }
+                        div.R-block-list{
+                            div.search-block{
+                                font-size: 0;
+                                margin-bottom: 20px;
+                                input[name=search]{
+                                    padding: 0 5px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    vertical-align: middle;
+                                    border-top-left-radius:$inputRadius;
+                                    border-bottom-left-radius:$inputRadius;
+                                    border: 1px solid gray;
+                                    outline: none;
+                                }
+                                div.icon{
+                                    font-size: 15px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding: 0 8px;
+                                    border-top-right-radius:$inputRadius;
+                                    border-bottom-right-radius:$inputRadius;
+                                    background-color: #fff;
+                                    border: 1px solid gray;
+                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
+                                    i{
+                                        color: map-get($color_regulation,'blue');
+                                    }
+                                }
+                            }
+                            div.R-table{
+                                height: 400px;
+                                overflow: auto;
+                                border-radius: $borderBtnRadius;
+                                form{
+                                    table{
+                                        width: 100%;
+                                        text-align: center;
+                                        font-size: $table-text;
+                                        // border: 1px solid red;
+                                        border-collapse: collapse;
+                                        border-radius: $borderBtnRadius;
+                                        box-shadow: $box-shadow;
+                                        background-color: map-get($color_regulation,'white');
+                                        tr{
+                                            
+                                            th,td{
+                                                min-width: 110px;
+                                                padding: $table-padding;
+                                                border: 0px solid #fff;
+                                                div.circle{
+                                                    width: 8px;
+                                                    height: 8px;
+                                                    border-radius: 50%;
+                                                    background-color: map-get($color_regulation,'gray');
+                                                }
+                                                div.new{
+                                                    background-color: #1483f1;
+                                                }
+                                                i{
+                                                    color: #225ca4c4;
+                                                    cursor: pointer;
+                                                }
+                                                div.edit{
+                                                    // text-align: center;
+                                                    display: none;
+                                                    input{
+                                                        margin: 5px;
+                                                    }
+                                                    button.edit-btn{
+                                                        border-radius: 10px;
+                                                        border: none;
+                                                        background-color: map-get($color_regulation,'blue');
+                                                        color: map-get($color_regulation,'white');
+                                                        padding: 5px 10px;
+                                                        margin: 10px 0 10px 10px;
+                                                        outline: none;
+                                                    }
+                                                }
+                                                &:nth-child(1){
+                                                   min-width: 20px;
+                                                }
+                                            }
+                                            &:nth-child(2n){
+                                                background-color:#4a93ec1a;
+                                            }
+                                            &:hover{
+                                                background-color:#4a93ec4b;
+                                            }
+                                            &:nth-child(1){
+                                                background-color:#ff4e8f00;
+                                            }
+                                        }
+                    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 活動管理CSS
+main{
+    div.mainContent{
+        div.container{
+            div.row{
+                overflow: auto;
+                height: 100%;
+                div.col-12{
+                    div#actVerifyMag{
+                        h3{
+                            font-size: $contentSubTit;
+                        }
+                        div.A-block-list{
+                            div.search-block{
+                                font-size: 0;
+                                margin-bottom: 20px;
+                                input[name=search]{
+                                    padding: 0 5px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    vertical-align: middle;
+                                    border-top-left-radius:$inputRadius;
+                                    border-bottom-left-radius:$inputRadius;
+                                    border: 1px solid gray;
+                                    outline: none;
+                                }
+                                div.icon{
+                                    font-size: 15px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding: 0 8px;
+                                    border-top-right-radius:$inputRadius;
+                                    border-bottom-right-radius:$inputRadius;
+                                    background-color: #fff;
+                                    border: 1px solid gray;
+                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
+                                    i{
+                                        color: map-get($color_regulation,'blue');
+                                    }
+                                }
+                            }
+                            div.A-table{
+                                height: 300px;
+                                overflow: auto;
+                                border-radius: $borderBtnRadius;
+                                table{
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: $table-text;
+                                    // border: 1px solid red;
+                                    border-collapse: collapse;
+                                    border-radius: $borderBtnRadius;
+                                    box-shadow: $box-shadow;
+                                    background-color: map-get($color_regulation,'white');
+                                    tr{
+                                        
+                                        th,td{
+                                            padding: $table-padding;
+                                            border: 0px solid #fff;
+                                            div.circle{
+                                                width: 8px;
+                                                height: 8px;
+                                                border-radius: 50%;
+                                                background-color: map-get($color_regulation,'gray');
+                                            }
+                                            div.new{
+                                                background-color: map-get($color_regulation,'red');
+                                            }
+                                            div.cancel{
+                                                background-color:rgb(13, 196, 13);
+                                            }
+                                        }
+                                        &:nth-child(2n){
+                                            background-color:#ff4e8f1a;
+                                        }
+                                        &:hover{
+                                            background-color:#ff4e8f2f;
+                                            cursor: pointer;
+                                        }
+                                        &:nth-child(1){
+                                            background-color:#ff4e8f00;
+                                            cursor: default;
+                                        }
+                                    }
+                
+                                }
+                            }
+                        }
+                        div.A-block-review-new{
+                            display: flex;
+                            padding: 30px 0px;
+                            align-items: flex-end;
+                            justify-content: space-between;
+                            div.info{
+                                width: 70%;
+                                box-shadow: $box-shadow;
+                                padding: 30px;
+                                border-radius: $borderRadius;
+                                background-color: map-get($color_regulation ,'white');
+                                p{
+                                    line-height: $lineHeight;
+                                    span.red{
+                                        color: map-get($color_regulation ,'red');
+                                        font-weight: bold;
+                                        font-size: $h7;
+                                    }
+                                }
+                            }
+                            div.review{
+                                form{
+                                    div.btn-group{
+                                        button.A-btn{
+                                            padding: 10px 30px;
+                                            background-color: map-get($color_regulation ,'blue');
+                                            color:map-get($color_regulation ,'white');
+                                            border: none;
+                                            outline: none;
+                                            border-radius: $borderRadius;
+                                            margin-right: 10px;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 花絮管理CSS
+main{
+    div.mainContent{
+        div.container{
+            div.row{
+                overflow: auto;
+                height: 100%;
+                div.col-12{
+                    div#actHistoryMag{
+                        h3{
+                            font-size: $contentSubTit;
+                        }
+                        div.AH-block-list{
+                            div.search-block{
+                                font-size: 0;
+                                margin-bottom: 20px;
+                                input[name=search]{
+                                    padding: 0 5px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    vertical-align: middle;
+                                    border-top-left-radius:$inputRadius;
+                                    border-bottom-left-radius:$inputRadius;
+                                    border: 1px solid gray;
+                                    outline: none;
+                                }
+                                div.icon{
+                                    font-size: 15px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding: 0 8px;
+                                    border-top-right-radius:$inputRadius;
+                                    border-bottom-right-radius:$inputRadius;
+                                    background-color: #fff;
+                                    border: 1px solid gray;
+                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
+                                    i{
+                                        color: map-get($color_regulation,'blue');
+                                    }
+                                }
+                            }
+                            div.AH-table{
+                                table{
+                                    width: 100%;
+                                    text-align: center;
+                                    font-size: $table-text;
+                                    // border: 1px solid red;
+                                    border-collapse: collapse;
+                                    border-radius: $borderBtnRadius;
+                                    box-shadow: $box-shadow;
+                                    background-color: map-get($color_regulation,'white');
+                                    tr{
+                                        
+                                        th,td{
+                                            padding: $table-padding;
+                                            border: 0px solid #fff;
+                                            div.circle{
+                                                width: 8px;
+                                                height: 8px;
+                                                border-radius: 50%;
+                                                background-color: map-get($color_regulation,'gray');
+                                            }
+                                            div.alert{
+                                                background-color: map-get($color_regulation,'lake');
+                                            }
+                                        }
+                                        &:nth-child(2n){
+                                            background-color:#b9fbf37f,
+                                        }
+                                    }
+                
+                                }
+                            }
+                        }
+                        div.AH-block-upload{
+                            div.info{
+                                box-shadow: $box-shadow;
+                                padding: 30px;
+                                margin: 30px 0;
+                                border-radius: $borderRadius;
+                                background-color: map-get($color_regulation ,'white');
+                            }
+                            div.upload{
+                                form{
+                                    display: flex;
+                                    width: 100%;
+                                    p.article{
+                                        span{
+                                            vertical-align: top;
+                                            margin-top: 5px;
+                                            margin-right: 5px;
+                                            display: inline-block;
+                                        }
+                                        textarea{
+                                            vertical-align: top;
+                                            width: 500px;
+                                            height: 200px;
+                                            resize: none;
+                                            box-shadow: $box-shadow;
+                                            border-radius: $inputRadius;
+                                            border: none;
+                                            padding: 10px;
+                                            outline: none;
+                                            background-color: map-get($color_regulation ,'white');
+                                        }
+                                    }
+                                    div.right{
+                                        position: relative;
+                                        margin-left: 30px;
+                                        input[type=file]{
+                                            width: 200px;
+                                        }
+                                        div.btn-group{
+                                            position: absolute;
+                                            right: 0;
+                                            bottom: 0;
+                                            button.AH-btn{
+                                                padding: 10px 30px;
+                                                background-color: map-get($color_regulation ,'blue');
+                                                color:map-get($color_regulation ,'white');
+                                                border: none;
+                                                outline: none;
+                                                border-radius: $borderRadius;
+                                                margin-bottom: 10px;
+                                                margin-right: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

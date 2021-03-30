@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 格線系統 -->
+    <link rel="stylesheet" href="./plugin/bootstrap-grid.min.css">
     <!-- 後臺css -->
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/backend.css">
-    <!-- 格線系統 -->
-    <link rel="stylesheet" href="./css/plugin/bootstrap-grid.min.css">
     <!-- 共同css -->
     <link rel="stylesheet" href="../css/common.css">
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- 字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
         
 </head>
 <body>
@@ -149,15 +150,347 @@
                         </div>
                         <div id="reportMag" class="tabContent">
                             <h3>檢舉留言管理</h3>
-                            <h1>興建中...請稍後</h1>
+                            <div class="R-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="R-table">
+                                    <form>
+                                        <table>
+                                            <tr>
+                                                <th></th>
+                                                <th>檢舉留言編號</th>
+                                                <th>檢舉日期</th>
+                                                <th>檢舉人會員編號</th>
+                                                <th>留言編號</th>
+                                                <th>留言內容</th>
+                                                <th>檢舉雲因</th>
+                                                <th>審核結果</th>
+                                                <th>審核</th>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle new"></div></td>
+                                                <td>R29</td>
+                                                <td>2020/03/20</td>
+                                                <td>M4</td>
+                                                <td>5</td>
+                                                <td>是否想賺更多錢?請洽詢.......</td>
+                                                <td>與本活動無關。</td>
+                                                <td></td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass1"><label for="pass1">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail1"><label for="fail1">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R90</td>
+                                                <td>2020/03/09</td>
+                                                <td>M2</td>
+                                                <td>71</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>留言下架</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass2"><label for="pass2">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail2"><label for="fail2">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass3"><label for="pass3">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail3"><label for="fail3">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>留言下架</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass4"><label for="pass4">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail4"><label for="fail4">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass5"><label for="pass5">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail5"><label for="fail5">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass6"><label for="pass6">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail6"><label for="fail6">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>留言下架</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass7"><label for="pass7">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail7"><label for="fail7">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass8"><label for="pass8">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail8"><label for="fail8">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div id="actVerifyMag" class="tabContent">
                             <h3>活動審核管理</h3>
-                            <h1>興建中...請稍後</h1>
+                            <div class="A-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="A-table">
+                                    <table>
+                                        <tr>
+                                            <th></th>
+                                            <th>活動編號</th>
+                                            <th>發起人會員編號</th>
+                                            <th>提案日期</th>
+                                            <th>活動日期</th>
+                                            <th>活動名稱</th>
+                                            <th>活動地點</th>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle new"></div></td>
+                                            <td>A6</td>
+                                            <td>M3</td>
+                                            <td>2021/03/30</td>
+                                            <td>2021/04/30</td>
+                                            <td>永安漁港淨灘</td>
+                                            <td>桃園市永安漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle cancel"></div></td>
+                                            <td>A4</td>
+                                            <td>M8</td>
+                                            <td>2021/02/15</td>
+                                            <td>2021/03/15</td>
+                                            <td>外澳淨灘</td>
+                                            <td>苗栗縣外澳沙灘</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle cancel"></div></td>
+                                            <td>A3</td>
+                                            <td>M9</td>
+                                            <td>2021/02/02</td>
+                                            <td>2021/03/07</td>
+                                            <td>隘門沙灘淨灘</td>
+                                            <td>澎湖縣隘門沙灘</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A5</td>
+                                            <td>M2</td>
+                                            <td>2021/02/01</td>
+                                            <td>2021/03/25</td>
+                                            <td>永安漁港淨灘</td>
+                                            <td>桃園市永安漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A2</td>
+                                            <td>M1</td>
+                                            <td>2021/01/01</td>
+                                            <td>2021/02/05</td>
+                                            <td>新蘭漁港淨灘</td>
+                                            <td>台東縣新蘭漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A1</td>
+                                            <td>M22</td>
+                                            <td>2020/12/1</td>
+                                            <td>2021/01/15</td>
+                                            <td>南濱公園淨灘</td>
+                                            <td>花蓮縣南濱公園</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="A-block-review-new">
+                                <div class="info">
+                                    <p><span class="red">新提案</span></p>
+                                    <p>活動編號：<span>A6</span></p>
+                                    <p>發起人編號：<span>M3</span></p>
+                                    <p>活動名稱：<span>永安漁港淨灘	</span></p>
+                                    <p>活動地點：<span>桃園市永安漁港</span></p>
+                                    <p>提案日期：<span>2021/03/30</span></p>
+                                    <p>活動日期：<span>2021/04/30</span></p>
+                                    <p>報名截止日期：<span>2021/04/15</span></p>
+                                    <p>募資目標：<span>NTD 200,000</span></p>
+                                    <p>志工目標：<span>100人</span></p>
+                                    <p>創辦理念：<span>Lorem ipsum, dolor sic voluptatibus earum a adipisci consectetur tempatum eos vero facere corrupti!</span></p>
+                                    <p>活動內容：<span>在永安漁港Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed voluptas ratione voluptatibus pariatur soluta voluptatum hic incidunt esse velit ad? Saepe, deserunt dolore non ea nisi eveniet praesentium iste sint.</span></p>
+                                </div>
+                                <div class="review">
+                                    <form>
+                                        <div class="btn-group">
+                                            <button type="submit" class="A-btn btn">通過</button>
+                                            <button class="A-btn btn">退件</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div id="actHistoryMag" class="tabContent">
                             <h3>活動花絮管理</h3>
-                            <h1>興建中...請稍後</h1>
+                            <div class="AH-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="AH-table">
+                                    <table>
+                                        <tr>
+                                            <th></th>
+                                            <th>活動編號</th>
+                                            <th>活動日期</th>
+                                            <th>活動名稱</th>
+                                            <th>活動地點</th>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle alert"></div></td>
+                                            <td>A5</td>
+                                            <td>2021/03/25</td>
+                                            <td>永安漁港淨灘</td>
+                                            <td>桃園市永安漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle alert"></div></td>
+                                            <td>A4</td>
+                                            <td>2021/03/15</td>
+                                            <td>外澳淨灘</td>
+                                            <td>苗栗縣外澳沙灘</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A3</td>
+                                            <td>2021/03/07</td>
+                                            <td>隘門沙灘淨灘</td>
+                                            <td>澎湖縣隘門沙灘</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A2</td>
+                                            <td>2021/02/05</td>
+                                            <td>新蘭漁港淨灘</td>
+                                            <td>台東縣新蘭漁港</td>
+                                        </tr>
+                                        <tr>
+                                            <td><div class="circle"></div></td>
+                                            <td>A1</td>
+                                            <td>2021/01/15</td>
+                                            <td>南濱公園淨灘</td>
+                                            <td>花蓮縣南濱公園</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="AH-block-upload">
+                                <div class="info">
+                                    <p>活動編號：<span>A1</span></p>
+                                    <p>活動日期：<span>2021/01/15</span></p>
+                                    <p>活動名稱：<span>南濱公園淨灘</span></p>
+                                    <p>活動地點：<span>花蓮縣南濱公園</span></p>
+                                </div>
+                                <div class="upload">
+                                    <form>
+                                        <p class="article"><span class="text">文章：</span><textarea></textarea></p>
+                                        <div class="right">
+                                            <p class="text">上傳圖片1： <input type="file" name="pic1"></p>
+                                            <p class="text">上傳圖片2： <input type="file" name="pic2"></p>
+                                            <p class="text">上傳圖片3： <input type="file" name="pic3"></p>
+                                            <div class="btn-group">
+                                                <button type="submit" class="AH-btn">確認</button>
+                                                <button class="AH-btn">取消</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,6 +502,18 @@
 
     
 </body>
+
+<script>
+    //檢舉留言
+    $('i').click(function(){
+        $(this).css('display','none');
+        $(this).parent().find('div').css('display','block');
+    });
+    $('button.edit-btn').click(function(){
+        $(this).parent().css('display','none');
+        $(this).parent().parent().find('i').css('display','block');
+    });
+</script>
 
 <script src="./js/backend.js"></script>
 
