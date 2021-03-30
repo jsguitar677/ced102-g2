@@ -13,6 +13,11 @@ h6{font-size: 22px;}
 p{font-size: 15px;}
 
 // -----------------------------------------------
+@mixin pcL {
+    @media(max-width:1200px){
+        @content;
+      }
+}
 @mixin pc{
     @media(max-width:1024px){
       @content;

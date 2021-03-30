@@ -6,15 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 共用css -->
     <link rel="stylesheet" href="./css/all.css">
+    <!-- 會員css -->
     <link rel="stylesheet" href="./css/pages/member.css">
+    <!-- 輪播圖 -->
+    <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
     <!-- 引用owl & jQuery -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
+    
+    <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- vue -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    
 </head>
 
 <body>
@@ -82,7 +91,7 @@
                         <div class="btnDisCon" id="btnDisCon1">
                             <span>
                                 <i class="fas fa-user-alt"></i>
-                                會員資訊
+                                <span class="btnText">會員資訊</span>
                             </span>
                             <span>
                                 &gt
@@ -93,7 +102,7 @@
                         <div class="btnDisCon" id="btnDisCon2">
                             <span>
                                 <i class="fas fa-exchange-alt"></i>
-                                經驗值兌換
+                                <span class="btnText">經驗值兌換</span>
                             </span>
                             <span>
                                 &gt
@@ -104,7 +113,7 @@
                         <div class="btnDisCon" id="btnDisCon3">
                             <span>
                                 <i class="fas fa-shopping-bag"></i>
-                                商城消費紀錄
+                                <span class="btnText">商城消費紀錄</span>
                             </span>
                             <span>
                                 &gt
@@ -115,7 +124,7 @@
                         <div class="btnDisCon" id="btnDisCon4">
                             <span>
                                 <i class="fas fa-chart-bar"></i>
-                                參與募款與志工紀錄
+                                <span class="btnText">參與募款與志工紀錄</span>
                             </span>
                             <span>
                                 &gt
@@ -125,8 +134,8 @@
                     <button class="tabLinks " onclick="openPage(event, 'eventManagement')">
                         <div class="btnDisCon" id="btnDisCon5">
                             <span>
-                                    <i class="fas fa-fist-raised"></i>
-                                活動發起管理
+                                <i class="fas fa-fist-raised"></i>
+                                <span class="btnText">活動發起管理</span>
                             </span>
                             <span>
                                 &gt
@@ -137,7 +146,7 @@
                         <div class="btnDisCon" id="btnDisCon6">
                             <span>
                                 <i class="far fa-heart"></i>
-                                活動收藏
+                                <span class="btnText">活動收藏</span>
                             </span>
                             <span>
                                 &gt
@@ -150,88 +159,116 @@
         <!-- ---------------------------------------------- -->
 
             <div class="memberContent comShape" id="memberContentId">
-                <!-- <div class="tab2">
-                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" id="defaultOpen">
-                        <div class="btnDisCon" id="btnDisCon11">
-                            <span>
-                                <i class="fas fa-user-alt"></i>
-                                會員資訊
-                            </span>
-                        </div>
-                    </button>
-                    <button class="tabLinks " onclick="openPage(event, 'memExp')" >
-                        <div class="btnDisCon" id="btnDisCon22">
-                            <span>
-                                <i class="fas fa-exchange-alt"></i>
-                                經驗值兌換
-                            </span>
-                        </button>
-                    </button>
-                    <button class="tabLinks " onclick="openPage(event, 'orderRecord')" >
-                        <div class="btnDisCon" id="btnDisCon33">
-                            <span>
-                                <i class="fas fa-shopping-bag"></i>
-                                商城消費紀錄
-                            </span>
-                        </div>
-                    </button>
-                    <button class="tabLinks " onclick="openPage(event, 'participateRecord')">
-                        <div class="btnDisCon" id="btnDisCon44">
-                            <span>
-                                <i class="fas fa-chart-bar"></i>
-                                參與募款與志工紀錄
-                            </span>
-                        </div>
-                    </button>
-                    <button class="tabLinks " onclick="openPage(event, 'eventManagement')">
-                        <div class="btnDisCon" id="btnDisCon55">
-                            <span>
-                                    <i class="fas fa-fist-raised"></i>
-                                活動發起管理
-                            </span>
-                        </div>
-                    </button>
-                    <button class="tabLinks " onclick="openPage(event, 'eventSave')">
-                        <div class="btnDisCon" id="btnDisCon66">
-                            <span>
-                                <i class="far fa-heart"></i>
-                                活動收藏
-                            </span>
-                        </div>
-                    </button>
-                </div>
-             -->
                 <div id="memInfo" class="tabContent ">
                     <div class="memInfoContent">
-                        <h3>會員資訊</h3>
-                        <ul id="memInfoContentLft">
-                            <li>
-                                <div>會員等級</div>
-                                <div>資深會員</div>
-                            </li>
-                            <li>
-                                <div>累計環保幣<br>
-                                    50P</div>
-                                <div>累計經驗值<br>
-                                    150 exp</div>
-                            </li>
-                            <li>
-                                <div>贊助次數<br>
-                                    3次
+                        <h6>會員資訊</h6>
+                        <!-- <ul id="memInfoContentLft"> -->
+                            <!-- <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div class="memrInfoLeft">會員等級</div>
+                                        <div class="memrInfoMiddle">資深會員</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
                                 </div>
-                                <div>贊助累計金額<br>
-                                    $1300
+                            <!-- </li>
+                            <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div class="memrInfoLeft">累計環保幣</div>
+                                        <div class="memrInfoMiddle">50P</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div>參與活動次數</div>
-                                <div>3次</div>
-                            </li>
-                            <li>
-                                <div>活動發起次數</div>
-                                <div>1次</div>
-                            </li>
-                        </ul>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div  class="memrInfoLeft">累計經驗值</div>
+                                        <div class="memrInfoMiddle">150 exp</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
+                                </div>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div  class="memrInfoLeft">贊助累計金額</div>
+                                        <div class="memrInfoMiddle">$1300</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
+                                </div>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div  class="memrInfoLeft">贊助次數</div>
+                                        <div class="memrInfoMiddle">3次</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
+                                </div>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div  class="memrInfoLeft">參與活動次數</div>
+                                        <div class="memrInfoMiddle">3次</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
+                                </div>
+                            <!-- </li> -->
+                            <!-- <li> -->
+                                <div class="memInfoBox">
+                                    <div class="memInfoTop">
+                                        <div  class="memrInfoLeft">活動發起次數</div>
+                                        <div class="memrInfoMiddle">1次</div>
+                                        <button class="infoBtn">
+                                            <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
+                                            <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
+                                        </button>
+                                    </div>
+                                    <div class="memInfoBottom">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore corporis non consequuntur porro voluptatem placeat id nesciunt illum, ex, eum, est aperiam delectus reiciendis! Molestiae a fugiat inventore impedit velit.</p>
+                                    </div>
+                                </div>
+                            <!-- </li> -->
+                        <!-- </ul> -->
                     </div>
                 </div>
                 <div id="memExp" class="tabContent ">
@@ -309,7 +346,7 @@
                 
                 <div id="orderRecord" class="tabContent">
                     <div class="orderBlock">
-                        <h3>商城消費紀錄</h3>
+                        <h6>商城消費紀錄</h6>
                         <p>選擇日期</p>
                         <div></div>
                         <form action="">
@@ -320,13 +357,13 @@
                                 <option></option>
                                 <option></option>
                             </select>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>活動日期</th>
-                                        <th>訂單編號</th>
-                                        <th>訂單狀態</th>
-                                        <th>送貨狀態</th>
+                            <table id="page3form">
+                                <thead >
+                                    <tr id="memberTableTitle">
+                                        <td>活動日期</td>
+                                        <td>訂單編號</td>
+                                        <td>訂單狀態</td>
+                                        <td>送貨狀態</td>
                                     </tr>
                                 </thead>
                                 <tbody id="memberTableTopBorder">
@@ -413,8 +450,8 @@
                     
                 </div>
                 <div id="participateRecord" class="tabContent">
-                    <h3>參與募款</h3>
-                    <p>感謝您的支持</p>
+                    <h6>參與募款</h6>
+                    
                     <div class="participateRecordCon">
                         <table class="participateRecordTable">
                             <tr id="participateRecordRow1">
@@ -433,7 +470,7 @@
                             </tr>
                         </table>
                     </div>
-                    <h3>志工紀錄</h3>
+                    <h6>志工紀錄</h6>
                     <div class="participateRecordCon">
                         <table class="participateRecordTable">
                             <tr id="participateRecordRow1">
@@ -456,9 +493,11 @@
                             </tr>
                         </table>
                     </div>
+
+                    <p>感謝您的支持。</p>
                 </div> 
                 <div id="eventManagement" class="tabContent">
-                    <h3>活動發起紀錄</h3>
+                    <h6>活動發起紀錄</h6>
                     <div class="participateRecordCon">
                         <table class="eventManagementTable">
                             <tr class="eventManagementRow1">
@@ -497,8 +536,74 @@
                     
                 </div>
                 <div id="eventSave" class="tabContent">
-                    <h3>您收藏的活動</h3>
-                    <div class="owl-one owl-carousel owl-theme">
+                    <h6>您收藏的活動</h6>
+                    <div class="eventSaveBox">
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                        <div class="page5Card">
+                            <div class="content">
+                                <h2 class="title">桃園-永安漁港</h2>
+                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+                                <button class="btn membtn">See More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="owl-one owl-carousel owl-theme">
                         <div class="item">
                             <div class="memberCollection">
                                 <div class="memberCollectionPic">
@@ -524,7 +629,7 @@
                         <div class="item">
                             <div class="memberCollection">
                                 <div class="memberCollectionPic">
-                                    <img src="./img/act_hist/beach3.jpg" alt="">
+                                    <img src="./img/act_hist/beach6.jpg" alt="">
                                 </div>
                                 <button class="memberCollectionCancel">
                                     取消收藏3
@@ -576,20 +681,25 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>
     </div>
     
+    @@include('./layout/footer.html')
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="./js/member.js"></script>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+    
+    
     <!-- 樣板 footer -->
-    @@include('./layout/footer.html')
+    <script src="./js/member.js"></script>
     <script src="./js/login.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <!-- Swiper JS -->
+    <!-- <script src="./js/swiper-bundle.js"></script> -->
+    <script src="js/swiper-all.js"></script>
 </body>
 
 </html>

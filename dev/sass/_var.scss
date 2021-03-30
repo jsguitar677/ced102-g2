@@ -33,7 +33,7 @@ $reserveSide:30px;//左右預留寬度
 $borderRadius:15px;
 $btnRadius:15px;
 $inputRadius:5px;
-$borderBtnRadius:10px;
+$borderBtnRadius:15px;
 $btnRadius:15px;
 
 
@@ -62,6 +62,8 @@ $color_regulation:(
     'lightGray':#bebebe,//提示色淡灰(直線顏色)
     'gray2':#424f5f,//footer背景字體色
 
+    
+    'pink2':#ffcccc,//新增 table tr色
 
     'footerSide':#161c24,//footer旁邊顏色
     'footerGray2':rgba(66, 79, 95,.1),
