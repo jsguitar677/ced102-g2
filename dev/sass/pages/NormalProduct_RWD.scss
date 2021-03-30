@@ -519,7 +519,12 @@ section.NormalProductPage{
                                     background: hsla(0,0%,100%,.7);
                                     padding:10px;
                                     button{
+                                        outline: none;
+                                        i{
+                                            margin-right: 2px;
+                                        }
                                         @include cartIcon();
+                                        
                                     }
                                     p.NameAndPrice{
                                         font-size: $p;

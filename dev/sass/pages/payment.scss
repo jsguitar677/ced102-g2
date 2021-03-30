@@ -420,16 +420,14 @@ div.title-block {
          width: 48%;
          background-color: #F6F6F6;
          border-radius: $borderRadius;
-         // -webkit-box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
          box-shadow: $box-shadow;
          display: inline-block;
          text-align: center;
          margin: 10px;
-         // display: flex;
-         // flex-direction: column;
          background-color: #ebebeb;
          border: none;
          color: #1D1E4C;
+         
          @media (min-width:992px) and (max-width:1199px){
             width: 96%;
             // margin: 20px;

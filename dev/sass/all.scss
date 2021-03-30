@@ -74,7 +74,7 @@ body header {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     position: fixed;
     top: 0;
-    font-family: "Palatino Linotype", "Noto Sans TC";
+    // font-family: "Palatino Linotype", "Noto Sans TC";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -110,6 +110,7 @@ body header nav div#lftUl ul li {
     font-size: 15px;
     vertical-align: bottom;
     transition: all 1s ease;
+    line-height: 66px;
 }
 
 body header nav div#lftUl ul li:nth-child(n+1) {
@@ -119,7 +120,6 @@ body header nav div#lftUl ul li:nth-child(n+1) {
 body header nav div#lftUl ul li:hover img {
     opacity: 1;
     transform: rotate(360deg) scale(1.5);
-    // transform: ;
 }
 
 body header nav div#lftUl ul li a {
@@ -132,10 +132,10 @@ body header nav div#lftUl ul li a:hover {
 }
 
 body header nav div#lftUl ul li img {
-    
     opacity: 0;
     transition: all .5s ease;
-    transform: translateY(20px);
+    width: 20px;
+    margin-left: 3px;
 }
 
 body header nav div#lftUl ul li:first-child {
