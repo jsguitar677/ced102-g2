@@ -8,6 +8,7 @@
     <title>一瓶的海岸線</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/act_detail.css">
+    <link rel="stylesheet" href="./css/pages/act_detail_eff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
@@ -17,19 +18,24 @@
 
 <body>
     <!-- 樣板 header   -->
-    @@include('./layout/header.html')
+    <!-- @@include('./layout/header.html') -->
     <!-- 會員登入 -->
     @@include('./layout/login.html')
     <!-- ------------------------------------------------------- -->
-<div class="ad_container">
     <div class="ad_intro">
-        <img src="./img/act_detail/dark-ocean.jpg" width="100%">
+      <div class="slide-wrapper">
+        <div class="slide-item">
+          <img src="./img/act_detail/dark-ocean.jpg" class="slide-item__image">
+        </div>
+      </div>
     </div>
+    <div class="spacing_block"><h1 data-aos="fade-in" data-aos-duration="1500" data-aos-once="true" data-aos-delay="500">淨下塑源</h1></div>
+    <div class="ad_container">
     <div class="ad_content">
         <div class="ad_block"><img src="./img/act_detail/beach_bottle.jpg"></div>
-           <div class="ad_inner_content">
+          <div class="ad_inner_content">
             <h1 data-aos="fade-in" data-aos-duration="1200" data-aos-once="true">一瓶的海岸線</h1>   
-            <p>在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！
             ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 
             淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。           
             淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。 
@@ -37,6 +43,7 @@
             </p>
         </div>
     </div>
+    
     
     <div class="ad_grid_content">
         <div class="ad_box1"><svg xmlns="http://www.w3.org/2000/svg" width="58.145" height="37.001" viewBox="0 0 58.145 37.001">
@@ -69,7 +76,7 @@
             </div>
             <button class="join">參加</button><br>
             <button class="share">分享
-            </button>
+            </button><br>
             <div class="founder"><h1>活動發起人:&nbsp;&nbsp;<img src="./img/act_detail/person1.png" >&nbsp;&nbsp;富力士</h1></div>
         </div>        
     </div> 
@@ -78,22 +85,22 @@
           <li>活動募款參加平台</li>
           <li class="current">活動詳情</li>
       </ul>
-  </div>
+    </div>
      <div class="fixed_pic"><h1 data-aos="fade-right" data-aos-duration="1500" data-aos-once="true">淨下塑源</h1><p data-aos="fade-in" data-aos-duration="800" data-aos-once="true">&nbsp;&nbsp;&nbsp;&nbsp;海洋主宰地球的氣候系統，健康的海洋能將碳儲存於海中、並控制天氣有助於減緩氣候危機。近年來的氣溫升高,導致北極海冰創下有紀錄以來第二低,北極海冰的減少,與氣候暖化.氣候變遷狀況有關。全球暖化則不利珊瑚礁生長，人類活動產生的汙染亦造成嚴重影響。
       科學家已提出建議，若要保護海洋物種．避免氣候變遷對人類的影響，我們必須在２０３０年前保護全球最少３０％的海洋，因此，保護海洋環境是目前刻不容緩必須執行的任務。
       </p></div>
       <div class="outer_board">
         <h1>活動留言板</h1>
     <div class="ad_board">
-      <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><p>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+      <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
         藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</p><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><p>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+      <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
         藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</p><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><p>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+      <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
         藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</p><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
       <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
     </div>
   </div>
@@ -124,7 +131,6 @@
     </div>
   </main>
   </div>
-      
 </div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
@@ -133,6 +139,39 @@
     <script>
       AOS.init();
     </script>
+    <script src="./js/pixi.min.js"></script>
+		<script src="./js/TweenMax.min.js"></script>
+		<script src="./js/main5.js"></script>
+		<script src="./js/imagesloaded.pkgd.min.js"></script>
+		<script>	
+			var spriteImages = document.querySelectorAll( '.slide-item__image' );
+			var spriteImagesSrc = [];
+			var texts = [];
+
+			for ( var i = 0; i < spriteImages.length; i++ ) {
+				var img = spriteImages[i];
+				// Set the texts you want to display to each slide 
+				// in a sibling element of your image and edit accordingly
+				if ( img.nextElementSibling ) {
+					texts.push(img.nextElementSibling.innerHTML);
+				} else {
+					texts.push('');
+				}
+				spriteImagesSrc.push( img.getAttribute('src' ) );
+			}
+      
+			var initCanvasSlideshow = new CanvasSlideshow({
+				sprites: spriteImagesSrc,
+				displacementImage: './img/act_detail/clouds.jpg',
+				autoPlay: true,
+				autoPlaySpeed: [4, 3],
+				displaceScale: [5000, 10000],
+				interactive: true,
+				interactionEvent: 'click', // 'click', 'hover', 'both' 
+				displaceAutoFit: false,
+				dispatchPointerOver: true // restarts pointerover event after click 
+			});
+		</script>
 </body>
 
 </html>

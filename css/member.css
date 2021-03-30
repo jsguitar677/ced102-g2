@@ -79,7 +79,7 @@ body header {
 
 body header nav {
   height: 66px;
-  padding-left: 30px;
+  padding: 0px 30px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -179,6 +179,7 @@ body header a {
 
 body header i.fwIcon {
   vertical-align: text-top;
+  font-size: 15px;
 }
 
 body div#page1 {
@@ -201,6 +202,7 @@ body div#page1 div#lightbox div#logWrapper {
   font-size: 0;
   width: 50%;
   height: 70%;
+  min-height: 435px;
   position: absolute;
   vertical-align: top;
   left: 50%;
@@ -234,7 +236,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url("../img/logo3.png"), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -242,12 +244,12 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
-  font-size: 18px;
+  font-size: 15px;
   padding: 0% 15%;
 }
 
@@ -294,7 +296,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
@@ -304,7 +306,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5%;
 }
 
@@ -332,14 +334,14 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 1%;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
   padding: 0% 15%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
@@ -370,6 +372,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
   display: inline-block;
   margin: 3% auto;
+  margin-bottom: 15px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
@@ -449,6 +452,7 @@ body div#page1 div#lightbox2 div#logWrapper2 {
   font-size: 0;
   width: 50%;
   height: 70%;
+  min-height: 435px;
   position: absolute;
   vertical-align: top;
   left: 50%;
@@ -490,12 +494,12 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
-  font-size: 18px;
+  font-size: 15px;
   padding: 0% 15%;
 }
 
@@ -543,7 +547,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
   padding-top: 30px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
@@ -552,7 +556,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5%;
 }
 
@@ -585,14 +589,18 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 1%;
   padding-top: 30px;
 }
 
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
+  font-size: 15px;
+}
+
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
   padding: 0% 15%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
@@ -1135,6 +1143,19 @@ div.closeRotate1 {
   }
 }
 
+div#logCarousel input, div#logCarousel2 form input {
+  outline: 0;
+}
+
+div#logCarousel input:focus, div#logCarousel2 form input:focus {
+  border-color: #1D1E4C;
+}
+
+div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-input-placeholder {
+  color: #C2C2C2 !important;
+  font-size: 13px !important;
+}
+
 h1 {
   font-size: 72px;
 }
@@ -1168,6 +1189,21 @@ p {
   font-size: 15px;
 }
 
+.btnConMemInfo {
+  background-image: url("../../img/member-1.jpg");
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btnDisCon2Sty {
+  background-image: url("../../img/MemberBgImg.png"), linear-gradient(#EF4325, #1D1E4C);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 40%, 100%;
+}
+
 body {
   background-color: #F6F6F6;
   color: #1D1E4C;
@@ -1183,12 +1219,13 @@ body main {
 body h5 {
   z-index: 2;
   color: #1D1E4C;
-  top: 125px;
-  left: -50px;
+  top: 93px;
+  left: -32px;
   position: absolute;
   transform: rotate(90deg);
   font-weight: bold;
-  font-size: 38px;
+  font-size: 20px;
+  padding: 10px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1315,7 +1352,6 @@ body main .memberContent {
   padding: 30px;
   width: 100%;
   border-radius: 15px;
-  background-image: url("./img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
 }
 
 body main .memberContent .tab {
@@ -1568,14 +1604,6 @@ button.active span {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.btnDisCon2Sty {
-  background-image: url("../../img/MemberBgImg.png"), linear-gradient(#1D1E4C, #1D1E4C);
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  background-size: 40%, 100%;
-}
-
 div#memExp h3 {
   color: #fafafa;
   font-size: 22px;
@@ -1598,14 +1626,24 @@ div#memExp div.expContent div.expDescription h3 {
   background-repeat: no-repeat;
 }
 
+div#memInfo {
+  width: 60%;
+  float: right;
+}
+
+div#memInfo div.memInfoContent h3 {
+  text-align: center;
+}
+
 div#memInfo div.memInfoContent ul#memInfoContentLft {
-  padding: 0 20%;
+  padding: 0;
 }
 
 div#memInfo div.memInfoContent ul#memInfoContentLft li {
+  height: 60px;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.377);
   border-radius: 15px;
   margin-bottom: 5%;
   padding: 2% 3%;
@@ -1685,7 +1723,7 @@ div#participateRecord p {
 }
 
 div#participateRecord table.participateRecordTable {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border-radius: 15px;
   border: 1px solid #1D1E4C;
@@ -1715,7 +1753,7 @@ div#eventManagement p {
 }
 
 div#eventManagement table.eventManagementTable {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border-radius: 15px;
   border: 1px solid #1D1E4C;
@@ -1869,7 +1907,7 @@ div#eventSave div.owl-theme div.item div.memberCollection button.memberCollectio
 
 div#memberContentId {
   color: #1D1E4C;
-  width: 70%;
+  width: 100%;
 }
 
 div#memberContentId div.tab2 {

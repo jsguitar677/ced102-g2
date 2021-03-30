@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backend_login</title>
+    <!-- 格線系統 -->
+    <!-- <link rel="stylesheet" href="./css/plugin/bootstrap-grid.min.css"> -->
+    <!-- 後臺css -->
+    <!-- <link rel="stylesheet" href="./css/backend_login.css"> -->
+    <link rel="stylesheet" href="./css/pages/backend_login.css">
+
+    <!-- 共同css -->
+    <!-- <link rel="stylesheet" href="../css/common.css"> -->
+    <!-- <link rel="stylesheet" href="./css/common.css"> -->
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="./img/backend/logo.png"></div>
+    </header>
+    <div class="min-hight">
+        <div class="title">淨下塑湲 - 後台</div>
+        <div class="login">
+            <form action="./backend.html">
+                <label for="id" id="id-text">帳號：</label><input type="text" name="id" id="id" value="Ann555"><br>
+                <label for="pws" id="pws-text">密碼：</label><input type="password" name="password" id="pws" value="Ann101010"><br>
+                <input type="submit" name="submit-btn" class="btn" value="登入" id="login-btn"><br>
+                <div class="forget"><a href="./index.html">回主頁</a></div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">© 淨下塑湲 All Rights Reserved. 淨下塑湲版權所有不得轉載</div>
+    </footer>
+
+    <script>
+        function init(){
+            document.getElementById('login-btn').addEventListener('click',function(e){
+                let id = document.getElementById('id');
+                let pws = document.getElementById('pws');
+                if( id.value == ''){
+                    document.getElementById('id-text').style.color = '#EF4325';
+                }else{
+                    document.getElementById('id-text').style.color = '#1D1E4C';    
+                }
+                if( pws.value == '' ){
+                    document.getElementById('pws-text').style.color = '#EF4325';
+                }else{
+                    document.getElementById('pws-text').style.color = '#1D1E4C';    
+                }
+                if( id.value == '' || pws.value == '' ){
+                    e.preventDefault();
+                    return;
+                }
+            })
+        }
+        window.addEventListener('load',function(){
+            init();
+        })
+    </script>
+</body>
+</html>

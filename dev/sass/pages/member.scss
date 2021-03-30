@@ -8,9 +8,25 @@ h3{font-size: 48px;}
 h4{font-size: 38px;}
 h5{font-size: 28px;}
 h6{font-size: 22px;}
-.h7{font-size: 18px;
+.h7{font-size: 18px;//
     font-weight: bold;}
 p{font-size: 15px;}
+
+
+.btnConMemInfo{
+    background-image: url('../../img/member-1.jpg');
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btnDisCon2Sty{
+    background-image: url('../../img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'red'),map-get($map: $color_regulation, $key: 'blue'));
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 40%, 100%;
+}
+
 
 // -----------------------------------------
 @mixin pc{
@@ -50,12 +66,13 @@ body{
     h5{
         z-index: 2;
         color: map-get($color-regulation, 'blue' );
-        top: 125px;
-        left: -50px;
+        top: 93px;
+        left: -32px;
         position: absolute;
         transform: rotate(90deg); 
         font-weight: bold;
-        font-size: $h4;
+        font-size: 20px;
+        padding: 10px;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -168,8 +185,8 @@ body{
             padding: 30px;
             width:100%;
             border-radius: $borderRadius;
-            background-image: url('./img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
-    // background-origin: border-box;
+            // background-image: url('./img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
+            // background-origin: border-box;
             .tab{
                 display: flex;
                 justify-content: space-around;
@@ -438,13 +455,7 @@ button.active{
     background-color: rgba(0, 0, 0, 0);
 }
 
-.btnDisCon2Sty{
-    background-image: url('../../img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
-    background-origin: border-box;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 40%, 100%;
-}
+
 div#memExp{
     h3{
         color: map-get($map: $color_regulation, $key: 'white');
@@ -471,13 +482,20 @@ div#memExp{
     background-repeat: no-repeat;
 }
 div#memInfo{
+    width: 60%;
+    float: right;
     div.memInfoContent{
+        h3{
+            text-align: center;
+        }
         ul#memInfoContentLft{
-            padding:0 20%;
+            padding:0;
             li{
+                // width: 100%;
+                height: 60px;
                 display: flex;
                 justify-content: space-between;
-                background-color: rgba(0, 0, 0, 0.3);
+                background-color: rgba(0, 0, 0, 0.377);
                 border-radius: $borderRadius;
                 margin-bottom: 5%;
                 padding: 2% 3%;
@@ -557,7 +575,7 @@ div#participateRecord{
     }
     table.participateRecordTable{
         // display: block;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         border-radius: $borderRadius;
         border: 1px solid map-get($map: $color_regulation, $key: 'blue');
@@ -584,7 +602,7 @@ div#eventManagement{
     }
     table.eventManagementTable{
         // display: block;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         border-radius: $borderRadius;
         border: 1px solid map-get($map: $color_regulation, $key: 'blue');
@@ -631,6 +649,7 @@ div#memPage{
                 label{
                     vertical-align: top;
                 }
+                
                 div#eventManagementBtnCon{
                     align-self: flex-end;
                     justify-content: space-around;
@@ -729,7 +748,7 @@ div#eventSave{
 }
 div#memberContentId{
     color: map-get($color-regulation, 'blue' );
-    width: 70%;
+    width: 100%;
     // overflow: hidden;
     div.tab2{
         display: none;
@@ -805,7 +824,7 @@ div#appMemberBriefIntro{
 //     }
 // }
 
-// //開始變橫
+//開始變橫
 // @media all and (max-width: 1295px){
 //     main{
 //         display: flex;
