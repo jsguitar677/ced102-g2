@@ -29,14 +29,19 @@ p{font-size: 15px;}
 
 
 // -----------------------------------------
+@mixin pcL {
+    @media(max-width:1200px){
+        @content;
+      }
+}
 @mixin pc{
     @media(max-width:1024px){
-      @content;
+        @content;
     }
 }
 @mixin pad{
     @media(max-width:768px){
-      @content;
+        @content;
     }
 }
 @mixin mobileL{
@@ -52,17 +57,15 @@ p{font-size: 15px;}
 
 
 // -----------------------------------------
+#memPage{
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+}
 body{
     background-color: map-get($color_regulation, 'white-bg' );
     color: map-get($color-regulation, 'blue' );
-    main{
-        margin: 0;
-        background-color: #F6F6F6;
-        overflow-y: hidden;
-        margin-top: 5%;
 
-    }
-    
     h5{
         z-index: 2;
         color: map-get($color-regulation, 'blue' );
@@ -77,14 +80,32 @@ body{
         margin-bottom: 0;
     }
     main{
-        padding: 30px;
+        margin: 0;
+        background-color: #F6F6F6;
+        overflow-y: hidden;
+        margin-top: 5%;
         display: flex;
         height: 100%;
-        max-width: 1200px;
-        margin: auto;
+        @include pc{
+            flex-direction: column;
+        }
         .genInfor{
+            @include pc{
+                padding: 30px 0;
+
+                display: flex;
+                justify-content: center;
+            }
             min-width:30%;
             .personBlock{
+                @include pc{
+                    height: auto;
+                    margin-bottom: 0;
+
+                }
+                @include pad{
+                    margin-right: 0;
+                }
                 height:45vh;
                 margin-right: 13px;
                 margin-bottom:13px;
@@ -92,6 +113,10 @@ body{
                 border-radius: $borderRadius;
                 box-shadow: $box-shadow;
                 .proTopBlock{
+                    @include pad{
+                        margin-top: 0;
+                        flex-direction: column;
+                    }
                     display: flex;
                     align-items: center;
                     height: 50%;
@@ -125,6 +150,10 @@ body{
                     }
                 }
                 .proBtnBlock{
+
+                    @include pad{
+                        width: auto;
+                    }
                     width: 317px;
                     position: relative;
                     // background-color:coral;
@@ -132,6 +161,10 @@ body{
                     justify-content: center;
                     align-items: center;
                     textarea{
+                        @include mobileL{
+                        width: 190px;
+
+                        }
                         overflow: auto;
                         height:100px;
                         width: 250px;
@@ -170,7 +203,36 @@ body{
                 align-items: stretch;
                 height:40vh;
                 margin-right: 13px;
+                @include pc{
+                    height: auto;
+                    width: 300px;
+                    margin-right: 0;
+                    padding-right: 0;
+                }
                 button{
+                    @include mobileL{
+                        .btnText{
+                            display: none;
+                        }
+                    }
+                    // @include mobileS{
+                    //     .btnText{
+                    //     }
+                    // }
+                    .btnDisCon{
+                        @include mobileS{
+                            width: auto;
+
+                        }
+                        span{
+                            &:first-child{
+                                @include mobileL(){
+                                    margin: auto;
+                                }
+                                
+                            }
+                        }
+                    }
                     margin-right: 5px;
                     border:1px solid #1D1E4C;
                     border-radius: 15px;
@@ -178,11 +240,13 @@ body{
                     height: 30px;
                     outline: none;
                     cursor: pointer;
+
+                    
                 }
             }
         }
         .memberContent{
-            padding: 30px;
+            padding: 3%;
             width:100%;
             border-radius: $borderRadius;
             // background-image: url('./img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'blue'),map-get($map: $color_regulation, $key: 'blue'));
@@ -281,34 +345,31 @@ body{
         left: -16px;
     }
 }
-@media screen and (max-width: 600px) {
-    .excBlcok::after {
-    left: 31px;
-    }
-    .expPart {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-    }
-    .expPart::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-    }
-    .expRight::after {
-    left: 15px;
-    }
-    .expRight {
-    left: 0%;
-    }
-  }
+// @media screen and (max-width: 600px) {
+//     .excBlcok::after {
+//     left: 31px;
+//     }
+//     .expPart {
+//     width: 100%;
+//     padding-left: 70px;
+//     padding-right: 25px;
+//     }
+//     .expPart::before {
+//     left: 60px;
+//     border: medium solid white;
+//     border-width: 10px 10px 10px 0;
+//     border-color: transparent white transparent transparent;
+//     }
+//     .expRight::after {
+//     left: 15px;
+//     }
+//     .expRight {
+//     left: 0%;
+//     }
+//   }
 
 #orderRecord{
     .orderBlock{
-        // height: calc(80vh - 120px);
-        // overflow: auto;
-        padding-right: 10px;
         color: map-get($map: $color_regulation, $key: 'blue');
         h3{
             font-size: $h6;
@@ -322,28 +383,36 @@ body{
             border-radius: 5px;
             outline: none;
         }
-        table{
-            margin-top: 10px;
+        #page3form{
+            margin:30px 0;
             width: 100%;
             text-align: left;
-            // border:1px solid#1D1E4C;
-            border-radius: 15px;
-            padding: 20px;
-            border-collapse: collapse;
             th,td{
                 text-align: center;
                 vertical-align: center;
-                // border:1px solid#1D1E4C;
             }
-            .proItemDetail{
-                height: 300px;
-                overflow: hidden;
+            tr{
+                height: 40px;
             }
-
         }
     }
-    
 }
+
+table {
+    border-radius: 15px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #1D1E4C;
+    tr{
+        &:nth-child(odd){
+            background-color: rgb(241, 241, 241);
+        }
+    }
+}
+
+
+
 
 #memInfo{
     
@@ -358,9 +427,9 @@ body{
             // padding: 10px 0px 0px 10px;
         }
         div{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
             ul{
                 list-style-type: none;
                 padding: 0;
@@ -476,40 +545,59 @@ div#memExp{
     }
     
 }
-// .bg1img{
-//     background-image: url('../../img/member-1.jpg');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-// }
+
 div#memInfo{
-    width: 60%;
-    float: right;
     div.memInfoContent{
         h3{
-            text-align: center;
+            text-align: left;
         }
-        ul#memInfoContentLft{
-            padding:0;
-            li{
-                // width: 100%;
-                height: 60px;
+        // ul#memInfoContentLft{
+            // padding:0;
+            // list-style: none;
+            // li{ 
+        .memInfoBox{
+            background-color: rgba(255, 255, 255, 0.753);
+            width: 100%;
+            border-radius: $borderRadius;
+            .infoBtn{
+                padding: 0;
+                border: 0;
+                height: 25px;
+                outline: none;
+                background: transparent;
+                color: map-get($map: $color_regulation, $key: 'blue');
+                cursor: pointer;
+                transition: all 0.3s linear;
+                &:hover{
+                    transform: rotate(90deg);
+                }
+            }
+            .memInfoTop{
+                line-height: 30px;
                 display: flex;
                 justify-content: space-between;
-                background-color: rgba(0, 0, 0, 0.377);
-                border-radius: $borderRadius;
-                margin-bottom: 5%;
-                padding: 2% 3%;
-                position: relative;
-                div{
-                    color: map-get($map: $color_regulation, $key: 'white');
+                margin-bottom: 15px;
+                padding:15px 15px;
+                color: map-get($map: $color_regulation, $key: 'blue');
+                .memrInfoLeft{
+                    width: 150px;
                 }
+                .memrInfoMiddle{
+                    width: 100px;
+                }
+            }
+            .memInfoBottom{
+                border-top: 1px solid #fafafa;
+                padding:5px 15px;
+                margin-bottom: 15px;
+
             }
         }
     }
 }
-div#memPage{
-    padding-top: 60px;
-}
+// div#memPage{
+//     padding-top: 60px;
+// }
 button.tabLinks{
     border-radius: $borderRadius;
     box-shadow: $box-shadow;
@@ -539,31 +627,24 @@ button.tabLinks{
 }
 
 tr#memberTableRowBorder{
-    border-top:1px solid map-get($map: $color_regulation, $key: 'gray');
-    th{
-        padding: 2% 0 0;
-    }
+    background-color: map-get($color-regulation, 'pink2');
+    // color: map-get($color-regulation, 'white');
 }
 
-tbody#memberTableTopBorder{
-    tr{
-        td{
-            padding: 0 0 2%;
-        }
-    }
+#memberTableTitle{
+    background-color: map-get($color-regulation, 'pink2')  !important;
 }
-
 thead#memberTableLowBlock{
-    border-top:1px solid map-get($map: $color_regulation, $key: 'gray');
+    background-color: map-get($color-regulation, 'pink2' )  !important;
     tr{
-        &:first-child{
-            th{
-                padding: 3% 0 0;
-            }
-        }
+        background-color: unset;
     }
 }
-
+#memberTableTopBorder{
+    tr{
+        background-color:  white;
+    }
+}
 div#participateRecord{
     color: map-get($map: $color_regulation, $key: 'blue');
     h3{
@@ -574,7 +655,7 @@ div#participateRecord{
         text-align: center;
     }
     table.participateRecordTable{
-        // display: block;
+        overflow: hidden;
         width: 100%;
         margin: 0 auto;
         border-radius: $borderRadius;
@@ -584,6 +665,13 @@ div#participateRecord{
             text-align: center;
         }
     }
+}
+
+#participateRecordRow1{
+    background-color: map-get($color-regulation,'pink2');
+}
+.eventManagementRow1{
+    background-color: map-get($color-regulation,'pink2')!important;
 }
 
 div.participateRecordCon{
@@ -601,7 +689,7 @@ div#eventManagement{
         text-align: center;
     }
     table.eventManagementTable{
-        // display: block;
+        overflow: hidden;
         width: 100%;
         margin: 0 auto;
         border-radius: $borderRadius;
@@ -613,11 +701,15 @@ div#eventManagement{
         }
         td{
             button{
+                font-size: 15px;
                 border-radius: $borderBtnRadius;
                 color: map-get($map: $color_regulation, $key: 'white');
                 background-color: map-get($map: $color_regulation, $key: 'blue');
                 cursor: pointer;
-            }
+                border: none;
+                height: 30px;
+                padding: 0 30px;
+            } 
         }
     }
 }
@@ -695,7 +787,7 @@ div#eventManagementCancelModalCloseBtn{
     width: 20px;
     height: 20px;
     cursor: pointer;
-    overflow: hidden;
+    // overflow: hidden;
     padding: 1%;
     span{
         background-color: map-get($map: $color_regulation, $key: 'blue');
@@ -713,42 +805,285 @@ div#eventManagementCancelModalCloseBtn{
         }
     }
 }
-
-div#eventSave{
-    h3{
-        font-size: $h6;
+// -------------------
+// -------------------
+// -------------------
+// -------------------
+#eventSave{
+    h6{
+        text-align: center;
     }
-    div.owl-theme{
-        div.item{
-            div.memberCollection{
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                div.memberCollectionPic{
-                    height: 60%;
-                    img{
-                        border-radius: $borderRadius;
-                    }
-                    margin-bottom: 20px;
-                }
-                button.memberCollectionCancel{
-                    border-radius: $borderBtnRadius;
-                    background-color: map-get($map: $color_regulation, $key: 'white');
-                    color: map-get($map: $color_regulation, $key: 'blue');
-                    padding: 0 2%;
-                    outline: none;
-                    cursor: pointer;
-                    i{
-                        color: red;
-                    }
-                }
+}
+.eventSaveBox{
+    
+    @include pc{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+
+:root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: "Rubik", sans-serif;
+    --font-serif: "Cardo", serif;
+}
+.page5Card{
+    position: relative;
+    display: inline-block;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 15px;
+    // padding: 1rem;
+    width: 30.33%;
+    height: 260px;
+    // width: 300px;
+    margin-right: 1.15%;
+    margin-left: 1.15%;
+    margin-bottom:2%;
+    @include pc{
+        width: 180px;
+        height: 240px;
+    }
+    @include pad{
+        width: 135px;
+        height: 180px;
+    }
+    // @include mobileL{
+    //     width: 90px;
+    //     height: 120px;
+    //     margin-right: 5px;
+    // }
+    // @include mobileS(){
+    //     width: 60px;
+    //     height: 90px;
+    // }
+    text-align: center;
+    color:map-get( $color_regulation, 'blue');
+    background-color: whitesmoke;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        background-size: cover;
+        background-position: 0 0;
+        transition: transform calc(var(--d) * 1.5) var(--e);
+        pointer-events: none;
+    }
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        pointer-events: none;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+        transform: translateY(-50%);
+        transition: transform calc(var(--d) * 2) var(--e);
+    }
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        // padding: 1rem;
+        transition: transform var(--d) var(--e);
+        z-index: 1;
+        color: map-get($color_regulation, 'white' );
+        .title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        // .membtn{
+        //     @include pc{
+        //         margin: 0;
+
+        //     }
+        // }
+        .copy {
+            font-family: var(--font-serif);
+            font-size: 1.125rem;
+            font-style: italic;
+            line-height: 1.35;
+            @include pc{
+                margin: 0 !important;
+                display: -webkit-box;
+                -webkit-line-clamp: 4; //行數
+                -webkit-box-orient: vertical;
+                white-space: normal;
+                overflow: hidden;
             }
+            @include pad{
+                // display: none;
+            }
+        }
+        
+        .btn {
+            @include pcL{
+                margin-top:0;
+            }
+            @include pc{
+                margin-top:10px;
+            }
+            @include pad{
+                margin-top:0;
+
+            }
+            cursor: pointer;
+            margin-top: 1.5rem;
+            height: 30px;
+            padding: 0 30px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 0.025rem;
+            text-transform: uppercase;
+            color: white;
+            background-color: map-get($color_regulation, 'blue' );
+            border: none;
+            border-radius: 15px;
+        }
+        .btn:focus {
+            outline: 1px dashed yellow;
+            outline-offset: 3px;
+        }        
+    }
+    .content>*+* {
+        margin-top: 1rem;
+        @include pc{
+            margin-top: 5px;
         }
     }
 }
+
+.page5Card:before {
+    background-image: url(../../img/act_hist/beach1.jpg);
+}
+.page5Card:before {
+    background-image: url(../../img/act_hist/beach2.jpg);
+}
+.page5Card:before {
+    background-image: url(../../img/act_hist/beach4.jpg);
+}
+.page5Card:before {
+    background-image: url(../../img/act_hist/beach3.jpg);
+}
+.page5Card:before {
+    background-image: url(../../img/act_hist/beach1.jpg);
+}
+.page5Card:before {
+    background-image: url(../../img/act_hist/beach2.jpg);
+}
+
+
+
+
+@media (hover: hover) and (min-width: 1200px) {
+    .page5Card:after {
+        transform: translateY(0);
+    }
+    .content {
+        transform: translateY(calc(100% - 4.5rem));
+    }
+    .content>*:not(.title) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+    }
+    .page5Card:hover,
+    .page5Card:focus-within {
+        align-items: center;
+    }
+    .page5Card:hover:before,
+    .page5Card:focus-within:before {
+        transform: translateY(-4%);
+    }
+    .page5Card:hover:after,
+    .page5Card:focus-within:after {
+        transform: translateY(-50%);
+    }
+    .page5Card:hover .content,
+    .page5Card:focus-within .content {
+        transform: translateY(0);
+    }
+    .page5Card:hover .content>*:not(.title),
+    .page5Card:focus-within .content>*:not(.title) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--d) / 8);
+    }
+    .page5Card:focus-within:before,
+    .page5Card:focus-within:after,
+    .page5Card:focus-within .content,
+    .page5Card:focus-within .content>*:not(.title) {
+        transition-duration: 0.3s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// -------------------
+// div#eventSave{
+//     h3{
+//         font-size: $h6;
+//     }
+//     div.owl-theme{
+//         div.item{
+//             div.memberCollection{
+//                 display: flex;
+//                 align-items: center;
+//                 flex-direction: column;
+//                 div.memberCollectionPic{
+//                     height: 60%;
+//                     img{
+//                         border-radius: $borderRadius;
+//                     }
+//                     margin-bottom: 20px;
+//                 }
+//                 button.memberCollectionCancel{
+//                     border-radius: $borderBtnRadius;
+//                     background-color: map-get($map: $color_regulation, $key: 'blue');
+//                     color: map-get($map: $color_regulation, $key: 'white');
+//                     padding: 0 2%;
+//                     outline: none;
+//                     height: 30px;
+//                     padding: 0 30px;
+//                     font-size: 15px;
+//                     border: none;
+//                     cursor: pointer;
+//                     i{
+//                         color: red;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
 div#memberContentId{
     color: map-get($color-regulation, 'blue' );
-    width: 100%;
+    width: 60%;
+    @include pc{
+    width: 93.4%;
+
+    }
     // overflow: hidden;
     div.tab2{
         display: none;
@@ -809,6 +1144,25 @@ div#appMemberBriefIntro{
     span{
         display: none;
     }
+}
+
+
+
+
+.memInfoBottom{
+    display: none;
+}
+.show-text .memInfoBottom{
+    display: block;
+}
+.minusIcon{
+    display: none;
+}
+.show-text .minusIcon{
+    display: block;
+}
+.show-text .plusIcon{
+    display: none;
 }
 
 

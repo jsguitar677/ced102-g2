@@ -1,3 +1,32 @@
+//筆記 注意querySelectorAll and querySelector差異
+
+const memInfoBoxs = document.querySelectorAll('.memInfoBox');
+
+memInfoBoxs.forEach(function(memInfoBox){
+    const infoBtn = memInfoBox.querySelector(".infoBtn");
+    // console.log(infoBtn);
+    infoBtn.addEventListener("click",function(){
+        memInfoBoxs.forEach(function (item){
+            if( item !== memInfoBox){
+                // 移除
+                item.classList.remove("show-text");
+            }
+        });
+        //新增
+        memInfoBox.classList.toggle("show-text");
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 // 網頁切換
 function openPage(evt, pageState) {
     var i, tabContent, tabLinks;
@@ -74,40 +103,40 @@ window.addEventListener('load', eventManagementModal);
 
 
 //owl carousel 輪播
-$(".owl-one").owlCarousel({
-    loop:true,
-    nav:false,
-    margin:35,
-    // autoplayTimeout: 2300,
-    // autoplay:false,
-    autoWidth:false,
-    dots:true,
-    // navText:[
-    //     prevIcon,
-    //     nextIcon
-    // ],
-    slideTransition:"linear",
-    responsive:{
-        500:{
-            items:3.5
-        },
-        // 600:{
-        //     items:3
-        // },
-        // 1000:{
-        //     items:5
-        // }
-    }
-});
+// $(".owl-one").owlCarousel({
+//     loop:true,
+//     nav:false,
+//     margin:35,
+//     // autoplayTimeout: 2300,
+//     // autoplay:false,
+//     autoWidth:false,
+//     dots:true,
+//     // navText:[
+//     //     prevIcon,
+//     //     nextIcon
+//     // ],
+//     slideTransition:"linear",
+//     responsive:{
+//         500:{
+//             items:3.5
+//         },
+//         // 600:{
+//         //     items:3
+//         // },
+//         // 1000:{
+//         //     items:5
+//         // }
+//     }
+// });
 
-//輪播圖
-var owlClearItem = $('.owl-carousel');
-owlClearItem.owlCarousel();
-$('.memberCollectionCancel').click(function(){
-    owlClearItem.trigger('remove.owl.carousel',$('.memberCollectionCancel').index(this));
-    console.log($('.memberCollectionCancel').index(this));
+// //輪播圖
+// var owlClearItem = $('.owl-carousel');
+// owlClearItem.owlCarousel();
+// $('.memberCollectionCancel').click(function(){
+//     owlClearItem.trigger('remove.owl.carousel',$('.memberCollectionCancel').index(this));
+//     console.log($('.memberCollectionCancel').index(this));
 
-})
+// })
 
 
 //經驗值圖

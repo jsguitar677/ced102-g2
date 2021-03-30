@@ -1,2 +1,2 @@
-var index_path = 'indexfront.html';
+var index_path = 'member.html';
 module.exports = index_path;

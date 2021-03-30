@@ -949,9 +949,9 @@ header nav div#lftUl{
             &:first-child{
                 transform: translateY(10px);
             }
-            &:nth-child(2){
+            // &:nth-child(2){
 
-            }
+            // }
             &:last-child{
                 transform: translateY(-10px);
             }
@@ -962,36 +962,36 @@ header nav div#lftUl{
     }
 }
 
-@media all and (max-width:1312px) {
-    body{
-        header{
-            nav{
-                div#lftUl{
-                    ul{
-                        display: flex;
-                        flex-direction: column;
-                        background-color: yellow;
-                        justify-content: flex-end;
-                        li{
-                            border-bottom: 1px solid red;
-                            margin-left: 0px !important;
-                        }
-                    }
-                }
-            }
-        }
-    }    
+// @media all and (max-width:1312px) {
+//     body{
+//         header{
+//             nav{
+//                 div#lftUl{
+//                     ul{
+//                         display: flex;
+//                         flex-direction: column;
+//                         background-color: yellow;
+//                         justify-content: flex-end;
+//                         li{
+//                             border-bottom: 1px solid red;
+//                             margin-left: 0px !important;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }    
     
-}
+// }
 
-@media (min-width:992px) and (max-width:1199px){
+// @media (min-width:992px) and (max-width:1199px){
 
-}
-@media(min-width:576px) and (max-width:991px){
+// }
+// @media(min-width:576px) and (max-width:991px){
 
-}
-@media(max-width:575px){
+// }
+// @media(max-width:575px){
 
-}
+// }
 /*# sourceMappingURL=style.css.map */
 
