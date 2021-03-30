@@ -236,7 +236,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(./img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url(img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -1141,5 +1141,18 @@ div.closeRotate1 {
   div.footerBlockTop div.footerBox3 div.orignate {
     padding: 25px 0px 0px;
   }
+}
+
+div#logCarousel input, div#logCarousel2 form input {
+  outline: 0;
+}
+
+div#logCarousel input:focus, div#logCarousel2 form input:focus {
+  border-color: #1D1E4C;
+}
+
+div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-input-placeholder {
+  color: #C2C2C2 !important;
+  font-size: 13px !important;
 }
 /*# sourceMappingURL=all.css.map */
