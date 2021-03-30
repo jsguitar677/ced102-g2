@@ -235,95 +235,68 @@ main.event{
                         div.part{
                             margin-top: 30px;
                             div.info,div.description{
-                                padding: 40px;
+                                padding: 50px 40px;
                             }
                             @media (min-width:992px) and (max-width:1199px){
-                                div.info,div.description{
-                                    padding: 30px;
+                                div.description{
+                                    padding: 50px 30px;
                                 }
                             }
                             @media (min-width:768px) and (max-width:991px){
-                                div.info,div.description{
-                                    padding: 30px;
+                                div.description{
+                                    padding: 50px 30px;
                                 }
                             }
                             @media (min-width:576px) and (max-width:767px){
-                                div.info,div.description{
-                                    padding: 20px;
+                                div.description{
+                                    padding: 40px 20px;
                                 }
                             }
                             @media (max-width:575px){
-                                div.info{
-                                    padding: 20px 30px;
-                                }
                                 div.description{
-                                    padding: 20px 0px;
+                                    padding: 30px 0px;
                                 }
                             }
                             div.description{
                                 text-align: center;
                                 box-shadow: $box-shadow;
                                 border-radius: $border-radius;
-                                h2,span{
+                                h2{
                                     font-size: $h7;
-                                    margin: 0 0 20px 0;
-                                    span{
-                                        color: map-get($web-color,'red');
+                                    margin: 0;
+                                    img{
+                                        width: 18px;
+                                        margin-right: 10px;
+                                        margin-bottom: 3px;
                                     }
                                 }
                                 p{
-                                    margin: 0;
+                                    margin: 30px 0 40px 0;
                                     line-height: $text-linehight;
                                 }
-                                div.checkbox-block{
-                                    label{
-                                        display: inline-block;
-                                        margin-top: 24px;
-                                        line-height: 21px;
-                                    }
-                                    input[name=agreement]{
-                                        margin: 25px 5px 25px 0;
-                                    }
-                                    @include checkbox();
-                                }
-                                button.btn{
-                                    border-radius: $border-radius;
-                                    outline: none;
-                                    color: map-get( $web-color ,'white');
-                                    background-color: map-get( $web-color ,'blue');
-                                    font-weight: bolder;
-                                    font-size: $text-fontSize;
-                                    padding: $padding-btn;
-                                }
+                                @include btn-module-blue();
                                 
                             }
                             @media (min-width:576px) and (max-width:767px){
                                 div.description{
                                     width: 95%;
                                     margin: 0 auto;
-                                    h2,span{
+                                    h2{
                                         font-size: 16px;
-                                        margin: 0 0 10px 0;
+                                        margin: 0;
                                     }
                                     p{
                                         margin: 0;
                                         font-size: $text-fontSize-575;
                                         line-height: 25px;
+                                        padding: 20px 10px 30px 10px;
                                     }
-                                    div.checkbox-block{
-                                        label{
-                                            margin-top: 15px;
-                                            line-height: 21px;
-                                            font-size: $text-fontSize-575;
-                                        }
-                                        input[name=agreement]{
-                                            margin: 15px 5px 25px 0;
-                                        }
-                                    }
-                                    button.btn{
+                                    div.btn{
                                         width: 100px;
-                                        font-size: $text-fontSize-575;
-                                        padding: 5px;
+                                        a{
+                                            font-size: $text-fontSize-575;
+                                            padding: 5px;
+                                        }
                                     }
                                 }
                             }
@@ -331,37 +304,22 @@ main.event{
                                 div.description{
                                     width: 100%;
                                     margin: 0 auto;
-                                    h2,span{
-                                        font-size: 16px;
-                                        margin: 0 0 10px 0;
-                                    }
-                                    span{
-                                        display: block;
-                                        font-size: 14px;
-                                    }
                                     h2{
-                                        padding: 0 30px;
+                                        font-size: 16px;
+                                        margin: 0;
                                     }
                                     p{
                                         margin: 0;
                                         font-size: $text-fontSize-575;
                                         line-height: 25px;
-                                        padding: 0 10px;
+                                        padding: 20px 20px 30px 20px;
                                     }
-                                    div.checkbox-block{
-                                        label{
-                                            margin-top: 15px;
-                                            line-height: 21px;
-                                            font-size: $text-fontSize-575;
-                                        }
-                                        input[name=agreement]{
-                                            margin: 15px 5px 25px 0;
-                                        }
-                                    }
-                                    button.btn{
+                                    div.btn{
                                         width: 100px;
-                                        font-size: $text-fontSize-575;
-                                        padding: 5px;
+                                        a{
+                                            font-size: $text-fontSize-575;
+                                            padding: 5px;
+                                        }
                                     }
                                 }
                             }
