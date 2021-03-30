@@ -509,15 +509,11 @@ div.ah_card_section {
     color: white;
     background-color: black;
     border: none;
+    outline: none;
 }
 
 .btn:hover {
     background-color: #0d0d0d;
-}
-
-.btn:focus {
-    outline: 1px dashed yellow;
-    outline-offset: 3px;
 }
 
 @media (hover: hover) and (min-width: 1076px) {
