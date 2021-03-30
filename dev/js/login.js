@@ -81,6 +81,8 @@ function turnBackToReg(){
     document.getElementById('logCarousel').style.left = '-60%';
     document.getElementById('lightbox2').style.display = 'none';
     document.getElementById('lightbox').style.display = 'block';
+    document.getElementById('signUpFConTitle').innerHTML = '登入會員';
+    document.getElementById('signRegFake').style.innerHTML = '進行登入';
 }
 
 
