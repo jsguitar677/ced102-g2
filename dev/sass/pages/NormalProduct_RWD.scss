@@ -270,7 +270,7 @@ section.NormalProductPage{
                     //左側 (商品簡介區)========================
                     //標題:商品簡介
                     div.leftarea_blockB{ 
-                        margin:10px auto 15px auto;
+                        margin-top:10px;
                         width:100%;
                         margin-top:20px;
                         padding:20px;
@@ -396,25 +396,27 @@ section.NormalProductPage{
                         div.placeOfSubmit{
                             text-align: center;
                             margin-bottom: 50px;
-                            button.btn_shopping_cart{
-                                box-shadow: $box-shadow;
-                                border-radius: $inputRadius;
-                                width:145px;
-                                height:35px;
-                                line-height: 35px;
-                                background-color:map-get($color_regulation,'blue');
-                                color:map-get($color_regulation,'white');
-                                position:relative;
-                                padding-right: 10%;
-                                margin-top:50px;
-                                cursor: pointer;
-                                img{
-                                    height:90%;
-                                    border-radius: 50%;
-                                    position:absolute;
-                                    top:50%;
-                                    right:8%;
-                                    transform: translateY(-50%);
+                            a{
+                                button.btn_shopping_cart{
+                                    box-shadow: $box-shadow;
+                                    border-radius: $inputRadius;
+                                    width:145px;
+                                    height:35px;
+                                    line-height: 35px;
+                                    background-color:map-get($color_regulation,'blue');
+                                    color:map-get($color_regulation,'white');
+                                    position:relative;
+                                    padding-right: 10%;
+                                    margin-top:50px;
+                                    cursor: pointer;
+                                    img{
+                                        height:90%;
+                                        border-radius: 50%;
+                                        position:absolute;
+                                        top:50%;
+                                        right:8%;
+                                        transform: translateY(-50%);
+                                    }
                                 }
                             }
                         }
@@ -507,6 +509,7 @@ section.NormalProductPage{
                                         bottom:7px;
                                         right:7px;
                                         width:27.9px;
+                                        height: 27.9px;
                                         border-radius: 50%;
                                         box-shadow: $box-shadow;
                                     }
