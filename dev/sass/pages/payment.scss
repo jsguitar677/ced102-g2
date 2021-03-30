@@ -4,36 +4,49 @@
    box-sizing: border-box;
    
 }
+@media (min-width:992px) and (max-width:1199px){
 
-// 流程// 
+}
+@media (min-width:768px) and (max-width:991px){
+    
+}
+@media (min-width:576px) and (max-width:767px){
+    
+}
+@media (max-width:575px){
+    
+}
+
 div.progress__bar{
    margin-top: 70px ;
+   
    margin-bottom: 0px;
    box-shadow: $box-shadow;
    position: relative;
    // padding: 10px 20px 20px 20px;
    flex: 0 0 83.33333%;
    width: 100%;
-   height: 60PX;
-   justify-content: flex-start !important;
+   height: 60px;
+   // justify-content: center;
    background-color: #fafafa;
    // border: 1px solid red;
    
    // margin: 10px auto;
    
    // display: flex !important;
-   
-   
    .progress{
-       list-style: none;
-       display: flex ;
-       text-align: center;
-       color: #ffffff;
-       text-align: center;
-       position: relative;
-       font-size: 24px;
-       text-align: center;
-       // margin: 0 auto;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        display: flex ;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+        text-align: center;
+        position: relative;
+        font-size: 24px;
+        width: auto;
+        // margin: 0 auto;
        
    
    
@@ -41,13 +54,13 @@ div.progress__bar{
        width: 30px;
        height: 30px;
        border-radius: 50%;
-       margin: 0 100px;
+       // margin: 0 100px;
        position: relative;
-       background-color: #D8D8D8;
+       background-color: #1D1E4C;
        line-height: 30px;
        letter-spacing: 0px;
-       margin: 0 auto;
-       background-color:#1D1E4C ;
+       margin: 0 ;
+       // background-color:#1D1E4C ;
        color: #fafafa;
 
        p.progress__text{
@@ -57,41 +70,15 @@ div.progress__bar{
            left: -200%;
            color: #1D1E4C;
            font-size: $h7;
+           font-family: $chinese;
        
        
        }
-       .progress__item--active{
-           background-color: #1D1E4C;
+       // .progress__item--active{
+       //     background-color: #1D1E4C;
    
-           }
-       .progress_group_bar {
-           height: 12px;
-           -webkit-box-flex: 1;
-           -ms-flex: 1 1 100%;
-           flex: 1 1 100%;
-           margin: auto -5px;
-           z-index: 0;
-           .progress-bar {
-               display: flex;
-               // -webkit-box-orient: vertical;
-               // -webkit-box-direction: normal;
-               // -ms-flex-direction: column;
-               flex-direction: column;
-               // -webkit-box-pack: center;
-               // -ms-flex-pack: center;
-               justify-content: center;
-               color: #1D1E4C;
-               text-align: center;
-               white-space: nowrap;
-               background-color: #007bff;
-               // -webkit-transition: width .6s ease;
-               // -o-transition: width .6s ease;
-               transition: width .6s ease;
-               width: 30px;
-               height: 10px;
-           }
+       //     }
        
-      }
    // width:100%;
    // margin: 0 auto;
    // padding-left:16px;
@@ -101,54 +88,86 @@ div.progress__bar{
    
    /* border: 1px solid red; */
     }  
+    .progress_group_bar {
+       height: 12px;
+       // -webkit-box-flex: 1;
+       // -ms-flex: 1 1 100%;
+       // flex: 1 1 100%;
+       margin: 10px -5px;
+       z-index: 0;
+       .progress-bar {
+          margin: 0 auto;
+           // display: flex;
+           // -webkit-box-orient: vertical;
+           // -webkit-box-direction: normal;
+           // -ms-flex-direction: column;
+           flex-direction: column;
+           // -webkit-box-pack: center;
+           // -ms-flex-pack: center;
+           justify-content: center;
+           color: #1D1E4C;
+           text-align: center;
+           white-space: nowrap;
+           background-color: #1D1E4C;
+           // -webkit-transition: width .6s ease;
+           // -o-transition: width .6s ease;
+           transition: width .6s ease;
+           width: 500px;
+           height: 10px;
+       }
+       @media (min-width:992px) and (max-width:1199px){
+           .progress-bar{
+               width: 400px;
+           }
+       }
+       @media (min-width:768px) and (max-width:991px){
+           .progress-bar{
+               width: 300px;
+           }  
+       }
+       @media (min-width:576px) and (max-width:767px){
+           .progress-bar{
+               width: 200px;
+           }  
+       }
+       @media (max-width:575px){
+           .progress-bar{
+               width: 150px;
+           }
+       }
+   
+  }
    }
 }
-// .progress__item &:after {
-//     content: "";
-//     width: 500%;
-//     height: 3px;
-//     position: absolute;
-//     background-color: #D8D8D8;
-//     top: 50%;
-//     left: -478%;
-//     z-index: 1;
-// }
-
-   
-   
-   // a {
-   //     text-decoration: none;
-   //     color: #B0B0B0;
-   //     font-size: 28px;
-   //     margin: 10px 20px;
-   // }
-   // .active {
-   //     color: #1d1e4c;
-   //     font-weight: bold;
-   // }
+div.title-block {
+   position: absolute;
+   display: inline-block;
+   vertical-align: top;
+   width: $reserveSide;
+   //    position: absolute;
+   // margin-top: 10px;
+   margin-left: 10px;
+   h1.title {
+       font-size: 20px;
+       color: #1d1e4c;
+       display: inline-block;
+       white-space: nowrap;
+       padding: 10px;
+       writing-mode: vertical-rl;
+       text-orientation: sideways;
+   }
+}
 
 .paymentSection{
    // max-width: 1280px;
-   margin: 0;
+   margin: 0 auto;
+   // display: inline-block;
+   
    // font-size: 0;
-   div.title-block{
-   display: inline-block;
-   vertical-align: top;
-   background-color: #F6F6F6;
-
-   h1.title{
-   font-size: 28px;
-   color:#1d1e4c ;
-   display: inline-block;
-   white-space: nowrap;
-   padding: 10px 0;
-   writing-mode: vertical-rl;
-   text-orientation: sideways;
-    }  
-   }
    
    div.paymentContent{
       width: $pageW;
+      
       max-width: 100%;
       margin: 0 auto;
       border: 1px solid red;
@@ -162,7 +181,13 @@ div.progress__bar{
          margin: 20px auto;
          box-shadow: $box-shadow;
          border-radius: $borderRadius;
-         
+         // @media (min-width:992px) and (max-width:1199px){
+         //    width: 100%;
+         //    display: flex;
+         //    flex-direction: column;
+            
+         // }
+              
 
          .card-header{
              button.btn-link{
@@ -171,7 +196,7 @@ div.progress__bar{
                // margin-top: 20px ;
                margin-bottom: 0px;
                width: 100%;
-               height: 88px;
+               height: auto;
                text-align: center;
                align-items: center;
                outline:none;
@@ -186,11 +211,33 @@ div.progress__bar{
          
          #collapseOne{
         border:1px solid #1d1e4c ;
+        display: inline-block;
         border-radius: 15px;
         margin: 10px ;
         width: 60%;
       //   height: 88px;
         align-items: center;
+        @media (min-width:992px) and (max-width:1199px){
+           width: 99%;
+           margin: 5px auto;
+         justify-content: center;
+
+      }
+      @media (min-width:768px) and (max-width:991px){
+         width: 99%;
+         margin: 5px auto;
+         justify-content: center;
+      }
+      @media (min-width:576px) and (max-width:767px){
+         width: 99%;
+         margin: 5px auto;
+         justify-content: center;
+      }
+      @media (max-width:575px){
+         width: 99%; 
+         margin: 5px auto;
+         justify-content: center;
+      }
         div.item_container{
            .item_header{
               display: flex;
@@ -198,30 +245,39 @@ div.progress__bar{
               margin: 0 auto;
               height: 30px;
             //   border-bottom:1px solid #1d1e4c ;
-            //   background-color: #fff; 
-            //   padding-left: 10px;
+            height: $line-height*2;
+            align-items: center;  
+            .item_header div{
+                width: 150px;
+                color:#1d1e4c;
+                line-height: $lineHeight;
+            }
+            .item_detail{
+                width: 35%;
+                display: inline-block;
+                text-align: center;
+              //   margin: 10px;
+              @media (min-width:576px) and (max-width:767px){
+               margin-button: 10px;
+                
+            }
+            @media (max-width:575px){
+               margin-top: 10px;
+                
+            }
+          
+            }
           }
-          .item_header div{
-              width: 150px;
-              color:#1d1e4c;
-              line-height: $lineHeight;
-          }
-          .item_header .item_detail{
-              width: 60%;
-              display: inline-block;
-            //   margin: 10px;
+         //  .item_header{
+         //    //   border-bottom:1px solid #1d1e4c ;
+         //    //   border-radius: 10px;
+         //    //   margin-top: 20px ;
+         //    //   margin-bottom: 20px;
+         //    //   width: 255px;
+         //      height: $line-height*2;
+         //      align-items: center;   
         
-          }
-          .item_body{
-            //   border-bottom:1px solid #1d1e4c ;
-            //   border-radius: 10px;
-            //   margin-top: 20px ;
-            //   margin-bottom: 20px;
-            //   width: 255px;
-              height: $line-height*2;
-              align-items: center;   
-        
-          }
+          
          //  .item_detail img{
          //      width: 80px;
          //      height: 80px;
@@ -233,6 +289,24 @@ div.progress__bar{
               margin-left: 30px;
               margin-top: 10px;
               display: inline-block;
+            //   @media (min-width:992px) and (max-width:1199px){
+            //    margin-left: 30px;
+            // }
+            // @media (min-width:768px) and (max-width:991px){
+            //    margin-left: 30px;
+                
+            // }
+            @media (min-width:576px) and (max-width:767px){
+              
+               margin-top: 5px;
+                
+            }
+            @media (max-width:575px){
+               margin-top: 5px;
+                
+            }
+            
+              
           }
           
           button.round{
@@ -269,28 +343,82 @@ div.progress__bar{
            cursor: pointer;
           }
         }
-        }
+      }
         div.payment-totalbody{
-         position:relative ;
+         display: flex;
+         vertical-align: top;
          // flex-direction: column;
          display: inline-block;
          width: 30%;
+         padding: 30px 0px;
          // border: 1px solid red;
-         position: absolute;
-         right: 40;
-         top: 130px;
+         // position: absolute;
+         // right: 40;
+         // top: 130px;
+         @media (min-width:992px) and (max-width:1199px){
+            width: 99%;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 20px 0px;
+
+         }
+         @media (min-width:768px) and (max-width:991px){
+            width: 99%;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 20px 0px;
+         }
+         @media (min-width:576px) and (max-width:767px){
+            width: 99%;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 20px 0px;
+         }
+         @media (max-width:575px){
+            width: 99%;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 20px 0px;
+         }
+         
          div.row {
                   clear:both;
                   padding:10px;
                   margin: 5px auto;
+                  @media (min-width:992px) and (max-width:1199px){
+                     margin: 0 auto;
+                     display: flex;
+                     justify-content: center;
+                     
+         
+                  }
+                  @media (min-width:768px) and (max-width:991px){
+                     margin: 0 auto;
+                     display: flex;
+                     justify-content: center;
+                  }
+                  @media (min-width:576px) and (max-width:767px){
+                     margin: 0 auto;
+                     display: flex;
+                     justify-content: center;
+                  }
+                  @media (max-width:575px){
+                     margin: 0 auto;
+                     display: flex;
+                     justify-content: center;
+                  }
                   
                   span.label {float:left;width:160px;text-align:left;}
                   div.formw{float:right;width:100px;text-align:right;}
                   input.formw {float:right;width:100px;text-align:right;}
                }
       }
+
+        
+        
       }
       .form_wrapper {
+         padding: 20px 10px;
          vertical-align: top;
          position: relative;
          width: 48%;
@@ -305,34 +433,107 @@ div.progress__bar{
          // flex-direction: column;
          background-color: #ebebeb;
          border: none;
-        }
-         .step_title{
-            margin: 10px;
-            color: #1D1E4C;
+         color: #1D1E4C;
+         @media (min-width:992px) and (max-width:1199px){
+            width: 96%;
+            // margin: 20px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+
          }
+         @media (min-width:768px) and (max-width:991px){
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+             
+         }
+         @media (min-width:576px) and (max-width:767px){
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+             
+         }
+         @media (max-width:575px){
+            width: 96%;
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+             
+         }
+         
+
+         
          .creadDetail,.consignee{
+            
+               // padding: 20px;
             .creadCardimg img{
-               width: 100px;
-               height: 70px;
+               width: 60px;
+               height: 40px;
+               margin: 5px 5px;
+               @media (min-width:992px) and (max-width:1199px){
+                  margin: 10px 15px;
+               }
+               @media (min-width:768px) and (max-width:991px){
+                  margin: 10px 10px;
+               }
+               @media (min-width:576px) and (max-width:767px){
+                  display: none;
+                 
+               }
+               @media (max-width:575px){
+                  display: none;
+                   
+               }  
             }
             div.row {
                clear:both;
-               padding:10px;
+               padding:0px;
                margin: 5px auto;
+               display: flex;
                
                .label {
                      float:left;
-                     width:130px;text-align:right;}
+                     width:140px;
+                     text-align:right;
+                     @media (min-width:768px) and (max-width:991px){
+                        width:140px;
+                     }
+                     @media (min-width:576px) and (max-width:767px){
+                        width:140px;
+                     }
+                     @media (max-width:575px){
+                        width:140px;
+                     }  
+                    }
                .form{
                   float:left;
-                  width:100px;
-                  text-align:left; 
+                  width:200px;
+                  text-align:center; 
                   margin: 3px;
                   border: none;
                   border-radius: $inputRadius;
                   background-color: #C2C2C2;
                   border-color: #1D1E4C;
                   line-height: $lineHeight;
+                  display: block;
+                  @media (min-width:992px) and (max-width:1199px){
+                     width:400px;
+                  }
+                  @media (min-width:768px) and (max-width:991px){
+                     width:300px;
+                     line-height: $lineHeight*1.5;
+                  }
+                  @media (min-width:576px) and (max-width:767px){
+                     width:300px;
+                     line-height: $lineHeight*1.5;
+                  }
+                  @media (max-width:575px){
+                     width:300px;
+                     line-height: $lineHeight*1.5;
+                  }  
                   
                }
                
@@ -345,13 +546,14 @@ div.progress__bar{
             //    }
             .input-group {
                position: relative;
-               display: -webkit-box;
-               display: -ms-flexbox;
-               display: flex;
+               display: inline-block;
+               // display: -webkit-box;
+               // display: -ms-flexbox;
+               // display: flex;
                // -ms-flex-wrap: wrap;
                flex-wrap: wrap;
-               -webkit-box-align: stretch;
-               -ms-flex-align: stretch;
+               // -webkit-box-align: stretch;
+               // -ms-flex-align: stretch;
                // align-items: stretch;
                width: 100%;
                .form-control{
@@ -359,9 +561,12 @@ div.progress__bar{
                }
             }
          }
+   
          .consignee{ 
-            .member.addAddress{
+            .member,.addAddress{
               padding: 20px 0;
+              margin: 20px 0;
+              text-align: left;
             
             div.row {
                clear:both;
@@ -369,10 +574,20 @@ div.progress__bar{
                margin: 5px auto;
                
                .label {float:left;
-                     width:130px;text-align:right;}
+                     width:130px;text-align:right;
+                     @media (min-width:768px) and (max-width:991px){
+                        width:140px;
+                     }
+                     @media (min-width:576px) and (max-width:767px){
+                        width:140px;
+                     }
+                     @media (max-width:575px){
+                        width:140px;
+                     }  
+                  }
                .form{
                   float:left;
-                  width:100px;
+                  width:300px;
                   text-align:left; 
                   margin: 3px;
                   border: none;
@@ -380,6 +595,21 @@ div.progress__bar{
                   background-color: #C2C2C2;
                   border-color: #1D1E4C;
                   line-height: $lineHeight;
+                  @media (min-width:992px) and (max-width:1199px){
+                     width:400px;
+                  }
+                  @media (min-width:768px) and (max-width:991px){
+                     width:300px;
+                     line-height: $lineHeight*1.5;
+                  }
+                  @media (min-width:576px) and (max-width:767px){
+                     width:300px;
+                     line-height: $lineHeight*1.5;
+                  }
+                  @media (max-width:575px){
+                     width:300px;
+                     line-height: $lineHeight*1.5;
+                  }  
                }
             
             }
@@ -387,7 +617,7 @@ div.progress__bar{
          
          }
          }
-
+      
       }
 
       // form.paymentForm{
@@ -430,60 +660,161 @@ div.progress__bar{
       //    }
       //  }
    .btn_group{
-      display: flex;
-      padding: 20px;
+      // display: flex;
+      border: none;
+      border-radius: 15px;
+      padding: 20px 50px;
       width: 100%;
       margin: 10px auto;
+      text-align: center;
+      button:first-child {
+         background-color: #1D1E4C;
+      }
+      button:last-child {
+         background-color: #EF4325;
+      }
       .btn{
+         border: none;
+      margin: 10px 50px;
+      padding: 5px 20px;
       display: inline-block;
-    font-weight: 400;
-    color: #212529;
-    text-align: center;
-    vertical-align: middle;
-    font-size: $btnTxt;
-   //  background-color: #1D1E4C;
-    border: 1px solid #1D1E4C;
-    border-radius: $btnRadius;
-    padding: 5px;
-    line-height: $lineHeight;
-    font-family: $chinese;
-    padding: 5px 30px;
-    margin: 5px auto;
-    outline: none;
-      button.cfmpay{
+      font-weight: 400;
+      color: #fafafa;
+      text-align: center;
+      vertical-align: middle;
+      font-size: $btnTxt;
+      border-radius: $btnRadius;
+      line-height: $lineHeight;
+      font-family: $chinese;
+      outline: none;
+      .finshbtn{
          background-color: #EF4325;
          font-size: $btnTxt;
-         color:#1D1E4C;
          color: #fafafa;
 
       }
    }
    }
-   #finsh_wrapper {
-      padding: 60px;
-      background-color: #fff;
-      border-radius: 15px;
-      margin: 20px auto;
-      width: 50%;
-      text-align: center;
-         .btn{
-            display: inline-block;
-          font-weight: 400;
-          color: #212529;
-          text-align: center;
-          vertical-align: middle;
-          font-size: $btnTxt;
-         //  background-color: #1D1E4C;
-          border: 1px solid #1D1E4C;
-          border-radius: $btnRadius;
-          padding: 5px;
-          line-height: $lineHeight;
-          font-family: $chinese;
-          padding: 5px 30px;
-          margin: 20px ;
-          outline: none;
-      }
-
-      
-} 
+ }
 }
+
+
+.full-screen{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 999;
+background-color:rgba(5, 5, 5, 0.8) ;
+display: flex;
+justify-content: center;
+align-items: center;
+display: none;
+.disc {
+   // width: 50%;
+   // height: 50%;
+   width: 600px;
+   height: 300px;
+   padding: 30px;
+   // position: relative;
+   position: absolute;    
+   top: 50%;              
+   left: 50%;
+   transform: translate(-50%,-50%);
+   background-color: #1D1E4C;
+   color: #fafafa;
+   border-radius: 15px;
+   text-align: center;
+      // top: 100%;
+   // vertical-align: top;
+   margin: 50px auto;
+   line-height: 100px;
+   @media (min-width:992px) and (max-width:1199px){
+      width: 600px;
+      height: 300px;
+   }
+   @media (min-width:768px) and (max-width:991px){
+      width: 500px;
+      height: 250px;
+      line-height: 50px;
+       
+   }
+   @media (min-width:576px) and (max-width:767px){
+      width: 500px;
+      height: 250px;
+      line-height: 50px;
+       
+   }
+   @media (max-width:575px){
+      width: 300px;
+      height: 250px;
+      line-height: 50px;
+
+       
+   }
+   
+   .step_done_title{
+      // margin: 0px 20px 20px 20px;
+      text-align: center;
+      align-items: center 
+      
+   }
+   }
+}
+// #finsh_wrapper {
+//    padding: 60px;
+//    background-color: #fff;
+//    border-radius: 15px;
+//    margin: 20px auto;
+//    width: 50%;
+//    text-align: center;
+//       .btn{
+//          display: inline-block;
+//        font-weight: 400;
+//        color: #212529;
+//        text-align: center;
+//        vertical-align: middle;
+//        font-size: $btnTxt;
+//       //  background-color: #1D1E4C;
+//        border: 1px solid #1D1E4C;
+//        border-radius: $btnRadius;
+//        padding: 5px;
+//        line-height: $lineHeight;
+//        font-family: $chinese;
+//        padding: 5px 30px;
+//        margin: 20px ;
+//        outline: none;
+//    }
+
+   
+// } 
+
+
+// .btn_group{
+//    // display: flex;
+//    padding: 50px;
+//    width: 100%;
+//    margin: 10px auto;
+//    text-align: center;
+//    .btn{
+//    margin: 10px 50px;
+//    padding: 0 20px;
+//    display: inline-block;
+//    font-weight: 400;
+//    color: #212529;
+//    text-align: center;
+//    vertical-align: middle;
+//    font-size: $btnTxt;
+//    border-radius: $btnRadius;
+//    line-height: $lineHeight;
+//    font-family: $chinese;
+//    outline: none;
+//    .finshbtn{
+//       background-color: #EF4325;
+//       font-size: $btnTxt;
+//       color: #fafafa;
+
+//    }
+// }
+// }

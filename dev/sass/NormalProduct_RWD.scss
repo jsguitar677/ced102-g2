@@ -1,0 +1,565 @@
+//@import '../var';
+//@import '../all.scss';
+//=========================================
+//=============共用規格設定如下=============
+//font-family
+$english: 'Palatino Linotype';
+$chinese: 'noto sans tc';
+//Header
+$navH:66px;
+$logoW:50px;
+//Footer
+$footerH:500px;
+// Font Size
+$p:15px;
+$h1:72px;
+$h2:60px;
+$h3:48px;
+$h4:38px;
+$h5:28px;
+$h6:22px;
+$h7:18px;
+$contentTxt:15px;   //內文字體大小
+$btnTxt:15px;   //按鈕字體大小
+$regionTxt:28px;//區域性字體
+$contentSubTit:22px;//內文副標題
+$navTxt:15px;//導覽列文字
+$line-height:30px;//文字行高
+$letter-Spacing:2px;//文字間距
+$padding-hint:10px;//頁面提示字padding
+//Others
+$pageW:1200px;//網頁寬
+$reserveSide:30px;//左右預留寬度
+//Radius
+$borderRadius:15px;
+$btnRadius:15px;
+$inputRadius:5px;
+//box-shadow
+$box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+//敬航
+$closeBtn:27px;//關閉紐大小
+//header
+$navH:66px;
+$logoW:50px;
+//Footer
+$footerH:500px;
+//new color
+$color_regulation:(
+    'btnPink': #FF9898,
+    'btnBlue': #1654FF,
+    'btnRed': #EF4325,
+    'orange':#FFAE41,
+    'pink':#FF498C,
+    'lake':#09E4C7,
+    'black':#1E1E1E,
+    'blue':#1D1E4C,//主要色
+    'white':#fafafa,//需要(白色)統一用這一個
+    'white-bg':#F6F6F6,//背景為暗色需改成白色(背景底色)
+    'red':#EF4325,//警示色
+    'green':#0e6d41,//環保幣顏色
+    'gray-input-hintText':#C2C2C2,//input的提示顏色
+    'blue-input-border':#1D1E4C,//input的邊框顏色
+    'gray':#C6C6C6,// 頁面提示字顏色(灰色)
+    'blackGray':#0D1017,//footer背景: 黑灰色
+    'footerGray':#2A323D,//footer背景字體色、nav顏色(黑灰色)
+    'footerSide':#161c24,//footer旁邊顏色
+    'footerGray2':rgba(66, 79, 95,.1),
+);
+//=============共用規格設定如上=============
+//=========================================
+
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: $english, $chinese;
+    background-color: map-get($color_regulation,'white-bg' );
+}
+
+//左側 直向 麵包條
+div.title-block{
+    h5.title {
+        position:absolute;
+        top: $navH;
+        left:0;
+        margin:0;
+        font-size: 20px;
+        font-weight: normal;
+        display: inline-block;
+        white-space: nowrap;
+        padding: 10px;
+        transform: rotate(90deg) translateY(-100%);
+        transform-origin: 0 0;
+        color:map-get($color_regulation,'blue');
+        @media (max-width:575px){
+            font-size: $h7;
+        }
+        span {
+            color:map-get($color_regulation,'gray' );
+        }
+        @media (max-width:575px){
+            font-size: $h7;
+        }
+    }
+}
+
+section.NormalProductPage {
+    letter-spacing:$letter-Spacing;
+    max-width: calc( #{$pageW} - #{$reserveSide} * 2 );
+    margin:0 auto;
+    font-size: 0px;
+    text-align: center;
+    margin-top:$navH;
+    position: relative;
+    //header下方背景圖(毛玻璃效果)，此div不占位
+    div.content_normalProduct {
+        text-align: left;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        div.top_back_img_1 {
+            position:relative;
+            margin: 0 auto;
+            z-index: -5;
+            @media (max-width:1200px){
+                width:calc(100% - #{$reserveSide} * 2);
+            }
+            div.top_back_img_2{  
+                width: 100%;
+                max-height:426px;
+                position:absolute;
+                top:-5px;
+                left:0;    
+                border-radius: 0 0 $borderRadius $borderRadius;
+                overflow: hidden;
+                box-shadow: $box-shadow;
+                img{
+                    width: 105%;
+                    filter: blur(7px); 
+                }
+            }
+        }
+        //標題:一般商品 - 環保手提袋
+        h5.title_2{
+            font-size: $h5;
+            color: map-get($color_regulation,'blue');
+            margin:0 auto;
+            padding:60px 0;
+            text-align: center;
+            @media (max-width:575px){
+                font-size: $h6;
+                padding:20px;
+            }
+        }
+    }
+}
+
+
+section.NormalProductPage{
+    div.content_normalProduct{
+        div.container{
+            margin:0 auto;
+            padding:0;
+            width:100%;
+            div.all{
+                margin:0 auto;
+                width:100%;
+                padding:0 $reserveSide;
+                //左上側 圖片展示&商品解說區==================================================================
+                //左上側 圖片展示&商品解說區==================================================================
+                //左上側 圖片展示&商品解說區==================================================================
+                div.leftarea{
+                    margin:0 auto;
+                    padding:0;
+                    padding-right:15px;
+                    @media (max-width:991px) {
+                        padding-right: 0;
+                    }
+                    //左側 (商品展示區)========================
+                    //左側 (商品展示區)========================
+                    //左側 (商品展示區)========================
+                    div.leftarea_blockA{
+                        width:100%;
+                        padding:0;
+                        display: flex;
+                        @media (max-width:520px) {
+                            display:inline-block;
+                        }
+                        //左邊單獨show 1張 (占50%)
+                        //左邊單獨show 1張 (占50%)
+                        //左邊單獨show 1張 (占50%)
+                        div.leftarea_blockA_L{
+                            cursor: pointer;
+                            width:49%;
+                            overflow: hidden;
+                            border-radius: $borderRadius;
+                            position:relative;
+                            box-shadow: $box-shadow;
+                            margin-right:1%;
+                            @media (max-width:520px) {
+                                width:100%;
+                                margin-right: 0;
+                            }
+                            img{
+                                width:100%;
+                            }
+                            div.explain{
+                                font-size: $p;
+                                width:36%;
+                                height:33px;
+                                line-height: 33px;
+                                text-align: center;
+                                border-radius: $borderRadius;
+                                position:absolute;
+                                bottom:15px;
+                                right:15px;
+                                background-color: map-get($color_regulation,'gray' );
+                                color:map-get($color_regulation,'blue');
+                                box-shadow: $box-shadow;
+                                background: hsla(0,0%,100%,.6); 
+                            }
+                        } 
+                        //右邊區塊show 4張 (共占50%)
+                        //右邊區塊show 4張 (共占50%)
+                        //右邊區塊show 4張 (共占50%)
+                        div.leftarea_blockA_R{
+                            cursor: pointer;
+                            width:50%;
+                            @media (max-width:520px) {
+                                width:100%;
+                                margin-top: 7px;
+                            }
+                            div.leftarea_blockA_R1{
+                                width:49%;
+                                overflow: hidden;
+                                display:inline-block;
+                                border-radius: $borderRadius;
+                                position:relative;
+                                box-shadow: $box-shadow;
+                                img{
+                                    width:100%;
+                                }
+                                div.explain{
+                                    font-size: $p;
+                                    width:75%;
+                                    height:33px;
+                                    line-height: 33px;
+                                    text-align: center;
+                                    border-radius: $borderRadius;
+                                    position:absolute;
+                                    bottom:15px;
+                                    left:50%;
+                                    transform: translateX(-50%);
+                                    background-color: map-get($color_regulation,'gray' );
+                                    color:map-get($color_regulation,'blue');
+                                    box-shadow: $box-shadow;
+                                    background: hsla(0,0%,100%,.6); 
+                                }
+                            }
+                            div.leftarea_blockA_R11{
+                                margin-top: 3.2%;
+                            }
+                            div#NP_ZoomIn3, div#NP_ZoomIn5{
+                                margin-left:1%;
+                            }
+                        }
+                    }
+                    //左側 (商品簡介區)========================
+                    //左側 (商品簡介區)========================
+                    //左側 (商品簡介區)========================
+                    //標題:商品簡介
+                    div.leftarea_blockB{ 
+                        margin-top:10px;
+                        width:100%;
+                        margin-top:20px;
+                        padding:20px;
+                        border-radius: $borderRadius;
+                        box-shadow: $box-shadow;
+
+                        h6.aboutProducts{ 
+                            font-size: $h6;
+                            color:map-get($color_regulation,'blue');
+                            margin:0;
+                            padding-top:5px;
+                            display:inline-block;
+                            @media (max-width:991px){
+                                padding:0;
+                            }
+                            @media (max-width:767px){
+                                font-size: $h7;
+                            }
+                        }
+                        img#showInfo{
+                            width:$h5;
+                            height:$h5;
+                            border-radius: 50%;
+                            box-shadow: $box-shadow;
+                            line-height: $h5;
+                            display:inline-block;
+                            display:none;
+                            @media (max-width:991px){
+                               display:block; 
+                            }
+                        }
+                        p#showInforHere{
+                            padding-left:35px;
+                            padding-right:35px;
+                            font-size: $p;
+                            font-weight: 550;
+                            color:map-get($color_regulation,'blue');
+                            @media (max-width:991px){
+                                display:none; 
+                            }
+                            @media (max-width:575px){
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+                //右側 選擇數量區選擇區=================================================================
+                //右側 選擇數量區選擇區=================================================================
+                //右側 選擇數量區選擇區=================================================================
+                div.rightarea{
+                    margin:0 auto;
+                    border-radius: $borderRadius;
+                    box-shadow: $box-shadow;
+                    background-color: map-get($color_regulation,'white-bg' );
+                    background: hsla(0,0%,100%,.6);
+                    @media (max-width:991px) {
+                        margin-top: 25px;
+                    }
+                    form.inforOfTheForm{
+                        width:98%;
+                        margin: 0 auto;
+                        //選擇數量區==============================
+                        //選擇數量區==============================
+                        //選擇數量區==============================
+                        div.qty_block{
+                            width:100%;
+                            font-size: $p;
+                            padding-bottom: 50px;
+                            //小標:數量
+                            p.stepExplain{
+                                font-size: $p;
+                                font-weight: 550;
+                                margin:0;
+                                padding-top:50px;
+                                padding-bottom:10px;
+                                @media (max-width:450px) {
+                                    font-size: 12px; 
+                                }
+                            }
+                            div.placememtOfQty{
+                                width:98%;
+                                margin:0 auto;
+                                @media (max-width:450px) {
+                                    font-size: 12px; 
+                                }
+                                select.select_qty_pcs{
+                                    width:100px;
+                                    height: 35px;
+                                    padding-left: 30px;
+                                    border-radius: $inputRadius;
+                                    @media (max-width:450px) {
+                                        font-size: 12px; 
+                                    }
+                                }
+                            }
+                        }
+                        //小計區==================================
+                        //小計區==================================
+                        //小計區==================================
+                        div.tal_block{
+                            width:100%;
+                            font-size: $p;
+                            color:map-get($color_regulation,'blue');
+                            //小標:小計
+                            p.stepExplain{
+                                font-weight: 550;
+                                margin:0;
+                                @media (max-width:450px) {
+                                    font-size: 12px; 
+                                }
+                            }
+                            div.placementOfTal{
+                                width:98%;
+                                text-align: right;
+                                @media (max-width:450px) {
+                                    font-size: 12px; 
+                                }
+                                label.thePrice{
+                                    margin-right: 10%;
+                                }
+                            }
+                        }
+                        div.placeOfSubmit{
+                            text-align: center;
+                            margin-bottom: 50px;
+                            a{
+                                button.btn_shopping_cart{
+                                    box-shadow: $box-shadow;
+                                    border-radius: $inputRadius;
+                                    width:145px;
+                                    height:35px;
+                                    line-height: 35px;
+                                    background-color:map-get($color_regulation,'blue');
+                                    color:map-get($color_regulation,'white');
+                                    position:relative;
+                                    padding-right: 10%;
+                                    margin-top:50px;
+                                    cursor: pointer;
+                                    img{
+                                        height:90%;
+                                        border-radius: 50%;
+                                        position:absolute;
+                                        top:50%;
+                                        right:8%;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            div.all_Bottom{
+                margin:0 auto;
+                width:100%;
+                //底部 推薦商品區======================================================================
+                //底部 推薦商品區======================================================================
+                //底部 推薦商品區======================================================================
+                div.bottomarea{
+                    border-radius: $borderRadius;
+                    box-shadow: $box-shadow;
+                    margin:0 atuo;
+                    padding-bottom: 40px;
+                    margin-bottom:70px;
+                    margin-top:25px;
+                    //標題:熱門推薦商品
+                    h5.title_2{
+                        font-size: $h5;
+                        color: map-get($color_regulation,'blue' );
+                        @media (max-width:575px){
+                            font-size: $h6;
+                            padding:20px;
+                        }
+                    }
+                    div.bottomareaBoxA{
+                        width:100%;
+                        margin:0 auto;
+                        padding:0;
+                        vertical-align: top;
+                        text-align: center;
+                        a.goToProductPage{
+                            text-decoration: none;
+                            div.recommendProduct{
+                                position:relative;
+                                width:23.4%;
+                                margin:0.68%;
+                                margin-bottom:2%;
+                                overflow: hidden;
+                                display:inline-block;
+                                border-radius: $borderRadius;
+                                box-shadow: $box-shadow;
+                                text-align: left;
+                                @media (min-width:576px) and (max-width:991px) {
+                                    width:45%;
+                                }
+                                @media (max-width:575px) {
+                                    width:93%;
+                                    margin-bottom: 15px;
+                                }
+                                img{
+                                    width:100%;
+                                }
+                                div.productInfo{
+                                    width: 100%;
+                                    position:absolute;
+                                    bottom:0;
+                                    left:0;
+                                    background-color: map-get($color_regulation,'white-bg' );
+                                    background: hsla(0,0%,100%,.7);
+                                    padding:5% 5% 15% 5%;
+                                    p.NameAndPrice{
+                                        font-size: $p;
+                                        font-weight: 550;
+                                        margin:0;
+                                        display:inline-block;
+                                        margin:3% 7% 3% 0;
+                                        @media (max-width:450px) {
+                                            font-size: 12px; 
+                                        }
+                                    }
+                                    p.text{
+                                        width: 100%;
+                                        font-size: $p;
+                                        color:map-get($color_regulation,'blue'); 
+                                        margin-top: 0;
+                                        overflow: hidden;        //內容溢出處理
+                                        text-overflow: ellipsis; //文字溢出處理
+                                        white-space:nowrap;      //文字超出時不換行
+                                        @media (max-width:450px) {
+                                            font-size: 12px; 
+                                        }
+                                    }
+                                    img.cart{
+                                        position:absolute;
+                                        bottom:7px;
+                                        right:7px;
+                                        width:27.9px;
+                                        border-radius: 50%;
+                                        box-shadow: $box-shadow;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
+
+//燈箱
+section.NormalProductPage{
+    div#NP_lightBox{
+        display:none;
+        position: fixed;
+        top:$navH;
+        left:0;
+        width:100%;
+        height: calc(100vh - #{$navH});
+        background: rgba(0, 0, 0, .75);
+        div.NP_showBox{
+            width:35%;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            @media (max-width:575px){
+                width:80%;
+            }
+            @media (min-width:576px) and (max-width:767px){
+                width:55%;
+            }
+            @media (min-width:768px) and (max-width:991px) {
+                width:45%;
+            }
+            img#NP_showImgHere{
+                width:100%;
+                overflow: hidden;
+                border-radius: $borderRadius;
+                box-shadow: $box-shadow;
+            }
+            img.NP_turnOffBtn{
+                width:$closeBtn;
+                position:absolute;
+                top: #{-$closeBtn};
+                right:#{-$closeBtn};
+            }
+        }
+    }
+}
+

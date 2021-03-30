@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css'/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="../css/indexFront_RWD.css"> -->
+     <!-- 本機端css連結用下列: -->
+    <!-- <link rel="stylesheet" href="./css/NormalProduct_RWD.css"> -->
+    <!-- git css連結用下列: -->
+    <link rel="stylesheet" href="./css/pages/NormalProduct_RWD.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    <title>R一般商品</title>
+</head>
+
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+
+    <!-- 左方麵包條 -->
+    <div class="title-block">
+        <h5 class="title"><span>首頁/商城/</span>一般商品</h5>
+    </div>
+
+    <section class="NormalProductPage">
+        <div class="content_normalProduct">
+            <!-- header底下裝飾背景圖 -->
+            <div class="top_back_img_1">
+                <div class="top_back_img_2">
+                    <img src="./img/mall/banner_005(1).jpg">   
+                </div>
+            </div>
+            <h5 class="title_2">一般商品 - 環保手提袋</h5>
+
+            <!-- 頁面上半部:左側圖區  右側購物選單 -->
+            <div class="container">
+                <div class="row all justify-content-center">
+                    <!-- ====================================左上側 商品展示區==================================== -->
+                    <!-- ====================================左上側 商品展示區==================================== -->
+                    <!-- ====================================左上側 商品展示區==================================== -->
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-11 leftarea">
+                        <div class="leftarea_blockA">
+                        <!-- ============展示圖片區============ -->
+                        <!-- ============展示圖片區============ -->
+                        <!-- ============展示圖片區============ -->
+                            <div class="leftarea_blockA_L" id="NP_ZoomIn1">
+                                <img src="./img/mall/bag11.jpg" alt="">
+                                <div class="explain">正面</div>
+                            </div>
+    
+                            <div class="leftarea_blockA_R">
+                                <div class="leftarea_blockA_R1" id="NP_ZoomIn2">
+                                    <img src="./img/mall/bag12.jpg" alt="">
+                                    <div class="explain">側面</div>
+                                </div>
+                                <div class="leftarea_blockA_R1" id="NP_ZoomIn3">
+                                    <img src="./img/mall/bag14.jpg" alt="">
+                                    <div class="explain">俯視</div>
+                                </div>
+                                <div class="leftarea_blockA_R1 leftarea_blockA_R11" id="NP_ZoomIn4">
+                                    <img src="./img/mall/bag13.jpg" alt="">
+                                    <div class="explain">背面</div>
+                                </div>
+                                <div class="leftarea_blockA_R1 leftarea_blockA_R11" id="NP_ZoomIn5">
+                                    <img src="./img/mall/bag15.jpg" alt="">
+                                    <div class="explain">平放</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============商品簡介區============ -->
+                        <!-- ============商品簡介區============ -->
+                        <!-- ============商品簡介區============ -->
+                        <div class="leftarea_blockB" >
+                            <h6 class="aboutProducts">商品簡介</h6>
+                            <img src="./img/mall/bottom.png" id="showInfo">
+                            <p class="textaboutProducts" id="showInforHere">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae consequuntur doloremque minus, aperiam doloribus mollitia facere fuga est excepturi hic suscipit veniam iste atque esse ab eum ratione ipsam ea soluta quos
+                                voluptas corrupti nesciunt! Soluta eveniet consequatur aliquam repellat animi, porro sed, totam inventore laudantium officiis praesentium in cumque possimus explicabo odit. Culpa ex perspiciatis impedit soluta dolorum voluptatibus
+                                earum quo eum eveniet animi sunt enim placeat eligendi error rerum ad, corporis accusantium beatae in praesentium architecto possimus alias fuga. Illo provident et deleniti aliquam sed voluptates minus quod sequi. Corporis
+                                neque, alias ut quis aperiam enim explicabo quod.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- ====================================右上側 選購數量區==================================== -->
+                    <!-- ====================================右上側 選購數量區==================================== -->
+                    <!-- ====================================右上側 選購數量區==================================== -->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-11 rightarea">
+                        <!-- ============================== -->
+                        <form action="" method="get" class="inforOfTheForm">
+                            <!-- ===========選擇數量區============= -->
+                            <!-- ===========選擇數量區============= -->
+                            <!-- ===========選擇數量區============= -->
+                            <div class="qty_block">
+                                <p class="stepExplain">請選擇購買數量</p>
+                                <div class="placememtOfQty">
+                                    <label class="style_qty">數量-</label>
+                                    <select class="select_qty_pcs" name="select_qty_pcs">
+                                        <option value="1" selected>1</option>
+                                        <option value="2" >2</option>
+                                        <option value="3" >3</option>
+                                        <option value="4" >4</option>
+                                        <option value="5" >5</option>
+                                        <option value="6" >6</option>
+                                        <option value="7" >7</option>
+                                        <option value="8" >8</option>
+                                        <option value="9" >9</option>
+                                        <option value="10" >10</option>
+                                        <option value="11" >11</option>
+                                        <option value="12" >12</option>
+                                        <option value="13" >13</option>
+                                        <option value="14" >14</option>
+                                        <option value="15" >15</option>
+                                        <option value="16" >16</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- =============小計區=============== -->
+                            <!-- =============小計區=============== -->
+                            <!-- =============小計區=============== -->
+                            <div class="tal_block">
+                                <p class="stepExplain">小計</p>
+                                <div class="placementOfTal">
+                                    <label class="thePrice">商品價格</label><label>NT$500</label>
+                                    <br>
+                                    <label class="thePrice">小計金額</label><label>NT$500</label>
+                                </div>
+                            </div>
+                            
+                            <div class="placeOfSubmit">
+                                <button type="submit" name="shopping_cart" class="btn_shopping_cart">加入購物車
+                                    <img src="./img/mall/cart.JPG" alt="">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- =====================================下側 推薦商品區===================================== -->
+                <!-- =====================================下側 推薦商品區===================================== -->
+                <!-- =====================================下側 推薦商品區===================================== -->
+                <div class="row all_Bottom justify-content-center">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-10 bottomarea">
+                        <h5 class="title_2">熱門推薦商品</h5>
+                        <div class="bottomareaBoxA">
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct">
+                                    <img src="./img/mall/bag2.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保購物袋</p>
+                                        <p class="NameAndPrice">NT$500</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <a href="./cart.html"><img src="./img/mall/cart.JPG" class="cart" id="cart"></a>
+                                        
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct B">
+                                    <img src="./img/mall/mask1.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保口罩</p>
+                                        <p class="NameAndPrice B">NT$150</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct B">
+                                    <img src="./img/mall/phone1.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保手機殼</p>
+                                        <p class="NameAndPrice B">NT$1290</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="" class="goToProductPage">
+                                <div class="recommendProduct B">
+                                    <img src="./img/mall/cup1.jpg">
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">環保杯套</p>
+                                        <p class="NameAndPrice B">NT$190</p>
+                                        <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
+                                        <img src="./img/mall/cart.JPG" class="cart" id="cart">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =======================燈箱 : 商品放大展示======================= -->
+        <!-- =======================燈箱 : 商品放大展示======================= -->
+        <!-- =======================燈箱 : 商品放大展示======================= -->
+        <div class="NP_showBox_bg" id="NP_lightBox">
+            <div class="NP_showBox">
+                <img src="./img/mall/bag11.jpg" class="NP_showHere" id="NP_showImgHere">
+                <img src="./img/mall/x_white.png" class="NP_turnOffBtn" id="NPtheTurnOffBtn">
+                <!-- <button class="round-cxl-add" ><i class="fas fa-times-circle"></i></button> -->
+            </div>
+        </div>
+
+    </section> 
+
+
+    <script>
+        //===========燈箱圖片 切換===========:
+        //===========燈箱圖片 切換===========:
+        //===========燈箱圖片 切換===========:
+        $(document).ready(function(){
+            //click第一圖 跳出燈箱
+            $('#NP_ZoomIn1').click(function(){
+                $('#NP_lightBox').css('display','block');
+                $('#NP_showImgHere').attr('src','./img/mall/bag11.jpg');
+            });
+            //click第二圖 跳出燈箱
+            $('#NP_ZoomIn2').click(function(){
+                $('#NP_lightBox').css('display','block');
+                $('#NP_showImgHere').attr('src','./img/mall/bag12.jpg');
+            });
+            //click第三圖 跳出燈箱
+            $('#NP_ZoomIn3').click(function(){
+                $('#NP_lightBox').css('display','block');
+                $('#NP_showImgHere').attr('src','./img/mall/bag14.jpg');
+            });
+            //click第四圖 跳出燈箱
+            $('#NP_ZoomIn4').click(function(){
+                $('#NP_lightBox').css('display','block');
+                $('#NP_showImgHere').attr('src','./img/mall/bag13.jpg');
+            });
+            //click第五圖 跳出燈箱
+            $('#NP_ZoomIn5').click(function(){
+                $('#NP_lightBox').css('display','block');
+                $('#NP_showImgHere').attr('src','./img/mall/bag15.jpg');
+            });
+
+            //click "X" 關閉燈箱
+            $('#NPtheTurnOffBtn').click(function(){
+                $('#NP_lightBox').css('display','none');
+            });
+        });
+    </script>
+    
+    <!-- ================================================================= -->
+
+    <script>
+        //===========商品簡介 切換===========:
+        //===========商品簡介 切換===========:
+        //===========商品簡介 切換===========:
+        $(document).ready(function(){
+            $('#showInfo').click(function(){
+                    $('#showInforHere').slideToggle();
+            })
+        });
+    </script>
+
+
+
+
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <!-- <script src="./js/login.js"></script> -->
+</body>
+</html>
