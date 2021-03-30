@@ -21,9 +21,7 @@ function signRegChange() {
     let signRegF = document.getElementById('signRegFake');
     let title = document.getElementById('signUpFConTitle');
     if (signRegF.innerHTML == "建立帳號") {
-        // document.getElementById('logCarousel').style.right = ((100)/1.6)+'%';
         document.getElementById('logCarousel').style.left = '-60%';
-        // document.getel
         signRegF.innerHTML = "進行登入";
         title.innerHTML = "登入會員";
     } else if (signRegF.innerHTML == "進行登入") {
@@ -31,6 +29,16 @@ function signRegChange() {
         signRegF.innerHTML = "建立帳號";
         title.innerHTML = "註冊會員";
     }
+    //======================留著
+    // if (document.getElementById('logCarousel').style.left == 0) {
+    //     document.getElementById('logCarousel').style.left = '-60%';
+    //     signRegF.innerHTML = "進行登入";
+    //     title.innerHTML = "登入會員";
+    // } else if (document.getElementById('logCarousel').style.left == '-60%') {
+    //     document.getElementById('logCarousel').style.left = 0;
+    //     signRegF.innerHTML = "建立帳號";
+    //     title.innerHTML = "註冊會員";
+    // }
 };
 // window.resize(function(){
 
@@ -61,15 +69,16 @@ window.addEventListener('load', logRegi, false);
 
 // 先抓到每個物件參考
 function logRegi2() {
-    document.getElementById('logForgetCode').onclick = showModal2;
+    // document.getElementById('logForgetCode').onclick = showModal2;
     document.getElementById('sendCodeBack').onclick = signRegChange2;
     document.getElementById('closeBtn2').onclick = exitLogReg2;
     document.getElementById('signRegFake2').onclick = turnBackToReg;
 };
 
-//回到註冊燈箱
+//回到修改燈箱
 function turnBackToReg(){
     document.getElementById('logCarousel2').style.left = 0;
+    document.getElementById('logCarousel').style.left = '-60%';
     document.getElementById('lightbox2').style.display = 'none';
     document.getElementById('lightbox').style.display = 'block';
 }
@@ -79,7 +88,6 @@ function turnBackToReg(){
 function showModal2() {
     let aa = document.getElementById('logForgetCode');
     aa.onclick = function(){
-        document.getElementById('lightbox').style.display = 'none';
         document.getElementById('lightbox2').style.display = 'block';
         document.getElementById('lightbox2').style.opacity = 1;
     };
@@ -88,9 +96,11 @@ function showModal2() {
 function signRegChange2() {
     let signRegF = document.getElementById('signRegFake2');
     let title = document.getElementById('signUpFConTitle2');
+    let title1 = document.getElementById('signUpFConTitle');
     if (signRegF.innerHTML == "建立帳號") {
         document.getElementById('logCarousel2').style.left = '-60%';
-
+        // signRegF.innerHTML = "註冊會員";
+        title1.innerHTML ="進行登入";
     }
 };
 // window.resize(function(){
@@ -98,6 +108,7 @@ function signRegChange2() {
 // })
 //離開登入註冊燈箱
 function exitLogReg2() {
+    document.getElementById('lightbox').style.display = 'none';
     document.getElementById('lightbox2').style.display = 'none';
     document.getElementById('logCarousel2').style.left = 0;
     document.getElementById('memId2').value = "";
@@ -107,8 +118,10 @@ function exitLogReg2() {
     document.getElementById('regId2').value = "";
     document.getElementById('regConPsw2').value = "";
     document.getElementById('regVerifi2').value = "";
+    
 }
 window.addEventListener('load', logRegi2, false);
+window.addEventListener('load',showModal2);
 
 
 //彈出漢堡
