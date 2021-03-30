@@ -2,7 +2,9 @@
 
 
 /* ::content-------------------------------------------------------------------------------------- */
-
+body{
+    overflow-x: hidden;
+}
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,800");
 @import url("https://fonts.googleapis.com/css?family=Oswald:500");
 ::-moz-selection {
@@ -105,6 +107,9 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     transform: translateX(25%);
 }
 
+.paragraph{
+    width: 40%;
+}
 .ocean {
     grid-row: 1/2;
     grid-column: 1/-1;
@@ -332,9 +337,9 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     left: 0;
     bottom: 0;
     right: 0;
-    width: 100%;
+    width: 1200px;
     height: 100%;
-    margin: auto;
+    margin-left:50px;
 }
 
 *,
@@ -509,15 +514,11 @@ div.ah_card_section {
     color: white;
     background-color: black;
     border: none;
+    outline: none;
 }
 
 .btn:hover {
     background-color: #0d0d0d;
-}
-
-.btn:focus {
-    outline: 1px dashed yellow;
-    outline-offset: 3px;
 }
 
 @media (hover: hover) and (min-width: 1076px) {

@@ -168,7 +168,7 @@ body header div#rgtUl ul li {
 }
 
 body header div#rgtUl ul li:nth-child(3) {
-    padding-right: 30px;
+    padding-right: 0px;
 }
 
 body header div#rgtUl ul li i.fwIcon {
@@ -391,6 +391,8 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
     display: block;
     margin: 0 auto;
     margin-top: 1%;
+    cursor: pointer;
+    border: none;
 }
 
 body div#page1 div#lightbox div#logWrapper div#closeBtn {
@@ -1034,7 +1036,7 @@ button#createAcc2 {
                             text-align: center;
                             margin-left: 0px !important;
                             background-color: map-get($map: $color_regulation, $key: 'black');
-                            width: 300px;
+                            width: 320px;
                             padding-left: 20px;
                             &:hover{
                                 background-color: map-get($map: $color_regulation, $key: 'red');
@@ -1083,7 +1085,7 @@ button#createAcc2 {
                 a{
                     color: map-get($map: $color_regulation, $key: 'white');
                     &:hover{
-                       color: map-get($map: $color_regulation, $key: 'redBtn'); 
+                       color: map-get($map: $color_regulation, $key: 'redBtn');
                     }
                 }
             }
@@ -1207,6 +1209,8 @@ div.closeRotate1{
 div#logCarousel, div#logCarousel2 form{
     input{
         outline: 0;
+        border-radius: 5px;
+        border:none;
         &:focus{
             border-color: map-get($map: $color_regulation, $key: 'blue-input-border');
         }
@@ -1221,6 +1225,9 @@ div#logCarousel, div#logCarousel2 form{
         ul{
             li{
                 padding-right: 20px !important;
+                &:nth-child(3){
+                    padding-right: 0px !important;
+                }
             }
         }
     }
@@ -1233,5 +1240,20 @@ div#logCarousel, div#logCarousel2 form{
     }
     div#navlogo{
         width: 105px !important;
+    }
+}
+@media all and (max-width:400px){
+    footer{
+        .footerTOP{
+            font-size: 81px !important;
+        }
+        .footerBottom ul li{
+            font-size: 24px !important;
+        }
+    }
+}
+@media all and (max-width:370px){
+    header nav{
+        padding: 0px 5px !important;
     }
 }

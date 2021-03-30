@@ -5,18 +5,18 @@ body {
 div.spacing_block {
     // border: 1px solid red;
     width: 100%;
-    height: 110vh;
+    height: 50vh;
     background-color: black;
     position: relative;
 }
 
 div.spacing_block>h1 {
-    font-size: 5vw;
+    font-size: 40px;
     position: absolute;
     z-index: 100;
     color: white;
-    right: 10%;
-    bottom: 10%;
+    right: 3%;
+    bottom: 50%;
     text-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
 
@@ -28,11 +28,10 @@ div.ad_container {
 
 div.ad_bread {
     position: absolute;
-    top: 25%;
+    top: 8%;
     left: 0;
     transform: rotate(90deg) translateY(-100%);
     transform-origin: 0 0;
-    margin: 10px;
 }
 
 div.ad_bread>ul {
@@ -44,6 +43,7 @@ div.ad_bread>ul>li {
     font-weight: bolder;
     color: #C6C6C6;
     display: inline-block;
+  
 }
 
 div.ad_bread ul li::after {
@@ -97,6 +97,10 @@ div.ad_content {
     color: white;
     // width: 100%;
     padding-top: 10px;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
 }
 
 .ad_inner_content>p {
@@ -104,7 +108,7 @@ div.ad_content {
     font-size: 15px;
     width: 70%;
     margin-left: 30%;
-    margin-top: 3%;
+    margin-top: 10%;
     line-height: 30px;
     letter-Spacing: 2px;
 }
@@ -112,7 +116,7 @@ div.ad_content {
 .ad_block>img {
     margin-left: 15%;
     width: 200px;
-    margin-top: 8%;
+    margin-top: 5%;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
@@ -216,7 +220,7 @@ div.ad_grid_content {
     display: grid;
     // border: 1px solid orange;
     width: 80%;
-    height: 550px;
+    height: 600px;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 200px;
     font-size: 12px;
@@ -301,7 +305,7 @@ div.ad_grid_content>h1 {
 div.ad_grid_content>div.ad_box4 {
     grid-column-start: 1;
     grid-column-end: 4;
-    height: 340px;
+    height: 380px;
     text-align: center;
     // border: 1px solid red;
     position: relative;
@@ -370,42 +374,58 @@ div.founder>h1>img {
     margin: 0 auto;
     margin-top: 40px;
     width: 65%;
-    height: 55.5px;
-    border-radius: 10px;
-    border: 3px solid #1D1E4C;
+    height: 20px;
+    font-weight: bolder;
     text-align: center;
-    -moz-box-shadow: inset 0 0 10px #ccc;
-    -webkit-box-shadow: inset 0 0 10px #ccc;
-    box-shadow: inset 0 0 10px #ccc;
-}
+    box-shadow: 0 0 5px #00000081;}
+
+.progress-bg2 {
+        margin: 0 auto;
+        margin-top: 40px;
+        width: 65%;
+        height: 20px;
+        font-weight: bolder;
+        text-align: center;
+        box-shadow: 0 0 5px #00000081;}
 
 .progress-bar {
-    height: 50px;
-    border-radius: 8px;
+    box-shadow: 0 0 5px #00000081;
+    height: 20px;
     float: left;
-    width: 50%;
-    /* fallback */
-    background-color: #09E4C7;
-    /* Safari 5.1, Chrome 10+ */
-    // background: -webkit-linear-gradient(top, #1c314a, #27425f); 
-    // /* Firefox 3.6+ */ 
-    // background: -moz-linear-gradient(top, #1c314a, #27425f); 
-    // /* IE 10 */ 
-    // background: -ms-linear-gradient(top, #1c314a, #27425f); 
-    // /* Opera 11.10+ */ 
-    // background: -o-linear-gradient(top, #1c314a, #27425f);	
+    background-color: #1D1E4C;
+    width: 60%;
 }
+.progress-bar2 {
+    box-shadow: 0 0 5px #00000081;
+    height: 20px;
+    float: left;
+    background-color: #EF4325;
+    width: 40%;
+}
+
 
 .progress-bg h3.goal,
 .progress-bg h3.raised {
     font-family: Arial, sans-serif;
-    font-size: 2em;
+    font-size: 15px;
     font-weight: 600;
-    line-height: 52px;
+    // line-height: px;
     margin: 0;
     padding: 0;
     text-align: center;
     display: inline;
+    
+}
+.progress-bg2 h3.goal,
+.progress-bg2 h3.raised {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    // line-height: px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: inline;   
 }
 
 .progress-bg h3.raised {
@@ -416,7 +436,18 @@ div.founder>h1>img {
 }
 
 .progress-bg h3.goal {
-    color: #b2b2b2;
+    color: black;
+    text-align: center;
+}
+.progress-bg2 h3.raised {
+    color: #fff;
+    padding: 0 25px 0 0;
+    padding-bottom: 20px;
+    height: 20px;
+}
+
+.progress-bg2 h3.goal {
+    color: black;
     text-align: center;
 }
 
@@ -441,56 +472,17 @@ body .progress-bg h3.raised {
     }
 }
 
-.progress-bg h3.goal {
-    float: right;
-    display: inline;
-    padding: 0 25px 0 0;
-    text-align: center;
-    height: 40px;
-}
 
-body .progress-bg div {
-    -webkit-animation: progress-bar 2s ease forwards;
-    -moz-animation: progress-bar 2s ease forwards;
-    -o-animation: progress-bar 2s ease forwards;
-    animation: progress-bar 2s ease forwards;
-}
 
-@-webkit-keyframes progress-bar {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 50%;
-    }
-}
 
-@-moz-keyframes progress-bar {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 50%;
-    }
-}
 
-@-o-keyframes progress-bar {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 50%;
-    }
-}
 
-@keyframes progress-bar {
-    from {
-        width: 0%;
-    }
-    to {
-        width: 50%;
-    }
-}
+
+
+
+
+
+
 
 @media (max-width: 658px) {
     .progress-bg h3.goal,
