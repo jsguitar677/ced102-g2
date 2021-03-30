@@ -4,6 +4,7 @@ function logRegi() {
     document.getElementById('logRegiCli').onclick = showModal;
     document.getElementById('signRegFake').onclick = signRegChange;
     document.getElementById('closeBtn').onclick = exitLogReg;
+    document.getElementById('logInButton').onclick = FakerLogIn;
 };
 // nav顯示的登入狀態
 function showModal() {
@@ -40,9 +41,43 @@ function signRegChange() {
     //     title.innerHTML = "註冊會員";
     // }
 };
-// window.resize(function(){
+//===================登入假帳號
+function FakerLogIn(){
+    let memId = document.getElementById('memIdCol');
+    let memPsw = document.getElementById('memPswCol');
+    let status = document.getElementById('logStat');
+    if(memId.value == 'John@mail.com' && memPsw.value == 123){
+        status.innerHTML = 'John';
+        document.getElementById('lightbox').style.display = 'none';
+        document.getElementById('memId').value = "";
+        document.getElementById('memPsw').value = "";
+        document.getElementById('regName').value = "";
+        document.getElementById('regBirth').value = "";
+        document.getElementById('regId').value = "";
+        document.getElementById('regPsw').value = "";
+        document.getElementById('regConPsw').value = "";
+        document.getElementById('regVerifi').value = "";
+    }else{
+        alert('輸入帳號密碼有誤!!');
+    }
+}
+//=================登出帳號
 
-// })
+document.getElementById('logStat').addEventListener('click',function FakerLogOut(){
+    let status = document.getElementById('logStat') ;
+    if(status.innerHTML != '登入/註冊'){
+        status.innerHTML = '登入/註冊';
+    }
+})
+
+
+
+
+
+
+
+
+
 //離開登入註冊燈箱
 function exitLogReg() {
     document.getElementById('lightbox').style.display = 'none';
@@ -140,7 +175,7 @@ function popOutBurger(){
         close2.classList.toggle('closeRotate2');
         close3.classList.toggle('closeRotate3');
         if(popList.style.left =='2000px'){
-            popList.style.left = '-30px';
+            popList.style.left = '-10px';
             popList.style.opacity = 1;
             
         }else{
