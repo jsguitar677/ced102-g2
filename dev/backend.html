@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- 字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
         
 </head>
 <body>
@@ -149,7 +150,172 @@
                         </div>
                         <div id="reportMag" class="tabContent">
                             <h3>檢舉留言管理</h3>
-                            <h1>興建中...請稍後</h1>
+                            <div class="R-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="R-table">
+                                    <form>
+                                        <table>
+                                            <tr>
+                                                <th></th>
+                                                <th>檢舉留言編號</th>
+                                                <th>檢舉日期</th>
+                                                <th>檢舉人會員編號</th>
+                                                <th>留言編號</th>
+                                                <th>留言內容</th>
+                                                <th>檢舉雲因</th>
+                                                <th>審核結果</th>
+                                                <th>審核</th>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle new"></div></td>
+                                                <td>R29</td>
+                                                <td>2020/03/20</td>
+                                                <td>M4</td>
+                                                <td>5</td>
+                                                <td>是否想賺更多錢?請洽詢.......</td>
+                                                <td>與本活動無關。</td>
+                                                <td></td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass1"><label for="pass1">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail1"><label for="fail1">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R90</td>
+                                                <td>2020/03/09</td>
+                                                <td>M2</td>
+                                                <td>71</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>留言下架</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass2"><label for="pass2">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail2"><label for="fail2">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass3"><label for="pass3">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail3"><label for="fail3">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>留言下架</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass4"><label for="pass4">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail4"><label for="fail4">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass5"><label for="pass5">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail5"><label for="fail5">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass6"><label for="pass6">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail6"><label for="fail6">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>留言下架</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass7"><label for="pass7">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail7"><label for="fail7">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>R97</td>
+                                                <td>2020/03/01</td>
+                                                <td>M9</td>
+                                                <td>76</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                <td>退件</td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <div class="edit">
+                                                        <input type="radio" name="choose" value="pass" id="pass8"><label for="pass8">下架</label>
+                                                        <input type="radio" name="choose" value="fail" id="fail8"><label for="fail8">退件</label><br>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div id="actVerifyMag" class="tabContent">
                             <h3>活動審核管理</h3>
@@ -336,6 +502,18 @@
 
     
 </body>
+
+<script>
+    //檢舉留言
+    $('i').click(function(){
+        $(this).css('display','none');
+        $(this).parent().find('div').css('display','block');
+    });
+    $('button.edit-btn').click(function(){
+        $(this).parent().css('display','none');
+        $(this).parent().parent().find('i').css('display','block');
+    });
+</script>
 
 <script src="./js/backend.js"></script>
 
