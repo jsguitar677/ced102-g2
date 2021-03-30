@@ -118,6 +118,12 @@ div.progress__bar{
             transition: width .6s ease;
             width: 500px;
             height: 10px;
+            // .active{
+            //     background-color: #1D1E4C;
+            //     }
+            //  .notactive{
+            //     background-color: #646464;
+            //  }
         }
         @media (min-width:992px) and (max-width:1199px){
             .progress-bar{
