@@ -11,7 +11,7 @@ div.spacing_block{
 }
 
 div.spacing_block>h1{
-    font-size: 90px;
+    font-size: 5vw;
     position: absolute;
     z-index: 100;
     color: white;
@@ -345,6 +345,13 @@ div.founder>h1>img{
     
 }
 
+@media (max-width: 500px){
+    div.founder>h1{
+        font-size: 15px;
+        margin: 0 auto;
+    }
+}
+
 // 進度條-------------------------------------------------------------------
 .progress-bg {
 	margin: 0 auto;
@@ -543,6 +550,12 @@ div.fixed_pic>p{
     }
     div.fixed_pic{
         height: 80vh;
+    }
+}
+
+@media (max-width: 500px){
+    div.fixed_pic{
+        height: 120vh;
     }
 }
 

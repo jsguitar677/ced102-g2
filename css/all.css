@@ -79,12 +79,13 @@ body header {
 
 body header nav {
   height: 66px;
-  padding-left: 60px;
+  padding: 0px 30px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 body header nav div#lftUl {
-  width: calc((100% - 66px)/2);
   display: inline-block;
   vertical-align: top;
   line-height: 66px;
@@ -119,7 +120,7 @@ body header nav div#lftUl ul li a {
 
 body header nav div#lftUl ul li img {
   opacity: 0;
-  transition: all 1s ease;
+  transition: all .8s ease;
   width: 20px;
 }
 
@@ -143,7 +144,6 @@ body header div#navlogo img {
 }
 
 body header div#rgtUl {
-  width: calc((100% - 66px)/2);
   display: inline-block;
   line-height: 66px;
   vertical-align: top;
@@ -164,7 +164,7 @@ body header div#rgtUl ul li {
 }
 
 body header div#rgtUl ul li:nth-child(3) {
-  padding-right: 60px;
+  padding-right: 30px;
 }
 
 body header div#rgtUl ul li i.fwIcon {
@@ -179,6 +179,7 @@ body header a {
 
 body header i.fwIcon {
   vertical-align: text-top;
+  font-size: 15px;
 }
 
 body div#page1 {
@@ -201,6 +202,7 @@ body div#page1 div#lightbox div#logWrapper {
   font-size: 0;
   width: 50%;
   height: 70%;
+  min-height: 435px;
   position: absolute;
   vertical-align: top;
   left: 50%;
@@ -234,7 +236,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url("../img/logo3.png"), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -242,12 +244,12 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
-  font-size: 18px;
+  font-size: 15px;
   padding: 0% 15%;
 }
 
@@ -294,7 +296,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
@@ -304,7 +306,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5%;
 }
 
@@ -332,14 +334,14 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 1%;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
   padding: 0% 15%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
@@ -370,6 +372,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
   display: inline-block;
   margin: 3% auto;
+  margin-bottom: 15px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
@@ -449,6 +452,7 @@ body div#page1 div#lightbox2 div#logWrapper2 {
   font-size: 0;
   width: 50%;
   height: 70%;
+  min-height: 435px;
   position: absolute;
   vertical-align: top;
   left: 50%;
@@ -490,12 +494,12 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
-  font-size: 18px;
+  font-size: 15px;
   padding: 0% 15%;
 }
 
@@ -543,7 +547,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
   padding-top: 30px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
@@ -552,7 +556,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5%;
 }
 
@@ -585,14 +589,18 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 1%;
   padding-top: 30px;
 }
 
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
+  font-size: 15px;
+}
+
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
   padding: 0% 15%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
@@ -699,6 +707,7 @@ footer {
 footer .footerWrapper {
   margin: 0 auto;
   width: calc(100% - 60px);
+  max-width: 1200px;
   height: 90%;
   background-color: #fff;
   border-radius: 15px;
@@ -707,7 +716,7 @@ footer .footerWrapper {
 
 footer .footerWrapper .footerBlockTop {
   display: flex;
-  padding: 30;
+  padding: 0 30px;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox1 {
@@ -716,6 +725,7 @@ footer .footerWrapper .footerBlockTop .footerBox1 {
   align-items: center;
   width: 40%;
   padding: 20px;
+  padding-left: 0px;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox1 .footerTOP {
@@ -742,7 +752,7 @@ footer .footerWrapper .footerBlockTop .footerBox2 {
 }
 
 footer .footerWrapper .footerBlockTop .footerBox2 .footerTitle {
-  font-size: 60px;
+  font-size: 48px;
   font-weight: bold;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
@@ -770,14 +780,16 @@ footer .footerWrapper .footerBlockTop .footerBox2 .goTop:hover {
 footer .footerWrapper .footerBlockTop .footerBox3 {
   width: 40%;
   padding: 20px;
+  padding-right: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
+  align-items: center;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .social {
   width: 70%;
-  padding: 30px 50px;
+  display: inline-block;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .social span {
@@ -793,7 +805,9 @@ footer .footerWrapper .footerBlockTop .footerBox3 .social__Icon {
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .orignate {
-  padding: 30px 50px;
+  text-align: center;
+  padding: 0 15%;
+  padding-top: 25px;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .orignate span {
@@ -803,7 +817,7 @@ footer .footerWrapper .footerBlockTop .footerBox3 .orignate span {
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .orignate p {
-  width: 80%;
+  width: 100%;
 }
 
 footer .footerWrapper .footerBlockbottom {
@@ -948,44 +962,197 @@ button#createAcc2 {
   margin-bottom: 10%;
 }
 
-header nav div#lftUl div#navBurgerBtn {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  position: relative;
-}
-
-header nav div#lftUl div#navBurgerBtn div {
-  background-color: #1D1E4C;
-  width: 40px;
-  height: 5px;
-  position: absolute;
-  top: 50%;
-}
-
-header nav div#lftUl div#navBurgerBtn div:first-child {
-  transform: translateY(10px);
-}
-
-header nav div#lftUl div#navBurgerBtn div:last-child {
-  transform: translateY(-10px);
-}
-
-header nav div#lftUl ul {
-  display: none;
-}
-
 @media all and (max-width: 1312px) {
+  body header nav div#lftUl div#navBurgerBtn {
+    transition: all .8s;
+    cursor: pointer;
+    width: 33px;
+    height: 43px;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    top: 7px;
+  }
+  body header nav div#lftUl div#navBurgerBtn div {
+    background-color: #1D1E4C;
+    width: 33px;
+    height: 3px;
+    position: absolute;
+    border-radius: 3px;
+    transition: all .8s;
+  }
+  body header nav div#lftUl div#navBurgerBtn div:first-child {
+    top: 14px;
+  }
+  body header nav div#lftUl div#navBurgerBtn div:nth-child(2) {
+    top: 23px;
+  }
+  body header nav div#lftUl div#navBurgerBtn div:last-child {
+    bottom: 8px;
+  }
   body header nav div#lftUl ul {
     display: flex;
     flex-direction: column;
-    background-color: yellow;
+    background-color: #EF4325;
     justify-content: flex-end;
+    align-items: stretch;
+    color: #fafafa;
+    position: relative;
+    top: 24px;
+    left: 2000px;
+    opacity: 0;
+    transition: all .8s;
   }
   body header nav div#lftUl ul li {
-    border-bottom: 1px solid red;
+    text-align: center;
     margin-left: 0px !important;
+    background-color: #1E1E1E;
+    width: 300px;
+    padding-left: 20px;
   }
+  body header nav div#lftUl ul li:hover {
+    background-color: #EF4325;
+    cursor: pointer;
+  }
+  div#closeBtn3 {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  div#closeBtn3 span#closeSpanOne3 {
+    width: calc(27px - 9px);
+    height: 2px;
+    display: inline-block;
+    background-color: #f2f2f2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+  }
+  div#closeBtn3 span#closeSpanTwo3 {
+    width: calc(27px - 9px);
+    height: 2px;
+    display: inline-block;
+    background-color: #f2f2f2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  div#lftUl ul#navRList li a {
+    color: #fafafa;
+  }
+}
+div.closeRotate2 {
+  transform: translateY(-50%) rotate(45deg) !important;
+  transition: all .5s;
+  top: 27px !important;
+}
+
+div.closeRotate3 {
+  transform: translateY(-50%) rotate(135deg) !important;
+  transition: all .5s;
+  bottom: 12px !important;
+}
+
+div.closeRotate1 {
+  display: none !important;
+}
+
+@media all and (max-width: 684px) {
+  span#logStat {
+    display: none;
+  }
+  nav {
+    flex-wrap: wrap;
+  }
+  nav div#navlogo {
+    height: 46px !important;
+    align-self: center;
+  }
+  nav div#navlogo img {
+    height: 46px !important;
+  }
+}
+
+@media all and (max-width: 1247px) {
+  div.footerBlockTop {
+    justify-content: space-between;
+    flex-wrap: wrap !important;
+  }
+  div.footerBlockTop div.footerBox1 {
+    order: 1 !important;
+    width: 50% !important;
+    padding-top: 30px !important;
+  }
+  div.footerBlockTop div.footerBox2 {
+    order: 0 !important;
+    width: 100% !important;
+    padding-top: 30px;
+  }
+  div.footerBlockTop div.footerBox2 div.footerTitle {
+    margin-bottom: 20px;
+  }
+  div.footerBlockTop div.footerBox2 button#goTop {
+    width: 100% !important;
+  }
+  div.footerBlockTop div.footerBox3 {
+    padding-top: 45px !important;
+  }
+  div.footerBlockTop div.footerBox3 div.social {
+    text-align: center !important;
+  }
+}
+
+@media all and (max-width: 780px) {
+  div.footerBlockTop {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  div.footerBlockTop div.footerBox1 {
+    order: 1 !important;
+    width: 100% !important;
+    padding-top: 30px !important;
+    padding-right: 0px !important;
+  }
+  div.footerBlockTop div.footerBox2 {
+    order: 2 !important;
+    width: 100% !important;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+  div.footerBlockTop div.footerBox2 button#goTop {
+    width: 100% !important;
+  }
+  div.footerBlockTop div.footerBox3 {
+    order: 0 !important;
+    width: 100% !important;
+    padding-top: 45px !important;
+    padding-left: 0px !important;
+  }
+  div.footerBlockTop div.footerBox3 div.social {
+    text-align: center !important;
+  }
+  div.footerBlockTop div.footerBox3 div.orignate {
+    padding: 25px 0px 0px;
+  }
+}
+
+div#logCarousel input, div#logCarousel2 form input {
+  outline: 0;
+}
+
+div#logCarousel input:focus, div#logCarousel2 form input:focus {
+  border-color: #1D1E4C;
+}
+
+div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-input-placeholder {
+  color: #C2C2C2 !important;
+  font-size: 13px !important;
 }
 /*# sourceMappingURL=all.css.map */

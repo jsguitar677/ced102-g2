@@ -6,6 +6,7 @@ body {
 }
 
 h5.title {
+  font-weight: normal;
   margin-top: 66px;
   position: absolute;
   top: calc( 66px + 10px);
@@ -56,9 +57,9 @@ section div.content_costomizedBag div.top_back_img_1 {
 
 section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
   width: 100%;
-  height: 421px;
+  height: 426px;
   position: absolute;
-  top: 0;
+  top: -5;
   left: 0;
   border-radius: 0 0 15px 15px;
   overflow: hidden;
@@ -67,7 +68,7 @@ section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 {
 
 section div.content_costomizedBag div.top_back_img_1 div.top_back_img_2 img {
   width: 105%;
-  filter: blur(4px);
+  filter: blur(7px);
 }
 
 section div.content_costomizedBag h5.title_2 {
@@ -116,9 +117,10 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   position: absolute;
   bottom: 15px;
   right: 15px;
-  background-color: #F6F6F6;
+  background-color: #C6C6C6;
   color: #1D1E4C;
-  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
@@ -151,9 +153,10 @@ section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.l
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #F6F6F6;
+  background-color: #C6C6C6;
   color: #1D1E4C;
-  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 section div.content_costomizedBag div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R11 {
