@@ -514,6 +514,11 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
     background-position: center center, center center;
     background-size: 35%, cover;
     background-repeat: no-repeat, no-repeat;
+    p{
+        color: map-get($map: $color_regulation, $key: 'btnRed');
+        text-align: center;
+        cursor: pointer;
+    }
 }
 
 
@@ -569,6 +574,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
     text-align: center;
     color: #f2f2f2;
     background-color: #1d1e4c;
+    
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {

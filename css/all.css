@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body > * {
+  font-family: "Palatino Linotype", "Noto Sans Tc";
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -43,7 +47,8 @@
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   font-size: 15px;
   background-color: #EF4325;
-  padding: 0 15px;
+  padding: 0px 30px;
+  line-height: 15px;
 }
 
 .comBtn2 {
@@ -56,7 +61,8 @@
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   font-size: 15px;
   background-color: #1D1E4C;
-  padding: 0 15px;
+  padding: 0px 30px;
+  line-height: 15px;
 }
 
 body {
@@ -67,7 +73,6 @@ body header {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   position: fixed;
   top: 0;
-  font-family: "Palatino Linotype", "Noto Sans TC";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -103,6 +108,7 @@ body header nav div#lftUl ul li {
   font-size: 15px;
   vertical-align: bottom;
   transition: all 1s ease;
+  line-height: 66px;
 }
 
 body header nav div#lftUl ul li:nth-child(n+1) {
@@ -111,6 +117,7 @@ body header nav div#lftUl ul li:nth-child(n+1) {
 
 body header nav div#lftUl ul li:hover img {
   opacity: 1;
+  transform: rotate(360deg) scale(1.5);
 }
 
 body header nav div#lftUl ul li a {
@@ -118,10 +125,15 @@ body header nav div#lftUl ul li a {
   color: #1D1E4C;
 }
 
+body header nav div#lftUl ul li a:hover {
+  color: #EF4325;
+}
+
 body header nav div#lftUl ul li img {
   opacity: 0;
-  transition: all .8s ease;
+  transition: all .5s ease;
   width: 20px;
+  margin-left: 3px;
 }
 
 body header nav div#lftUl ul li:first-child {
@@ -164,7 +176,7 @@ body header div#rgtUl ul li {
 }
 
 body header div#rgtUl ul li:nth-child(3) {
-  padding-right: 30px;
+  padding-right: 0px;
 }
 
 body header div#rgtUl ul li i.fwIcon {
@@ -175,6 +187,10 @@ body header a {
   text-decoration: none;
   cursor: pointer;
   color: #1D1E4C;
+}
+
+body header a:hover {
+  color: #EF4325;
 }
 
 body header i.fwIcon {
@@ -385,6 +401,8 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
   display: block;
   margin: 0 auto;
   margin-top: 1%;
+  cursor: pointer;
+  border: none;
 }
 
 body div#page1 div#lightbox div#logWrapper div#closeBtn {
@@ -492,6 +510,12 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
+}
+
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 p {
+  color: #EF4325;
+  text-align: center;
+  cursor: pointer;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
@@ -745,6 +769,10 @@ footer .footerWrapper .footerBlockTop .footerBox1 .footerBottom ul {
   margin: 0;
 }
 
+footer .footerWrapper .footerBlockTop .footerBox1 .footerBottom ul li:hover {
+  color: #EF4325;
+}
+
 footer .footerWrapper .footerBlockTop .footerBox2 {
   width: 20%;
   display: flex;
@@ -835,6 +863,10 @@ footer .footerWrapper .footerBlockbottom {
 body a {
   text-decoration: none;
   color: #1D1E4C;
+}
+
+body a:hover {
+  color: #EF4325;
 }
 
 body div#page2 {
@@ -1012,7 +1044,7 @@ button#createAcc2 {
     text-align: center;
     margin-left: 0px !important;
     background-color: #1E1E1E;
-    width: 300px;
+    width: 320px;
     padding-left: 20px;
   }
   body header nav div#lftUl ul li:hover {
@@ -1153,6 +1185,8 @@ div.closeRotate1 {
 
 div#logCarousel input, div#logCarousel2 form input {
   outline: 0;
+  border-radius: 5px;
+  border: none;
 }
 
 div#logCarousel input:focus, div#logCarousel2 form input:focus {
@@ -1168,6 +1202,9 @@ div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-inp
   div#rgtUl ul li {
     padding-right: 20px !important;
   }
+  div#rgtUl ul li:nth-child(3) {
+    padding-right: 0px !important;
+  }
   body header div#navlogo {
     width: 161px;
     height: 30px !important;
@@ -1177,6 +1214,21 @@ div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-inp
   }
   div#navlogo {
     width: 105px !important;
+  }
+}
+
+@media all and (max-width: 400px) {
+  footer .footerTOP {
+    font-size: 81px !important;
+  }
+  footer .footerBottom ul li {
+    font-size: 24px !important;
+  }
+}
+
+@media all and (max-width: 370px) {
+  header nav {
+    padding: 0px 5px !important;
   }
 }
 /*# sourceMappingURL=all.css.map */

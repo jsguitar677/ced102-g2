@@ -47,7 +47,7 @@ function FakerLogIn(){
     let memPsw = document.getElementById('memPswCol');
     let status = document.getElementById('logStat');
     if(memId.value == 'John@mail.com' && memPsw.value == 123){
-        status.innerHTML = 'John';
+        status.innerHTML = 'John/登出';
         document.getElementById('lightbox').style.display = 'none';
         document.getElementById('memId').value = "";
         document.getElementById('memPsw').value = "";
@@ -189,3 +189,9 @@ function popOutBurger(){
 }
 
 window.addEventListener('load',popOutBurger);
+
+//回到登入燈箱
+document.getElementById('ForgetBackToLog').addEventListener('click',function(){
+    document.getElementById('lightbox2').style.display = 'none';
+    document.getElementById('lightbox').style.display = 'block';
+})
