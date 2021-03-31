@@ -117,7 +117,7 @@ function turnBackToReg(){
     document.getElementById('lightbox2').style.display = 'none';
     document.getElementById('lightbox').style.display = 'block';
     document.getElementById('signUpFConTitle').innerHTML = '登入會員';
-    document.getElementById('signRegFake').style.innerHTML = '進行登入';
+    document.getElementById('signRegFake').innerHTML = '進行登入';
 }
 
 
@@ -132,12 +132,14 @@ function showModal2() {
 //切換登入/註冊
 function signRegChange2() {
     let signRegF = document.getElementById('signRegFake2');
+    let changeBtnTit = document.getElementById('signRegFake');
     let title = document.getElementById('signUpFConTitle2');
     let title1 = document.getElementById('signUpFConTitle');
     if (signRegF.innerHTML == "建立帳號") {
         document.getElementById('logCarousel2').style.left = '-60%';
         // signRegF.innerHTML = "註冊會員";
         title1.innerHTML ="進行登入";
+        changeBtnTit.innerHTML = "進行登入";
     }
 };
 // window.resize(function(){

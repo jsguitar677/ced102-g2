@@ -1417,6 +1417,11 @@ main.event {
               }
               @include btn-module-blue();
               div.btn{
+                a{
+                  padding: 0 20px;
+                }
+              }
+              div.btn{
                 width: 108px;
                 position: relative;
                 left: 20px; 
