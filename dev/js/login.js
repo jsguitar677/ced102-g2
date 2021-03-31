@@ -177,7 +177,7 @@ function popOutBurger(){
         close2.classList.toggle('closeRotate2');
         close3.classList.toggle('closeRotate3');
         if(popList.style.left =='2000px'){
-            popList.style.left = '-10px';
+            popList.style.left = '-30px';
             popList.style.opacity = 1;
             
         }else{
