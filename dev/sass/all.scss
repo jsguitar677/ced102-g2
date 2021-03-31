@@ -90,6 +90,7 @@ body header nav {
     position: relative;
     display: flex;
     justify-content: space-between;
+    background-color: map-get($map: $color_regulation, $key: 'blue');
 }
 
 body header nav div#lftUl {
@@ -111,6 +112,7 @@ body header nav div#lftUl ul li {
     vertical-align: bottom;
     transition: all 1s ease;
     line-height: 66px;
+    color: map-get($map: $color_regulation, $key: 'white');
 }
 
 body header nav div#lftUl ul li:nth-child(n+1) {
@@ -746,6 +748,7 @@ footer{
         .footerBlockTop{
             display: flex;
             padding: 0 30px;
+            border-radius: 15px 15px 0px 0px;
             .footerBox1{
                 display: flex;
                 flex-direction: column;
@@ -813,8 +816,10 @@ footer{
                 flex-direction: column;
                 align-items: center;
                 .social{
-                    width: 70%;
-                    display: inline-block;
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                     span{
                         font-weight: bold;
                         font-size: 40px;
@@ -824,6 +829,9 @@ footer{
                         margin-top: 20px;
                         display: flex;
                         justify-content: space-around;
+                    }
+                    p{
+                        margin-right: 20px;
                     }
                 }
                 .orignate{
@@ -1284,4 +1292,22 @@ div#logCarousel, div#logCarousel2 form{
     header nav{
         padding: 0px 5px !important;
     }
+}
+nav{
+    ul{
+        li{
+            a{
+            color: map-get($map: $color_regulation, $key: 'white') !important;
+            }
+        }
+    }
+}
+div.footerBlockTop{
+    background-color: map-get($map: $color_regulation, $key: 'blue');
+}
+div.footerTOP, div.footerBottom, div.footerBottom ul li a, div.footerBox2, div.footerTitle, div.social span, div.orignate span, div.orignate p, div.social__Icon a{
+    color: map-get($map: $color_regulation, $key: 'white');
+}
+div.social__Icon a{
+    margin-right: 20px;
 }

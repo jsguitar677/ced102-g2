@@ -88,6 +88,7 @@ body header nav {
   position: relative;
   display: flex;
   justify-content: space-between;
+  background-color: #1D1E4C;
 }
 
 body header nav div#lftUl {
@@ -109,6 +110,7 @@ body header nav div#lftUl ul li {
   vertical-align: bottom;
   transition: all 1s ease;
   line-height: 66px;
+  color: #fafafa;
 }
 
 body header nav div#lftUl ul li:nth-child(n+1) {
@@ -743,6 +745,7 @@ footer .footerWrapper {
 footer .footerWrapper .footerBlockTop {
   display: flex;
   padding: 0 30px;
+  border-radius: 15px 15px 0px 0px;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox1 {
@@ -818,8 +821,10 @@ footer .footerWrapper .footerBlockTop .footerBox3 {
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .social {
-  width: 70%;
-  display: inline-block;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .social span {
@@ -832,6 +837,10 @@ footer .footerWrapper .footerBlockTop .footerBox3 .social__Icon {
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
+}
+
+footer .footerWrapper .footerBlockTop .footerBox3 .social p {
+  margin-right: 20px;
 }
 
 footer .footerWrapper .footerBlockTop .footerBox3 .orignate {
@@ -1230,5 +1239,21 @@ div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-inp
   header nav {
     padding: 0px 5px !important;
   }
+}
+
+nav ul li a {
+  color: #fafafa !important;
+}
+
+div.footerBlockTop {
+  background-color: #1D1E4C;
+}
+
+div.footerTOP, div.footerBottom, div.footerBottom ul li a, div.footerBox2, div.footerTitle, div.social span, div.orignate span, div.orignate p, div.social__Icon a {
+  color: #fafafa;
+}
+
+div.social__Icon a {
+  margin-right: 20px;
 }
 /*# sourceMappingURL=all.css.map */
