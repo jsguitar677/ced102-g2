@@ -145,16 +145,18 @@ div.title-block {
    vertical-align: top;
    width: $reserveSide;
    //    position: absolute;
-   // margin-top: 10px;
+   margin-top: 10px;
    margin-left: 10px;
+   
    h1.title {
        font-size: 20px;
        color: #1d1e4c;
        display: inline-block;
        white-space: nowrap;
-       padding: 10px;
+      //  padding-right: 35px;
        writing-mode: vertical-rl;
        text-orientation: sideways;
+       margin: 0;
    }
 }
 
@@ -175,18 +177,26 @@ div.title-block {
       // display: inline-block;
       vertical-align: top;
       position: relative;
+      // padding: 0 0 0 35px;
       
       div.card{
          // border: 1px solid ;
-         margin: 20px auto;
+         margin: 20px 30px;
          box-shadow: $box-shadow;
          border-radius: $borderRadius;
+         
          // @media (min-width:992px) and (max-width:1199px){
          //    width: 100%;
          //    display: flex;
          //    flex-direction: column;
             
          // }
+         @media (min-width:576px) and (max-width:767px){
+            margin: 20px 35px;
+         }
+         @media (max-width:575px){
+            margin: 20px 35px;
+         }
               
 
          .card-header{
@@ -262,7 +272,7 @@ div.title-block {
                 
             }
             @media (max-width:575px){
-               margin-top: 10px;
+               margin: 10px 0px;
                 
             }
           
@@ -302,7 +312,8 @@ div.title-block {
                 
             }
             @media (max-width:575px){
-               margin-top: 5px;
+               margin-left: 10px;
+               margin-top: 0px;
                 
             }
             
