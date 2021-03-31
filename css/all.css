@@ -275,6 +275,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#lo
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label input {
   width: 100%;
   margin-bottom: 5%;
+  padding: 5px 10px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember {
@@ -1258,5 +1259,13 @@ div.footerTOP, div.footerBottom, div.footerBottom ul li a, div.footerBox2, div.f
 
 div.social__Icon a {
   margin-right: 20px;
+}
+
+form#regForm input, form#logForm2 input {
+  padding: 5px 10px;
+}
+
+div#lightbox, div#lightbox2 {
+  transition: .8s all;
 }
 /*# sourceMappingURL=all.css.map */
