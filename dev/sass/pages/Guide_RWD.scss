@@ -146,6 +146,9 @@ section {
                 //     background-color: map-get($color_regulation, "red" );
                 //     color: white;
                 // }
+                &:nth-child(4){
+                    margin-bottom: 20px;
+                }
                 @media (min-width:576px) and (max-width:992px){
                     vertical-align: top;
                     width:49%;
@@ -171,7 +174,8 @@ section {
             div.explainOfGuide{
                 width:100%;
                 padding:30px;
-                height: 50vh;
+                // height: 50vh;
+                
                 text-align: left;
                 border-radius: $borderRadius;
                 box-shadow: $box-shadow;
