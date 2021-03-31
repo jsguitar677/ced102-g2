@@ -800,7 +800,7 @@ footer{
                     transition: .3s ease-in-out;
 
                     &:hover{
-                        background-color: #1D1E4C;
+                        background-color: map-get($map: $color_regulation, $key: 'red');
                         color: #fff;
                     transition: .3s ease-in-out;
 
