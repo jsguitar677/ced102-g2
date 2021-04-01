@@ -52,6 +52,12 @@ p{font-size: 15px;}
     overflow: hidden;
 }
 
+@mixin yellowTitleBtn(){
+    width: 50px;
+    height: 8px;
+    margin: 0 auto;
+    background-color: map-get($color_regulation,'yellow');
+}
 // ------套件class------------------------------
 
 
@@ -65,8 +71,6 @@ p{font-size: 15px;}
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    // background: #fff;
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -81,7 +85,6 @@ p{font-size: 15px;}
     align-items: center;
 }
 
-
 // ---------------------------------------
 .homeBlock{
     margin: 0 auto;
@@ -95,18 +98,48 @@ p{font-size: 15px;}
     line-height:30px;
     letter-spacing:2px;
     width: 100%;
-    background-color:map-get($color_regulation, 'white-bg');
     margin-top: 66px;
+    z-index:0;
     .homeBotLayer1{
         @include pad{
             padding: 30px 0;
         }
         .homeBlock{
             .homePage1{
+                position: relative;
+                button{
+                    outline: none;
+                    top: 50px;
+                    left: 50px;
+                    position: absolute;
+                    color: map-get($color-regulation, 'yellow' );
+                    cursor: pointer;
+                    font-size: 30px;
+                    padding: 0;
+                    border: none;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    border:1px solid map-get($color-regulation, 'yellow' );
+                    background-color: transparent;
+                    i{
+                        padding-left: 1px;
+                    }
+                }
+                #myVideo{
+                    z-index: -1;
+                    position: fixed;
+                    right: 0px;
+                    bottom: 0px;
+                    min-width: 100%;
+                    min-height: 100%;
+                    height: auto;
+                    width: auto;
+                }
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: map-get($color_regulation, 'blue');
+                color: map-get($color_regulation, 'white');
                 @include pad{
                     flex-direction: column;
                 }
@@ -114,123 +147,26 @@ p{font-size: 15px;}
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    width: 35%;
-                    height: calc(100vh - 66px);
-                    background-image:url(../../img/indexFront/indexfont-img.png);
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    position: relative;
+                    width: 50%;
+                    height: calc(75vh - 66px);
+                    text-align: center;
                     @include pad{
-                        // height:100%;
-                        // padding: 120px 0;
                         width: 100%;
                         height:300px;
                     }
-                    div{
-                        position: absolute;
-                        margin: auto 0;
-                        // left:50%
-                        @include pad{
-                            width: 100%;
-                            text-align: center;
-                        }
-                    }
                     h5{
                         margin: 0;
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
                     }
-                }
-                .page1Right{
-                    margin-left: 5%;
-                    border-radius: 15px;
-                    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-                    background-color:#FFFFFF;
-                    width: 65%;
-                    overflow: hidden;
-                    padding: 15px;
-                    @include pad{
-                        height: auto;
-                        width: calc(100% - 20px);
-                        margin-left:0;
-                        padding: 10px;
+                    .page1YellowTitle{
+                        @include yellowTitleBtn();
+                        margin-bottom: 30px;
                     }
-                    .swiper-wrapper{
-                        .swiper-slide{
-                            @include mobileS{
-                                flex-direction: column;
-                            }
-                            .page1RightCard{
-                                border-radius: 15px;
-                                overflow: hidden;
-                                width: 310px;
-                                height: 380px;
-                                @include pad{
-                                    width: calc( 310px * 0.7);
-                                    height: calc( 380px * 0.7);
-                                }
-                                @include mobileL{
-                                    width: calc( 310px * 0.5);
-                                    height: calc( 380px * 0.5);
-                                }
-                                // @include mobileS{
-                                //     width: calc( 310px * 0.25);
-                                //     height: calc( 380px * 0.25);
-                                // }
-                                img{
-                                    @include pad{
-                                        width: calc( 310px * 0.7);
-                                        height: calc( 380px * 0.7);
-                                    }
-                                    @include mobileL{
-                                        width: calc( 310px * 0.5);
-                                        height: calc( 380px * 0.5);
-                                    }
-                                    // @include mobileS{
-                                    //     width: calc( 310px * 0.25);
-                                    //     height: calc( 380px * 0.25);
-                                    // }
-                                }
-                            }
-                            .page1RightText{
-                                pad: 20px;
-                                // margin-left: 20px;
-                                width: 45%;
-                                @include mobileS{
-                                width: 100%;
-                                margin-left: 0px;
-
-                                }
-                                h5{
-                                    margin: 0;
-                                    @include mobileL(){
-                                        margin-top: 10px;
-                                    }
-                                    @include mobileS{
-                                        margin: 0;
-                                        margin-top: 10px;
-                                    }
-                                }
-                                p{  
-                                    display: block; // 如果不是區塊元素的話，要加這一行
-                                    overflow: hidden;
-                                    display: -webkit-box;
-                                    -webkit-box-orient: vertical;
-                                    -webkit-line-clamp: 4;
-                                    @include mobileL(){
-                                        margin: 0px;
-                                        margin-bottom: 10px;
-                                    }
-                                   
-                                }
-                                button{
-                                    @include mobileS{
-                                        margin-bottom: 10px;
-                                    }
-                                }
-                            }
-                        }
+                    .totalDetail{
+                        display: flex;
+                        justify-content: center;
                     }
+                    
                 }
             }
         }
@@ -241,15 +177,20 @@ p{font-size: 15px;}
 //     cursor: pointer;
 // }
 #homeBotLayer2{
+    z-index: 3;
+    background: #707070; /* Old browsers */
+    background: -moz-linear-gradient(top, #70707000 0%,#000000a6 20%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #70707000 0%,#000000a6 20%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #70707000 0%,#000000a6 20%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
     .page1RightCard{
         img{
             cursor: pointer;
-            border-radius: 15px;
+            border-radius: 0;
             overflow: hidden;
             width: 260px;
             height: 300px;
             box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-            // filter: blur(5px);
             @include pc{
                 width: 180px;
                 height: 240px;
@@ -270,34 +211,40 @@ p{font-size: 15px;}
     }
 
     color: map-get($color_regulation, 'white');
-    // height: 100vh;
     align-items: center;
     justify-content: center;
-    background-attachment: fixed;
-    @include bgImg('../../img/indexFront/indexImg5.jpg');
-    
     .homeBlock{
         color: map-get($color_regulation,'blue');
         .homePage2{
-            // color: map-get($color_regulation, 'color' );
             padding: 30px 0;
             height: 100%;
+            color: map-get($color_regulation,'white');
+            text-align: center;
+            p{
+                margin: 0;
+            }
             h5{
-                margin-top: 0;
+                margin: 0;
             }
-            .homePage2Top{
-                margin-bottom: 50px;
+            .yellowTitleBtn{
+                @include yellowTitleBtn();
+                // margin-bottom: 30px;
+                margin: 10px auto 30px;
+                // margin: 30px;
             }
+            
             .homePage2Data{
                 display: flex;
                 justify-content: space-around;
-                background-color: rgba(255, 255, 255, 0.7);
+                // background-color: rgba(255, 255, 255, 0.7);
                 border-radius: 15px;
                 padding: 10px;
-                .data4{
-                    p{
-                        margin: 0;
-                    }
+                text-align: left;
+                .iconBox{
+                    border: 1px solid map-get($color-regulation, 'white');
+                    width: 30px;
+                    text-align: center;
+
                 }
             }
         }
@@ -308,7 +255,7 @@ p{font-size: 15px;}
 .homeBotLayer3{
     height: 50vh;
     background-color:map-get($color_regulation, 'white-bg');
-    margin: 30px 0;
+    padding: 30px;
     display: flex;
     @include mobileL{
         height: 100%;
@@ -317,12 +264,10 @@ p{font-size: 15px;}
     .homePage3{
         display: flex;
         div.toggle{
-            margin-top: 30px;
             div.toggle-block{
             box-shadow: $box-shadow;
             width: 400px;
             height: 40px;
-            border-radius: 20px;
             padding: 5px;
             background-color: map-get($color-regulation,'blue');
             margin: 0px auto 30px auto;
@@ -335,7 +280,6 @@ p{font-size: 15px;}
                 left: 0;
                 width: 50%;
                 height: 100%;
-                border-radius: 20px;
                 background-color: map-get($color-regulation,'white');
               }
               div.text{
@@ -406,7 +350,6 @@ p{font-size: 15px;}
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-radius: 15px;
             box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
             @include mobileL{
                 width: calc(100% - 20px);
@@ -426,16 +369,13 @@ p{font-size: 15px;}
             }
             &__no1{
                 box-shadow: $box-shadow;
-
                 margin-bottom: 25px;
-                border-radius: 15px;
                 height: 80px;
                 width: 95%;
                 background-color:map-get($color_regulation, 'orange');
             }
             &__no2{
                 margin-bottom: 10px;
-                border-radius: 15px;
                 height: 50px;
                 width: 90%;
                 background-color:map-get($color_regulation, 'pink');
@@ -443,12 +383,10 @@ p{font-size: 15px;}
 
             }
             &__no3{
-                border-radius: 15px;
                 width: 90%;
                 height: 50px;
                 background-color:map-get($color_regulation, 'lake');
                 box-shadow: $box-shadow;
-
             }
         }
     }
@@ -456,13 +394,10 @@ p{font-size: 15px;}
 
 
 .homeBotLayer4{
-    background-color:map-get($color_regulation, 'white-bg');
+    background-color:#FFFFFF;
+    padding: 30px;
     .homePage4{
-        margin-bottom: 30px;
         @include borbox();
-        background: #FFFFFF;
-        box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-        // height: 95vh;
         padding: 30px;
         @include pad{
             padding: 10px;
@@ -481,7 +416,6 @@ p{font-size: 15px;}
         &__customerBlock{
             background-size: cover;
             margin-bottom: 30px;
-            border-radius: 15px;
             overflow: hidden;
             box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
             .frontBlur2{
@@ -514,14 +448,12 @@ p{font-size: 15px;}
                 position: relative;
                 cursor: pointer;
                 overflow: hidden;
-                border-radius: 15px;
                 height: 310px;
                 width: 300px;
 
                 img{
                     height: 310px;
                     width: 300px;
-                    border-radius: 15px;
                     transition: .5s ease-in-out;
                     
                 }
@@ -533,7 +465,6 @@ p{font-size: 15px;}
                         background-color: rgba(255, 255, 255, 0.774);
                         overflow: hidden;
                         line-height: 40px;
-                        border-radius: 50%;
                         width: 40px;
                         height: 40px;
                         transition: .5s ease-in-out;
@@ -554,7 +485,6 @@ p{font-size: 15px;}
                 .page4CardCont{
                     opacity: 0;
                     transition: .5s ease-in-out;
-
                     overflow: hidden;
                     position: absolute;
                     bottom: 0px;
@@ -616,7 +546,7 @@ p{font-size: 15px;}
                 text-align: left;
                 }
                 a{  
-                    line-height: 30px;
+                    line-height: 35px;
                     height: 30px;
                     padding: 0 30px;
                     float: right;
@@ -625,12 +555,10 @@ p{font-size: 15px;}
                     margin-top: 30px;
                     display: flex;
                     justify-content: space-between;
-                    border-radius: 15px;
                     height: 200px;
                     width: 80%;
                     .colorBox{
                         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-                        border-radius: 15px;
                         overflow: hidden;
                         width: 80px;
                         height: 110px;
@@ -682,13 +610,9 @@ p{font-size: 15px;}
                             height: 70px;
                             width: 80px;
                         }
-                        
-                        
                     }
                 }
             }
-            
-
         }
         @mixin card(){
             width:260px;
@@ -880,7 +804,7 @@ p{font-size: 15px;}
     display: flex;
     justify-content:center;
     align-items: center;
-    margin-top: 6%;
+    padding: 15px;
     @include pad{
         flex-direction: column;
     }
@@ -1090,71 +1014,5 @@ p{font-size: 15px;}
 }
 
 
-.homeBotLayer6{
-    height: 50vh;
-    .homeBlock{
-        .homePage6{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-            &__left{
-                
-                h5{
-                    margin: 0;
-                    
-                }
-                p{
-                    display: block;
-                    overflow: hidden;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 4;
-                }
-                padding: 0 20px;
-                // height: 50vh;
-                width: 50%;
-                background-color:map-get($color_regulation, 'white-bg');
-                color: map-get($color_regulation, 'blue');
-            }
-            &__right{
-                cursor: pointer;
-                border-radius: 15px;
-                box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-                height: 30vh;
-                width: 50%;
-                overflow: hidden;
-                position: relative;
-                border:none;
-                #myVideo{
-                    height: 100%;
-                    width: 100%;
-                    //poster裡面的照片填滿
-                    object-fit: cover;
-                }
-
-                #myBtn{
-                    cursor: pointer;
-                    outline: none;
-                    bottom: 10PX;
-                    left: 10PX;
-                    height: 34px;
-                    width: 34px;
-                    position: absolute;
-                    border: none;
-                    background-color: rgba(255, 255, 255, 0);
-                    // border:none;
-                    border-radius: 50%;
-                    color: map-get($color_regulation, 'blue' );
-                    font-size: 18px;
-                    font-weight: bold;
-                    padding: 0;
-                    color: white;
-                }
-            }
-        }
-    }
-    
-}
 
 

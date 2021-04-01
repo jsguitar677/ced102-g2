@@ -39,12 +39,11 @@ body>*{
     cursor: pointer;
     outline: none;
     color: white;
-    border-radius: 15px;
-    height: 30px;
+    height: 35px;
     border:none!important;
     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
     font-size: 15px;
-    background-color: #EF4325;
+    background-color: map-get($color-regulation,'yellow');
     padding: 0px 30px;
     line-height: 15px;
 }
@@ -53,12 +52,11 @@ body>*{
     cursor: pointer;
     outline: none;
     color: white;
-    border-radius: 15px;
     height: 30px;
     border:none!important;
     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
     font-size: 15px;
-    background-color: #1D1E4C;
+    background-color: map-get($color-regulation,'blue');
     padding: 0px 30px;
     line-height: 15px;
 

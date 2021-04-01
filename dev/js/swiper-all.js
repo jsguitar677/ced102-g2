@@ -1,22 +1,6 @@
-var swiper1 = new Swiper('#swiper1', {
-    mousewheel: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        effect: 'fade',
-    },
-});
-var swiper3 = new Swiper('#swiper3', {
-    mousewheel: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        effect: 'fade',
-    },
-});
 
 var swiper2 = new Swiper('#swiper2', {
-    slidesPerView:3,
+    slidesPerView:4,
     mousewheel: true,
     pagination: {
         el: '.swiper-pagination',
