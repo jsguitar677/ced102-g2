@@ -9,6 +9,22 @@ $table-padding:20px;
     color: map-get($color_regulation,'blue');
 }
 
+@mixin btn-module {
+    .btn{
+        width: 100px;
+        text-align: center;
+        padding: 10px 30px;
+        background-color: map-get($color_regulation ,'blue');
+        color:map-get($color_regulation ,'white');
+        border: none;
+        outline: none;
+        border-radius: $borderRadius;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+    }
+}
+
 main{
     background-color: rgb(224, 224, 224);
 
@@ -67,6 +83,260 @@ main{
     
 }
 
+
+// 商品管理CSS
+main{
+    div.mainContent{
+        div.container{
+            div.row{
+                overflow: auto;
+                height: 100%;
+                div.col-12{
+                    #porMag{
+                        h3{
+                            font-size: $contentSubTit;
+                        }
+                        div.P-block-list{
+                            div.search-block{
+                                font-size: 0;
+                                margin-bottom: 20px;
+                                input[name=search]{
+                                    padding: 0 5px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    vertical-align: middle;
+                                    border-top-left-radius:$inputRadius;
+                                    border-bottom-left-radius:$inputRadius;
+                                    border: 1px solid gray;
+                                    outline: none;
+                                }
+                                div.icon{
+                                    font-size: 15px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding: 0 8px;
+                                    border-top-right-radius:$inputRadius;
+                                    border-bottom-right-radius:$inputRadius;
+                                    background-color: #fff;
+                                    border: 1px solid gray;
+                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
+                                    i{
+                                        color: map-get($color_regulation,'blue');
+                                    }
+                                }
+                            }
+                            div.P-table{
+                                height: 400px;
+                                overflow: auto;
+                                border-radius: $borderBtnRadius;
+                                form{
+                                    table{
+                                        width: 100%;
+                                        text-align: center;
+                                        font-size: $table-text;
+                                        // border: 1px solid red;
+                                        border-collapse: collapse;
+                                        border-radius: $borderBtnRadius;
+                                        box-shadow: $box-shadow;
+                                        background-color: map-get($color_regulation,'white');
+                                        tr{
+                                            
+                                            th,td{
+                                                padding: $table-padding;
+                                                border: 0px solid #fff;
+                                                i{
+                                                    color: #225ca4c4;
+                                                    cursor: pointer;
+                                                }
+                                                input,select,label,button{
+                                                    display: none;
+                                                }
+                                                button.edit-btn{
+                                                    border-radius: 10px;
+                                                    border: none;
+                                                    background-color: map-get($color_regulation,'blue');
+                                                    color: map-get($color_regulation,'white');
+                                                    padding: 5px 10px;
+                                                    margin: 10px 0 10px 10px;
+                                                    outline: none;
+                                                }
+                                                &:nth-child(1){
+                                                   min-width: 20px;
+                                                }
+                                            }
+                                            &:nth-child(2n){
+                                                background-color:#4a93ec1a;
+                                            }
+                                            &:hover{
+                                                background-color:#4a93ec4b;
+                                            }
+                                            &:nth-child(1){
+                                                background-color:#ff4e8f00;
+                                            }
+                                        }
+                    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 訂單管理CSS
+main{
+    div.mainContent{
+        div.container{
+            div.row{
+                overflow: auto;
+                height: 100%;
+                div.col-12{
+                    #ordMag{
+                        h3{
+                            font-size: $contentSubTit;
+                        }
+                        div.O-block-list{
+                            div.search-block{
+                                font-size: 0;
+                                margin-bottom: 20px;
+                                input[name=search]{
+                                    padding: 0 5px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    vertical-align: middle;
+                                    border-top-left-radius:$inputRadius;
+                                    border-bottom-left-radius:$inputRadius;
+                                    border: 1px solid gray;
+                                    outline: none;
+                                }
+                                div.icon{
+                                    font-size: 15px;
+                                    line-height: $line-height;
+                                    height: $line-height;
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    padding: 0 8px;
+                                    border-top-right-radius:$inputRadius;
+                                    border-bottom-right-radius:$inputRadius;
+                                    background-color: #fff;
+                                    border: 1px solid gray;
+                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
+                                    i{
+                                        color: map-get($color_regulation,'blue');
+                                    }
+                                }
+                            }
+                            div.O-table{
+                                height: 400px;
+                                overflow: auto;
+                                border-radius: $borderBtnRadius;
+                                form{
+                                    table{
+                                        width: 100%;
+                                        text-align: center;
+                                        font-size: $table-text;
+                                        border-collapse: collapse;
+                                        border-radius: $borderBtnRadius;
+                                        box-shadow: $box-shadow;
+                                        background-color: map-get($color_regulation,'white');
+                                        tr{
+                                            
+                                            th,td{
+                                                min-width: 110px;
+                                                padding: $table-padding;
+                                                border: 0px solid #fff;
+                                                div.circle{
+                                                    width: 8px;
+                                                    height: 8px;
+                                                    border-radius: 50%;
+                                                    background-color: map-get($color_regulation,'gray');
+                                                }
+                                                div.new{
+                                                    background-color: #FFAE41;
+                                                }
+                                                i{
+                                                    color: #FFAE41;
+                                                    cursor: pointer;
+                                                }
+                                                &:nth-child(1){
+                                                   min-width: 20px;
+                                                }
+                                            }
+                                            &:nth-child(2n){
+                                                background-color:#ecb34a1f;
+                                            }
+                                            &:hover{
+                                                background-color:#ecb34a44;
+                                            }
+                                            &:nth-child(1){
+                                                background-color:#ff4e8f00;
+                                            }
+                                        }
+                    
+                                    }
+                                }
+                            }
+                            div.order-items{
+                                background-color: map-get($color_regulation,'white');
+                                margin-bottom: 10px;
+                                border-radius: $borderBtnRadius;
+                                box-shadow: $box-shadow;
+                                padding: 20px;
+                                div.info{
+                                    margin: 0 10px 10px 10px;
+                                    p{
+                                        margin: 0 0 10px 0;
+                                    }
+                                }
+                                div.items{
+                                    table{
+                                        width: 100%;
+                                        text-align: center;
+                                        // border-collapse: collapse;
+                                        border: 1px solid map-get($color_regulation,'gray');
+                                        border-radius: $borderRadius;
+                                        tr{
+                                            th,td{
+                                                padding: $table-padding;
+                                                @include btn-module();
+                                                .btn{
+                                                    border: 1px solid map-get($color_regulation,'blue');
+                                                    background-color: map-get($color_regulation,'white');
+                                                    color: map-get($color_regulation,'blue');
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                                div.price{
+                                    text-align: right;
+                                }
+                                div.flex{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    div.buyer{
+                                        width: 70%;
+                                    }
+                                    div.btn-block{
+                                        align-self: flex-end;
+                                        @include btn-module();
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 // 檢舉留言管理CSS
 main{
@@ -194,7 +464,7 @@ main{
                 overflow: auto;
                 height: 100%;
                 div.col-12{
-                    div#actVerifyMag{
+                    #actVerifyMag{
                         h3{
                             font-size: $contentSubTit;
                         }
@@ -299,16 +569,7 @@ main{
                             div.review{
                                 form{
                                     div.btn-group{
-                                        button.A-btn{
-                                            padding: 10px 30px;
-                                            background-color: map-get($color_regulation ,'blue');
-                                            color:map-get($color_regulation ,'white');
-                                            border: none;
-                                            outline: none;
-                                            border-radius: $borderRadius;
-                                            margin-right: 10px;
-                                            cursor: pointer;
-                                        }
+                                        @include btn-module();
                                     }
                                 }
                             }
@@ -328,7 +589,7 @@ main{
                 overflow: auto;
                 height: 100%;
                 div.col-12{
-                    div#actHistoryMag{
+                    #actHistoryMag{
                         h3{
                             font-size: $contentSubTit;
                         }
@@ -438,16 +699,7 @@ main{
                                             position: absolute;
                                             right: 0;
                                             bottom: 0;
-                                            button.AH-btn{
-                                                padding: 10px 30px;
-                                                background-color: map-get($color_regulation ,'blue');
-                                                color:map-get($color_regulation ,'white');
-                                                border: none;
-                                                outline: none;
-                                                border-radius: $borderRadius;
-                                                margin-bottom: 10px;
-                                                margin-right: 10px;
-                                            }
+                                            @include btn-module();
                                         }
                                     }
                                 }
