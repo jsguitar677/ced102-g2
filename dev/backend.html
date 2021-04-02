@@ -28,8 +28,8 @@
             <div class="changeBlock">
                 <button class="tabLinks" onclick="openPage(event, 'adMag')" >管理員管理</button>
                 <button class="tabLinks" onclick="openPage(event, 'memberMag')"id="defaultOpen" >會員管理</button>
-                <button class="tabLinks" onclick="openPage(event, 'norPorMag')">一般商品管理</button>
-                <button class="tabLinks" onclick="openPage(event, 'cusProMag')">客製化商品管理</button>
+                <button class="tabLinks" onclick="openPage(event, 'porMag')">商品管理</button>
+                <!-- <button class="tabLinks" onclick="openPage(event, 'cusProMag')">客製化商品管理</button> -->
                 <button class="tabLinks" onclick="openPage(event, 'ordMag')">訂單管理管理</button>
                 <button class="tabLinks" onclick="openPage(event, 'reportMag')">檢舉留言管理</button>
                 <button class="tabLinks" onclick="openPage(event, 'actVerifyMag')">活動審核管理</button>
@@ -135,18 +135,284 @@
                                 </form>
                             </div>
                         </div>
-                        <div id="norPorMag" class="tabContent">
-                            <h3>一般商品管理</h3>
-                            <h1>興建中...請稍後</h1>
+                        <div id="porMag" class="tabContent">
+                            <h3>商品管理</h3>
+                            <div class="P-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="P-table">
+                                    <form>
+                                        <table>
+                                            <tr>
+                                                <th>商品編號</th>
+                                                <th>商品類別</th>
+                                                <th>商品名稱</th>
+                                                <th>單價</th>
+                                                <th>商品簡介</th>
+                                                <th>商品圖片1</th>
+                                                <th>商品圖片2</th>
+                                                <th>商品圖片3</th>
+                                                <th>商品圖片4</th>
+                                                <th>商品圖片5</th>
+                                                <th>客製化</th>
+                                                <th>商品狀態</th>
+                                                <th>編輯</th>
+                                            </tr>
+                                            <tr>
+                                                <td><span>P6</span></td>
+                                                <td>
+                                                    <span>B</span>
+                                                    <select>
+                                                        <option>A(包包)</option>
+                                                        <option>B(手機殼)</option>
+                                                        <option>C(口罩)</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <span>客製化手機殼</span>
+                                                    <input type="text">
+                                                </td>
+                                                <td>
+                                                    <span>NTD 399</span>
+                                                    <input type="number">
+                                                </td>
+                                                <td>
+                                                    <span>簡介簡介簡介</span>
+                                                    <input type="text">
+                                                </td>
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>                                                
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>                                               
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>                                                
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>
+
+                                                <td>
+                                                    <span>可</span>
+                                                    <input type="radio" name="customized" value="0"><label>可</label>
+                                                    <input type="radio" name="customized" value="1"><label>否</label>
+                                                </td>
+                                                <td>
+                                                    切換按鈕
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <button class="edit-btn" type="submit">確認</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span>P6</span></td>
+                                                <td>
+                                                    <span>B</span>
+                                                    <select>
+                                                        <option>A(包包)</option>
+                                                        <option>B(手機殼)</option>
+                                                        <option>C(口罩)</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <span>客製化手機殼</span>
+                                                    <input type="text">
+                                                </td>
+                                                <td>
+                                                    <span>NTD 399</span>
+                                                    <input type="number">
+                                                </td>
+                                                <td>
+                                                    <span>簡介簡介簡介</span>
+                                                    <input type="text">
+                                                </td>
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>                                                
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>                                               
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>                                                
+                                                <td>
+                                                    <div class="img"><img></div>
+                                                    <input type="file" >
+                                                </td>
+
+                                                <td>
+                                                    <span>否</span>
+                                                    <input type="radio" name="customized" value="0"><label>可</label>
+                                                    <input type="radio" name="customized" value="1"><label>否</label>
+                                                </td>
+                                                <td>
+                                                    切換按鈕
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-edit"></i>
+                                                    <button class="edit-btn" type="submit">確認</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
                         </div> 
-                        <div id="cusProMag" class="tabContent">
+                        <!-- <div id="cusProMag" class="tabContent">
                             <h3>客製化商品管理</h3>
                             <h1>興建中...請稍後</h1>
 
-                        </div>
+                        </div> -->
                         <div id="ordMag" class="tabContent">
                             <h3>訂單管理管理</h3>
-                            <h1>興建中...請稍後</h1>
+                            <div class="O-block-list">
+                                <div class="search-block">
+                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                </div>
+                                <div class="O-table">
+                                    <form>
+                                        <table>
+                                            <tr>
+                                                <th></th>
+                                                <th>訂單編號</th>
+                                                <th>訂單日期</th>
+                                                <th>訂單狀態</th>
+                                                <th>付款狀態</th>
+                                                <th>送貨狀態</th>
+                                                <th>是否出貨</th>
+                                                <th>查看訂單</th>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle new"></div></td>
+                                                <td>O111</td>
+                                                <td>2020/03/20</td>
+                                                <td>處理中</td>
+                                                <td>已付款</td>
+                                                <td>備貨中</td>
+                                                <td>請幫我換你的違規停權切換紐</td>
+                                                <td>
+                                                    <i class="fas fa-sticky-note"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>O110</td>
+                                                <td>2020/03/16</td>
+                                                <td>已完成</td>
+                                                <td>已付款</td>
+                                                <td>已取貨</td>
+                                                <td>按鈕</td>
+                                                <td>
+                                                    <i class="fas fa-sticky-note"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>O109</td>
+                                                <td>2020/03/01</td>
+                                                <td>已完成</td>
+                                                <td>已付款</td>
+                                                <td>已取貨</td>
+                                                <td>按鈕</td>
+                                                <td>
+                                                    <i class="fas fa-sticky-note"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>O108</td>
+                                                <td>2020/02/19</td>
+                                                <td>已完成</td>
+                                                <td>已付款</td>
+                                                <td>已取貨</td>
+                                                <td>按鈕</td>
+                                                <td>
+                                                    <i class="fas fa-sticky-note"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td>O107</td>
+                                                <td>2020/02/11</td>
+                                                <td>已完成</td>
+                                                <td>已付款</td>
+                                                <td>已取貨</td>
+                                                <td>按鈕</td>
+                                                <td>
+                                                    <i class="fas fa-sticky-note"></i>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="order-items">
+                                    <div class="info">
+                                        <p>訂單編號：<span>O111</span></p>
+                                        <p>訂單日期：<span>2021/03/20</span></p>
+                                        <p>會員編號：<span>M1</span></p>
+                                    </div>
+                                    <div class="items">
+                                        <table>
+                                            <tr>
+                                                <th>商品編號</th>
+                                                <th>商品名稱</th>
+                                                <th>單價</th>
+                                                <th>數量</th>
+                                                <th>客製化圖片</th>
+                                            </tr>
+                                            <tr>
+                                                <td>C1</td>
+                                                <td>手機殼</td>
+                                                <td>399</td>
+                                                <td>1</td>
+                                                <td><div class="btn">下載</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td>G3</td>
+                                                <td>環保包包</td>
+                                                <td>599</td>
+                                                <td>2</td>
+                                                <td></td>
+                                            </tr> 
+                                        </table>
+                                    </div>
+                                    <div class="price">
+                                        <p>商品總價：<span>NTD 1,697</span></p>
+                                        <p>環保幣折抵：<span>NTD 20</span></p>
+                                        <p>總價：<span>NTD 1,677</span></p>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="buyer">
+                                            <p>收貨人：<span>Ann</span></p>
+                                            <p>收貨地址：<span>32001桃園市中壢區中大路300號</span></p>
+                                            <p>收貨電話：<span>0932-333-333</span></p>
+                                        </div>
+                                        <div class="btn-block">
+                                            <div class="close-btn btn">關閉</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="reportMag" class="tabContent">
                             <h3>檢舉留言管理</h3>
@@ -505,11 +771,11 @@
 
 <script>
     //檢舉留言
-    $('i').click(function(){
+    $('#reportMag i').click(function(){
         $(this).css('display','none');
         $(this).parent().find('div').css('display','block');
     });
-    $('button.edit-btn').click(function(){
+    $('#reportMag button.edit-btn').click(function(){
         $(this).parent().css('display','none');
         $(this).parent().parent().find('i').css('display','block');
     });

@@ -86,94 +86,113 @@
 
 
     <script>
-        //各種說明的切換
-        $(document).ready(function() {
-            // 第1個按鈕
-            $('#btnGuide1').click(function() {
-                // ======================左邊按鈕===========================
-                $('#btnGuide2').css('background', '#fafafa');
-                $('#btnGuide2').css('color', '#1D1E4C');
+        $('.titleOfGuide').click(function(){
+            $('.titleOfGuide').css('background-color','#fafafa');
+            $('.titleOfGuide').css('color','#1D1E4C');
+            $('.titleOfGuide').addClass('F');
+            $(this).removeClass('F');
+            $('.F').not(this).mouseover(function(){
+                $(this).css('background-color','red');
+                $(this).css('color','#fafafa');
+            }).mouseout(function(){
+                $('.F').css('background-color','#fafafa');
+                $('.F').css('color','#1D1E4C');
+            })
+            $(this).mouseover(function(){
+                $(this).css('background-color','#1D1E4C');
+                $(this).css('color','#fafafa');
+            })
+            $(this).css('background-color','#1D1E4C');
+            $(this).css('color','#fafafa');
+        })
+        // //各種說明的切換
+        // $(document).ready(function() {
+        //     // 第1個按鈕
+        //     $('#btnGuide1').click(function() {
+        //         // ======================左邊按鈕===========================
+        //         $('#btnGuide2').css('background', '#fafafa');
+        //         $('#btnGuide2').css('color', '#1D1E4C');
 
-                $('#btnGuide3').css('background', '#fafafa');
-                $('#btnGuide3').css('color', '#1D1E4C');
+        //         $('#btnGuide3').css('background', '#fafafa');
+        //         $('#btnGuide3').css('color', '#1D1E4C');
 
-                $('#btnGuide4').css('background', '#fafafa');
-                $('#btnGuide4').css('color', '#1D1E4C');
+        //         $('#btnGuide4').css('background', '#fafafa');
+        //         $('#btnGuide4').css('color', '#1D1E4C');
 
-                $('#btnGuide1').css('background', '#1D1E4C');
-                $('#btnGuide1').css('color', '#fafafa');
-                // ======================右邊顯示===========================
-                $('#ShowGuide2').css('display', 'none');
-                $('#ShowGuide3').css('display', 'none');
-                $('#ShowGuide4').css('display', 'none');
+        //         $('#btnGuide1').css('background', '#1D1E4C');
+        //         $('#btnGuide1').css('color', '#fafafa');
+        //         // ======================右邊顯示===========================
+        //         $('#ShowGuide2').css('display', 'none');
+        //         $('#ShowGuide3').css('display', 'none');
+        //         $('#ShowGuide4').css('display', 'none');
 
-                $('#ShowGuide1').css('display', 'block');
-            });
+        //         $('#ShowGuide1').css('display', 'block');
+        //     });
 
-            //第2個按鈕
-             $('#btnGuide2').click(function() {
-                 // ======================左邊按鈕===========================
-                $('#btnGuide1').css('background', '#fafafa');
-                $('#btnGuide1').css('color', '#1D1E4C');
+        //     //第2個按鈕
+        //      $('#btnGuide2').click(function() {
+        //          // ======================左邊按鈕===========================
+        //         $('#btnGuide1').css('background', '#fafafa');
+        //         $('#btnGuide1').css('color', '#1D1E4C');
 
-                $('#btnGuide3').css('background', '#fafafa');
-                $('#btnGuide3').css('color', '#1D1E4C');
+        //         $('#btnGuide3').css('background', '#fafafa');
+        //         $('#btnGuide3').css('color', '#1D1E4C');
 
-                $('#btnGuide4').css('background', '#fafafa');
-                $('#btnGuide4').css('color', '#1D1E4C');
+        //         $('#btnGuide4').css('background', '#fafafa');
+        //         $('#btnGuide4').css('color', '#1D1E4C');
 
-                $('#btnGuide2').css('background', '#1D1E4C');
-                $('#btnGuide2').css('color', '#fafafa');
-                // ======================右邊顯示===========================
-                $('#ShowGuide1').css('display', 'none');
-                $('#ShowGuide3').css('display', 'none');
-                $('#ShowGuide4').css('display', 'none');
-                $('#ShowGuide2').css('display', 'block');
-            });
+        //         $('#btnGuide2').css('background', '#1D1E4C');
+        //         $('#btnGuide2').css('color', '#fafafa');
+        //         // ======================右邊顯示===========================
+        //         $('#ShowGuide1').css('display', 'none');
+        //         $('#ShowGuide3').css('display', 'none');
+        //         $('#ShowGuide4').css('display', 'none');
+        //         $('#ShowGuide2').css('display', 'block');
+        //     });
 
-            //第3個按鈕
-            $('#btnGuide3').click(function() {
-                // ======================左邊按鈕===========================
-                $('#btnGuide1').css('background', '#fafafa');
-                $('#btnGuide1').css('color', '#1D1E4C');
+        //     //第3個按鈕
+        //     $('#btnGuide3').click(function() {
+        //         // ======================左邊按鈕===========================
+        //         $('#btnGuide1').css('background', '#fafafa');
+        //         $('#btnGuide1').css('color', '#1D1E4C');
 
-                $('#btnGuide2').css('background', '#fafafa');
-                $('#btnGuide2').css('color', '#1D1E4C');
+        //         $('#btnGuide2').css('background', '#fafafa');
+        //         $('#btnGuide2').css('color', '#1D1E4C');
 
-                $('#btnGuide4').css('background', '#fafafa');
-                $('#btnGuide4').css('color', '#1D1E4C');
+        //         $('#btnGuide4').css('background', '#fafafa');
+        //         $('#btnGuide4').css('color', '#1D1E4C');
 
-                $('#btnGuide3').css('background', '#1D1E4C');
-                $('#btnGuide3').css('color', '#fafafa');
-                // ======================右邊顯示===========================
-                $('#ShowGuide1').css('display', 'none');
-                $('#ShowGuide2').css('display', 'none');
-                $('#ShowGuide4').css('display', 'none');
-                $('#ShowGuide3').css('display', 'block');
-            });
+        //         $('#btnGuide3').css('background', '#1D1E4C');
+        //         $('#btnGuide3').css('color', '#fafafa');
+        //         // ======================右邊顯示===========================
+        //         $('#ShowGuide1').css('display', 'none');
+        //         $('#ShowGuide2').css('display', 'none');
+        //         $('#ShowGuide4').css('display', 'none');
+        //         $('#ShowGuide3').css('display', 'block');
+        //     });
 
-            //第4個按鈕
-            $('#btnGuide4').click(function() {
-                // ======================左邊按鈕===========================
-                $('#btnGuide1').css('background', '#fafafa');
-                $('#btnGuide1').css('color', '#1D1E4C');
+        //     //第4個按鈕
+        //     $('#btnGuide4').click(function() {
+        //         // ======================左邊按鈕===========================
+        //         $('#btnGuide1').css('background', '#fafafa');
+        //         $('#btnGuide1').css('color', '#1D1E4C');
 
-                $('#btnGuide2').css('background', '#fafafa');
-                $('#btnGuide2').css('color', '#1D1E4C');
+        //         $('#btnGuide2').css('background', '#fafafa');
+        //         $('#btnGuide2').css('color', '#1D1E4C');
 
-                $('#btnGuide3').css('background', '#fafafa');
-                $('#btnGuide3').css('color', '#1D1E4C');
+        //         $('#btnGuide3').css('background', '#fafafa');
+        //         $('#btnGuide3').css('color', '#1D1E4C');
 
-                $('#btnGuide4').css('background', '#1D1E4C');
-                $('#btnGuide4').css('color', '#fafafa');
-                // ======================右邊顯示===========================
-                $('#ShowGuide1').css('display', 'none');
-                $('#ShowGuide2').css('display', 'none');
-                $('#ShowGuide3').css('display', 'none');
-                $('#ShowGuide4').css('display', 'block');
-            });
+        //         $('#btnGuide4').css('background', '#1D1E4C');
+        //         $('#btnGuide4').css('color', '#fafafa');
+        //         // ======================右邊顯示===========================
+        //         $('#ShowGuide1').css('display', 'none');
+        //         $('#ShowGuide2').css('display', 'none');
+        //         $('#ShowGuide3').css('display', 'none');
+        //         $('#ShowGuide4').css('display', 'block');
+        //     });
 
-        });
+        // });
     </script>
 
 

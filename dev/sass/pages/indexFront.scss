@@ -38,6 +38,13 @@ p{font-size: 15px;}
         @content;
     }
 }
+// -----------------------------------------------
+@mixin customSize{
+    @media(max-width:850px){
+        @content;
+    }
+}
+
 
 // -----------------------------------------------
 @mixin bgImg ($url){
@@ -48,10 +55,15 @@ p{font-size: 15px;}
 }
 
 @mixin borbox(){
-    border-radius: 15px;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
+@mixin yellowTitleBtn(){
+    width: 50px;
+    height: 8px;
+    margin: 0 auto;
+    background-color: map-get($color_regulation,'yellow');
+}
 // ------套件class------------------------------
 
 
@@ -65,8 +77,6 @@ p{font-size: 15px;}
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    // background: #fff;
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -81,12 +91,14 @@ p{font-size: 15px;}
     align-items: center;
 }
 
-
 // ---------------------------------------
 .homeBlock{
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 30px;
+    @include mobileS{
+        padding: 0 10px;
+    }
 }
 
 
@@ -95,18 +107,49 @@ p{font-size: 15px;}
     line-height:30px;
     letter-spacing:2px;
     width: 100%;
-    background-color:map-get($color_regulation, 'white-bg');
     margin-top: 66px;
+    z-index:0;
     .homeBotLayer1{
-        @include pad{
-            padding: 30px 0;
-        }
         .homeBlock{
             .homePage1{
+                position: relative;
+                button{
+                    @include mobileL{
+                        top: 15px;
+                        left: 0px; 
+                    }
+                    outline: none;
+                    top: 50px;
+                    left: 50px;
+                    position: absolute;
+                    color: map-get($color-regulation, 'yellow' );
+                    cursor: pointer;
+                    font-size: 20px;
+                    padding: 0;
+                    border: none;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    border:1px solid map-get($color-regulation, 'yellow' );
+                    background-color: transparent;
+                    i{
+                        padding-left: 1px;
+                    }
+                }
+                #myVideo{
+                    z-index: -1;
+                    position: fixed;
+                    right: 0px;
+                    bottom: 0px;
+                    min-width: 100%;
+                    min-height: 100%;
+                    height: auto;
+                    width: auto;
+                }
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: map-get($color_regulation, 'blue');
+                color: map-get($color_regulation, 'white');
                 @include pad{
                     flex-direction: column;
                 }
@@ -114,190 +157,117 @@ p{font-size: 15px;}
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    width: 35%;
-                    height: calc(100vh - 66px);
-                    background-image:url(../../img/indexFront/indexfont-img.png);
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    position: relative;
+                    width: 50%;
+                    height: calc(75vh - 66px);
+                    text-align: center;
                     @include pad{
-                        // height:100%;
-                        // padding: 120px 0;
-                        width: 100%;
-                        height:300px;
-                    }
-                    div{
-                        position: absolute;
-                        margin: auto 0;
-                        // left:50%
-                        @include pad{
-                            width: 100%;
-                            text-align: center;
-                        }
+                        width: 90%;
+                        // height:300px;
                     }
                     h5{
                         margin: 0;
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
                     }
-                }
-                .page1Right{
-                    margin-left: 5%;
-                    border-radius: 15px;
-                    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-                    background-color:#FFFFFF;
-                    width: 65%;
-                    overflow: hidden;
-                    padding: 15px;
-                    @include pad{
-                        height: auto;
-                        width: calc(100% - 20px);
-                        margin-left:0;
-                        padding: 10px;
+                    .page1YellowTitle{
+                        @include yellowTitleBtn();
+                        margin-bottom: 30px;
                     }
-                    .swiper-wrapper{
-                        .swiper-slide{
-                            @include mobileS{
-                                flex-direction: column;
-                            }
-                            .page1RightCard{
-                                border-radius: 15px;
-                                overflow: hidden;
-                                width: 310px;
-                                height: 380px;
-                                @include pad{
-                                    width: calc( 310px * 0.7);
-                                    height: calc( 380px * 0.7);
-                                }
-                                @include mobileL{
-                                    width: calc( 310px * 0.5);
-                                    height: calc( 380px * 0.5);
-                                }
-                                // @include mobileS{
-                                //     width: calc( 310px * 0.25);
-                                //     height: calc( 380px * 0.25);
-                                // }
-                                img{
-                                    @include pad{
-                                        width: calc( 310px * 0.7);
-                                        height: calc( 380px * 0.7);
-                                    }
-                                    @include mobileL{
-                                        width: calc( 310px * 0.5);
-                                        height: calc( 380px * 0.5);
-                                    }
-                                    // @include mobileS{
-                                    //     width: calc( 310px * 0.25);
-                                    //     height: calc( 380px * 0.25);
-                                    // }
-                                }
-                            }
-                            .page1RightText{
-                                pad: 20px;
-                                // margin-left: 20px;
-                                width: 45%;
-                                @include mobileS{
-                                width: 100%;
-                                margin-left: 0px;
-
-                                }
-                                h5{
-                                    margin: 0;
-                                    @include mobileL(){
-                                        margin-top: 10px;
-                                    }
-                                    @include mobileS{
-                                        margin: 0;
-                                        margin-top: 10px;
-                                    }
-                                }
-                                p{  
-                                    display: block; // 如果不是區塊元素的話，要加這一行
-                                    overflow: hidden;
-                                    display: -webkit-box;
-                                    -webkit-box-orient: vertical;
-                                    -webkit-line-clamp: 4;
-                                    @include mobileL(){
-                                        margin: 0px;
-                                        margin-bottom: 10px;
-                                    }
-                                   
-                                }
-                                button{
-                                    @include mobileS{
-                                        margin-bottom: 10px;
-                                    }
-                                }
-                            }
-                        }
+                    .totalDetail{
+                        display: flex;
+                        justify-content: center;
                     }
+                    
                 }
             }
         }
     }
 }
-
-// #pre2Img{
-//     cursor: pointer;
-// }
 #homeBotLayer2{
+    z-index: 3;
+    background: #707070;
+    background: -moz-linear-gradient(top, #70707000 0%,#000000a6 20%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #70707000 0%,#000000a6 20%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #70707000 0%,#000000a6 20%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
     .page1RightCard{
         img{
             cursor: pointer;
-            border-radius: 15px;
+            border-radius: 0;
             overflow: hidden;
             width: 260px;
             height: 300px;
             box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-            // filter: blur(5px);
-            @include pc{
-                width: 180px;
-                height: 240px;
-            }
-            @include pad{
-                width: 135px;
-                height: 180px;
-            }
-            @include mobileL{
-                width: 90px;
-                height: 120px;
-            }
-            @include mobileS(){
-                width: 60px;
-                height: 90px;
-            }
+            
         }
     }
 
     color: map-get($color_regulation, 'white');
-    // height: 100vh;
     align-items: center;
     justify-content: center;
-    background-attachment: fixed;
-    @include bgImg('../../img/indexFront/indexImg5.jpg');
-    
     .homeBlock{
         color: map-get($color_regulation,'blue');
         .homePage2{
-            // color: map-get($color_regulation, 'color' );
-            padding: 30px 0;
+            @include pad{
+                padding-top: 0;
+            }
+            @include mobileS{
+                padding: 0;
+                padding-bottom: 10px;
+            }
+            padding: 50px 0;
             height: 100%;
+            color: map-get($color_regulation,'white');
+            text-align: center;
+            p{
+                margin: 0;
+                
+                @include pad{
+                    display: inline-block;
+                }
+            }
             h5{
-                margin-top: 0;
+                margin: 0;
             }
-            .homePage2Top{
-                margin-bottom: 50px;
+            .yellowTitleBtn{
+                @include yellowTitleBtn();
+                margin: 10px auto 30px;
             }
+            @include pad{
+                .data1,.data2,.data3,.data4{
+                    margin-bottom: 30px;
+                }
+            }
+            
             .homePage2Data{
                 display: flex;
-                justify-content: space-around;
-                background-color: rgba(255, 255, 255, 0.7);
+                justify-content: space-between;
                 border-radius: 15px;
                 padding: 10px;
-                .data4{
-                    p{
-                        margin: 0;
+                text-align: left;
+                @include pad{
+                    flex-direction: column;
+                    text-align: center;
+                }
+                #personTarget{
+                    display: block;
+                    @include pad{
+                    display: inline-block;
                     }
+                }
+                #moneyTarget{
+                    display: block;
+                    @include pad{
+                        display: inline-block;
+                    }
+                }
+                .iconBox{
+                    @include pad{
+                        margin: auto;
+                    }
+                    border: 1px solid map-get($color-regulation, 'white');
+                    width: 30px;
+                    text-align: center;
+
                 }
             }
         }
@@ -306,23 +276,23 @@ p{font-size: 15px;}
 }
 
 .homeBotLayer3{
-    height: 50vh;
     background-color:map-get($color_regulation, 'white-bg');
-    margin: 30px 0;
+    padding:50px 30px;
     display: flex;
     @include mobileL{
         height: 100%;
-
+        padding:50px 0;
     }
     .homePage3{
         display: flex;
+        @include pad{
+            flex-direction: column;
+        }
         div.toggle{
-            margin-top: 30px;
             div.toggle-block{
             box-shadow: $box-shadow;
-            width: 400px;
+            max-width: 400px;
             height: 40px;
-            border-radius: 20px;
             padding: 5px;
             background-color: map-get($color-regulation,'blue');
             margin: 0px auto 30px auto;
@@ -335,8 +305,7 @@ p{font-size: 15px;}
                 left: 0;
                 width: 50%;
                 height: 100%;
-                border-radius: 20px;
-                background-color: map-get($color-regulation,'white');
+                background-color: map-get($color-regulation,'yellow');
               }
               div.text{
                 position: absolute;
@@ -355,42 +324,63 @@ p{font-size: 15px;}
                 cursor: pointer;
               }
             }
-            @media (min-width:430px) and (max-width:575px){
-              div.toggle-block{
-                width: 300px;
-                div.text{
-                  font-size: 15px;
-                }
-              }
-            }
-            @media (max-width:429px){
-              div.toggle-block{
-                width: 220px;
-              height: 30px;
-                div.text{
-                  font-size: 12px;
-                }
-              }
-            }
+            // @media (min-width:430px) and (max-width:575px){
+            //   div.toggle-block{
+            //     width: 300px;
+            //     div.text{
+            //       font-size: 15px;
+            //     }
+            //   }
+            // }
+            // @media (max-width:429px){
+            //   div.toggle-block{
+            //     width: 220px;
+            //   height: 30px;
+            //     div.text{
+            //       font-size: 12px;
+            //     }
+            //   }
+            // }
           }
         @include mobileL{
             flex-direction: column;
             align-items: center;
         }
         &__left{
-            width: 50%;
-            padding-right: 50px;
+            @include pad{
+                margin: auto;
+                width: 100%;
+                padding-right: 0;
+            }
             @include mobileL{
                 padding-right: 0px;
                 margin-bottom: 20px;
                 width: calc(100% - 60px);
             }
+            @include mobileS{
+                width: calc(100% - 20px);
+            }
+            width: 50%;
+            padding: 30px;
+            // padding-left: 0;
+            .page3LeftTitle{
+                margin-bottom: 30px;
+                border-left: 8px solid map-get($color-regulation, 'yellow' );
+                padding-left: 10px;
+                p{
+                    margin: 0;
+                }
+                h5{
+                    margin: 0;
+                }
+            }
             p{
-                display: block; // 如果不是區塊元素的話，要加這一行
+                display: block;
                 overflow: hidden;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 4; 
+                margin-top: 0;
             }
             h5{
                 @include mobileL{
@@ -399,21 +389,22 @@ p{font-size: 15px;}
             }
         }
         &__right{
-            justify-content: center;
-            padding: 30px;
-            background: #FFFFFF;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 15px;
-            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-            @include mobileL{
-                width: calc(100% - 20px);
-                
+            @include mobileS{
+            width: calc(100% - 20px);
+
             }
             @include pad{
-                padding: 10px;
+            width: calc(100% - 60px);
+            }
+            justify-content: center;
+            padding: 30px;
+            background: map-get($color-regulation, 'white' );
+            width: 50%;
+            margin: 0 auto;
+            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+            .rankBox{
+                margin: 0 auto;
+                border: 2px solid map-get($color-regulation, 'blue' );
             }
             h5{
                 margin: 0;
@@ -423,105 +414,91 @@ p{font-size: 15px;}
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
+                color: map-get($color-regulation,'blue');
             }
             &__no1{
-                box-shadow: $box-shadow;
-
-                margin-bottom: 25px;
-                border-radius: 15px;
                 height: 80px;
-                width: 95%;
-                background-color:map-get($color_regulation, 'orange');
             }
             &__no2{
-                margin-bottom: 10px;
-                border-radius: 15px;
                 height: 50px;
-                width: 90%;
-                background-color:map-get($color_regulation, 'pink');
-                box-shadow: $box-shadow;
-
+                background-color:map-get($color_regulation, 'rankGray');
             }
             &__no3{
-                border-radius: 15px;
-                width: 90%;
                 height: 50px;
-                background-color:map-get($color_regulation, 'lake');
-                box-shadow: $box-shadow;
-
             }
         }
     }
 }
 
-
 .homeBotLayer4{
-    background-color:map-get($color_regulation, 'white-bg');
+    padding: 50px 0;
+    background-color:#fff;
+    position: relative;
+    .page4YellowBlock{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 124px;
+        width: 80%;
+        height: 260px;
+        background-color: map-get($color-regulation, 'yellow' );
+        // box-shadow: $box-shadow;
+    }
     .homePage4{
-        margin-bottom: 30px;
-        @include borbox();
-        background: #FFFFFF;
-        box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-        // height: 95vh;
-        padding: 30px;
-        @include pad{
-            padding: 10px;
-        }
-        h5{
-            margin: 0;
+        .newsPorTitle{
+            margin: 0 auto;
             text-align: center;
-            margin-bottom: 30px;
-            &:nth-child(2) {
-                margin-top:30px;
+            p{
+                margin: 0;
+            }
+            .newProLine{
+                @include yellowTitleBtn();
+                margin-bottom: 30px;
             }
         }
-        h6{
-            margin: 0;
+        @include pad{
+            // padding: 10px;
         }
-        &__customerBlock{
-            background-size: cover;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-            .frontBlur2{
-                padding: 0 30px;
-                position: relative;
-                z-index: 1; // 不讓毛玻璃掉到最底層
-                overflow: hidden; // 超出的毛玻璃裁切掉
-                background-image: url(../../img/indexFront/indexImg8.jpg);
-                &::before{
-                    margin: auto;
-                    position: absolute;
-                    z-index: -1;
-                    content:"";
-                    width: 100vw;
-                    height: 35vh;
-                    top: 0; // 要比原本的div大
-                    bottom: 0; // 毛玻璃邊才不會內縮
-                    left: 0;
-                    right: 0;
-                    opacity: 1; // 透光可控制內部陰影
-                    background-image: url(../../img/indexFront/indexImg8.jpg);
-                    background-size: cover;
-                    background-position: bottom;
-                    filter: blur(10px);
-                }
+        @include mobileS{
+            padding: 0;   
+        }
+        div{
             
+            h5{
+                margin: 0;
+                margin-bottom: 12px;
             }
+            h6{
+                margin: 0;
+            }
+        }
+        
+        &__customerBlock{
+            margin-bottom: 30px;
+            // #cusSwiperWrapper{
+            //     // 解決多出來的陰影!!!!!!
+            //     // width: 102%;
+            // }
+            @include customSize{
+                .cusSwiper{
+                    flex-direction: column;
+                }
+                #cusSwipersBtnR,#cusSwipersBtnL{
+                    top:75%;
+                }
+            }
+            
             .page4LeftCard{
                 font-size: 0;
                 position: relative;
                 cursor: pointer;
-                overflow: hidden;
-                border-radius: 15px;
-                height: 310px;
-                width: 300px;
-
+                height: 350px;
+                width: 320px;
+                background-color: map-get($color-regulation,'yellow' );
+                box-shadow: $box-shadow;
                 img{
                     height: 310px;
                     width: 300px;
-                    border-radius: 15px;
                     transition: .5s ease-in-out;
                     
                 }
@@ -533,7 +510,6 @@ p{font-size: 15px;}
                         background-color: rgba(255, 255, 255, 0.774);
                         overflow: hidden;
                         line-height: 40px;
-                        border-radius: 50%;
                         width: 40px;
                         height: 40px;
                         transition: .5s ease-in-out;
@@ -554,11 +530,9 @@ p{font-size: 15px;}
                 .page4CardCont{
                     opacity: 0;
                     transition: .5s ease-in-out;
-
                     overflow: hidden;
                     position: absolute;
                     bottom: 0px;
-                    border-radius: 0 0 15px 15px;
                     left: 0;
                     padding: 10px;
                     background-color: rgba(255, 255, 255, 0.774);
@@ -579,59 +553,60 @@ p{font-size: 15px;}
                         -webkit-box-orient: vertical;
                         white-space: normal;
                     }
-                    
                 }
                 &:hover{
-                    // transition: .3s ease-in-out;
                     img{
                         transform: scale(1.2);
                         transition: .5s ease-in-out;
                     }
                     .cusBlock{
-                        border-radius: 20px;
                         width: 165px;
                         transition: .3s ease-in-out;
                     }
                     .cusText{
                         display: block;
-                     
                     }
                     .page4CardCont{
                         opacity: 1;
-                        
                         transition: .5s ease-in-out;
-
                     }
                 }
-                
-                
-                
             }
             .page4RightText{
-               
-                padding: 30px;
+                padding: 10px 20px 30px 10px;
                 width: 60%;
                 text-align: left;
-                h5{
-                text-align: left;
+                @include customSize{
+                width: 100%;
+                // padding: 30px;
+                // margin-right: -10px;
+                padding-right: 10px;
                 }
+                .page4Title{
+                    p{
+                        margin: 0;
+                    }
+                    padding-left: 10px;
+                    border-left: 8px solid map-get($color-regulation, 'yellow' );
+                }
+                
                 a{  
-                    line-height: 30px;
-                    height: 30px;
+                    line-height: 35px;
+                    height: 35px;
                     padding: 0 30px;
                     float: right;
+                    margin-right: 15px;
                 }
                 .colorAll{
-                    margin-top: 30px;
-                    display: flex;
-                    justify-content: space-between;
-                    border-radius: 15px;
-                    height: 200px;
-                    width: 80%;
+                    // display: flex;
+                    // justify-content: space-between;
+                    overflow: auto;
+                    height: 160px;
+                    width: 100%;
                     .colorBox{
+                        display: inline-block;
                         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-                        border-radius: 15px;
-                        overflow: hidden;
+                        overflow: auto;
                         width: 80px;
                         height: 110px;
                         position: relative;
@@ -682,13 +657,9 @@ p{font-size: 15px;}
                             height: 70px;
                             width: 80px;
                         }
-                        
-                        
                     }
                 }
             }
-            
-
         }
         @mixin card(){
             width:260px;
@@ -696,38 +667,36 @@ p{font-size: 15px;}
             position: relative;
             background-size: cover;
             box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-            @include pc{
-                width: 180px;
-                height: 240px;
-            }
-            @include pad{
-                width: 135px;
-                height: 180px;
-            }
-            @include mobileL{
-                width: 90px;
-                height: 120px;
-                margin-right: 5px;
-            }
-            @include mobileS(){
-                width: 60px;
-                height: 90px;
-            }
+            // @include pc{
+            //     width: 180px;
+            //     height: 240px;
+            // }
+            // @include pad{
+            //     width: 135px;
+            //     height: 180px;
+            // }
+            // @include mobileL{
+            //     width: 90px;
+            //     height: 120px;
+            //     margin-right: 5px;
+            // }
+            // @include mobileS(){
+            //     width: 60px;
+            //     height: 90px;
+            // }
         }
         &__generalBlock{
-            margin-top: 30px;
+            flex-wrap: wrap;
             display: flex;
             justify-content: space-around;
-            @include pad{
-                margin-bottom: 30px;
-
-            }
+            // @include pad{
+            //     margin-bottom: 30px;
+            // }
             .proDetail{
+                margin: 10px;
                 .page4Pro1{
                     background-image: url("../../img/indexFront/bag1.jpg");
-                    @include borbox();
                     @include card();
-                    
                 }
                 .page4Pro2{
                     background-image: url("../../img/indexFront/bag1.jpg");
@@ -845,48 +814,40 @@ p{font-size: 15px;}
         height: auto;
     }
     color: map-get($color_regulation, 'white');
-    // height: 50vh;
-    // align-items: center;
-    // justify-content: center;
     @include bgImg('../../img/indexFront/indexImg7.jpg');
-    .frontBlur{
-        position: relative;
-        z-index: 1; // 不讓毛玻璃掉到最底層
-        overflow: hidden; // 超出的毛玻璃裁切掉
-        height: 50vh;
-        @include pad{
-            height: auto;
-        }
-        &::before{
-            margin: auto;
-            position: absolute;
-            z-index: -1;
-            content:"";
-            width: 100vw;
-            // height: 100vh;
-            top: 0; // 要比原本的div大
-            bottom: 0; // 毛玻璃邊才不會內縮
-            left: 0;
-            right: 0;
-            opacity: 1; // 透光可控制內部陰影
-            @include bgImg('../../img/indexFront/indexImg7.jpg');
-            background-attachment: fixed;
-            filter: blur(5px);
-        }
-    }
 }
 
 .homePage5{
     display: flex;
     justify-content:center;
     align-items: center;
-    margin-top: 6%;
-    @include pad{
+    padding: 50px 30px;
+    @include pc{
         flex-direction: column;
     }
+    @include mobileS{
+        padding: 30px 0;   
+    }
     .homePage5Left{
+        @include pc{
+            padding: 0;
+            width: 100%;
+
+        }
         width: 40%;
         height: 50%;
+        padding-right: 30px;
+        .pageHistoryTitle{
+            border-left: 8px solid map-get($color-regulation, 'yellow' );
+            padding-left: 10px;
+            margin-bottom: 30px;
+            P{
+                margin: 0;
+            }
+            h5{
+                margin: 0;
+            }
+        }
         @include pad{
             width: 100%;
         }
@@ -896,7 +857,8 @@ p{font-size: 15px;}
                 margin: 0;
             }
         }
-        p{
+        p{  
+            margin-top: 0;
             display: block;
             overflow: hidden;
             display: -webkit-box;
@@ -910,13 +872,12 @@ p{font-size: 15px;}
         height: 50%;
         @include pad{
             width: 100%;
-            
         }
         @include pc{
             margin-top: 6%;
+            width: 100%;
         }
         @include pad{
-            margin-top: 0%;
             padding-bottom: 30px;
         }
         
@@ -926,29 +887,9 @@ p{font-size: 15px;}
     position: relative;
     display: flex;
     align-items: flex-end;
-    overflow: hidden;
-    border-radius: 15px;
-    // padding: 1rem;
-    width: 100%;
+    // width: 100%;
     height: 330px;
     width: 300px;
-    @include pc{
-        width: 180px;
-        height: 240px;
-    }
-    @include pad{
-        width: 135px;
-        height: 180px;
-    }
-    @include mobileL{
-        width: 90px;
-        height: 120px;
-        margin-right: 5px;
-    }
-    @include mobileS(){
-        width: 60px;
-        height: 90px;
-    }
     text-align: center;
     color:map-get( $color_regulation, 'blue');
     background-color: whitesmoke;
@@ -1090,71 +1031,5 @@ p{font-size: 15px;}
 }
 
 
-.homeBotLayer6{
-    height: 50vh;
-    .homeBlock{
-        .homePage6{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-            &__left{
-                
-                h5{
-                    margin: 0;
-                    
-                }
-                p{
-                    display: block;
-                    overflow: hidden;
-                    display: -webkit-box;
-                    -webkit-box-orient: vertical;
-                    -webkit-line-clamp: 4;
-                }
-                padding: 0 20px;
-                // height: 50vh;
-                width: 50%;
-                background-color:map-get($color_regulation, 'white-bg');
-                color: map-get($color_regulation, 'blue');
-            }
-            &__right{
-                cursor: pointer;
-                border-radius: 15px;
-                box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-                height: 30vh;
-                width: 50%;
-                overflow: hidden;
-                position: relative;
-                border:none;
-                #myVideo{
-                    height: 100%;
-                    width: 100%;
-                    //poster裡面的照片填滿
-                    object-fit: cover;
-                }
-
-                #myBtn{
-                    cursor: pointer;
-                    outline: none;
-                    bottom: 10PX;
-                    left: 10PX;
-                    height: 34px;
-                    width: 34px;
-                    position: absolute;
-                    border: none;
-                    background-color: rgba(255, 255, 255, 0);
-                    // border:none;
-                    border-radius: 50%;
-                    color: map-get($color_regulation, 'blue' );
-                    font-size: 18px;
-                    font-weight: bold;
-                    padding: 0;
-                    color: white;
-                }
-            }
-        }
-    }
-    
-}
 
 

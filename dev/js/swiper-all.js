@@ -1,23 +1,20 @@
-var swiper1 = new Swiper('#swiper1', {
-    mousewheel: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        effect: 'fade',
-    },
-});
-var swiper3 = new Swiper('#swiper3', {
-    mousewheel: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        effect: 'fade',
-    },
-});
 
 var swiper2 = new Swiper('#swiper2', {
-    slidesPerView:3,
-    mousewheel: true,
+    // slidesPerView:4,
+    breakpoints:{
+        1200: {
+            slidesPerView:4,
+        },
+        900:{
+            slidesPerView:3,
+
+        },
+        600:{
+            slidesPerView:2,
+
+        },
+    },
+    // mousewheel: true,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -30,14 +27,34 @@ var swiper2 = new Swiper('#swiper2', {
 });
 
 
+var swiper3 = new Swiper('#swiper3', {
+    slidesPerView:1,
+    breakpoints:{
+        
+    },
+    // mousewheel: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        effect: 'fade',
+    },
+});
+
 var swiper4 = new Swiper('#swiper4', {          
-    slidesPerView:3,
-    mousewheel: true,
+    slidesPerView:1,
+    // mousewheel: true,
     keyboard: true,
     spaceBetween: 30,
     breakpoints:{
         768: {
-            slidesPerView:2.3,
+            slidesPerView:2.5,
+        },
+        600:{
+            slidesPerView:2,
         },
     },
     pagination: {

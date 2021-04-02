@@ -142,10 +142,10 @@ section {
                 margin-bottom: 4%;
                 cursor: pointer;
                 display:inline-block;
-                // &:hover{
-                //     background-color: map-get($color_regulation, "red" );
-                //     color: white;
-                // }
+                &:hover{
+                        background-color: map-get($color_regulation, "red" );
+                        color: white;
+                }
                 &:nth-child(4){
                     margin-bottom: 20px;
                 }
