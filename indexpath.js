@@ -1,2 +1,2 @@
-var index_path = 'act_hist.html';
+var index_path = 'member.html';
 module.exports = index_path;
