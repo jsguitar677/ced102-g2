@@ -1,11 +1,23 @@
 /*# sourceMappingURL=style.css.map */
+
 @import '../var';
 
-
 /* ::content-------------------------------------------------------------------------------------- */
-body{
+
+body {
     overflow-x: hidden;
 }
+
+div.yellow-block1 {
+    position: fixed;
+    z-index: -1;
+    width: 400px;
+    height: 300px;
+    background-color: #FFD241;
+    top: 50%;
+    right: 0;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,800");
 @import url("https://fonts.googleapis.com/css?family=Oswald:500");
 ::-moz-selection {
@@ -34,6 +46,7 @@ div.intro {
     color: #000;
     font-family: 'Palatino Linotype';
     overflow: hidden;
+    position: relative;
 }
 
 #site * {
@@ -108,11 +121,12 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     transform: translateX(25%);
 }
 
-.paragraph{
+.paragraph {
     width: 40%;
 }
+
 .ocean {
-    grid-row: 1/2;
+    grid-row: 1/5;
     grid-column: 1/-1;
     background-color: blue;
     background-image: url(../../img/act_hist/thalassophobia.jpg);
@@ -150,6 +164,8 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    width: 500px;
+    margin-left: 350px;
 }
 
 .left-content .layer_top>.subtitle {
@@ -165,7 +181,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 .left-content .layer_top>.subtitle,
 .left-content .layer_top>.number,
 .left-content .layer_top>.description {
-    color: map-get($color-regulation, 'red' );
+    color: map-get($color-regulation, 'red');
 }
 
 .left-content .layer_top>.number {
@@ -176,30 +192,31 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 
 .right-content {
     grid-row: 2/4;
-    grid-column: 3/-1;
+    grid-column: 1/-1;
+    position: relative;
 }
 
 .right-content>.layer_top {
-    color: map-get($color-regulation, 'blue' );
+    color: map-get($color-regulation, 'blue');
     padding: 3rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 40%;
+    color: white;
 }
 
 .right-content>.layer_top>.heading {
     margin: 0;
     font-size: 1rem;
-    color: map-get($color-regulation, 'blue' );
+    color: white
 }
 
 
 /* ---------------------------------- */
 
 .slide-nav {
-    position: absolute;
-    bottom: 100%;
-    right: 0;
+    bottom: 10%;
     display: flex;
 }
 
@@ -219,22 +236,31 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     border-radius: 10px;
 }
 
-.nav-button.-next {
-    color: #2D4451;
-    background: #CEDBE5;
-}
-
 .nav-button .nav-toggle {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 20%;
     width: 100%;
     height: 100%;
     cursor: pointer;
     opacity: 0;
     transform: translateX(0);
     transition: transform 0.5s linear 0s;
-    z-index: 2;
+    z-index: 10;
+}
+
+.nav-button.-next {
+    color: #2D4451;
+    background: #CEDBE5;
+    position: absolute;
+    bottom: 0;
+    right: 40%;
+}
+
+.nav-button.-prev {
+    position: absolute;
+    left: 30%;
+    bottom: 10%;
 }
 
 input[value="1"]:checked~* .-next .nav-toggle:not([for=scene-2]),
@@ -342,7 +368,7 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     right: 0;
     width: 1200px;
     height: 100%;
-    margin-left:50px;
+    margin-left: 50px;
 }
 
 *,
@@ -589,9 +615,9 @@ ul.ah_picklist li a {
     font: 700 15px Open Sans;
     text-transform: uppercase;
     position: relative;
-    color: map-get($color-regulation, 'blue' );
+    color: map-get($color-regulation, 'blue');
     text-decoration: none;
-    border: 1px solid map-get($color-regulation, 'blue' );
+    border: 1px solid map-get($color-regulation, 'blue');
     border-radius: 20px;
     letter-spacing: 1px;
     // padding: 10px 15px 10px 25px;
@@ -627,7 +653,7 @@ ul.ah_picklist li .drop-down li a {
 }
 
 ul.ah_picklist li .drop-down li a:hover {
-    background: map-get($color-regulation, 'blue' );
+    background: map-get($color-regulation, 'blue');
     color: #ffffff;
 }
 
@@ -645,7 +671,7 @@ i.fa.fa-chevron-down {
     left: 0;
     width: 0%;
     height: 100%;
-    background: map-get($color-regulation, 'blue' );
+    background: map-get($color-regulation, 'blue');
     position: absolute;
     transition: 0.3s ease;
     border-radius: 20px;
@@ -676,7 +702,7 @@ svg.feather_icon {
 }
 
 div.ah_picker>h1 {
-    color: map-get($color-regulation, 'blue' );
+    color: map-get($color-regulation, 'blue');
     font-size: 1rem;
     margin: 0px;
     width: 60px;
@@ -684,11 +710,13 @@ div.ah_picker>h1 {
     left: 30px;
     top: 10%;
 }
-div.outer_card_section{
+
+div.outer_card_section {
     width: 100%;
     // border: 1px solid red;
     position: relative;
 }
+
 div.ah_bread {
     position: absolute;
     top: 0;
@@ -715,7 +743,7 @@ div.ah_bread ul li::after {
 }
 
 div.ah_bread ul li:last-child {
-    color: map-get($color-regulation, 'blue' );
+    color: map-get($color-regulation, 'blue');
 }
 
 div.ah_bread ul li:last-child::after {
