@@ -2,16 +2,16 @@
 // --------page1-- 跳轉頁面------------------------------------
 // --------page1--------------------------------------
 
-let storage = sessionStorage;
-if(storage['btnId'] == null){
-    storage['btnId'] = '';
-}else{
-    storage['btnId'] = '';
-};
-document.getElementById('A').addEventListener('click',function(){
-    itemId = this.id;
-    storage['btnId'] += `${itemId}, `;
-});
+// let storage = sessionStorage;
+// if(storage['btnId'] == null){
+//     storage['btnId'] = '';
+// }else{
+//     storage['btnId'] = '';
+// };
+// document.getElementById('A').addEventListener('click',function(){
+//     itemId = this.id;
+//     storage['btnId'] += `${itemId}, `;
+// });
 
 // --------page3--------------------------------------
 // --------page3--------------------------------------
