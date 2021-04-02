@@ -44,16 +44,8 @@
           <h1 class="title">購物車</h1>
      </div>
     <section  class="paymentSection">
-        <!-- <div class="product-mb col-lg-12">
-          <a  href="#" >1.確認訂單明細</a>
-          <span >/</span>&nbsp;
-          <a class="active"  >2.填寫付款資料</a>&nbsp;
-          <span>/</span>&nbsp;
-          <a href="#" >3.訂單完成</a>       
-        </div> -->
        
         <div class="paymentContent " >
-          <!-- <button class="accordion"><span>訂單總金額</span>{{item.price * item.count}}}</button> -->
           <div class="card">
             <div class="card-header" id="headingOne">
               
@@ -152,8 +144,13 @@
                 <div class="row">
                   <span class="label">使用環保幣折扣:</span>
                   <!-- <input class="formw discount" value="$0" readonly > -->
-                  <div class="formw discount" ><span>$</span>0</div>
+                  <input class="formw discount" value="$0" readonly>
                 </div>
+                <!-- <div class="row">
+                  <span class="label">使用環保幣折扣:</span>
+                  <input class="formw discount" value="$0" readonly > -->
+                  <!-- <input class="formw discount" value="$0" readonly>
+              </div> -->
                 <div class="row">
                   <span class="label">總計：</span>
                   <!-- <input class="formw discount" value="$0" readonly > -->
@@ -180,7 +177,7 @@
                     <div class="col " v-if="isMobile">
                       <input class="form-control form" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)">
                     </div>
-                    <div class="col " v-if="isMobile">
+                    <!-- <div class="col " v-if="isMobile">
                       <input class="form-control form" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)">
                     </div>
                     <div class="col " v-if="isMobile">
@@ -188,13 +185,13 @@
                     </div>
                     <div class="col " v-if="isMobile">
                       <input class="form-control form" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)">
-                    </div>
+                    </div> -->
                   </div>
-                  <div class="creadCardimg row">
+                  <!-- <div class="creadCardimg row">
                     <img src="./img/cart/Mastercard.png">
                     <img src="./img/cart/VISA.png" >
                     <img src="./img/cart/JCB.png" >
-                  </div>
+                  </div> -->
                 </div>
                 <div class="form-group row">
                   <label class="label">到期日期:</label>
@@ -249,10 +246,48 @@
                 <input  type="text" name="creditCard" class="form-control phone form" maxlength="20"
                     id="phone">
                </div>
+               <!-- 地區跟郵遞區號串中華郵政 -->
                <div class="row" >
-                <label class="label" for="add">地址：</label>
-                <input  type="text" name="creditCard" class="form-control add form" maxlength="20"
-                    id="cellPhone">
+                <label class="label add" for="add">地址：</label>
+                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                    <option value="01">請選擇縣市</option>
+                      <option value="01">基隆</option>
+                      <option value="02">台北市</option>
+                      <option value="03">新北市</option>
+                      <option value="04">桃園市</option>
+                      <option value="05">新竹市</option>
+                      <option value="06">新竹縣</option>
+                      <option value="07">苗栗縣</option>
+                      <option value="08">台中市</option>
+                      <option value="09">彰化縣</option>
+                      <option value="10">南投縣</option>
+                      <option value="11">雲林縣</option>
+                      <option value="12">嘉義縣</option>
+                </select>
+                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                  <option value="01">郵遞區號</option>
+                    <option value="01">101</option>
+                    <option value="02">102</option>
+                    <option value="03">103</option>
+                    <option value="04">104</option>
+                    <option value="05">105</option>
+                    <option value="06">106</option>
+                    <option value="07">107</option>
+                </select>
+                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                  <option value="01">鄉鎮縣市</option>
+                    <option value="01">大安區</option>
+                    <option value="02">中山區</option>
+                    <option value="03">松山區</option>
+                    <option value="04">信義區</option>
+                    <option value="05">北投區</option>
+                    <option value="06">南港區</option>
+                    <option value="07">萬華區</option>
+                </select>      
+               </div>
+               <div class="row" >
+                <label class="label" for="phone"></label>
+                <input  type="text" name="creditCard" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址">
                </div>
               </div>
     
@@ -271,13 +306,50 @@
                 <label class="label" for="Phone">市話：</label>
                 <input  type="text" name="creditCard" class="form-control Phone form" maxlength="20"
                     id="Phone">
+
+               </div>
+               <!-- 地區跟郵遞區號串中華郵政 -->
+               <div class="row" >
+                <label class="label add" for="add">地址：</label>
+                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                    <option value="01">請選擇縣市</option>
+                      <option value="01">基隆</option>
+                      <option value="02">台北市</option>
+                      <option value="03">新北市</option>
+                      <option value="04">桃園市</option>
+                      <option value="05">新竹市</option>
+                      <option value="06">新竹縣</option>
+                      <option value="07">苗栗縣</option>
+                      <option value="08">台中市</option>
+                      <option value="09">彰化縣</option>
+                      <option value="10">南投縣</option>
+                      <option value="11">雲林縣</option>
+                      <option value="12">嘉義縣</option>
+                </select>
+                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                  <option value="01">郵遞區號</option>
+                    <option value="01">101</option>
+                    <option value="02">102</option>
+                    <option value="03">103</option>
+                    <option value="04">104</option>
+                    <option value="05">105</option>
+                    <option value="06">106</option>
+                    <option value="07">107</option>
+                </select>
+                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                  <option value="01">鄉鎮縣市</option>
+                    <option value="01">大安區</option>
+                    <option value="02">中山區</option>
+                    <option value="03">松山區</option>
+                    <option value="04">信義區</option>
+                    <option value="05">北投區</option>
+                    <option value="06">南港區</option>
+                    <option value="07">萬華區</option>
+                </select>      
                </div>
                <div class="row" >
-                <label class="label" for="add">地址：</label>
-                <!-- <span v-if="receiverRoad.remind!==''" class="form__text form__text--warning"
-                                  >{{receiverRoad.remind}}</span> -->
-                  <input  type="text" name="creditCard" class="form-control Phone form" maxlength="20"
-                  id="address">
+                <label class="label" for="phone"></label>
+                <input  type="text" name="creditCard" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址">
                </div>
               </div> 
             </form>
