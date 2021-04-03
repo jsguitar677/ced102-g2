@@ -43,33 +43,47 @@
                             <h3>管理員管理</h3>
                             <div class="Form1">
                                 <form action="">
-                                    <button>
+                                    <div id="addad">
                                         <i class="fas fa-plus fa-1x"></i>
-                                        新增管理員</button>
+                                        新增管理員</div>
                                     <table>
                                         <tr>
-                                            <th>管理員帳號</th>
+                                            <th>管理員編號</th>
                                             <th>姓名</th>
                                             <th>帳號</th>
                                             <th>刪除</th>
                                         </tr>
-                                        <tr>
+                                        <tr id="G001">
                                             <td>G001</td>
                                             <td>Eva</td>
                                             <td>Eva0909</td>
                                             <td>
-                                                <button id="delete"><i class="far fa-trash-alt"></i></button>
+                                                <div class="delete-icon"><i class="far fa-trash-alt"></i></div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="G002">
                                             <td>G002</td>
                                             <td>BlackCuba</td>
                                             <td>BlackCuba0309</td>
                                             <td>
-                                                <button id="delete"><i class="far fa-trash-alt"></i></button>
+                                                <div class="delete-icon"><i class="far fa-trash-alt"></i></div>
                                             </td>
                                         </tr>
                                     </table>
+                                    <div id="AD-delete">
+                                        <p>您確定要將管理員編號<span class="ad-number"></span>刪除?</p>
+                                        <p>一經刪除便無法復原</p>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="delete-cancel-btn btn">取消</button>
+                                    </div>
+                                    <div id="AD-add">
+                                        <label>管理員編號：</label><input type="text" name="adno"><br>
+                                        <label>管理員姓名：</label><input type="text" name="adname"><br>
+                                        <label>管理員帳號：</label><input type="text" name="adid"><br>
+                                        <label>管理員密碼：</label><input type="password" name="adpws"><br>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="delete-cancel-btn btn">取消</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -92,31 +106,11 @@
                                             <th>經驗值</th>
                                             <th>刪除</th>
                                         </tr>
-                                        <tr>
+                                        <tr id="M12345">
                                             <td>M12345</td>
                                             <td>正常</td>
                                             <td>
-                                                <label class="switch">
-                                                    <input type="checkbox" checked>
-                                                    <span class="slider round"></span>
-                                                </label>
-                                            </td>
-                                            <td>魯夫</td>
-                                            <td>進階會員</td>
-                                            <td>1995/06/31</td>
-                                            <td>a4927763@gmail.com</td>
-                                            <td>0975753772</td>
-                                            <td>30P</td>
-                                            <td>130Exp</td>
-                                            <td>
-                                                <button id="delete"><i class="far fa-trash-alt fa-2x"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>M12345</td>
-                                            <td>正常</td>
-                                            <td>
-                                                <label class="switch">
+                                                <label class="switch suspension-btn">
                                                     <input type="checkbox">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -129,10 +123,41 @@
                                             <td>30P</td>
                                             <td>130Exp</td>
                                             <td>
-                                                <button id="delete"><i class="far fa-trash-alt fa-2x"></i></button>
+                                                <div class="delete-icon"><i class="far fa-trash-alt fa-2x"></i></div>
+                                            </td>
+                                        </tr>
+                                        <tr id="M12555">
+                                            <td>M12555</td>
+                                            <td>正常</td>
+                                            <td>
+                                                <label class="switch suspension-btn">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </td>
+                                            <td>魯夫</td>
+                                            <td>進階會員</td>
+                                            <td>1995/06/31</td>
+                                            <td>a4927763@gmail.com</td>
+                                            <td>0975753772</td>
+                                            <td>30P</td>
+                                            <td>130Exp</td>
+                                            <td>
+                                                <div class="delete-icon"><i class="far fa-trash-alt fa-2x"></i></div>
                                             </td>
                                         </tr>
                                     </table>
+                                    <div id="M-suspension">
+                                        <p>您確定要將會員編號<span class="mem-number"></span>停權?</p>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="suspension-cancel-btn btn">取消</button>
+                                    </div>
+                                    <div id="M-delete">
+                                        <p>您確定要將會員編號<span class="mem-number"></span>刪除?</p>
+                                        <p>一經刪除便無法復原</p>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="delete-cancel-btn btn">取消</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>

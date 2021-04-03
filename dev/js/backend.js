@@ -20,6 +20,32 @@ document.getElementById("defaultOpen").click();
 
 
 $(document).ready(function(){
+    //管理員管理
+    $('#adMag .delete-icon').click(function(){
+        $('#AD-delete').css('display','block');
+        let adNO = $(this).parent().parent().attr("id");
+        $('#AD-delete .ad-number').text(`${adNO}`);
+    })
+
+    $('#addad').click(function(){
+        $('#AD-add').css('display','block');
+    })
+
+
+    //會員管理
+    $('#memberMag label.suspension-btn').click(function(){
+        if($(this).find('input').is(":checked") == false){
+            $('#M-suspension').css('display','block');
+            let memNO = $(this).parent().parent().find('td:nth-child(1)').text();
+            $('#M-suspension .mem-number').text(`${memNO}`);
+        }
+    })
+
+    $('#memberMag .delete-icon').click(function(){
+        $('#M-delete').css('display','block');
+        let memNO = $(this).parent().parent().find('td:nth-child(1)').text();
+        $('#M-delete .mem-number').text(`${memNO}`);
+    })
 
     //商品管理
     var options = {valueNames: [ 'P-title','P-name']};
