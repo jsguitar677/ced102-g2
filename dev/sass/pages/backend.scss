@@ -25,13 +25,26 @@ $table-padding:20px;
     }
 }
 
+
+.btnColor{
+    background-color: map-get($color_regulation, 'yellow' );
+}
+.tabLinks{
+    background-color: map-get($color_regulation, 'white' );
+    &:hover{
+    background-color: map-get($color_regulation, 'blue' );
+    color: map-get($color_regulation, 'white' );
+    }
+}
+
 main{
     background-color: rgb(224, 224, 224);
 
     nav{
         height: 60px;
-        background-color: #1D1E4C;
+        background-color: map-get($color_regulation,'blue');
         h4{
+            margin: 0;
             color: white;
             text-align: right;
             line-height: 60px;
@@ -44,12 +57,15 @@ main{
             height: calc(100vh - 60px);
             width: 20%;
             display: flex;
-            border: 2px solid #1D1E4C;
+            border: 2px solid map-get($color_regulation,'blue');
             background-color: #9090a0;
             flex-direction: column;
             justify-content: space-around;
             button{
-                border: 1px solid #1D1E4C;
+                cursor: pointer;
+                outline: none;
+                height: 100%;
+                border: 1px solid map-get($color_regulation,'blue');
             }
         }
         .container{
@@ -65,7 +81,7 @@ main{
         margin-top: 30px;
         button{
             border-radius: 15px;
-            border: 1px solid #1D1E4C;
+            border: 1px solid map-get($color_regulation,'blue');
         }
         table{
             margin-top: 30px;

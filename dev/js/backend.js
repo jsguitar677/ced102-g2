@@ -9,10 +9,9 @@ tabContent[i].style.display = "none";
 }
 tabLinks = document.getElementsByClassName("tabLinks");
 for (i = 0; i < tabLinks.length; i++) {
-tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+tabLinks[i].className = tabLinks[i].className.replace(" active btnColor", "");
 }
 document.getElementById(pageState).style.display = "block";
-evt.currentTarget.className += " active";
+evt.currentTarget.className += " active btnColor";
 }
-
 document.getElementById("defaultOpen").click();
