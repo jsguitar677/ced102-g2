@@ -2,10 +2,9 @@
 @import '../all.scss';
 
 $table-text:15px;
-$table-padding:20px;
-
+$table-padding:20px 10px;
 *{
-    letter-spacing: $letter-Spacing;
+    letter-spacing: 2px;
     color: map-get($color_regulation,'blue');
 }
 
@@ -36,6 +35,90 @@ $table-padding:20px;
     color: map-get($color_regulation, 'white' );
     }
 }
+
+@mixin search-module {
+    div.search-block{
+        margin-bottom: 20px;
+        input[name=search]{
+            padding: 0 5px;
+            line-height: $line-height;
+            height: $line-height;
+            vertical-align: middle;
+            border-radius:$inputRadius;
+            border: 1px solid gray;
+            outline: none;
+        }
+    }
+}
+
+@mixin table-module {
+    table{
+        width: 100%;
+        text-align: center;
+        font-size: $table-text;
+        border-collapse: collapse;
+        border-radius: $borderBtnRadius;
+        box-shadow: $box-shadow;
+        background-color: map-get($color_regulation,'white');
+        tr{
+            
+            th,td{
+                min-width: 110px;
+                padding: $table-padding;
+                border: 0px solid #fff;
+                i{
+                    color: #323987;
+                    cursor: pointer;
+                }
+                &:nth-child(1){
+                   min-width: 20px;
+                }
+            }
+        }
+        >tbody{
+            >tr{
+                &:nth-child(2n){
+                    background-color:#b2b8f547;
+                }
+                &:hover{
+                    background-color:#4551d645;
+                }
+            }
+        }
+
+    }
+}
+
+@mixin toggle-module {
+    label.switch{
+        width: 36px;
+        height: 26px;
+        margin: 0 auto;
+        span{
+            &::before{
+                width: 20px;
+                height: 20px;
+                left: 3px;
+                bottom: 3px;
+            }
+        }
+        input:checked + .slider:before{
+            left: calc(100% - 3px);
+            transform: translateX(-100%);
+        }
+    }
+}
+
+@mixin cirle-default {
+    div.circle{
+        margin: 0 10px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: map-get($color_regulation,'gray');
+    }
+}
+
 
 main{
     background-color: rgb(224, 224, 224);
@@ -113,63 +196,38 @@ main{
                             font-size: $contentSubTit;
                         }
                         div.P-block-list{
-                            div.search-block{
-                                font-size: 0;
-                                margin-bottom: 20px;
-                                input[name=search]{
-                                    padding: 0 5px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    vertical-align: middle;
-                                    border-top-left-radius:$inputRadius;
-                                    border-bottom-left-radius:$inputRadius;
-                                    border: 1px solid gray;
-                                    outline: none;
-                                }
-                                div.icon{
-                                    font-size: 15px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                    padding: 0 8px;
-                                    border-top-right-radius:$inputRadius;
-                                    border-bottom-right-radius:$inputRadius;
-                                    background-color: #fff;
-                                    border: 1px solid gray;
-                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
-                                    i{
-                                        color: map-get($color_regulation,'blue');
-                                    }
-                                }
-                            }
+                            @include search-module();
                             div.P-table{
                                 height: 400px;
                                 overflow: auto;
                                 border-radius: $borderBtnRadius;
                                 form{
+                                    @include table-module();
                                     table{
-                                        width: 100%;
-                                        text-align: center;
-                                        font-size: $table-text;
-                                        // border: 1px solid red;
-                                        border-collapse: collapse;
-                                        border-radius: $borderBtnRadius;
-                                        box-shadow: $box-shadow;
-                                        background-color: map-get($color_regulation,'white');
                                         tr{
-                                            
                                             th,td{
-                                                padding: $table-padding;
-                                                border: 0px solid #fff;
                                                 i{
                                                     color: #225ca4c4;
                                                     cursor: pointer;
                                                 }
-                                                input,select,label,button{
+                                                input,select,textarea{
+                                                    padding: 0 5px;
+                                                }
+                                                input,select,label,button,textarea{
                                                     display: none;
                                                 }
-                                                button.edit-btn{
+                                                input[type=file]{
+                                                    width: 70px;
+                                                    padding: 0;
+                                                }
+                                                textarea{
+                                                    resize: none;
+                                                    border-radius: $inputRadius;
+                                                    border: 1px solid map-get($color_regulation,'blue');
+                                                    line-height: $line-height;
+                                                    width: 150px;
+                                                }
+                                                button{
                                                     border-radius: 10px;
                                                     border: none;
                                                     background-color: map-get($color_regulation,'blue');
@@ -178,21 +236,15 @@ main{
                                                     margin: 10px 0 10px 10px;
                                                     outline: none;
                                                 }
-                                                &:nth-child(1){
-                                                   min-width: 20px;
+                                                label.switch{
+                                                    display: block;
                                                 }
-                                            }
-                                            &:nth-child(2n){
-                                                background-color:#4a93ec1a;
-                                            }
-                                            &:hover{
-                                                background-color:#4a93ec4b;
-                                            }
-                                            &:nth-child(1){
-                                                background-color:#ff4e8f00;
+                                                @include toggle-module();
+                                                &:nth-child(1){
+                                                    min-width: 100px;
+                                                 }
                                             }
                                         }
-                    
                                     }
                                 }
                             }
@@ -217,83 +269,23 @@ main{
                             font-size: $contentSubTit;
                         }
                         div.O-block-list{
-                            div.search-block{
-                                font-size: 0;
-                                margin-bottom: 20px;
-                                input[name=search]{
-                                    padding: 0 5px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    vertical-align: middle;
-                                    border-top-left-radius:$inputRadius;
-                                    border-bottom-left-radius:$inputRadius;
-                                    border: 1px solid gray;
-                                    outline: none;
-                                }
-                                div.icon{
-                                    font-size: 15px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                    padding: 0 8px;
-                                    border-top-right-radius:$inputRadius;
-                                    border-bottom-right-radius:$inputRadius;
-                                    background-color: #fff;
-                                    border: 1px solid gray;
-                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
-                                    i{
-                                        color: map-get($color_regulation,'blue');
-                                    }
-                                }
-                            }
+                            @include search-module();
                             div.O-table{
                                 height: 400px;
                                 overflow: auto;
                                 border-radius: $borderBtnRadius;
                                 form{
+                                    @include table-module();
                                     table{
-                                        width: 100%;
-                                        text-align: center;
-                                        font-size: $table-text;
-                                        border-collapse: collapse;
-                                        border-radius: $borderBtnRadius;
-                                        box-shadow: $box-shadow;
-                                        background-color: map-get($color_regulation,'white');
                                         tr{
-                                            
                                             th,td{
-                                                min-width: 110px;
-                                                padding: $table-padding;
-                                                border: 0px solid #fff;
-                                                div.circle{
-                                                    width: 8px;
-                                                    height: 8px;
-                                                    border-radius: 50%;
-                                                    background-color: map-get($color_regulation,'gray');
-                                                }
+                                                @include cirle-default();
                                                 div.new{
-                                                    background-color: #FFAE41;
+                                                    background-color: #4161ff;
                                                 }
-                                                i{
-                                                    color: #FFAE41;
-                                                    cursor: pointer;
-                                                }
-                                                &:nth-child(1){
-                                                   min-width: 20px;
-                                                }
-                                            }
-                                            &:nth-child(2n){
-                                                background-color:#ecb34a1f;
-                                            }
-                                            &:hover{
-                                                background-color:#ecb34a44;
-                                            }
-                                            &:nth-child(1){
-                                                background-color:#ff4e8f00;
+                                                @include toggle-module();
                                             }
                                         }
-                    
                                     }
                                 }
                             }
@@ -367,71 +359,25 @@ main{
                             font-size: $contentSubTit;
                         }
                         div.R-block-list{
-                            div.search-block{
-                                font-size: 0;
-                                margin-bottom: 20px;
-                                input[name=search]{
-                                    padding: 0 5px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    vertical-align: middle;
-                                    border-top-left-radius:$inputRadius;
-                                    border-bottom-left-radius:$inputRadius;
-                                    border: 1px solid gray;
-                                    outline: none;
-                                }
-                                div.icon{
-                                    font-size: 15px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                    padding: 0 8px;
-                                    border-top-right-radius:$inputRadius;
-                                    border-bottom-right-radius:$inputRadius;
-                                    background-color: #fff;
-                                    border: 1px solid gray;
-                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
-                                    i{
-                                        color: map-get($color_regulation,'blue');
-                                    }
-                                }
-                            }
+                            @include search-module();
                             div.R-table{
                                 height: 400px;
                                 overflow: auto;
                                 border-radius: $borderBtnRadius;
                                 form{
+                                    @include table-module();
                                     table{
-                                        width: 100%;
-                                        text-align: center;
-                                        font-size: $table-text;
-                                        // border: 1px solid red;
-                                        border-collapse: collapse;
-                                        border-radius: $borderBtnRadius;
-                                        box-shadow: $box-shadow;
-                                        background-color: map-get($color_regulation,'white');
                                         tr{
-                                            
                                             th,td{
-                                                min-width: 110px;
-                                                padding: $table-padding;
-                                                border: 0px solid #fff;
-                                                div.circle{
-                                                    width: 8px;
-                                                    height: 8px;
-                                                    border-radius: 50%;
-                                                    background-color: map-get($color_regulation,'gray');
-                                                }
+                                                @include cirle-default();
                                                 div.new{
-                                                    background-color: #1483f1;
+                                                    background-color: #4161ff;
                                                 }
                                                 i{
                                                     color: #225ca4c4;
                                                     cursor: pointer;
                                                 }
                                                 div.edit{
-                                                    // text-align: center;
                                                     display: none;
                                                     input{
                                                         margin: 5px;
@@ -446,21 +392,8 @@ main{
                                                         outline: none;
                                                     }
                                                 }
-                                                &:nth-child(1){
-                                                   min-width: 20px;
-                                                }
-                                            }
-                                            &:nth-child(2n){
-                                                background-color:#4a93ec1a;
-                                            }
-                                            &:hover{
-                                                background-color:#4a93ec4b;
-                                            }
-                                            &:nth-child(1){
-                                                background-color:#ff4e8f00;
                                             }
                                         }
-                    
                                     }
                                 }
                             }
@@ -485,80 +418,27 @@ main{
                             font-size: $contentSubTit;
                         }
                         div.A-block-list{
-                            div.search-block{
-                                font-size: 0;
-                                margin-bottom: 20px;
-                                input[name=search]{
-                                    padding: 0 5px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    vertical-align: middle;
-                                    border-top-left-radius:$inputRadius;
-                                    border-bottom-left-radius:$inputRadius;
-                                    border: 1px solid gray;
-                                    outline: none;
-                                }
-                                div.icon{
-                                    font-size: 15px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                    padding: 0 8px;
-                                    border-top-right-radius:$inputRadius;
-                                    border-bottom-right-radius:$inputRadius;
-                                    background-color: #fff;
-                                    border: 1px solid gray;
-                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
-                                    i{
-                                        color: map-get($color_regulation,'blue');
-                                    }
-                                }
-                            }
+                            @include search-module();
                             div.A-table{
                                 height: 300px;
                                 overflow: auto;
                                 border-radius: $borderBtnRadius;
+                                @include table-module();
                                 table{
-                                    width: 100%;
-                                    text-align: center;
-                                    font-size: $table-text;
-                                    // border: 1px solid red;
-                                    border-collapse: collapse;
-                                    border-radius: $borderBtnRadius;
-                                    box-shadow: $box-shadow;
-                                    background-color: map-get($color_regulation,'white');
-                                    tr{
-                                        
-                                        th,td{
-                                            padding: $table-padding;
-                                            border: 0px solid #fff;
-                                            div.circle{
-                                                width: 8px;
-                                                height: 8px;
-                                                border-radius: 50%;
-                                                background-color: map-get($color_regulation,'gray');
-                                            }
-                                            div.new{
-                                                background-color: map-get($color_regulation,'red');
-                                            }
-                                            div.cancel{
-                                                background-color:rgb(13, 196, 13);
-                                            }
-                                        }
-                                        &:nth-child(2n){
-                                            background-color:#ff4e8f1a;
-                                        }
-                                        &:hover{
-                                            background-color:#ff4e8f2f;
+                                    >tbody{
+                                        >tr{
                                             cursor: pointer;
-                                        }
-                                        &:nth-child(1){
-                                            background-color:#ff4e8f00;
-                                            cursor: default;
+                                            td{
+                                                @include cirle-default();
+                                                div.new{
+                                                    background-color: map-get($color_regulation,'red');
+                                                }
+                                                div.cancel{
+                                                    background-color: #4161ff;
+                                                }
+                                            }
                                         }
                                     }
-                
                                 }
                             }
                         }
@@ -610,66 +490,24 @@ main{
                             font-size: $contentSubTit;
                         }
                         div.AH-block-list{
-                            div.search-block{
-                                font-size: 0;
-                                margin-bottom: 20px;
-                                input[name=search]{
-                                    padding: 0 5px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    vertical-align: middle;
-                                    border-top-left-radius:$inputRadius;
-                                    border-bottom-left-radius:$inputRadius;
-                                    border: 1px solid gray;
-                                    outline: none;
-                                }
-                                div.icon{
-                                    font-size: 15px;
-                                    line-height: $line-height;
-                                    height: $line-height;
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                    padding: 0 8px;
-                                    border-top-right-radius:$inputRadius;
-                                    border-bottom-right-radius:$inputRadius;
-                                    background-color: #fff;
-                                    border: 1px solid gray;
-                                    border-left: 0px solid  map-get($color_regulation,'blackGray');
-                                    i{
-                                        color: map-get($color_regulation,'blue');
-                                    }
-                                }
-                            }
+                            @include search-module();
                             div.AH-table{
+                                height: 400px;
+                                overflow: auto;
+                                border-radius: $borderBtnRadius;
+                                @include table-module();
                                 table{
-                                    width: 100%;
-                                    text-align: center;
-                                    font-size: $table-text;
-                                    // border: 1px solid red;
-                                    border-collapse: collapse;
-                                    border-radius: $borderBtnRadius;
-                                    box-shadow: $box-shadow;
-                                    background-color: map-get($color_regulation,'white');
-                                    tr{
-                                        
-                                        th,td{
-                                            padding: $table-padding;
-                                            border: 0px solid #fff;
-                                            div.circle{
-                                                width: 8px;
-                                                height: 8px;
-                                                border-radius: 50%;
-                                                background-color: map-get($color_regulation,'gray');
+                                    >tbody{
+                                        >tr{
+                                            cursor: pointer;
+                                            td{
+                                                @include cirle-default();
+                                                div.alert{
+                                                    background-color: #4161ff;
+                                                }
                                             }
-                                            div.alert{
-                                                background-color: map-get($color_regulation,'lake');
-                                            }
-                                        }
-                                        &:nth-child(2n){
-                                            background-color:#b9fbf37f,
                                         }
                                     }
-                
                                 }
                             }
                         }
