@@ -229,8 +229,8 @@ body{
                     }
                     margin-right: 5px;
                     border:1px solid map-get($color_regulation,'blue' );
-                    padding: 0 5px;
-                    height: 30px;
+                    padding: 0 10px;
+                    height: 40px;
                     outline: none;
                     cursor: pointer;
                     background-color: map-get($color_regulation, 'white');
@@ -339,14 +339,6 @@ body{
 }
 
 #orderRecord{
-    // .ordertitle{
-    //     background-color: map-get($color_regulation ,'memberGray')!important;
-    //     color: map-get($color_regulation, 'white');
-    //     margin: 0;
-    //     height: 50px;
-    //     line-height: 50px;
-    //     padding-left: 30px;
-    // }
     .orderBlock{
         color: map-get($color_regulation,'blue');
         .orderSelect{
@@ -419,6 +411,8 @@ button.tabLinks{
             background-color: black;
             color: map-get($map: $color_regulation, $key: 'white');
             padding: 5px 7px 4px 7px;
+            width: 15px;
+            margin-right: 5px;
         }
        line-height: $lineHeight;
     }

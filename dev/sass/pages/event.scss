@@ -39,26 +39,30 @@ $padding-btn: 0px 30px;
 $padding-hint:10px;
 
 //圓角
-$border-radius: 15px;
-$border-radius-btn: 15px;
-$border-radius-input: 5px;
+$border-radius:0;
+$border-radius-btn: 0;
+$border-radius-input: 0;
 
 $box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 
 $web-color:(
-    'red':#EF4325,
-    'pink':#FF498C,
-    'orange':#FFAE41,
-    'lake':#09E4C7,
-    'blue':#1D1E4C,
-    'black':#1E1E1E,
-    'white':#fafafa,
-    'white-bg':#F6F6F6,
-    'gray-hint':#C6C6C6,
-    'green-coin':#0e6d41,
-    'gray-input-hint':#C2C2C2,
-    'blue-input-border':#1D1E4C,
-    'blue-activity-nav':#24324B,
+  'red':#EF4325,
+  'pink':#FF498C,
+  'orange':#FFAE41,
+  'lake':#09E4C7,
+  'blue':#07082E,
+  'black':#1E1E1E,
+  'white':#FFFFFF,
+  'white-bg':#EEEEEE,
+  'gray-hint':#C6C6C6,
+  'green-coin':#0e6d41,
+  'gray-input-hint':#C2C2C2,
+  'blue-input-border':#07082E,
+  'blue-activity-nav':#24324B,
+
+  'yellow':#FFD241,
+  'rankGray':#E3E3EA,
+  'memberGray':#181919,
 );
 
 @mixin btn-module-red() {
@@ -67,12 +71,14 @@ $web-color:(
       border-radius: $border-radius;
       display: inline-block;
       overflow: hidden;
-      background-color: map-get( $web-color , 'red' );
+      background-color: map-get( $web-color , 'yellow' );
       cursor: pointer;
+      height: 35px;
+      line-height: 35px;
       a{
       font-weight: bolder;
       font-size: $text-fontSize;
-      color: map-get($web-color, 'white' );
+      color: map-get($web-color, 'blue' );
       padding: $padding-btn;
       width: 100%;
       display: inline-block;
@@ -83,7 +89,17 @@ $web-color:(
 @mixin btn-module-blue() {
   @include btn-module-red();
   div.btn{
+    height: 35px;
+    line-height: 35px;
       background-color: map-get( $web-color , 'blue' );
+      a{
+        font-weight: bolder;
+        font-size: $text-fontSize;
+        color: map-get($web-color, 'white' );
+        padding: $padding-btn;
+        width: 100%;
+        display: inline-block;
+      }
   }
 }
 @mixin bg-module() {
@@ -311,9 +327,7 @@ div.menu-div {
       margin: 0;
       padding: 0;
   }
-  li{
-      list-style: none;
-  }
+  
   a{
       text-decoration: none;
   }
@@ -327,18 +341,23 @@ div.menu-div {
     font-size: 0px;
     height: 60px;
     text-align: center;
-    background-color: map-get($web-color, 'blue-activity-nav');
-
+    background-color: map-get($web-color, 'memberGray');
+    padding-top: 10px;
     li {
+      list-style: none;
+      border-bottom: 2px solid map-get($web-color, 'yellow' );
       color: map-get($web-color, 'white');
       display: inline-block;
       font-size: $text-fontSize;
-      line-height: 60px;
+      line-height: 30px;
       margin: 0px 120px;
       cursor: pointer;
-
+      transition: 0.3s all;
       &:hover {
         font-weight: bolder;
+        background-color: map-get($web-color, 'yellow' );
+        color: map-get($web-color, 'blue');
+        transition: 0.3s all;
       }
     }
 
@@ -545,8 +564,11 @@ main.event {
           padding-left: 20px;
           div.info-card{
             div.search-and-filter {
+              box-shadow: $box-shadow;
               margin-bottom: 15px;
-
+              background-color: map-get($web-color, 'yellow' );
+              height: 50px;
+              line-height: 50px;
               input[name=filter] {
                 line-height: 18px;
               }
@@ -638,11 +660,16 @@ main.event {
                     text-align: left;
                     width: 60%;
                     padding-left: 5px;
-                    h2 {
-                      font-size: $text-fontSize-subtitle;
-                      color: map-get($web-color, 'blue');
-                      margin: 0;
+                    .leftTitleBox{
+                      border-left: 8px solid map-get($web-color, 'yellow');
+                      padding-left: 10px;
+                      h2 {
+                        font-size: $text-fontSize-subtitle;
+                        color: map-get($web-color, 'blue');
+                        margin: 0;
+                      }
                     }
+                    
 
                     p {
                       padding-right: 20px;
@@ -1370,9 +1397,11 @@ main.event {
           div.col-12{
             text-align: center;
             h2.initiation-title{
+              border-left: 8px solid map-get($color_regulation, 'yellow');
               font-size: $text-fontSize-region;
-              text-align: center;
-              margin: 50px 0;
+              margin: 30px auto;
+              display: inline-block;
+              padding-left: 10px;
             }
             @media (max-width:575px){
               h2.initiation-title{
@@ -1615,11 +1644,11 @@ main.event {
           div.toggle{
             margin-top: 30px;
             div.toggle-block{
+              box-shadow: $box-shadow;
               width: 400px;
               height: 40px;
-              border-radius: 20px;
               padding: 5px;
-              background-color: map-get($web-color,'blue');
+              background-color: map-get($web-color,'memberGray');
               margin: 0px auto 30px auto;
               position: relative;
               font-size: 0;
@@ -1630,8 +1659,7 @@ main.event {
                 left: 0;
                 width: 50%;
                 height: 100%;
-                border-radius: 20px;
-                background-color: map-get($web-color,'white');
+                background-color: map-get($web-color,'yellow');
               }
               div.text{
                 position: absolute;
@@ -1743,10 +1771,15 @@ main.event {
                   }
                 }
                 div.thanks-card{
-                  background-color: map-get($web-color,'white');
+                  background-image: url("../../img/event/rankBg.jpg");
+                  background-repeat: no-repeat;
+                  background-size: 20%;
+                  background-position:35% 50%;
+                  background-attachment: fixed;
+                  background-color: map-get($web-color, 'memberGray');
+                  
                   padding: 43px 40px 50px 40px;
                   border-radius: $border-radius;
-                  margin: 10px;
                   box-shadow: $box-shadow;
                   font-weight: bolder;
                   display: flex;
@@ -1754,11 +1787,16 @@ main.event {
                   align-items: center;
                   margin-bottom: 10px;
                   div.thanks-title{
+                    color: map-get($web-color, 'white');
+                    
+                    border-left: 8px solid map-get($web-color,'yellow');
+                    padding-left: 10px;
                     font-size: 40px;
                     line-height: 50px;
                   }
                   div.text{
                     p{
+                      color: map-get($web-color, 'white');
                       margin: 0;
                       line-height: 30px;
                       text-align: right;
