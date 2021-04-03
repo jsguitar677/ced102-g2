@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +15,8 @@
         position: relative;
         height: 66px;
         margin: 0;
-        background-color: #1D1E4C;
+        background-color: #07082E;
         text-align: center;
-        
     }
     .show{
         height: 400px;
@@ -33,7 +31,6 @@
         text-decoration: none;
         transition: 1s;
         font-size: 40px;
-       
         color:#fafafa;
     }
     a:hover{
@@ -42,14 +39,14 @@
     }
     .front{
         margin-right: 5px;
-        background-color: #1D1E4C;
+        background-color: #07082E;
         background-image: url(./img/index/前台照片.png);
         background-repeat: no-repeat;
         background-position: 0% center;
         background-size: cover;
     }
     .backend{
-        background-color: #1D1E4C;
+        background-color: #07082E;
         background-image: url(./img/index/後台照片.png);
         background-repeat: no-repeat;
         background-position:62% center;
@@ -57,16 +54,16 @@
     }
     .front:hover{
         margin-right: 50px;
-        background-color: #DDDDDD;
+        background-color: #FFD241;
     }
     .backend:hover{
         margin-left: 50px;
-        background-color: #DDDDDD;
+        background-color: #EF4325;
     }
     footer{
         width: 100%;
         text-align: center;
-        color:#1D1E4C;
+        color:#07082E;
         padding: 30px 0 0 0;
     }
 
@@ -81,7 +78,7 @@
         
         margin: auto;
         padding: 0;
-        background-color: #F6F6F6;
+        background-color: #FFFFFf;
         background-image: url(./img/index/bg-1.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -97,6 +94,13 @@
     transform: translate(-50%,-50%);
     top:50%;
    }
+   .textLine{
+       border-left:8px solid #FFD241;
+       line-height: 40px;
+       font-size: 40px;
+       display: inline;
+       padding-left: 10px;
+   }
   </style>
 
   <title>Leading page</title>
@@ -109,8 +113,12 @@
     <div class="container">
         
         <div class="indexBox">
-            <a class="show front" href="./indexfront.html">前台</a>
-            <a class="show backend" href="./backend_login.html">後台</a>
+            <a class="show front" href="./indexfront.html">
+                <div class="textLine">前台</div>
+            </a>
+            <a class="show backend" href="./backend_login.html">
+                <div class="textLine">後台</div>
+            </a>
         </div>
     </div>
 </body>
