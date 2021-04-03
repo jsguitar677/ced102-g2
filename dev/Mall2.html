@@ -23,7 +23,10 @@
     
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
-        
+    
+    <!-- 輪播圖 -->
+    <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
+
     <title>商城</title>
 
     <style>
@@ -49,26 +52,19 @@
 
     <section>
         <div class="content_Mall">
-            
-            <div class="top_back_img_1">
+            <div class="yellowBlock"></div>
+            <!-- <div class="top_back_img_1">
                 <div class="top_back_img_2">
                     <img src="./img/mall/banner_005(1).jpg">   
                 </div>
-            </div>
-            
-            <h5 class="title_2">客製化商品區</h5>
-            <h6 class="title_">訂製專屬自己的商品吧!</h6>
-
+            </div> -->
             <!-- 頁面上半部:左圖 右購物 -->
             <div class="all">
                 <!-- =======================客製商品區============================ -->
-                <div class="CustomizedArea_Block">
+                <!-- <div class="CustomizedArea_Block">
                     <div class="CustomizedAreaBox">
-                        <!-- ===================== -->
-                        <!-- =======測jquery====== -->
-                        <!-- ===================== -->
                         <a href="./CustomizedBag_RWD.html" class="customized" >
-                            <div class="CustomizedArea" id="design_area"> <!-- id="design_area" 這裡hover到的話 -->
+                            <div class="CustomizedArea" id="design_area"> 
                                 <img src="./img/mall/bag2.jpg">
                                 <div class="productInfo">
                                     <p class="NameAndPrice">環保購物袋</p>
@@ -76,18 +72,14 @@
                                     <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
                                 </div>
                             </div>
-                            <div class="DesignIcon" id="showDesignIcon">  <!-- id="showDesignIcon" 這裡border-radius改為50px -->
+                            <div class="DesignIcon" id="showDesignIcon"> 
                                 
                                 <img src="./img/mall/icon_designByYourself.png" class="design">      
-                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> <!-- id="text_designYrStyle" 這裡要出現 -->
+                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> 
                             </div>
                         </a>
-                        <!-- ===================== -->
-                        <!-- ===================== -->
-                        <!-- ===================== -->
-
                         <a href="" class="customized" >
-                            <div class="CustomizedArea" id="design_area"> <!-- id="design_area" 這裡hover到的話 -->
+                            <div class="CustomizedArea" id="design_area"> 
                                 <img src="./img/mall/bag2.jpg">
                                 <div class="productInfo">
                                     <p class="NameAndPrice">環保購物袋</p>
@@ -95,14 +87,14 @@
                                     <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
                                 </div>
                             </div>
-                            <div class="DesignIcon" id="showDesignIcon">  <!-- id="showDesignIcon" 這裡border-radius改為50px -->
+                            <div class="DesignIcon" id="showDesignIcon"> 
                                 <img src="./img/mall/icon_designByYourself.png" class="design">      
-                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> <!-- id="text_designYrStyle" 這裡要出現 -->
+                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> 
                             </div>
                         </a>
 
                         <a href="" class="customized" >
-                            <div class="CustomizedArea" id="design_area"> <!-- id="design_area" 這裡hover到的話 -->
+                            <div class="CustomizedArea" id="design_area">
                                 <img src="./img/mall/bag2.jpg">
                                 <div class="productInfo">
                                     <p class="NameAndPrice">環保購物袋</p>
@@ -110,14 +102,14 @@
                                     <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
                                 </div>
                             </div>
-                            <div class="DesignIcon" id="showDesignIcon">  <!-- id="showDesignIcon" 這裡border-radius改為50px -->
+                            <div class="DesignIcon" id="showDesignIcon">  
                                 <img src="./img/mall/icon_designByYourself.png" class="design">      
-                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> <!-- id="text_designYrStyle" 這裡要出現 -->
+                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> 
                             </div>
                         </a>
 
                         <a href="" class="customized" >
-                            <div class="CustomizedArea" id="design_area"> <!-- id="design_area" 這裡hover到的話 -->
+                            <div class="CustomizedArea" id="design_area">
                                 <img src="./img/mall/bag2.jpg">
                                 <div class="productInfo">
                                     <p class="NameAndPrice">環保購物袋</p>
@@ -125,16 +117,216 @@
                                     <P class="text">Lorem ipsum dolor sit amet consectetur adipisicing.</P>
                                 </div>
                             </div>
-                            <div class="DesignIcon" id="showDesignIcon">  <!-- id="showDesignIcon" 這裡border-radius改為50px -->
+                            <div class="DesignIcon" id="showDesignIcon">
                                 <img src="./img/mall/icon_designByYourself.png" class="design">      
-                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p> <!-- id="text_designYrStyle" 這裡要出現 -->
+                                <p class="designYrStyle" id="text_designYrStyle">風格由自己設計!!</p>
                             </div>
                         </a>
 
                     </div>
-                </div>
+                </div> -->
                 <!-- =======================客製商品區//========================== -->
                 <!-- ============================================================ -->
+                <div class="homePage4__customerBlock">
+                    <div id="swiper3" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>挑選你喜愛的顏色吧</h5>
+                                    <div class="colorAll">
+                                        <div class="colorBox" id="color_btn_1">
+                                            <div class="colorBox__Blue"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlue" checked><label for="cusBlue">米白</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_2">
+                                            <div class="colorBox__Red"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusRed"><label for="cusRed">天空藍</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_3">
+                                            <div class="colorBox__Green"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusGreen"><label for="cusGreen">環保綠</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_4">
+                                            <div class="colorBox__Black"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlack"><label for="cusBlack">甜心粉</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_5">
+                                            <div class="colorBox__Yellow"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusYellow"><label for="cusYellow">深海藍</label></div>
+                                        </div>
+                                    </div>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                                <div class="page4LeftCard">
+                                    <img id="img_color" width="50%" src="./img/indexFront/shopImg/cusBag1.png" alt="">
+                                    <div class="cusBlock">
+                                        <img class="cusIcon" src="./img/indexFront/customerIcon.png" alt="">
+                                        <p class="cusText">由你來設計吧</p>
+                                    </div>
+                                    <div class="page4CardCont">
+                                        <div>
+                                            <h6>客製化-環保袋</h6>
+                                            <h6>$300</h6>
+                                        </div>
+                                        <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>挑選你喜愛的顏色吧</h5>
+                                    <div class="colorAll">
+                                        <div class="colorBox" id="color_btn_1">
+                                            <div class="colorBox__Blue"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlue" checked><label for="cusBlue">米白</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_2">
+                                            <div class="colorBox__Red"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusRed"><label for="cusRed">天空藍</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_3">
+                                            <div class="colorBox__Green"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusGreen"><label for="cusGreen">環保綠</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_4">
+                                            <div class="colorBox__Black"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlack"><label for="cusBlack">甜心粉</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_5">
+                                            <div class="colorBox__Yellow"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusYellow"><label for="cusYellow">深海藍</label></div>
+                                        </div>
+                                    </div>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                                <div class="page4LeftCard">
+                                    <img id="img_color" width="50%" src="./img/indexFront/shopImg/cusBag1.png" alt="">
+                                    <div class="cusBlock">
+                                        <img class="cusIcon" src="./img/indexFront/customerIcon.png" alt="">
+                                        <p class="cusText">由你來設計吧</p>
+                                    </div>
+                                    <div class="page4CardCont">
+                                        <div>
+                                            <h6>客製化-環保袋</h6>
+                                            <h6>$300</h6>
+                                        </div>
+                                        <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ---------------- -->
+
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>挑選你喜愛的顏色吧</h5>
+                                    <div class="colorAll">
+                                        <div class="colorBox" id="color_btn_1">
+                                            <div class="colorBox__Blue"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlue" checked><label for="cusBlue">米白</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_2">
+                                            <div class="colorBox__Red"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusRed"><label for="cusRed">天空藍</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_3">
+                                            <div class="colorBox__Green"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusGreen"><label for="cusGreen">環保綠</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_4">
+                                            <div class="colorBox__Black"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlack"><label for="cusBlack">甜心粉</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_5">
+                                            <div class="colorBox__Yellow"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusYellow"><label for="cusYellow">深海藍</label></div>
+                                        </div>
+                                    </div>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                                <div class="page4LeftCard">
+                                    <img id="img_color" width="50%" src="./img/indexFront/shopImg/cusBag1.png" alt="">
+                                    <div class="cusBlock">
+                                        <img class="cusIcon" src="./img/indexFront/customerIcon.png" alt="">
+                                        <p class="cusText">由你來設計吧</p>
+                                    </div>
+                                    <div class="page4CardCont">
+                                        <div>
+                                            <h6>客製化-環保袋</h6>
+                                            <h6>$300</h6>
+                                        </div>
+                                        <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ---------------- -->
+
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>挑選你喜愛的顏色吧</h5>
+                                    <div class="colorAll">
+                                        <div class="colorBox" id="color_btn_1">
+                                            <div class="colorBox__Blue"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlue" checked><label for="cusBlue">米白</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_2">
+                                            <div class="colorBox__Red"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusRed"><label for="cusRed">天空藍</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_3">
+                                            <div class="colorBox__Green"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusGreen"><label for="cusGreen">環保綠</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_4">
+                                            <div class="colorBox__Black"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusBlack"><label for="cusBlack">甜心粉</label></div>
+                                        </div>
+                                        <div class="colorBox" id="color_btn_5">
+                                            <div class="colorBox__Yellow"></div>
+                                            <div class="colorBox__text"><input type="radio" name="cusColor" id="cusYellow"><label for="cusYellow">深海藍</label></div>
+                                        </div>
+                                    </div>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                                <div class="page4LeftCard">
+                                    <img id="img_color" width="50%" src="./img/indexFront/shopImg/cusBag1.png" alt="">
+                                    <div class="cusBlock">
+                                        <img class="cusIcon" src="./img/indexFront/customerIcon.png" alt="">
+                                        <p class="cusText">由你來設計吧</p>
+                                    </div>
+                                    <div class="page4CardCont">
+                                        <div>
+                                            <h6>客製化-環保袋</h6>
+                                            <h6>$300</h6>
+                                        </div>
+                                        <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div id="cusSwipersBtnR" class="swiper-button-next"></div>
+                        <div id="cusSwipersBtnL" class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                
                 <!-- ====================== 一般商品區 =========================== -->
 
 
@@ -152,7 +344,11 @@
                         </select>
                     </div>
 
-                    <h5 class="title">一般商品區</h5>
+                    <div class="newsPorTitle">
+                        <p>PORDUCTS</p>
+                        <h5>一般商品</h5>
+                        <div class="newProLine"></div>
+                    </div>
                     
                     <div class="allProduct" >
                         <!-- 放大區 -->
@@ -164,7 +360,8 @@
                                         <p class="NameAndPrice">環保購物袋</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text1 shortten2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -176,7 +373,8 @@
                                         <p class="NameAndPrice">環保手機殼</p>
                                         <p class="NameAndPrice B">NT$<span class="price">1290</span></p>
                                         <P class="text1 shortten2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -191,7 +389,8 @@
                                         <p class="NameAndPrice">環保杯套</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -203,7 +402,8 @@
                                         <p class="NameAndPrice">環保杯套</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -215,7 +415,8 @@
                                         <p class="NameAndPrice">環保杯套</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -227,7 +428,8 @@
                                         <p class="NameAndPrice">環保杯套</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -239,7 +441,8 @@
                                         <p class="NameAndPrice">環保杯套</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -251,7 +454,8 @@
                                         <p class="NameAndPrice">環保杯套</p>
                                         <p class="NameAndPrice B">NT$<span class="price">500</span></p>
                                         <P class="text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor vel nulla ea dolores, reprehenderit odit blanditiis minus sit repellat distinctio obcaecati in. Laudantium magni nemo itaque quae doloremque nisi et?</P>
-                                        <button><i class="fas fa-shopping-cart fa-1x"></i></button>
+                                        <button>查看商品<i class="fas fa-info-circle"></i></button>
+                                        <button>加入購物車<i class="fas fa-shopping-cart fa-1x"></i></button>
                                     </div>
                                 </div>
                             </a>
@@ -261,6 +465,72 @@
                     </div>
                 </div>
                 <!-- ==================================排序區//================================== -->
+                <!-- ==================================排序區//================================== -->
+                <!-- ==================================排序區//================================== -->
+                
+                <div class="newsPorTitle">
+                    <p>NEWS PORDUCTS</p>
+                    <h5>最新商品</h5>
+                    <div class="newProLine"></div>
+                </div>
+                
+                <div class="homePage4__generalBlock">
+                    <div class="proDetail">
+                        <div class="page4Pro1">
+                            <div class="page4CardCont">
+                                <div>
+                                    <h6>客製化-環保袋</h6>
+                                    <h6>$300</h6>
+                                </div>
+
+
+                                <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                <button onclick="location.href='./NormalProdcut.html'"><p>查看商品</p><i class="fas fa-info-circle"></i></button>
+                                <button><p>加入購物車</p><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proDetail">
+                        <div class="page4Pro2">
+                            <div class="page4CardCont">
+                                <div>
+                                    <h6>客製化-環保袋</h6>
+                                    <h6>$300</h6>
+                                </div>
+                                <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                <button onclick="location.href='./NormalProdcut.html'"><p>查看商品</p><i class="fas fa-info-circle"></i></button>
+                                <button><p>加入購物車</p><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proDetail">
+                        <div class="page4Pro2">
+                            <div class="page4CardCont">
+                                <div>
+                                    <h6>客製化-環保袋</h6>
+                                    <h6>$300</h6>
+                                </div>
+                                <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                <button onclick="location.href='./NormalProdcut.html'"><p>查看商品</p><i class="fas fa-info-circle"></i></button>
+                                <button><p>加入購物車</p><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proDetail">
+                        <div class="page4Pro3">
+                            <div class="page4CardCont">
+                                <div>
+                                    <h6>客製化-環保袋</h6>
+                                    <h6>$300</h6>
+                                </div>
+                                <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                <button onclick="location.href='./NormalProdcut.html'"><p>查看商品</p><i class="fas fa-info-circle"></i></button>
+                                <button><p>加入購物車</p><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
             </div>
         </div>
     </section> 
@@ -268,6 +538,28 @@
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
 
+    <!-- Swiper JS -->
+    <script src="./js/swiper-bundle.js"></script>
+    <!-- Initialize Swiper -->
+    <script src="./js/swiper-all.js"></script>
+    <script>
+    var swiper3 = new Swiper('#swiper3', {
+        slidesPerView:1,
+        breakpoints:{
+            
+        },
+        // mousewheel: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            effect: 'fade',
+        },
+    });
+    </script>
     <!-- ==================================這段測試中(還沒辦法有動態)================================== -->
     <!-- <script>
         $(document).ready(function(){

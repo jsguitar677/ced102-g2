@@ -39,9 +39,9 @@ $padding-btn: 0px 30px;
 $padding-hint:10px;
 
 //圓角
-$border-radius: 15px;
-$border-radius-btn: 15px;
-$border-radius-input: 5px;
+$border-radius:0;
+$border-radius-btn: 0;
+$border-radius-input: 0;
 
 $box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 
@@ -50,21 +50,24 @@ $web-color:(
     'pink':#FF498C,
     'orange':#FFAE41,
     'lake':#09E4C7,
-    'blue':#1D1E4C,
+    'blue':#07082E,
     'black':#1E1E1E,
-    'white':#fafafa,
-    'white-bg':#F6F6F6,
+    'white':#FFFFFF,
+    'white-bg':#EEEEEE,
     'gray-hint':#C6C6C6,
     'green-coin':#0e6d41,
     'gray-input-hint':#C2C2C2,
-    'blue-input-border':#1D1E4C,
+    'blue-input-border':#07082E,
     'blue-activity-nav':#24324B,
+
+    'yellow':#FFD241,
+    'rankGray':#E3E3EA,
+    'memberGray':#181919,
 );
 
 @mixin btn-module-red() {
     .btn{
         box-shadow: $box-shadow;
-        border-radius: $border-radius;
         display: inline-block;
         overflow: hidden;
         background-color: map-get( $web-color , 'red' );
@@ -265,7 +268,6 @@ main.event{
                             div.description{
                                 text-align: center;
                                 box-shadow: $box-shadow;
-                                border-radius: $border-radius;
                                 h2,span{
                                     font-size: $h7;
                                     margin: 0 0 20px 0;
@@ -289,16 +291,14 @@ main.event{
                                     @include checkbox();
                                 }
                                 button.btn{
-                                    // cursor: pointer;
-                                    border-radius: $border-radius;
                                     outline: none;
-                                    color: map-get( $web-color ,'white');
-                                    background-color: map-get( $web-color ,'blue');
+                                    color: map-get( $web-color ,'blue');
+                                    background-color: map-get( $web-color ,'yellow');
                                     font-weight: bolder;
                                     font-size: $text-fontSize;
                                     padding: $padding-btn;
                                     border:none;
-                                    height: 30px;
+                                    height: 35px;
                                 }
                                 
                             }

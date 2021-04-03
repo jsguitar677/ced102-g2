@@ -237,7 +237,6 @@ p{font-size: 15px;}
             .homePage2Data{
                 display: flex;
                 justify-content: space-between;
-                border-radius: 15px;
                 padding: 10px;
                 text-align: left;
                 @include pad{
@@ -290,7 +289,7 @@ p{font-size: 15px;}
             max-width: 400px;
             height: 40px;
             padding: 5px;
-            background-color: map-get($color-regulation,'blue');
+            background-color: map-get($color-regulation,'memberGray');
             margin: 0px auto 30px auto;
             position: relative;
             font-size: 0;
@@ -400,7 +399,6 @@ p{font-size: 15px;}
             box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
             .rankBox{
                 margin: 0 auto;
-                border: 2px solid map-get($color-regulation, 'blue' );
             }
             h5{
                 margin: 0;
@@ -414,10 +412,11 @@ p{font-size: 15px;}
             }
             &__no1{
                 height: 80px;
+                background-color:map-get($color_regulation, 'rankGray');
             }
             &__no2{
                 height: 50px;
-                background-color:map-get($color_regulation, 'rankGray');
+               
             }
             &__no3{
                 height: 50px;
@@ -663,23 +662,6 @@ p{font-size: 15px;}
             position: relative;
             background-size: cover;
             box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-            // @include pc{
-            //     width: 180px;
-            //     height: 240px;
-            // }
-            // @include pad{
-            //     width: 135px;
-            //     height: 180px;
-            // }
-            // @include mobileL{
-            //     width: 90px;
-            //     height: 120px;
-            //     margin-right: 5px;
-            // }
-            // @include mobileS(){
-            //     width: 60px;
-            //     height: 90px;
-            // }
         }
         &__generalBlock{
             flex-wrap: wrap;
@@ -768,12 +750,10 @@ p{font-size: 15px;}
                         cursor: pointer;
                         box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
                         border:none;
-                        background-color:#1D1E4C;
-                        color:#FFFFFF;
+                        background-color:map-get($color_regulation , 'yellow' );
+                        color:map-get($color_regulation, 'blue' );
                         width: 150px;
                         height: 30px;
-                        // width: 30px;
-                        border-radius: 15px;
                         margin: 0 auto ;
                         margin-bottom: 10px;
                         @include pad(){
@@ -950,7 +930,6 @@ p{font-size: 15px;}
             color: white;
             background-color: map-get($color_regulation, 'blue' );
             border: none;
-            border-radius: 15px;
         }
         .btn:focus {
             outline: 1px dashed yellow;

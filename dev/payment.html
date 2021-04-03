@@ -48,10 +48,8 @@
         <div class="paymentContent " >
           <div class="card">
             <div class="card-header" id="headingOne">
-              
-              <!-- <button class="accordion"><span>訂單總金額</span>{{item.price * item.count}}}</button> -->
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h2 class="btntext" style="color: white;">訂單總金額NT$1600</h2>
+                  <h2 class="btntext">訂單總金額NT$1600</h2>
               </button>
               
             </div>
@@ -157,12 +155,16 @@
                   <div class="formw subtotal"><span>$</span>1600</div>
                 </div>
               </div>
-            
           </div>
-          <h2>填寫資料</h2>
+          <div class="perDetailTitle"><h2>填寫資料</h2></div>
+          
           <main class="form_wrapper" v-else-if="progress.steps[progress.currentStep] === 'payment'" key="payment">
             <section class="step step2">
-              <h2 class="step_title">填寫付款資訊</h2>
+              <div class="step_title_box">
+                <h2 class="step_title">填寫付款資訊</h2>
+                <div class="step_title_line"></div>
+              </div>
+              
               <form class="creadDetail" novalidate @submit.prevent="validateBeforeSubmit('payment')">
                 <div class="form-group row">
                   <label class="label">持卡人:</label>
@@ -209,11 +211,10 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="label">CVV: 
-                    <br>(卡片背面末三碼)</label>
+                  <label class="label">CVV:</label>
                   <div class="form-row">
                     <div class="col-md-3">
-                      <input class="form-control form" type="text" name="cvv" v-model="formPayment.cvv" v-validate="'required|numeric|length:3'">
+                      <input placeholder="卡片背面末三碼" class="form-control form" type="text" name="cvv" v-model="formPayment.cvv" v-validate="'required|numeric|length:3'">
                     </div>
                   </div>
                 </div>
@@ -228,7 +229,10 @@
           </main>
           <main class="form_wrapper" v-else-if="progress.steps[progress.currentStep] === 'payment'" key="payment">
           <section class="step step3">
-            <h2 class="step_title">收貨人資料</h2>
+            <div class="step_title_box">
+              <h2 class="step_title">收貨人資料</h2>
+              <div class="step_title_line"></div>
+            </div>
             <form class="consignee">
               <div class="member">
               <input type="radio" name="block" class="memberblock" >同會員資料

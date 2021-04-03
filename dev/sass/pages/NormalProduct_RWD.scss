@@ -19,57 +19,92 @@ $h4:38px;
 $h5:28px;
 $h6:22px;
 $h7:18px;
-$contentTxt:15px;   //內文字體大小
-$btnTxt:15px;   //按鈕字體大小
-$regionTxt:28px;//區域性字體
-$contentSubTit:22px;//內文副標題
-$navTxt:15px;//導覽列文字
-$line-height:30px;//文字行高
+
 $letter-Spacing:2px;//文字間距
 $padding-hint:10px;//頁面提示字padding
 //Others
 $pageW:1200px;//網頁寬
 $reserveSide:30px;//左右預留寬度
 //Radius
-$borderRadius:15px;
-$btnRadius:15px;
-$inputRadius:5px;
+$contentTxt:15px;   //內文字體大小
+$btnTxt:15px;   //按鈕字體大小
+$regionTxt:28px;//區域性字體
+$contentSubTit:22px;//內文副標題
+$navTxt:15px;//導覽列文字
+$lineHeight:35px;//文字行高
+$borderRadius:0px;
+$btnRadius:0px;
+$inputRadius:0px;
 //box-shadow
 $box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+
 //敬航
 $closeBtn:27px;//關閉紐大小
-//header
+// header
 $navH:66px;
 $logoW:50px;
 //Footer
 $footerH:500px;
+
 //new color
 $color_regulation:(
-    'btnPink': #FF9898,
-    'btnBlue': #1654FF,
-    'btnRed': #EF4325,
-    'orange':#FFAE41,
+    'red':#EF4325,
     'pink':#FF498C,
+    'orange':#FFAE41,
     'lake':#09E4C7,
+    'blue':#07082E,
     'black':#1E1E1E,
-    'blue':#1D1E4C,//主要色
-    'white':#fafafa,//需要(白色)統一用這一個
-    'white-bg':#F6F6F6,//背景為暗色需改成白色(背景底色)
-    'red':#EF4325,//警示色
-    'green':#0e6d41,//環保幣顏色
-    'gray-input-hintText':#C2C2C2,//input的提示顏色
-    'blue-input-border':#1D1E4C,//input的邊框顏色
-    'gray':#C6C6C6,// 頁面提示字顏色(灰色)
-    'blackGray':#0D1017,//footer背景: 黑灰色
-    'footerGray':#2A323D,//footer背景字體色、nav顏色(黑灰色)
-    'footerSide':#161c24,//footer旁邊顏色
-    'footerGray2':rgba(66, 79, 95,.1),
+    'white':#FFFFFF,
+    'white-bg':#EEEEEE,
+    'gray-hint':#C6C6C6,
+    'green-coin':#0e6d41,
+    'gray-input-hint':#C2C2C2,
+    'blue-input-border':#07082E,
+    'blue-activity-nav':#24324B,
+  
+    'yellow':#FFD241,
+    'rankGray':#E3E3EA,
+    'memberGray':#181919,
 );
+// ==============RWD=======================
+@mixin pcL {
+    @media(max-width:1200px){
+        @content;
+      }
+}
+@mixin pc{
+    @media(max-width:1024px){
+      @content;
+    }
+}
+@mixin pad{
+    @media(max-width:768px){
+      @content;
+    }
+}
+@mixin mobileL{
+    @media(max-width:576px){
+        @content;
+    }
+}
+@mixin mobileS{
+    @media(max-width:375px){
+        @content;
+    }
+}
+// -----for cusblock------------------------------------------
+@mixin customSize{
+    @media(max-width:850px){
+        @content;
+    }
+}
+//=============共用規格設定如上=============
+
 //=============共用規格設定如上=============
 @mixin cartIcon2(){
-    color: map-get($color_regulation, 'white');
-    background-color: map-get($color_regulation, 'blue');
-    height: 30px;
+    color: map-get($color_regulation, 'blue');
+    background-color: map-get($color_regulation, 'yellow');
+    height: 35px;
     padding: 0 30px;
     border-radius: $borderRadius;
     box-shadow: $box-shadow;
@@ -80,17 +115,16 @@ $color_regulation:(
 }
 
 @mixin cartIcon(){
-    color: map-get($color_regulation, 'blue');
-    float: right;
-    background-color: rgb(255, 255, 255) !important;
-    width: 35px;
+    color: map-get($color_regulation,'blue');
+    background-color: map-get($color_regulation,'yellow');
     height: 35px;
     padding: 0;
-    border-radius: 50%;
-    box-shadow: $box-shadow;
     border: none ;
     outline: none;
     cursor: pointer;
+    padding: 0 10px;
+    width: 150px;
+    line-height: 35px;
 }
 //=========================================
 
@@ -100,7 +134,7 @@ $color_regulation:(
 body {
     margin: 0;
     font-family: $english, $chinese;
-    background-color: map-get($color_regulation,'white-bg' );
+    background-color: map-get($color_regulation,'white' );
 }
 
 //左側 直向 麵包條
@@ -132,50 +166,41 @@ div.title-block{
 
 section.NormalProductPage {
     letter-spacing:$letter-Spacing;
-    max-width: calc( #{$pageW} - #{$reserveSide} * 2 );
     margin:0 auto;
     font-size: 0px;
     text-align: center;
     margin-top:$navH;
     position: relative;
-    //header下方背景圖(毛玻璃效果)，此div不占位
     div.content_normalProduct {
         text-align: left;
         display: inline-block;
         vertical-align: top;
         width: 100%;
-        div.top_back_img_1 {
-            position:relative;
-            margin: 0 auto;
-            z-index: -5;
-            @media (max-width:1200px){
-                width:calc(100% - #{$reserveSide} * 2);
+        .customizedTotleBox{
+            margin: auto;
+            padding: 10px;
+            padding-top: 20px;
+            height: 100px;
+            background-color: map-get($color_regulation, 'yellow' );
+            p{  
+                color: map-get($color_regulation,'blue');
+                font-size: $p;
+                text-align: center;
+                margin: 0;
             }
-            div.top_back_img_2{  
-                width: 100%;
-                max-height:426px;
-                position:absolute;
-                top:-5px;
-                left:0;    
-                border-radius: 0 0 $borderRadius $borderRadius;
-                overflow: hidden;
-                box-shadow: $box-shadow;
-                img{
-                    width: 105%;
-                    filter: blur(7px); 
-                }
+            h5.title_2{
+                font-size: $h5;
+                color: map-get($color_regulation,'blue');
+                text-align: center;
+                margin: 0;
+                padding:0;
+                
             }
-        }
-        //標題:一般商品 - 環保手提袋
-        h5.title_2{
-            font-size: $h5;
-            color: map-get($color_regulation,'blue');
-            margin:0 auto;
-            padding:60px 0;
-            text-align: center;
-            @media (max-width:575px){
-                font-size: $h6;
-                padding:20px;
+            .yellowLine{
+                margin:10px auto;
+                width: 40px;
+                height: 8px;
+                background-color: map-get($color_regulation,'white' );
             }
         }
     }
@@ -186,6 +211,7 @@ section.NormalProductPage{
     div.content_normalProduct{
         div.container{
             margin:0 auto;
+            margin-top: 30px;
             padding:0;
             width:100%;
             div.all{
@@ -304,11 +330,11 @@ section.NormalProductPage{
                         box-shadow: $box-shadow;
 
                         h6.aboutProducts{ 
+                            border-left: 8px solid map-get($color_regulation ,'yellow' );
+                            padding-left: 10px;
                             font-size: $h6;
                             color:map-get($color_regulation,'blue');
                             margin:0;
-                            padding-top:5px;
-                            display:inline-block;
                             @media (max-width:991px){
                                 padding:0;
                             }
@@ -329,8 +355,6 @@ section.NormalProductPage{
                             }
                         }
                         p#showInforHere{
-                            padding-left:35px;
-                            padding-right:35px;
                             font-size: $p;
                             font-weight: 550;
                             color:map-get($color_regulation,'blue');
@@ -347,6 +371,7 @@ section.NormalProductPage{
                 //右側 選擇數量區選擇區=================================================================
                 //右側 選擇數量區選擇區=================================================================
                 div.rightarea{
+                    padding: 30px;
                     height: 50%;
                     color: map-get($color_regulation,'blue' );
                     margin:0 auto;
@@ -361,24 +386,24 @@ section.NormalProductPage{
                         width:98%;
                         margin: 0 auto;
                         //選擇數量區==============================
-                        //選擇數量區==============================
-                        //選擇數量區==============================
                         div.qty_block{
                             width:100%;
                             font-size: $p;
-                            padding-bottom: 50px;
+                            
+                            padding-bottom: 30px;
                             //小標:數量
                             p.stepExplain{
+                                border-left: 8px solid map-get($color_regulation , 'yellow' );
                                 font-size: $p;
-                                font-weight: 550;
+                                font-weight: bold;
                                 margin:0;
-                                padding-top:50px;
-                                padding-bottom:10px;
+                                padding-left: 10px;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
                             }
                             div.placememtOfQty{
+                                padding-top: 30px;
                                 width:100%;
                                 margin:0 auto;
                                 font-weight: bold;
@@ -400,14 +425,13 @@ section.NormalProductPage{
                             }
                         }
                         //小計區==================================
-                        //小計區==================================
-                        //小計區==================================
                         div.tal_block{
                             width:100%;
                             font-size: $p;
                             color:map-get($color_regulation,'blue');
                             //小標:小計
                             p.stepExplain{
+                                float: left;
                                 font-weight: 550;
                                 margin:0;
                                 @media (max-width:450px) {
@@ -427,34 +451,11 @@ section.NormalProductPage{
                         }
                         div.placeOfSubmit{
                             text-align: center;
-                            margin-bottom: 50px;
+                            margin-bottom: 30px;
                             button{
                                 margin-top:30px;
                                 @include cartIcon2();
                             }
-                            // a{
-                            //     button.btn_shopping_cart{
-                            //         box-shadow: $box-shadow;
-                            //         border-radius: $inputRadius;
-                            //         width:145px;
-                            //         height:30px;
-                            //         line-height: 30px;
-                            //         background-color:map-get($color_regulation,'blue');
-                            //         color:map-get($color_regulation,'white');
-                            //         position:relative;
-                            //         padding-right: 10%;
-                            //         margin-top:50px;
-                            //         cursor: pointer;
-                            //         img{
-                            //             height:90%;
-                            //             border-radius: 50%;
-                            //             position:absolute;
-                            //             top:50%;
-                            //             right:8%;
-                            //             transform: translateY(-50%);
-                            //         }
-                            //     }
-                            // }
                         }
                     }
                 }
@@ -467,9 +468,6 @@ section.NormalProductPage{
                 //底部 推薦商品區======================================================================
                 //底部 推薦商品區======================================================================
                 div.bottomarea{
-                    border-radius: $borderRadius;
-                    box-shadow: $box-shadow;
-                    margin:0 atuo;
                     padding-bottom: 40px;
                     margin-bottom:70px;
                     margin-top:25px;
@@ -511,6 +509,11 @@ section.NormalProductPage{
                                     width:100%;
                                 }
                                 div.productInfo{
+                                    &:hover {
+                                        button{
+                                            display: block;
+                                        }
+                                    }
                                     width: 100%;
                                     position:absolute;
                                     bottom:0;
@@ -518,14 +521,6 @@ section.NormalProductPage{
                                     background-color: map-get($color_regulation,'white-bg' );
                                     background: hsla(0,0%,100%,.7);
                                     padding:10px;
-                                    button{
-                                        outline: none;
-                                        i{
-                                            margin-right: 2px;
-                                        }
-                                        @include cartIcon();
-                                        
-                                    }
                                     p.NameAndPrice{
                                         font-size: $p;
                                         font-weight: 550;
@@ -537,26 +532,33 @@ section.NormalProductPage{
                                         }
                                     }
                                     p.text{
-                                        width: 100%;
                                         font-size: $p;
-                                        color:map-get($color_regulation,'blue'); 
-                                        margin-top: 0;
-                                        overflow: hidden;        //內容溢出處理
-                                        text-overflow: ellipsis; //文字溢出處理
-                                        white-space:nowrap;      //文字超出時不換行
-                                        @media (max-width:450px) {
-                                            font-size: 12px; 
-                                        }
+                                        font-weight: 500;
+                                        color:map-get($color_regulation,'blue');
+                                        margin: 10px 0;
+                                        overflow: hidden; 
+                                        text-overflow: ellipsis;
+                                        white-space:nowrap;
                                     }
-                                    // img.cart{
-                                    //     position:absolute;
-                                    //     bottom:7px;
-                                    //     right:7px;
-                                    //     width:27.9px;
-                                    //     height: 27.9px;
-                                    //     border-radius: 50%;
-                                    //     box-shadow: $box-shadow;
-                                    // }
+                                    .B{
+                                        float: right;
+                                        margin-right: 0;
+                                    }
+                                    button{
+                                        margin: auto;
+                                        display: none;
+                                        margin-bottom: 10px;
+                                        @include cartIcon();
+                                        p{
+                                            margin: 0;
+                                            display: inline-block;
+                                        }
+                                        i{
+                                            font-size: 18px;
+                                            padding-right: 1px;
+                                        }
+                                        
+                                    }
                                 }
                             }
                         }

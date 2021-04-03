@@ -25,7 +25,7 @@
     <div class=" col-lg-6 d-flex justify-content-start progress__bar">
             <ul class="progress ">
               <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}">1
-                <p class="progress__text ">確認訂單</p>
+                <p style="color:#FFD241;" class="progress__text">確認訂單</p>
               </li>
               <li class="progress progress_group_bar">
                 <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
@@ -51,6 +51,7 @@
         <div class="content ">
             <div class="sub-title-block ">
                 <h2 class="sub-title">確認訂單明細</h1>
+                <div class="sub-title-line"></div>
             </div>
             <form id="app">
                 <table class="table">
@@ -159,7 +160,7 @@
             </div>
             <div class="butSection">
                 <button  class=" button button-buy"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
-                <button onclick="location.href='./payment.html'" class="button button-pay"><a style="color: white;" href='./payment.html'>進行結帳</a></button>
+                <button onclick="location.href='./payment.html'" class="button button-pay"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
                 
             </div>
             

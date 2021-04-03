@@ -30,7 +30,7 @@ div.progress__bar{
     padding: 10px 0 40px 0;
     flex: 0 0 83.33333%;
     width: 100%;
-    background-color: #fafafa;
+    background-color: map-get($map: $color_regulation, $key: 'white'); 
     
     .progress{
         margin: 0 auto;
@@ -51,32 +51,27 @@ div.progress__bar{
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        // margin: 0 100px;
         position: relative;
-        background-color: #1D1E4C;
+        background-color: map-get($map: $color_regulation, $key: 'blue');
         line-height: 30px;
         letter-spacing: 0px;
         margin: 0 ;
-        // background-color:#1D1E4C ;
-        color: #fafafa;
- 
+        color: map-get($map: $color_regulation, $key: 'white');
+        &:first-child{
+            color: map-get($map: $color_regulation, $key:'blue' );
+            background-color: map-get($map:$color_regulation, $key:'yellow' );
+            z-index: 1;
+        }
         p.progress__text{
             position: absolute;
             width: 150px;
             top: 50%;
             left: -200%;
-            color: #1D1E4C;
+            color: map-get($map: $color_regulation, $key: 'blue');
             font-size: $h7;
             font-family: $chinese;
-        
-        
+            
         }
-        // .progress__item--active{
-        //     background-color: #1D1E4C;
-    
-        //     }
-        
-   
      }  
      .progress_group_bar {
         height: 12px;
@@ -86,19 +81,13 @@ div.progress__bar{
             flex-direction: column;
 
             justify-content: center;
-            color: #1D1E4C;
+            color: map-get($map: $color_regulation, $key: 'blue');
             text-align: center;
             white-space: nowrap;
-            background-color: #1D1E4C;
+            background-color: map-get($map: $color_regulation, $key: 'blue');
             transition: width .6s ease;
             width: 500px;
             height: 10px;
-            // .active{
-            //     background-color: #1D1E4C;
-            //     }
-            //  .notactive{
-            //     background-color: #646464;
-            //  }
         }
         @media (min-width:992px) and (max-width:1199px){
             .progress-bar{
@@ -136,7 +125,7 @@ div.title-block {
     h1.title {
         margin: 0;
         font-size: 20px;
-        color: #1d1e4c;
+        color: map-get($color_regulation, 'blue' );;
         display: inline-block;
         white-space: nowrap;
         padding: 10px;
@@ -149,8 +138,8 @@ div.title-block {
     margin: 0 auto;
     display: flex;
     position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     // flex: 0 0 83.33333%;
     max-width: $pageW;
     @media (min-width:992px) and (max-width:1199px){
@@ -168,39 +157,38 @@ div.title-block {
  #new {
     z-index: 1;
     width: 100%;
-    margin-left: 10px;
     letter-spacing: $letter-Spacing;
     }
     div.content {
-        // border: 1px solid red;
         text-align: left;
         display: inline-block;
         vertical-align: top;
         position: relative;
-        // max-width: $pageW;
         width: 100%;
-        // padding-right: 60px;
         div.sub-title-block {
             text-align: center;
             h2.sub-title {
+                margin: 0;
+                margin-top: 30px;
                 font-size: 28px;
-                color: #1D1E4C;
+                color: map-get($map: $color_regulation, $key: 'blue');
+            }
+            .sub-title-line{
+                margin: 10px auto 30px;
+                width: 50px;
+                height: 8px;
+                background-color:map-get($map: $color_regulation, $key:'yellow' );
             }
         }
         #app {
             margin: 0 auto;
             font-size: 18px;
-            color: #1d1e4c;
+            color: map-get($color_regulation, 'blue' );;
             position: relative;
 
             .item_body {
-                // border: 1px solid #1d1e4c;
-                border-radius: 15px;
-                margin: 5px auto;
-                // padding: 30px 20px;
-                // margin-bottom: 20px;
+                margin: 15px auto;
                 width: 100%;
-                // height: 88px;
                 align-items: center;
                 display: flex;
                 box-shadow: $box-shadow;
@@ -208,7 +196,7 @@ div.title-block {
                 .item_body div{
                     border: 1px solid red;
                     width: 400px;
-                    color: #1d1e4c;
+                    color: map-get($color_regulation, 'blue' );;
                     line-height: $lineHeight;
                     @media (min-width:992px) and (max-width:1199px){
                        
@@ -234,7 +222,7 @@ div.title-block {
                             width: 100px;
                             height: 100px;
                             background-image: url(https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);
-                            border-radius: 10px;
+                            // border-radius: 10px;
                             overflow: hidden;
                             /* margin-top: 10px; */
                             float: left;
@@ -308,11 +296,10 @@ div.title-block {
                 }
             }
             .item-count{
-                border: 1px solid #1d1e4c;
-                padding: 3px 8px;
+                border: 1px solid map-get($color_regulation, 'blue' );;
+                padding: 5px 9px;
+                padding-left: 13x;
                 text-align: center;
-                border-radius: $inputRadius;
-            
             }
             button.round {
                 border-radius: 50%;
@@ -320,13 +307,13 @@ div.title-block {
                 height: 30px;
                 outline: 0;
                 border: 0;
-                color: #1d1e4c;
+                color: map-get($color_regulation, 'blue' );;
                 font-size: 18px;
-                background: #fafafa;
+                background: map-get($color_regulation, 'gray' );
                 cursor: pointer;
                 &:hover{
-                    background: #1d1e4c;
-                    color: #fafafa;
+                    background: map-get($color_regulation, 'yellow' );
+                    color: map-get($map: $color_regulation, $key: 'blue');
                 }
                 
                 @media (min-width:992px) and (max-width:1199px){
@@ -351,11 +338,9 @@ div.title-block {
 
             }
             button.add {
-                // background-color: #1d1e4c;
                 font-size: 20px;
             }
             button.less {
-                // color: #1d1e4c;
                 font-size: 24px;
             }
             button.round-cxl {
@@ -364,12 +349,8 @@ div.title-block {
                 height: 28px;
                 outline: 0;
                 border: 0;
-                // color: #1d1e4c;
                 font-size: 18px;
-                // background: #1d1e4c;
-                border-radius: 50%;
                 cursor: pointer;
-                
                 @media (min-width:992px) and (max-width:1199px){
 
                 }
@@ -394,8 +375,6 @@ div.title-block {
         
     
         .total_body {
-            // border: 1px solid #1d1e4c;
-            border-radius: 15px;
             margin-top: 20px;
             margin-bottom: 50px;
             float: right;
@@ -419,17 +398,15 @@ div.title-block {
             }
 
             .total-title {
-            box-shadow: $box-shadow;
-
+                box-shadow: $box-shadow;
                 width: 100%;
                 height: 30px;
-                background-color: #1d1e4c;
-                border-radius: 15px;
+                background-color: map-get($color_regulation,'yellow');
                 text-align: center;
                 vertical-align: middle;
                 border: none;
                 .detail {
-                    color: white;
+                    color: map-get($map: $color_regulation, $key: 'blue');
                     font-size: 18px;
                 }
             }
@@ -452,24 +429,20 @@ div.title-block {
                     width: 40%;
                     text-align: right;
                     // padding: $paddingSide;
-                    border: 1px solid #1D1E4C;                    
+                    border: 1px solid map-get($map: $color_regulation, $key: 'blue');                    
                 }
                 input.discount {
-                    // width: 30px;
-                    // height: 50px;
-                    border: 1px solid #1D1E4C; 
+                    border: 1px solid map-get($map: $color_regulation, $key: 'blue'); 
                     line-height: $lineHeight;
-                    border-radius: $inputRadius;
-
                 }
             }
             div.orderCount {
                 p {
-                    // text-align: center;
                     font-size: 22px;
                     font-weight: bold;
                     margin: 20px auto 0px;
                     padding: 10px;
+                    color:map-get($map: $color_regulation, $key: 'red'); 
                 }
             }
         }
@@ -478,13 +451,12 @@ div.title-block {
             margin: 30px auto;
             text-align: center;
             button.button{
-                border-radius: $btnRadius;
+                height: 35px;
                 font-size: $btnTxt;
                 box-shadow: $box-shadow;
                 line-height: $lineHeight;
                 margin: 20px 50px;
                 padding: 0px 30px;
-                // background-color: #1D1E4C;
                 border: none;
                 outline: none;
                 @media (min-width:992px) and (max-width:1199px){
@@ -503,18 +475,13 @@ div.title-block {
                 
             }
             .button-buy{
-                border-radius: $btnRadius;
-                background-color: #1D1E4C; 
-                color:#fafafa
-
+                background-color: map-get($map: $color_regulation, $key: 'blue'); 
+                color:map-get($map: $color_regulation, $key: 'white');
             }
             .button-pay{
-                border-radius: $btnRadius;
-                background-color: #EF4325; 
-                color:#fafafa
-
+                background-color: map-get($map: $color_regulation, $key: 'yellow');
+                color:map-get($map: $color_regulation, $key: 'blue');
             }
-
         }
       }
     }
