@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body > * {
+  font-family: "Palatino Linotype", "Noto Sans Tc";
+}
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -25,38 +29,36 @@
 .comShape {
   background-color: #fff;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 15px;
 }
 
 .comInput {
-  border: 1px solid #1D1E4C;
-  border-radius: 15px;
+  border: 1px solid #07082E;
 }
 
 .comBtn {
   cursor: pointer;
   outline: none;
-  color: white;
-  border-radius: 15px;
-  height: 30px;
+  color: #07082E;
+  height: 35px;
   border: none !important;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   font-size: 15px;
-  background-color: #EF4325;
-  padding: 0 15px;
+  background-color: #FFD241;
+  padding: 0px 30px;
+  line-height: 35px;
 }
 
 .comBtn2 {
   cursor: pointer;
   outline: none;
-  color: white;
-  border-radius: 15px;
-  height: 30px;
+  color: #FFFFFF;
+  height: 35px;
   border: none !important;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   font-size: 15px;
-  background-color: #1D1E4C;
-  padding: 0 15px;
+  background-color: #07082E;
+  padding: 0px 30px;
+  line-height: 35px;
 }
 
 body {
@@ -67,7 +69,6 @@ body header {
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   position: fixed;
   top: 0;
-  font-family: "Palatino Linotype", "Noto Sans TC";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -79,10 +80,11 @@ body header {
 
 body header nav {
   height: 66px;
-  padding-left: 30px;
+  padding: 0px 30px;
   position: relative;
   display: flex;
   justify-content: space-between;
+  background-color: #07082E;
 }
 
 body header nav div#lftUl {
@@ -103,6 +105,8 @@ body header nav div#lftUl ul li {
   font-size: 15px;
   vertical-align: bottom;
   transition: all 1s ease;
+  line-height: 66px;
+  color: #FFFFFF;
 }
 
 body header nav div#lftUl ul li:nth-child(n+1) {
@@ -111,17 +115,23 @@ body header nav div#lftUl ul li:nth-child(n+1) {
 
 body header nav div#lftUl ul li:hover img {
   opacity: 1;
+  transform: rotate(360deg) scale(1.5);
 }
 
 body header nav div#lftUl ul li a {
   margin-right: 5px;
-  color: #1D1E4C;
+  color: #07082E;
+}
+
+body header nav div#lftUl ul li a:hover {
+  color: #FFD241;
 }
 
 body header nav div#lftUl ul li img {
   opacity: 0;
-  transition: all .8s ease;
+  transition: all .5s ease;
   width: 20px;
+  margin-left: 3px;
 }
 
 body header nav div#lftUl ul li:first-child {
@@ -164,7 +174,7 @@ body header div#rgtUl ul li {
 }
 
 body header div#rgtUl ul li:nth-child(3) {
-  padding-right: 30px;
+  padding-right: 0px;
 }
 
 body header div#rgtUl ul li i.fwIcon {
@@ -174,11 +184,16 @@ body header div#rgtUl ul li i.fwIcon {
 body header a {
   text-decoration: none;
   cursor: pointer;
-  color: #1D1E4C;
+  color: #07082E;
+}
+
+body header a:hover {
+  color: #EF4325;
 }
 
 body header i.fwIcon {
   vertical-align: text-top;
+  font-size: 15px;
 }
 
 body div#page1 {
@@ -201,6 +216,8 @@ body div#page1 div#lightbox div#logWrapper {
   font-size: 0;
   width: 50%;
   height: 70%;
+  min-height: 435px;
+  min-width: 320px;
   position: absolute;
   vertical-align: top;
   left: 50%;
@@ -234,7 +251,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url("../../img/logo3.png"), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -242,18 +259,19 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
-  font-size: 18px;
+  font-size: 15px;
   padding: 0% 15%;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label input {
   width: 100%;
   margin-bottom: 5%;
+  padding: 5px 10px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember {
@@ -294,7 +312,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
@@ -304,7 +322,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5%;
 }
 
@@ -325,21 +343,21 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
   height: 100%;
   width: calc(100%*0.6/1.6);
   text-align: center;
-  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 1%;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
   padding: 0% 15%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
@@ -370,6 +388,7 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
   display: inline-block;
   margin: 3% auto;
+  margin-bottom: 15px;
 }
 
 body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
@@ -381,6 +400,8 @@ body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#reg
   display: block;
   margin: 0 auto;
   margin-top: 1%;
+  cursor: pointer;
+  border: none;
 }
 
 body div#page1 div#lightbox div#logWrapper div#closeBtn {
@@ -449,6 +470,8 @@ body div#page1 div#lightbox2 div#logWrapper2 {
   font-size: 0;
   width: 50%;
   height: 70%;
+  min-height: 435px;
+  min-width: 320px;
   position: absolute;
   vertical-align: top;
   left: 50%;
@@ -482,20 +505,26 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
   margin: 0 auto;
   height: 100%;
   font-size: 0;
-  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
 }
 
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 p {
+  color: #EF4325;
+  text-align: center;
+  cursor: pointer;
+}
+
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   padding-top: 30px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
-  font-size: 18px;
+  font-size: 15px;
   padding: 0% 15%;
 }
 
@@ -543,7 +572,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
   padding-top: 30px;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
@@ -552,7 +581,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5%;
 }
 
@@ -573,7 +602,7 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
   height: 100%;
   width: calc(100%*0.6/1.6);
   text-align: center;
-  background-image: url(../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
+  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
   background-position: center center, center center;
   background-size: 35%, cover;
   background-repeat: no-repeat, no-repeat;
@@ -585,14 +614,18 @@ body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 1%;
   padding-top: 30px;
 }
 
+body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
+  font-size: 15px;
+}
+
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
   padding: 0% 15%;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
@@ -686,145 +719,13 @@ svg#closeBtnBorderSvg2:hover {
   transform: rotate(180deg);
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 0;
-  color: #1D1E4C;
-  width: 100%;
-  background-color: #F6F6F6;
-}
-
-footer .footerWrapper {
-  margin: 0 auto;
-  width: calc(100% - 60px);
-  max-width: 1200px;
-  height: 90%;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-footer .footerWrapper .footerBlockTop {
-  display: flex;
-  padding: 0 30px;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 40%;
-  padding: 20px;
-  padding-left: 0px;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox1 .footerTOP {
-  font-size: 100px;
-  font-weight: bold;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-footer .footerWrapper .footerBlockTop .footerBox1 .footerBottom {
-  font-size: 45px;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox1 .footerBottom ul {
-  list-style-type: circle;
-  margin: 0;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox2 {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox2 .footerTitle {
-  font-size: 48px;
-  font-weight: bold;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-footer .footerWrapper .footerBlockTop .footerBox2 .goTop {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  width: 230px;
-  height: 50px;
-  font-size: 30px;
-  border: 2px solid #1D1E4C;
-  border-radius: 30px;
-  background-color: #fff;
-  color: #1D1E4C;
-  outline: none;
-  cursor: pointer;
-  transition: .3s ease-in-out;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox2 .goTop:hover {
-  background-color: #1D1E4C;
-  color: #fff;
-  transition: .3s ease-in-out;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 {
-  width: 40%;
-  padding: 20px;
-  padding-right: 0px;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 .social {
-  width: 70%;
-  display: inline-block;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 .social span {
-  font-weight: bold;
-  font-size: 40px;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 .social__Icon {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-around;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 .orignate {
-  text-align: center;
-  padding: 0 15%;
-  padding-top: 25px;
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 .orignate span {
-  font-size: 40px;
-  font-weight: bold;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-}
-
-footer .footerWrapper .footerBlockTop .footerBox3 .orignate p {
-  width: 100%;
-}
-
-footer .footerWrapper .footerBlockbottom {
-  text-align: center;
-  font-weight: bold;
-  padding: 15px;
-}
-
-.fa-facebook, .fa-twitter, .fa-instagram {
-  font-size: 40px;
-}
-
 body a {
   text-decoration: none;
   color: #1D1E4C;
+}
+
+body a:hover {
+  color: #FFFFFF;
 }
 
 body div#page2 {
@@ -955,6 +856,9 @@ button#createAcc2 {
 }
 
 @media all and (max-width: 1312px) {
+  body header nav div#lftUl {
+    width: 33px;
+  }
   body header nav div#lftUl div#navBurgerBtn {
     transition: all .8s;
     cursor: pointer;
@@ -966,21 +870,21 @@ button#createAcc2 {
     top: 7px;
   }
   body header nav div#lftUl div#navBurgerBtn div {
-    background-color: #1D1E4C;
-    width: 33px;
+    background-color: #FFFFFF;
+    width: 25px;
     height: 3px;
     position: absolute;
     border-radius: 3px;
     transition: all .8s;
   }
   body header nav div#lftUl div#navBurgerBtn div:first-child {
-    top: 14px;
+    top: 15px;
   }
   body header nav div#lftUl div#navBurgerBtn div:nth-child(2) {
-    top: 23px;
+    top: 24px;
   }
   body header nav div#lftUl div#navBurgerBtn div:last-child {
-    bottom: 8px;
+    bottom: 6px;
   }
   body header nav div#lftUl ul {
     display: flex;
@@ -988,9 +892,9 @@ button#createAcc2 {
     background-color: #EF4325;
     justify-content: flex-end;
     align-items: stretch;
-    color: #fafafa;
+    color: #FFFFFF;
     position: relative;
-    top: 24px;
+    top: 23px;
     left: 2000px;
     opacity: 0;
     transition: all .8s;
@@ -999,7 +903,7 @@ button#createAcc2 {
     text-align: center;
     margin-left: 0px !important;
     background-color: #1E1E1E;
-    width: 300px;
+    width: 320px;
     padding-left: 20px;
   }
   body header nav div#lftUl ul li:hover {
@@ -1035,8 +939,11 @@ button#createAcc2 {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
   }
+  div#lftUl {
+    width: 320px;
+  }
   div#lftUl ul#navRList li a {
-    color: #fafafa;
+    color: #FFFFFF;
   }
 }
 div.closeRotate2 {
@@ -1071,67 +978,323 @@ div.closeRotate1 {
   }
 }
 
-@media all and (max-width: 1247px) {
-  div.footerBlockTop {
-    justify-content: space-between;
-    flex-wrap: wrap !important;
+div#logCarousel input, div#logCarousel2 form input {
+  outline: 0;
+  border-radius: 5px;
+  border: none;
+}
+
+div#logCarousel input:focus, div#logCarousel2 form input:focus {
+  border-color: #07082E;
+}
+
+div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-input-placeholder {
+  color: #C2C2C2 !important;
+  font-size: 13px !important;
+}
+
+@media all and (max-width: 560px) {
+  div#rgtUl {
+    height: 66px;
   }
-  div.footerBlockTop div.footerBox1 {
-    order: 1 !important;
-    width: 50% !important;
-    padding-top: 30px !important;
+  div#rgtUl ul li {
+    padding-right: 20px !important;
   }
-  div.footerBlockTop div.footerBox2 {
-    order: 0 !important;
-    width: 100% !important;
-    padding-top: 30px;
+  div#rgtUl ul li:nth-child(3) {
+    padding-right: 0px !important;
   }
-  div.footerBlockTop div.footerBox2 div.footerTitle {
-    margin-bottom: 20px;
+  body header div#navlogo {
+    width: 161px;
+    height: 30px !important;
   }
-  div.footerBlockTop div.footerBox2 button#goTop {
-    width: 100% !important;
+  body header div#navlogo img {
+    height: 30px !important;
   }
-  div.footerBlockTop div.footerBox3 {
-    padding-top: 45px !important;
-  }
-  div.footerBlockTop div.footerBox3 div.social {
-    text-align: center !important;
+  div#navlogo {
+    width: 105px !important;
   }
 }
 
-@media all and (max-width: 780px) {
-  div.footerBlockTop {
+@media all and (max-width: 370px) {
+  header nav {
+    padding: 0px 5px !important;
+  }
+}
+
+nav ul li a {
+  color: #FFFFFF !important;
+}
+
+div.social__Icon a {
+  margin-right: 20px;
+}
+
+form#regForm input, form#logForm2 input {
+  padding: 5px 10px;
+}
+
+div#lightbox, div#lightbox2 {
+  transition: .8s all;
+}
+
+div#footerTestPage {
+  height: 100vh;
+  background-color: navy;
+}
+
+div.footerTop {
+  color: #FFFFFF;
+  text-align: center;
+  background-image: url("../../img/anastasia-taioglou-CTivHyiTbFw-unsplash.jpg");
+  background-position: center;
+  padding: 22px 30px 18px;
+}
+
+div.footerTop h3 {
+  margin-top: 0;
+  padding: 10px;
+  font-size: 48px;
+}
+
+div.footerTop h4 {
+  font-size: 38px;
+}
+
+div.footerTop button#FooterRegBtn {
+  background-color: #FFD241;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #07082E;
+  height: 35px;
+  padding: 0px 10px;
+  line-height: 35px;
+}
+
+.blackBg {
+  background-color: black;
+}
+
+.FooterDarkPattern {
+  color: #2A323D;
+}
+
+div#footerMiddle {
+  display: flex;
+  justify-content: space-around;
+  padding: 78px 30px 30px;
+  position: relative;
+}
+
+div#footerMiddle #footerMiddleLeft, div#footerMiddle #footerMiddleRight {
+  text-align: center;
+  flex-grow: 1;
+}
+
+div#footerMiddle #footerMiddleLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+
+div#footerMiddle #footerMiddleLeft h1 {
+  font-size: 72px;
+  margin: 0;
+}
+
+div#footerMiddle #footerMiddleLeft h2 {
+  color: #FFFFFF;
+  font-size: 60px;
+  margin: 20px auto 0px;
+}
+
+div#footerMiddle #footerMiddleLeft h2::before {
+  content: '01 |';
+}
+
+div#footerMiddle #footerMiddleLeft h2:hover {
+  color: #FFD241;
+}
+
+div#footerMiddle div#footerBackTop {
+  position: absolute;
+  color: #FFFFFF;
+  width: 55px;
+  height: 55px;
+  background-color: #FFD241;
+  right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+div#footerMiddle div#footerBackTop a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+#footerMiddleRight {
+  width: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#footerMiddleRight h2 {
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#footerMiddleRight p {
+  width: 70%;
+  color: #FFFFFF;
+  margin-top: 0px;
+}
+
+#footerMiddleRight a {
+  padding: 0px 20px;
+}
+
+#footerMiddleLeft a {
+  text-decoration: none;
+}
+
+#footerMiddleLeft a:nth-child(3) h2::before {
+  content: '02 | ' !important;
+}
+
+#footerMiddleLeft a:nth-child(4) h2::before {
+  content: '03 | ' !important;
+}
+
+#footerMiddleLeft a:nth-child(5) h2::before {
+  content: '04 | ' !important;
+}
+
+i.fab {
+  color: #FFFFFF;
+}
+
+div#footerBottom {
+  background-color: #000;
+  position: relative;
+  height: 53px;
+}
+
+div#footerBottom div#footerIcon {
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+div#footerBottom div#footerIcon svg {
+  width: 154px;
+  font-weight: bold;
+}
+
+div#footerBottom div.FooterDarkPattern {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div#footerBottom div.FooterDarkPattern p {
+  color: #2A323D;
+}
+
+@media all and (max-width: 1135px) {
+  div#footerMiddle {
     flex-direction: column;
-    justify-content: space-around;
+  }
+  div#footerMiddle div#footerMiddleLeft, div#footerMiddle div#footerMiddleRight {
     align-items: center;
   }
-  div.footerBlockTop div.footerBox1 {
-    order: 1 !important;
-    width: 100% !important;
-    padding-top: 30px !important;
-    padding-right: 0px !important;
+  div#footerMiddle div#footerMiddleRight {
+    width: 100%;
   }
-  div.footerBlockTop div.footerBox2 {
-    order: 2 !important;
-    width: 100% !important;
-    padding-top: 30px;
-    margin-bottom: 30px;
+  div#footerMiddle div#footerMiddleRight h2 {
+    margin-top: 20px;
   }
-  div.footerBlockTop div.footerBox2 button#goTop {
-    width: 100% !important;
+  div#footerMiddle div#footerMiddleRight p {
+    width: 50%;
   }
-  div.footerBlockTop div.footerBox3 {
-    order: 0 !important;
-    width: 100% !important;
-    padding-top: 45px !important;
-    padding-left: 0px !important;
+  div#footerMiddle div#footerBackTop {
+    bottom: 46px;
   }
-  div.footerBlockTop div.footerBox3 div.social {
-    text-align: center !important;
+}
+
+#footerMiddleRight p {
+  text-align: initial;
+  text-shadow: 2px 2px 2px black;
+}
+
+@media screen and (max-width: 800px) {
+  div#footerBottom div#footerIcon {
+    left: 30px;
   }
-  div.footerBlockTop div.footerBox3 div.orignate {
-    padding: 25px 0px 0px;
+}
+
+@media screen and (max-width: 640px) {
+  div.footerTop h3 {
+    font-size: 38px;
+  }
+  div.footerTop h4 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  div#footerMiddle #footerMiddleLeft h2 {
+    font-size: 48px;
+  }
+  div#footerBottom div#footerIcon svg {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  div.footerTop h3 {
+    font-size: 28px;
+  }
+  div.footerTop h4 {
+    font-size: 22px;
+  }
+  div#footerMiddle #footerMiddleLeft h2 {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #footerMiddleRight h2 {
+    font-size: 28px;
+  }
+  div#footerMiddle div#footerMiddleRight p {
+    width: 65%;
+  }
+  div#footerMiddle div#footerBackTop {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  div#footerMiddle #footerMiddleLeft h2 {
+    font-size: 28px;
+  }
+  div.footerTop h3 {
+    font-size: 22px;
+  }
+  div.footerTop h4 {
+    font-size: 18px;
+  }
+  i.fab {
+    font-size: 28px;
   }
 }
 
@@ -1171,7 +1334,7 @@ div.banner a {
 
 div.banner div, div.banner a, div.banner p, div.banner ul, div.banner li {
   font-size: 15px;
-  color: #1D1E4C;
+  color: #07082E;
   letter-spacing: 2px;
   line-height: 30px;
 }
@@ -1241,7 +1404,7 @@ div.banner div.slider-block div.flexslider ul.slides li {
 div.banner div.slider-block div.flexslider ul.slides li div.description {
   width: 50%;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   background-color: rgba(255, 255, 255, 0.212);
 }
@@ -1254,7 +1417,7 @@ div.banner div.slider-block div.flexslider ul.slides li div.description p.text {
 div.banner div.slider-block div.flexslider ul.slides li div.img {
   width: 30%;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 15px;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
 }
@@ -1302,11 +1465,11 @@ div.banner div.slider-block div.flexslider ul.slides li div.img img {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.377);
-    color: #fafafa;
+    color: #FFFFFF;
     z-index: 1;
   }
   div.banner div.slider-block div.flexslider ul.slides li div.description p.text {
-    color: #fafafa;
+    color: #FFFFFF;
     font-size: 12px;
     font-weight: lighter;
   }
@@ -1328,17 +1491,13 @@ div.menu-div ul {
   padding: 0;
 }
 
-div.menu-div li {
-  list-style: none;
-}
-
 div.menu-div a {
   text-decoration: none;
 }
 
 div.menu-div div, div.menu-div a, div.menu-div p, div.menu-div ul, div.menu-div li {
   font-size: 15px;
-  color: #1D1E4C;
+  color: #07082E;
   letter-spacing: 2px;
   line-height: 30px;
 }
@@ -1347,20 +1506,27 @@ div.menu-div ul.menu {
   font-size: 0px;
   height: 60px;
   text-align: center;
-  background-color: #24324B;
+  background-color: #181919;
+  padding-top: 10px;
 }
 
 div.menu-div ul.menu li {
-  color: #fafafa;
+  list-style: none;
+  border-bottom: 2px solid #FFD241;
+  color: #FFFFFF;
   display: inline-block;
   font-size: 15px;
-  line-height: 60px;
+  line-height: 30px;
   margin: 0px 120px;
   cursor: pointer;
+  transition: 0.3s all;
 }
 
 div.menu-div ul.menu li:hover {
   font-weight: bolder;
+  background-color: #FFD241;
+  color: #07082E;
+  transition: 0.3s all;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1394,7 +1560,7 @@ div.menu-div ul.menu li:hover {
 }
 
 main.event {
-  background-color: #F6F6F6;
+  background-color: #EEEEEE;
   width: 100%;
   position: relative;
 }
@@ -1418,7 +1584,7 @@ main.event a {
 
 main.event div, main.event a, main.event p, main.event ul, main.event li {
   font-size: 15px;
-  color: #1D1E4C;
+  color: #07082E;
   letter-spacing: 2px;
   line-height: 30px;
 }
@@ -1429,14 +1595,17 @@ main.event div.bread {
   left: 0;
   transform: rotate(90deg) translateY(-100%);
   transform-origin: 0 0;
+  line-height: 20px;
 }
 
 main.event div.bread ul {
   padding: 10px;
+  line-height: 20px;
 }
 
 main.event div.bread ul li {
-  font-size: 28px;
+  font-size: 20px;
+  line-height: 20px;
   font-weight: bolder;
   color: #C6C6C6;
   display: inline-block;
@@ -1447,7 +1616,7 @@ main.event div.bread ul li::after {
 }
 
 main.event div.bread ul li:last-child {
-  color: #1D1E4C;
+  color: #07082E;
 }
 
 main.event div.bread ul li:last-child::after {
@@ -1455,14 +1624,18 @@ main.event div.bread ul li:last-child::after {
 }
 
 @media (max-width: 575px) {
+  main.event div.bread ul {
+    line-height: 18px;
+  }
   main.event div.bread ul li {
     font-size: 18px;
+    line-height: 18px;
   }
 }
 
 main.event div.content {
   max-width: 1200px;
-  background-color: #F6F6F6;
+  background-color: #EEEEEE;
   margin: 0 auto;
 }
 
@@ -1478,7 +1651,7 @@ main.event div.content #section1 {
 
 main.event div.content #section1 div.block {
   text-align: center;
-  padding: 60px 0px 30px 20px;
+  padding: 60px 0px 30px 5px;
   width: 100%;
   position: relative;
 }
@@ -1487,11 +1660,11 @@ main.event div.content #section1 div.block div.map-card {
   display: inline-block;
   vertical-align: top;
   position: sticky;
-  top: 10px;
+  top: 80px;
   left: 0px;
-  background-color: #fafafa;
+  background-color: #FFFFFF;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 15px;
+  border-radius: 0;
   width: 500px;
   padding: 50px 0 20px 0;
 }
@@ -1674,7 +1847,11 @@ main.event div.content #section1 div.block div.event-info {
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.search-and-filter {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   margin-bottom: 15px;
+  background-color: #FFD241;
+  height: 50px;
+  line-height: 50px;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.search-and-filter input[name=filter] {
@@ -1709,7 +1886,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.list
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 15px;
+  border-radius: 0;
   cursor: pointer;
 }
 
@@ -1758,7 +1935,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.list
 main.event div.content #section1 div.block div.event-info div.info-card div.card {
   font-weight: bolder;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 15px;
+  border-radius: 0;
   position: relative;
   overflow: hidden;
 }
@@ -1798,9 +1975,14 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
   padding-left: 5px;
 }
 
-main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.left h2 {
+main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.left .leftTitleBox {
+  border-left: 8px solid #FFD241;
+  padding-left: 10px;
+}
+
+main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.left .leftTitleBox h2 {
   font-size: 22px;
-  color: #1D1E4C;
+  color: #07082E;
   margin: 0;
 }
 
@@ -1808,7 +1990,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
   padding-right: 20px;
   font-size: 15px;
   margin: 12px 0px;
-  color: #1D1E4C;
+  color: #07082E;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.right {
@@ -1817,7 +1999,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.right div.img {
-  border-radius: 15px;
+  border-radius: 0;
   overflow: hidden;
   margin-bottom: 15px;
   height: 190px;
@@ -1833,20 +2015,23 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.right div.btn {
-  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0;
   display: inline-block;
   overflow: hidden;
-  background-color: #EF4325;
+  background-color: #FFD241;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.right div.btn a {
   font-weight: bolder;
   font-size: 15px;
-  color: #fafafa;
-  padding: 10px 20px;
+  color: #07082E;
+  padding: 0px 30px;
   width: 100%;
   display: inline-block;
-  cursor: pointer;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.right #weather-btn {
@@ -1854,7 +2039,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.flex div.right #weather-btn a {
-  background-color: #1D1E4C;
+  background-color: #07082E;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.goals div.goal {
@@ -1947,7 +2132,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.goals div.goal div.progress-bar div.text-left {
-  color: #fafafa;
+  color: #FFFFFF;
   left: 5px;
 }
 
@@ -1957,7 +2142,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.goals div.goal div.progress-bar #money {
-  background-color: #1D1E4C;
+  background-color: #07082E;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.goals div.goal div.progress-bar #people {
@@ -1973,14 +2158,14 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div {
   font-weight: lighter;
-  background-color: #181239c2;
+  background-color: #1a1345cd;
   background-image: url("#");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  color: #fafafa;
+  color: #FFFFFF;
   box-shadow: 0px 0px 10px rgba(22, 21, 21, 0.253);
-  border-radius: 15px;
+  border-radius: 0;
   margin-top: 15px;
   padding: 16px;
   font-size: 12px;
@@ -1991,7 +2176,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.update-text {
   line-height: 15px;
   font-size: 12px;
-  color: #fafafa;
+  color: #FFFFFF;
   text-align: center;
 }
 
@@ -2000,7 +2185,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
   top: 15px;
   left: 20px;
   font-size: 22px;
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.today {
@@ -2010,7 +2195,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.today p.location,
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.today p.date,
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.today p.description {
-  color: #fafafa;
+  color: #FFFFFF;
   margin: 0;
   font-size: 18px;
   text-align: center;
@@ -2040,7 +2225,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.today div.temperature p {
-  color: #fafafa;
+  color: #FFFFFF;
   display: inline-block;
   margin: 0;
 }
@@ -2062,7 +2247,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.flex p.date {
   margin: 4px 0px;
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.flex div.weather {
@@ -2073,7 +2258,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.flex div.weather div.temperature p {
   display: inline-block;
   vertical-align: text-bottom;
-  color: #fafafa;
+  color: #FFFFFF;
   letter-spacing: 1px;
   margin: 0;
 }
@@ -2106,7 +2291,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 
 main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.weather-div div.flex p.description {
   margin: 0;
-  color: #fafafa;
+  color: #FFFFFF;
   font-size: 10px;
 }
 
@@ -2132,7 +2317,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
-    background-color: #fafafa;
+    background-color: #FFFFFF;
   }
   main.event div.content #section1 div.block div.event-info div.info-card div.card div.closebtn {
     display: block;
@@ -2147,7 +2332,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
     left: 50%;
     transform: translatex(-50%);
     width: 400px;
-    background-color: #fafafa;
+    background-color: #FFFFFF;
   }
   main.event div.content #section1 div.block div.event-info div.info-card div.card div.closebtn {
     display: block;
@@ -2231,7 +2416,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
     left: 50%;
     transform: translatex(-50%);
     width: 260px;
-    background-color: #fafafa;
+    background-color: #FFFFFF;
   }
   main.event div.content #section1 div.block div.event-info div.info-card div.card div.closebtn {
     display: block;
@@ -2280,7 +2465,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
   }
   main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.goals div.goal div.progress-bar div.text-left {
     top: -20px;
-    color: #1D1E4C;
+    color: #07082E;
   }
   main.event div.content #section1 div.block div.event-info div.info-card div.card div.block div.goals div.goal div.progress-bar div.text-right {
     display: none;
@@ -2411,7 +2596,7 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
     transform: translate(-50%, -100%);
     width: 260px;
     box-shadow: none;
-    background-color: #F6F6F6;
+    background-color: #EEEEEE;
     padding-top: 10px;
   }
   main.event div.content #section1 div.block div.map-card h2 {
@@ -2458,32 +2643,46 @@ main.event div.content #section1 div.block div.event-info div.info-card div.card
 }
 
 main.event div.content #section1 div.problem {
-  background-color: #fafafa;
+  background-color: #FFFFFF;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   padding: 30px 0;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 0;
 }
 
 main.event div.content #section1 div.problem div.btn {
-  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0;
   display: inline-block;
   overflow: hidden;
-  background-color: #EF4325;
+  background-color: #FFD241;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
 }
 
 main.event div.content #section1 div.problem div.btn a {
   font-weight: bolder;
   font-size: 15px;
-  color: #fafafa;
-  padding: 10px 20px;
+  color: #07082E;
+  padding: 0px 30px;
   width: 100%;
   display: inline-block;
-  cursor: pointer;
 }
 
 main.event div.content #section1 div.problem div.btn {
-  background-color: #1D1E4C;
+  height: 35px;
+  line-height: 35px;
+  background-color: #07082E;
+}
+
+main.event div.content #section1 div.problem div.btn a {
+  font-weight: bolder;
+  font-size: 15px;
+  color: #FFFFFF;
+  padding: 0px 30px;
+  width: 100%;
+  display: inline-block;
 }
 
 main.event div.content #section1 div.problem div.btn {
@@ -2526,9 +2725,11 @@ main.event div.content #section2 div.initiation div.row div.col-12 {
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 h2.initiation-title {
+  border-left: 8px solid #FFD241;
   font-size: 28px;
-  text-align: center;
-  margin: 50px 0;
+  margin: 30px auto;
+  display: inline-block;
+  padding-left: 10px;
 }
 
 @media (max-width: 575px) {
@@ -2542,9 +2743,9 @@ main.event div.content #section2 div.initiation div.row div.col-12 div.flex {
   padding: 30px 80px 30px 60px;
   margin: 0 auto;
   width: 70%;
-  background-color: #fafafa;
+  background-color: #FFFFFF;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 15px;
+  border-radius: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -2567,7 +2768,7 @@ main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.
   width: 85%;
   font-size: 18px;
   font-weight: bolder;
-  background-color: #fafafa;
+  background-color: #FFFFFF;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.content:first-child {
@@ -2583,24 +2784,42 @@ main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
-  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0;
   display: inline-block;
   overflow: hidden;
-  background-color: #EF4325;
+  background-color: #FFD241;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn a {
   font-weight: bolder;
   font-size: 15px;
-  color: #fafafa;
-  padding: 10px 20px;
+  color: #07082E;
+  padding: 0px 30px;
   width: 100%;
   display: inline-block;
-  cursor: pointer;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
-  background-color: #1D1E4C;
+  height: 35px;
+  line-height: 35px;
+  background-color: #07082E;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn a {
+  font-weight: bolder;
+  font-size: 15px;
+  color: #FFFFFF;
+  padding: 0px 30px;
+  width: 100%;
+  display: inline-block;
+}
+
+main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn a {
+  padding: 0 20px;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.flex div.btn {
@@ -2683,15 +2902,15 @@ main.event div.content #section2 div.initiation div.row div.col-12 div.standard-
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 40px 80px;
-  background-color: #1D1E4C;
+  background-color: #07082E;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  border-radius: 15px;
+  border-radius: 0;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card h3 {
   font-size: 18px;
   font-weight: bolder;
-  color: #fafafa;
+  color: #FFFFFF;
   margin-bottom: 30px;
 }
 
@@ -2699,7 +2918,7 @@ main.event div.content #section2 div.initiation div.row div.col-12 div.standard-
   text-align: left;
   font-size: 18px;
   font-weight: bolder;
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.standard-block #standard div.standard-card div.closebtn {
@@ -2772,20 +2991,23 @@ main.event div.content #section2 div.initiation div.row div.col-12 div.standard-
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.btn {
-  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0;
   display: inline-block;
   overflow: hidden;
-  background-color: #EF4325;
+  background-color: #FFD241;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.btn a {
   font-weight: bolder;
   font-size: 15px;
-  color: #fafafa;
-  padding: 10px 20px;
+  color: #07082E;
+  padding: 0px 30px;
   width: 100%;
   display: inline-block;
-  cursor: pointer;
 }
 
 main.event div.content #section2 div.initiation div.row div.col-12 div.start-btn {
@@ -2819,11 +3041,11 @@ main.event div.content #section3 div.container div.row div.toggle {
 }
 
 main.event div.content #section3 div.container div.row div.toggle div.toggle-block {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   width: 400px;
   height: 40px;
-  border-radius: 20px;
   padding: 5px;
-  background-color: #1D1E4C;
+  background-color: #181919;
   margin: 0px auto 30px auto;
   position: relative;
   font-size: 0;
@@ -2836,8 +3058,7 @@ main.event div.content #section3 div.container div.row div.toggle div.toggle-blo
   left: 0;
   width: 50%;
   height: 100%;
-  border-radius: 20px;
-  background-color: #fafafa;
+  background-color: #FFD241;
 }
 
 main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.text {
@@ -2855,7 +3076,7 @@ main.event div.content #section3 div.container div.row div.toggle div.toggle-blo
 }
 
 main.event div.content #section3 div.container div.row div.toggle div.toggle-block div.toggle-text-effect {
-  color: #fafafa;
+  color: #FFFFFF;
   cursor: pointer;
 }
 
@@ -2884,13 +3105,13 @@ main.event div.content #section3 div.container div.row #rank {
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card {
   background-color: #FFAE41;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   margin-bottom: 30px;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-left div.pic {
-  margin: 40px auto;
+  margin: 40px auto 40px 35px;
   width: 172px;
   height: 172px;
   border-radius: 128px;
@@ -2923,7 +3144,7 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-title h3, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-title h3 {
   font-size: 28px;
-  color: #fafafa;
+  color: #FFFFFF;
   margin: 30px 0 0 0;
   display: inline-block;
   vertical-align: middle;
@@ -2937,13 +3158,13 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.donation-total, main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right div.volunteer-number {
-  color: #fafafa;
+  color: #FFFFFF;
   font-size: 28px;
   margin-bottom: 30px;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.big-card div.row div.big-card-right p.text {
-  color: #fafafa;
+  color: #FFFFFF;
   margin: 0;
 }
 
@@ -2958,10 +3179,14 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card {
-  background-color: #fafafa;
+  background-image: url("../../img/event/rankBg.jpg");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: 35% 50%;
+  background-attachment: fixed;
+  background-color: #181919;
   padding: 43px 40px 50px 40px;
-  border-radius: 15px;
-  margin: 10px;
+  border-radius: 0;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   font-weight: bolder;
   display: flex;
@@ -2971,11 +3196,15 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.thanks-title {
+  color: #FFFFFF;
+  border-left: 8px solid #FFD241;
+  padding-left: 10px;
   font-size: 40px;
   line-height: 50px;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.left div.thanks-card div.text p {
+  color: #FFFFFF;
   margin: 0;
   line-height: 30px;
   text-align: right;
@@ -3024,7 +3253,7 @@ main.event div.content #section3 div.container div.row #rank div.row div.left di
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card {
   margin: 0px 10px 20px 10px;
-  border-radius: 15px;
+  border-radius: 0;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
   margin-bottom: 16px;
 }
@@ -3037,16 +3266,17 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.TOP {
-  color: #1D1E4C;
+  color: #07082E;
   font-size: 48px;
   padding: 30px 30px;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.pic {
-  border-radius: 50%;
-  overflow: hidden;
+  flex-shrink: 0;
   width: 100px;
   height: 100px;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.pic img {
@@ -3055,7 +3285,7 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.small-card div.flex div.text p {
-  color: #1D1E4C;
+  color: #07082E;
   padding: 0 25px;
 }
 
@@ -3127,13 +3357,13 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text {
-  color: #1D1E4C;
+  color: #07082E;
   margin: 0;
   font-weight: bolder;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.detail p.text span {
-  color: #1D1E4C;
+  color: #07082E;
   display: inline-block;
   margin-left: 10px;
   font-weight: bolder;
@@ -3176,11 +3406,11 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.flex div.TOP {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.flex div.text p {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.detail {
@@ -3188,11 +3418,11 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.detail p.text {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP1 div.detail p.text span {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 {
@@ -3200,11 +3430,11 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.flex div.TOP {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.flex div.text p {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.detail {
@@ -3212,11 +3442,11 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.detail p.text {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP2 div.detail p.text span {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 {
@@ -3224,11 +3454,11 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.flex div.TOP {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.flex div.text p {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.detail {
@@ -3236,11 +3466,11 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.detail p.text {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.TOP3 div.detail p.text span {
-  color: #fafafa;
+  color: #FFFFFF;
 }
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.TOP {
@@ -3249,6 +3479,24 @@ main.event div.content #section3 div.container div.row #rank div.row div.right d
 
 main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.text p:nth-child(2n) {
   font-size: 22px;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.TOP {
+    padding: 30px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.text p:nth-child(2n) {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.TOP {
+    padding: 0px 30px 20px 30px;
+  }
+  main.event div.content #section3 div.container div.row #rank div.row div.right div.effect div.flex div.text p:nth-child(2n) {
+    font-size: 15px;
+  }
 }
 
 main.event div.content #section3 div.container div.row #rank #money-rank {
