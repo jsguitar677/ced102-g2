@@ -21,7 +21,8 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
     <!-- ------------------------------------------------------- -->
-  <div class="ad_container">    
+  <div class="ad_container">  
+    <div class="bread"><h2>活動募款平台</h2></div>
           <div class="ad_inner_content">
             <div class="content-left">
             <h1>一瓶的海岸線</h1>
@@ -56,30 +57,92 @@
         <img src="./img/act_detail/maldives-5939710_1280.jpg" alt=""></div>
       </div>
 
-    <div class="ad_grid_content">
-        <div class="ad_box4">
-            
-
-            <button class="join">參加</button><br>
-            <button class="share">分享
-            </button><br>       
-            <div class="founder"><h1>活動發起人:&nbsp;&nbsp;<img src="./img/act_detail/person1.png" >&nbsp;&nbsp;富力士</h1></div>
-        </div>        
-    </div> 
-      <div class="outer_board">
-        <h1>活動留言板</h1>
-    <div class="ad_board">
-      <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-        藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-        藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-        藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
+      <div class="ad_tab">
+        <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
+        <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
+        <button id="join">參加活動</button>
+            <button id="share"><h4>分享活動</h4>
+            </button>
+            <div class="founder"><h1>活動發起人:&nbsp;富力士</h1></div>
+      </div>
+      <!-- drop down menu -->
+    <div id="QA" class="outer_board">
+      <div class="row">
+        <div class="col">
+          <div class="tabs">
+            <div class="tab">
+              <input type="checkbox" id="chck1">
+              <label class="tab-label" for="chck1">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div>
+            <div class="tab">
+              <input type="checkbox" id="chck2">
+              <label class="tab-label" for="chck2">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div>
+            <div class="tab">
+              <input type="checkbox" id="chck3">
+              <label class="tab-label" for="chck3">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div>  
+            <div class="tab">
+              <input type="checkbox" id="chck4">
+              <label class="tab-label" for="chck4">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div> 
+            <div class="tab">
+              <input type="checkbox" id="chck5">
+              <label class="tab-label" for="chck5">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div> 
+          </div>
+        </div>
     </div>
+  </div>
+
+
+    
+          <div id="Board" class="outer_board">
+                <div class="banner_box"><h1>如有專案相關提問，請聯絡提案</h1></div>
+            <div class="ad_board">
+              <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
+                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+              <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
+                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+              <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
+                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+              <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
+            </div>
+            
+          </div>
   </div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
@@ -88,6 +151,21 @@
     <script>
       AOS.init();
     </script>
+    <script>
+      function openQa(evt, cityName) {
+        var i, outer_board, tablinks;
+        outer_board = document.getElementsByClassName("outer_board");
+        for (i = 0; i < outer_board.length; i++) {
+          outer_board[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
 </body>
 
 </html>
