@@ -28,6 +28,7 @@
             <h1>一瓶的海岸線</h1>
             <h2>地點：苗栗外澳海灘</h2> 
             <h2>日期：2020/03/31</h2>
+            <h2 class="rw_founder">活動發起人: 富力士</h2>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！
             ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 
             淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。           
@@ -56,7 +57,8 @@
         <div class="right_pic">
         <img src="./img/act_detail/maldives-5939710_1280.jpg" alt=""></div>
       </div>
-
+<div class="sticky_container">
+  
       <div class="ad_tab">
         <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
         <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
@@ -64,6 +66,10 @@
             <button id="share"><h4>分享活動</h4>
             </button>
             <div class="founder"><h1>活動發起人:&nbsp;富力士</h1></div>
+      </div>
+      <div class="sidetab">
+        <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
+        <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
       </div>
       <!-- drop down menu -->
     <div id="QA" class="outer_board">
@@ -126,7 +132,6 @@
   </div>
 
 
-    
           <div id="Board" class="outer_board">
                 <div class="banner_box"><h1>如有專案相關提問，請聯絡提案</h1></div>
             <div class="ad_board">
@@ -143,6 +148,7 @@
             </div>
             
           </div>
+        </div>
   </div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
