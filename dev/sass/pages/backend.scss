@@ -160,6 +160,7 @@ main{
 }
 
 .Form1{
+    @include table-module();
     form{
         margin-top: 30px;
         button{
@@ -167,11 +168,11 @@ main{
             border: 1px solid map-get($color_regulation,'blue');
         }
         table{
+            
             margin-top: 30px;
             text-align: left;
             width: 100%;
             tr{
-                
                 height: 60px;
                 button{
                     border:none;
