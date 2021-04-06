@@ -20,6 +20,16 @@ $h5:28px;
 $h6:22px;
 $h7:18px;
 
+p{font-size: $p;}
+h1{font-size: $h1;}
+h2{font-size: $h2;}
+h3{font-size: $h3;}
+h4{font-size: $h4;}
+h5{font-size: $h5;}
+h6{font-size: $h6;}
+.h7{font-size: $h7;}
+
+
 $letter-Spacing:2px;//文字間距
 $padding-hint:10px;//頁面提示字padding
 //Others
@@ -101,7 +111,6 @@ $color_regulation:(
 //=============共用規格設定如上=============
 @mixin cartIcon(){
     color: map-get($color_regulation,'blue');
-    // float: right;
     background-color: map-get($color_regulation,'yellow');
     height: 35px;
     padding: 0;
@@ -114,541 +123,198 @@ $color_regulation:(
 }
 
 //=========================================
+button{
+    outline: none;
+}
+.type.-open{
+    transition: all 0.3s ease;
+    display: block!important;
+    top:0;
+    left: 0;
+}
+
+//=========================================
 
 body {
     box-sizing: border-box;
     margin: 0;
     font-family: $english, $chinese;
     background-color: map-get($color_regulation,'white');
-}
-
-//左側 直向 麵包條
-div.title-block{
-    line-height: 20px;
-    h5.title {
-        line-height: 20px;
-        margin-top:$navH;
-        position:absolute;
-        //top: $navH;
-        top: 66px;
-        left:0;
-        margin:0;
-        font-size: 20px;
-        font-weight: normal;
-        display: inline-block;
-        white-space: nowrap;
-        padding: 10px;
-        transform: rotate(90deg) translateY(-100%);
-        transform-origin: 0% 0%;
-        color:map-get($color_regulation,'blue');
-        span {
-            line-height: 20px;
-            color:map-get($color_regulation,'gray' );
-        }
-    }
-    @media (max-width:575px){
-        line-height: 18px;
-        h5.title {
-            font-size: 18px;
-            line-height: 18px;
-        }
-    }
-}
-
-section {
-    letter-spacing:1px;
-    margin:0 auto;
-    // font-size: 0px;
-    text-align: center;
-    padding-top:$navH;
-    margin-bottom:70px;
-}
-
-//header下方背景圖(毛玻璃效果)，此div不占位
-section div.content_Mall{
-    text-align: left;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
     position: relative;
-    .yellowBlock{
-        position: absolute;
-        top: 105px;
-        left: 0;
-        width: 80%;
-        height: 260px;
-        background-color: map-get($color_regulation , 'yellow' )
-    }
-    // div.top_back_img_1 {
-    //     position:relative;
-    //     width:calc(100% - 60px);
-    //     margin: 0 auto;
-    //     z-index: -5;
-    //     div.top_back_img_2{    
-    //         width: 100%;
-    //         max-height:426px;
-    //         position:absolute;
-    //         top:0px;
-    //         left:0;
-    //         overflow: hidden;
-    //         box-shadow: $box-shadow;
-    //         img{
-    //             width: 105%;
-    //             filter: blur(17px); 
-    //         }
-    //     }
-        
-    // }
-    // @media (max-width:575px){
-    //     div.top_back_img_1 {
-    //         display: none;
-    //     }
-    // }
+}
+.titleBlock{
+    position: absolute;
+    padding: 10px;
+    top: 31px;
+    left: -31px;
+    font-size: 20px;
+    transform: rotate(90deg);
 }
 
-//客製商品區塊
-section div.content_Mall{
-    @media (max-width:575px){
-        h5.title_2 {
-            font-size: $h6;
-            padding-top: 20px;
+.sizeBox{
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+.productBlock{
+    @include pad{
+        position: relative;
+        justify-content: center;
+    }
+    border-bottom: 1px solid map-get($color-regulation, memberGray );
+    display: flex;
+    .productType{
+        @include pad{
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+            left: -40px;
+            top: -10px;
+            width: 150px;
+            padding-left: 10px;
+        }
+        width: 18%;
+        display: flex;
+        flex-direction: column;
+        margin-right: 15px;
+        .typeTitle{
+            @include pc{
+                
+                padding-left: 20px;
+            }
+            @include pad{
+                span{
+                    &:hover{
+                        // transition: all 0.3s ease;
+                        border-bottom: 2px solid map-get($color-regulation,"yellow" );
+                        }
+                    }
+            }
+            height: 50px;
+            background-color: map-get($color-regulation, 'memberGray');
+            border:1px solid black;
+            width: 100%;
+            line-height: 50px;
+            font-weight: bold;
+            padding-left: 30px;
+            span{
+                font-size: 18px;
+                color:map-get($color-regulation, 'white');
+                padding-left: 10px;
+                border-left: 8px solid map-get($color-regulation, 'yellow');
+            }
+        }
+        button{
+            &:hover{
+                transition: all 0.3s ease;
+                background-color: map-get($color-regulation, 'yellow');
+                box-shadow: $box-shadow;
+            }
+            @include pad{
+                transition: all 0.3s ease;
+                display: none;
+            }
+            @include pc{
+
+                padding-left: 30px;
+            }
+            background-color: map-get($color-regulation, 'white');
+            cursor: pointer;
+            padding-left: 40px;
+            text-align: left;
+            width: 100%;
+            height: 50px;
+            border-radius:0;
+            border:none;
+            border:1px solid black;
+            border-top:none;
         }
     }
-    div.all{
-        padding: 0 30px;
-        max-width: 1200px;
-        margin: auto;
-        // margin: auto;
-        // div.CustomizedArea_Block{
-        //     margin:0 $reserveSide;
-        //     div.CustomizedAreaBox{
-        //         display:flex;
-        //         flex-direction: row;
-        //         flex-wrap: wrap;
-        //         justify-content:space-between;
-        //         margin:0 auto;
-        //         padding-top: 60px;
-        //         a.customized{
-        //             text-decoration:none;
-        //             width:23.5%;
-        //             position:relative;
-        //             div.DesignIcon{
-        //                 height:12%;
-        //                 background: rgba(255, 255, 255, 0.781);
-        //                 // border-radius: 50px;
-        //                 overflow: hidden;
-        //                 position: absolute;
-        //                 top:7px;
-        //                 left:7px;
-        //                 padding: 0 10px;
-        //                 img.design{
-        //                     height:100%;
-        //                     display:inline-block;
-        //                     vertical-align: top;
-        //                 }
-        //                 p.designYrStyle{
-        //                     font-size: $p;
-        //                     font-weight: 550;
-        //                     color: map-get($color_regulation,'blue');
-        //                     display:inline-block;
-        //                     line-height:3;
-        //                     margin:0;
-        //                     vertical-align: top;
-        //                     //display:none;
-        //                 }
-        //                 @media (max-width:991px){
-        //                     p.designYrStyle{
-        //                         display:none;
-        //                     }
-        //                 }
-        //             }
-        //             div.CustomizedArea{
-        //                 box-shadow: $box-shadow;
-        //                 overflow: hidden;
-        //                 img{
-        //                     width:100%;
-        //                 }
-        //                 div.productInfo{
-        //                     width:100%;
-        //                     height:33%;
-        //                     background-color: rgb(255, 255, 255);
-        //                     padding:10px;
-        //                     display:flex;
-        //                     flex-direction: row;
-        //                     flex-wrap: wrap;
-        //                     justify-content: space-between;
-        //                     p.NameAndPrice{
-        //                         font-size: $p;
-        //                         font-weight: 550; 
-        //                         color:map-get($color_regulation,'blue');
-        //                     }
-        //                     p.text{
-        //                         font-size: $p;
-        //                         color:map-get($color_regulation,'blue');
-        //                         overflow: hidden;        //內容溢出處理
-        //                         text-overflow: ellipsis; //文字溢出處理
-        //                         white-space:nowrap;      //文字超出時不換行
-        //                         margin:0;
-        //                         padding: 0 0 25px 0;
-        //                     }
-                           
-        //                 }
-        //             }
-        //         }
-        //         @media (min-width:992px) and (max-width:1199px){
-
-        //         }
-        //         @media (min-width:768px) and (max-width:991px){
-        //             a.customized{
-        //                 div.CustomizedArea{
-        //                     div.productInfo{
-        //                         p.NameAndPrice{
-        //                             &:first-child{
-        //                                 margin-bottom: 0;
-        //                                 margin-right: 5px;
-        //                             }
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //         @media (min-width:576px) and (max-width:767px){
-        //             a.customized{
-        //                 width: calc(50% - 30px);
-        //                 margin: 15px 15px;
-        //                 div.CustomizedArea{
-        //                     div.productInfo{
-        //                         p.NameAndPrice{
-        //                             &:first-child{
-        //                                 margin-bottom: 0;
-        //                                 margin-right: 5px;
-        //                             }
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //         @media (min-width:476px) and (max-width:575px){
-        //             a.customized{
-        //                 width: calc(50% - 30px);
-        //                 margin: 15px 15px;
-        //                 div.CustomizedArea{
-        //                     div.productInfo{
-        //                         p.NameAndPrice{
-        //                             &:first-child{
-        //                                 margin-bottom: 0;
-        //                                 margin-right: 5px;
-        //                             }
-        //                         }
-        //                         p.text{
-        //                             font-size: 12px;
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //         @media (max-width:475px){
-        //             a.customized{
-        //                 width: 60%;
-        //                 min-width: 200px;
-        //                 margin: 15px;
-        //                 div.CustomizedArea{
-        //                     div.productInfo{
-        //                         p.NameAndPrice{
-        //                             &:first-child{
-        //                                 margin-bottom: 0;
-        //                                 margin-right: 5px;
-        //                             }
-        //                         }
-        //                         p.text{
-        //                             font-size: 12px;
-        //                         }
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        //     @media (min-width:576px) and (max-width:767px){
-        //         div.CustomizedAreaBox{
-        //             justify-content: center;
-        //             padding: 40px 40px;
-        //         }
-        //     }
-        //     @media (max-width:575px){
-        //         div.CustomizedAreaBox{
-        //             justify-content: center;
-        //             padding: 10px 0px;
-        //         }
-        //     }
-        // }
+    .allProduct{
+        @include pad{
+            padding-top: 70px;
+            width: 100%;
+            
+        }
+        position: relative;
+        width: 82%;
+        padding-top: 50px;
+        .theWayOfSort{
+            .select_sort_way{
+                box-shadow: $box-shadow;
+                width: 150px;
+                height: 35px;
+                border:none;
+                padding: 0 10px;
+                background-color: map-get($color-regulation, 'yellow');
+                option{
+                    font-size: 15px;
+                    color: map-get($color-regulation, 'blue');
+                background-color: map-get($color-regulation, 'white');
+                }
+            }
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .normalBlack{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
     }
 }
 
-
-
-//一般商品區塊
-section div.content_Mall div.all div.ProductArea_Block{
-    margin-top: 30px;
-    padding: 30px;
-    box-shadow: $box-shadow;
-    div.theWayOfSort{
-        text-align: right;
-        margin-top:30px;
-        select.select_sort_way{
-            color: map-get($color_regulation,'blue');
-            font-size: $p;
-            font-weight: 550;
-            line-height:33px;
-            display:inline-block;
-            width:165px;
-            height:33px;
-            border:1.5px solid map-get($color_regulation,'blue');
+.product{
+    margin-bottom: 30px;
+    // margin-right: 10px;
+    width: 275px;
+    img{
+        width: 275px;
+        height: 275px;
+    }
+    .productInfo{
+        color:map-get($color-regulation, 'blue' );
+        border-left: 8px solid map-get($color-regulation, "yellow" );
+        padding-left: 10px;
+        margin-top: 10px;
+        p{  
+            margin: 0;
+            line-height: 36px;
+        }
+        button{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            float: right;
+            height: 35px;
+            width:35px;
+            line-height: 35px;
+            color: map-get($color-regulation,'blue');
+            background-color: map-get($color-regulation, 'yellow' );
+            border:none;
             box-shadow: $box-shadow;
-            vertical-align: center;
-            text-align: center;
-            // option.sortWay{
-            //     div.sort_0{
-            //     } 
-            // }
-        }
-    }
-    @media (min-width:576px) and (max-width:767px){
-        div.theWayOfSort{
-            padding: 20px 20px 10px 0;
-        }
-    }
-    @media (max-width:575px){
-        div.theWayOfSort{
-            padding: 20px 20px 10px 0;
-        }
-    }
-    h5.title{
-        font-size: $h5;
-        color:map-get($color_regulation,'blue');
-        margin:0;
-        padding-bottom:60px;
-        text-align: center; 
-    }
-    @media (min-width:576px) and (max-width:767px){
-        h5.title{
-            padding-bottom:40px;
-        }
-    }
-    @media (max-width:575px){
-        h5.title{
-            padding-bottom:40px;
-            font-size: $h6;
-        }
-    }
-    div.allProduct{
-        font-size: $p;
-    }
-    
-    // 放大顯示區
-    div.SpecialBlack{
-        width:95%;
-        display:flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: space-between;
-        margin:0 auto;
-        margin-bottom:25px;
-        a.zoomin{
-            width:49%;
-            
-            
-            div.CustomizedAreaA{
-                font-size: 0;
-                overflow: hidden;
-                box-shadow: $box-shadow;
-                position: relative;
-                img{
-                    width:100%;
-                }
-                div.productInfo{
-                    &:hover {
-                        button{
-                            display: block;
-                        }
-                    }
-                    width:100%;
-                    padding:30px;
-                    position:absolute;
-                    bottom:0%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background-color:map-get($color_regulation,'white');
-                    box-shadow: $box-shadow;
-                    background: hsla(0,0%,100%,.8); 
-                    p.NameAndPrice{
-                        font-size: $p;
-                        font-weight: 550; 
-                        color: map-get($color_regulation,'blue');
-                        display:inline-block;
-                        margin-bottom:10px;
-                    }
-                    .B{
-                        float: right;
-                        margin-right: 0;
-                    }
-                    @media(max-width:767px){
-                        p.NameAndPrice{
-                            display:block;
-                            &:nth-child(2){
-                                margin-right: 0;
-                            }
-                        }
-                    }
-                    p.text1{
-                        font-size: $p;
-                        color: map-get($color_regulation,'blue');
-                        margin:20px 0;
-                        width:100%;
-                        height: 50%;
-                    }
-                    @media (max-width:575px){
-                        p.text1{
-                            font-size: 12px;
-                        }
-                    }
-                    button{
-                        display: none;
-                        margin: auto;
-                        margin-bottom: 10px;
-                        @include cartIcon();
-                        i{
-                            font-size: 18px;
-                            padding-right: 1px;
-                        }
-                    }
-                    @media (max-width:575px){
-                        img.cart{
-                            bottom:calc(100% - 43px);
-                        }
-                    }
-                }
+            white-space:nowrap;
+            transition: all 0.3s ease 0s;
+            i{
+                display: inline-block;
             }
-            @media (max-width:575px){
-                div.CustomizedAreaA{
-                    margin-bottom: 20px;
-                }
+            p{  
+                opacity: 0;
+                margin: 0;
+                display: none;
             }
-        }
-        @media (max-width:575px){
-            margin-bottom:0px;
-            justify-content: center;
-            a.zoomin{
-                width: 210px;
-                // min-width: 210px;
-                margin: 0px 10px;
-            }
-        }
-        
-    }
-
-    // 一般顯示區
-    div.NormalBlack{
-        width:95%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin:0 auto;
-        a.normal{
-            width:32%;
-            div.CustomizedAreaA{
-                font-size: 0;
-                overflow: hidden;
-                box-shadow: $box-shadow;
-                position: relative;
-                margin-bottom: 25px;
-                img{
-                    width:100%;
-                }
-                div.productInfo{
-                    &:hover {
-                        button{
-                            display: block;
-                        }
-                    }
-                    margin: 0 auto;
-                    width:100%;
-                    padding:10px;
-                    position:absolute;
-                    bottom:0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background-color:map-get($color_regulation,'white');
-                    box-shadow: $box-shadow;
-                    background: hsla(0,0%,100%,.8);
-                    p.NameAndPrice{
-                        font-size: $p;
-                        font-weight: 550; 
-                        color: map-get($color_regulation,'blue');
-                        display:inline-block;
-                        margin-bottom:10px;
-                    }
-                    .B{
-                        float: right;
-                        margin-right: 0;
-                    }
-                    @media (max-width:575px) {
-                        p.NameAndPrice{
-                            display: block;
-                        }
-                    }
-                    p.text2{
-                        font-size: $p;
-                        font-weight: 500;
-                        color:map-get($color_regulation,'blue');
-                        margin: 10px 0;
-                        // width:80%;
-                        overflow: hidden; 
-                        text-overflow: ellipsis;
-                        white-space:nowrap;
-                    }
-                    @media (max-width:575px){
-                        p.text2{
-                            font-size: 12px;
-
-                        }
-                    }
-                    button{
-                    display: none;
-                    margin: auto;
-                    margin-bottom: 10px;
-
-                       @include cartIcon();
-                        i{
-                            font-size: 18px;
-                            padding-right: 1px;
-                        }
-                    }
-                    @media (max-width:575px){
-                        img.cart{
-                            bottom:calc(100% - 43px);
-                        }
-                    }
-                }
-            }
-        }
-        @media (max-width:575px){
-            justify-content: center;
-            a.normal{
-                width: 40%;
-                min-width: 210px;
-                margin: 0 10px 20px 10px;
-                div.CustomizedAreaA{
-                    margin: 0;
+            &:hover{
+                transition: all 0.3s ease 0s;
+                width: 150px;
+                p{
+                    opacity: 1;
+                    display: inline-block;
                 }
             }
         }
     }
 }
-
-
-
-
 // -----------------------------------------//
 
 @mixin card(){
@@ -686,9 +352,11 @@ section div.content_Mall div.all div.ProductArea_Block{
 // -----------------------------------------//
 
 .homePage4__generalBlock{
+    padding: 0 30px;
+    margin: 30px 0;
     flex-wrap: wrap;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     .proDetail{
         margin: 10px;
         .page4Pro1{
@@ -704,15 +372,9 @@ section div.content_Mall div.all div.ProductArea_Block{
             @include card();
         }
        
-        &:hover{
-            .page4CardCont{
-                opacity: 1;
-                transition: .5s ease-in-out;
-            }
-        }
+        
         .page4CardCont{
             width: 100%;
-            opacity: 0;
             transition: .5s ease-in-out;
             overflow: hidden;
             position: absolute;
@@ -791,19 +453,25 @@ section div.content_Mall div.all div.ProductArea_Block{
 
 
 .homePage4__customerBlock{
-    margin:50px 0;
+    margin:66px 0 50px 0;
+    padding: 50px;
+    background-image: url(../../img/mall/mall-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
     .cusSwiper{
         display: flex;
     }
     @include customSize{
         .cusSwiper{
-            flex-direction: column;
+            flex-direction: column-reverse;
+            align-items: center;
         }
         #cusSwipersBtnR,#cusSwipersBtnL{
             top:75%;
         }
     }
-    
     .page4LeftCard{
         margin: auto;
         font-size: 0;
@@ -834,7 +502,6 @@ section div.content_Mall div.all div.ProductArea_Block{
             .cusIcon{
                 margin: auto 8px;
                 padding-left: 0;
-                
                 width: 30px;
                 height: 30px;
             }
@@ -842,12 +509,9 @@ section div.content_Mall div.all div.ProductArea_Block{
                 color: map-get($color_regulation,'blue' );
                 font-size: $p; 
                 margin: 0;
-                display: none;
             }
         }
         .page4CardCont{
-            opacity: 0;
-            transition: .5s ease-in-out;
             position: absolute;
             bottom: 0px;
             left: 0;
@@ -857,7 +521,6 @@ section div.content_Mall div.all div.ProductArea_Block{
             div{
                 display: flex;
                 justify-content: space-between;
-                
                 h6{
                     color: map-get($color_regulation,'blue' );
                     font-size: 18px;
@@ -876,37 +539,19 @@ section div.content_Mall div.all div.ProductArea_Block{
                 white-space: normal;
             }
         }
-        &:hover{
-            img{
-                transform: scale(1.2);
-                transition: .5s ease-in-out;
-            }
-            .cusBlock{
-                width: 165px;
-                transition: .3s ease-in-out;
-            }
-            .cusText{
-                display: block;
-            }
-            .page4CardCont{
-                opacity: 1;
-                transition: .5s ease-in-out;
-            }
-        }
     }
     .page4RightText{
-        padding: 10px 20px 30px 10px;
+        padding: 10px 20px 30px 30px;
         width: 60%;
         text-align: left;
         @include customSize{
-            width: 100%;
+            width: 80%;
             padding-right: 10px;
         }
         h5{
             color: map-get($color_regulation, 'blue' );
             font-size: $h5;
             margin: 0;
-
         }
         .page4Title{
             color: map-get($color_regulation, 'blue' );
@@ -920,74 +565,18 @@ section div.content_Mall div.all div.ProductArea_Block{
             padding-left: 10px;
             border-left: 8px solid map-get($color-regulation, 'yellow' );
         }
-        
+        p{
+            margin-bottom: 50px;
+        }
         a{  
-            line-height: 35px;
-            height: 35px;
-            padding: 0 30px;
+            text-decoration:none;
             float: right;
             margin-right: 15px;
-        }
-        .colorAll{
-            // display: flex;
-            // justify-content: space-between;
-            overflow: auto;
-            height: 160px;
-            width: 100%;
-            .colorBox{
-                display: inline-block;
-                box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-                overflow: auto;
-                width: 80px;
-                height: 110px;
-                position: relative;
-                &__text{
-                    input{
-                        cursor: pointer;
-                        line-height: 40px;
-                        margin-left: 0;
-                        label{
-                            line-height: 40px;
-                        }
-                    }
-                    position: absolute;
-                    line-height: 40px;
-                    height: 40px;
-                    width: 80px;
-                    bottom: 0;
-                    text-align: center;
-                    background-color: #fff;
-                }
-                &__Blue{
-                    background-color:#f5f5dc;
-                    position: absolute;
-                    height: 70px;
-                    width: 80px;
-                }
-                &__Red{
-                    background-color: #add8e6;
-                    position: absolute;
-                    height: 70px;
-                    width: 80px;
-                }
-                &__Green{
-                    background-color: #66cdaa;
-                    position: absolute;
-                    height: 70px;
-                    width: 80px;
-                }
-                &__Black{
-                    background-color:#ffb6c1;
-                    position: absolute;
-                    height: 70px;
-                    width: 80px;
-                }
-                &__Yellow{
-                    background-color:  #483d8b;
-                    position: absolute;
-                    height: 70px;
-                    width: 80px;
-                }
+            transition: all 0.3s ease;
+            &:hover{
+                background-color: map-get($color-regulation,'yellow' );
+                color: map-get($color-regulation,'blue' );
+                transition: all 0.3s ease;
             }
         }
     }

@@ -664,114 +664,60 @@ p{font-size: 15px;}
             box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
         }
         &__generalBlock{
-            flex-wrap: wrap;
             display: flex;
-            justify-content: space-around;
-            // @include pad{
-            //     margin-bottom: 30px;
-            // }
-            .proDetail{
-                margin: 10px;
-                .page4Pro1{
-                    background-image: url("../../img/indexFront/bag1.jpg");
-                    @include card();
-                }
-                .page4Pro2{
-                    background-image: url("../../img/indexFront/bag1.jpg");
-                    @include borbox();
-                    @include card();
-                }
-                .page4Pro3{
-                    background-image: url("../../img/indexFront/bag1.jpg");
-                    @include borbox();
-                    @include card();
-                }
-               
-                &:hover{
-                    // cursor: pointer;
-                    .page4CardCont{
-                        opacity: 1;
-                        transition: .5s ease-in-out;
-                    }
-                }
-                .page4CardCont{
-                    // width:250px;
-                    // height:280px;
-                    opacity: 0;
-                    transition: .5s ease-in-out;
-                    overflow: hidden;
-                    position: absolute;
-                    bottom: 0px;
-                    border-radius: 0 0 15px 15px;
-                    left: 0;
-                    padding: 10px;
-                    background-color: rgba(255, 255, 255, 0.774);
-                    @include pad(){
-                        width: 100%;
-                        padding: 0px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+    }
+}
+// --------------------------------------------------------------
 
-                    }
-                    
-                    div{
-                        display: flex;
-                        justify-content: space-between;
-                        @include pad{
-                            flex-direction: column;
-                            align-items: center;
-                        }
-                        @include mobileL{
-                            display: none;
-                        }
-                        h6{
-                            font-size: 18px;
-                            @include pad{
-                                font-size: 15px;
-                            }
-                            
-                        }
-                    }
-                    p{  
-                        overflow:hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-                        white-space: normal;
-                        @include pad(){
-                            display: none;
-                        }
-                    }
-                    button{
-                        font-size: 15px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        cursor: pointer;
-                        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-                        border:none;
-                        background-color:map-get($color_regulation , 'yellow' );
-                        color:map-get($color_regulation, 'blue' );
-                        width: 150px;
-                        height: 30px;
-                        margin: 0 auto ;
-                        margin-bottom: 10px;
-                        @include pad(){
-                            width: 90%;
-                        }
-                        p{
-                            margin: 0 10px;
-                        }
-                        &:focus{
-                            outline: 0;
-                        }
-                        
-                    }
-                    
-                }
-               
+.product{
+    margin-bottom: 30px;
+    width: 275px;
+    img{
+        width: 275px;
+        height: 275px;
+    }
+    .productInfo{
+        color:map-get($color_regulation, 'blue' );
+        border-left: 8px solid map-get($color_regulation, "yellow" );
+        padding-left: 10px;
+        margin-top: 10px;
+        p{  
+            margin: 0;
+            line-height: 36px;
+        }
+        button{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            float: right;
+            height: 35px;
+            width:35px;
+            line-height: 35px;
+            color: map-get($color_regulation,'blue');
+            background-color: map-get($color_regulation, 'yellow' );
+            border:none;
+            box-shadow: $box-shadow;
+            white-space:nowrap;
+            transition: all 0.3s ease 0s;
+            i{
+                display: inline-block;
             }
-            
+            p{  
+                opacity: 0;
+                margin: 0;
+                display: none;
+            }
+            &:hover{
+                transition: all 0.3s ease 0s;
+                width: 150px;
+                p{
+                    opacity: 1;
+                    display: inline-block;
+                }
+            }
         }
     }
 }

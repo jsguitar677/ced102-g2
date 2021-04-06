@@ -877,13 +877,13 @@ svg#closeBtnBorderSvg2{
 
 // ========================== footer new =========================JohnLing 2021/04/04
 
-body a {
-    text-decoration: none;
-    color: #1D1E4C;
-    &:hover{
-        color: map-get($color_regulation, 'white' );
-    }
-}
+// body a {
+//     text-decoration: none;
+//     color: #1D1E4C;
+//     &:hover{
+//         color: map-get($color_regulation, 'white' );
+//     }
+// }
 
 body div#page2 {
     height: 100vh;
