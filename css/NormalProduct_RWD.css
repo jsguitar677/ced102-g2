@@ -1,0 +1,573 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Palatino Linotype", "noto sans tc";
+  background-color: #FFFFFF;
+}
+
+div.title-block h5.title {
+  position: absolute;
+  top: 66px;
+  left: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: normal;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: 0 0;
+  color: #07082E;
+}
+
+@media (max-width: 575px) {
+  div.title-block h5.title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  div.title-block h5.title {
+    font-size: 18px;
+  }
+}
+
+section.NormalProductPage {
+  letter-spacing: 2px;
+  margin: 0 auto;
+  font-size: 0px;
+  text-align: center;
+  margin-top: 66px;
+  position: relative;
+}
+
+section.NormalProductPage div.content_normalProduct {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+section.NormalProductPage div.content_normalProduct .customizedTotleBox {
+  margin: auto;
+  padding: 10px;
+  padding-top: 20px;
+  height: 100px;
+  background-color: #FFD241;
+}
+
+section.NormalProductPage div.content_normalProduct .customizedTotleBox p {
+  color: #07082E;
+  font-size: 15px;
+  text-align: center;
+  margin: 0;
+}
+
+section.NormalProductPage div.content_normalProduct .customizedTotleBox h5.title_2 {
+  font-size: 28px;
+  color: #07082E;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+section.NormalProductPage div.content_normalProduct .customizedTotleBox .yellowLine {
+  margin: 10px auto;
+  width: 40px;
+  height: 8px;
+  background-color: #FFFFFF;
+}
+
+section.NormalProductPage div.content_normalProduct div.container {
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0;
+  width: 100%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 30px;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea {
+  margin: 0 auto;
+  padding: 0;
+  padding-right: 15px;
+}
+
+@media (max-width: 991px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea {
+    padding-right: 0;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA {
+  width: 100%;
+  padding: 0;
+  display: flex;
+}
+
+@media (max-width: 520px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA {
+    display: inline-block;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L {
+  cursor: pointer;
+  width: 49%;
+  overflow: hidden;
+  border-radius: 0px;
+  position: relative;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  margin-right: 1%;
+}
+
+@media (max-width: 520px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L img {
+  width: 100%;
+  height: 100%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_L div.explain {
+  font-size: 15px;
+  width: 36%;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 0px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #07082E;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
+  cursor: pointer;
+  width: 50%;
+}
+
+@media (max-width: 520px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R {
+    width: 100%;
+    margin-top: 7px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 {
+  width: 49%;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 0px;
+  position: relative;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 img {
+  width: 100%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R1 div.explain {
+  font-size: 15px;
+  width: 75%;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 0px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #07082E;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div.leftarea_blockA_R11 {
+  margin-top: 3.2%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div#NP_ZoomIn3, section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockA div.leftarea_blockA_R div#NP_ZoomIn5 {
+  margin-left: 1%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB {
+  margin-top: 30px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 0px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB h6.aboutProducts {
+  border-left: 8px solid #FFD241;
+  padding-left: 10px;
+  font-size: 22px;
+  color: #07082E;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB h6.aboutProducts {
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB h6.aboutProducts {
+    font-size: 18px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB img#showInfo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  line-height: 28px;
+  display: inline-block;
+  display: none;
+}
+
+@media (max-width: 991px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB img#showInfo {
+    display: block;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB p#showInforHere {
+  font-size: 15px;
+  font-weight: 550;
+  color: #07082E;
+}
+
+@media (max-width: 991px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB p#showInforHere {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.leftarea div.leftarea_blockB p#showInforHere {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea {
+  padding: 30px;
+  height: 50%;
+  color: #07082E;
+  margin: 0 auto;
+  border-radius: 0px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 991px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea {
+    margin-top: 25px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm {
+  width: 98%;
+  margin: 0 auto;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block {
+  width: 100%;
+  font-size: 15px;
+  padding-bottom: 30px;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block p.stepExplain {
+  border-left: 8px solid #FFD241;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 10px;
+}
+
+@media (max-width: 450px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block p.stepExplain {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
+  padding-top: 30px;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+@media (max-width: 450px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
+  outline: none;
+  border-color: #07082E !important;
+  color: #07082E !important;
+  width: 100px;
+  height: 30px;
+  padding-left: 30px;
+  border-radius: 0px;
+}
+
+@media (max-width: 450px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.qty_block div.placememtOfQty select.select_qty_pcs {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.tal_block {
+  width: 100%;
+  font-size: 15px;
+  color: #07082E;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.tal_block p.stepExplain {
+  float: left;
+  font-weight: 550;
+  margin: 0;
+}
+
+@media (max-width: 450px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.tal_block p.stepExplain {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
+  width: 98%;
+  text-align: right;
+}
+
+@media (max-width: 450px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.tal_block div.placementOfTal label.thePrice {
+  margin-right: 10%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.placeOfSubmit {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all div.rightarea form.inforOfTheForm div.placeOfSubmit button {
+  margin-top: 30px;
+  color: #07082E;
+  background-color: #FFD241;
+  height: 35px;
+  padding: 0 30px;
+  border-radius: 0px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border: none;
+  outline: none;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom {
+  margin: 0 auto;
+  width: 100%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea {
+  padding-bottom: 40px;
+  margin-bottom: 70px;
+  margin-top: 25px;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea h5.title_2 {
+  font-size: 28px;
+  color: #07082E;
+}
+
+@media (max-width: 575px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea h5.title_2 {
+    font-size: 22px;
+    padding: 20px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  vertical-align: top;
+  text-align: center;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage {
+  text-decoration: none;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct {
+  position: relative;
+  width: 23.4%;
+  margin: 0.68%;
+  margin-bottom: 2%;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 0px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  text-align: left;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct {
+    width: 45%;
+  }
+}
+
+@media (max-width: 575px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct {
+    width: 93%;
+    margin-bottom: 15px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct img {
+  width: 100%;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #EEEEEE;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo:hover button {
+  display: block;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
+  font-size: 15px;
+  font-weight: 550;
+  margin: 0;
+  display: inline-block;
+  margin: 3% 7% 3% 0;
+}
+
+@media (max-width: 450px) {
+  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
+    font-size: 12px;
+  }
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo p.text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #07082E;
+  margin: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo .B {
+  float: right;
+  margin-right: 0;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo button {
+  margin: auto;
+  display: none;
+  margin-bottom: 10px;
+  color: #07082E;
+  background-color: #FFD241;
+  height: 35px;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 10px;
+  width: 150px;
+  line-height: 35px;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo button p {
+  margin: 0;
+  display: inline-block;
+}
+
+section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo button i {
+  font-size: 18px;
+  padding-right: 1px;
+}
+
+section.NormalProductPage div#NP_lightBox {
+  display: none;
+  position: fixed;
+  top: 66px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 66px);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+section.NormalProductPage div#NP_lightBox div.NP_showBox {
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 575px) {
+  section.NormalProductPage div#NP_lightBox div.NP_showBox {
+    width: 80%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  section.NormalProductPage div#NP_lightBox div.NP_showBox {
+    width: 55%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  section.NormalProductPage div#NP_lightBox div.NP_showBox {
+    width: 45%;
+  }
+}
+
+section.NormalProductPage div#NP_lightBox div.NP_showBox img#NP_showImgHere {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+section.NormalProductPage div#NP_lightBox div.NP_showBox img.NP_turnOffBtn {
+  width: 27px;
+  position: absolute;
+  top: -27px;
+  right: -27px;
+}
+/*# sourceMappingURL=NormalProduct_RWD.css.map */

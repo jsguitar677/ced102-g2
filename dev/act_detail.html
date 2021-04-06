@@ -8,7 +8,6 @@
     <title>一瓶的海岸線</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/act_detail.css">
-    <link rel="stylesheet" href="./css/pages/act_detail_eff.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
@@ -22,124 +21,135 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
     <!-- ------------------------------------------------------- -->
-    <div class="ad_intro">
-      <div class="slide-wrapper">
-        <div class="slide-item">
-          <img src="./img/act_detail/dark-ocean.jpg" class="slide-item__image">
-        </div>
-      </div>
-    </div>
-    <div class="spacing_block"><h1 data-aos="fade-in" data-aos-duration="1500" data-aos-once="true" data-aos-delay="500">活動詳情</h1></div>
-  <div class="ad_container">
-    <div class="ad_content">
-        <div class="ad_block"><img src="./img/act_detail/beach_bottle.jpg"></div>
+  <div class="ad_container">  
+    <div class="bread"><h2>活動募款平台</h2></div>
           <div class="ad_inner_content">
-            <h1 data-aos="fade-in" data-aos-duration="1200" data-aos-once="true">一瓶的海岸線</h1>   
+            <div class="content-left">
+            <h1>一瓶的海岸線</h1>
+            <h2>地點：苗栗外澳海灘</h2> 
+            <h2>日期：2020/03/31</h2>
+            <h2 class="rw_founder">活動發起人: 富力士</h2>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！
             ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 
             淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。           
             淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。 
             您可以透過淨灘，與荒野共同減少廢棄物進入大海的機會。
             </p>
+            <div class="clock"><svg id="Icon_ionic-md-time" data-name="Icon ionic-md-time" xmlns="http://www.w3.org/2000/svg" width="28.87" height="28.87" viewBox="0 0 28.87 28.87">
+              <path id="Path_27" data-name="Path 27" d="M17.8,3.375A14.435,14.435,0,1,0,32.245,17.81,14.43,14.43,0,0,0,17.8,3.375Zm.014,25.983A11.548,11.548,0,1,1,29.358,17.81,11.548,11.548,0,0,1,17.81,29.358Z" transform="translate(-3.375 -3.375)" fill="#07082e"/>
+              <path id="Path_28" data-name="Path 28" d="M18.7,10.688H16.537v8.661l7.578,4.546L25.2,22.118l-6.5-3.852Z" transform="translate(-3.546 -3.47)" fill="#07082e"/>
+            </svg>&nbsp;&nbsp;&nbsp;活動截止日期:10天</div>
+            <div class="progress-bg">
+              <div class="progress-bar">
+                  <h3 class="raised">目前募資金額$9000</h3>
+              </div>  
+                  <h3 class="goal">目標募資金額$300000</h3>
+          </div>
+       
+
+          <div class="progress-bg2">
+            <div class="progress-bar2">
+                <h3 class="raised">目前參與人數50人</h3>
+            </div>  
+                <h3 class="goal">目標志工人數200人</h3>
+          </div>
+        </div>
+        <div class="right_pic">
+        <img src="./img/act_detail/maldives-5939710_1280.jpg" alt=""></div>
+      </div>
+<div class="sticky_container">
+  
+      <div class="ad_tab">
+        <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
+        <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
+        <button id="join">參加活動</button>
+            <button id="share"><h4>分享活動</h4>
+            </button>
+            <div class="founder"><h1>活動發起人:&nbsp;富力士</h1></div>
+      </div>
+      <div class="sidetab">
+        <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
+        <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
+      </div>
+      <!-- drop down menu -->
+    <div id="QA" class="outer_board">
+      <div class="row">
+        <div class="col">
+          <div class="tabs">
+            <div class="tab">
+              <input type="checkbox" id="chck1">
+              <label class="tab-label" for="chck1">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div>
+            <div class="tab">
+              <input type="checkbox" id="chck2">
+              <label class="tab-label" for="chck2">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div>
+            <div class="tab">
+              <input type="checkbox" id="chck3">
+              <label class="tab-label" for="chck3">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div>  
+            <div class="tab">
+              <input type="checkbox" id="chck4">
+              <label class="tab-label" for="chck4">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div> 
+            <div class="tab">
+              <input type="checkbox" id="chck5">
+              <label class="tab-label" for="chck5">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+              <div class="tab-content">
+                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              </div>
+            </div> 
+          </div>
         </div>
     </div>
-    
-    
-    <div class="ad_grid_content">
-        <div class="ad_box1"><svg xmlns="http://www.w3.org/2000/svg" width="58.145" height="37.001" viewBox="0 0 58.145 37.001">
-            <path id="Icon_material-people" data-name="Icon material-people" d="M41.144,23.358a7.929,7.929,0,1,0-7.929-7.929A7.9,7.9,0,0,0,41.144,23.358ZM20,23.358a7.929,7.929,0,1,0-7.929-7.929A7.9,7.9,0,0,0,20,23.358Zm0,5.286c-6.158,0-18.5,3.092-18.5,9.25V44.5h37V37.894C38.5,31.736,26.159,28.644,20,28.644Zm21.144,0c-.766,0-1.639.053-2.564.132,3.066,2.22,5.207,5.207,5.207,9.118V44.5H59.645V37.894C59.645,31.736,47.3,28.644,41.144,28.644Z" transform="translate(-1.5 -7.5)"/>
-          </svg>
-          <h1>淨灘需求人數/<br>
-            已報名</h1>
-            <h1>50/29</h1>
-          </div>
-        <div class="ad_box2"><svg xmlns="http://www.w3.org/2000/svg" width="58.82" height="42.014" viewBox="0 0 58.82 42.014">
-            <path id="Icon_awesome-chart-line" data-name="Icon awesome-chart-line" d="M56.982,39.511H7.353V6.251A1.8,1.8,0,0,0,5.514,4.5H1.838A1.8,1.8,0,0,0,0,6.251V43.012a3.592,3.592,0,0,0,3.676,3.5H56.982a1.8,1.8,0,0,0,1.838-1.751v-3.5A1.8,1.8,0,0,0,56.982,39.511ZM53.306,8H39.743a2.612,2.612,0,0,0-1.95,4.483l3.722,3.545-8.429,8.029L24.657,16.03a3.806,3.806,0,0,0-5.2,0l-7.891,7.515a1.692,1.692,0,0,0,0,2.476l2.6,2.475a1.9,1.9,0,0,0,2.6,0l5.292-5.041,8.429,8.027a3.806,3.806,0,0,0,5.2,0l11.029-10.5,3.722,3.545a2.776,2.776,0,0,0,4.707-1.857V9.752A1.794,1.794,0,0,0,53.306,8Z" transform="translate(0 -4.5)"/>
-          </svg>
-          <h1>目標金額/<br>
-            以募款金額</h1>
-            <h1>5000/2876</h1>
-          </div>
-        <div class="ad_box3"><svg xmlns="http://www.w3.org/2000/svg" width="59.55" height="48.796" viewBox="0 0 59.55 48.796">
-            <path id="Icon_material-today" data-name="Icon material-today" d="M57.434,6.38H54.125V1.5H47.509V6.38H21.042V1.5H14.425V6.38H11.117c-3.672,0-6.584,2.2-6.584,4.88L4.5,45.416c0,2.684,2.944,4.88,6.617,4.88H57.434c3.639,0,6.617-2.2,6.617-4.88V11.259C64.05,8.575,61.073,6.38,57.434,6.38Zm0,39.037H11.117V18.578H57.434Zm-39.7-21.958H34.275v12.2H17.733Z" transform="translate(-4.5 -1.5)"/>
-          </svg>
-          <h1>截止日期/<br>
-            剩餘幾日</h1>
-            <h1>2021/4/27</h1>
-          </div>
-        <div class="ad_box4">
-            <div class="progress-bg">
-                <div class="progress-bar">
-                    <h3 class="raised">目前募資金額$9000</h3>
-                </div>  
-                    <h3 class="goal">目標募資金額$300000</h3>
-            </div>
-
-            <div class="progress-bg2">
-              <div class="progress-bar2">
-                  <h3 class="raised">目前參與人數50人</h3>
-              </div>  
-                  <h3 class="goal">目標志工人數200人</h3>
-            </div>
-
-            <button class="join">參加</button><br>
-            <button class="share">分享
-            </button><br>       
-            <div class="founder"><h1>活動發起人:&nbsp;&nbsp;<img src="./img/act_detail/person1.png" >&nbsp;&nbsp;富力士</h1></div>
-        </div>        
-    </div> 
-    <div class="ad_bread">
-      <ul>
-          <li>活動募款參加平台</li>
-          <li class="current">活動詳情</li>
-      </ul>
-    </div>
-     <div class="fixed_pic"><h1 data-aos="fade-right" data-aos-duration="1500" data-aos-once="true">淨下塑源</h1><p data-aos="fade-in" data-aos-duration="800" data-aos-once="true">&nbsp;&nbsp;&nbsp;&nbsp;海洋主宰地球的氣候系統，健康的海洋能將碳儲存於海中、並控制天氣有助於減緩氣候危機。近年來的氣溫升高,導致北極海冰創下有紀錄以來第二低,北極海冰的減少,與氣候暖化.氣候變遷狀況有關。全球暖化則不利珊瑚礁生長，人類活動產生的汙染亦造成嚴重影響。
-      科學家已提出建議，若要保護海洋物種．避免氣候變遷對人類的影響，我們必須在２０３０年前保護全球最少３０％的海洋，因此，保護海洋環境是目前刻不容緩必須執行的任務。
-      </p></div>
-      <div class="outer_board">
-        <h1>活動留言板</h1>
-    <div class="ad_board">
-      <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-        藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-        藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-        藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-        讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-      <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
-    </div>
   </div>
-<!-- linker-------------------------------------------------------------------------------------------- -->
-<div class="linker">
-  <h1>活動連結</h1>
-  <main class="page-content">
-    <div class="card" data-aos="flip-left" data-aos-duration="800" data-aos-once="true">
-      <div class="content">
-        <h2 class="title">藍色沙灘</h2>
-        <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-        <button class="btn">我想了解</button>
-      </div>
-    </div>
-    <div class="card" data-aos="flip-down" data-aos-duration="800" data-aos-once="true" data-aos-delay="1000">
-      <div class="content">
-        <h2 class="title">塑膠立於沙灘之上</h2>
-        <p class="copy">Plan your next beach trip with these fabulous destinations</p>
-        <button class="btn">我想了解</button>
-      </div>
-    </div>
-    <div class="card" data-aos="flip-right" data-aos-duration="800" data-aos-once="true" data-aos-delay="500">
-      <div class="content">
-        <h2 class="title">海底打撈王</h2>
-        <p class="copy">It's the desert you've always dreamed of</p>
-        <button class="btn">我想了解</button>
-      </div>
-    </div>
-  </main>
+
+
+          <div id="Board" class="outer_board">
+                <div class="banner_box"><h1>如有專案相關提問，請聯絡提案</h1></div>
+            <div class="ad_board">
+              <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
+                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+              <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
+                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+              <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
+                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
+                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
+              <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
+            </div>
+            
+          </div>
+        </div>
   </div>
-</div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
@@ -147,39 +157,21 @@
     <script>
       AOS.init();
     </script>
-    <script src="./js/pixi.min.js"></script>
-		<script src="./js/TweenMax.min.js"></script>
-		<script src="./js/main5.js"></script>
-		<script src="./js/imagesloaded.pkgd.min.js"></script>
-		<script>	
-			var spriteImages = document.querySelectorAll( '.slide-item__image' );
-			var spriteImagesSrc = [];
-			var texts = [];
-
-			for ( var i = 0; i < spriteImages.length; i++ ) {
-				var img = spriteImages[i];
-				// Set the texts you want to display to each slide 
-				// in a sibling element of your image and edit accordingly
-				if ( img.nextElementSibling ) {
-					texts.push(img.nextElementSibling.innerHTML);
-				} else {
-					texts.push('');
-				}
-				spriteImagesSrc.push( img.getAttribute('src' ) );
-			}
-      
-			var initCanvasSlideshow = new CanvasSlideshow({
-				sprites: spriteImagesSrc,
-				displacementImage: './img/act_detail/clouds.jpg',
-				autoPlay: true,
-				autoPlaySpeed: [4, 3],
-				displaceScale: [5000, 10000],
-				interactive: true,
-				interactionEvent: 'click', // 'click', 'hover', 'both' 
-				displaceAutoFit: false,
-				dispatchPointerOver: true // restarts pointerover event after click 
-			});
-		</script>
+    <script>
+      function openQa(evt, cityName) {
+        var i, outer_board, tablinks;
+        outer_board = document.getElementsByClassName("outer_board");
+        for (i = 0; i < outer_board.length; i++) {
+          outer_board[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
 </body>
 
 </html>

@@ -1412,90 +1412,76 @@ main.event div.content #section1 form div.container div.row div.part {
 }
 
 main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
-  padding: 40px;
+  padding: 50px 40px;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
-    padding: 30px;
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 50px 30px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
-    padding: 30px;
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 50px 30px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  main.event div.content #section1 form div.container div.row div.part div.info, main.event div.content #section1 form div.container div.row div.part div.description {
-    padding: 20px;
+  main.event div.content #section1 form div.container div.row div.part div.description {
+    padding: 40px 20px;
   }
 }
 
 @media (max-width: 575px) {
-  main.event div.content #section1 form div.container div.row div.part div.info {
-    padding: 20px 30px;
-  }
   main.event div.content #section1 form div.container div.row div.part div.description {
-    padding: 20px 0px;
+    padding: 30px 0px;
   }
 }
 
 main.event div.content #section1 form div.container div.row div.part div.description {
   text-align: center;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0;
 }
 
-main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+main.event div.content #section1 form div.container div.row div.part div.description h2 {
   font-size: 18px;
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 
-main.event div.content #section1 form div.container div.row div.part div.description h2 span, main.event div.content #section1 form div.container div.row div.part div.description span span {
-  color: #EF4325;
+main.event div.content #section1 form div.container div.row div.part div.description h2 img {
+  width: 18px;
+  margin-right: 10px;
+  margin-bottom: 3px;
 }
 
 main.event div.content #section1 form div.container div.row div.part div.description p {
-  margin: 0;
+  margin: 30px 0 40px 0;
   line-height: 30px;
 }
 
-main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
+main.event div.content #section1 form div.container div.row div.part div.description .btn {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0;
   display: inline-block;
-  margin-top: 24px;
-  line-height: 21px;
-}
-
-main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
-  margin: 25px 5px 25px 0;
-}
-
-main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox] {
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  background-color: #fff;
-  border: 1px solid #07082E;
-  border-radius: 3px;
-  outline: none;
-  vertical-align: top;
-}
-
-main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[type=checkbox]:checked {
-  background-image: url("../../img/event/icon/icon-checkbox.png");
-  background-size: cover;
-}
-
-main.event div.content #section1 form div.container div.row div.part div.description button.btn {
-  outline: none;
-  color: #07082E;
+  overflow: hidden;
   background-color: #FFD241;
+  cursor: pointer;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description .btn a {
   font-weight: bolder;
   font-size: 15px;
+  color: #07082E;
   padding: 0px 30px;
-  border: none;
-  height: 35px;
+  width: 100%;
+  display: inline-block;
+}
+
+main.event div.content #section1 form div.container div.row div.part div.description .btn {
+  background-color: #FFD241;
+  color: #07082E;
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -1503,25 +1489,20 @@ main.event div.content #section1 form div.container div.row div.part div.descrip
     width: 95%;
     margin: 0 auto;
   }
-  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
+  main.event div.content #section1 form div.container div.row div.part div.description h2 {
     font-size: 16px;
-    margin: 0 0 10px 0;
+    margin: 0;
   }
   main.event div.content #section1 form div.container div.row div.part div.description p {
     margin: 0;
     font-size: 12px;
     line-height: 25px;
+    padding: 20px 10px 30px 10px;
   }
-  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
-    margin-top: 15px;
-    line-height: 21px;
-    font-size: 12px;
-  }
-  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
-    margin: 15px 5px 25px 0;
-  }
-  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+  main.event div.content #section1 form div.container div.row div.part div.description div.btn {
     width: 100px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.btn a {
     font-size: 12px;
     padding: 5px;
   }
@@ -1532,33 +1513,21 @@ main.event div.content #section1 form div.container div.row div.part div.descrip
     width: 100%;
     margin: 0 auto;
   }
-  main.event div.content #section1 form div.container div.row div.part div.description h2, main.event div.content #section1 form div.container div.row div.part div.description span {
-    font-size: 16px;
-    margin: 0 0 10px 0;
-  }
-  main.event div.content #section1 form div.container div.row div.part div.description span {
-    display: block;
-    font-size: 14px;
-  }
   main.event div.content #section1 form div.container div.row div.part div.description h2 {
-    padding: 0 30px;
+    font-size: 16px;
+    margin: 0;
   }
   main.event div.content #section1 form div.container div.row div.part div.description p {
     margin: 0;
     font-size: 12px;
     line-height: 25px;
-    padding: 0 10px;
+    padding: 20px 20px 30px 20px;
   }
-  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block label {
-    margin-top: 15px;
-    line-height: 21px;
-    font-size: 12px;
-  }
-  main.event div.content #section1 form div.container div.row div.part div.description div.checkbox-block input[name=agreement] {
-    margin: 15px 5px 25px 0;
-  }
-  main.event div.content #section1 form div.container div.row div.part div.description button.btn {
+  main.event div.content #section1 form div.container div.row div.part div.description div.btn {
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342) !important;
     width: 100px;
+  }
+  main.event div.content #section1 form div.container div.row div.part div.description div.btn a {
     font-size: 12px;
     padding: 5px;
   }
@@ -1569,4 +1538,4 @@ main.event div.content #section1 form div.container div.row div.part div.descrip
     padding: 0px;
   }
 }
-/*# sourceMappingURL=initiation_agreement.css.map */
+/*# sourceMappingURL=initiation_success.css.map */

@@ -22,6 +22,7 @@ $h5:28px;
 $h6:22px;
 $h7:18px;
 
+
 $text-linehight: 30px;          //文字行高
 $text-letterspacing: 2px;       //文字間距
 $text-fontSize: 15px;           //一般文字
@@ -39,9 +40,9 @@ $padding-btn: 0px 30px;
 $padding-hint:10px;
 
 //圓角
-$border-radius: 15px;
-$border-radius-btn: 15px;
-$border-radius-input: 5px;
+$border-radius:0;
+$border-radius-btn: 0;
+$border-radius-input: 0;
 
 $box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 
@@ -50,15 +51,19 @@ $web-color:(
     'pink':#FF498C,
     'orange':#FFAE41,
     'lake':#09E4C7,
-    'blue':#1D1E4C,
+    'blue':#07082E,
     'black':#1E1E1E,
-    'white':#fafafa,
-    'white-bg':#F6F6F6,
+    'white':#FFFFFF,
+    'white-bg':#EEEEEE,
     'gray-hint':#C6C6C6,
     'green-coin':#0e6d41,
     'gray-input-hint':#C2C2C2,
-    'blue-input-border':#1D1E4C,
+    'blue-input-border':#07082E,
     'blue-activity-nav':#24324B,
+
+    'yellow':#FFD241,
+    'rankGray':#E3E3EA,
+    'memberGray':#181919,
 );
 
 @mixin btn-module-red() {
@@ -67,12 +72,12 @@ $web-color:(
         border-radius: $border-radius;
         display: inline-block;
         overflow: hidden;
-        background-color: map-get( $web-color , 'red' );
+        background-color: map-get( $web-color , 'yellow' );
         cursor: pointer;
         a{
             font-weight: bolder;
             font-size: $text-fontSize;
-            color: map-get($web-color, 'white' );
+            color: map-get($web-color, 'blue' );
             padding: $padding-btn;
             width: 100%;
             display: inline-block;
@@ -83,7 +88,8 @@ $web-color:(
 @mixin btn-module-blue() {
     @include btn-module-red();
     .btn{
-        background-color: map-get( $web-color , 'blue' );
+        background-color: map-get( $web-color , 'yellow' );
+        color: map-get($web-color,'blue' );
     }
 }
 @mixin bg-module() {

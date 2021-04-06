@@ -1,0 +1,248 @@
+@import '../var';
+@import '../all.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+@mixin btn-module {
+    .btn {
+        background-color: map-get($color_regulation, 'yellow');
+        color: map-get($color_regulation, 'white');
+        padding: 10px 50px;
+        border: none;
+        outline: none;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+#join {
+    div,a,p,input,select,form,span,label{
+        color: map-get($color_regulation, 'blue');
+    }
+    width: 100%;
+    min-height: calc(100vh - 66px);
+    position: relative;
+    margin-top: 66px;
+
+    div.cards {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.537);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        div.card {
+            position: relative;
+            top: -100%;
+            width: calc(100% /3);
+            height: 100%;
+            box-shadow: $box-shadow;
+            background-color: map-get($color_regulation, 'blue');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+            span {
+                width: 100%;
+                display: block;
+                text-align: center;
+                font-weight: bolder;
+                position: absolute;
+                top: 50%;
+                transform: translate(0%, -100%);
+                font-size: $h4;
+                color: map-get($color_regulation, 'white');
+                padding: 0 10px;
+
+                &::before {
+                    content: '';
+                    height: 100%;
+                    margin-right: 6px;
+                    border-left: 6px solid map-get($color_regulation, 'orange');
+                }
+            }
+        }
+
+        //替換你要的背景
+        // #v{
+        //     background-image: url('../../img/event/bg1.png');
+        // }
+        // #f{
+        //     background-image: url('../../img/event/bg1.png');
+        // }
+        // #v-f{
+        //     background-image: url('../../img/event/bg1.png');
+        // }
+        div.content {
+            width: 100vw;
+            min-height: calc(100vh - 66px);
+            padding: 20px 0;
+            box-shadow: $box-shadow;
+            background-image: url('../../img/indexFront/indexImg10.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: none;
+            flex-wrap: nowrap;
+            align-items: center;
+            opacity: 0;
+            h3 {
+                width: 40%;
+                font-size: $h3;
+                color: map-get($color_regulation, 'white');
+                text-align: center;
+                &::before {
+                    content: '';
+                    height: 90%;
+                    margin-right: 8px;
+                    border-left: 8px solid map-get($color_regulation, 'orange');
+                }
+            }
+            @media (max-width:575px){
+                h3{
+                    font-size: $h4;
+                }
+            }
+            form {
+                width: 60%;
+                min-height: 100%;
+                background-color: map-get($color_regulation, 'white');
+                padding: 20px;
+                box-shadow: $box-shadow;
+                p {
+                    font-size: $contentSubTit;
+                    margin: 0 auto 30px auto;
+                    padding: 15px;
+                    width: 60%;
+                    text-align: center;
+                    background-color: map-get($color_regulation, 'blue');
+                    color: map-get($color_regulation, 'white');
+
+                    &::before {
+                        content: '';
+                        height: 90%;
+                        margin-right: 6px;
+                        border-left: 6px solid map-get($color_regulation, 'orange');
+                    }
+
+                    span {
+                        color: map-get($color_regulation, 'white');
+                    }
+                }
+                @media (max-width:575px){
+                    p{
+                        font-size: $h7;
+                    }
+                }
+                div.join,div.donate {
+                    display: none;
+                    margin: 0 auto;
+                    width: 60%;
+
+                    input[type=checkbox] {
+                        margin: 0 5px 20px 0;
+                    }
+
+                    input[type=text],input[type=number] {
+                        width: 60px;
+                        line-height: $line-height;
+                        padding: 0 5px;
+                        margin: 0 0 6px 0;
+                        border: 1px solid map-get($color_regulation, 'blue');
+                        border-radius: $inputRadius;
+                    }
+                    @media (max-width:575px){
+                        input[type=text],input[type=number] {
+                            width: 35px;
+                            line-height: 22px;
+                        }
+                    }
+
+                    label {
+                        margin: 5px 0 0 0px;
+                        display: inline-block;
+                        width: 100px;
+                    }
+                    @media (max-width:575px){
+                        label{
+                            font-size: 12px;
+                            width: 75px;
+                        }
+                    }
+                    input.long {
+                        width: 130px;
+                    }
+                }
+
+                @media (min-width:992px) and (max-width:1199px) {
+                    p, div.join, div.donate {
+                        width: 80%;
+                    }
+                }
+
+                @media (min-width:768px) and (max-width:991px) {
+                    p, div.join, div.donate {
+                        width: 90%;
+                    }
+                }
+
+                @include btn-module();
+
+                button {
+                    display: block;
+                    margin: 10px auto;
+                }
+
+                div#cancel {
+                    text-align: center;
+                    color: map-get($color_regulation, 'red');
+                    cursor: pointer;
+                }
+            }
+        }
+        @media (min-width:576px) and (max-width:767px){
+            div.content{
+                flex-wrap: wrap;
+                justify-content: center;
+                h3{
+                    width: 100%;
+                }
+                form{
+                    width: 90%;
+                    min-height: auto;
+                    p,div.join, div.donate{
+                      width: 80%;  
+                    }
+                }
+            }
+        }
+        @media (max-width:575px){
+            div.content{
+                flex-wrap: wrap;
+                justify-content: center;
+                h3{
+                    width: 100%;
+                }
+                form{
+                    width: 95%;
+                    min-height: auto;
+                    p,div.join, div.donate{
+                      width: 90%;  
+                    }
+                }
+            }
+        }
+    }
+}

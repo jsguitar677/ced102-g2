@@ -4,10 +4,10 @@
     .btn{
         border-radius: $borderRadius;
         display: inline-block;
-        background-color: map-get($color_regulation,'blue');
+        background-color: map-get($color_regulation,'yellow');
         font-weight: bolder;
         font-size: $contentTxt;
-        color: map-get($color_regulation,'white');
+        color: map-get($color_regulation,'blue');
         padding: 0px 30px;
         display: inline-block;
         cursor: pointer;

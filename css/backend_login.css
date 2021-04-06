@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  font-family: 'Palatino Linotype';
+  color: #07082E;
+}
+
+body {
+  margin: 0;
+  background-color: #EEEEEE;
+}
+
+a {
+  text-decoration: none;
+  color: #EF4325;
+}
+
+a:hover {
+  color: #07082E;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  width: 100%;
+  height: 66px;
+  text-align: center;
+  background-color: #07082E;
+}
+
+header div.logo {
+  background-color: #07082E;
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+header div.logo img {
+  max-height: 100%;
+}
+
+div.min-hight {
+  width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 100px);
+  padding: 60px 0;
+  background-image: url("../../img/backend/indexfont-img.png");
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-position: center center;
+}
+
+div.min-hight div.title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+div.min-hight div.login {
+  margin: 0px auto;
+  width: 360px;
+  background-color: rgba(255, 255, 255, 0.558);
+  padding: 40px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  border-radius: 0px;
+}
+
+div.min-hight div.login form {
+  text-align: center;
+}
+
+div.min-hight div.login form label {
+  width: 55px;
+  line-height: 35px;
+  margin-right: 10px;
+}
+
+div.min-hight div.login form input {
+  padding: 0px 8px;
+  margin: 0 0 25px 0;
+  line-height: 35px;
+  border-radius: 0px;
+  border: 1px solid #07082E;
+}
+
+div.min-hight div.login form input[type=submit] {
+  margin-top: 20px;
+}
+
+div.min-hight div.login form .btn {
+  border-radius: 0px;
+  display: inline-block;
+  background-color: #FFD241;
+  font-weight: bolder;
+  font-size: 15px;
+  color: #07082E;
+  padding: 0px 30px;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 150px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+div.min-hight div.login form div.forget {
+  width: 100%;
+  text-align: right;
+  margin-top: 10px;
+}
+
+footer {
+  width: 100%;
+  font-size: 12px;
+  background-color: #07082E;
+}
+
+footer div.footer {
+  text-align: center;
+  margin: 0 auto;
+  width: 1200px;
+  color: #FFFFFF;
+  height: 40px;
+  line-height: 40px;
+  background-color: #07082E;
+}
+/*# sourceMappingURL=backend_login.css.map */

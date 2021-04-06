@@ -18,15 +18,6 @@ memInfoBoxs.forEach(function(memInfoBox){
 });
 
 
-
-
-
-
-
-
-
-
-
 // 網頁切換
 function openPage(evt, pageState) {
     var i, tabContent, tabLinks;
@@ -100,44 +91,6 @@ function eventManagementModal(){
     }
 }
 window.addEventListener('load', eventManagementModal);
-
-
-//owl carousel 輪播
-// $(".owl-one").owlCarousel({
-//     loop:true,
-//     nav:false,
-//     margin:35,
-//     // autoplayTimeout: 2300,
-//     // autoplay:false,
-//     autoWidth:false,
-//     dots:true,
-//     // navText:[
-//     //     prevIcon,
-//     //     nextIcon
-//     // ],
-//     slideTransition:"linear",
-//     responsive:{
-//         500:{
-//             items:3.5
-//         },
-//         // 600:{
-//         //     items:3
-//         // },
-//         // 1000:{
-//         //     items:5
-//         // }
-//     }
-// });
-
-// //輪播圖
-// var owlClearItem = $('.owl-carousel');
-// owlClearItem.owlCarousel();
-// $('.memberCollectionCancel').click(function(){
-//     owlClearItem.trigger('remove.owl.carousel',$('.memberCollectionCancel').index(this));
-//     console.log($('.memberCollectionCancel').index(this));
-
-// })
-
 
 //經驗值圖
 function ReceiveCoin(){

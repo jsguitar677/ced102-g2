@@ -17,6 +17,7 @@
     <!-- 字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
         
 </head>
 <body>
@@ -42,33 +43,47 @@
                             <h3>管理員管理</h3>
                             <div class="Form1">
                                 <form action="">
-                                    <button>
+                                    <div id="addad">
                                         <i class="fas fa-plus fa-1x"></i>
-                                        新增管理員</button>
+                                        新增管理員</div>
                                     <table>
                                         <tr>
-                                            <th>管理員帳號</th>
+                                            <th>管理員編號</th>
                                             <th>姓名</th>
                                             <th>帳號</th>
                                             <th>刪除</th>
                                         </tr>
-                                        <tr>
+                                        <tr id="G001">
                                             <td>G001</td>
                                             <td>Eva</td>
                                             <td>Eva0909</td>
                                             <td>
-                                                <button id="delete"><i class="far fa-trash-alt"></i></button>
+                                                <div class="delete-icon"><i class="far fa-trash-alt"></i></div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr id="G002">
                                             <td>G002</td>
                                             <td>BlackCuba</td>
                                             <td>BlackCuba0309</td>
                                             <td>
-                                                <button id="delete"><i class="far fa-trash-alt"></i></button>
+                                                <div class="delete-icon"><i class="far fa-trash-alt"></i></div>
                                             </td>
                                         </tr>
                                     </table>
+                                    <div id="AD-delete">
+                                        <p>您確定要將管理員編號<span class="ad-number"></span>刪除?</p>
+                                        <p>一經刪除便無法復原</p>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="delete-cancel-btn btn">取消</button>
+                                    </div>
+                                    <div id="AD-add">
+                                        <label>管理員編號：</label><input type="text" name="adno"><br>
+                                        <label>管理員姓名：</label><input type="text" name="adname"><br>
+                                        <label>管理員帳號：</label><input type="text" name="adid"><br>
+                                        <label>管理員密碼：</label><input type="password" name="adpws"><br>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="delete-cancel-btn btn">取消</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -91,31 +106,11 @@
                                             <th>經驗值</th>
                                             <th>刪除</th>
                                         </tr>
-                                        <tr>
+                                        <tr id="M12345">
                                             <td>M12345</td>
                                             <td>正常</td>
                                             <td>
-                                                <label class="switch">
-                                                    <input type="checkbox" checked>
-                                                    <span class="slider round"></span>
-                                                </label>
-                                            </td>
-                                            <td>魯夫</td>
-                                            <td>進階會員</td>
-                                            <td>1995/06/31</td>
-                                            <td>a4927763@gmail.com</td>
-                                            <td>0975753772</td>
-                                            <td>30P</td>
-                                            <td>130Exp</td>
-                                            <td>
-                                                <button id="delete"><i class="far fa-trash-alt fa-2x"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>M12345</td>
-                                            <td>正常</td>
-                                            <td>
-                                                <label class="switch">
+                                                <label class="switch suspension-btn">
                                                     <input type="checkbox">
                                                     <span class="slider round"></span>
                                                 </label>
@@ -128,240 +123,305 @@
                                             <td>30P</td>
                                             <td>130Exp</td>
                                             <td>
-                                                <button id="delete"><i class="far fa-trash-alt fa-2x"></i></button>
+                                                <div class="delete-icon"><i class="far fa-trash-alt fa-2x"></i></div>
+                                            </td>
+                                        </tr>
+                                        <tr id="M12555">
+                                            <td>M12555</td>
+                                            <td>正常</td>
+                                            <td>
+                                                <label class="switch suspension-btn">
+                                                    <input type="checkbox">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </td>
+                                            <td>魯夫</td>
+                                            <td>進階會員</td>
+                                            <td>1995/06/31</td>
+                                            <td>a4927763@gmail.com</td>
+                                            <td>0975753772</td>
+                                            <td>30P</td>
+                                            <td>130Exp</td>
+                                            <td>
+                                                <div class="delete-icon"><i class="far fa-trash-alt fa-2x"></i></div>
                                             </td>
                                         </tr>
                                     </table>
+                                    <div id="M-suspension">
+                                        <p>您確定要將會員編號<span class="mem-number"></span>停權?</p>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="suspension-cancel-btn btn">取消</button>
+                                    </div>
+                                    <div id="M-delete">
+                                        <p>您確定要將會員編號<span class="mem-number"></span>刪除?</p>
+                                        <p>一經刪除便無法復原</p>
+                                        <button type="submit" class="submit btn">確認</button>
+                                        <button class="delete-cancel-btn btn">取消</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
                         <div id="porMag" class="tabContent">
                             <h3>商品管理</h3>
-                            <div class="P-block-list">
+                            <div class="P-block-list" id="P-user">
                                 <div class="search-block">
-                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                    <input class="search" type="text" name="search" placeholder='請輸入商品編號或名稱'>
                                 </div>
                                 <div class="P-table">
                                     <form>
                                         <table>
-                                            <tr>
-                                                <th>商品編號</th>
-                                                <th>商品類別</th>
-                                                <th>商品名稱</th>
-                                                <th>單價</th>
-                                                <th>商品簡介</th>
-                                                <th>商品圖片1</th>
-                                                <th>商品圖片2</th>
-                                                <th>商品圖片3</th>
-                                                <th>商品圖片4</th>
-                                                <th>商品圖片5</th>
-                                                <th>客製化</th>
-                                                <th>商品狀態</th>
-                                                <th>編輯</th>
-                                            </tr>
-                                            <tr>
-                                                <td><span>P6</span></td>
-                                                <td>
-                                                    <span>B</span>
-                                                    <select>
-                                                        <option>A(包包)</option>
-                                                        <option>B(手機殼)</option>
-                                                        <option>C(口罩)</option>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    <span>客製化手機殼</span>
-                                                    <input type="text">
-                                                </td>
-                                                <td>
-                                                    <span>NTD 399</span>
-                                                    <input type="number">
-                                                </td>
-                                                <td>
-                                                    <span>簡介簡介簡介</span>
-                                                    <input type="text">
-                                                </td>
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>                                                
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>                                               
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>                                                
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>
+                                            <thead>
+                                                <tr>
+                                                    <th>商品編號</th>
+                                                    <th>商品類別</th>
+                                                    <th>商品名稱</th>
+                                                    <th>單價</th>
+                                                    <th>商品簡介</th>
+                                                    <th>商品圖片1</th>
+                                                    <th>商品圖片2</th>
+                                                    <th>商品圖片3</th>
+                                                    <th>商品圖片4</th>
+                                                    <th>商品圖片5</th>
+                                                    <th>客製化</th>
+                                                    <th>商品狀態</th>
+                                                    <th>編輯</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list">
+                                                <tr>
+                                                    <td><span class="P-title">P6</span></td>
+                                                    <td>
+                                                        <span class="hide1">B</span>
+                                                        <select class="hide2">
+                                                            <option>A(包包)</option>
+                                                            <option>B(手機殼)</option>
+                                                            <option>C(口罩)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <span class="P-name hide1">客製化手機殼</span>
+                                                        <input type="text" class="hide2">
+                                                    </td>
+                                                    <td>
+                                                        <span class="hide1">NTD 399</span>
+                                                        <input type="number" class="hide2">
+                                                    </td>
+                                                    <td>
+                                                        <span class="hide1">簡介簡介簡介</span>
+                                                        <textarea class="hide2"></textarea>
+                                                    </td>
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>                                                
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>                                               
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>                                                
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>
 
-                                                <td>
-                                                    <span>可</span>
-                                                    <input type="radio" name="customized" value="0"><label>可</label>
-                                                    <input type="radio" name="customized" value="1"><label>否</label>
-                                                </td>
-                                                <td>
-                                                    切換按鈕
-                                                    <input type="checkbox">
-                                                </td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <button class="edit-btn" type="submit">確認</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>P6</span></td>
-                                                <td>
-                                                    <span>B</span>
-                                                    <select>
-                                                        <option>A(包包)</option>
-                                                        <option>B(手機殼)</option>
-                                                        <option>C(口罩)</option>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    <span>客製化手機殼</span>
-                                                    <input type="text">
-                                                </td>
-                                                <td>
-                                                    <span>NTD 399</span>
-                                                    <input type="number">
-                                                </td>
-                                                <td>
-                                                    <span>簡介簡介簡介</span>
-                                                    <input type="text">
-                                                </td>
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>                                                
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>                                               
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>                                                
-                                                <td>
-                                                    <div class="img"><img></div>
-                                                    <input type="file" >
-                                                </td>
+                                                    <td>
+                                                        <span class="hide1">可</span>
+                                                        <input class="hide2" type="radio" name="customized" value="0"><label class="hide2">可</label>
+                                                        <input class="hide2" type="radio" name="customized" value="1"><label class="hide2">否</label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                        <button class="cancel-btn">取消</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="P-title">P5</span></td>
+                                                    <td>
+                                                        <span class="hide1">A</span>
+                                                        <select class="hide2">
+                                                            <option>A(包包)</option>
+                                                            <option>B(手機殼)</option>
+                                                            <option>C(口罩)</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <span class="P-name hide1">客製化包包</span>
+                                                        <input type="text" class="hide2">
+                                                    </td>
+                                                    <td>
+                                                        <span class="hide1">NTD 599</span>
+                                                        <input type="number" class="hide2">
+                                                    </td>
+                                                    <td>
+                                                        <span class="hide1">簡介簡介簡介</span>
+                                                        <textarea class="hide2"></textarea>
+                                                    </td>
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>                                                
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>                                               
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>                                                
+                                                    <td>
+                                                        <div class="img"><img></div>
+                                                        <input type="file" class="hide2">
+                                                    </td>
 
-                                                <td>
-                                                    <span>否</span>
-                                                    <input type="radio" name="customized" value="0"><label>可</label>
-                                                    <input type="radio" name="customized" value="1"><label>否</label>
-                                                </td>
-                                                <td>
-                                                    切換按鈕
-                                                    <input type="checkbox">
-                                                </td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <button class="edit-btn" type="submit">確認</button>
-                                                </td>
-                                            </tr>
+                                                    <td>
+                                                        <span class="hide1">可</span>
+                                                        <input class="hide2" type="radio" name="customized" value="0"><label class="hide2">可</label>
+                                                        <input class="hide2" type="radio" name="customized" value="1"><label class="hide2">否</label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <button class="edit-btn" type="submit">確認</button>
+                                                        <button class="cancel-btn">取消</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </form>
                                 </div>
                             </div>
                         </div> 
-                        <!-- <div id="cusProMag" class="tabContent">
-                            <h3>客製化商品管理</h3>
-                            <h1>興建中...請稍後</h1>
-
-                        </div> -->
                         <div id="ordMag" class="tabContent">
                             <h3>訂單管理管理</h3>
-                            <div class="O-block-list">
+                            <div class="O-block-list" id="O-user">
                                 <div class="search-block">
-                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                    <input class="search" type="text" name="search" placeholder='請輸入訂單編號'>
                                 </div>
                                 <div class="O-table">
                                     <form>
                                         <table>
-                                            <tr>
-                                                <th></th>
-                                                <th>訂單編號</th>
-                                                <th>訂單日期</th>
-                                                <th>訂單狀態</th>
-                                                <th>付款狀態</th>
-                                                <th>送貨狀態</th>
-                                                <th>是否出貨</th>
-                                                <th>查看訂單</th>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle new"></div></td>
-                                                <td>O111</td>
-                                                <td>2020/03/20</td>
-                                                <td>處理中</td>
-                                                <td>已付款</td>
-                                                <td>備貨中</td>
-                                                <td>請幫我換你的違規停權切換紐</td>
-                                                <td>
-                                                    <i class="fas fa-sticky-note"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>O110</td>
-                                                <td>2020/03/16</td>
-                                                <td>已完成</td>
-                                                <td>已付款</td>
-                                                <td>已取貨</td>
-                                                <td>按鈕</td>
-                                                <td>
-                                                    <i class="fas fa-sticky-note"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>O109</td>
-                                                <td>2020/03/01</td>
-                                                <td>已完成</td>
-                                                <td>已付款</td>
-                                                <td>已取貨</td>
-                                                <td>按鈕</td>
-                                                <td>
-                                                    <i class="fas fa-sticky-note"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>O108</td>
-                                                <td>2020/02/19</td>
-                                                <td>已完成</td>
-                                                <td>已付款</td>
-                                                <td>已取貨</td>
-                                                <td>按鈕</td>
-                                                <td>
-                                                    <i class="fas fa-sticky-note"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>O107</td>
-                                                <td>2020/02/11</td>
-                                                <td>已完成</td>
-                                                <td>已付款</td>
-                                                <td>已取貨</td>
-                                                <td>按鈕</td>
-                                                <td>
-                                                    <i class="fas fa-sticky-note"></i>
-                                                </td>
-                                            </tr>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>訂單編號</th>
+                                                    <th>訂單日期</th>
+                                                    <th>訂單狀態</th>
+                                                    <th>付款狀態</th>
+                                                    <th>送貨狀態</th>
+                                                    <th>是否出貨</th>
+                                                    <th>查看訂單</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list">
+                                                <tr>
+                                                    <td><div class="circle new"></div></td>
+                                                    <td class="O-number">O111</td>
+                                                    <td>2020/03/20</td>
+                                                    <td>處理中</td>
+                                                    <td>已付款</td>
+                                                    <td>備貨中</td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox" name="ship">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-sticky-note"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="O-number">O110</td>
+                                                    <td>2020/03/16</td>
+                                                    <td>已完成</td>
+                                                    <td>已付款</td>
+                                                    <td>已取貨</td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox" checked>
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-sticky-note"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="O-number">O109</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>已完成</td>
+                                                    <td>已付款</td>
+                                                    <td>已取貨</td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox" checked>
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-sticky-note"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="O-number">O108</td>
+                                                    <td>2020/02/19</td>
+                                                    <td>已完成</td>
+                                                    <td>已付款</td>
+                                                    <td>已取貨</td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox" checked>
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-sticky-note"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="O-number">O107</td>
+                                                    <td>2020/02/11</td>
+                                                    <td>已完成</td>
+                                                    <td>已付款</td>
+                                                    <td>已取貨</td>
+                                                    <td>
+                                                        <label class="switch">
+                                                            <input type="checkbox" checked>
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-sticky-note"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </form>
                                 </div>
@@ -416,168 +476,172 @@
                         </div>
                         <div id="reportMag" class="tabContent">
                             <h3>檢舉留言管理</h3>
-                            <div class="R-block-list">
+                            <div class="R-block-list" id="R-user">
                                 <div class="search-block">
-                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                    <input class="search" type="text" name="search" placeholder='請輸入檢舉留言編號'>
                                 </div>
                                 <div class="R-table">
                                     <form>
                                         <table>
-                                            <tr>
-                                                <th></th>
-                                                <th>檢舉留言編號</th>
-                                                <th>檢舉日期</th>
-                                                <th>檢舉人會員編號</th>
-                                                <th>留言編號</th>
-                                                <th>留言內容</th>
-                                                <th>檢舉雲因</th>
-                                                <th>審核結果</th>
-                                                <th>審核</th>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle new"></div></td>
-                                                <td>R29</td>
-                                                <td>2020/03/20</td>
-                                                <td>M4</td>
-                                                <td>5</td>
-                                                <td>是否想賺更多錢?請洽詢.......</td>
-                                                <td>與本活動無關。</td>
-                                                <td></td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass1"><label for="pass1">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail1"><label for="fail1">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R90</td>
-                                                <td>2020/03/09</td>
-                                                <td>M2</td>
-                                                <td>71</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>留言下架</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass2"><label for="pass2">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail2"><label for="fail2">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R97</td>
-                                                <td>2020/03/01</td>
-                                                <td>M9</td>
-                                                <td>76</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>退件</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass3"><label for="pass3">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail3"><label for="fail3">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R97</td>
-                                                <td>2020/03/01</td>
-                                                <td>M9</td>
-                                                <td>76</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>留言下架</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass4"><label for="pass4">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail4"><label for="fail4">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R97</td>
-                                                <td>2020/03/01</td>
-                                                <td>M9</td>
-                                                <td>76</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>退件</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass5"><label for="pass5">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail5"><label for="fail5">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R97</td>
-                                                <td>2020/03/01</td>
-                                                <td>M9</td>
-                                                <td>76</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>退件</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass6"><label for="pass6">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail6"><label for="fail6">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R97</td>
-                                                <td>2020/03/01</td>
-                                                <td>M9</td>
-                                                <td>76</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>留言下架</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass7"><label for="pass7">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail7"><label for="fail7">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><div class="circle"></div></td>
-                                                <td>R97</td>
-                                                <td>2020/03/01</td>
-                                                <td>M9</td>
-                                                <td>76</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
-                                                <td>退件</td>
-                                                <td>
-                                                    <i class="fas fa-edit"></i>
-                                                    <div class="edit">
-                                                        <input type="radio" name="choose" value="pass" id="pass8"><label for="pass8">下架</label>
-                                                        <input type="radio" name="choose" value="fail" id="fail8"><label for="fail8">退件</label><br>
-                                                        <button class="edit-btn" type="submit">確認</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>檢舉留言編號</th>
+                                                    <th>檢舉日期</th>
+                                                    <th>檢舉人會員編號</th>
+                                                    <th>留言編號</th>
+                                                    <th>留言內容</th>
+                                                    <th>檢舉原因</th>
+                                                    <th>審核結果</th>
+                                                    <th>審核</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="list">
+                                                <tr>
+                                                    <td><div class="circle new"></div></td>
+                                                    <td class="R-number">R29</td>
+                                                    <td>2020/03/20</td>
+                                                    <td>M4</td>
+                                                    <td>5</td>
+                                                    <td>是否想賺更多錢?請洽詢.......</td>
+                                                    <td>與本活動無關。</td>
+                                                    <td></td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass1"><label for="pass1">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail1"><label for="fail1">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R90</td>
+                                                    <td>2020/03/09</td>
+                                                    <td>M2</td>
+                                                    <td>71</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>留言下架</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass2"><label for="pass2">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail2"><label for="fail2">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R97</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>M9</td>
+                                                    <td>76</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>退件</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass3"><label for="pass3">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail3"><label for="fail3">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R96</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>M9</td>
+                                                    <td>76</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>留言下架</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass4"><label for="pass4">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail4"><label for="fail4">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R66</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>M9</td>
+                                                    <td>76</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>退件</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass5"><label for="pass5">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail5"><label for="fail5">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R90</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>M9</td>
+                                                    <td>76</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>退件</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass6"><label for="pass6">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail6"><label for="fail6">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R95</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>M9</td>
+                                                    <td>76</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>留言下架</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass7"><label for="pass7">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail7"><label for="fail7">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><div class="circle"></div></td>
+                                                    <td class="R-number">R32</td>
+                                                    <td>2020/03/01</td>
+                                                    <td>M9</td>
+                                                    <td>76</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>Lorem ipsum dolor sit amet consectetur, ad nulla.</td>
+                                                    <td>退件</td>
+                                                    <td>
+                                                        <i class="fas fa-edit"></i>
+                                                        <div class="edit">
+                                                            <input type="radio" name="choose" value="pass" id="pass8"><label for="pass8">下架</label><br>
+                                                            <input type="radio" name="choose" value="fail" id="fail8"><label for="fail8">退件</label><br>
+                                                            <button class="edit-btn" type="submit">確認</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </form>
                                 </div>
@@ -585,75 +649,79 @@
                         </div>
                         <div id="actVerifyMag" class="tabContent">
                             <h3>活動審核管理</h3>
-                            <div class="A-block-list">
+                            <div class="A-block-list" id="A-user">
                                 <div class="search-block">
-                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                    <input type="text" name="search" class="search" placeholder="請輸入活動編號或名稱">
                                 </div>
                                 <div class="A-table">
                                     <table>
-                                        <tr>
-                                            <th></th>
-                                            <th>活動編號</th>
-                                            <th>發起人會員編號</th>
-                                            <th>提案日期</th>
-                                            <th>活動日期</th>
-                                            <th>活動名稱</th>
-                                            <th>活動地點</th>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle new"></div></td>
-                                            <td>A6</td>
-                                            <td>M3</td>
-                                            <td>2021/03/30</td>
-                                            <td>2021/04/30</td>
-                                            <td>永安漁港淨灘</td>
-                                            <td>桃園市永安漁港</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle cancel"></div></td>
-                                            <td>A4</td>
-                                            <td>M8</td>
-                                            <td>2021/02/15</td>
-                                            <td>2021/03/15</td>
-                                            <td>外澳淨灘</td>
-                                            <td>苗栗縣外澳沙灘</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle cancel"></div></td>
-                                            <td>A3</td>
-                                            <td>M9</td>
-                                            <td>2021/02/02</td>
-                                            <td>2021/03/07</td>
-                                            <td>隘門沙灘淨灘</td>
-                                            <td>澎湖縣隘門沙灘</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle"></div></td>
-                                            <td>A5</td>
-                                            <td>M2</td>
-                                            <td>2021/02/01</td>
-                                            <td>2021/03/25</td>
-                                            <td>永安漁港淨灘</td>
-                                            <td>桃園市永安漁港</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle"></div></td>
-                                            <td>A2</td>
-                                            <td>M1</td>
-                                            <td>2021/01/01</td>
-                                            <td>2021/02/05</td>
-                                            <td>新蘭漁港淨灘</td>
-                                            <td>台東縣新蘭漁港</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle"></div></td>
-                                            <td>A1</td>
-                                            <td>M22</td>
-                                            <td>2020/12/1</td>
-                                            <td>2021/01/15</td>
-                                            <td>南濱公園淨灘</td>
-                                            <td>花蓮縣南濱公園</td>
-                                        </tr>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>活動編號</th>
+                                                <th>發起人會員編號</th>
+                                                <th>提案日期</th>
+                                                <th>活動日期</th>
+                                                <th>活動名稱</th>
+                                                <th>活動地點</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="list">
+                                            <tr>
+                                                <td><div class="circle new"></div></td>
+                                                <td class="A-title">A6</td>
+                                                <td>M3</td>
+                                                <td>2021/03/30</td>
+                                                <td>2021/04/30</td>
+                                                <td class="A-name">永安漁港淨灘</td>
+                                                <td>桃園市永安漁港</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle cancel"></div></td>
+                                                <td  class="A-title">A4</td>
+                                                <td>M8</td>
+                                                <td>2021/02/15</td>
+                                                <td>2021/03/15</td>
+                                                <td class="A-name">外澳淨灘</td>
+                                                <td>苗栗縣外澳沙灘</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle cancel"></div></td>
+                                                <td  class="A-title">A3</td>
+                                                <td>M9</td>
+                                                <td>2021/02/02</td>
+                                                <td>2021/03/07</td>
+                                                <td class="A-name">隘門沙灘淨灘</td>
+                                                <td>澎湖縣隘門沙灘</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td  class="A-title">A5</td>
+                                                <td>M2</td>
+                                                <td>2021/02/01</td>
+                                                <td>2021/03/25</td>
+                                                <td class="A-name">永安漁港淨灘</td>
+                                                <td>桃園市永安漁港</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td  class="A-title">A2</td>
+                                                <td>M1</td>
+                                                <td>2021/01/01</td>
+                                                <td>2021/02/05</td>
+                                                <td class="A-name">新蘭漁港淨灘</td>
+                                                <td>台東縣新蘭漁港</td>
+                                            </tr>
+                                            <tr>
+                                                <td><div class="circle"></div></td>
+                                                <td class="A-title">A1</td>
+                                                <td>M22</td>
+                                                <td>2020/12/1</td>
+                                                <td>2021/01/15</td>
+                                                <td class="A-name">南濱公園淨灘</td>
+                                                <td>花蓮縣南濱公園</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -684,74 +752,78 @@
                         </div>
                         <div id="actHistoryMag" class="tabContent">
                             <h3>活動花絮管理</h3>
-                            <div class="AH-block-list">
+                            <div class="AH-block-list" id="AH-user">
                                 <div class="search-block">
-                                    <input type="text" name="search"><div class="icon"><i class="fas fa-search"></i></div>
+                                    <input class="search" type="text" name="search" placeholder='請輸入活動編號'>
                                 </div>
                                 <div class="AH-table">
                                     <table>
-                                        <tr>
-                                            <th></th>
-                                            <th>活動編號</th>
-                                            <th>活動日期</th>
-                                            <th>活動名稱</th>
-                                            <th>活動地點</th>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle alert"></div></td>
-                                            <td>A5</td>
-                                            <td>2021/03/25</td>
-                                            <td>永安漁港淨灘</td>
-                                            <td>桃園市永安漁港</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle alert"></div></td>
-                                            <td>A4</td>
-                                            <td>2021/03/15</td>
-                                            <td>外澳淨灘</td>
-                                            <td>苗栗縣外澳沙灘</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle"></div></td>
-                                            <td>A3</td>
-                                            <td>2021/03/07</td>
-                                            <td>隘門沙灘淨灘</td>
-                                            <td>澎湖縣隘門沙灘</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle"></div></td>
-                                            <td>A2</td>
-                                            <td>2021/02/05</td>
-                                            <td>新蘭漁港淨灘</td>
-                                            <td>台東縣新蘭漁港</td>
-                                        </tr>
-                                        <tr>
-                                            <td><div class="circle"></div></td>
-                                            <td>A1</td>
-                                            <td>2021/01/15</td>
-                                            <td>南濱公園淨灘</td>
-                                            <td>花蓮縣南濱公園</td>
-                                        </tr>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>活動編號</th>
+                                                <th>活動日期</th>
+                                                <th>活動名稱</th>
+                                                <th>活動地點</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="list">
+                                            <tr class="AH-tr">
+                                                <td><div class="circle alert"></div></td>
+                                                <td class="AH-title">A5</td>
+                                                <td>2021/03/25</td>
+                                                <td>永安漁港淨灘</td>
+                                                <td>桃園市永安漁港</td>
+                                            </tr>
+                                            <tr class="AH-tr">
+                                                <td><div class="circle alert"></div></td>
+                                                <td class="AH-title">A4</td>
+                                                <td>2021/03/15</td>
+                                                <td>外澳淨灘</td>
+                                                <td>苗栗縣外澳沙灘</td>
+                                            </tr>
+                                            <tr class="AH-tr">
+                                                <td><div class="circle"></div></td>
+                                                <td class="AH-title">A3</td>
+                                                <td>2021/03/07</td>
+                                                <td>隘門沙灘淨灘</td>
+                                                <td>澎湖縣隘門沙灘</td>
+                                            </tr>
+                                            <tr class="AH-tr">
+                                                <td><div class="circle"></div></td>
+                                                <td class="AH-title">A2</td>
+                                                <td>2021/02/05</td>
+                                                <td>新蘭漁港淨灘</td>
+                                                <td>台東縣新蘭漁港</td>
+                                            </tr>
+                                            <tr class="AH-tr">
+                                                <td><div class="circle"></div></td>
+                                                <td class="AH-title">A1</td>
+                                                <td>2021/01/15</td>
+                                                <td>南濱公園淨灘</td>
+                                                <td>花蓮縣南濱公園</td>
+                                            </tr>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="AH-block-upload">
                                 <div class="info">
-                                    <p>活動編號：<span>A1</span></p>
-                                    <p>活動日期：<span>2021/01/15</span></p>
-                                    <p>活動名稱：<span>南濱公園淨灘</span></p>
-                                    <p>活動地點：<span>花蓮縣南濱公園</span></p>
+                                    <p>活動編號：<span id="AH-actno">A1</span></p>
+                                    <p>活動日期：<span id="AH-actdate">2021/01/15</span></p>
+                                    <p>活動名稱：<span id="AH-actname">南濱公園淨灘</span></p>
+                                    <p>活動地點：<span id="AH-actloc">花蓮縣南濱公園</span></p>
                                 </div>
                                 <div class="upload">
                                     <form>
                                         <p class="article"><span class="text">文章：</span><textarea></textarea></p>
                                         <div class="right">
-                                            <p class="text">上傳圖片1： <input type="file" name="pic1"></p>
-                                            <p class="text">上傳圖片2： <input type="file" name="pic2"></p>
-                                            <p class="text">上傳圖片3： <input type="file" name="pic3"></p>
+                                            <p class="text">上傳圖片1：<input type="file" name="pic1"></p>
+                                            <p class="text">上傳圖片2：<input type="file" name="pic2"></p>
+                                            <p class="text">上傳圖片3：<input type="file" name="pic3"></p>
                                             <div class="btn-group">
-                                                <button type="submit" class="AH-btn">確認</button>
-                                                <button class="AH-btn">取消</button>
+                                                <button type="submit" class="AH-btn btn">確認</button>
+                                                <button class="AH-btn btn">取消</button>
                                             </div>
                                         </div>
                                     </form>
@@ -766,21 +838,7 @@
     </main>
     
 
-    
+
+    <script src="./js/backend.js"></script>
 </body>
-
-<script>
-    //檢舉留言
-    $('#reportMag i').click(function(){
-        $(this).css('display','none');
-        $(this).parent().find('div').css('display','block');
-    });
-    $('#reportMag button.edit-btn').click(function(){
-        $(this).parent().css('display','none');
-        $(this).parent().parent().find('i').css('display','block');
-    });
-</script>
-
-<script src="./js/backend.js"></script>
-
 </html>
