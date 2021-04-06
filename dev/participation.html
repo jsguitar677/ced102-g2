@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./css/participation.css"> -->
+    <link rel="stylesheet" href="./css/pages/participation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="./js/participation.js"></script>
+</head>
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <div id="join">
+        <div class="cards">
+            <div class="card" id="v"><span>志工</span></div>
+            <div class="card" id="f"><span>捐款</span></div>
+            <div class="card" id="v-f"><span>志工 + 捐款</span></div>
+            <div class="content" id="form-bg">
+                <h3 id="card-title">志工</h3>
+                <form id="form">
+                    <p>您即將參與<span id="act-name">永安漁港淨灘</span>，請填寫以下資訊</p>
+                    <div class="join">
+                        <input type="checkbox" value="join" id="checkbox1"><label for="checkbox1">我要當志工</label><br>
+                    </div>
+                    <div class="donate">
+                        <input type="checkbox" value="donate" id="checkbox2"><label for="checkbox2">我要捐款</label><br>
+                    </div>
+                    <div class="join">
+                        <label>志工姓名</label>
+                        <input type="text" class="long"><br>
+                        <label>聯絡電話</label>
+                        <input type="text" class="long"><br>
+                    </div>
+                    <div class="donate">
+                        <label>捐款金額</label>
+                        <input type="number" name="money" class="long"><br>
+                        <label>信用卡卡號</label>
+                        <input name="credit-card-number1" type="text" maxlength="4"> -
+                        <input name="credit-card-number2" type="text" maxlength="4"> -
+                        <input name="credit-card-number3" type="text" maxlength="4"> -
+                        <input name="credit-card-number4" type="text" maxlength="4"><br>
+                        <label>安全碼</label>
+                        <input name="code" type="text" maxlength="3"><br>
+                        <label>信用卡到期日</label>
+                        <input name="month" type="text" maxlength="2"> /
+                        <input name="year" type="text" maxlength="2"><br><br>
+                    </div>
+                    <button type="submit" class="btn">提交</button>
+                    <div id="cancel">返回重新選擇</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 樣板 footer -->
+    @@include('./layout/footer.html')
+    <script src="./js/login.js"></script>
+</body>
+</html>
