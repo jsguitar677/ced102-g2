@@ -141,6 +141,7 @@ div.title-block {
    //    position: absolute;
    margin-top: 10px;
    margin-left: 10px;
+   
    h1.title {
        font-size: 20px;
        color: #1d1e4c;
@@ -150,6 +151,7 @@ div.title-block {
       margin: 0 5px 0 0;
        writing-mode: vertical-rl;
        text-orientation: sideways;
+       margin: 0;
    }
 }
 
@@ -170,10 +172,11 @@ div.title-block {
       // display: inline-block;
       vertical-align: top;
       position: relative;
+      // padding: 0 0 0 35px;
       
       div.card{
          // border: 1px solid ;
-         margin: 20px auto;
+         margin: 20px 30px;
          box-shadow: $box-shadow;
          border-radius: $borderRadius;
          @media (min-width:992px) and (max-width:1199px){
