@@ -62,670 +62,1182 @@ body > * {
 }
 
 body {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 body header {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  position: fixed;
-  top: 0;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-size: 0;
-  width: 100%;
-  z-index: 50;
-  background-color: white;
-}
-
-body header nav {
-  height: 66px;
+  height: 50px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 0px 30px;
-  position: relative;
+  width: 100%;
+  top: 0px;
+  z-index: 5;
+}
+
+body header div#SlideNav {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 2000px;
+  z-index: 2;
+  background-color: rgba(255, 210, 65, 0.7);
+}
+
+body header div#All_BgBtnList {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #56daae;
+  right: 2000px;
+  transition: all .6s;
+}
+
+body header div#All_BgBtnList ul {
+  list-style-type: none;
+  padding: 0px;
+  padding-top: 50px;
+  height: calc(100vh - 50px);
   display: flex;
-  justify-content: space-between;
-  background-color: #07082E;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0;
 }
 
-body header nav div#lftUl {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 66px;
+body header div#All_BgBtnList ul li {
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 100%;
+  background-color: blanchedalmond;
 }
 
-body header nav div#lftUl ul {
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-  justify-content: space-between;
+body header div#All_BgBtnList ul li:first-child {
+  background-image: url("./img/maxResDefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-body header nav div#lftUl ul li {
-  display: inline-block;
-  font-size: 15px;
-  vertical-align: bottom;
-  transition: all 1s ease;
-  line-height: 66px;
-  color: #FFFFFF;
+body header div#All_BgBtnList ul li:nth-child(2) {
+  background-image: url("./img/PeopleFriendsPickingUpTrash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-body header nav div#lftUl ul li:nth-child(n+1) {
-  margin-left: 40px;
+body header div#All_BgBtnList ul li:nth-child(3) {
+  background-image: url("./img/plastic234205_128.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
 }
 
-body header nav div#lftUl ul li:hover img {
-  opacity: 1;
-  transform: rotate(360deg) scale(1.5);
+body header div#All_BgBtnList ul li:last-child {
+  background-image: url("./img/seagull5320726128.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-body header nav div#lftUl ul li a {
-  margin-right: 5px;
-  color: #07082E;
+body header div#All_BgBtnList ul li a {
+  font-size: 60px;
+  color: white;
+  text-decoration: none;
+  padding: 82px 0px;
 }
 
-body header nav div#lftUl ul li a:hover {
+body header div#All_BgBtnList ul li a:hover {
   color: #FFD241;
 }
 
-body header nav div#lftUl ul li img {
-  opacity: 0;
-  transition: all .5s ease;
-  width: 20px;
-  margin-left: 3px;
+body header div#All_BgBtnList ul li a:hover span {
+  transition: all .3s;
 }
 
-body header nav div#lftUl ul li:first-child {
-  margin-left: 0;
+body header div#All_BgBtnList ul li a:hover span:last-child {
+  border-bottom: 8px solid #FFD241;
 }
 
-body header div#navlogo {
-  display: inline-block;
-  height: 66px;
-  position: relative;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+body header div#All_BgBtnList {
+  height: 100vh;
+  width: 100vw;
+  border: 10px solid ridge;
 }
 
-body header div#navlogo img {
-  height: 66px;
-  vertical-align: center;
-}
-
-body header div#rgtUl {
-  display: inline-block;
-  line-height: 66px;
-  vertical-align: top;
-}
-
-body header div#rgtUl ul {
+body header nav {
+  top: 0;
+  height: 50px;
+  width: 100%;
   display: flex;
-  flex: row nowrap;
-  list-style: none;
-  padding: 0;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
-body header div#rgtUl ul li {
-  font-size: 15px;
-  align-content: center;
-  padding-right: 30px;
+body header nav div#All_BgBtn {
+  width: 35px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 3;
 }
 
-body header div#rgtUl ul li:nth-child(3) {
+body header nav div#All_BgBtn div {
+  width: 30px;
+  height: 2px;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+}
+
+body header nav div#All_BgBtn div:first-child {
+  top: 17px;
+}
+
+body header nav div#All_BgBtn div:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body header nav div#All_BgBtn div:last-child {
+  bottom: 16px;
+}
+
+body header nav div#All_BgBtn div:nth-child(n) {
+  transition: all .4s;
+}
+
+body header nav div.BgBtnClickedEffect div:first-child {
+  transform: rotate(45deg) translateY(10px);
+}
+
+body header nav div.BgBtnClickedEffect div:nth-child(2) {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+body header nav div.BgBtnClickedEffect div:last-child {
+  transform: rotate(315deg) translateY(-10px);
+}
+
+body header nav div#All_Logo {
+  height: 50px;
+}
+
+body header nav div#All_Logo img {
+  height: 50px;
+}
+
+body header nav div#All_Logo svg {
+  height: 50px;
+}
+
+body header nav div#All_Logo svg .st0 {
+  transition: all .5s;
+}
+
+body header nav div#All_RList {
+  display: flex;
+  align-items: center;
+}
+
+body header nav div#All_RList ul {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+}
+
+body header nav div#All_RList ul li {
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body header nav div#All_RList ul li:first-child {
+  padding-top: 0px;
+}
+
+body header nav div#All_RList ul li:last-child {
   padding-right: 0px;
 }
 
-body header div#rgtUl ul li i.fwIcon {
-  vertical-align: baseline;
-}
-
-body header a {
+body header nav div#All_RList ul li a {
   text-decoration: none;
   cursor: pointer;
-  color: #07082E;
 }
 
-body header a:hover {
-  color: #EF4325;
+body header nav div#All_RList ul li a i {
+  color: white;
+  font-size: 16px;
+  line-height: 15px;
 }
 
-body header i.fwIcon {
-  vertical-align: text-top;
-  font-size: 15px;
+body header nav div#All_RList ul li img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
-body div#page1 {
-  height: calc(100vh - 66px);
-  position: fixed;
-  z-index: 100;
+body header nav div#All_RList ul li span {
+  color: white;
 }
 
-body div#page1 div#lightbox {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  font-size: 0;
+body div#Page1Test {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("../img/seagull5320726128.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 50px);
+  padding-top: 50px;
 }
 
-body div#page1 div#lightbox div#logWrapper {
-  font-size: 0;
-  width: 50%;
-  height: 70%;
-  min-height: 435px;
-  min-width: 320px;
+body div#Page1Test h1 {
+  margin-top: 0px;
+}
+
+body div#Page2Test {
+  height: 100vh;
+  background-color: chartreuse;
+}
+
+ul#All_BgBtnListIt li {
+  position: relative;
+  z-index: 2;
+}
+
+ul#All_BgBtnListIt li > span {
+  color: #FFFFFF;
+  writing-mode: vertical-lr;
+  font-size: 72px;
   position: absolute;
-  vertical-align: top;
-  left: 50%;
+  left: 13%;
+}
+
+ul#All_BgBtnListIt li a {
+  font-size: 60px;
+}
+
+ul#All_BgBtnListIt li a span:first-child {
+  writing-mode: vertical-lr;
+  position: absolute;
+  left: 15%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
-  color: #1d1e4c;
-  background-color: #f2f2f2;
-  background-image: linear-gradient(#ccb0ac, #8b7b5d);
+  transform: translateY(-50%);
+}
+
+ul#All_BgBtnListIt li a span:last-child {
+  position: absolute;
+  left: 39%;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 100%;
+}
+
+ul#All_BgBtnListIt li:hover {
+  background-image: url("../img/maxResDefault.jpg"), rgba(0, 210, 140, 0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.dialogOpen {
   overflow: hidden;
 }
 
-body div#page1 div#lightbox div#logWrapper button:focus {
-  outline: 0;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel {
-  width: 160%;
-  height: 100%;
-  position: relative;
-  font-size: 0;
-  top: 0;
-  left: 0;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon {
-  display: inline-block;
-  padding: 10px auto;
-  width: calc(100%*0.6/1.6);
-  margin: 0 auto;
-  height: 100%;
-  font-size: 0;
-  background-image: url("../../img/logo3.png"), linear-gradient(#ccb0ac, #8b7b5d);
-  background-position: center center, center center;
-  background-size: 35%, cover;
-  background-repeat: no-repeat, no-repeat;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon h3 {
-  text-align: center;
-  font-size: 18px;
-  padding-top: 30px;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm {
-  font-size: 15px;
-  padding: 0% 15%;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label input {
+div#wholeScreenOverlay, div.wholeScreenOverlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  position: absolute;
   width: 100%;
-  margin-bottom: 5%;
+  height: 100vh;
+  transition: all .5s;
+  z-index: 6;
+}
+
+div#wholeScreenOverlay div.LogModalFakeSIze, div.wholeScreenOverlay div.LogModalFakeSIze {
+  font-size: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc((1/.6)*290px + 40px);
+  background-color: #FFD241;
+  padding-right: 30px;
+}
+
+div#wholeScreenOverlay div.yellowLeftBar h3 {
+  margin: 0px;
+  padding: 0px;
+}
+
+div#wholeScreenOverlay div.yellowLeftBar p {
+  margin-bottom: 0px;
+}
+
+div.blackMinorPart {
+  width: calc(40% -3 0px);
+}
+
+div.blackMinorPart h3 {
+  font-size: 28px;
+  margin-top: 0px;
+}
+
+div.blackMinorPart p {
+  font-size: 15px;
+}
+
+div.blackMinorPart h4 {
+  font-size: 18px;
+}
+
+.yellowBotBar {
+  border-bottom: 8px solid #FFD241;
+}
+
+div.LogCloseBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid black;
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  cursor: pointer;
+}
+
+div.LogCloseBtn div.LogCloseBtnLine1 {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 25px;
+  height: 3px;
+}
+
+div.LogCloseBtn div.LogCloseBtnLine2 {
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(315deg);
+  width: 25px;
+  height: 3px;
+}
+
+div.yellowSidePart {
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  background-color: #FFD241;
+  top: 0;
+  right: 30px;
+  z-index: -2;
+}
+
+div.blackMinorPart {
+  color: white;
+  background-color: black;
+  width: calc(40% - 30px);
+}
+
+div.LogModalTrueSIze {
+  font-size: 0px;
+  background-color: #fff;
+  display: flex;
+  color: white;
+  height: 100%;
+}
+
+@media all and (max-width: 660px) {
+  div#wholeScreenOverlay div.LogModalFakeSIze {
+    width: 60%;
+    top: 51%;
+    min-width: 290px;
+  }
+  div#wholeScreenOverlay div.LogModalTrueSIze {
+    flex-direction: column;
+    width: 100%;
+  }
+  div#wholeScreenOverlay div.LogModalTrueSIze div.yellowLeftBar p {
+    display: none;
+  }
+  div#wholeScreenOverlay div.whiteMainPart {
+    width: 100% !important;
+  }
+  div#wholeScreenOverlay div.whiteMainPart h2 {
+    font-size: 22px;
+    margin: 15px 0px;
+  }
+  div#wholeScreenOverlay div.whiteMainPart form div label {
+    font-size: 15px;
+  }
+  div#wholeScreenOverlay div.blackMinorPart {
+    width: 100%;
+    padding-top: 10px;
+  }
+  div#wholeScreenOverlay h4#RegToLog {
+    margin: 10px 0px 15px;
+  }
+}
+
+@media all and (max-width: 410px) {
+  div#wholeScreenOverlay div.LogModalFakeSIze {
+    left: 44%;
+    min-width: 269px;
+  }
+  div#wholeScreenOverlay div.whiteMainPart form input {
+    padding: 5px 5px;
+    width: 200px;
+  }
+  div#wholeScreenOverlay div.whiteMainPart form input#BirthYear {
+    width: 200px !important;
+  }
+  div#wholeScreenOverlay div.whiteMainPart input#logCertificationNme {
+    width: 106px;
+    margin-right: 6px;
+  }
+}
+
+div.blackMinorPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+}
+
+div.blackMinorPart h3, div.blackMinorPart p, div.blackMinorPart h4 {
+  display: inline-block;
+}
+
+.transformLogReg {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  padding: 5px 0px;
+}
+
+.transformLogReg div {
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: #FFD241;
+  transition: all .5s;
+  transform: scaleY(1);
+}
+
+.transformLogReg:hover div {
+  transform: scaleY(9);
+  z-index: -1;
+  transform-origin: 0% 50%;
+}
+
+div.whiteMainPart {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0px;
+  width: 60%;
+}
+
+div.whiteMainPart form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.whiteMainPart form div {
+  margin-bottom: 10px;
+}
+
+div.whiteMainPart form div label {
+  display: block;
+}
+
+div.whiteMainPart form div input#logCertificationNme {
+  margin-right: 28px;
+}
+
+div.whiteMainPart h2 {
+  font-size: 28px;
+}
+
+div.whiteMainPart label {
+  font-size: 18px;
+}
+
+label#IAgreeLabel, label.ModalRadioStyle {
+  font-size: 13px !important;
+  margin-bottom: 10px;
+}
+
+button.LogModalLowestBtn {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  margin-bottom: 15px;
+  background-color: #FFD241;
+  color: "";
+}
+
+button#RegSendCertificationCode {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  color: white;
+  padding: 0 12px;
+}
+
+.logRegModalShow {
+  display: block !important;
+}
+
+div#wholeScreenOverlay2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 6;
+  z-index: 6;
+}
+
+div#wholeScreenOverlay2 div#LogOutCheckModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  background-color: #fff;
+  transition: all .5s;
+}
+
+div#wholeScreenOverlay2 div.LogOutCheckModalBlack {
+  width: 100%;
+  height: 30px;
+}
+
+div.LogOutCheckModalConfirmContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-left: 30px solid #181919;
+}
+
+div.LogOutCheckModalConfirmContent p {
+  font-size: 22px;
+  border-left: 8px solid #FFD241;
+}
+
+div.LogOutCheckModalConfirmContent button#LogConfirmY {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  margin-right: 30px;
+  color: #fff;
+  padding: 0px 25px;
+}
+
+div.LogOutCheckModalConfirmContent button#LogConfirmN {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  background-color: #FFD241;
+  padding: 0px 25px;
+}
+
+div#wholeScreenOverlay3 {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 6;
+  z-index: 6;
+  transition: all .5s;
+}
+
+div#wholeScreenOverlay3 div#LogInModal {
+  position: absolute;
+  left: 47%;
+  top: 50%;
+  height: 530px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: calc((1/0.6)*290px + 35px);
+}
+
+div#wholeScreenOverlay3 div.blackMinorPart div.yellowLeftBar h3 {
+  margin: 0px !important;
+  padding: 0px  !important;
+}
+
+div#wholeScreenOverlay3 div.blackMinorPart div.yellowLeftBar p {
+  margin: 15px 0px 0px;
+}
+
+button.LowestBtn {
+  margin-bottom: 10px;
+}
+
+button#LogInModalLogInBtn {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  background-color: #FFD241;
+  margin-top: 10px;
+}
+
+p#ForgetPsw, p.ModalRedAlert {
+  color: #EF4325;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+div.whiteMainPart2 {
+  box-sizing: border-box;
+}
+
+div.yellowDecoBar {
+  position: absolute;
+  background-color: #FFD241;
+}
+
+div.DecoSide {
+  height: 100%;
+  width: 20px;
+  left: 0px;
+  top: 0px;
+}
+
+div.DecoBot {
+  width: 100%;
+  height: 20px;
+  bottom: 0px;
+  left: 0px;
+}
+
+div.whiteMainPart2 {
+  position: relative;
+}
+
+input {
   padding: 5px 10px;
 }
 
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember {
-  width: 100%;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm label#remember input {
-  width: auto;
-  margin: 10% 5px 10% 0px;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon form#logForm button {
-  width: 100%;
-  border-radius: 15px;
-  background-color: #1d1e4c;
-  color: #f2f2f2;
+h4#LogToReg {
   font-size: 15px;
+}
+
+div#wholeScreenOverlay4 {
+  z-index: 6;
+}
+
+div#wholeScreenOverlay4 div#ForgetModal {
+  display: flex;
+  width: calc((1/.6)*290px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 530px;
+}
+
+div#wholeScreenOverlay4 div#ForgetModal button#SendPswToMailBtn {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
   cursor: pointer;
-  margin-bottom: 10%;
+  padding: 0px 25px;
+  background-color: #FFD241;
 }
 
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signInCon a {
-  display: block;
-  text-align: center;
-  color: #d71212;
-  font-size: 15px;
+div.blackMinorPart4, div.whiteMainPart4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon {
-  display: inline-block;
-  height: 100%;
-  width: calc(100%*0.4/1.6);
-  font-size: 0;
-  vertical-align: top;
-  text-align: center;
-  color: #f2f2f2;
-  background-color: #1d1e4c;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon h3 {
-  font-size: 18px;
-  padding-top: 30px;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon ul li {
-  font-size: 15px;
-  margin-bottom: 5%;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpFCon button#signRegFake {
-  border-radius: 15px;
-  background-color: #1d1e4c;
-  color: #f2f2f2;
-  margin-top: 10%;
-  width: 50%;
-  cursor: pointer;
-  border: 1px solid #f2f2f2;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon {
-  font-size: 0;
-  vertical-align: top;
-  display: inline-block;
-  height: 100%;
-  width: calc(100%*0.6/1.6);
-  text-align: center;
-  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
-  background-position: center center, center center;
-  background-size: 35%, cover;
-  background-repeat: no-repeat, no-repeat;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon h3 {
-  font-size: 18px;
-  margin-bottom: 1%;
-  padding-top: 30px;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form {
-  padding: 0% 15%;
-  font-size: 15px;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div {
-  text-align: left;
-  width: 100%;
-  margin-bottom: 2%;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div label {
-  display: block;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon form div input {
-  width: 100%;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn {
-  width: 100%;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
-  font-size: 15px;
-  width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn label#regAgreeCheck {
-  display: inline-block;
-  margin: 3% auto;
+input#ForgetMemId {
   margin-bottom: 15px;
 }
 
-body div#page1 div#lightbox div#logWrapper div#logCarousel div#signUpCon div#regBtn button {
-  border-radius: 15px;
-  color: #f2f2f2;
-  background-color: #EF4325;
-  font-size: 15px;
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-  margin-top: 1%;
-  cursor: pointer;
-  border: none;
-}
-
-body div#page1 div#lightbox div#logWrapper div#closeBtn {
-  width: 27px;
-  height: 27px;
-  position: absolute;
-  right: 10px;
-  top: 8px;
-  border-radius: 50%;
+.ModalRedAlert {
   cursor: pointer;
 }
 
-body div#page1 div#lightbox div#logWrapper div#closeBtn:hover svg {
-  transform: rotate(180deg);
+div#wholeScreenOverlay5 {
+  z-index: 6;
 }
 
-body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanOne {
-  width: calc(27px - 9px);
-  height: 2px;
-  display: inline-block;
-  background-color: #f2f2f2;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+div#wholeScreenOverlay5 h2 {
+  margin-bottom: 0px;
+}
+
+div#wholeScreenOverlay5 div#ModifiedModal {
+  width: calc((1/.6)*290px);
   position: absolute;
-}
-
-body div#page1 div#lightbox div#logWrapper div#closeBtn span#closeSpanTwo {
-  width: calc(27px - 9px);
-  height: 2px;
-  display: inline-block;
-  background-color: #f2f2f2;
-  position: absolute;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-body div#page2 {
-  height: 100vh;
-  background-color: chartreuse;
-}
-
-body div#page3 {
-  background-color: cornflowerblue;
-  height: 100vh;
-}
-
-svg#closeBtnBorderSvg {
-  transition: all .5s;
-}
-
-body div#page1 div#lightbox2 {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.6);
-  white-space: nowrap;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  font-size: 0;
-  opacity: 0;
-  transition: all .8s;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 {
-  font-size: 0;
-  width: 50%;
-  height: 70%;
-  min-height: 435px;
-  min-width: 320px;
-  position: absolute;
-  vertical-align: top;
   left: 50%;
-  top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 15px;
-  color: #1d1e4c;
-  background-color: #f2f2f2;
-  background-image: linear-gradient(#ccb0ac, #8b7b5d);
-  overflow: hidden;
+  height: 530px;
+  display: flex;
 }
 
-body div#page1 div#lightbox2 div#logWrapper2 button:focus {
-  outline: 0;
+div#wholeScreenOverlay5 div#ModifiedModal p.ModalRedAlert {
+  margin: 0px;
+  cursor: text;
 }
 
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 {
-  width: 160%;
-  height: 100%;
+div.whiteMainPart5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.whiteMainPart5 p.ModalRedAlert {
+  margin: 10px 0px !important;
+}
+
+#All_RListUL {
+  display: flex;
+  align-items: center;
+}
+
+#All_RListUL li#LogInMemIdPhoto {
+  padding-top: 5px !important;
+  border: 1px solid !important;
+  margin-bottom: 0px !important;
+}
+
+#All_RListUL li#All_RListUL_lastLi {
   position: relative;
-  font-size: 0;
-  top: 0;
-  left: 0;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 {
-  display: inline-block;
-  padding: 10px auto;
-  width: calc(100%*0.6/1.6);
-  margin: 0 auto;
-  height: 100%;
-  font-size: 0;
-  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
-  background-position: center center, center center;
-  background-size: 35%, cover;
-  background-repeat: no-repeat, no-repeat;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 p {
-  color: #EF4325;
-  text-align: center;
-  cursor: pointer;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 h3 {
-  text-align: center;
-  font-size: 18px;
-  padding-top: 30px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 {
-  font-size: 15px;
-  padding: 0% 15%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label input {
-  width: 100%;
-  margin-bottom: 5%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label#remember2 {
-  width: 100%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 label#remember2 input {
-  width: auto;
-  margin: 10% 5px 10% 0px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 form#logForm2 button {
-  width: 100%;
-  border-radius: 15px;
-  background-color: #1d1e4c;
-  color: #f2f2f2;
-  font-size: 15px;
-  cursor: pointer;
-  margin-bottom: 10%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signInCon2 a {
-  display: block;
-  text-align: center;
-  color: #d71212;
-  font-size: 15px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 {
-  display: inline-block;
-  height: 100%;
-  width: calc(100%*0.4/1.6);
-  font-size: 0;
-  vertical-align: top;
-  text-align: center;
-  color: #f2f2f2;
-  background-color: #1d1e4c;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 h3 {
-  padding-top: 30px;
-  font-size: 18px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 ul li {
-  font-size: 15px;
-  margin-bottom: 5%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpFCon2 button#signRegFake2 {
-  border-radius: 15px;
-  background-color: #1d1e4c;
-  color: #f2f2f2;
-  margin-top: 10%;
-  width: 50%;
-  cursor: pointer;
-  border: 1px solid #f2f2f2;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 {
-  font-size: 0;
-  vertical-align: top;
-  display: inline-block;
-  height: 100%;
-  width: calc(100%*0.6/1.6);
-  text-align: center;
-  background-image: url(../../img/logo3.png), linear-gradient(#ccb0ac, #8b7b5d);
-  background-position: center center, center center;
-  background-size: 35%, cover;
-  background-repeat: no-repeat, no-repeat;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
-  color: red;
-  font-size: 18px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 h3 {
-  font-size: 18px;
-  margin-bottom: 1%;
-  padding-top: 30px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 p {
-  font-size: 15px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form {
-  padding: 0% 15%;
-  font-size: 15px;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div {
-  text-align: left;
-  width: 100%;
-  margin-bottom: 2%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div label {
-  display: block;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 form div input {
-  width: 100%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 {
-  width: 100%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 label#regAgreeCheck2 {
-  font-size: 15px;
-  width: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 label#regAgreeCheck2 {
-  display: inline-block;
-  margin: 3% auto;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#logCarousel2 div#signUpCon2 div#regBtn2 button {
-  border-radius: 15px;
-  color: #f2f2f2;
-  background-color: #EF4325;
-  font-size: 15px;
-  width: 70%;
-  display: block;
-  margin: 0 auto;
-  margin-top: 1%;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 {
-  width: 27px;
-  height: 27px;
+#All_RListUL li#All_RListUL_lastLi div#notificationDot {
   position: absolute;
-  right: 10px;
-  top: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  cursor: pointer;
+  background-color: #FFD241;
+  top: -5px;
+  right: -5px;
 }
 
-body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 span#closeSpanOne2 {
-  width: calc(27px - 9px);
-  height: 2px;
-  display: inline-block;
-  background-color: #f2f2f2;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  position: absolute;
-}
-
-body div#page1 div#lightbox2 div#logWrapper2 div#closeBtn2 span#closeSpanTwo2 {
-  width: calc(27px - 9px);
-  height: 2px;
-  display: inline-block;
-  background-color: #f2f2f2;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-body div#page2 {
-  height: 100vh;
-  background-color: chartreuse;
-}
-
-body div#page3 {
-  background-color: cornflowerblue;
-  height: 100vh;
-}
-
-svg#closeBtnBorderSvg2 {
+#All_RListUL i {
   transition: all .5s;
 }
 
-svg#closeBtnBorderSvg2:hover {
-  transform: rotate(180deg);
+@media all and (max-width: 1015px) {
+  ul#All_BgBtnListIt li a span {
+    font-size: 48px;
+  }
 }
 
-body a {
+@media all and (max-width: 975px) {
+  ul#All_BgBtnListIt li a span:first-child {
+    left: 10%;
+  }
+}
+
+@media all and (max-width: 845px) {
+  ul#All_BgBtnListIt li a span {
+    font-size: 38px;
+  }
+}
+
+@media all and (max-width: 750px) {
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 37%;
+  }
+}
+
+@media all and (max-width: 660px) {
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 32%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 26%;
+  }
+}
+
+@media all and (max-width: 510px) {
+  ul#All_BgBtnListIt li a span:first-child {
+    left: 5%;
+  }
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 20%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 18%;
+  }
+}
+
+@media all and (max-width: 460px) {
+  ul#All_BgBtnListIt li a span {
+    font-size: 28px;
+  }
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 25%;
+  }
+}
+
+@media all and (max-width: 382px) {
+  ul#All_BgBtnListIt li a span {
+    font-size: 28px;
+  }
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 18%;
+  }
+}
+
+@media all and (max-width: 382px) {
+  ul#All_BgBtnListIt li a span:first-child {
+    display: none;
+  }
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 30px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  ul#All_BgBtnListIt li a span:last-child {
+    left: 24px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  body header nav div#All_Logo img {
+    width: 150px;
+  }
+  body header {
+    padding: 0px 15px;
+  }
+}
+
+ul#AccountList {
+  position: absolute;
+  right: 0px;
+  opacity: 0;
+  list-style-type: none;
+  background-color: #fff;
+  padding-left: 0px;
+  width: 230px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  transition: .5s all;
+  border: 1px solid;
+}
+
+ul#AccountList li {
+  margin-bottom: 10px;
+}
+
+ul#AccountList li:last-child, ul#AccountList li:first-child {
+  padding-bottom: 0px;
+}
+
+ul#AccountList li:first-child {
+  margin-top: 20px;
+}
+
+ul#AccountList li:first-child {
+  margin-bottom: 0px;
+}
+
+ul#AccountList a {
   text-decoration: none;
-  color: #1D1E4C;
 }
 
-body a:hover {
-  color: #FFFFFF;
+ul#AccountList li#LogInMemIdPhoto {
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  padding: 5px 25px;
+}
+
+ul#AccountList li#LogInMemIdPhoto img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+ul#AccountList li#LogInMemIdIt span {
+  background-color: #000;
+  color: white;
+}
+
+ul#AccountList li#hrline {
+  width: 100%;
+  height: 3px;
+}
+
+.yellowLeftBar {
+  border-left: 8px solid #FFD241;
+  padding-left: 6px;
+}
+
+div#logCertificationNmeRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+div#logCertificationDis {
+  width: 100%;
+}
+
+.yellowLeftBar2 {
+  border-left: 8px solid #FFD241;
+}
+
+div.flexBoxModel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.flexBoxModel h3 {
+  margin: 0px;
+  border-left: 8px solid #FFD241;
+}
+
+div#flexChange {
+  justify-content: space-around;
+}
+
+div#flexChange h3 {
+  margin-bottom: 0px;
+}
+
+div.whiteMainPart4 {
+  justify-content: center;
+}
+
+div.whiteMainPart4 h2 {
+  margin-bottom: 0px;
+}
+
+div.botEnSmallBar {
+  width: 100%;
+  height: 8px;
+  background-color: #FFD241;
+  transform: scaleX(0.35);
+}
+
+button#ModfiedPswBtn {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  background-color: #FFD241;
+}
+
+h3.paddingWelcomeJoin {
+  padding-left: 6px;
+}
+
+button.createNewAcc {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  background-color: #FFd241;
+}
+
+button#AccountListRegBtn, button#AccountListLogBtn {
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  background-color: #FFD241;
+}
+
+button#AccountListLogBtn {
+  color: white;
+}
+
+span#LogInMemId {
+  padding-left: 10px;
+}
+
+ul.AccountListToggle {
+  top: 50px !important;
+  opacity: 1 !important;
+}
+
+li#GoMemberCenter {
+  margin-top: 10px;
+}
+
+@media all and (max-width: 350px) {
+  div#All_Logo {
+    width: 150px;
+  }
+  svg {
+    width: 150px;
+  }
+}
+
+@media all and (max-width: 620px) {
+  div#LogOutCheckModal {
+    left: 45% !important;
+  }
+  div.LogOutCheckModalConfirmContent {
+    border-left: 25px solid #181919;
+    padding: 15px 0px;
+  }
+}
+
+@media all and (max-width: 380px) {
+  div#wholeScreenOverlay2 div#LogOutCheckModal {
+    width: 260px;
+  }
+}
+
+@media all and (max-width: 380px) {
+  div#wholeScreenOverlay2 div#LogOutCheckModal {
+    width: 260px;
+  }
+}
+
+@media all and (max-width: 608px) {
+  div#wholeScreenOverlay3 div#LogInModal {
+    flex-direction: column;
+    width: 80%;
+  }
+  div#wholeScreenOverlay3 div#LogInModal div#flexChange {
+    padding: 15px 0px;
+  }
+  div#wholeScreenOverlay3 div#LogInModal div.whiteMainPart2, div#wholeScreenOverlay3 div#LogInModal div#flexChange {
+    width: 100%;
+  }
+  div#wholeScreenOverlay3 div#LogInModal div.whiteMainPart2 {
+    order: 1;
+  }
+}
+
+@media all and (max-width: 400px) {
+  div#wholeScreenOverlay3 input#LogInModalMemId, div#wholeScreenOverlay3 input#LogInModalMemPsw {
+    width: 89%;
+  }
+  div#wholeScreenOverlay3 div.yellowDecoBar {
+    background-color: transparent;
+  }
+  div#wholeScreenOverlay3 form div {
+    padding-left: 2px;
+  }
+}
+
+@media all and (max-width: 640px) {
+  div#wholeScreenOverlay4 div#ForgetModal {
+    left: 48%;
+  }
+}
+
+@media all and (max-width: 550px) {
+  div#wholeScreenOverlay4 div#ForgetModal {
+    flex-direction: column;
+    width: 290px;
+  }
+  div#wholeScreenOverlay4 div.blackMinorPart4, div#wholeScreenOverlay4 div.whiteMainPart4 {
+    width: 100%;
+  }
+  div#wholeScreenOverlay4 div.whiteMainPart4 {
+    order: 1;
+  }
+  div#wholeScreenOverlay4 div.blackMinorPart {
+    padding: 15px 0px 0px;
+  }
+}
+
+@media all and (max-width: 375px) {
+  div#wholeScreenOverlay4 div#ForgetModal {
+    left: 45%;
+    width: 273px;
+  }
+}
+
+@media all and (max-width: 695px) {
+  div#wholeScreenOverlay5 div#ModifiedModal {
+    flex-direction: column;
+    width: 350px;
+  }
+  div#wholeScreenOverlay5 div#ModifiedModal div.blackMinorPart5, div#wholeScreenOverlay5 div#ModifiedModal div.whiteMainPart5 {
+    width: 100%;
+  }
+  div#wholeScreenOverlay5 div#ModifiedModal div.blackMinorPart5 {
+    padding: 15px 0px 0px;
+  }
+}
+
+@media all and (max-width: 455px) {
+  div#wholeScreenOverlay5 div#ModifiedModal {
+    left: 45%;
+  }
+}
+
+@media all and (max-width: 404px) {
+  div#wholeScreenOverlay5 div#ModifiedModal {
+    left: 45%;
+    width: 273px;
+  }
+}
+
+input#checkAccountOccupied {
+  width: 90px;
+  border: none;
+  outline: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  height: 30px;
+  cursor: pointer;
+  padding: 0px 25px;
+  padding: 0px;
+  color: white;
+}
+
+input#logMemId {
+  width: 105px;
+  margin-right: 28px;
 }
 
 body div#page2 {
@@ -855,188 +1367,6 @@ button#createAcc2 {
   margin-bottom: 10%;
 }
 
-@media all and (max-width: 1312px) {
-  body header nav div#lftUl {
-    width: 33px;
-  }
-  body header nav div#lftUl div#navBurgerBtn {
-    transition: all .8s;
-    cursor: pointer;
-    width: 33px;
-    height: 43px;
-    overflow: hidden;
-    position: relative;
-    vertical-align: middle;
-    top: 7px;
-  }
-  body header nav div#lftUl div#navBurgerBtn div {
-    background-color: #FFFFFF;
-    width: 25px;
-    height: 3px;
-    position: absolute;
-    border-radius: 3px;
-    transition: all .8s;
-  }
-  body header nav div#lftUl div#navBurgerBtn div:first-child {
-    top: 15px;
-  }
-  body header nav div#lftUl div#navBurgerBtn div:nth-child(2) {
-    top: 24px;
-  }
-  body header nav div#lftUl div#navBurgerBtn div:last-child {
-    bottom: 6px;
-  }
-  body header nav div#lftUl ul {
-    display: flex;
-    flex-direction: column;
-    background-color: #EF4325;
-    justify-content: flex-end;
-    align-items: stretch;
-    color: #FFFFFF;
-    position: relative;
-    top: 23px;
-    left: 2000px;
-    opacity: 0;
-    transition: all .8s;
-  }
-  body header nav div#lftUl ul li {
-    text-align: center;
-    margin-left: 0px !important;
-    background-color: #1E1E1E;
-    width: 320px;
-    padding-left: 20px;
-  }
-  body header nav div#lftUl ul li:hover {
-    background-color: #EF4325;
-    cursor: pointer;
-  }
-  div#closeBtn3 {
-    width: 27px;
-    height: 27px;
-    position: absolute;
-    right: 10px;
-    top: 8px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  div#closeBtn3 span#closeSpanOne3 {
-    width: calc(27px - 9px);
-    height: 2px;
-    display: inline-block;
-    background-color: #f2f2f2;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    position: absolute;
-  }
-  div#closeBtn3 span#closeSpanTwo3 {
-    width: calc(27px - 9px);
-    height: 2px;
-    display: inline-block;
-    background-color: #f2f2f2;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-  }
-  div#lftUl {
-    width: 320px;
-  }
-  div#lftUl ul#navRList li a {
-    color: #FFFFFF;
-  }
-}
-div.closeRotate2 {
-  transform: translateY(-50%) rotate(45deg) !important;
-  transition: all .5s;
-  top: 27px !important;
-}
-
-div.closeRotate3 {
-  transform: translateY(-50%) rotate(135deg) !important;
-  transition: all .5s;
-  bottom: 12px !important;
-}
-
-div.closeRotate1 {
-  display: none !important;
-}
-
-@media all and (max-width: 684px) {
-  span#logStat {
-    display: none;
-  }
-  nav {
-    flex-wrap: wrap;
-  }
-  nav div#navlogo {
-    height: 46px !important;
-    align-self: center;
-  }
-  nav div#navlogo img {
-    height: 46px !important;
-  }
-}
-
-div#logCarousel input, div#logCarousel2 form input {
-  outline: 0;
-  border-radius: 5px;
-  border: none;
-}
-
-div#logCarousel input:focus, div#logCarousel2 form input:focus {
-  border-color: #07082E;
-}
-
-div#logCarousel ::-webkit-input-placeholder, div#logCarousel2 form ::-webkit-input-placeholder {
-  color: #C2C2C2 !important;
-  font-size: 13px !important;
-}
-
-@media all and (max-width: 560px) {
-  div#rgtUl {
-    height: 66px;
-  }
-  div#rgtUl ul li {
-    padding-right: 20px !important;
-  }
-  div#rgtUl ul li:nth-child(3) {
-    padding-right: 0px !important;
-  }
-  body header div#navlogo {
-    width: 161px;
-    height: 30px !important;
-  }
-  body header div#navlogo img {
-    height: 30px !important;
-  }
-  div#navlogo {
-    width: 105px !important;
-  }
-}
-
-@media all and (max-width: 370px) {
-  header nav {
-    padding: 0px 5px !important;
-  }
-}
-
-nav ul li a {
-  color: #FFFFFF !important;
-}
-
-div.social__Icon a {
-  margin-right: 20px;
-}
-
-form#regForm input, form#logForm2 input {
-  padding: 5px 10px;
-}
-
-div#lightbox, div#lightbox2 {
-  transition: .8s all;
-}
-
 div#footerTestPage {
   height: 100vh;
   background-color: navy;
@@ -1045,19 +1375,18 @@ div#footerTestPage {
 div.footerTop {
   color: #FFFFFF;
   text-align: center;
-  background-image: url("../../img/anastasia-taioglou-CTivHyiTbFw-unsplash.jpg");
+  background-image: url("../img/anastasia-taioglou-CTivHyiTbFw-unsplash.jpg");
   background-position: center;
-  padding: 22px 30px 18px;
+  padding: 30px;
 }
 
-div.footerTop h3 {
-  margin-top: 0;
-  padding: 10px;
-  font-size: 48px;
+div.footerTop h6 {
+  margin: 0;
+  margin-top: 50px;
 }
 
-div.footerTop h4 {
-  font-size: 38px;
+div.footerTop .h7 {
+  margin: 30px;
 }
 
 div.footerTop button#FooterRegBtn {
@@ -1070,6 +1399,8 @@ div.footerTop button#FooterRegBtn {
   height: 35px;
   padding: 0px 10px;
   line-height: 35px;
+  width: 200px;
+  margin-bottom: 50px;
 }
 
 .blackBg {
@@ -1106,7 +1437,7 @@ div#footerMiddle #footerMiddleLeft h1 {
 
 div#footerMiddle #footerMiddleLeft h2 {
   color: #FFFFFF;
-  font-size: 60px;
+  font-size: 45px;
   margin: 20px auto 0px;
 }
 
@@ -1157,7 +1488,7 @@ div#footerMiddle div#footerBackTop a {
 }
 
 #footerMiddleRight a {
-  padding: 0px 20px;
+  padding-right: 20px;
 }
 
 #footerMiddleLeft a {
@@ -1194,8 +1525,9 @@ div#footerBottom div#footerIcon {
 }
 
 div#footerBottom div#footerIcon svg {
-  width: 154px;
+  width: 140px;
   font-weight: bold;
+  color: #2A323D;
 }
 
 div#footerBottom div.FooterDarkPattern {
