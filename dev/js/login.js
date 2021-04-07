@@ -371,8 +371,7 @@ window.addEventListener('load',navTlFn)
             if(GeneralModal.textContent =='輸入錯誤請重試'){
                 wholeScreenOverlay3.style.display = 'block';
                 wholeScreenOverlay2.style.display = 'none';
-                document.getElementById('LogInModalMemId').reset() = '';
-                document.getElementById('LogInModalMemPsw').reset() = '';
+                document.getElementById('Overlay3Form').reset();
 
             }
             //您確定要登出嗎?  登入資訊: 照片 & 名稱刪除
@@ -393,12 +392,7 @@ window.addEventListener('load',navTlFn)
         LogRegClsBtn.onclick = function(){
             wholeScreenOverlay.style.display = 'none';
             document.body.style.overflow = 'auto';
-            document.getElementById('logMemName').reset() = '';
-            document.getElementById('BirthYear').reset() = '';
-            document.getElementById('logMemId').reset() = '';
-            document.getElementById('logMemPsw').reset() = '';
-            document.getElementById('logMemPswCheck').reset() = '';
-            document.getElementById('logCertificationNme').reset() = '';
+            document.getElementById('OverlayForm').reset();
         }
 
 
@@ -430,12 +424,8 @@ window.addEventListener('load',navTlFn)
             wholeScreenOverlay.style.display = 'none';
             
             //註冊燈箱資料清除
-            document.getElementById('logMemName').reset() = '';
-            document.getElementById('BirthYear').reset() = '';
-            document.getElementById('logMemId').reset() = '';
-            document.getElementById('logMemPsw').reset() = '';
-            document.getElementById('logMemPswCheck').reset() = '';
-            document.getElementById('logCertificationNme').reset() = '';
+            document.getElementById('OverlayForm').reset();
+
         }
 
 
@@ -452,9 +442,7 @@ window.addEventListener('load',navTlFn)
         LogToReg.onclick = function(){
             wholeScreenOverlay3.style.display = 'none';
             wholeScreenOverlay.style.display = 'block';
-            document.getElementById('LogInModalMemId').reset();
-            document.getElementById('LogInModalMemPsw').reset();
-            document.getElementById('LogInModalRememberMem').reset();
+            document.getElementById('Overlay3Form').reset();
         }
             //登入燈箱 >> 進行登入
         var LogInModalLogInBtn = document.getElementById('LogInModalLogInBtn');
@@ -468,6 +456,9 @@ window.addEventListener('load',navTlFn)
                 console.log('正確');
                 GeneralModal.textContent = 'Jason Fox 歡迎回來!';
                 wholeScreenOverlay2.style.display = 'block';
+                setTimeout(function(){
+                    document.getElementById('wholeScreenOverlay2').style.display = 'none';
+                },1800)
                 wholeScreenOverlay3.style.display = 'none';
                 LogConfirmY.style.display = 'none';
                 LogConfirmN.style.display = 'none';
@@ -475,14 +466,12 @@ window.addEventListener('load',navTlFn)
                 LogInMemId.textContent = 'Jason Fox';
                 document.getElementById('All_RListUL').style.marginTop = '0px';
                 //清除登入燈箱資訊
-                document.getElementById("LogInModalMemId").reset();
-                document.getElementById("LogInModalMemPsw").reset();
+                document.getElementById('Overlay3Form').reset();
                 document.getElementById('AccountListLogBtn').textContent = '登出';
             }else{
                 GeneralModal.textContent = '輸入錯誤請重試'
                 //清除登入燈箱資訊
-                document.getElementById("LogInModalMemId").reset();
-                document.getElementById("LogInModalMemPsw").reset();
+                document.getElementById('Overlay3Form').reset();
                 wholeScreenOverlay3.style.display = 'none';
                 wholeScreenOverlay2.style.display = 'block';
             }
@@ -491,8 +480,7 @@ window.addEventListener('load',navTlFn)
         // 登入燈箱 跳轉到忘記密碼燈箱
         document.getElementById('ForgetPsw').onclick = function(){
                 //清除登入燈箱資訊
-                document.getElementById("LogInModalMemId").reset();
-                document.getElementById("LogInModalMemPsw").reset();
+               document.getElementById('Overlay3Form').reset();
                 //關閉登入燈箱
                 wholeScreenOverlay3.style.display = 'none';
                 //開啟申請忘記密碼燈箱
@@ -512,17 +500,17 @@ window.addEventListener('load',navTlFn)
         var ForgetPswB2LogIn = document.getElementById('ForgetPswB2LogIn');
         var SendPswToMailBtn = document.getElementById('SendPswToMailBtn');
         LogToReg2.onclick = function(){
-            document.getElementById('ForgetMemId').reset();
+            document.getElementById('Overlay4Form').reset();
             document.getElementById('wholeScreenOverlay4').style.display = 'none';
             document.getElementById('wholeScreenOverlay').style.display = 'block';
         }
         ForgetPswB2LogIn.onclick = function(){
-            document.getElementById('ForgetMemId').reset();
+            document.getElementById('Overlay4Form').reset();
             document.getElementById('wholeScreenOverlay4').style.display = 'none';
             document.getElementById('wholeScreenOverlay3').style.display = 'block';
         }
         SendPswToMailBtn.onclick = function(){
-            document.getElementById('ForgetMemId').reset();
+            document.getElementById('Overlay4Form').reset();
             document.getElementById('wholeScreenOverlay4').style.display = 'none';
             document.getElementById('wholeScreenOverlay5').style.display = 'block';
         }
@@ -542,18 +530,14 @@ window.addEventListener('load',navTlFn)
         //點按建立新帳號
         LogToReg5.onclick = function(){
             //清除燈箱資料,跳出修改密碼登箱,回到註冊燈箱
-            document.getElementById('ModifiedPswAcc').reset();
-            document.getElementById('ModifiedOldPsw').reset();
-            document.getElementById('ConfirmNewPsw').reset();
+            document.getElementById('Overlay5Form').reset();
             document.getElementById('wholeScreenOverlay5').style.display = 'none';
             document.getElementById('wholeScreenOverlay').style.display = 'block';
         }
         //點按關閉紐
         var LogRegClsBtn5 = document.getElementById('LogRegClsBtn5');
         LogRegClsBtn5.onclick = function(){
-            document.getElementById('ModifiedPswAcc').reset();
-            document.getElementById('ModifiedOldPsw').reset();
-            document.getElementById('ConfirmNewPsw').reset();
+            document.getElementById('Overlay5Form').reset();
             document.getElementById('wholeScreenOverlay5').style.display = 'none';
         }
         
