@@ -4,7 +4,7 @@
 
 /* ::content-------------------------------------------------------------------------------------- */
 
-body {
+html {
     overflow-x: hidden;
 }
 
@@ -13,9 +13,9 @@ div.yellow-block1 {
     z-index: -1;
     width: 400px;
     height: 200px;
-    background-color: map-get($color-regulation, 'yellow' );
+    background-color: map-get($color-regulation, 'yellow');
     top: 20%;
-    right: 0;
+    float: right;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,800");
@@ -182,7 +182,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 .left-content .layer_top>.subtitle,
 .left-content .layer_top>.number,
 .left-content .layer_top>.description {
-    color: map-get($color-regulation, 'white' );
+    color: map-get($color-regulation, 'white');
 }
 
 .left-content .layer_top>.number {
@@ -197,7 +197,6 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     position: relative;
 }
 
-
 .right-content>.layer_top {
     color: map-get($color-regulation, 'blue');
     padding: 3rem 1rem;
@@ -210,7 +209,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 
 .right-content>.layer_top>.heading {
     margin: 0;
-    font-size:22px;
+    font-size: 22px;
     color: white
 }
 
@@ -234,9 +233,9 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     font-weight: bold;
     text-transform: uppercase;
     overflow: hidden;
-    color: map-get($color-regulation, 'yellow' );
+    color: map-get($color-regulation, 'yellow');
     border-radius: 10px;
-    border: 1px solid map-get($color-regulation, 'yellow' );
+    border: 1px solid map-get($color-regulation, 'yellow');
 }
 
 .nav-button .nav-toggle {
@@ -253,7 +252,7 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
 }
 
 .nav-button.-next {
-    color: map-get($color-regulation, 'yellow' );
+    color: map-get($color-regulation, 'yellow');
     position: absolute;
     bottom: 40%;
     right: 20%;
@@ -264,9 +263,13 @@ input[value="4"]:checked~* [data-scene="4"]+[data-scene] .fact {
     left: 20%;
     bottom: 40%;
 }
+
 @media (max-width: 520px) {
-    .nav-button.-prev {left: 15%;}
+    .nav-button.-prev {
+        left: 15%;
+    }
 }
+
 input[value="1"]:checked~* .-next .nav-toggle:not([for=scene-2]),
 input[value="2"]:checked~* .-next .nav-toggle:not([for=scene-3]),
 input[value="3"]:checked~* .-next .nav-toggle:not([for=scene-4]),
@@ -287,7 +290,7 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     text-transform: uppercase;
     letter-spacing: 2px;
     z-index: 2;
-    color:map-get($color-regulation, 'yellow' );
+    color: map-get($color-regulation, 'yellow');
     font-weight: bold;
     text-shadow: 0 1px 1em rgba(0, 0, 0, 0.4);
 }
@@ -313,7 +316,7 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     display: flex;
     align-items: flex-end;
     overflow: hidden;
-    color: map-get($color-regulation, 'white' );
+    color: map-get($color-regulation, 'white');
     transform: translateY(0.5rem);
 }
 
@@ -337,7 +340,7 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
 .hero {
     grid-row: 1/2;
     grid-column: 3/-1;
-    color: map-get($color-regulation, 'white' );
+    color: map-get($color-regulation, 'white');
 }
 
 .hero>.layer_top {
@@ -359,7 +362,7 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     border: none;
     padding: 1rem;
     background-color: #0D3D4D;
-    color: map-get($color-regulation, 'white' );
+    color: map-get($color-regulation, 'white');
     font-size: 0.6rem;
     font-family: inherit;
 }
@@ -373,7 +376,6 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     max-width: 1200px;
     height: 100%;
     margin-left: 50px;
-    
 }
 
 *,
@@ -382,28 +384,29 @@ input[value="4"]:checked~* .-prev .nav-toggle:not([for=scene-3]) {
     box-sizing: border-box;
     position: relative;
 }
+
 @media (max-width: 1330px) {
     .right-content>.layer_top {
         display: none;
     }
-    .right-content>.layer_top{
+    .right-content>.layer_top {
         display: none;
     }
-    
-    .left-content {     
+    .left-content {
         grid-column: 2/4;
-        position:relative;
+        position: relative;
         // border: 1px solid red;
         text-align: center;
     }
-    .left-content>.layer_top{
+    .left-content>.layer_top {
         display: block;
-        width:100%;
+        width: 100%;
         margin: 0px;
         position: absolute;
         top: 35%;
     }
 }
+
 
 /* 卡片清單 */
 
@@ -541,7 +544,8 @@ div.ah_card_section {
     transition: transform var(--d) var(--e);
     z-index: 1;
 }
-div.top_title{
+
+div.top_title {
     // border: 1px solid red;
     margin: 0px;
     font-size: 12px;
@@ -550,24 +554,27 @@ div.top_title{
     height: 80px;
 }
 
-div.top_title>img{
-    width: 15%; 
+div.top_title>img {
+    width: 15%;
     position: absolute;
     left: 10%;
     top: 25%;
 }
-div.top_title>h1{
+
+div.top_title>h1 {
     font-size: 12px;
     margin: 0;
-    float:left;
+    float: left;
 }
-div.top_title>h2{
+
+div.top_title>h2 {
     font-size: 12px;
     margin: 0;
     position: absolute;
     top: 35%;
     left: 30%;
 }
+
 .content>*+* {
     margin-top: 0.1rem;
 }
@@ -595,8 +602,8 @@ div.top_title>h2{
     font-weight: bold;
     letter-spacing: 0.025rem;
     text-transform: uppercase;
-    color: map-get($color-regulation, 'black' );
-    background-color: map-get($color-regulation, 'yellow' );
+    color: map-get($color-regulation, 'black');
+    background-color: map-get($color-regulation, 'yellow');
     border: none;
     outline: none;
     transition: all 0.5s;
@@ -604,15 +611,14 @@ div.top_title>h2{
 
 .btn:hover {
     background-color: #0d0d0d;
-    color: map-get($color-regulation, 'yellow' );;
-    
+    color: map-get($color-regulation, 'yellow');
+    ;
 }
 
 @media (hover: hover) and (min-width: 1076px) {
     .card:after {
         transform: translateY(0);
     }
-
     .content {
         transform: translateY(calc(100% - 8rem));
     }
@@ -653,7 +659,7 @@ div.top_title>h2{
 
 // 篩選器
 ul.ah_picklist {
-    width: 620px;
+    // width: 620px;
     margin: 0 auto;
     position: absolute;
     left: 60px;
