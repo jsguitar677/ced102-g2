@@ -93,6 +93,8 @@ body{
             @include pc{
                 padding: 30px 0;
                 display: flex;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
             }
             min-width:30%;
@@ -1052,4 +1054,88 @@ div#appMemberBriefIntro{
 }
 .show-text .plusIcon{
     display: none;
+}
+
+
+@media all and (max-width:1024px){
+    main{
+        div.genInfor{
+            div.personBlock {
+                margin-right: 0px;
+                margin-bottom: 15px;
+            }
+            div.cumulativeBlcok {
+                padding-left: 0px;
+                button{
+                    margin-right: 0px;
+                    width: calc(100%/6);
+                }
+            }
+            div#underNoBorder{
+                flex-direction: row;                
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+}
+@media all and (max-width:888px){
+    main{
+        div.genInfor{
+            div.cumulativeBlcok {
+                padding-left: 0px;
+                button{
+                    margin-right: 0px;
+                    width: calc(100%/6);
+                    div.btnDisCon{
+                        justify-content: center;
+                        >span{
+                            >span{
+                                display: none;
+                            }
+                            &:last-child{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:630px){
+    div#underNoBorder{
+        button.tabLinks{
+            padding: 0px 10px;
+        }
+    }
+}
+
+@media all and (max-width:768px){
+    main{
+        div.genInfor{
+            div.personBlock{
+                div.proTopBlock{
+                    button{
+                        bottom: 75px;
+                        left: 165px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:576px){
+    main{
+        div.genInfor{
+            div.personBlock{
+                div.proTopBlock{
+                    button{
+                        left: 135px;
+                    }
+                }
+            }
+        }
+    }
 }
