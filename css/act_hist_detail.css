@@ -1,0 +1,146 @@
+div.article_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 66px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+@media (max-width: 1212px) {
+  div.article_container {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+div.left_part {
+  max-width: 800px;
+}
+
+div.head_line {
+  border-bottom: 5px solid black;
+}
+
+.img_container {
+  text-align: center;
+}
+
+.img_container > img {
+  width: 70%;
+}
+
+div.head_line > h4 {
+  margin: 10px;
+  padding: 0;
+}
+
+div.inner_article1 {
+  margin-top: 20px;
+  max-width: 800px;
+  text-align: center;
+}
+
+div.inner_article1 > p {
+  text-align: left;
+  line-height: 35px;
+  width: 90%;
+}
+
+div.inner_article1 > h3:first-child {
+  text-align: left;
+}
+
+div.inner_article1 > img {
+  width: 70%;
+}
+
+div.right_part {
+  width: 400px;
+  height: 700px;
+  position: sticky;
+  top: 3.5rem;
+}
+
+h2.rp_title {
+  text-align: center;
+  margin: 0%;
+  margin-top: 20px;
+  border-bottom: 5px solid black;
+}
+
+div.rp_pop {
+  width: 100%;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 4fr;
+  text-decoration: none;
+  height: 122px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.37);
+  color: black;
+}
+
+.a {
+  text-decoration: none;
+}
+
+div.rp_pop > H3 {
+  margin: 0;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  margin-left: 5px;
+  margin-bottom: 30px;
+}
+
+div.rp_pop > H4 {
+  margin: 0;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin-left: 5px;
+}
+
+div.rp_pop > img {
+  height: 100px;
+  width: 150px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+div.outer_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+div.bread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(90deg) translateY(-100%);
+  transform-origin: 0 0;
+  line-height: 20px;
+}
+
+div.bread > ul {
+  padding: 10px;
+  line-height: 20px;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  font-family: 'Palatino Linotype';
+}
+
+li.current {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bolder;
+  color: #07082E;
+}
+/*# sourceMappingURL=act_hist_detail.css.map */

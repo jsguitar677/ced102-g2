@@ -70,7 +70,7 @@ body header {
   box-sizing: border-box;
   height: 50px;
   position: fixed;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 0px 30px;
   width: 100%;
   top: 0px;
@@ -1633,4 +1633,249 @@ div#footerBottom div.FooterDarkPattern p {
     font-size: 28px;
   }
 }
-/*# sourceMappingURL=all.css.map */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#join {
+  width: 100%;
+  min-height: calc(100vh - 66px);
+  position: relative;
+  margin-top: 66px;
+}
+
+#join div, #join a, #join p, #join input, #join select, #join form, #join span, #join label {
+  color: #07082E;
+}
+
+#join div.cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.537);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#join div.cards div.card {
+  position: relative;
+  top: -100%;
+  width: calc(100% /3);
+  height: 100%;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background-color: #07082E;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#join div.cards div.card span {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-weight: bolder;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -100%);
+  font-size: 38px;
+  color: #FFFFFF;
+  padding: 0 10px;
+}
+
+#join div.cards div.card span::before {
+  content: '';
+  height: 100%;
+  margin-right: 6px;
+  border-left: 6px solid #FFAE41;
+}
+
+#join div.cards div.content {
+  width: 100vw;
+  min-height: calc(100vh - 66px);
+  padding: 20px 0;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  background-image: url("../../img/indexFront/indexImg10.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: none;
+  flex-wrap: nowrap;
+  align-items: center;
+  opacity: 0;
+}
+
+#join div.cards div.content h3 {
+  width: 40%;
+  font-size: 48px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+#join div.cards div.content h3::before {
+  content: '';
+  height: 90%;
+  margin-right: 8px;
+  border-left: 8px solid #FFAE41;
+}
+
+@media (max-width: 575px) {
+  #join div.cards div.content h3 {
+    font-size: 38px;
+  }
+}
+
+#join div.cards div.content form {
+  width: 60%;
+  min-height: 100%;
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+}
+
+#join div.cards div.content form p {
+  font-size: 22px;
+  margin: 0 auto 30px auto;
+  padding: 15px;
+  width: 60%;
+  text-align: center;
+  background-color: #07082E;
+  color: #FFFFFF;
+}
+
+#join div.cards div.content form p::before {
+  content: '';
+  height: 90%;
+  margin-right: 6px;
+  border-left: 6px solid #FFAE41;
+}
+
+#join div.cards div.content form p span {
+  color: #FFFFFF;
+}
+
+@media (max-width: 575px) {
+  #join div.cards div.content form p {
+    font-size: 18px;
+  }
+}
+
+#join div.cards div.content form div.join, #join div.cards div.content form div.donate {
+  display: none;
+  margin: 0 auto;
+  width: 60%;
+}
+
+#join div.cards div.content form div.join input[type=checkbox], #join div.cards div.content form div.donate input[type=checkbox] {
+  margin: 0 5px 20px 0;
+}
+
+#join div.cards div.content form div.join input[type=text], #join div.cards div.content form div.join input[type=number], #join div.cards div.content form div.donate input[type=text], #join div.cards div.content form div.donate input[type=number] {
+  width: 60px;
+  line-height: 35px;
+  padding: 0 5px;
+  margin: 0 0 6px 0;
+  border: 1px solid #07082E;
+  border-radius: 0px;
+}
+
+@media (max-width: 575px) {
+  #join div.cards div.content form div.join input[type=text], #join div.cards div.content form div.join input[type=number], #join div.cards div.content form div.donate input[type=text], #join div.cards div.content form div.donate input[type=number] {
+    width: 35px;
+    line-height: 22px;
+  }
+}
+
+#join div.cards div.content form div.join label, #join div.cards div.content form div.donate label {
+  margin: 5px 0 0 0px;
+  display: inline-block;
+  width: 100px;
+}
+
+@media (max-width: 575px) {
+  #join div.cards div.content form div.join label, #join div.cards div.content form div.donate label {
+    font-size: 12px;
+    width: 75px;
+  }
+}
+
+#join div.cards div.content form div.join input.long, #join div.cards div.content form div.donate input.long {
+  width: 130px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #join div.cards div.content form p, #join div.cards div.content form div.join, #join div.cards div.content form div.donate {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #join div.cards div.content form p, #join div.cards div.content form div.join, #join div.cards div.content form div.donate {
+    width: 90%;
+  }
+}
+
+#join div.cards div.content form .btn {
+  background-color: #FFD241;
+  color: #FFFFFF;
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#join div.cards div.content form button {
+  display: block;
+  margin: 10px auto;
+}
+
+#join div.cards div.content form div#cancel {
+  text-align: center;
+  color: #EF4325;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  #join div.cards div.content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #join div.cards div.content h3 {
+    width: 100%;
+  }
+  #join div.cards div.content form {
+    width: 90%;
+    min-height: auto;
+  }
+  #join div.cards div.content form p, #join div.cards div.content form div.join, #join div.cards div.content form div.donate {
+    width: 80%;
+  }
+}
+
+@media (max-width: 575px) {
+  #join div.cards div.content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #join div.cards div.content h3 {
+    width: 100%;
+  }
+  #join div.cards div.content form {
+    width: 95%;
+    min-height: auto;
+  }
+  #join div.cards div.content form p, #join div.cards div.content form div.join, #join div.cards div.content form div.donate {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=participation.css.map */

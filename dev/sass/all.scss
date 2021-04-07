@@ -779,7 +779,8 @@ body{
         box-sizing: border-box;
         height: 50px;
         position: fixed;
-        background-color: rgba(0, 0, 0,.5);
+        // background-color: rgba(0, 0, 0,.5);
+        background-color: #fff;
         padding: 0px 30px;
         width: 100%;
         top: 0px;
@@ -823,23 +824,23 @@ body{
                     line-height: 100%;
                     background-color: blanchedalmond;
                     &:first-child{
-                        background-image: url("./img/maxResDefault.jpg");
+                        background-image: url("../../img/maxResDefault.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                     }
                     &:nth-child(2){
-                        background-image: url("./img/PeopleFriendsPickingUpTrash.jpg");
+                        background-image: url("../../img/PeopleFriendsPickingUpTrash.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                     }
                     &:nth-child(3){
-                        background-image: url("./img/plastic234205_128.jpg");
+                        background-image: url("../../img/plastic234205_128.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-position: center right;
                     }
                     &:last-child{
-                        background-image: url("./img/seagull5320726128.jpg");
+                        background-image: url("../../img/seagull5320726128.jpg");
                         background-repeat: no-repeat;
                         background-size: cover;
                     }
@@ -860,6 +861,7 @@ body{
                         
                     }
                 }
+                
             }
         }
         div#All_BgBtnList{
@@ -896,7 +898,7 @@ body{
                     width: 30px;
                     height: 2px;
                     border-radius: 5px;
-                    background-color: white;
+                    background-color: map-get($map: $color_regulation, $key: 'newBlue');
                     position: absolute;
                     
                     &:first-child{
@@ -966,7 +968,7 @@ body{
                             text-decoration: none;
                             cursor: pointer;
                             i{
-                                color: white;
+                                color: #1d1c4c;
                                 font-size: 16px;
                                 line-height: 15px;
                             }
@@ -1048,15 +1050,15 @@ ul#All_BgBtnListIt{
     }
 }
 
-ul#All_BgBtnListIt{
-    li{
-        &:hover{
-            background-image: url("../img/maxResDefault.jpg"), rgba(0,210,140,.5);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    }
-}
+// ul#All_BgBtnListIt{
+//     li{
+//         &:hover{
+//             background-image: url("../img/maxResDefault.jpg"), rgba(0,210,140,.5);
+//             background-repeat: no-repeat;
+//             background-size: cover;
+//         }
+//     }
+// }
 
 body.dialogOpen{
     overflow: hidden;

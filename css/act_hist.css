@@ -23,7 +23,6 @@ div.yellow-block1 {
 }
 
 div.intro {
-  margin-top: 4%;
   font-size: 1rem;
 }
 
@@ -37,7 +36,7 @@ div.intro {
   grid-template-rows: 3fr 2fr;
   grid-template-columns: 4rem 1fr 1fr 5rem;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
   color: #000;

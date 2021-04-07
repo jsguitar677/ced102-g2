@@ -412,113 +412,9 @@ section.NormalProductPage div.content_normalProduct div.container div.all_Bottom
 }
 
 section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  vertical-align: top;
-  text-align: center;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage {
-  text-decoration: none;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct {
-  position: relative;
-  width: 23.4%;
-  margin: 0.68%;
-  margin-bottom: 2%;
-  overflow: hidden;
-  display: inline-block;
-  border-radius: 0px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-  text-align: left;
-}
-
-@media (min-width: 576px) and (max-width: 991px) {
-  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct {
-    width: 45%;
-  }
-}
-
-@media (max-width: 575px) {
-  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct {
-    width: 93%;
-    margin-bottom: 15px;
-  }
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct img {
-  width: 100%;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: #EEEEEE;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 10px;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo:hover button {
-  display: block;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
-  font-size: 15px;
-  font-weight: 550;
-  margin: 0;
-  display: inline-block;
-  margin: 3% 7% 3% 0;
-}
-
-@media (max-width: 450px) {
-  section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo p.NameAndPrice {
-    font-size: 12px;
-  }
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo p.text {
-  font-size: 15px;
-  font-weight: 500;
-  color: #07082E;
-  margin: 10px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo .B {
-  float: right;
-  margin-right: 0;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo button {
-  margin: auto;
-  display: none;
-  margin-bottom: 10px;
-  color: #07082E;
-  background-color: #FFD241;
-  height: 35px;
-  padding: 0;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0 10px;
-  width: 150px;
-  line-height: 35px;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo button p {
-  margin: 0;
-  display: inline-block;
-}
-
-section.NormalProductPage div.content_normalProduct div.container div.all_Bottom div.bottomarea div.bottomareaBoxA a.goToProductPage div.recommendProduct div.productInfo button i {
-  font-size: 18px;
-  padding-right: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 section.NormalProductPage div#NP_lightBox {
@@ -569,5 +465,64 @@ section.NormalProductPage div#NP_lightBox div.NP_showBox img.NP_turnOffBtn {
   position: absolute;
   top: -27px;
   right: -27px;
+}
+
+.product {
+  margin-bottom: 30px;
+  width: 275px;
+}
+
+.product img {
+  width: 275px;
+  height: 275px;
+}
+
+.product .productInfo {
+  color: #07082E;
+  border-left: 8px solid #FFD241;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.product .productInfo p {
+  font-size: 15px;
+  margin: 0;
+  line-height: 36px;
+}
+
+.product .productInfo button {
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  float: right;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
+  color: #07082E;
+  background-color: #FFD241;
+  border: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+  white-space: nowrap;
+  transition: all 0.3s ease 0s;
+}
+
+.product .productInfo button i {
+  display: inline-block;
+}
+
+.product .productInfo button p {
+  opacity: 0;
+  margin: 0;
+  display: none;
+}
+
+.product .productInfo button:hover {
+  transition: all 0.3s ease 0s;
+  width: 150px;
+}
+
+.product .productInfo button:hover p {
+  opacity: 1;
+  display: inline-block;
 }
 /*# sourceMappingURL=NormalProduct_RWD.css.map */

@@ -571,35 +571,35 @@ window.addEventListener('load',navTlFn)
 
     // window.addEventListener('load',scrollSensor);
 
-window.onscroll = function() {
-    scrollFunction();
-};
+// window.onscroll = function() {
+//     scrollFunction();
+// };
 
-function scrollFunction() {
-    var AllSt0 =  document.querySelectorAll('.st0');
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("header").style.backgroundColor = "white";
-        document.getElementById('All_BgBtnIt1').style.backgroundColor = '#1D1C4C';
-        document.getElementById('All_BgBtnIt2').style.backgroundColor = '#1D1C4C';
-        document.getElementById('All_BgBtnIt3').style.backgroundColor = '#1D1C4C';
-        document.getElementsByClassName('fa-user')[0].style.color = '#1D1C4C';
-        document.getElementsByClassName('fa-shopping-cart')[0].style.color = '#1D1C4C';
-        document.getElementsByClassName('fa-bell')[0].style.color = '#1D1C4C';
-        // AllSt0.style.color = 'blue';
-        for(i = 0; i < AllSt0.length; i++){
-            AllSt0[i].style.fill = '#1D1C4C';
-        }
+// function scrollFunction() {
+//     var AllSt0 =  document.querySelectorAll('.st0');
+//     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//         document.getElementById("header").style.backgroundColor = "white";
+//         document.getElementById('All_BgBtnIt1').style.backgroundColor = '#1D1C4C';
+//         document.getElementById('All_BgBtnIt2').style.backgroundColor = '#1D1C4C';
+//         document.getElementById('All_BgBtnIt3').style.backgroundColor = '#1D1C4C';
+//         document.getElementsByClassName('fa-user')[0].style.color = '#1D1C4C';
+//         document.getElementsByClassName('fa-shopping-cart')[0].style.color = '#1D1C4C';
+//         document.getElementsByClassName('fa-bell')[0].style.color = '#1D1C4C';
+//         // AllSt0.style.color = 'blue';
+//         for(i = 0; i < AllSt0.length; i++){
+//             AllSt0[i].style.fill = '#1D1C4C';
+//         }
         
-    } else{
-        document.getElementById("header").style.backgroundColor = "transparent";
-        document.getElementById('All_BgBtnIt1').style.backgroundColor = 'white';
-        document.getElementById('All_BgBtnIt2').style.backgroundColor = 'white';
-        document.getElementById('All_BgBtnIt3').style.backgroundColor = 'white';
-        document.getElementsByClassName('fa-user')[0].style.color = 'white';
-        document.getElementsByClassName('fa-shopping-cart')[0].style.color = 'white';
-        document.getElementsByClassName('fa-bell')[0].style.color = 'white';
-        for(i = 0; i < AllSt0.length; i++){
-            AllSt0[i].style.fill = 'white';
-        }
-    }
-}
+//     } else{
+//         document.getElementById("header").style.backgroundColor = "transparent";
+//         document.getElementById('All_BgBtnIt1').style.backgroundColor = 'white';
+//         document.getElementById('All_BgBtnIt2').style.backgroundColor = 'white';
+//         document.getElementById('All_BgBtnIt3').style.backgroundColor = 'white';
+//         document.getElementsByClassName('fa-user')[0].style.color = 'white';
+//         document.getElementsByClassName('fa-shopping-cart')[0].style.color = 'white';
+//         document.getElementsByClassName('fa-bell')[0].style.color = 'white';
+//         for(i = 0; i < AllSt0.length; i++){
+//             AllSt0[i].style.fill = 'white';
+//         }
+//     }
+// }
