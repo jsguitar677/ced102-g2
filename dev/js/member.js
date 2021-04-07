@@ -130,3 +130,19 @@ new Vue({
         MemberBriefIntroMessage:'',
     },
 });
+
+//  小於一定寬度 按鈕顯示文字縮減
+function resizeBtnTextEnSmall(){
+    var mq = window.innerWidth;
+
+if (mq < 1024) {
+    document.getElementById('ShopSpanEnSmall').textContent = '商城消費';
+    document.getElementById('VolunSpanEnSmall').innerText = '募款與志工'
+    document.getElementById('ActSpanEnSmall').textContent = '活動管理';
+    }else{
+        document.getElementById('ShopSpanEnSmall').textContent = '商城消費紀錄';
+        document.getElementById('VolunSpanEnSmall').innerText = '參與募款與志工紀錄'
+        document.getElementById('ActSpanEnSmall').textContent = '活動發起管理';
+    }
+}
+window.addEventListener('resize',resizeBtnTextEnSmall);
