@@ -481,87 +481,9 @@ section.NormalProductPage{
                         }
                     }
                     div.bottomareaBoxA{
-                        width:100%;
-                        margin:0 auto;
-                        padding:0;
-                        vertical-align: top;
-                        text-align: center;
-                        a.goToProductPage{
-                            text-decoration: none;
-                            div.recommendProduct{
-                                position:relative;
-                                width:23.4%;
-                                margin:0.68%;
-                                margin-bottom:2%;
-                                overflow: hidden;
-                                display:inline-block;
-                                border-radius: $borderRadius;
-                                box-shadow: $box-shadow;
-                                text-align: left;
-                                @media (min-width:576px) and (max-width:991px) {
-                                    width:45%;
-                                }
-                                @media (max-width:575px) {
-                                    width:93%;
-                                    margin-bottom: 15px;
-                                }
-                                img{
-                                    width:100%;
-                                }
-                                div.productInfo{
-                                    &:hover {
-                                        button{
-                                            display: block;
-                                        }
-                                    }
-                                    width: 100%;
-                                    position:absolute;
-                                    bottom:0;
-                                    left:0;
-                                    background-color: map-get($color_regulation,'white-bg' );
-                                    background: hsla(0,0%,100%,.7);
-                                    padding:10px;
-                                    p.NameAndPrice{
-                                        font-size: $p;
-                                        font-weight: 550;
-                                        margin:0;
-                                        display:inline-block;
-                                        margin:3% 7% 3% 0;
-                                        @media (max-width:450px) {
-                                            font-size: 12px; 
-                                        }
-                                    }
-                                    p.text{
-                                        font-size: $p;
-                                        font-weight: 500;
-                                        color:map-get($color_regulation,'blue');
-                                        margin: 10px 0;
-                                        overflow: hidden; 
-                                        text-overflow: ellipsis;
-                                        white-space:nowrap;
-                                    }
-                                    .B{
-                                        float: right;
-                                        margin-right: 0;
-                                    }
-                                    button{
-                                        margin: auto;
-                                        display: none;
-                                        margin-bottom: 10px;
-                                        @include cartIcon();
-                                        p{
-                                            margin: 0;
-                                            display: inline-block;
-                                        }
-                                        i{
-                                            font-size: 18px;
-                                            padding-right: 1px;
-                                        }
-                                        
-                                    }
-                                }
-                            }
-                        }
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
                     }
                 }
             }
@@ -610,3 +532,56 @@ section.NormalProductPage{
     }
 }
 
+
+
+
+.product{
+    margin-bottom: 30px;
+    width: 275px;
+    img{
+        width: 275px;
+        height: 275px;
+    }
+    .productInfo{
+        color:map-get($color-regulation, 'blue' );
+        border-left: 8px solid map-get($color-regulation, "yellow" );
+        padding-left: 10px;
+        margin-top: 10px;
+        p{  
+            font-size: 15px;
+            margin: 0;
+            line-height: 36px;
+        }
+        button{
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            float: right;
+            height: 35px;
+            width:35px;
+            line-height: 35px;
+            color: map-get($color-regulation,'blue');
+            background-color: map-get($color-regulation, 'yellow' );
+            border:none;
+            box-shadow: $box-shadow;
+            white-space:nowrap;
+            transition: all 0.3s ease 0s;
+            i{
+                display: inline-block;
+            }
+            p{  
+                opacity: 0;
+                margin: 0;
+                display: none;
+            }
+            &:hover{
+                transition: all 0.3s ease 0s;
+                width: 150px;
+                p{
+                    opacity: 1;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
