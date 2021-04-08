@@ -127,7 +127,7 @@ window.addEventListener('load',ReceiveCoin);
 new Vue({
     el:'#appMemberBriefIntro',
     data:{
-        MemberBriefIntroMessage:'',
+        MemberBriefIntroMessage:'請輸入簡介讓大家更認識你吧...',
     },
 });
 

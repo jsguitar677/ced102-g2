@@ -2853,3 +2853,8 @@ div#footerBottom{
         font-size: $h5;
     }
 }
+@media all and (max-width:483px){
+    p#footerTurnToBlock{
+        word-wrap: break-word;
+    }
+}

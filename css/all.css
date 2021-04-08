@@ -1648,4 +1648,10 @@ div#footerBottom div.FooterDarkPattern p {
     font-size: 28px;
   }
 }
+
+@media all and (max-width: 483px) {
+  p#footerTurnToBlock {
+    word-wrap: break-word;
+  }
+}
 /*# sourceMappingURL=all.css.map */
