@@ -43,11 +43,12 @@ div.ad_inner_content {
 div.right_pic {
     // border: 1px solid orange;
     width: 600px;
+    text-align: center;
 }
 
 div.right_pic>img {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .content-left {
@@ -216,7 +217,7 @@ div.ad_grid_content>div.ad_box4 {
 
 // 進度條-------------------------------------------------------------------
 .progress-bg {
-    margin-top: 20px;
+    margin-top: 40px;
     width: 95%;
     height: 25px;
     font-weight: bolder;
@@ -393,10 +394,31 @@ div.ad_tab {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    // padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
     vertical-align: middle;
+    margin-right: 50px;
+    position: relative;
+}
+
+.ad_tab button::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: map-get($color-regulation, 'yellow');
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: right;
+    z-index: 5;
+}
+
+.ad_tab button:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 div.outer_link {
@@ -417,14 +439,10 @@ div.outer_link {
     font-weight: 550;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     padding: 0;
-    text-align: center;
+    margin-right: 20px;
+    margin-top: 40px;
     outline: 2px solid map-get($color-regulation, 'yellow');
     outline-offset: 6px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
 }
 
 #share {
@@ -439,12 +457,49 @@ div.outer_link {
     width: 100px;
     color: white;
     background-color: map-get($color-regulation, 'blue');
-    position: absolute;
-    right: 35%;
-    z-index: 1;
 }
 
 #share>h4 {
+    margin: 0;
+    padding: 0;
+}
+
+#join1 {
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    outline: 0;
+    transition: 0.3s;
+    // border: 1px solid green;
+    width: 150px;
+    height: 40px;
+    background-color: map-get($color-regulation, 'yellow');
+    font-weight: 550;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+    padding: 0;
+    margin-right: 20px;
+    margin-top: 40px;
+    outline: 2px solid map-get($color-regulation, 'yellow');
+    outline-offset: 6px;
+    display: none;
+}
+
+#share1 {
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    outline: 0;
+    transition: 0.3s;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+    height: 30px;
+    padding: 0;
+    width: 100px;
+    color: white;
+    background-color: map-get($color-regulation, 'blue');
+    display: none;
+}
+
+#share1>h4 {
     margin: 0;
     padding: 0;
 }
@@ -455,7 +510,7 @@ div.founder {
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 3%;
+    right: 12%;
 }
 
 div.founder>h1 {
@@ -475,14 +530,7 @@ div.founder>h1 {
 }
 
 @media (max-width: 1335px) {
-    #join {
-        position: static;
-        transform: none;
-    }
-    #share {
-        position: static;
-        margin-top: 20px;
-    }
+   
     div.ad_tab {
         justify-content: center;
         align-content: center;
@@ -493,11 +541,19 @@ div.founder>h1 {
     div.founder {
         display: none;
     }
-    div.outer_link {
-        display: none;
-    }
-    .sidetab {
+}
+
+@media (max-width: 1200px){
+    #join1 {
         display: block;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    #share1 {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 40px;
     }
 }
 
@@ -593,13 +649,13 @@ div.banner_box {
     margin: 0 auto;
     height: 50px;
     padding: 10px;
+    text-align: center;
 }
 
 div.banner_box>h1 {
     font-size: 18px;
     margin-top: 10px;
     padding: 0;
-    float: left;
     font-weight: 300;
 }
 
