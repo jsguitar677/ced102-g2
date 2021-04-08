@@ -70,7 +70,7 @@ body header {
   box-sizing: border-box;
   height: 50px;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #fff;
   padding: 0px 30px;
   width: 100%;
   top: 0px;
@@ -1379,7 +1379,7 @@ div#footerTestPage {
 div.footerTop {
   color: #FFFFFF;
   text-align: center;
-  background-image: url("../img/anastasia-taioglou-CTivHyiTbFw-unsplash.jpg");
+  background-image: url("../../img/anastasia-taioglou-CTivHyiTbFw-unsplash.jpg");
   background-position: center;
   padding: 30px;
 }

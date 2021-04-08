@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,800");
 @import url("https://fonts.googleapis.com/css?family=Oswald:500");
 @import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
-body {
+html {
   overflow-x: hidden;
 }
 
@@ -14,7 +14,7 @@ div.yellow-block1 {
   height: 200px;
   background-color: #FFD241;
   top: 20%;
-  right: 0;
+  float: right;
 }
 
 ::-moz-selection {
@@ -154,6 +154,7 @@ input[value="4"]:checked ~ * [data-scene="4"] + [data-scene] .fact {
   grid-row: 2/4;
   grid-column: 2/3;
   max-width: 1200px;
+  position: relative;
 }
 
 .left-content .layer_top {
@@ -295,6 +296,7 @@ input[value="4"]:checked ~ * .-prev .nav-toggle:not([for=scene-3]) {
   font-family: "Oswald", sans-serif;
   font-weight: 500;
   overflow: hidden;
+  position: relative;
 }
 
 .page-numbers {
@@ -331,6 +333,7 @@ input[value="4"]:checked ~ * .-prev .nav-toggle:not([for=scene-3]) {
   grid-row: 1/2;
   grid-column: 3/-1;
   color: #FFFFFF;
+  position: relative;
 }
 
 .hero > .layer_top {
@@ -370,7 +373,6 @@ input[value="4"]:checked ~ * .-prev .nav-toggle:not([for=scene-3]) {
 *:before,
 *:after {
   box-sizing: border-box;
-  position: relative;
 }
 
 @media (max-width: 1330px) {
@@ -639,7 +641,6 @@ div.top_title > h2 {
 }
 
 ul.ah_picklist {
-  width: 620px;
   margin: 0 auto;
   position: absolute;
   left: 60px;

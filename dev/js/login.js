@@ -332,7 +332,16 @@ window.addEventListener('load',navTlFn)
         var LogInMemIdPhoto = document.getElementById('LogInMemIdPhoto');
         //點按人形註冊圖示開啟帳戶選單燈箱(由上方往下彈出)
         Log_RegBtn.onclick = function(){
-           AccountList.classList.toggle('AccountListToggle');
+        //    AccountList.classList.toggle('AccountListToggle');
+            if(AccountList.style.display == 'none'){
+                AccountList.style.display = 'flex';
+                AccountList.style.opacity = 1;
+                return false;
+            }else{
+                AccountList.style.display ='none';
+                AccountList.style.opacity = 0;
+                return false;
+            }
         }
 
         //在  "帳戶選單燈箱"  點按開啟  "註冊燈箱"
@@ -352,14 +361,16 @@ window.addEventListener('load',navTlFn)
             //目前為登入狀態時
         AccountListLogBtn.onclick = function(){
             var LogInMemId = document.getElementById('LogInMemId');
-            if(LogInMemId.textContent != ''){
+            if(LogInMemId.textContent != ''){//狀態: 已登入欲登出
                 
                 wholeScreenOverlay2.style.display = 'block';
                 document.getElementById('GeneralModal').textContent = '您確定要登出嗎?';
                 document.getElementById('LogConfirmY').style.display = 'inline';
                 document.getElementById('LogConfirmN').style.display = 'inline';
-            }else{
+                document.body.style.overflow = 'hidden';
+            }else{//狀態:未登入欲登入
                 wholeScreenOverlay3.style.display = 'block';
+                document.body.style.overflow = 'hidden';
             }
         }
 
@@ -383,7 +394,9 @@ window.addEventListener('load',navTlFn)
                 document.body.style.overflow = 'auto';
                 // All_RListUL.style.marginTop = '0px';
                 AccountListLogBtn.textContent = '登入';
-                document.getElementById('AccountList').classList.toggle('AccountListToggle');
+                AccountList.style.display = 'none';
+                AccountList.style.opacity = '0';
+                // document.getElementById('AccountList').classList.toggle('AccountListToggle');
             }
         }
 
@@ -468,6 +481,11 @@ window.addEventListener('load',navTlFn)
                 //清除登入燈箱資訊
                 document.getElementById('Overlay3Form').reset();
                 document.getElementById('AccountListLogBtn').textContent = '登出';
+                //關閉註冊圖示顯示div
+                AccountList.style.display = 'none';
+                AccountList.style.opacity = '0';
+                //解鎖螢幕
+                document.body.style.overflow = 'auto';
             }else{
                 GeneralModal.textContent = '輸入錯誤請重試'
                 //清除登入燈箱資訊
@@ -587,3 +605,11 @@ window.addEventListener('load',navTlFn)
 //         }
 //     }
 // }
+
+// ==================  Footer 註冊鈕
+function FooterRegFn(){
+    document.getElementById('wholeScreenOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('FooterRegBtn').addEventListener('click',FooterRegFn);
