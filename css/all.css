@@ -961,14 +961,14 @@ div.whiteMainPart5 p.ModalRedAlert {
 }
 
 ul#AccountList {
-  position: fixed;
-  top: 50px;
+  position: absolute;
   right: 0px;
   opacity: 0;
   list-style-type: none;
   background-color: #fff;
   padding-left: 0px;
   width: 230px;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   margin: 0px;
@@ -1118,6 +1118,7 @@ span#LogInMemId {
 }
 
 ul.AccountListToggle {
+  top: 50px !important;
   opacity: 1 !important;
   display: inline-flex !important;
   transition: all 1s;

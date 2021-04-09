@@ -333,13 +333,18 @@ window.addEventListener('load',navTlFn)
         //點按人形註冊圖示開啟帳戶選單燈箱(由上方往下彈出)
         Log_RegBtn.onclick = function(){
         //    AccountList.classList.toggle('AccountListToggle');
-            if(AccountList.style.display == 'none'){
-                AccountList.style.display = 'flex';
+            if(AccountList.style.top == '-200px'){
                 AccountList.style.opacity = 1;
+                AccountList.style.top = '50px';
+                AccountList.style.transition = 'all .5s';
+                // AccountList.classList.toggle('AccountListToggle');
                 return false;
             }else{
-                AccountList.style.display ='none';
                 AccountList.style.opacity = 0;
+                AccountList.style.top = '-200px';
+                AccountList.style.transition = 'all .5s';
+
+                // AccountList.classList.toggle('AccountListToggle');
                 return false;
             }
         }
