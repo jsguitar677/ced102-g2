@@ -145,4 +145,39 @@ if (mq < 1024) {
         document.getElementById('ActSpanEnSmall').textContent = '活動發起管理';
     }
 }
-window.addEventListener('resize',resizeBtnTextEnSmall);
+window.addEventListener('load',resizeBtnTextEnSmall);
+
+// 寬度小於650px >> "領取環保幣"字樣縮減至"領取" // 大於650px >> 回復
+function receiveCoinTextReduce(){
+    var ScreenWidth = window.innerWidth;
+    var textWidth = document.getElementsByClassName('comBtn2');
+    if(ScreenWidth < 650){
+        for(let i = 0; i < textWidth.length; i++){
+            textWidth[i].innerText = '領取';
+            }
+        }
+    else{
+        for(let i = 0; i < textWidth.length; i++){
+            textWidth[i].textContent = '領取50環保幣';
+        }
+    }
+}
+
+window.addEventListener('resize',receiveCoinTextReduce);
+//募款與志工活動連結按鈕字樣縮減
+function AttendEnSmallBtnTxt(){
+    var ScreenWidth = window.innerWidth;
+    var textWidth = document.getElementsByClassName('ActLink');
+    if(ScreenWidth < 574){
+        for(let i = 0; i < textWidth.length; i++){
+            textWidth[i].innerText = '連結';
+            }
+        }
+    else{
+        for(let i = 0; i < textWidth.length; i++){
+            textWidth[i].textContent = '活動連結';
+        }
+    } 
+}
+window.addEventListener('resize',AttendEnSmallBtnTxt);
+

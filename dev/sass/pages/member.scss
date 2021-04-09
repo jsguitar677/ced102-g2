@@ -1138,3 +1138,122 @@ div#appMemberBriefIntro{
         }
     }
 }
+
+
+
+@media all and (max-width:470px){
+    body{
+        main{
+            .memberContent{
+                .expContent{
+                    .expExchange{
+                        width: 95%;
+                        .excBlcok{
+                            &::after{
+                                left: 13%;
+                            }
+                            .expPart{
+                                padding: 1px 0px 6px 20px;
+                                &::after{
+                                    left: -31px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width:344px){
+    body{
+        main{
+            .memberContent{
+                .expContent{
+                    .expExchange{
+                        .excBlcok{
+                            .expPart{
+                                width: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media all and (max-width:382px){
+    #orderRecord .orderBlock .page3FormBox{
+        padding: 30px 15px;
+    }
+
+}
+
+@media all and (max-width:820px){
+    .participateRecordCon{
+        width: 95%;
+    } 
+}
+
+@media all and (max-width:655px){
+    div#participateRecord{
+        div.participateRecordCon{
+            table.participateRecordTable{
+                .comBtn{
+                    padding: 0px 10px;
+                }
+            }
+        }
+    }
+    div#eventManagement{
+        .comBtn{
+            padding: 0px 10px;
+        }
+    }
+}
+
+@media all and (max-width:470px){
+    div#participateRecord{
+        div.participateRecordCon{
+            table.participateRecordTable{
+                .comBtn{
+                    padding: 0px 5px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width:440px){
+    #memPage{
+        padding: 30px 10px;
+    }
+}
+
+@media all and (max-width:500px){
+    #participateRecord table.participateRecordTable th, #participateRecord table.participateRecordTable td {
+        height: 50px;
+        text-align: center;
+        font-size: 12px;
+    }
+    .ActLink{
+        font-size: 13px;
+    }
+}
+
+@media all and (max-width:500px){
+    .CancelLink{
+        font-size: 13px;
+    }
+    div#eventManagement table.eventManagementTable th, div#eventManagement table.eventManagementTable td {
+        font-size: 13px;
+    }
+}
+
+
+
+
