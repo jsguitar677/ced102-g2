@@ -1078,7 +1078,7 @@ div#appMemberBriefIntro{
         }
     }
 }
-@media all and (max-width:888px){
+@media all and (max-width:937px){
     main{
         div.genInfor{
             div.cumulativeBlcok {
@@ -1141,7 +1141,7 @@ div#appMemberBriefIntro{
 
 
 
-@media all and (max-width:470px){
+@media all and (max-width:531px){
     body{
         main{
             .memberContent{
@@ -1152,10 +1152,58 @@ div#appMemberBriefIntro{
                             &::after{
                                 left: 13%;
                             }
-                            .expPart{
-                                padding: 1px 0px 6px 20px;
+                            .expPart, .expPartReceived{
+                                padding: 1px 0px 6px 20px !important;
                                 &::after{
-                                    left: -31px;
+                                    left: -22%;
+                                }
+                            }
+                            .expPartReceived{
+                                padding: 1px 0px 6px 20px !important;
+                                &::after{
+                                    left: -22%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media all and (max-width:531px){
+    body{
+        main{
+            .memberContent{
+                .expContent{
+                    .expExchange{
+                        .excBlcok{
+                            .expPartReceived{
+                                padding: 1px 0px 6px 20px !important;
+                                &::after{
+                                    left: -24%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media all and (max-width:320px){
+    body{
+        main{
+            .memberContent{
+                .expContent{
+                    .expExchange{
+                        .excBlcok{
+                            .expPartReceived{
+                                padding: 1px 0px 6px 20px !important;
+                                &::after{
+                                    left: -25%;
                                 }
                             }
                         }
@@ -1167,6 +1215,7 @@ div#appMemberBriefIntro{
 
 }
 
+
 @media all and (max-width:344px){
     body{
         main{
@@ -1174,7 +1223,7 @@ div#appMemberBriefIntro{
                 .expContent{
                     .expExchange{
                         .excBlcok{
-                            .expPart{
+                            .expPart, .expPartReceived{
                                 width: 60%;
                             }
                         }

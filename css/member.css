@@ -2771,7 +2771,7 @@ div#appMemberBriefIntro span {
   }
 }
 
-@media all and (max-width: 888px) {
+@media all and (max-width: 937px) {
   main div.genInfor div.cumulativeBlcok {
     padding-left: 0px;
   }
@@ -2809,23 +2809,47 @@ div#appMemberBriefIntro span {
   }
 }
 
-@media all and (max-width: 470px) {
+@media all and (max-width: 531px) {
   body main .memberContent .expContent .expExchange {
     width: 95%;
   }
   body main .memberContent .expContent .expExchange .excBlcok::after {
     left: 13%;
   }
-  body main .memberContent .expContent .expExchange .excBlcok .expPart {
-    padding: 1px 0px 6px 20px;
+  body main .memberContent .expContent .expExchange .excBlcok .expPart, body main .memberContent .expContent .expExchange .excBlcok .expPartReceived {
+    padding: 1px 0px 6px 20px !important;
   }
-  body main .memberContent .expContent .expExchange .excBlcok .expPart::after {
-    left: -31px;
+  body main .memberContent .expContent .expExchange .excBlcok .expPart::after, body main .memberContent .expContent .expExchange .excBlcok .expPartReceived::after {
+    left: -22%;
+  }
+  body main .memberContent .expContent .expExchange .excBlcok .expPartReceived {
+    padding: 1px 0px 6px 20px !important;
+  }
+  body main .memberContent .expContent .expExchange .excBlcok .expPartReceived::after {
+    left: -22%;
+  }
+}
+
+@media all and (max-width: 531px) {
+  body main .memberContent .expContent .expExchange .excBlcok .expPartReceived {
+    padding: 1px 0px 6px 20px !important;
+  }
+  body main .memberContent .expContent .expExchange .excBlcok .expPartReceived::after {
+    left: -24%;
+  }
+}
+
+@media all and (max-width: 320px) {
+  body main .memberContent .expContent .expExchange .excBlcok .expPartReceived {
+    padding: 1px 0px 6px 20px !important;
+  }
+  body main .memberContent .expContent .expExchange .excBlcok .expPartReceived::after {
+    left: -25%;
   }
 }
 
 @media all and (max-width: 344px) {
-  body main .memberContent .expContent .expExchange .excBlcok .expPart {
+  body main .memberContent .expContent .expExchange .excBlcok .expPart, body main .memberContent .expContent .expExchange .excBlcok .expPartReceived {
     width: 60%;
   }
 }
