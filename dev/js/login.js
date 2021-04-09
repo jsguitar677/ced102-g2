@@ -399,7 +399,7 @@ window.addEventListener('load',navTlFn)
                 document.body.style.overflow = 'auto';
                 // All_RListUL.style.marginTop = '0px';
                 AccountListLogBtn.textContent = '登入';
-                AccountList.style.display = 'none';
+                AccountList.style.top = '-200px';
                 AccountList.style.opacity = '0';
                 // document.getElementById('AccountList').classList.toggle('AccountListToggle');
             }
@@ -471,7 +471,7 @@ window.addEventListener('load',navTlFn)
         var LogInMemId = document.getElementById('LogInMemId');
         LogInModalLogInBtn.onclick = function(){
             if(document.getElementById('LogInModalMemId').value == "JasonFox" && document.getElementById('LogInModalMemPsw').value == 123){
-                console.log('正確');
+                // console.log('正確');
                 GeneralModal.textContent = 'Jason Fox 歡迎回來!';
                 wholeScreenOverlay2.style.display = 'block';
                 setTimeout(function(){
@@ -487,7 +487,7 @@ window.addEventListener('load',navTlFn)
                 document.getElementById('Overlay3Form').reset();
                 document.getElementById('AccountListLogBtn').textContent = '登出';
                 //關閉註冊圖示顯示div
-                AccountList.style.display = 'none';
+                AccountList.style.top = '-200px';
                 AccountList.style.opacity = '0';
                 //解鎖螢幕
                 document.body.style.overflow = 'auto';
