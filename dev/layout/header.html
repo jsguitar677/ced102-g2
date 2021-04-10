@@ -97,10 +97,8 @@
 </header>
 
 <!-- ============= 註冊暗幕 -->
-<div id="wholeScreenOverlay">
-    <!-- =========== 註冊燈箱 -->
+<!-- <div id="wholeScreenOverlay">
     <div class="LogModalFakeSIze">
-        <!-- 關閉按鈕 -->
         <div class="LogCloseBtn" id="LogRegClsBtn">
             <div class="LogCloseBtnLine1"></div>
             <div class="LogCloseBtnLine2"></div>
@@ -154,16 +152,15 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- ============= 確定登出 + 歡迎登入暗幕 -->
-<div id="wholeScreenOverlay2">
+<!-- <div id="wholeScreenOverlay2">
     <div id="LogOutCheckModal">
         <div class="LogCloseBtn" id="LogRegClsBtn2">
             <div class="LogCloseBtnLine1"></div>
             <div class="LogCloseBtnLine2"></div>
         </div>
-        <!-- <div class="LogOutCheckModalBlack"></div> -->
         <div class="LogOutCheckModalConfirmContent">
             <p id="GeneralModal" class="yellowLeftBar">您確定要登出嗎?</p>
             <div>
@@ -172,9 +169,9 @@
             </div>    
         </div>
     </div>
-</div>
+</div> -->
 
-<!-- ============= 登入跳窗暗幕 -->
+<!-- ============= 登入跳窗暗幕 ===========-->
 <div id="wholeScreenOverlay3">
     <div id="LogInModal">
         <div class="LogCloseBtn" id="LogRegClsBtn3">
@@ -188,12 +185,14 @@
             <h2 class="yellowBotBar">登入</h2>
             <form action="#" id="Overlay3Form">
                 <div>
-                    <label for="LogInModalMemId">輸入帳號</label>
-                    <input type="email" placeholder="Email" id="LogInModalMemId" name="LogInModalMemId" required size="30">
+                    <label for="MBRMAIL">輸入帳號</label>
+                    <input type="email" placeholder="Email" name="MBRMAIL" id="MBRMAIL" required size="30">
+                    <!-- <input type="email" placeholder="Email" id="LogInModalMemId" name="LogInModalMemId" required size="30"> -->
                 </div>
                 <div>
-                    <label for="LogInModalMemPsw">輸入密碼</label>
-                    <input type="password" id="LogInModalMemPsw" name="LogInModalMemPsw" required size="30" placeholder="6-15位英數混合，英文需區分大小寫">
+                    <label for="MBRPSW">輸入密碼</label>
+                    <input type="password" name="MBRPSW" id="MBRPSW"required size="30" placeholder="6-15位英數混合，英文需區分大小寫">
+                    <!-- <input type="password" id="LogInModalMemPsw" name="LogInModalMemPsw" required size="30" placeholder="6-15位英數混合，英文需區分大小寫"> -->
                 </div>
             </form>
             <label for="LogInModalRememberMem"><input type="radio" id="LogInModalRememberMem" name="LogInModalRememberMem" value="RememberMem">記住我的帳號</label>

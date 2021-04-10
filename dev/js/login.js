@@ -374,6 +374,7 @@ window.addEventListener('load',navTlFn)
                 document.getElementById('LogConfirmN').style.display = 'inline';
                 document.body.style.overflow = 'hidden';
             }else{//狀態:未登入欲登入
+                
                 wholeScreenOverlay3.style.display = 'block';
                 document.body.style.overflow = 'hidden';
             }
@@ -453,8 +454,8 @@ window.addEventListener('load',navTlFn)
             wholeScreenOverlay3.style.display = 'none';
             document.body.style.overflow = 'auto';
             //登入燈箱資訊清除
-            document.getElementById("LogInModalMemId").value = '';
-            document.getElementById("LogInModalMemPsw").value = '';
+            document.getElementById("MBRMAIL").value = '';
+            document.getElementById("MBRPSW").value = '';
         }
 
         LogToReg.onclick = function(){
@@ -465,40 +466,79 @@ window.addEventListener('load',navTlFn)
             //登入燈箱 >> 進行登入
         var LogInModalLogInBtn = document.getElementById('LogInModalLogInBtn');
         var GeneralModal = document.getElementById('GeneralModal');
-        var LogInModalMemId = document.getElementById('LogInModalMemId').value;
-        var LogInModalMemPsw = document.getElementById('LogInModalMemPsw').value;
+        var MBRMAIL = document.getElementById('MBRMAIL').value;
+        var MBRPSW = document.getElementById('MBRPSW').value;
         var LogInMemIdPhoto = document.getElementById('LogInMemIdPhoto');
         var LogInMemId = document.getElementById('LogInMemId');
+
+        
+        // var member;
         LogInModalLogInBtn.onclick = function(){
-            if(document.getElementById('LogInModalMemId').value == "JasonFox" && document.getElementById('LogInModalMemPsw').value == 123){
-                // console.log('正確');
-                GeneralModal.textContent = 'Jason Fox 歡迎回來!';
-                wholeScreenOverlay2.style.display = 'block';
-                setTimeout(function(){
-                    document.getElementById('wholeScreenOverlay2').style.display = 'none';
-                },1500)
-                wholeScreenOverlay3.style.display = 'none';
-                LogConfirmY.style.display = 'none';
-                LogConfirmN.style.display = 'none';
-                LogInMemIdPhoto.style.display = 'flex';
-                LogInMemId.textContent = 'Jason Fox';
-                document.getElementById('All_RListUL').style.marginTop = '0px';
-                //清除登入燈箱資訊
-                document.getElementById('Overlay3Form').reset();
-                document.getElementById('AccountListLogBtn').textContent = '登出';
-                //關閉註冊圖示顯示div
-                AccountList.style.top = '-200px';
-                AccountList.style.opacity = '0';
-                //解鎖螢幕
-                document.body.style.overflow = 'auto';
-            }else{
-                GeneralModal.textContent = '輸入錯誤請重試'
-                //清除登入燈箱資訊
-                document.getElementById('Overlay3Form').reset();
-                wholeScreenOverlay3.style.display = 'none';
-                wholeScreenOverlay2.style.display = 'block';
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                let member = JSON.parse(xhr.responseText);
+                if( member.MBRNAME){
+                    GeneralModal.textContent = 'Jason Fox 歡迎回來!';
+                    wholeScreenOverlay2.style.display = 'block';
+                    setTimeout(function(){
+                        document.getElementById('wholeScreenOverlay2').style.display = 'none';
+                    },1500)
+                    wholeScreenOverlay3.style.display = 'none';
+                    LogConfirmY.style.display = 'none';
+                    LogConfirmN.style.display = 'none';
+                    LogInMemIdPhoto.style.display = 'flex';
+                    LogInMemId.textContent = 'Jason Fox';
+                    document.getElementById('All_RListUL').style.marginTop = '0px';
+                    //清除登入燈箱資訊
+                    document.getElementById('Overlay3Form').reset();
+                    document.getElementById('AccountListLogBtn').textContent = '登出';
+                    //關閉註冊圖示顯示div
+                    AccountList.style.top = '-200px';
+                    AccountList.style.opacity = '0';
+                    //解鎖螢幕
+                    document.body.style.overflow = 'auto';
+                }else{
+                    GeneralModal.textContent = '輸入錯誤請重試'
+                    //清除登入燈箱資訊
+                    document.getElementById('Overlay3Form').reset();
+                    wholeScreenOverlay3.style.display = 'none';
+                    wholeScreenOverlay2.style.display = 'block';
+                }
             }
+            xhr.open("post", "../php/login.php", true); //連結伺服端程式
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
+            let data_info = `MBRMAIL=${$id("MBRMAIL").value}&MBRPSW=${$id("MBRPSW").value}`;
+            xhr.send(data_info); 
         }
+        //     if(  "ced102000@tibame.com.tw" && document.getElementById('MBRPSW').value == 11111){
+        //         // console.log('正確');
+        //         GeneralModal.textContent = 'Jason Fox 歡迎回來!';
+        //         wholeScreenOverlay2.style.display = 'block';
+        //         setTimeout(function(){
+        //             document.getElementById('wholeScreenOverlay2').style.display = 'none';
+        //         },1500)
+        //         wholeScreenOverlay3.style.display = 'none';
+        //         LogConfirmY.style.display = 'none';
+        //         LogConfirmN.style.display = 'none';
+        //         LogInMemIdPhoto.style.display = 'flex';
+        //         LogInMemId.textContent = 'Jason Fox';
+        //         document.getElementById('All_RListUL').style.marginTop = '0px';
+        //         //清除登入燈箱資訊
+        //         document.getElementById('Overlay3Form').reset();
+        //         document.getElementById('AccountListLogBtn').textContent = '登出';
+        //         //關閉註冊圖示顯示div
+        //         AccountList.style.top = '-200px';
+        //         AccountList.style.opacity = '0';
+        //         //解鎖螢幕
+        //         document.body.style.overflow = 'auto';
+        //     }else{
+        //         GeneralModal.textContent = '輸入錯誤請重試'
+        //         //清除登入燈箱資訊
+        //         document.getElementById('Overlay3Form').reset();
+        //         wholeScreenOverlay3.style.display = 'none';
+        //         wholeScreenOverlay2.style.display = 'block';
+        //     }
+        // }
 
         // 登入燈箱 跳轉到忘記密碼燈箱
         document.getElementById('ForgetPsw').onclick = function(){
