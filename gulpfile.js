@@ -9,6 +9,12 @@ const sourcemaps = require('gulp-sourcemaps');
 const clean = require('gulp-clean');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload; //browser的方法 更新後~
+// -----------------
+function movePhp() {
+    return src('dev/php/*.php').pipe(dest('dist/php/'));
+}
+// -----------------
+
 
 function moveImg() {
     return src('dev/img/**').pipe(dest('dist/img/'));
@@ -78,7 +84,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
+exports.u = series(killDist, parallel(movePhp,moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
 
 exports.browser = function browsersync() {
     browserSync.init({
