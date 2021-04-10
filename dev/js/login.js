@@ -476,7 +476,7 @@ window.addEventListener('load',navTlFn)
                 wholeScreenOverlay2.style.display = 'block';
                 setTimeout(function(){
                     document.getElementById('wholeScreenOverlay2').style.display = 'none';
-                },1800)
+                },1500)
                 wholeScreenOverlay3.style.display = 'none';
                 LogConfirmY.style.display = 'none';
                 LogConfirmN.style.display = 'none';
@@ -539,7 +539,7 @@ window.addEventListener('load',navTlFn)
         }
         var LogRegClsBtn4 = document.getElementById('LogRegClsBtn4');
         LogRegClsBtn4.onclick = function(){
-            document.getElementById('ForgetMemId').reset();
+            document.getElementById('Overlay4Form').reset();
             document.getElementById('wholeScreenOverlay4').style.display = 'none';
         }
     }
