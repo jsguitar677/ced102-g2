@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- 打包連接的css -->
+    <link rel="stylesheet" href="./css/pages/memMGT.css">
+    <!-- 自己開watch sass連接的css，如果不用請把下面註解，上面打開-->
+    <!-- <link rel="stylesheet" href="./css/memMGT.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    <script src="./js/common_backend.js"></script>
+</head>
+<body>
+    @@include('./layout/backend_header.html')
+    <div class="bg">
+        <main id="backend">
+            <aside class="tags">
+                <div class="t1 tag"><a href="./admMGT.html"><div class="circle"></div>管理員管理</a></div>
+                <div class="t2 tag current"><a><div class="circle"></div>會員管理</a></div>
+                <div class="t3 tag"><a href="./prodMGT.html"><div class="circle"></div>商品管理</a></div>
+                <div class="t4 tag"><a href="./orderMGT.html"><div class="circle"></div>訂單管理</a></div>
+                <div class="t5 tag"><a href="./rptMGT.html"><div class="circle"></div>檢舉留言管理</a></div>
+                <div class="t6 tag"><a href="./actMGT.html"><div class="circle"></div>活動審核管理</a></div>
+                <div class="t7 tag"><a href="./act_histMGT.html"><div class="circle"></div>活動花絮管理</a></div>
+                <span class="text">© 淨下塑湲 All Rights Reserved. <br>淨下塑湲版權所有不得轉載</span>
+            </aside>
+            <div class="content">
+                <section id="c2">
+                    <h1>會員管理</h1>
+                    <div class="flex">
+                        <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號或名稱'></div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>編號</th>
+                                <th>姓名</th>
+                                <th>等級</th>
+                                <th>帳號(信箱)</th>
+                                <th>生日</th>
+                                <th>手機</th>
+                                <th>環保幣</th>
+                                <th>經驗值</th>
+                                <th>狀態</th>
+                                <th>違規停權</th>
+                                <th>刪除</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="mem-tbody">
+                            <tr id="mem1">
+                                <td><div class="no-block mem-num">1</div></td>
+                                <td class="mem-name">Herry Chen</td>
+                                <td>一般會員</td>
+                                <td>Herry123</td>
+                                <td>2000/09/09</td>
+                                <td>0945090909</td>
+                                <td>66</td>
+                                <td>203</td>
+                                <td>停權</td>
+                                <td>
+                                    <label class="toggle-btn" for="suspension1">
+                                        <input type="checkbox" id="suspension1" checked hidden>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="delete-icon"><i class="fas fa-trash"></i></div>
+                                </td>
+                            </tr>
+                            <tr id="mem2">
+                                <td><div class="no-block mem-num">2</div></td>
+                                <td class="mem-name">Amy Lin</td>
+                                <td>一般會員</td>
+                                <td>AMY123</td>
+                                <td>2001/02/06</td>
+                                <td>0945090777</td>
+                                <td>0</td>
+                                <td>20</td>
+                                <td>正常</td>
+                                <td>
+                                    <label class="toggle-btn" for="suspension2">
+                                        <input type="checkbox" id="suspension2" hidden>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="delete-icon"><i class="fas fa-trash"></i></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert-block alert-block-delete">
+                        <form id="mem-delete" class="alert">
+                            <input type="text" name="mbrno" hidden>
+                            <p>您確定要將會員編號<span class="mbrno"></span>刪除?</p>
+                            <p class="highlight">一經刪除便無法復原</p>
+                            <div class="cancel-btn btn">取消</div>
+                            <button type="submit" class="submit btn">確認</button>
+                        </form>
+                    </div>
+                    <div class="alert-block alert-block-stop">
+                        <form id="mem-stop" class="alert">
+                            <input type="text" name="mbrno" hidden>
+                            <p>您確定要將會員編號<span class="mbrno"></span><span id="stop-text">停權?</span></p>
+                            <p class="highlight">請確認會員違規情形</p>
+                            <div class="btn" id="stop-cancel">取消</div>
+                            <button type="submit" class="submit btn">確認</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

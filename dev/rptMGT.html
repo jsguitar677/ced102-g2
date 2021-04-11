@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- 打包連接的css -->
+    <link rel="stylesheet" href="./css/pages/rptMGT.css">
+    <!-- 自己開watch sass連接的css，如果不用請把下面註解，上面打開-->
+    <!-- <link rel="stylesheet" href="./css/rptMGT.css"> -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    <script src="./js/common_backend.js"></script>
+</head>
+<body>
+    @@include('./layout/backend_header.html')
+    <div class="bg">
+        <main id="backend">
+            <aside class="tags">
+                <div class="t1 tag"><a href="./admMGT.html"><div class="circle"></div>管理員管理</a></div>
+                <div class="t2 tag"><a href="./memMGT.html"><div class="circle"></div>會員管理</a></div>
+                <div class="t3 tag"><a href="./prodMGT.html"><div class="circle"></div>商品管理</a></div>
+                <div class="t4 tag"><a href="./orderMGT.html"><div class="circle"></div>訂單管理</a></div>
+                <div class="t5 tag current"><a><div class="circle"></div>檢舉留言管理</a></div>
+                <div class="t6 tag"><a href="./actMGT.html"><div class="circle"></div>活動審核管理</a></div>
+                <div class="t7 tag"><a href="./act_histMGT.html"><div class="circle"></div>活動花絮管理</a></div>
+                <span class="text">© 淨下塑湲 All Rights Reserved. <br>淨下塑湲版權所有不得轉載</span>
+            </aside>
+            <div class="content">
+                <section id="c5">
+                    <h1>檢舉留言管理</h1>
+                    <div class="flex">
+                        <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號'></div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>檢舉留言編號</th>
+                                <th>檢舉日期</th>
+                                <th>檢舉人編號</th>
+                                <th>檢舉人姓名</th>
+                                <th>留言編號</th>
+                                <th class="des">留言內容</th>
+                                <th class="des">檢舉原因</th>
+                                <th>審核結果</th>
+                                <th>審核</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            <tr id="rpt1">
+                                <td><div class="no-block rpt-num">1</div></td>
+                                <td>03/01</td>
+                                <td class="rpt-mem-num">6</td>
+                                <td class="rpt-mem-name">King</td>
+                                <td class="message-num">80</td>
+                                <td class="des"><p>是否想賺更多錢?請洽詢請洽詢請洽詢請洽詢請洽詢請洽詢請洽詢請洽詢OOO投資公司!!!</p></td>
+                                <td class="des"><p>與本活動無關。與本活動無關。與本活動無關。</p></td>
+                                <td></td>
+                                <td><div class="edit-icon"><i class="fas fa-marker"></i></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert-block alert-block-audit">
+                        <form id="rpt-audit" class="alert">
+                            <input type="text" name="REPORTNO" hidden>
+                            <p>審核留言編號<span class="commno"></span>違規情形：</p>
+                            <input type="radio" name="audit" value="通過" id="pass"><label for="pass">檢舉通過</label>
+                            <input type="radio" name="audit" value="退件" id="nopass"><label for="nopass">檢舉退件</label><br>
+                            <div class="cancel-btn btn" id="audit-cancel">取消</div>
+                            <button type="submit" class="submit btn">提交</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

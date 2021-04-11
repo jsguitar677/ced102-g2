@@ -1,0 +1,477 @@
+$max-width: 1200px;
+$header-height: 60px;
+$box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.342);
+$null:null;
+
+// Font-Size
+$text-lineheight: 20px;         //文字行高
+$text-letterspacing: 1px;       //文字間距
+$text-fontSize: 15px;           //一般文字
+$text-fontSize-small:13px;
+$text-fontSize-btn: 12px;       //按鈕文字
+$text-fontSize-title: 18px;     //內文標題
+
+//圓角
+$border-radius: 4px;
+$border-radius-btn: 5px;
+$border-radius-input: 5px;
+
+//切換按鈕設定
+$toggle-btn-hight:20px;
+
+//顏色
+$web-color:(
+    'text':#fff,
+    'red-btn':#E24428,
+    'blue':#1f1f39,
+    'blue-dark':#19192F,
+    'blue-header':#282742,
+    'hover':#33324D,
+    'yellow':#FFD241,
+    'input-border':#4E4E6A,
+    'table-title':#80809b,
+    'number-bg':#1b827b,
+    'table-block-1':#2b2a44,
+);
+
+//extend
+%btn{
+    background-color: map-get($web-color,'red');
+}
+
+%center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+%flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+%flex-center{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+%i-block{
+    cursor: pointer;
+    transition: 0.8s;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin: 0 auto;
+}
+%add{
+    margin-left: 40px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: map-get($web-color,"hover");
+    border: 1px solid map-get($web-color,"input-border");
+    transition: 0.5s;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+@mixin search-bar {
+    input[name=search]{
+        padding: 0 10px;
+        height: 35px;
+        width: 160px;
+        border-radius: $border-radius-input;
+        background-color: map-get($web-color,'blue');
+        outline: none;
+        border: 2px solid map-get($web-color,'input-border');
+    }
+}
+@mixin upload-img {
+    div.img{
+        border: 1px solid map-get($web-color,"hover");
+        overflow: auto;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        min-width: 220px;
+        min-height: 30px;
+        max-width: 220px;
+        max-height: 200px;
+        margin: 0 0 10px 10px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    div.img::-webkit-scrollbar { width: 0 !important }
+}
+
+// =================================================================================================
+*{
+    box-sizing: border-box;
+    letter-spacing: $text-letterspacing;
+    color: map-get($web-color,'text');
+    font-family: 'Calibri';
+}
+body{
+    margin: 0;
+}
+img{
+    max-width: 100%;
+}
+.highlight{
+    color: map-get($web-color,'red-btn');
+}
+
+// ===================================== header ============================================================
+header{
+    background-color: map-get($web-color,'blue-header');
+    height: $header-height;
+    width: 100%;
+    min-width: $max-width;
+    box-shadow: $box-shadow;
+    div.flex{
+        height: 100%;
+        @extend %flex;
+        justify-content: space-between;
+        width: $max-width;
+        margin: 0 auto;
+        div.logo{
+            height: 100%;
+            img{
+                max-height: 90%;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        div.user-block{
+            height: 100%;
+            @extend %flex-center;
+            div.user-icon{
+                border-radius: 50%;
+                background-color: rgb(75, 56, 111);
+                box-shadow: $box-shadow;
+                width: 30px;
+                height: 30px;
+                @extend %flex-center;
+                margin-right: 10px;
+            }
+            div.user-name{
+                font-size: 16px;
+                margin-right: 30px;
+            }
+            div.sign-out{
+                font-size: $text-fontSize;
+                margin-right: 10px;
+                cursor: pointer;
+                a{
+                    text-decoration: none;
+                    i{
+                        margin: 0 5px 0 0;
+                    }
+                    &:hover{
+                        // color: map-get($web-color,'red-btn');
+                        color: map-get($web-color,'yellow');
+                        i{
+                            // color: map-get($web-color,'red-btn');
+                            color: map-get($web-color,'yellow');
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+  
+
+
+// ===================================== main ============================================================
+div.bg{
+    background-image: linear-gradient(map-get($web-color,'blue-dark'), map-get($web-color,'blue-dark')), linear-gradient(map-get($web-color,'blue'), map-get($web-color,'blue'));
+    background-size: 50% 100%;
+    background-position: 0% 0%, 100% 0%;
+    background-repeat: no-repeat;
+    width: 100%;
+    main#backend{
+        width: $max-width;
+        margin: 0 auto;
+        @extend %flex;
+        overflow: auto;
+        aside.tags{
+            width: 260px;
+            background-color: map-get($web-color,'blue-dark');
+            height: calc(100vh - #{$header-height});
+            padding: 20px 10px;
+            overflow: auto;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+            div.tag{
+                width: 100%;
+                line-height: 50px;
+                font-size: $text-fontSize-small;
+                cursor: pointer;
+                border-radius: $border-radius;
+                overflow: hidden;
+                &:hover{
+                    background-color: map-get($web-color,'hover');
+                }
+                a{
+                    display: inline-block;
+                    text-decoration: none;
+                    padding: 0 10px;
+                    width: 100%;
+                    height: 100%;
+                    div.circle{
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background-color: rgb(250, 116, 99);
+                        display: inline-block;
+                        margin-right: 8px;
+                    }
+                }
+            }
+            div.t2{a{div.circle{background-color: #31B7AF;}}}
+            div.t3{a{div.circle{background-color: #5985C4;}}}
+            div.t4{a{div.circle{background-color: #EB6160;}}}
+            div.t5{a{div.circle{background-color: #EF833A;}}}
+            div.t6{a{div.circle{background-color: #5985C4;}}}
+            div.t7{a{div.circle{background-color: #1b827b;}}}
+            div.current{
+                cursor: default;
+                background-color: map-get($web-color,'hover');
+            }
+            span.text{
+                display: inline-block;
+                width: 100%;
+                text-align: left;
+                font-size: 12px;
+                padding: 10px;
+                line-height: 20px;
+                color: map-get($web-color,'table-title');
+            }
+        }
+        aside.tags::-webkit-scrollbar { width: 0 !important }
+        div.content{
+            overflow: auto;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+            width: calc(100% - 260px);
+            height: calc(100vh - #{$header-height});
+            section{
+                width: 100%;
+                min-height: 100%;
+                padding: 30px 10px 30px 40px;
+                background-color: map-get($web-color,'blue');
+                h1{
+                    font-size: $text-fontSize-title;
+                    font-weight: lighter;
+                    margin: 0;
+                    padding-bottom: 20px;
+                }
+                div.flex{
+                    @extend %flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    div.add-block{
+                        width: 120px;
+                        height: 40px;
+                        text-align: center;
+                        margin: 20px 0px;
+                        div.add{
+                            display: inline-block;
+                            transition: 0.5s;
+                            width: 100%;
+                            // border: 1px solid #31B7AF;
+                            border: 1px solid map-get($web-color,'yellow');
+                            color: map-get($web-color,'yellow');
+                            border-radius: $border-radius-btn;
+                            text-align: center;
+                            font-size: $text-fontSize-btn;
+                            line-height: 40px;
+                        }
+                        &:hover{
+                            div.add{
+                                border-radius: 15px;
+                                width: 90%;
+                                background-color: #31B7AF;
+                                background-color: map-get($web-color,'yellow');
+                                color: map-get($web-color,'blue');
+                                font-weight: bolder;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    div.search{
+                        i{
+                            color: map-get($web-color,'table-title');
+                            padding: 0 8px;
+                        }
+                        @include search-bar();
+
+                    }
+                }
+                table{
+                    width: 100%;
+                    border-collapse: collapse;
+                    border-radius: $border-radius;
+                    thead{
+                        tr{
+                            th{
+                                color: map-get($web-color,'table-title');
+                                font-size: $text-fontSize-small;
+                                height: 50px;
+                            }
+                        }
+                    }
+                    tbody{
+                        tr{
+                            td{
+                                font-size: $text-fontSize-small;
+                                text-align: center;
+                                height: 80px;
+                                div.no-block{
+                                    display: inline-block;
+                                    width: 30px;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    background-color: map-get($web-color,'number-bg');
+                                    border-radius: 50%;
+                                    box-shadow: $box-shadow;
+                                }
+                                div.delete-icon{
+                                    &:hover{
+                                        border: 1px solid map-get($web-color, 'yellow');
+                                    }
+                                    @extend %i-block;
+                                }
+                                div.edit-icon{
+                                    &:hover{
+                                        border: 1px solid map-get($web-color, 'number-bg');
+                                    }
+                                    @extend %i-block;
+                                }
+                                div.view-icon{
+                                    &:hover{
+                                        border: 1px solid map-get($web-color, 'red-btn');
+                                    }
+                                    @extend %i-block;
+                                }
+                                label.toggle-btn{
+                                    display: inline-block;
+                                    width: $toggle-btn-hight*2;
+                                    height: $toggle-btn-hight;
+                                    background-color: map-get($web-color,'hover');
+                                    border: 1px solid map-get($web-color,'table-title');
+                                    border-radius: 30px;
+                                    padding: 2px;
+                                    cursor: pointer;
+                                    span.slider{
+                                        transition: 0.4s;
+                                        display: flex;
+                                        position: relative;
+                                        top: 0;
+                                        left: 0;
+                                        width: calc(50% - 2px);
+                                        height: 100%;
+                                        border-radius: 50%;
+                                        background-color: map-get($web-color,'table-title');
+                                    }
+                                    input:checked + span.slider{
+                                        transition: 0.4s;
+                                        left: 50%;
+                                        background-color: map-get($web-color,'yellow');
+                                    }
+                                }
+                                
+                            }
+                            &:nth-child(1){
+                                td{
+                                    &:nth-child(1){
+                                        border-top-left-radius: $border-radius;
+                                    }
+                                    &:last-child{
+                                        border-top-right-radius: $border-radius;
+                                    }
+                                }
+                            }
+                            &:nth-child(odd){
+                                background-color: map-get($web-color,'table-block-1');
+                            }
+                            &:nth-child(even){
+                                background-color: map-get($web-color,'hover');
+                            }
+                        }
+                    }
+                }
+                div.alert-block{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+                    form.alert{
+                        @extend %center;
+                        text-align: center;
+                        border-radius: $border-radius;
+                        background-color: map-get($web-color,'blue');
+                        border: 1px solid map-get($web-color, 'input-border');
+                        padding: 30px 40px;
+                        //刪除設定
+                        p{
+                            margin: 5px 0;
+                            font-size: $text-fontSize-small;
+                        }
+                        //新增設定
+                        label{
+                            font-size: $text-fontSize-small;
+                        }
+                        input{
+                            height: 30px;
+                            background-color: rgba(255, 255, 255, 0);
+                            border-radius: $border-radius-input;
+                            border: 1px solid map-get($web-color, 'input-border');
+                            margin: 5px 0;
+                            padding: 0 5px;
+                        }
+                        //submit跟cancel按鈕
+                        .btn{
+                            display: inline-block;
+                            margin-top: 20px;
+                            border: 1px solid map-get($web-color, 'input-border');
+                            background: none;
+                            padding: 5px 15px;
+                            border-radius: $border-radius;
+                            font-size: $text-fontSize-btn;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: map-get($web-color, 'yellow');
+                                color: map-get($web-color, 'blue-dark');
+                            }
+                        }
+                        button[type=submit]{
+                            &:hover{
+                                background-color: map-get($web-color, 'red-btn');
+                                color: map-get($web-color, 'blue-dark');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.content::-webkit-scrollbar { width: 0 !important }
+    }
+}
+
