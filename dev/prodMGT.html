@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- 打包連接的css -->
+    <link rel="stylesheet" href="./css/pages/prodMGT.css">
+    <!-- 自己開watch sass連接的css，如果不用請把下面註解，上面打開-->
+    <!-- <link rel="stylesheet" href="./css/prodMGT.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    <script src="./js/common_backend.js"></script>
+</head>
+<body>
+    @@include('./layout/backend_header.html')
+    <div class="bg">
+        <main id="backend">
+            <aside class="tags">
+                <div class="t1 tag"><a href="./admMGT.html"><div class="circle"></div>管理員管理</a></div>
+                <div class="t2 tag"><a href="./memMGT.html"><div class="circle"></div>會員管理</a></div>
+                <div class="t3 tag current"><a><div class="circle"></div>商品管理</a></div>
+                <div class="t4 tag"><a href="./orderMGT.html"><div class="circle"></div>訂單管理</a></div>
+                <div class="t5 tag"><a href="./rptMGT.html"><div class="circle"></div>檢舉留言管理</a></div>
+                <div class="t6 tag"><a href="./actMGT.html"><div class="circle"></div>活動審核管理</a></div>
+                <div class="t7 tag"><a href="./act_histMGT.html"><div class="circle"></div>活動花絮管理</a></div>
+                <span class="text">© 淨下塑湲 All Rights Reserved. <br>淨下塑湲版權所有不得轉載</span>
+            </aside>
+            <div class="content">
+                <section id="c3">
+                    <h1 id="e">商品管理</h1>
+                    <div class="flex">
+                        <div class="add-block">
+                            <div class="add">add +</div>
+                        </div>
+                        <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號或名稱'></div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>編號</th>
+                                <th>類別</th>
+                                <th>名稱</th>
+                                <th>單價</th>
+                                <th>簡介</th>
+                                <th>商品圖</th>
+                                <th>可客製</th>
+                                <th>上架時間</th>
+                                <th>上架狀態</th>
+                                <th>編輯</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list" id="prod-tbody">
+                            <tr>
+                                <td><div class="no-block prod-num">1</div></td>
+                                <td>環保袋</td>
+                                <td class="prod-name">美麗的環保袋</td>
+                                <td>$100</td>
+                                <td class="des"><p>美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋</p></td>
+                                <td>
+                                    <div id="imgs">
+                                        <div class="img"><img src="./img/mall/bag1.JPG"></div>
+                                        <div class="img"><img src="./img/mall/bag1.JPG"></div>
+                                        <div class="img"><img src="./img/mall/bag13.JPG"></div>
+                                        <div class="img"><img src="./img/mall/bag15.JPG"></div>
+                                        <div class="img"><img src="./img/mall/bag14.JPG"></div>
+                                    </div>
+                                </td>
+                                <td>是</td>
+                                <td>03/01</td>
+                                <td>
+                                    <label class="toggle-btn" for="suspension1">
+                                        <input type="checkbox" id="suspension1" checked hidden>
+                                        <span class="slider"></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="edit-icon"><i class="fas fa-marker"></i></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert-block alert-block-add">
+                        <form id="pro-add" class="alert">
+                            <label class="left">商品類別：</label>
+                            <select>
+                                <option>購物袋</option>
+                                <option>杯套</option>
+                                <option>口罩</option>
+                                <option>購物袋</option>
+                                <option>手機殼</option>
+                                <option>上衣</option>
+                                <option>帽子</option>
+                            </select>
+                            <br>
+                            <label class="left">商品名稱：</label><input type="text"><br>
+                            <label class="left">商品單價：</label><input type="text"><br>
+                            <label class="left des">商品簡介：</label><textarea maxlength="150"></textarea><br>
+                            <label class="left">商品狀態：</label>
+                            <input type="radio" value="0" name="PRODSTAT" id="prodstat"><label for="prodstat" class="right">下架</label>
+                            <input type="radio" value="1" name="PRODSTAT" id="prodstat1"><label for="prodstat1" class="right">上架</label><br>
+                            <label class="left">客製商品：</label>                   
+                            <input type="radio" value="0" name="PRODCA" id="prodca"><label for="prodca" class="right">是</label>
+                            <input type="radio" value="1" name="PRODCA" id="prodca1"><label for="prodca1" class="right">否</label><br>
+                            <label class="left">商品圖片：</label><br>
+                            <label class="addimg-btn" for="uploadimg1">+</label><input type="file" id="uploadimg1" hidden><div class="img"><img src=""></div><br>
+                            <label class="addimg-btn" for="uploadimg2">+</label><input type="file" id="uploadimg2" hidden><div class="img"><img src=""></div><br>
+                            <label class="addimg-btn" for="uploadimg3">+</label><input type="file" id="uploadimg3" hidden><div class="img"><img src=""></div><br>
+                            <label class="addimg-btn" for="uploadimg4">+</label><input type="file" id="uploadimg4" hidden><div class="img"><img src=""></div><br>
+                            <label class="addimg-btn" for="uploadimg5">+</label><input type="file" id="uploadimg5" hidden><div class="img"><img src=""></div><br>
+                            <div class="btn-group">
+                                <div class="add-cancel-btn btn">取消</div>
+                                <button type="submit" class="submit btn">新增</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="alert-block alert-block-edit">
+                        <form id="pro-edit" class="alert">
+                            <label class="left">商品類別：</label>
+                            <select>
+                                <option>購物袋</option>
+                                <option>杯套</option>
+                                <option>口罩</option>
+                                <option>購物袋</option>
+                                <option>手機殼</option>
+                                <option>上衣</option>
+                                <option>帽子</option>
+                            </select>
+                            <br>
+                            <label class="left">商品名稱：</label><input type="text"><br>
+                            <label class="left">商品單價：</label><input type="text"><br>
+                            <label class="left des">商品簡介：</label><textarea maxlength="150"></textarea><br>
+                            <label class="left">商品狀態：</label>
+                            <input type="radio" value="0" name="PRODSTAT" id="prodstat-edit"><label for="prodstat-edit" class="right">下架</label>
+                            <input type="radio" value="1" name="PRODSTAT" id="prodstat1-edit"><label for="prodstat1-edit" class="right">上架</label><br>
+                            <label class="left">客製商品：</label>                   
+                            <input type="radio" value="0" name="PRODCA" id="prodca-edit"><label for="prodca-edit" class="right">是</label>
+                            <input type="radio" value="1" name="PRODCA" id="prodca1-edit"><label for="prodca1-edit" class="right">否</label><br>
+                            <label class="left">商品圖片：</label><br>
+                            <label class="editimg-btn" for="editimg1">+</label><input type="file" id="editimg1" hidden><div class="img"><img src=""></div><br>
+                            <label class="editimg-btn" for="editimg2">+</label><input type="file" id="editimg2" hidden><div class="img"><img src=""></div><br>
+                            <label class="editimg-btn" for="editimg3">+</label><input type="file" id="editimg3" hidden><div class="img"><img src=""></div><br>
+                            <label class="editimg-btn" for="editimg4">+</label><input type="file" id="editimg4" hidden><div class="img"><img src=""></div><br>
+                            <label class="editimg-btn" for="editimg5">+</label><input type="file" id="editimg5" hidden><div class="img"><img src=""></div><br>
+                            <div class="btn-group">
+                                <div class="edit-cancel-btn btn">取消</div>
+                                <button type="submit" class="submit btn">修改</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

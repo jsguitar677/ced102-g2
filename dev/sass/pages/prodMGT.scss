@@ -1,0 +1,105 @@
+@import '../common_backend';
+
+// 結構(右邊部分)
+div.bg{
+    main#backend{
+        div.content{
+            section#c3{
+                table{
+                    tr{
+                        td{
+                            &:nth-child(1){width: 60px;}
+                            &:nth-child(6){width: 130px;}
+                            &:nth-child(7){width: 45px;}
+                            #imgs{
+                                width: 100px;
+                                display: inline-block;
+                                padding: 5px;
+                                overflow: auto;
+                                -ms-overflow-style: none;
+                                overflow: -moz-scrollbars-none;
+                                max-height: 120px;
+                                div.img{
+                                    padding: 5px;
+                                }
+                            }
+                            #imgs::-webkit-scrollbar { width: 0 !important }
+                        }
+                        td.des{
+                            width: 150px;
+                            p{
+                                margin: 0 10px;
+                                text-align: left;
+                                max-height: 50px;
+                                overflow: auto;
+                                overflow: auto;
+                                -ms-overflow-style: none;
+                                overflow: -moz-scrollbars-none;
+                            }
+                            p::-webkit-scrollbar { width: 0 !important }
+                        }
+                    }
+                }
+                div.alert-block-add,div.alert-block-edit{
+                    #pro-add,#pro-edit{
+                        max-height: 80vh;
+                        overflow: auto;
+                        -ms-overflow-style: none;
+                        overflow: -moz-scrollbars-none;
+                        text-align: left;
+                        label.left{
+                            text-align: left;
+                            display: inline-block;
+                            width: 80px;
+                            margin-bottom: 15px;
+                        }
+                        label.right{
+                            margin: 0 10px 0 3px;
+                        }
+                        label.des{
+                            margin-top: 10px;
+                        }
+                        label.addimg-btn,label.editimg-btn{
+                            @extend %add;
+                            &:hover{
+                                color: map-get($web-color,"blue");
+                                background-color: map-get($web-color,"yellow");
+                            }
+                        }
+                        select{
+                            option{
+                                color: map-get($web-color,"blue-dark");
+                            }
+                            padding: 5px;
+                            background-color: rgba(255, 255, 255, 0);
+                        }
+                        select,input{
+                            vertical-align: middle;
+                            border-radius: $border-radius-btn;
+                        }
+                        textarea{
+                            padding: 5px;
+                            overflow: auto;
+                            vertical-align: top;
+                            border-radius: $border-radius-btn;
+                            width: 230px;
+                            height: 150px;
+                            background-color: transparent;
+                            border: 1px solid map-get($web-color,"input-border");
+                            resize: none;
+                            margin-top: 5px;
+                        }
+                        @include upload-img();
+                        div.btn-group{
+                            width: 100%;
+                            text-align: right;
+                        }
+                    }
+                    #pro-add::-webkit-scrollbar { width: 0 !important }
+                    #pro-edit::-webkit-scrollbar { width: 0 !important }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,61 @@
+@import '../common_backend';
+
+// 結構(右邊部分)
+div.bg{
+    main#backend{
+        div.content{
+            section#c4{
+                div.flex{
+                    width: 100%;
+                    justify-content: flex-end;
+                    height: 80px;
+                }
+                div.alert-block-view{
+                    #ord-view{
+                        min-width: 60%;
+                        max-height: 90%;
+                        overflow: auto;
+                        -ms-overflow-style: none;
+                        overflow: -moz-scrollbars-none;
+                        div.top,div.middle2,div.bottom{
+                            text-align: left;
+                            label{
+                                display: inline-block;
+                            }
+                            p{
+                                display: inline-block;
+                            }
+                            margin-bottom: 10px;
+                        }
+                        div.middle2{
+                            text-align: right;
+                            margin: 10px 0;
+                        }
+                        div.middle1{
+                            table{
+                                tr{
+                                    th{
+                                        padding: 10px 0;
+                                        font-size: $text-fontSize-small;
+                                        font-weight: lighter;
+                                    }
+                                    td{
+                                        font-size: $text-fontSize-small;
+                                        div.btn{
+                                            margin: 0;
+                                            &:hover{
+                                                background-color: #EB6160;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #ord-view::-webkit-scrollbar { width: 0 !important }
+                }
+            }
+        }
+    }
+}
+
