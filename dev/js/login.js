@@ -197,6 +197,7 @@
 // })
 
 
+
 //============== new Js
 function navTlFn (){
     var All_BgBtn = document.getElementById('All_BgBtn');
@@ -295,6 +296,10 @@ window.addEventListener('load',navTlFn)
 
 
 // ============ 註冊登入的 JS
+function $id(id){
+	return document.getElementById(id);
+}	
+let memberText;
 
     //"帳戶選單燈箱"判斷 "登入/登出按鍵狀態"
     function IdentifyLorRStatus(){
@@ -355,13 +360,6 @@ window.addEventListener('load',navTlFn)
             document.body.style.overflow = 'hidden';
         }
 
-        // function AccountListRegBtnClicked(){
-        //     wholeScreenOverlay.style.display = 'block';
-        //     document.body.style.overflow = 'hidden';
-        // }
-
-        // AccountListRegBtn.addEventListener('click',AccountListRegBtnClicked)
-
         //在  "帳戶選單燈箱"  點按開啟  "登入/登出燈箱"
             //目前為登入狀態時
         AccountListLogBtn.onclick = function(){
@@ -393,15 +391,21 @@ window.addEventListener('load',navTlFn)
             }
             //您確定要登出嗎?  登入資訊: 照片 & 名稱刪除
             else{
-                document.getElementById('LogInMemId').textContent = '';
-                document.getElementById('LogInMemIdPhoto').style.display = 'none';
-                wholeScreenOverlay.style.display = 'none';
-                wholeScreenOverlay2.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                // All_RListUL.style.marginTop = '0px';
-                AccountListLogBtn.textContent = '登入';
-                AccountList.style.top = '-200px';
-                AccountList.style.opacity = '0';
+                let xhr = new XMLHttpRequest(); 
+                xhr.onload = function(){
+                    $id('LogInMemId').textContent = '';
+                    $id('LogInMemIdPhoto').style.display = 'none';
+                    wholeScreenOverlay.style.display = 'none';
+                    wholeScreenOverlay2.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                    AccountListLogBtn.textContent = '登入';
+                    AccountList.style.top = '-200px';
+                    AccountList.style.opacity = '0';
+                }
+                xhr.open("get","php/logout.php");
+                xhr.send(null);
+
+                
                 // document.getElementById('AccountList').classList.toggle('AccountListToggle');
             }
         }
@@ -413,9 +417,6 @@ window.addEventListener('load',navTlFn)
             document.body.style.overflow = 'auto';
             document.getElementById('OverlayForm').reset();
         }
-
-
-
 
         //點按登出燈箱關閉鈕>> 關閉暗幕 & 關閉燈箱
         LogRegClsBtn2.onclick = function(){
@@ -454,8 +455,8 @@ window.addEventListener('load',navTlFn)
             wholeScreenOverlay3.style.display = 'none';
             document.body.style.overflow = 'auto';
             //登入燈箱資訊清除
-            document.getElementById("MBRMAIL").value = '';
-            document.getElementById("MBRPSW").value = '';
+            $id("MBRMAIL").value = '';
+            $id("MBRPSW").value = '';
         }
 
         LogToReg.onclick = function(){
@@ -466,8 +467,8 @@ window.addEventListener('load',navTlFn)
             //登入燈箱 >> 進行登入
         var LogInModalLogInBtn = document.getElementById('LogInModalLogInBtn');
         var GeneralModal = document.getElementById('GeneralModal');
-        var MBRMAIL = document.getElementById('MBRMAIL').value;
-        var MBRPSW = document.getElementById('MBRPSW').value;
+        // var LogInModalMemId = document.getElementById('LogInModalMemId').value;
+        // var LogInModalMemPsw = document.getElementById('LogInModalMemPsw').value;
         var LogInMemIdPhoto = document.getElementById('LogInMemIdPhoto');
         var LogInMemId = document.getElementById('LogInMemId');
 
@@ -476,22 +477,25 @@ window.addEventListener('load',navTlFn)
         LogInModalLogInBtn.onclick = function(){
             let xhr = new XMLHttpRequest();
             xhr.onload = function(){
-                let member = JSON.parse(xhr.responseText);
-                if( member.MBRNAME){
-                    GeneralModal.textContent = 'Jason Fox 歡迎回來!';
+                let memberText = JSON.parse(xhr.responseText);
+                if( memberText.MBRNAME){
+                    // 彈跳視窗------------
+                    GeneralModal.textContent = memberText.MBRNAME+' Welcome back!';
                     wholeScreenOverlay2.style.display = 'block';
                     setTimeout(function(){
-                        document.getElementById('wholeScreenOverlay2').style.display = 'none';
-                    },1500)
+                        $id('wholeScreenOverlay2').style.display = 'none';
+                    },3000)
+                    // -------------------
+
                     wholeScreenOverlay3.style.display = 'none';
                     LogConfirmY.style.display = 'none';
                     LogConfirmN.style.display = 'none';
                     LogInMemIdPhoto.style.display = 'flex';
-                    LogInMemId.textContent = 'Jason Fox';
-                    document.getElementById('All_RListUL').style.marginTop = '0px';
+                    LogInMemId.textContent = memberText.MBRNAME;
+                    $id('All_RListUL').style.marginTop = '0px';
                     //清除登入燈箱資訊
-                    document.getElementById('Overlay3Form').reset();
-                    document.getElementById('AccountListLogBtn').textContent = '登出';
+                    $id('Overlay3Form').reset();
+                    $id('AccountListLogBtn').textContent = '登出';
                     //關閉註冊圖示顯示div
                     AccountList.style.top = '-200px';
                     AccountList.style.opacity = '0';
@@ -500,50 +504,22 @@ window.addEventListener('load',navTlFn)
                 }else{
                     GeneralModal.textContent = '輸入錯誤請重試'
                     //清除登入燈箱資訊
-                    document.getElementById('Overlay3Form').reset();
+                    $id('Overlay3Form').reset();
                     wholeScreenOverlay3.style.display = 'none';
                     wholeScreenOverlay2.style.display = 'block';
                 }
             }
-            xhr.open("post", "../php/login.php", true); //連結伺服端程式
+            xhr.open("post", "php/login.php", true); //連結伺服端程式
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
             let data_info = `MBRMAIL=${$id("MBRMAIL").value}&MBRPSW=${$id("MBRPSW").value}`;
-            xhr.send(data_info); 
+            xhr.send(data_info);
         }
-        //     if(  "ced102000@tibame.com.tw" && document.getElementById('MBRPSW').value == 11111){
-        //         // console.log('正確');
-        //         GeneralModal.textContent = 'Jason Fox 歡迎回來!';
-        //         wholeScreenOverlay2.style.display = 'block';
-        //         setTimeout(function(){
-        //             document.getElementById('wholeScreenOverlay2').style.display = 'none';
-        //         },1500)
-        //         wholeScreenOverlay3.style.display = 'none';
-        //         LogConfirmY.style.display = 'none';
-        //         LogConfirmN.style.display = 'none';
-        //         LogInMemIdPhoto.style.display = 'flex';
-        //         LogInMemId.textContent = 'Jason Fox';
-        //         document.getElementById('All_RListUL').style.marginTop = '0px';
-        //         //清除登入燈箱資訊
-        //         document.getElementById('Overlay3Form').reset();
-        //         document.getElementById('AccountListLogBtn').textContent = '登出';
-        //         //關閉註冊圖示顯示div
-        //         AccountList.style.top = '-200px';
-        //         AccountList.style.opacity = '0';
-        //         //解鎖螢幕
-        //         document.body.style.overflow = 'auto';
-        //     }else{
-        //         GeneralModal.textContent = '輸入錯誤請重試'
-        //         //清除登入燈箱資訊
-        //         document.getElementById('Overlay3Form').reset();
-        //         wholeScreenOverlay3.style.display = 'none';
-        //         wholeScreenOverlay2.style.display = 'block';
-        //     }
-        // }
 
+        
         // 登入燈箱 跳轉到忘記密碼燈箱
-        document.getElementById('ForgetPsw').onclick = function(){
+        $id('ForgetPsw').onclick = function(){
                 //清除登入燈箱資訊
-               document.getElementById('Overlay3Form').reset();
+                $id('Overlay3Form').reset();
                 //關閉登入燈箱
                 wholeScreenOverlay3.style.display = 'none';
                 //開啟申請忘記密碼燈箱
@@ -551,9 +527,6 @@ window.addEventListener('load',navTlFn)
         }
 
     }
-
-
-    window.addEventListener('load',LogReg);
 
 
     // =======================  忘記密碼燈箱
@@ -584,7 +557,6 @@ window.addEventListener('load',navTlFn)
         }
     }
     
-    window.addEventListener('load',ForgetApplyNewPsw);
 
     //=============== 修改密碼登箱
 
@@ -593,68 +565,71 @@ window.addEventListener('load',navTlFn)
         //點按建立新帳號
         LogToReg5.onclick = function(){
             //清除燈箱資料,跳出修改密碼登箱,回到註冊燈箱
-            document.getElementById('Overlay5Form').reset();
-            document.getElementById('wholeScreenOverlay5').style.display = 'none';
-            document.getElementById('wholeScreenOverlay').style.display = 'block';
+            $id('Overlay5Form').reset();
+            $id('wholeScreenOverlay5').style.display = 'none';
+            $id('wholeScreenOverlay').style.display = 'block';
         }
         //點按關閉紐
         var LogRegClsBtn5 = document.getElementById('LogRegClsBtn5');
         LogRegClsBtn5.onclick = function(){
-            document.getElementById('Overlay5Form').reset();
-            document.getElementById('wholeScreenOverlay5').style.display = 'none';
+            $id('Overlay5Form').reset();
+            $id('wholeScreenOverlay5').style.display = 'none';
         }
         
     }
 
-    window.addEventListener('load',ModifiedPsw);
-
-    // function scrollSensor(){
-    //     var scrollTopVar = document.body.scrollTop;
-    //     var headerChange = document.getElementById('header');
-    //     if(scrollTopVar > 20 ){
-    //         headerChange.style.backgroundColor = 'white';
-    //     }
-    // }
-
-    // window.addEventListener('load',scrollSensor);
-
-// window.onscroll = function() {
-//     scrollFunction();
-// };
-
-// function scrollFunction() {
-//     var AllSt0 =  document.querySelectorAll('.st0');
-//     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//         document.getElementById("header").style.backgroundColor = "white";
-//         document.getElementById('All_BgBtnIt1').style.backgroundColor = '#1D1C4C';
-//         document.getElementById('All_BgBtnIt2').style.backgroundColor = '#1D1C4C';
-//         document.getElementById('All_BgBtnIt3').style.backgroundColor = '#1D1C4C';
-//         document.getElementsByClassName('fa-user')[0].style.color = '#1D1C4C';
-//         document.getElementsByClassName('fa-shopping-cart')[0].style.color = '#1D1C4C';
-//         document.getElementsByClassName('fa-bell')[0].style.color = '#1D1C4C';
-//         // AllSt0.style.color = 'blue';
-//         for(i = 0; i < AllSt0.length; i++){
-//             AllSt0[i].style.fill = '#1D1C4C';
-//         }
-        
-//     } else{
-//         document.getElementById("header").style.backgroundColor = "transparent";
-//         document.getElementById('All_BgBtnIt1').style.backgroundColor = 'white';
-//         document.getElementById('All_BgBtnIt2').style.backgroundColor = 'white';
-//         document.getElementById('All_BgBtnIt3').style.backgroundColor = 'white';
-//         document.getElementsByClassName('fa-user')[0].style.color = 'white';
-//         document.getElementsByClassName('fa-shopping-cart')[0].style.color = 'white';
-//         document.getElementsByClassName('fa-bell')[0].style.color = 'white';
-//         for(i = 0; i < AllSt0.length; i++){
-//             AllSt0[i].style.fill = 'white';
-//         }
-//     }
-// }
 
 // ==================  Footer 註冊鈕
 function FooterRegFn(){
-    document.getElementById('wholeScreenOverlay').style.display = 'block';
+    $id('wholeScreenOverlay').style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
 
-document.getElementById('FooterRegBtn').addEventListener('click',FooterRegFn);
+$id('FooterRegBtn').addEventListener('click',FooterRegFn);
+
+
+
+// =================
+
+function getMemInfo(){
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+      let memberText = JSON.parse(xhr.responseText);
+      if(memberText.MBRMAIL){
+        wholeScreenOverlay3.style.display = 'none';
+        LogConfirmY.style.display = 'none';
+        LogConfirmN.style.display = 'none';
+        LogInMemIdPhoto.style.display = 'flex';
+        LogInMemId.textContent = memberText.MBRNAME;
+        $id('All_RListUL').style.marginTop = '0px';
+        //清除登入燈箱資訊
+        $id('Overlay3Form').reset();
+        $id('AccountListLogBtn').textContent = '登出';
+        //關閉註冊圖示顯示div
+        AccountList.style.top = '-200px';
+        AccountList.style.opacity = '0';
+        //解鎖螢幕
+        document.body.style.overflow = 'auto';
+        
+      }
+    }
+    xhr.open("get", "php/getMemInfo.php", true);
+    xhr.send(null);
+};
+
+
+window.addEventListener("load", function(){
+
+    //----------------  navTlFn動畫
+    navTlFn();
+    //---------------- 檢查會員是否已登入，以取回會員的資料
+    getMemInfo();
+    //-------------    登入會員帳號密碼
+    LogReg();
+    //---------------- 修改密碼登箱
+    ModifiedPsw();
+    //---------------- 忘記密碼燈箱
+    ForgetApplyNewPsw();
+
+    
+})
