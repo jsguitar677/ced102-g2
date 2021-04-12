@@ -557,7 +557,7 @@ div.founder>h1 {
 }
 
 // dropdown menu---------------
-input {
+.tab>input {
     position: absolute;
     opacity: 0;
     z-index: -1;
@@ -778,62 +778,86 @@ button.submmit {
     }
 }
 
-
-/* (A) COMMENTS */
-
-#cwrap .crow {
-    border: 1px solid #e4d9d9;
-    margin: 10px 0;
-    padding: 10px;
+// 留言板--------------------------------------------------
+.comment-form-container {
+    background: #F0F0F0;
+    border: #e0dfdf 1px solid;
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 16px;
+    text-align: left;
+    width: 1200px;
+    margin: 0 auto;
 }
 
-#cwrap .chead {
-    margin-bottom: 10px;
+.input-row {
+    margin-bottom: 20px;
 }
 
-#cwrap .cname {
-    color: #e88b66;
-    font-weight: bold;
-}
-
-#cwrap .ctime {
-    color: #aaa;
-    font-size: 0.95em;
-}
-
-#cwrap .cmsg {
-    font-size: 1.1em;
-}
-
-
-/* (B) ADD COMMENT */
-
-#cadd {
-    background: #f2f2f2;
-    border: 1px solid #ccc;
-    padding: 15px;
-}
-
-#cadd h1 {
-    font-size: 1.3em;
-}
-
-#cadd input[type=text],
-#cadd textarea {
-    box-sizing: border-box;
+.input-field {
     width: 100%;
-    margin: 5px 0;
+    border-radius: 2px;
     padding: 10px;
-    resize: none;
+    border: #e0dfdf 1px solid;
 }
 
-#cadd input[type=submit] {
-    background: #db4104;
-    border: 0;
-    color: #fff;
-    padding: 10px;
+.btn-submit {
+    padding: 10px 20px;
+    background: #333;
+    border: #1d1d1d 1px solid;
+    color: #f0f0f0;
+    font-size: 0.9em;
+    width: 100px;
+    border-radius: 2px;
     cursor: pointer;
 }
 
+ul {
+    list-style-type: none;
+}
 
-/* (X) DOES NOT MATTER */
+.comment-row {
+    border-bottom: #e0dfdf 1px solid;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.outer-comment {
+    background: #F0F0F0;
+    padding: 20px;
+    border: #dedddd 1px solid;
+}
+
+span.commet-row-label {
+    font-style: italic;
+}
+
+span.posted-by {
+    color: #09F;
+}
+
+.comment-info {
+    font-size: 0.8em;
+}
+
+.comment-text {
+    margin: 10px 0px;
+}
+
+.btn-reply {
+    font-size: 0.8em;
+    text-decoration: underline;
+    color: #888787;
+    cursor: pointer;
+}
+
+#comment-message {
+    margin-left: 20px;
+    color: #189a18;
+    display: none;
+}
+
+#output {
+    font-size: 16px;
+    text-align: left;
+}
