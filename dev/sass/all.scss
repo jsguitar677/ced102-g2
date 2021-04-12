@@ -1,7 +1,6 @@
 @import './var';
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
 body>*{
     font-family: "Palatino Linotype", "Noto Sans Tc";
 }
@@ -73,12 +72,13 @@ body>*{
 }
 //=========================        header new =========
 @mixin LogRegBtn {
+    font-size: 15px;
     border:none;
     outline:none;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, .342);
-    height: 30px;
+    height: 35px;
     cursor: pointer;
-    padding: 0px 25px;
+    padding: 0px 30px;
 }
 @mixin ScreenOverLay{
     background-color: rgba(0, 0, 0, .5);
@@ -87,7 +87,7 @@ body>*{
     width: 100%;
     height: 100vh;
     z-index: 6;
-
+    top: 0;
 }
 
 @mixin ModalSetting{
@@ -464,7 +464,7 @@ div.LogCloseBtn{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(45deg);
-        width: 25px;
+        width: 18px;
         height: 3px;
     }
     div.LogCloseBtnLine2{
@@ -473,7 +473,7 @@ div.LogCloseBtn{
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(315deg);
-        width: 25px;
+        width: 18px;
         height: 3px;
     }
 }
@@ -609,7 +609,7 @@ div.blackMinorPart{
     
 }
 div.whiteMainPart{
-    color: map-get($map: $color_regulation, $key: 'newBlue');
+    color: map-get($map: $color_regulation, $key: 'blue');
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -701,7 +701,7 @@ div.LogOutCheckModalConfirmContent{
         @include LogRegBtn();
         margin-right: 30px;
         color: #fff;
-        background-color: map-get($map: $color_regulation, $key: 'newBlue');
+        background-color: map-get($map: $color_regulation, $key: 'blue');
         padding: 0px 25px;
     }
     button#LogConfirmN{
@@ -791,7 +791,7 @@ div#wholeScreenOverlay4{
         button#SendPswToMailBtn{
             @include LogRegBtn();
             background-color: #FFD241;
-            color: map-get($map: $color_regulation, $key: 'newBlue');
+            color: map-get($map: $color_regulation, $key: 'blue');
         }
     }
 }
@@ -1055,7 +1055,6 @@ ul#AccountList{
     opacity: 0;
     list-style-type: none;
     background-color: #fff;
-    // padding: 30px 30px;
     padding-left: 0px;
     width: 230px;
     display: inline-flex;
@@ -1063,10 +1062,9 @@ ul#AccountList{
     align-items: center;
     margin: 0px;
     transition: all 1s;
-    border: 1px solid map-get($map: $color_regulation, $key: 'newBlue');
+    border: 2px solid map-get($map: $color_regulation, $key: 'blue');
     
     li{
-        margin-bottom: 10px;
         &:last-child, &:first-child{
             padding-bottom: 0px;
         }
@@ -1080,12 +1078,12 @@ ul#AccountList{
     }
     a{
         text-decoration: none;
-        color: map-get($map: $color_regulation, $key: 'newBlue');   
+        color: map-get($map: $color_regulation, $key: 'blue');   
 
     }
     li#LogInMemIdPhoto{
-        border: 1px solid map-get($map: $color_regulation, $key: 'newBlue');
-        color: map-get($map: $color_regulation, $key: 'newBlue');   
+        border: 1px solid map-get($map: $color_regulation, $key: 'blue');
+        color: map-get($map: $color_regulation, $key: 'blue');   
         display: flex;
         align-items: center;
         padding: 5px 25px;
@@ -1104,7 +1102,7 @@ ul#AccountList{
     }
     li#hrline{
         width: 100%;
-        background-color: map-get($map: $color_regulation, $key: 'newBlue');   
+        background-color: map-get($map: $color_regulation, $key: 'blue');   
         height: 3px;
     }
 }
@@ -1161,9 +1159,13 @@ button.createNewAcc{
 button#AccountListRegBtn, button#AccountListLogBtn{
     @include LogRegBtn();
     background-color: #FFD241;
+    
+}
+#AccountListRegBtn,#AccountListReg,#AccountListLog,#AccountListLogBtn{
+    width: 100%;
 }
 button#AccountListLogBtn{
-    background-color: map-get($map: $color_regulation, $key: 'newBlue');
+    background-color: map-get($map: $color_regulation, $key: 'blue');
     color: white;
 }
 span#LogInMemId{
@@ -1177,6 +1179,8 @@ ul.AccountListToggle{
 }
 li#GoMemberCenter{
     margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom:2px solid #FFD241;
 }
 @media all and (max-width:350px){
     div#All_Logo{
@@ -1314,7 +1318,7 @@ input#checkAccountOccupied{
     @include LogRegBtn();
     padding: 0px;
     color: white;
-    background-color: map-get($map: $color_regulation, $key: 'newBlue');
+    background-color: map-get($map: $color_regulation, $key: 'blue');
 }
 input#logMemId{
     width: 105px;
@@ -1701,3 +1705,20 @@ div#footerBottom{
         word-wrap: break-word;
     }
 }
+
+/* ========================john add 2021/03/13====================================================== */
+#Log_RegBtn{
+    position: relative;
+  }
+  #memberBell{
+    display: none;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #a0ecdc;
+    top: -5px;
+    left: 8px;
+  }
+  
+  /* =============================================================================================== */

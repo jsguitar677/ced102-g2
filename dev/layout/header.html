@@ -72,8 +72,8 @@
         </div>
         <div id="All_RList">
             <ul id="All_RListUL">
-                <li id="LogInMemIdIt"><span id="LogInMemId">Jason Fox</span></li>
-                <li id="LogInMemIdPhoto"><a href="#"><img src="./img/selfieEG.jpg" alt="" id="LogInMemImg"></a></li>
+                <!-- <li id="LogInMemIdIt"><span id="LogInMemId">訪客</span></li>
+                <li id="LogInMemIdPhoto"><a href="#"><img src="./img/selfieEG.jpg" alt="" id="LogInMemImg"></a></li> -->
                 <li id="Log_RegBtn"><a href="#"><i class="fas fa-user"></i></a></li>
                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                 <li id="All_RListUL_lastLi"><a href="#"><i class="fas fa-bell"></i></a><div id="notificationDot"></div></li>
@@ -114,40 +114,43 @@
                 <h2 class="yellowLeftBar">註冊</h2>
                 <form action="#" id="OverlayForm">
                     <div>
-                        <label for="logMemName">姓名</label>
-                        <input type="text" placeholder="請輸入真實姓名" id="logMemName" name="logMemName" required size="30">
-                    </div>
-                    <div>
-                        <label for="BirthYear"  >出生年</label>
-                        <input type="date" required style="width:225px;" id="BirthYear">
-                    </div>
-                    <div>
                         <label for="logMemId">輸入帳號</label>
-                        <input type="email" placeholder="請填寫有效email" id="logMemId" name="logMemId" required size="30">
+                        <input type="email" placeholder="請填寫有效email" id="logMemId" name="logMemId" maxlength="30" required size="30">
                         <input type="button" id="checkAccountOccupied" value="檢查帳號">
                     </div>
                     <div>
                         <label for="logMemPsw">設定密碼</label>
-                        <input type="password" id="logMemPsw" name="logMemPsw" placeholder="6-15位英數混合，英文需區分大小寫" required size="30">
+                        <input type="password" id="logMemPsw" name="logMemPsw" placeholder="密碼長度必須為6-15位" maxlength="15" required size="30">
                     </div>
                     <div>
                         <label for="logMemPswCheck">確認密碼</label>
-                        <input type="password" id="logMemPswCheck" name="logMemPswCheck" placeholder="請再次輸入密碼" required size="30">
+                        <input type="password" id="logMemPswCheck" name="logMemPswCheck" placeholder="請再次輸入密碼" maxlength="15" required size="30">
+                    </div>
+                    <div>
+                        <label for="logMemName">姓名</label>
+                        <input type="text" placeholder="請輸入真實姓名(最多10個字)" id="logMemName" name="logMemName" maxlength="10" required size="30">
+                    </div>
+                    <div>
+                        <label for="BirthYear">出生年</label>
+                        <input type="date" required style="width:225px;" id="BirthYear">
                     </div>
                     <div>
                         <label for="logMemMobileCheck">輸入電話</label>
-                        <input type="text" id="logMemMobileCheck" name="logMemMobileCheck" placeholder="請輸入手機號碼" required size="30">
+                        <input type="text" id="logMemMobileCheck" name="logMemMobileCheck" placeholder="請輸入手機號碼" maxlength="10" required size="30">
                     </div>
-                    <div id="logCertificationDis">
+                    <!-- <div id="logCertificationDis">
                         <label for="logCertificationNme">請輸入驗證碼</label>
                         <div id="logCertificationNmeRow">
-                            <input type="text" id="logCertificationNme" name="logCertificationNme" placeholder="請輸入六位驗證碼" required size="12">
+                            <input type="text" id="logCertificationNme" name="logCertificationNme" placeholder="請輸入六位驗證碼" maxlength="6" required size="12">
                         <button id="RegSendCertificationCode">發送驗證碼</button>
                         </div>
-                    </div>
+                    </div> -->
+                    <label for="createAgree" id="IAgreeLabel" class="ModalRadioStyle"> <input type="radio" id="createAgree" name="createAgree" value="yes" required>我同意客戶服務條款與客戶隱私政策</label> 
+                    <span id="createRemind"style="font-size: 13px;color:red;" >請先檢查帳號</span>
+                    <input disabled id="createNewAcc" type="submit" value="建立帳號" class="createNewAcc LowestBtn">
+                    
                 </form>
-                <label for="createAgree" id="IAgreeLabel" class="ModalRadioStyle"> <input type="radio" id="createAgree" name="createAgree" value="yes" required>我同意客戶服務條款與客戶隱私政策</label> 
-                <button class="createNewAcc LowestBtn">建立新帳號</button><div class="yellowSidePart"></div>
+                <div class="yellowSidePart"></div>
             </div>
         </div>
     </div>

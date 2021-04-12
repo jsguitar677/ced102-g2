@@ -292,14 +292,15 @@ function navTlFn (){
         
     }
 }
-window.addEventListener('load',navTlFn)
 
 
 // ============ 註冊登入的 JS
 function $id(id){
 	return document.getElementById(id);
-}	
+}
+
 let memberText;
+// $id('memberBell').style.display="block";
 
     //"帳戶選單燈箱"判斷 "登入/登出按鍵狀態"
     function IdentifyLorRStatus(){
@@ -314,7 +315,6 @@ let memberText;
 
     }
 
-    window.addEventListener('load',IdentifyLorRStatus)
 
     //============  狀態:尚未登入時 >> 彈跳登入註冊燈箱
     function LogReg(){
@@ -401,11 +401,13 @@ let memberText;
                     AccountListLogBtn.textContent = '登入';
                     AccountList.style.top = '-200px';
                     AccountList.style.opacity = '0';
+                    // 登出後綠色球球消失
+                    $id('memberBell').style.display="none";
+                    // 登出後註冊按鈕就顯現
+                    $id('AccountListReg').style.display = "block";
                 }
                 xhr.open("get","php/logout.php");
-                xhr.send(null);
-
-                
+                xhr.send(null);                
                 // document.getElementById('AccountList').classList.toggle('AccountListToggle');
             }
         }
@@ -415,7 +417,7 @@ let memberText;
         LogRegClsBtn.onclick = function(){
             wholeScreenOverlay.style.display = 'none';
             document.body.style.overflow = 'auto';
-            document.getElementById('OverlayForm').reset();
+            $id('OverlayForm').reset();
         }
 
         //點按登出燈箱關閉鈕>> 關閉暗幕 & 關閉燈箱
@@ -438,7 +440,6 @@ let memberText;
             
             //登入燈箱出現
             wholeScreenOverlay3.style.display = 'block';
-
 
             //將註冊燈箱並關閉
             wholeScreenOverlay.style.display = 'none';
@@ -486,12 +487,18 @@ let memberText;
                         $id('wholeScreenOverlay2').style.display = 'none';
                     },3000)
                     // -------------------
-
+                    
                     wholeScreenOverlay3.style.display = 'none';
                     LogConfirmY.style.display = 'none';
                     LogConfirmN.style.display = 'none';
                     LogInMemIdPhoto.style.display = 'flex';
+                    //寫入會員的姓名
                     LogInMemId.textContent = memberText.MBRNAME;
+                    // 登入後綠色球球出現
+                    $id('memberBell').style.display="block";
+                    // 登入後註冊按鈕就消失
+                    $id('AccountListReg').style.display = "none";
+                    
                     $id('All_RListUL').style.marginTop = '0px';
                     //清除登入燈箱資訊
                     $id('Overlay3Form').reset();
@@ -536,24 +543,24 @@ let memberText;
         var ForgetPswB2LogIn = document.getElementById('ForgetPswB2LogIn');
         var SendPswToMailBtn = document.getElementById('SendPswToMailBtn');
         LogToReg2.onclick = function(){
-            document.getElementById('Overlay4Form').reset();
-            document.getElementById('wholeScreenOverlay4').style.display = 'none';
-            document.getElementById('wholeScreenOverlay').style.display = 'block';
+            $id('Overlay4Form').reset();
+            $id('wholeScreenOverlay4').style.display = 'none';
+            $id('wholeScreenOverlay').style.display = 'block';
         }
         ForgetPswB2LogIn.onclick = function(){
-            document.getElementById('Overlay4Form').reset();
-            document.getElementById('wholeScreenOverlay4').style.display = 'none';
-            document.getElementById('wholeScreenOverlay3').style.display = 'block';
+            $id('Overlay4Form').reset();
+            $id('wholeScreenOverlay4').style.display = 'none';
+            $id('wholeScreenOverlay3').style.display = 'block';
         }
         SendPswToMailBtn.onclick = function(){
-            document.getElementById('Overlay4Form').reset();
-            document.getElementById('wholeScreenOverlay4').style.display = 'none';
-            document.getElementById('wholeScreenOverlay5').style.display = 'block';
+            $id('Overlay4Form').reset();
+            $id('wholeScreenOverlay4').style.display = 'none';
+            $id('wholeScreenOverlay5').style.display = 'block';
         }
         var LogRegClsBtn4 = document.getElementById('LogRegClsBtn4');
         LogRegClsBtn4.onclick = function(){
-            document.getElementById('Overlay4Form').reset();
-            document.getElementById('wholeScreenOverlay4').style.display = 'none';
+            $id('Overlay4Form').reset();
+            $id('wholeScreenOverlay4').style.display = 'none';
         }
     }
     
@@ -587,8 +594,6 @@ function FooterRegFn(){
 
 $id('FooterRegBtn').addEventListener('click',FooterRegFn);
 
-
-
 // =================
 
 function getMemInfo(){
@@ -618,18 +623,110 @@ function getMemInfo(){
 };
 
 
-window.addEventListener("load", function(){
-
-    //----------------  navTlFn動畫
-    navTlFn();
-    //---------------- 檢查會員是否已登入，以取回會員的資料
-    getMemInfo();
-    //-------------    登入會員帳號密碼
-    LogReg();
-    //---------------- 修改密碼登箱
-    ModifiedPsw();
-    //---------------- 忘記密碼燈箱
-    ForgetApplyNewPsw();
+// =====註冊表單=============================
+// 前台註冊js判斷
+function checkACFT(e){
+    // 帳號
+    let logMemId = document.getElementById("logMemId");
+    if( logMemId.value.length < 6 && logMemId.value != null){
+        alert("帳號不得低於6碼");
+        e.preventDefault();
+        return;
+    }
+    let logMemPsw = document.getElementById("logMemPsw");
+    let logMemPswCheck = document.getElementById("logMemPswCheck");
+    if( logMemPsw.value.length < 6){
+        alert("密碼長度必須為6-15位");
+        e.preventDefault();
+        return;
+    }
+    if( logMemPswCheck.value.length < 6){
+        alert("密碼長度必須為6-15位");
+        e.preventDefault();
+        return;
+    }
+    if(logMemPsw.value !== logMemPswCheck.value){
+        alert("密碼與確認密碼必須相同");
+        e.preventDefault();
+        return;
+    }
+    
+    var numRegex = /\D/g;
+    let logMemMobileCheck = document.getElementById("logMemMobileCheck");
+    logMemMobileCheck.value = logMemMobileCheck.value.replace(numRegex,'');
+    if( logMemMobileCheck.value.length != 10 || !logMemMobileCheck.value){
+        alert("請輸入手機號碼10碼且必須皆為數字");
+        e.preventDefault();
+        return;
+    }
 
     
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        let memberText = JSON.parse(xhr.responseText);
+        if(memberText == 1){
+            alert("已成功註冊!");
+        }else{
+            alert("失敗!");
+        }
+
+    }
+    xhr.open("post", "php/cread_AC.php", true);
+    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    let data_AC = `logMemId=${$id("logMemId").value} & logMemPsw=${$id("logMemPsw").value} & logMemName=${$id("logMemName").value} & BirthYear=${$id("BirthYear").value} & logMemMobileCheck=${$id("logMemMobileCheck").value}`;
+    xhr.send(data_AC);
+    
+
+}
+
+// 提交後台判斷
+    // -----檢查帳號信箱重複
+    function checkId(){
+        let xhr = new XMLHttpRequest();
+        let logMemId = document.getElementById("logMemId");
+        let createRemind = document.getElementById('createRemind')
+        let createNewAcc = document.getElementById('createNewAcc')
+        xhr.onload = function(){//server端已執行完畢
+            console.log("onload : ", xhr.readyState);
+            if(xhr.status == 200){//http status is OK
+                if(xhr.responseText == 2 && logMemId.value != null){
+                    createNewAcc.disabled = false;
+                    createRemind.style.opacity = 0;
+                    alert("此帳號可使用");
+                }else{
+                    createNewAcc.disabled=true
+                    alert("此帳號已存在, 不可用");
+                    createRemind.style.opacity = 1;
+                }
+            }else{
+                alert(xhr.status);
+            }
+        } 
+        
+        let url = "php/check_AC.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        let data_AD = `logMemId=${$id("logMemId").value}`;
+        xhr.send(data_AD);
+
+    };
+
+
+window.addEventListener("load", function(){
+    //----------------  帳戶選單燈箱判斷 "登入/登出按鍵狀態
+    IdentifyLorRStatus();
+    //----------------  動畫navTlFn
+    navTlFn();
+    //----------------  檢查會員是否已登入，以取回會員的資料
+    getMemInfo();
+    //----------------  登入會員帳號密碼
+    LogReg();
+    //----------------  修改密碼登箱
+    ModifiedPsw();
+    //----------------  忘記密碼燈箱
+    ForgetApplyNewPsw();
+    //----------------  前台送出密碼燈箱
+    $id('OverlayForm').onsubmit = checkACFT;
+    //----------------  後台驗證帳號姓名
+    $id("checkAccountOccupied").addEventListener("click",checkId,false);
 })
