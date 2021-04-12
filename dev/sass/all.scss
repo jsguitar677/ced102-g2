@@ -1029,15 +1029,6 @@ div.whiteMainPart5{
     }
 }
 
-//=================== header RWD
-// @media all and (max-width:700px){
-//     ul#All_RListUL{
-//         li#LogInMemIdIt{
-//             // display: none;
-
-//         }
-//     }
-// }
 @media all and (max-width:500px){
     body header nav div#All_Logo img{
         width: 150px;
@@ -1710,7 +1701,7 @@ div#footerBottom{
 #Log_RegBtn{
     position: relative;
   }
-  #memberBell{
+#memberBell{
     display: none;
     position: absolute;
     width: 10px;
@@ -1719,6 +1710,6 @@ div#footerBottom{
     background-color: #a0ecdc;
     top: -5px;
     left: 8px;
-  }
+}
   
   /* =============================================================================================== */
