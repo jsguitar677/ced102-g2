@@ -402,7 +402,7 @@ div.ad_tab {
     position: relative;
 }
 
-.ad_tab button::after{
+.ad_tab button::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -478,7 +478,7 @@ div.outer_link {
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
     padding: 0;
     margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 0px;
     outline: 2px solid map-get($color-regulation, 'yellow');
     outline-offset: 6px;
     display: none;
@@ -530,7 +530,6 @@ div.founder>h1 {
 }
 
 @media (max-width: 1335px) {
-   
     div.ad_tab {
         justify-content: center;
         align-content: center;
@@ -543,7 +542,7 @@ div.founder>h1 {
     }
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
     #join1 {
         display: block;
         margin: 0 auto;
@@ -558,7 +557,7 @@ div.founder>h1 {
 }
 
 // dropdown menu---------------
-input {
+.tab>input {
     position: absolute;
     opacity: 0;
     z-index: -1;
@@ -661,7 +660,7 @@ div.banner_box>h1 {
 
 div.ad_board {
     margin: 0 auto;
-    display: grid;
+    // display: grid;
     // border: 1px solid orange;
     // width: 80%;
     height: 1050px;
@@ -777,4 +776,111 @@ button.submmit {
     div.chat4 {
         height: 400px;
     }
+}
+
+// 留言板--------------------------------------------------
+.comment-form-container {
+    background: #F0F0F0;
+    border: #e0dfdf 1px solid;
+    padding: 20px;
+    border-radius: 2px;
+    font-size: 16px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 350px;
+}
+
+.input-row {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    border-radius: 2px;
+    padding: 10px;
+    border: #e0dfdf 1px solid;
+    resize: none;
+    width: 70%;
+    outline: none;
+}
+
+#comment{
+    border: 1px solid red;
+    height: 200px;
+    width: 80%;
+    float: right;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background: map-get($color-regulation, 'yellow');
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+    color: black;
+    font-size: 1.2em;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.comment-row {
+    border-bottom: #e0dfdf 1px solid;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.outer-comment {
+    background: #F0F0F0;
+    padding: 20px;
+    border: #dedddd 1px solid;
+}
+
+span.commet-row-label {
+    font-style: italic;
+}
+
+span.posted-by {
+    color: #09F;
+}
+
+.comment-info {
+    font-size: 0.8em;
+}
+
+.comment-text {
+    margin: 10px 0px;
+}
+
+.btn-reply {
+    font-size: 0.8em;
+    text-decoration: underline;
+    color: #888787;
+    cursor: pointer;
+}
+
+#comment-message {
+    margin-left: 20px;
+    color: #189a18;
+    display: none;
+}
+
+#output {
+    font-size: 16px;
+    text-align: left;
+   
+}
+
+div.comment_section{
+border: 1px solid red;
+max-width: 1200px;
+margin: 0 auto;
 }

@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="./css/pages/act_detail.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="./js/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -21,121 +21,133 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
     <!-- ------------------------------------------------------- -->
-  <div class="ad_container">  
-    <div class="bread"><p>活動募款平台</p>
-          <div class="ad_inner_content">
-            <div class="content-left">
-            <h1>一瓶的海岸線</h1>
-            <h2>地點：苗栗外澳海灘</h2> 
-            <h2>日期：2020/03/31</h2>
-            <h2 class="rw_founder">活動發起人: 富力士</h2>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！
-            ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 
-            淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。           
-            淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。 
-            您可以透過淨灘，與荒野共同減少廢棄物進入大海的機會。
-            </p>
-            <div class="clock"><svg id="Icon_ionic-md-time" data-name="Icon ionic-md-time" xmlns="http://www.w3.org/2000/svg" width="28.87" height="28.87" viewBox="0 0 28.87 28.87">
+    <div class="ad_container">
+        <div class="bread">
+            <p>活動募款平台</p>
+            <div class="ad_inner_content">
+                <div class="content-left">
+                    <h1>一瓶的海岸線</h1>
+                    <h2>地點：苗栗外澳海灘</h2>
+                    <h2>日期：2020/03/31</h2>
+                    <h2 class="rw_founder">活動發起人: 富力士</h2>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！ ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。 淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。
+                        您可以透過淨灘，與荒野共同減少廢棄物進入大海的機會。
+                    </p>
+                    <div class="clock"><svg id="Icon_ionic-md-time" data-name="Icon ionic-md-time" xmlns="http://www.w3.org/2000/svg" width="28.87" height="28.87" viewBox="0 0 28.87 28.87">
               <path id="Path_27" data-name="Path 27" d="M17.8,3.375A14.435,14.435,0,1,0,32.245,17.81,14.43,14.43,0,0,0,17.8,3.375Zm.014,25.983A11.548,11.548,0,1,1,29.358,17.81,11.548,11.548,0,0,1,17.81,29.358Z" transform="translate(-3.375 -3.375)" fill="#07082e"/>
               <path id="Path_28" data-name="Path 28" d="M18.7,10.688H16.537v8.661l7.578,4.546L25.2,22.118l-6.5-3.852Z" transform="translate(-3.546 -3.47)" fill="#07082e"/>
             </svg>&nbsp;&nbsp;&nbsp;活動截止日期:10天</div>
-            <div class="progress-bg">
-              <div class="progress-bar">
-                  <h3 class="raised">目前募資金額$9000</h3>
-              </div>  
-                  <h3 class="goal">目標募資金額$300000</h3>
-          </div>
-       
+                    <div class="progress-bg">
+                        <div class="progress-bar">
+                            <h3 class="raised">目前募資金額$9000</h3>
+                        </div>
+                        <h3 class="goal">目標募資金額$300000</h3>
+                    </div>
 
-          <div class="progress-bg2">
-            <div class="progress-bar2">
-                <h3 class="raised">目前參與人數50人</h3>
-            </div>  
-                <h3 class="goal">目標志工人數200人</h3>
-          </div>
-          <button id="join1">參加活動</button>
-        <button id="share1"><h4>分享活動</h4>
+
+                    <div class="progress-bg2">
+                        <div class="progress-bar2">
+                            <h3 class="raised">目前參與人數50人</h3>
+                        </div>
+                        <h3 class="goal">目標志工人數200人</h3>
+                    </div>
+                    <button id="join1">參加活動</button>
+                    <button id="share1"><h4>分享活動</h4>
         </button>
-        </div>
-        <div class="right_pic">
-        <img src="./img/act_detail/maldives-5939710_1280.jpg" alt=""><button id="join">參加活動</button>
-        <button id="share"><h4>分享活動</h4>
+                </div>
+                <div class="right_pic">
+                    <img src="./img/act_detail/maldives-5939710_1280.jpg" alt=""><button id="join">參加活動</button>
+                    <button id="share"><h4>分享活動</h4>
         </button></div>
-      </div>
-    </div>
-
-  
-      <div class="ad_tab">
-        <div class="outer_link">
-        <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
-        <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
-      </div>
-            <div class="founder"><h1>活動發起人:&nbsp;富力士</h1></div>
-      </div>
-      <!-- drop down menu -->
-    <div id="QA" class="outer_board">
-      <div class="row">
-        <div class="col">
-          <div class="tabs">
-            <div class="tab">
-              <input type="checkbox" id="chck1">
-              <label class="tab-label" for="chck1">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
-                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-              </svg></label>
-              <div class="tab-content">
-                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </div>
             </div>
-            <div class="tab">
-              <input type="checkbox" id="chck2">
-              <label class="tab-label" for="chck2">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
-                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-              </svg></label>
-              <div class="tab-content">
-                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </div>
-            </div>
-            <div class="tab">
-              <input type="checkbox" id="chck3">
-              <label class="tab-label" for="chck3">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
-                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-              </svg></label>
-              <div class="tab-content">
-                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </div>
-            </div>  
-            <div class="tab">
-              <input type="checkbox" id="chck4">
-              <label class="tab-label" for="chck4">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
-                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-              </svg></label>
-              <div class="tab-content">
-                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </div>
-            </div> 
-            <div class="tab">
-              <input type="checkbox" id="chck5">
-              <label class="tab-label" for="chck5">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
-                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
-              </svg></label>
-              <div class="tab-content">
-                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-              </div>
-            </div> 
-          </div>
         </div>
-    </div>
-  </div>
 
 
-          <div id="Board" class="outer_board">
-                <div class="banner_box"><h1>如有專案相關提問，請聯絡提案</h1></div>
-            <div class="ad_board">
+        <div class="ad_tab">
+            <div class="outer_link">
+                <button class="tablinks" onclick="openQa(event, 'QA')">活動常見問題</button>
+                <button class="tablinks" onclick="openQa(event, 'Board')">活動留言板</button>
+            </div>
+            <div class="founder">
+                <h1>活動發起人:&nbsp;富力士</h1>
+            </div>
+        </div>
+        <!-- drop down menu -->
+        <div id="QA" class="outer_board">
+            <div class="row">
+                <div class="col">
+                    <div class="tabs">
+                        <div class="tab">
+                            <input type="checkbox" id="chck1">
+                            <label class="tab-label" for="chck1">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+                            <div class="tab-content">
+                                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                                dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="checkbox" id="chck2">
+                            <label class="tab-label" for="chck2">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+                            <div class="tab-content">
+                                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                                dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="checkbox" id="chck3">
+                            <label class="tab-label" for="chck3">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+                            <div class="tab-content">
+                                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                                dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="checkbox" id="chck4">
+                            <label class="tab-label" for="chck4">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+                            <div class="tab-content">
+                                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                                dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="checkbox" id="chck5">
+                            <label class="tab-label" for="chck5">夜府起朋氣影有今法<svg class="deco" xmlns="http://www.w3.org/2000/svg" width="29.25" height="29.25" viewBox="0 0 29.25 29.25">
+                <path id="Path_82" data-name="Path 82" d="M25.523,19.477H19.477v6.047H16.523V19.477H10.477V16.523h6.047V10.477h2.953v6.047h6.047Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+                <path id="Path_83" data-name="Path 83" d="M18,6.328A11.667,11.667,0,1,1,9.745,9.745,11.623,11.623,0,0,1,18,6.328m0-2.953A14.625,14.625,0,1,0,32.625,18,14.623,14.623,0,0,0,18,3.375Z" transform="translate(-3.375 -3.375)" fill="#ffd241"/>
+              </svg></label>
+                            <div class="tab-content">
+                                夜府起朋氣影有今法：基為出子出平部布片。百廣到南萬回親產深布省汽通苦！動方達的界登著事，線列的育訴取什岸的而片金當持首從定黃況調地不這國，變基只大了怕消排原justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                                dolor sit amet.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="Board" class="outer_board">
+            <div class="banner_box">
+                <h1>如有專案相關提問，請聯絡提案</h1>
+            </div>
+            <!-- <div class="ad_board">
               <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
                 藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
                 讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
@@ -146,33 +158,141 @@
                 藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
                 讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
               <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
+            </div> -->
+           <div class="comment_section">
+            <div id="output"></div>
+            <div class="comment-form-container">
+                <form id="frm-comment">
+                    <div class="input-row">
+                        <input type="hidden" name="comment_id" id="commentId" placeholder="Name" /> <input class="input-field" type="text" name="name" id="name" placeholder="Name" />
+                    </div>
+                    <div class="input-row">
+                        <textarea class="input-field" type="text" name="comment" id="comment" placeholder="Add a Comment">  </textarea>
+                    </div>
+                    <div>
+                        <input type="button" class="btn-submit" id="submitButton" value="送出" />
+                        <div id="comment-message">Comments Added Successfully!</div>
+                    </div>
+
+                </form>
             </div>
-            
-          </div>
-       
-  </div>
+        </div>
+
+        </div>
+
+    </div>
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+        AOS.init();
     </script>
     <script>
-      function openQa(evt, cityName) {
-        var i, outer_board, tablinks;
-        outer_board = document.getElementsByClassName("outer_board");
-        for (i = 0; i < outer_board.length; i++) {
-          outer_board[i].style.display = "none";
+        function openQa(evt, cityName) {
+            var i, outer_board, tablinks;
+            outer_board = document.getElementsByClassName("outer_board");
+            for (i = 0; i < outer_board.length; i++) {
+                outer_board[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" active", "");
+    </script>
+    <script>
+        function postReply(commentId) {
+            $('#commentId').val(commentId);
+            $("#name").focus();
         }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-      </script>
+
+        $("#submitButton").click(function() {
+            $("#comment-message").css('display', 'none');
+            var str = $("#frm-comment").serialize();
+
+            $.ajax({
+                url: "./php/comment-add.php",
+                data: str,
+                type: 'post',
+                success: function(response) {
+                    var result = eval('(' + response + ')');
+                    if (response) {
+                        $("#comment-message").css('display', 'inline-block');
+                        $("#name").val("");
+                        $("#comment").val("");
+                        $("#commentId").val("");
+                        listComment();
+                    } else {
+                        alert("Failed to add comments !");
+                        return false;
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            listComment();
+        });
+
+        function listComment() {
+            $.post("./php/comment-list.php",
+                function(data) {
+                    var data = JSON.parse(data);
+
+                    var comments = "";
+                    var replies = "";
+                    var item = "";
+                    var parent = -1;
+                    var results = new Array();
+
+                    var list = $("<ul class='outer-comment'>");
+                    var item = $("<li>").html(comments);
+
+                    for (var i = 0;
+                        (i < data.length); i++) {
+                        var commentId = data[i]['comment_id'];
+                        parent = data[i]['parent_comment_id'];
+
+                        if (parent == "0") {
+                            comments = "<div class='comment-row'>" +
+                                "<div class='comment-info'><span class='commet-row-label'>from</span> <span class='posted-by'>" + data[i]['comment_sender_name'] + " </span> <span class='commet-row-label'>at</span> <span class='posted-at'>" + data[i]['date'] + "</span></div>" +
+                                "<div class='comment-text'>" + data[i]['comment'] + "</div>" +
+                                "<div><a class='btn-reply' onClick='postReply(" + commentId + ")'>Reply</a></div>" +
+                                "</div>";
+
+                            var item = $("<li>").html(comments);
+                            list.append(item);
+                            var reply_list = $('<ul>');
+                            item.append(reply_list);
+                            listReplies(commentId, data, reply_list);
+                        }
+                    }
+                    $("#output").html(list);
+                });
+        }
+
+        function listReplies(commentId, data, list) {
+            for (var i = 0;
+                (i < data.length); i++) {
+                if (commentId == data[i].parent_comment_id) {
+                    var comments = "<div class='comment-row'>" +
+                        " <div class='comment-info'><span class='commet-row-label'>from</span> <span class='posted-by'>" + data[i]['comment_sender_name'] + " </span> <span class='commet-row-label'>at</span> <span class='posted-at'>" + data[i]['date'] + "</span></div>" +
+                        "<div class='comment-text'>" + data[i]['comment'] + "</div>" +
+                        "<div><a class='btn-reply' onClick='postReply(" + data[i]['comment_id'] + ")'>Reply</a></div>" +
+                        "</div>";
+                    var item = $("<li>").html(comments);
+                    var reply_list = $('<ul>');
+                    list.append(item);
+                    item.append(reply_list);
+                    listReplies(data[i].comment_id, data, reply_list);
+                }
+            }
+        }
+    </script>
+
 </body>
 
 </html>
