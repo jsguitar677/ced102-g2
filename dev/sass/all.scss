@@ -143,7 +143,7 @@ body{
                 list-style-type: none;
                 padding: 0px;
                 padding-top: 50px;
-                height: calc(100vh - 50px);
+                height: calc(100vh) !important;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -161,7 +161,7 @@ body{
                     transition:all 1s ease 0s;
                     
                     &:first-child{
-                        background-image: url("../../img/login/banner1.jpg");
+                        background-image: url("../../img/login/banner1.jpg") !important;
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-position: top;
@@ -171,7 +171,7 @@ body{
                         }
                     }
                     &:nth-child(2){
-                        background-image: url("../../img/login/banner2.jpg");
+                        background-image: url("../../img/login/banner2.jpg") !important;
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-position: 40% 75%;
@@ -181,7 +181,7 @@ body{
                         }
                     }
                     &:nth-child(3){
-                        background-image: url("../../img/login/banner3.jpg");
+                        background-image: url("../../img/login/banner3.jpg") !important;
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-position: bottom !important;
@@ -191,7 +191,7 @@ body{
                         }
                     }
                     &:last-child{
-                        background-image: url("../../img/login/banner4.jpg");
+                        background-image: url("../../img/login/banner4.jpg") !important; 
                         background-repeat: no-repeat;
                         background-size: cover;
                         background-position: bottom!important;
@@ -790,7 +790,7 @@ div#wholeScreenOverlay4{
         @include ModalSetting();
         button#SendPswToMailBtn{
             @include LogRegBtn();
-            background-color: #FFD241;
+            background-color: #ffffff;
             color: map-get($map: $color_regulation, $key: 'blue');
         }
     }
