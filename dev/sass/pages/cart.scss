@@ -300,8 +300,10 @@ div.title-block {
                 padding: 5px 9px;
                 padding-left: 13x;
                 text-align: center;
+                // margin: 10px;
             }
-            button.round {
+                
+            div.round {
                 border-radius: 50%;
                 width: 30px;
                 height: 30px;
@@ -311,6 +313,7 @@ div.title-block {
                 font-size: 18px;
                 background: map-get($color_regulation, 'gray' );
                 cursor: pointer;
+                margin: 0 10px;
                 &:hover{
                     background: map-get($color_regulation, 'yellow' );
                     color: map-get($map: $color_regulation, $key: 'blue');
@@ -337,13 +340,15 @@ div.title-block {
                 }
 
             }
-            button.add {
+            div.add {
                 font-size: 20px;
+                text-align: center;
             }
-            button.less {
-                font-size: 24px;
+            div.less {
+                font-size: 20px;
+                text-align: center;
             }
-            button.round-cxl {
+            div.round-cxl {
                 border-radius: 50%;
                 width: 28px;
                 height: 28px;
@@ -372,6 +377,7 @@ div.title-block {
             }
             
             } 
+        
         
     
         .total_body {

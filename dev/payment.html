@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
+    
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
 </head>
 
@@ -175,13 +175,13 @@
                   <input class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'">
                 </div>
                 <div class="form-group row">
-                  <label class="label">卡號:</label>
+                  <label class="label ">卡號:</label>
                   <div class="form-row">
                     <!-- <div class="col form" v-if="!isMobile" v-for="(number, index) in formPayment.cardNumber">
                       <input class="form-control" type="text" :name="`cardNumber${index}`" ref="cardNumber" v-model="formPayment.cardNumber[index]" v-validate="'required|numeric|length:4'" @input="checkCardNumberInput(formPayment.cardNumber[index], index)">
                     </div> -->
                     <div class="col " v-if="isMobile">
-                      <input class="form-control form" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)">
+                      <input class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" required>
                     </div>
                     <!-- <div class="col " v-if="isMobile">
                       <input class="form-control form" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)">
@@ -203,9 +203,9 @@
                   <label class="label">到期日期:</label>
                   <div class="form-row  label ">
                     <div class="input-group " >
-                      <input class="form-control form" type="text" name="expiredMonth" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02">
+                      <input class="form-control form" type="text" name="expiredMonth" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02" required>
                       
-                      <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27">
+                      <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27" required>
                       
                     </div>
                     <!-- <div class="col-6 col-md-3 input-group row">
@@ -246,12 +246,12 @@
                </div>
                <div class="row" id="card-number-field">
                   <label class="label" for="cellPhone">手機號碼：</label>
-                  <input type="text" name="cellPhone" class="form-control cellPhone form" maxlength="20"
+                  <input type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
                       id="cellPhone">
                </div>
                <div class="row" >
                 <label class="label" for="phone">市話：</label>
-                <input  type="text" name="creditCard" class="form-control phone form" maxlength="20"
+                <input  type="text" name="creditCard" class="form-control homephone form" maxlength="20"
                     id="phone">
                </div>
                <!-- 地區跟郵遞區號串中華郵政 -->
@@ -295,7 +295,7 @@
                </div>
                <div class="row" >
                 <label class="label" for="phone"></label>
-                <input  type="text" name="creditCard" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址">
+                <input  type="text" name="phone" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址">
                </div>
               </div>
     
@@ -307,12 +307,12 @@
                </div>
                <div class="row" id="card-number-field">
                   <label class="label" for="cellPhone">手機號碼：</label>
-                  <input  type="text" name="cellPhone" class="form-control cellPhone form" maxlength="20"
+                  <input  type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
                       id="cellPhone">
                </div>
                <div class="row" >
                 <label class="label" for="Phone">市話：</label>
-                <input  type="text" name="creditCard" class="form-control Phone form" maxlength="20"
+                <input  type="text" name="creditCard" class="form-control homePhone form" maxlength="20"
                     id="Phone">
 
                </div>
@@ -357,7 +357,7 @@
                </div>
                <div class="row" >
                 <label class="label" for="phone"></label>
-                <input  type="text" name="creditCard" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址">
+                <input  type="text" name="creditCard" class="form-control form" maxlength="20" placeholder="請輸入郵寄地址">
                </div>
               </div> 
             </form>
@@ -450,28 +450,38 @@
     <script src="./js/login.js"></script>
 </body>
 <script src="vendor/jQuery/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.1.1/cleave.min.js"></script>
 <script>
   $('.finshbtn').click(function(){
 $('.full-screen').css('display','block');
 
 });
+
+new Cleave(".creadNum",{
+  creditCard: true,
+  delimiter: "-",
+  // onCreditCardTypeChanged: function(type){
+  //     if(type === "visa"){
+  //         document.querySelector(".visa").classList.add("use");
+  //     }else if(type === "jcb"){
+  //         document.querySelector(".jcb").classList.add("use");
+  //     }else if(type === "master"){
+  //         document.querySelector(".master").classList.add("use");
+  //     }else{
+  //         document.querySelector(".visa").classList.remove("use");
+  //         document.querySelector(".jcb").classList.remove("use");
+  //         document.querySelector(".master").classList.remove("use");
+
+  //     }
+  // }
+})
+var cleave = new Cleave( ".Phone", {
+  		phone: true, // 電話模式
+  		phoneRegionCode: "tw"
+  	});
  
 </script>
-<!-- <script>
-   $(document).ready(function(){
 
-        // 會員登入
-        $(function () {
-        $('#finshbtn').click(function () {
-            $('#finsh_wrapper').fadeIn();
-        });
 
-        $('.step_done_btn').click(function () {
-            $('#login-modal').fadeOut();
-        });
-        })
-      })
-
-</script> -->
 
 </html>

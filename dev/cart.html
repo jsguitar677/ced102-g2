@@ -8,11 +8,14 @@
     <title>購物車</title>
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/pages/cart.css">
+    <link rel="stylesheet" href="./js/cart.js">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <!-- <link rel="stylesheet" href="./plugin/bootstrap-grid.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.6.2/vuex.min.js"></script>
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
 </head>
 
@@ -54,30 +57,34 @@
                 <div class="sub-title-line"></div>
             </div>
             <form id="app">
-                <table class="table">
-                    <div class="item_container" v-for="(item, index) in itemList" :key="item.id">
-                        <div class=" item_body">
+                <table class="table wrap">
+                    <!-- <div id="emptycart" class="item_body" style="padding: 20px;">
+                        <p style="margin: 0 auto;">您還沒挑選任何商品，歡迎到商城逛逛唷！</p>
+                    </div> -->
+                    <!-- <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id"> -->
+                        <div class="item_container listRow" >
+                        <div class=" item_body prodInfo">
                             <div class="item_detail">
                                 <!-- <img v-bind:src="item.imgUrl" alt=""> -->
-                                <div class="img"></div>
+                                <div class="img prodPic"></div>
                                 <!-- <div class="name">{{item.itemName}}</div> -->
-                                <div class="name"><span>品名:</span>優質短袖白T</div>
-                                <div class="size"><span>尺寸:</span>F</div>
+                                <div class="prodName name"><span>品名:</span>優質短袖白T</div>
+                                <div class="size prodSize"><span>尺寸:</span>F</div>
                             </div>
 
                             <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
-                            <div class="price itemcol"><span>$</span>500</div>
-                            <div class="count">
-                                <button class="round less" @click="handleSub(item)">-</button>
-                                <span class="item-count">1</span>
+                            <div class="price itemcol prodPrice"><span>$</span>500</div>
+                            <div class="count prodNumber" style="display: flex;">
+                                <div class=" button round less " @click="lessCount">-</div>
+                                <span class="item-count">{{count}}</span>
                                 <!-- {{item.count}} -->
-                                <button class="round add" @click="handlePlus(item)">+</button>
+                                <div class=" button round add " @click="addCount">+</div>
                             </div>
-                            <!-- <div class="amount">{{item.price * item.count}}</div> -->
+                            <div class="amount">{{item.price * item.count}}</div>
                             <div class="amount itemcol">500</div>
                             <div class="operate itemcol">
-                                <button class="round round-cxl add  @click=" handledelete(index) " ><i class="fas fa-trash fa-1x "></i></button>
-                                </div>
+                                <div class="round round-cxl add  ><i class="fas fa-trash fa-1x"></i></div>
+                            </div>
                         </div>
                   </div>
                   <div class="item_container " v-for="(item, index) in itemList " :key="item.id " >
@@ -141,26 +148,26 @@
                 <div class="row">
                     <span class="label">商品總金額:</span>
                     <!-- <div class="formw totalAmount"><span>$</span>{{item.price * item.count}}</div> -->
-                    <div class="formw totalAmount"><span>$</span>1600</div>
+                    <div class="formw totalAmount">$<span id="subtotal">0</span></div>
                     <!-- <span class="formw"><input type="text" size="25" /></span> -->
                 </div>
                 <div class="row">
                     <span class="label">使用環保幣折扣:</span>
                     <!-- <input class="formw discount" value="$0" readonly > -->
-                    <input class="formw discount" value="$0" readonly>
+                    <input class="formw discount"  value="登入會員才能折抵" readonly style="border: none;">
                 </div>
                 
                 
                 <div class="orderCount">
                     
                     <!-- <p>總計：${{subtotal[index]}}</p> -->
-                    <p class="orderCount-subtotal">總計：$1600</p>
+                    <p class="orderCount-subtotal ">總計：<span id="allTotal">0</span></p>
                 </div>
 
             </div>
             <div class="butSection">
-                <button  class=" button button-buy"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
-                <button onclick="location.href='./payment.html'" class="button button-pay"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
+                <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
+                <button onclick="location.href='./payment.html'" class="button button-pay thebill"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
                 
             </div>
             
@@ -178,6 +185,46 @@
     @@include('./layout/footer.html')
 
     <script src="./js/login.js"></script>
+    <script src="./js/vue.js"></script>
+    <script> 
+        const store = new Vuex.Store({  //global store
+            state: {  
+                count: 0,
+            },
+            mutations:{ 
+                addCount(state){
+                    state.count += 1;
+                },
+                lessCount(state){
+                    if(state.count>1){
+                    state.count -= 1;
+                    }
+                },
+            },
+        });      
+
+        new Vue({
+            el: '#app',
+            store,  //store: store,
+            data: {
+                // count: 0,
+            },
+            methods: {
+
+                addCount(){
+                    this.$store .commit('addCount');
+                },
+                lessCount(){
+                    this.$store .commit('lessCount');
+                },
+            },
+            computed: {
+                count(){
+                    return this.$store.state.count;
+                },
+            },
+        });
+    </script>    
 
     
     
