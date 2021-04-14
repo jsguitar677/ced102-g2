@@ -406,7 +406,7 @@ let memberText;
                     // 登出後註冊按鈕就顯現
                     $id('AccountListReg').style.display = "block";
                 }
-                xhr.open("get","php/logout.php");
+                xhr.open("get","php/15/logout.php");
                 xhr.send(null);                
                 // document.getElementById('AccountList').classList.toggle('AccountListToggle');
             }
@@ -516,7 +516,7 @@ let memberText;
                     wholeScreenOverlay2.style.display = 'block';
                 }
             }
-            xhr.open("post", "php/login.php", true); //連結伺服端程式
+            xhr.open("post", "php/15/login.php", true); //連結伺服端程式
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
             let data_info = `MBRMAIL=${$id("MBRMAIL").value}&MBRPSW=${$id("MBRPSW").value}`;
             xhr.send(data_info);
@@ -618,7 +618,7 @@ function getMemInfo(){
         
       }
     }
-    xhr.open("get", "php/getMemInfo.php", true);
+    xhr.open("get", "php/15/getMemInfo.php", true);
     xhr.send(null);
 };
 
@@ -671,7 +671,7 @@ function checkACFT(e){
         }
 
     }
-    xhr.open("post", "php/cread_AC.php", true);
+    xhr.open("post", "php/15/cread_AC.php", true);
     xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
     let data_AC = `logMemId=${$id("logMemId").value} & logMemPsw=${$id("logMemPsw").value} & logMemName=${$id("logMemName").value} & BirthYear=${$id("BirthYear").value} & logMemMobileCheck=${$id("logMemMobileCheck").value}`;
     xhr.send(data_AC);
@@ -703,7 +703,7 @@ function checkACFT(e){
             }
         } 
         
-        let url = "php/check_AC.php";
+        let url = "php/15/check_AC.php";
         xhr.open("post", url, true);
         xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
         let data_AD = `logMemId=${$id("logMemId").value}`;
