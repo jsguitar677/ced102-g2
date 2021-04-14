@@ -18,15 +18,9 @@ $(document).ready(function(){
             borderColor: '#4E4E6A',
         })
     })
-    //取消冒泡事件
     $('form.alert').click(function(e){
         e.stopPropagation();
     });
-    //點擊新增管理員
-    $('#c1 div.add-administrator').click(function(){
-        $('#c1 div.alert-block-add').css('display','block');
-    })
-
     
     //====================================會員管理============================================
     $('#c2 div.delete-icon').click(function(){
@@ -94,21 +88,31 @@ $(document).ready(function(){
     userList_ord = new List('c4', options);
 
     //====================================檢舉管理============================================
-    $('#c5 div.edit-icon').click(function(){
+    $('#c5 label.toggle-btn').click(function(){
         let rptno = $(this).parent().parent().attr("id");
         $('#c5 div.alert-block-audit').css('display','block');
         let commno = $(this).parent().parent().find('td.message-num').text();
         $('#rpt-audit .commno').text(`${commno}`);
         $('#rpt-audit input[name="REPORTNO"]').val(`${rptno.substr(3).trim()}`);
+        if($(this).find('input').prop("checked")){
+            $('#c5 #audit-cancel').click(function(){
+                let val = $(this).parent().find('input').val();
+                $(`#c5 #rpt${val} input`).prop('checked',false);
+                $('#c5 div.alert-block-audit').css('display','none');
+            })
+        }else{
+            $('#c5 #audit-cancel').click(function(){
+                let val = $(this).parent().find('input').val();
+                $(`#c5 #rpt${val} input`).prop("checked",true);
+                $('#c5 div.alert-block-audit').css('display','none');
+            })
+        }
     })
-    
+
     var options = {valueNames: [ 'rpt-num','rpt-mem-num','rpt-mem-name','message-num']};
     userList_rpt = new List('c5', options);
 
     //====================================活動審核管理============================================
-
-
-
 
 
     //====================================活動花絮管理============================================
