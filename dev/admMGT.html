@@ -15,9 +15,19 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
     <script src="./js/common_backend.js"></script>
+    <script src="./js/admMGT.js"></script>
 </head>
 <body>
-    @@include('./layout/backend_header.html')
+    <header>
+        <div class="flex">
+            <div class="logo"><img src="./img/backend/logo.png"></div>
+            <div class="user-block">
+                <div class="user-icon"><i class="fas fa-user"></i></div>
+                <div class="user-name">Ann Chen</div>
+                <div class="sign-out"><i class="fas fa-sign-out-alt"></i>sign out</div>
+            </div>
+        </div>
+    </header>
     <div class="bg">
         <main id="backend">
             <aside class="tags">
@@ -49,40 +59,25 @@
                             </tr>
                         </thead>
                         <tbody class="list" id="adm-tbody">
-                            <tr>
-                                <td><div class="no-block adm-num">1</div></td>
-                                <td class="adm-name">Ann Chen</td>
-                                <td>ANN0909</td>
-                                <td>
-                                    <div class="delete-icon"><i class="fas fa-trash"></i></div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><div class="no-block adm-num">2</div></td>
-                                <td class="adm-name">BlackCuba</td>
-                                <td>BlackCuba0309</td>
-                                <td>
-                                    <div class="delete-icon"><i class="fas fa-trash"></i></div>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                     <div class="alert-block alert-block-delete">
-                        <form id="adm-delete" class="alert" action="./getAdm_JSON.php" method="GET">
-                            <input type="text" name="admno" hidden>
+                        <form id="adm-delete" class="alert">
+                            <input type="text" name="admno" id="admno" hidden>
                             <p>您確定要將管理員編號<span class="admno"></span>刪除?</p>
                             <p class="highlight">一經刪除便無法復原</p>
                             <div class="cancel-btn btn">取消</div>
-                            <button type="submit" class="submit btn">確認</button>
+                            <div class="btn submit" id="deletebtn">確認</div>
                         </form>
                     </div>
                     <div class="alert-block alert-block-add">
-                        <form id="adm-add" class="alert" action="./getAdm_JSON.php" method="POST">
-                            <label>管理員姓名：</label><input type="text" name="admname"><br>
-                            <label>管理員帳號：</label><input type="text" name="admacc"><br>
-                            <label>管理員密碼：</label><input type="password" name="admpws"><br>
+                        <form id="adm-add" class="alert">
+                            <label>管理員姓名：</label><input type="text" name="admname" id="admname"><br>
+                            <label>管理員帳號：</label><input type="text" name="admacc" id="admacc"><br>
+                            <label>管理員密碼：</label><input type="password" name="admpws" id="admpws"><br>
                             <div class="cancel-btn btn">取消</div>
-                            <button type="submit" class="submit btn">新增</button>
+                            <div class="btn submit" id="addbtn">新增</div>
                         </form>
                     </div>
                 </section>

@@ -394,6 +394,9 @@ div.bg{
                                         background-color: map-get($web-color,'yellow');
                                     }
                                 }
+                                &:nth-child(1){
+                                    min-width: 45px;
+                                }
                                 
                             }
                             &:nth-child(1){
@@ -462,6 +465,12 @@ div.bg{
                             }
                         }
                         button[type=submit]{
+                            &:hover{
+                                background-color: map-get($web-color, 'red-btn');
+                                color: map-get($web-color, 'blue-dark');
+                            }
+                        }
+                        div.submit{
                             &:hover{
                                 background-color: map-get($web-color, 'red-btn');
                                 color: map-get($web-color, 'blue-dark');
