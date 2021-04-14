@@ -5,7 +5,6 @@ body>*{
     font-family: "Palatino Linotype", "Noto Sans Tc";
 }
 
-
 //======================  footer Mixin ================= JohnLing 2021/04/04
 @mixin FooterBtn (){
     background-color: map-get($map: $color_regulation, $key: 'yellow');
