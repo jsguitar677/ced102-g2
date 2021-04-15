@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("../../connect_ced102g2.php");
+  require_once("../connect_ced102g2.php");
   $sql = "select ADMNO, ADMNAME, ADMACC from adm";
   $delete = "delete from adm where ADMNO =:admno";
   $add = "insert into adm(ADMNAME, ADMACC, ADMPSW) values (:admname,:admacc,:admpws)";
