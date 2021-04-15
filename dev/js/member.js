@@ -1,7 +1,9 @@
 //筆記 注意querySelectorAll and querySelector差異
+// querySelector 返回第一匹配元節點的子樹內的節點。如果 找不到匹配節點，則返回null。
+// querySelectorAll 如果沒有找到匹配，則返回一個節點列表包含 節點的子樹中的所有匹配元素節點，或一個空節點列表。
 
+//  -------------------------以下-----------fromjohn
 const memInfoBoxs = document.querySelectorAll('.memInfoBox');
-
 memInfoBoxs.forEach(function(memInfoBox){
     const infoBtn = memInfoBox.querySelector(".infoBtn");
     // console.log(infoBtn);
@@ -16,7 +18,6 @@ memInfoBoxs.forEach(function(memInfoBox){
         memInfoBox.classList.toggle("show-text");
     });
 });
-
 
 // 網頁切換
 function openPage(evt, pageState) {
@@ -33,11 +34,10 @@ for (i = 0; i < tabLinks.length; i++) {
     document.getElementById(pageState).style.display = "block";
     evt.currentTarget.className += " active comBtn";
 }
-
 document.getElementById("defaultOpen").click();
+//  -------------------------以上-----------fromjohn
 
-
- 
+//  -------------------------以下-----------from班代
 var memberContentId = document.querySelectorAll('memberContent');
 
 //點按經驗值兌換顯示背景btnDisCon2
@@ -106,24 +106,6 @@ function ReceiveCoin(){
 }
 window.addEventListener('load',ReceiveCoin);
 
-//取消收藏
-// function cancelCollection(){
-//     let cancelCollectBtn = document.getElementsByClassName('memberCollectionCancel');
-//     let carouselItem = document.getElementsByClassName('item');
-//     // for(let i = 0; i < cancelCollectBtn.length; i++){
-//     //     cancelCollectBtn[i].onclick = function(){
-//     //         carouselItem[i].remove();
-//     //     }
-//     // }
-//         cancelCollectBtn[0].onclick = function(){
-//             // carouselItem[0].remove();
-//             carouselItem[0].classList.add('see');
-
-//         }
-// }
-
-// window.addEventListener('load',cancelCollection)
-
 new Vue({
     el:'#appMemberBriefIntro',
     data:{
@@ -164,6 +146,7 @@ function receiveCoinTextReduce(){
 }
 
 window.addEventListener('resize',receiveCoinTextReduce);
+
 //募款與志工活動連結按鈕字樣縮減
 function AttendEnSmallBtnTxt(){
     var ScreenWidth = window.innerWidth;
@@ -180,4 +163,69 @@ function AttendEnSmallBtnTxt(){
     } 
 }
 window.addEventListener('resize',AttendEnSmallBtnTxt);
+//  -------------------------以上-----------from班代
 
+//  -------------------------以下-----------fromjohn
+// -------------4/14-------------------------------
+function $id(id){
+	return document.getElementById(id);
+}
+function IfNotMemberTransefer(){
+    var memberHook = document.getElementById('member_hook');
+    // console.log(memberHook.href);
+    let xhr = new XMLHttpRequest(); 
+    xhr.onload = function(){
+        let MBRMAIL = JSON.parse(xhr.responseText);
+        if( MBRMAIL === 50 ){
+            alert('請先登入會員帳號');
+            window.location.href='./indexfront.html';
+            memberHook.href="./member.html";
+            // AccountListLogBtn  問題 跳轉完才能夠跳燈箱 顯示
+            // setcookie("userss","100",time(3600));
+            // $id('wholeScreenOverlay3').style.display = 'block';
+            // document.body.style.overflow = 'hidden';
+            return;
+        } else{
+            memberHook.innerHTML="返回首頁";
+            memberHook.href="./indexfront.html";
+        }
+    }
+    xhr.open("get","php/15/getMemInfo.php", true);
+    xhr.send(null);
+};
+// document.cookie = 'cookie3=value3';
+// function IfMemberLogOut(){
+//     document.cookie = "user3=100";
+//     window.location.href='./indexfront.html';
+// };
+
+function IfMemberLogOut(){
+    document.cookie = 99;
+    window.location.href='./indexfront.html';
+};
+//  -------------------------以上-----------fromjohn
+
+
+window.addEventListener("load", function(){
+    // ------------------------如果在非會員點選會員中心
+    IfNotMemberTransefer();
+    // ------------------------如果在會員區登出 跳轉回首頁
+    $id("LogConfirmY").addEventListener("click",IfMemberLogOut);
+});
+
+
+
+// 4/14 須完成 
+// 會員資訊拉取  ex 點擊才拉取資料
+// 經驗值兌換  ex 點擊才拉取資料
+// 商城消費紀錄  ex 點擊才拉取資料
+
+// 1 解決會員綠色圈圈問題
+// 2 問題 跳轉完才能夠跳燈箱 顯示 Line:184
+
+// 4/15 做後半段
+// 參與募款與志工紀錄
+// 發起活動管理
+
+// 4/16 做後半段
+// 發起活動管理

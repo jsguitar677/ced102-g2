@@ -39,3 +39,21 @@ $(document).ready(function() {
         $('#img_color').attr('src', './img/indexFront/shopImg/cusBag5.png');
     });
 });
+
+
+window.addEventListener("load",function(){
+    test2();
+});
+
+function test2 (){
+    if( document.cookie = 0 ){
+        $id('wholeScreenOverlay3').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        document.cookie = 99;
+        return;
+    }else{
+        $id('wholeScreenOverlay3').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        return;
+    }
+}

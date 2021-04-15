@@ -18,7 +18,7 @@ try{
     $_SESSION["MBRNAME"] = $memRow["MBRNAME"];
 
     //送出登入者的姓名資料
-    $result = ["MBRMAIL"=>$memRow["MBRMAIL"], "MBRNAME"=>$memRow["MBRNAME"]];
+    $res = ["MBRMAIL"=>$memRow["MBRMAIL"], "MBRNAME"=>$memRow["MBRNAME"]];
 
     echo json_encode($memRow); //輸出json
   }
@@ -26,3 +26,4 @@ try{
   echo $e->getMessage();
 }
 ?>
+
