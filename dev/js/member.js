@@ -171,9 +171,8 @@ function $id(id){
 	return document.getElementById(id);
 }
 function IfNotMemberTransefer(){
-    
     var memberHook = document.getElementById('member_hook');
-    console.log(memberHook.href);
+    // console.log(memberHook.href);
     let xhr = new XMLHttpRequest(); 
     xhr.onload = function(){
         let MBRMAIL = JSON.parse(xhr.responseText);
@@ -182,10 +181,11 @@ function IfNotMemberTransefer(){
             window.location.href='./indexfront.html';
             memberHook.href="./member.html";
             // AccountListLogBtn  問題 跳轉完才能夠跳燈箱 顯示
-            $id('wholeScreenOverlay3').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            // return;
-        } else {
+            // setcookie("userss","100",time(3600));
+            // $id('wholeScreenOverlay3').style.display = 'block';
+            // document.body.style.overflow = 'hidden';
+            return;
+        } else{
             memberHook.innerHTML="返回首頁";
             memberHook.href="./indexfront.html";
         }
@@ -193,8 +193,14 @@ function IfNotMemberTransefer(){
     xhr.open("get","php/15/getMemInfo.php", true);
     xhr.send(null);
 };
+// document.cookie = 'cookie3=value3';
+// function IfMemberLogOut(){
+//     document.cookie = "user3=100";
+//     window.location.href='./indexfront.html';
+// };
 
 function IfMemberLogOut(){
+    document.cookie = 99;
     window.location.href='./indexfront.html';
 };
 //  -------------------------以上-----------fromjohn
@@ -223,4 +229,3 @@ window.addEventListener("load", function(){
 
 // 4/16 做後半段
 // 發起活動管理
-
