@@ -1493,7 +1493,7 @@ div#footerMiddle{
         align-items: flex-start;
         padding-left: 5%;
         h1{
-            font-size: $h1;
+            font-size: 40px !important;
             margin: 0;
         }
         h2{
@@ -1509,12 +1509,15 @@ div#footerMiddle{
         }
     }
     div#footerBackTop{
-        position: absolute;
+        box-shadow: $box-shadow;
+        position: fixed;
+        bottom: 15%;
+        right: 6%;
+        z-index: 3;
         color: map-get($map: $color_regulation , $key:'white') ;
-        width: 55px;
-        height: 55px;
+        width: 30px;
+        height: 30px;
         background-color: map-get($map: $color_regulation , $key:'yellow');
-        right: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1533,7 +1536,7 @@ div#footerMiddle{
     flex-direction: column;
     align-items: flex-start;
     h2{
-        font-size: $h3;
+        font-size: 40px !important;
         margin-top: 0;
         margin-bottom: 20px;
     }
@@ -1547,7 +1550,9 @@ div#footerMiddle{
     }
 }
 
-
+.st0{
+    fill: map-get($color_regulation, 'footerGray' ) !important;
+}
 #footerMiddleLeft{
     a{
         text-decoration: none;
@@ -1666,7 +1671,7 @@ div#footerBottom{
 
 @media screen and (max-width:440px){
     #footerMiddleRight h2{
-        font-size: $h5;
+        font-size: 40px;
     }
     div#footerMiddle div#footerMiddleRight p{
         width: 65%;
