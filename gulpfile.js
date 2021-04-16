@@ -13,6 +13,9 @@ const reload = browserSync.reload; //browser的方法 更新後~
 function movePhp() {
     return src('dev/php/*.php').pipe(dest('dist/php/'));
 }
+function movePagePhp5() {
+    return src('dev/php/5/*.php').pipe(dest('dist/php/5/'));
+}
 function movePagePhp15() {
     return src('dev/php/15/*.php').pipe(dest('dist/php/15/'));
 }
@@ -90,7 +93,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(movePagePhp7,movePagePhp15,movePhp,moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
+exports.u = series(killDist, parallel(movePagePhp5,movePagePhp7,movePagePhp15,movePhp,moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
 
 exports.browser = function browsersync() {
     browserSync.init({
