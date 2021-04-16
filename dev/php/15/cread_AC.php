@@ -15,6 +15,9 @@ try{
 
 
 }catch(PDOException $e){
-  echo "error";
+  echo "error :　";
+  echo $e->getMessage();
+  echo "errorLine :　";
+  echo $e->getLine();
 }
 ?>
