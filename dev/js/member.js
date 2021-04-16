@@ -1,3 +1,6 @@
+function $id(id){
+	return document.getElementById(id);
+}
 //筆記 注意querySelectorAll and querySelector差異
 // querySelector 返回第一匹配元節點的子樹內的節點。如果 找不到匹配節點，則返回null。
 // querySelectorAll 如果沒有找到匹配，則返回一個節點列表包含 節點的子樹中的所有匹配元素節點，或一個空節點列表。
@@ -24,22 +27,82 @@ function openPage(evt, pageState) {
     var i, tabContent, tabLinks;
     tabContent = document.getElementsByClassName("tabContent");
     for (i = 0; i < tabContent.length; i++) {
-    tabContent[i].style.display = "none";
-
-}
-tabLinks = document.getElementsByClassName("tabLinks");
-for (i = 0; i < tabLinks.length; i++) {
-    tabLinks[i].className = tabLinks[i].className.replace(" active comBtn", "");
-}
+        tabContent[i].style.display = "none";
+    }
+    tabLinks = document.getElementsByClassName("tabLinks");
+    for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].className = tabLinks[i].className.replace(" active comBtn", "");
+    }
     document.getElementById(pageState).style.display = "block";
     evt.currentTarget.className += " active comBtn";
+    var getPages = pageState;
+    switch(getPages){
+        // ----11111111111111111111------------memberInfo.php----
+        case 'memInfo': 
+            // function show(jsonStr){
+            //     // let row = JSON.parse(jsonStr);
+            //     console.log(jsonsrt);
+            // }
+            // let xhr = new XMLHttpRequest();
+            // xhr.onload = function(){
+            //     if( xhr.status == 200 ){
+            //         show(xhr.responseText);
+            //     }else{
+            //         alert( xhr.status )
+            //     }
+            //     // let memberText = JSON.parse(xhr.responseText);
+            //     // console.log(memberText);
+            // }
+            // xhr.open("Get", "php/15/memberInfo.php", true); //連結伺服端程式
+            // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
+            // xhr.send(null);
+            break;
+        // ----22222222222222222222----------memberExp.php------
+        case 'memExp':
+            let xhr2 = new XMLHttpRequest();
+            xhr2.onload = function(){
+                console.log(xhr2.responseText);
+            }
+            xhr2.open("post", "php/15/memberExp.php", true); //連結伺服端程式
+            xhr2.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
+            xhr2.send(null);
+            console.log('999');
+            break;
+        // ----33333333333333333333----------------
+        case 'orderRecord':
+        console.log(321);
+            break;
+        // ----44444444444444444444----------------
+        case 'participateRecord':
+        console.log(321);
+            break;
+        // ----55555555555555555555----------------
+        case 'eventManagement':
+        console.log(321);
+            break;
+        // ----66666666666666666666----------------
+        case 'eventSave':
+        console.log(321);
+            break;
+    }
+
 }
 document.getElementById("defaultOpen").click();
+
+
+// var elem1 = document.getElementById("elemId");
+// var style = window.getComputedStyle(elem1, null)
+
+
+
+window.addEventListener("load", function(){
+    // memberInfo();
+})
+
 //  -------------------------以上-----------fromjohn
 
 //  -------------------------以下-----------from班代
 var memberContentId = document.querySelectorAll('memberContent');
-
 //點按經驗值兌換顯示背景btnDisCon2
 document.getElementById('btnDisCon1').onclick = function(){
     document.getElementById('memberContentId').classList.remove('btnDisCon2Sty');
@@ -167,9 +230,7 @@ window.addEventListener('resize',AttendEnSmallBtnTxt);
 
 //  -------------------------以下-----------fromjohn
 // -------------4/14-------------------------------
-function $id(id){
-	return document.getElementById(id);
-}
+
 function IfNotMemberTransefer(){
     var memberHook = document.getElementById('member_hook');
     // console.log(memberHook.href);
@@ -189,21 +250,18 @@ function IfNotMemberTransefer(){
             memberHook.innerHTML="返回首頁";
             memberHook.href="./indexfront.html";
         }
+        
     }
     xhr.open("get","php/15/getMemInfo.php", true);
     xhr.send(null);
 };
-// document.cookie = 'cookie3=value3';
-// function IfMemberLogOut(){
-//     document.cookie = "user3=100";
-//     window.location.href='./indexfront.html';
-// };
 
 function IfMemberLogOut(){
     document.cookie = 99;
     window.location.href='./indexfront.html';
 };
 //  -------------------------以上-----------fromjohn
+
 
 
 window.addEventListener("load", function(){
