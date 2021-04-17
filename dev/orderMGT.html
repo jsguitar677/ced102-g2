@@ -14,7 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    
     <script src="./js/common_backend.js"></script>
+    <script src="./js/orderMGT.js"></script>
 </head>
 <body>
     @@include('./layout/backend_header.html')
@@ -50,8 +52,8 @@
                                 <th>查看訂單</th>
                             </tr>
                         </thead>
-                        <tbody class="list">
-                            <tr>
+                        <tbody class="list" id="ord-tbody">
+                            <!-- <tr>
                                 <td><div class="no-block ord-num">1</div></td>
                                 <td>03/05</td>
                                 <td class="mem-num">2</td>
@@ -68,11 +70,11 @@
                                 <td>
                                     <div class="view-icon"><i class="fas fa-paste"></i></div>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                     <div class="alert-block alert-block-view">
-                        <form id="ord-view" class="alert">
+                        <!-- <form id="ord-view" class="alert">
                             <div class="top">
                                 <label class="left">訂單編號：</label><p>1</p><br>
                                 <label class="left">訂單日期：</label><p>2020/03/05</p><br>
@@ -108,7 +110,7 @@
                                 <label class="left">收貨人電話：</label><p>0932333333</p><br>
                             </div>
                             <div class="cancel-btn btn">關閉</div>
-                        </form>
+                        </form> -->
                     </div>
                 </section>
             </div>
