@@ -1,43 +1,31 @@
-@import '../var';
+@import '../common_backend';
 
-@mixin btn-module-blue() {
-    .btn{
-        border-radius: $borderRadius;
-        display: inline-block;
-        background-color: map-get($color_regulation,'yellow');
-        font-weight: bolder;
-        font-size: $contentTxt;
-        color: map-get($color_regulation,'blue');
-        padding: 0px 30px;
-        display: inline-block;
-        cursor: pointer;
-        outline: none;
-        border: none;
-        width: 150px;
-        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
-    }
+%btn{
+    border-radius: $border-radius;
+    display: inline-block;
+    background-color: map-get($web-color,'yellow');
+    font-weight: bolder;
+    color: map-get($web-color,'blue-dark');
+    padding: 5px 20px;
+    cursor: pointer;
+    border: 1px solid map-get($web-color,'input-border');
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.342);
+    // &:hover{
+    //     background-color: map-get($web-color,'yellow');
+    // }
 }
 
 
 *{
     box-sizing: border-box;
-    letter-spacing: $letter-Spacing;
-    font-family: 'Palatino Linotype';
-    color:  map-get($color_regulation,'blue');
+    letter-spacing: $text-letterspacing;
+    color:  map-get($web-color,'text');
+    font-size: $text-fontSize-small;
 }
 
 body{
     margin: 0;
-    background-color: map-get($color_regulation,'white-bg');
-}
-
-a{
-    text-decoration: none;
-    color: map-get($color_regulation,'red');
-    
-    &:hover{
-        color: map-get($color_regulation,'blue');
-    }
+    background-color: map-get($web-color,'blue-dark');
 }
 
 img{
@@ -48,77 +36,90 @@ header{
     width: 100%;
     height: 66px;
     text-align: center;
-    background-color: map-get($color_regulation,'blue');
+    background-color: map-get($web-color,'blue');
     div.logo{
-        background-color: map-get($color_regulation,'blue');
-        width: $pageW;
+        background-color: map-get($web-color,'blue');
+        width: $max-width;
         margin: 0 auto;
         height: 100%;
+        padding: 5px;
         img{
             max-height: 100%;
         }
     }
 }
 div.min-hight{
-    width: $pageW;
+    text-align: center;
+    width: $max-width;
     margin: 0 auto;
     min-height:calc(100vh - 100px);
     padding: 60px 0;   
-    background-image: url('../../img/backend/indexfont-img.png');
-    background-repeat: no-repeat;
-    background-size: 400px;
-    background-position: center center;
 
     div.title{
         text-align: center;
-        font-size: $contentSubTit;
+        font-size: $text-fontSize;
         margin-bottom: 15px;
     }
     div.login{
         margin: 0px auto;
-        width: 360px;
-        background-color: rgba(255, 255, 255, 0.558);
-        padding: 40px;
-        box-shadow: $box-shadow;
-        border-radius: $borderRadius;
+        display: inline-block;
+        background-color: map-get($web-color,'blue');
+        border: 1px solid map-get($web-color,'input-border');
+        padding: 30px 0px 30px 0;
+        border-radius: $border-radius;
         form{
             text-align: center;
-            label{
-                width: 55px;
-                line-height: $line-height;
-                margin-right: 10px;
+            margin: 0 50px;
+            div.group{
+                position: relative;
+                padding-bottom: 28px;
+                label{
+                    width: 55px;
+                    line-height: $text-lineheight;
+                    margin-right: 10px;
+                }
+                input{
+                    background-color: transparent;
+                    padding: 5px 8px;
+                    line-height: $text-lineheight;
+                    border-radius: $border-radius-input;
+                    border: 1px solid map-get($web-color,'input-border');
+                    
+                }
+                div#hint-id,div#hint-psw{
+                    display: none;
+                    font-size: 12px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 8px;
+                    text-align: right;
+                    color: map-get($web-color,'yellow');
+                }
             }
-            input{
-                padding: 0px 8px;
-                margin: 0 0 25px 0;
-                line-height: $line-height;
-                border-radius: $inputRadius;
-                border: 1px solid map-get($color_regulation,'blue');
-                
+            div.btn{
+                @extend %btn;
             }
-            input[type=submit]{
-                margin-top: 20px
-            }
-            @include btn-module-blue();
-            div.forget{
-                width: 100%;
-                text-align: right;
-                margin-top: 10px;
+        }
+        div.back{
+            width: 100%;
+            font-size: $text-fontSize-small;
+            text-align: right;
+            margin-top: 20px;
+            padding: 0 20px;
+            a{
+                text-decoration: none;
+                // color: map-get($web-color,'yellow');
+                &:hover{
+                    color: map-get($web-color,'yellow');
+                }
             }
         }
     }
-}
-footer{
-    width: 100%;
-    font-size: 12px;
-    background-color: map-get($color_regulation,'blue');
     div.footer{
         text-align: center;
-        margin: 0 auto;
-        width: $pageW;
-        color: map-get($color_regulation,'white');
+        margin: 10px auto;
+        color: map-get($web-color,'table-title');
         height: 40px;
         line-height: 40px;
-        background-color: map-get($color_regulation,'blue');
     }
 }
