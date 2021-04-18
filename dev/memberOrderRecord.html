@@ -144,15 +144,12 @@
                     <div class="orderBlock">
                         <div class="orderSelect">
                             <p>選擇日期</p>
-                            <select>
+                            <select id="selectDate">
                                 <option>請選擇訂單日期</option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
                             </select>
                         </div>
                         <div class="page3FormBox">
+                            <div class="alertMessage" id="alertMessage">搜尋訂單中。</div>
                             <form action="">
                                 <table id="page3form">
                                     <thead >
@@ -165,10 +162,10 @@
                                     </thead>
                                     <tbody id="memberTableTopBorder">
                                         <tr>
-                                            <td>2013/03/24</td>
-                                            <td>#332345</td>
-                                            <td>已取貨</td>
-                                            <td>備貨中</td>
+                                            <td id="orderdate"></td>
+                                            <td id="orderNo"></td>
+                                            <td id="alreadyGetPack"></td>
+                                            <td id="preparePack"></td>
                                         </tr>
                                     </tbody>
             
@@ -180,66 +177,19 @@
                                             <th>商品單價</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="proItemDetail">
+                                    <tbody class="proItemDetail" id="proItemDetail">
                                         <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
+                                            <td><img id="productImg" src="https://fakeimg.pl/40x40/" alt=""></td>
+                                            <td id="productName">客製化</td>
+                                            <td id="productQty">1</td>
+                                            <td id="productPrice">100$</td>
                                         </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
+                                        
                                     </tbody>
                                     <thead class="thead" id="memberTableLowBlock">
-                                        <tr><th colspan="4">商品總金額 300$</th></tr>
-                                        <tr><th colspan="4">使用環保幣折扣 -30$</th></tr>
-                                        <tr><th colspan="4">總價270$</th></tr>
+                                        <tr><th colspan="4">商品總金額<span id="proTotalPrice">300$</span></th></tr>
+                                        <tr><th colspan="4">使用環保幣折扣<span id="discount">-30$</span></th></tr>
+                                        <tr><th colspan="4">總價<span id="totalPrice">270$</span></th></tr>
                                     </thead>
                                 </table> 
                             </form>
@@ -254,14 +204,14 @@
     
     @@include('./layout/footer.html')
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
-    
-    <!-- 樣板 footer -->
-    <script src="./js/member.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="js/swiper-all.js"></script>
+     <!-- jQuery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- 樣板 footer -->
+     <script src="./js/login.js"></script>
+     <!-- 共同會員的js -->
+     <script src="./js/member.js"></script>
+     <!-- 這個頁面的js -->
+     <script src="./js/memberOrderRecord.js"></script>
 </body>
 
 </html>
