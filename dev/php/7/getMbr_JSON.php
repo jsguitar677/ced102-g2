@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("../connect_ced102g2.php");
+  require_once("../15/connect.php");
   $sql = "select * from mbr where MBRNO =:mbrno";
 
   $mbr = $pdo->prepare($sql);

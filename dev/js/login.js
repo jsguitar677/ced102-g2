@@ -399,6 +399,7 @@ function getMemInfo(){
     let xhr = new XMLHttpRequest();
     xhr.onload = function(){
       let memberText = JSON.parse(xhr.responseText);
+    //   console.log(memberText);
       if(memberText.MBRMAIL){
         wholeScreenOverlay3.style.display = 'none';
         LogConfirmY.style.display = 'none';
@@ -510,6 +511,9 @@ function checkACFT(e){
     };
 
 
+
+
+    
 window.addEventListener("load", function(){
     //----------------  帳戶選單燈箱判斷 "登入/登出按鍵狀態
     IdentifyLorRStatus();
