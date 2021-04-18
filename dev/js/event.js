@@ -106,6 +106,38 @@ $('document').ready(function(){
     })
 
 
+    $('.start-btn').click(function(){
+        let xhrlogin = new XMLHttpRequest();
+        xhrlogin.onload = function (){
+            if( xhrlogin.status == 200 ){
+                let res = JSON.parse(xhrlogin.responseText)
+                console.log(res);
+                if(res[0]=='nologin'){ 
+                    //請先登入
+                    $('#wholeScreenOverlay3').css('display','block');
+                    $('body').css('overflow','hidden');
+                    $('#LogRegClsBtn3').click(function(){
+                        $('#wholeScreenOverlay3').css('display','none');
+                        $('body').css('overflow','auto');
+                    })
+                }else if(res[0].MBREXP < 1000){
+                    //須為資深會員
+                    alert('抱歉您尚未解鎖發起提案功能，請繼續努力升級吧~');
+                }else if((res[0].MBREXP >= 1000)){
+                    //連結事前須知頁面
+                    location.href="./initiation_agreement.html";
+                }
+            }else{
+                alert( xhrlogin.status );
+            }
+        }
+        let urllogin = "./php/7/eventlogin.php";
+        xhrlogin.open("Get", urllogin, true);
+        xhrlogin.send( null );
+    });
+
+
+
     //====================================感謝有你=================================
     function showRank(jsonStr){
         let rankRow = JSON.parse(jsonStr);
