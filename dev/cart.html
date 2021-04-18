@@ -98,23 +98,31 @@
                     <div class="formw totalAmount">$<span id="subtotal">{{totalPrice}}</span></div>
                     <!-- <span class="formw"><input type="text" size="25" /></span> -->
                 </div>
-                <div class="row">
-                    <span class="label">使用環保幣折扣:</span>
-                    <div class="formw loginbutton"><button class="button">請登入會員</button></div>
-                    <input class="formw discount" value="0"  >
+                <div class="row recordPoint">
+                    <span class="label point">您目前持有點數:</span>
+                    <div id="getPoint" class="formw ">0</div>
                 </div>
+                <div class="row">
+                    <span class="label usePointsP">使用環保幣折扣:</span>
+                    <div class="formw loginbutton"><button class="button">請登入會員</button></div>
+                    <input class="formw discount"  type="text" name="usePointShow" value="0">
+                </div>
+                
                 
                 
                 <div class="orderCount">
                     
                     <!-- <p>總計：${{subtotal[index]}}</p> -->
-                    <p class="orderCount-subtotal ">總計：<span id="allTotal">${{totalPrice}}</span></p>
+                    <p class="orderCount-subtotal ">總計：<span id="lastTotal">${{totalPrice}}</span></p>
+                    <input type="hidden" name="orderTotal" value="">
+                    <input type="hidden" name="usePoint" value="">
+                    <input type="hidden" name="leftPoints" value="">
                 </div>
 
             </div>
             <div class="butSection">
                 <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
-                <button onclick="location.href='./payment.html'" class="button button-pay thebill"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
+                <button onclick="location.href='./payment.html'" class="button button-pay thebill submit"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
                 
             </div>
             
@@ -133,6 +141,7 @@
 
     <script src="./js/login.js"></script>
     <script src="./js/spacecar.js"></script>
+    <script src="./js/orderCoin.js"></script>
     <script src="./js/vue.js"></script>
     <script>
         var app = new Vue({
@@ -233,9 +242,11 @@ function doFirst(){
     $('.loginbutton').show()
      if(LogInMemId.textContent != ''){
         $('.discount').show()
+        $('.recordPoint').show()
         $('.loginbutton').hide()
     }else{
         $('.discount').hide()
+        $('.recordPoint').hide()
         $('.loginbutton').show()
     }   
 
