@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("../connect_ced102g2.php");
+  require_once("../../connect_ced102g2.php");
   $mbr_info_sql = "select MBRNO , MBRPIC , MBRNAME , MBRBIO from mbr";
   $f_sql = "select f.MBRNO , f.fnum , f.ftotal , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO from (select MBRNO , count(*) fnum , sum(amount) ftotal from fundra group by MBRNO order by ftotal desc) f join mbr m on (m.MBRNO = f.MBRNO);";
 //   $f_sql = "select MBRNO , count(*) fnum , sum(amount) ftotal from fundra group by MBRNO order by ftotal desc limit 5";

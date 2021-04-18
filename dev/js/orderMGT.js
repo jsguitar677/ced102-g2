@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    function show(jsonStr){
+    function showord(jsonStr){
+        // console.log(1);
         var ordRow = JSON.parse(jsonStr);
         console.log(ordRow);
         for( var i=0 ; i<ordRow.length ; i++){
@@ -24,9 +25,9 @@ $(document).ready(function(){
                 </tr>
             `)
         }
-        // $('.view-icon').click(function(){
-        //     $('.alert-block-view').css('display','block');
-        // })
+        $('.view-icon').click(function(){
+            $('.alert-block-view').css('display','block');
+        })
 
         $('.view-icon').click(function(){
             let orderno = $(this).parent().parent().attr("id");
@@ -64,9 +65,9 @@ $(document).ready(function(){
                     <label class="left">結帳總價：</label><p>NTD 1,677</p><br>
                 </div>
                 <div class="bottom">
-                    <label class="left">收貨人：</label><p>Herry Wang</p><br>
-                    <label class="left">收貨地址：</label><p>32001桃園市中壢區中大路300號</p><br>
-                    <label class="left">收貨人電話：</label><p>0932333333</p><br>
+                    <label class="left">收貨人：</label><p>${ordRow[i].CONSIG}</p><br>
+                    <label class="left">收貨地址：</label><p>${ordRow[i].POSTCODE}${ordRow[i].CONSIGADD}</p><br>
+                    <label class="left">收貨人電話：</label><p>${ordRow[i].CONSIGTEL}</p><br>
                 </div>
                 <div class="cancel-btn btn">關閉</div>
                 </form>
@@ -87,7 +88,9 @@ $(document).ready(function(){
         let xhr = new XMLHttpRequest();
         xhr.onload = function (){
             if( xhr.status == 200 ){
-                show(xhr.responseText)
+                // console.log(xhr.responseText);
+                showord(xhr.responseText);
+                // console.log(111);
             }else{
                 alert( xhr.status );
             }

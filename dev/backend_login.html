@@ -5,51 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>backend_login</title>
+    <!-- <link rel="stylesheet" href="./css/backend_login.css"> -->
     <link rel="stylesheet" href="./css/pages/backend_login.css">
-    <!-- 字體 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
         
 </head>
 <body>
     <header>
-        <div class="logo"><img src="./img/logowhite.svg"></div>
+        <div class="logo"><img src="./img/backend/logo.png"></div>
     </header>
     <div class="min-hight">
-        <div class="title">淨下塑湲 - 後台</div>
+        <div class="title">淨下塑湲後台</div>
         <div class="login">
-            <form action="./admMGT.html">
-                <label for="id" id="id-text">帳號：</label><input type="text" name="id" id="id" value="Ann555"><br>
-                <label for="pws" id="pws-text">密碼：</label><input type="password" name="password" id="pws" value="Ann101010"><br>
-                <input type="submit" name="submit-btn" class="btn" value="登入" id="login-btn"><br>
-                <div class="forget"><a href="./index.html">返回主頁</a></div>
+            <form>
+                <div class="group">
+                    <label for="id">帳號</label><input type="text" name="id" id="id"><br>
+                    <div id="hint-id">請輸入帳號</div>
+                </div>
+                <div class="group">
+                    <label for="psw">密碼</label><input type="password" name="password" id="psw"><br>
+                    <div id="hint-psw">請輸入密碼</div>
+                </div>
+                <div class="btn submit-btn" id="login-btn">登入</div>
             </form>
+            <div class="back"><a href="./index.html">返回主頁</a></div>
         </div>
-    </div>
-    <footer>
         <div class="footer">© 淨下塑湲 All Rights Reserved. 淨下塑湲版權所有不得轉載</div>
-    </footer>
+    </div>
 
     <script>
         function init(){
-            document.getElementById('login-btn').addEventListener('click',function(e){
+            document.getElementById('login-btn').addEventListener('click',function(){
                 let id = document.getElementById('id');
-                let pws = document.getElementById('pws');
+                let psw = document.getElementById('psw');
                 if( id.value == ''){
-                    document.getElementById('id-text').style.color = '#EF4325';
+                    id.style.border = '1px solid #FFD241';
+                    $('#hint-id').css('display','block');
+
                 }else{
-                    document.getElementById('id-text').style.color = '#1D1E4C';    
+                    id.style.border = '1px solid #4E4E6A';   
+                    $('#hint-id').css('display','none'); 
                 }
-                if( pws.value == '' ){
-                    document.getElementById('pws-text').style.color = '#EF4325';
+                if( psw.value == '' ){
+                    psw.style.border = '1px solid #FFD241';
+                    $('#hint-psw').css('display','block');
                 }else{
-                    document.getElementById('pws-text').style.color = '#1D1E4C';    
+                    psw.style.border = '1px solid #4E4E6A';  
+                    $('#hint-psw').css('display','none');   
                 }
-                if( id.value == '' || pws.value == '' ){
-                    e.preventDefault();
-                    return;
+                if( id.value != '' && psw.value != ''){
+                    getAmd();
                 }
             })
         }
+        function getAmd(){
+            let admacc = $('#id').val();
+            let admpsw = $('#psw').val();
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function (){
+                if( xhr.status == 200 ){
+                    var admRow = JSON.parse(xhr.responseText);
+                    console.log(admRow);
+                    if(admRow[0]==null){
+                        alert('帳密錯誤')
+                    }else{
+                        location.href = "./admMGT.html";
+                    }
+                }else{
+                    alert( xhr.status );
+                }
+            }
+            var url = "./php/7/backend_login.php";
+            xhr.open("Post", url, true);
+            xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+            let data_info = `admacc=${admacc}&admpsw=${admpsw}`;
+            xhr.send(data_info);
+        }
+
+
         window.addEventListener('load',function(){
             init();
         })

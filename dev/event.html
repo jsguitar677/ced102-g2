@@ -61,7 +61,7 @@
     <!-- 樣板 header   -->
     @@include('./layout/header.html')
     <!-- 會員登入 -->
-    <!-- @@include('./layout/login.html') -->
+    @@include('./layout/login.html')
     <div class="banner">
         <div class="bg">
             <img src="./img/event/background_binner.png">
@@ -1234,7 +1234,7 @@
                             <div class="search-and-filter">
                                 <input type="radio" name="filter" id="all"><label for="all">全部</label>
                                 <input type="radio" name="filter" id="join"><label for="join">招募中</label>
-                                <input type="radio" name="filter" id="coming"><label for="coming">招募結束，即將舉辦</label>
+                                <input type="radio" name="filter" id="coming"><label for="coming">即將舉辦</label>
                             </div>
                             <div class="list">
                                 <ul id="list">
@@ -1264,7 +1264,7 @@
                                         </div>
                                         <div class="right">
                                             <div class="img"><img src="#"></div>
-                                            <div class="btn"><a href="./act_detail.html">查看活動詳情</a></div>
+                                            <div class="btn"><a href="#" id="view-next">查看活動詳情</a></div>
                                             <div class="btn" id="weather-btn"><a>查看天氣資訊</a></div>
                                         </div>
                                     </div>
@@ -1401,7 +1401,7 @@
                                 <div class="step">4</div>
                                 <div class="content">活動報名截止，參與率與募資率達標，成功舉辦活動。</div>
                             </div>
-                            <div class="btn start-btn"><a href="./initiation_agreement.html">開始行動</a></div>
+                            <div class="btn start-btn">開始行動</div>
                         </div>
                     </div>
                 </div>

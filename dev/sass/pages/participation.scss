@@ -7,13 +7,17 @@
 
 @mixin btn-module {
     .btn {
+        text-align: center;
+        width: 100px;
         background-color: map-get($color_regulation, 'yellow');
-        color: map-get($color_regulation, 'white');
-        padding: 10px 50px;
+        color: map-get($color_regulation, 'blue');
+        padding: 10px 0px;
         border: none;
         outline: none;
         font-weight: bolder;
         cursor: pointer;
+        display: block;
+        margin: 0 auto 30px auto;
     }
 }
 
@@ -21,225 +25,287 @@ body {
     margin: 0;
 }
 
-#join {
-    div,a,p,input,select,form,span,label{
-        color: map-get($color_regulation, 'blue');
-    }
+div.bg{
+    width: 100%;
+    background-image: url('../../img/location/M8_1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+main.flex {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 70px 0 40px 0;
     width: 100%;
     min-height: calc(100vh - 66px);
-    position: relative;
-    margin-top: 66px;
-
-    div.cards {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.537);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div.choose-block{
+        width: 40%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
-
-        div.card {
-            position: relative;
-            top: -100%;
-            width: calc(100% /3);
-            height: 100%;
-            box-shadow: $box-shadow;
-            background-color: map-get($color_regulation, 'blue');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
+        padding: 10px 10px 0 10px;
+        label{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
             cursor: pointer;
+            margin-bottom: 10px;
+            font-size: $h4;
+            color: map-get($color_regulation, 'white');
+            transition: 0.5s;
+            
+            &::before {
+                content: "";
+                margin-right: 6px;
+                height: $h4;
+                border-left: 6px solid map-get($color_regulation, 'yellow');
+            }
+            &:hover{
+                background-color:  map-get($color_regulation, 'yellow');
+                color: map-get($color_regulation, 'blue');
+            }
+        }
+        .yellow-bg{
+            color: map-get($color_regulation, 'blue');
+            background-color:  map-get($color_regulation, 'yellow');
+        }
+    }
+    div.form{
+        width: 60%;
+        padding: 10px;
 
-            span {
+        form{
+            background-color: map-get($color_regulation, 'white');
+            box-shadow: $box-shadow;
+            height: 100%;
+            h3{
                 width: 100%;
-                display: block;
-                text-align: center;
-                font-weight: bolder;
-                position: absolute;
-                top: 50%;
-                transform: translate(0%, -100%);
-                font-size: $h4;
+                margin: 0;
+                padding: 10px 20px;
+                // border: 1px solid blue;
+                background-color: map-get($color_regulation, 'memberGray');
                 color: map-get($color_regulation, 'white');
-                padding: 0 10px;
-
                 &::before {
                     content: '';
                     height: 100%;
                     margin-right: 6px;
-                    border-left: 6px solid map-get($color_regulation, 'orange');
+                    border-left: 6px solid map-get($color_regulation, 'yellow');
                 }
+                
             }
-        }
-
-        //替換你要的背景
-        // #v{
-        //     background-image: url('../../img/event/bg1.png');
-        // }
-        // #f{
-        //     background-image: url('../../img/event/bg1.png');
-        // }
-        // #v-f{
-        //     background-image: url('../../img/event/bg1.png');
-        // }
-        div.content {
-            width: 100vw;
-            min-height: calc(100vh - 66px);
-            padding: 20px 0;
-            box-shadow: $box-shadow;
-            background-image: url('../../img/indexFront/indexImg10.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: none;
-            flex-wrap: nowrap;
-            align-items: center;
-            opacity: 0;
-            h3 {
-                width: 40%;
-                font-size: $h3;
-                color: map-get($color_regulation, 'white');
-                text-align: center;
-                &::before {
-                    content: '';
-                    height: 90%;
-                    margin-right: 8px;
-                    border-left: 8px solid map-get($color_regulation, 'orange');
-                }
-            }
-            @media (max-width:575px){
-                h3{
-                    font-size: $h4;
-                }
-            }
-            form {
-                width: 60%;
-                min-height: 100%;
-                background-color: map-get($color_regulation, 'white');
-                padding: 20px;
-                box-shadow: $box-shadow;
-                p {
-                    font-size: $contentSubTit;
-                    margin: 0 auto 30px auto;
-                    padding: 15px;
-                    width: 60%;
-                    text-align: center;
-                    background-color: map-get($color_regulation, 'blue');
-                    color: map-get($color_regulation, 'white');
-
-                    &::before {
-                        content: '';
-                        height: 90%;
-                        margin-right: 6px;
-                        border-left: 6px solid map-get($color_regulation, 'orange');
-                    }
-
-                    span {
-                        color: map-get($color_regulation, 'white');
-                    }
-                }
-                @media (max-width:575px){
-                    p{
-                        font-size: $h7;
-                    }
-                }
-                div.join,div.donate {
-                    display: none;
-                    margin: 0 auto;
-                    width: 60%;
-
-                    input[type=checkbox] {
-                        margin: 0 5px 20px 0;
-                    }
-
-                    input[type=text],input[type=number] {
-                        width: 60px;
-                        line-height: $line-height;
-                        padding: 0 5px;
-                        margin: 0 0 6px 0;
-                        border: 1px solid map-get($color_regulation, 'blue');
-                        border-radius: $inputRadius;
-                    }
-                    @media (max-width:575px){
-                        input[type=text],input[type=number] {
-                            width: 35px;
-                            line-height: 22px;
-                        }
-                    }
-
-                    label {
-                        margin: 5px 0 0 0px;
-                        display: inline-block;
-                        width: 100px;
-                    }
-                    @media (max-width:575px){
+            div.flex{
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 40px;
+                div.left-block{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    div.join,div.donate{
+                        width: 50%;
+                        padding: 30px 20px 0 0px;
                         label{
-                            font-size: 12px;
-                            width: 75px;
+                            font-size: $contentTxt;
+                            font-weight: bolder;
+                            width: 80px;
+                            display: inline-block;
+                            text-align: right;
+                            padding: 0 10px;
+                            color: map-get($color_regulation, 'blue');
+                        }
+                        input{
+                            height: $line-height;
+                            margin: 0 0 20px 0;
+                            outline: none;
+                            padding: 0 10px;
+                            font-size: 13px;
+                            width: 145px;
                         }
                     }
-                    input.long {
-                        width: 130px;
+                    div.join{
+                        label{
+                            width: 100px;
+                        }
                     }
                 }
-
-                @media (min-width:992px) and (max-width:1199px) {
-                    p, div.join, div.donate {
-                        width: 80%;
-                    }
-                }
-
-                @media (min-width:768px) and (max-width:991px) {
-                    p, div.join, div.donate {
-                        width: 90%;
-                    }
-                }
-
-                @include btn-module();
-
-                button {
-                    display: block;
-                    margin: 10px auto;
-                }
-
-                div#cancel {
-                    text-align: center;
-                    color: map-get($color_regulation, 'red');
-                    cursor: pointer;
-                }
-            }
-        }
-        @media (min-width:576px) and (max-width:767px){
-            div.content{
-                flex-wrap: wrap;
-                justify-content: center;
-                h3{
+                div.right-block{
                     width: 100%;
-                }
-                form{
-                    width: 90%;
-                    min-height: auto;
-                    p,div.join, div.donate{
-                      width: 80%;  
+                    margin: 20px 0px;
+                    div.state{
+                        padding: 20px;
+                        // border: 1px solid map-get($color_regulation, 'blue');
+                        h4{
+                            margin: 0 0 10px 0;
+                            font-size: $contentSubTit;
+                        }
+                        p{
+                            display: inline-block;
+                            margin: 0;
+                            line-height: 25px;
+                            font-size: $contentTxt;
+                        }
                     }
                 }
             }
+            @include btn-module();
         }
-        @media (max-width:575px){
-            div.content{
-                flex-wrap: wrap;
-                justify-content: center;
-                h3{
-                    width: 100%;
+    }
+}
+
+
+@media (min-width:768px) and (max-width:1199px){
+    main.flex{
+        justify-content: center;
+        div.choose-block{
+            width: 650px;
+            justify-content: center;
+            label{
+                width: 33%;
+                font-size: $h5;
+                line-height: 100px;
+            }
+        }
+        div.form{
+            width: 650px;
+            form{
+                div.flex{
+                    div.left-block{
+                        div.join,div.donate{
+                            padding: 30px 0px 0 0;
+                        }
+                    }
                 }
-                form{
-                    width: 95%;
-                    min-height: auto;
-                    p,div.join, div.donate{
-                      width: 90%;  
+            }
+        }
+    }
+}
+@media (min-width:576px) and (max-width:767px){
+    main.flex{
+        justify-content: center;
+        div.choose-block{
+            width: 540px;
+            justify-content: center;
+            label{
+                width: 33%;
+                font-size: $h5;
+                line-height: 100px;
+            }
+        }
+        div.form{
+            width: 540px;
+            form{
+                div.flex{
+                    div.left-block{
+                        div.join,div.donate{
+                            padding: 20px 0px 0 0;
+                            label{
+                                padding: 3px;
+                                text-align: left;
+                            }
+                            label#falselabel{
+                                display: none;
+                            }
+                            input{
+                                margin-bottom: 10px;
+                                width: 90%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width:390px) and (max-width:575px){
+    main.flex{
+        justify-content: center;
+        div.choose-block{
+            width: 90%;
+            justify-content: center;
+            label{
+                width: 33%;
+                font-size: $h7;
+                line-height: 100px;
+            }
+        }
+        div.form{
+            width: 90%;
+            form{
+                div.flex{
+                    padding-top: 20px;
+                    div.left-block{
+                        div.join,div.donate{
+                            width: 100%;
+                            padding: 0;
+                            label{
+                                padding: 3px;
+                                width: 90px;
+                            }
+                            input{
+                                margin-bottom: 10px;
+                            }
+                        }
+                        div.donate{
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:389px){
+    main.flex{
+        justify-content: center;
+        div.choose-block{
+            width: 90%;
+            justify-content: center;
+            label{
+                width: 100%;
+                font-size: $h7;
+                line-height: 50px;
+                margin-bottom: 0;
+            }
+        }
+        div.form{
+            width: 90%;
+            form{
+                h3{
+                    font-size: 15px;
+                    line-height: 25px;
+                }
+                div.flex{
+                    padding: 20px 15px 0 15px;
+                    div.left-block{
+                        div.join,div.donate{
+                            width: 100%;
+                            padding: 0;
+                            label{
+                                font-size: 12px;
+                                padding: 3px;
+                                width: 70px;
+                            }
+                            input{
+                                margin-bottom: 10px;
+                                width: calc(100% - 75px);
+                            }
+                        }
+                    }
+                    div.right-block{
+                        margin: 0px;
+                        div.state{
+                            h4{
+                                font-size: $h7;
+                            }
+                            p{
+                                line-height: 20px;
+                                font-size: 12px;
+                            }
+                        }
                     }
                 }
             }
