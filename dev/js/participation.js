@@ -1,69 +1,152 @@
 $('document').ready(function(){
-    function start(){
-        if($(document).width()<768){
-            $('.card').css('width','100%');
-            $('.card').css('height',`${100/3}%`);
-            $('.card').css('top',`0`);
-            $('.card').css('left',`-100%`);
-            animation_start = new TimelineMax();
-            animation_start.to('#v',0.5,{
-                x:'100%'
-            }).to('#f',0.5,{ 
-                x:'100%'
-            }).to('#v-f',0.5,{
-                x:'100%'
-            })
-        }else{
-            animation_start = new TimelineMax();
-            animation_start.to('#v',0.5,{
-                y:'100%'
-            }).to('#f',0.5,{ 
-                y:'100%'
-            }).to('#v-f',0.5,{
-                y:'100%'
-            }) 
-        }
-    }
-    start();
+    $('label[for=v-f]').addClass('yellow-bg')
 
+    $('label.card').click(function(){
+        $('label.card').removeClass('yellow-bg')
+        $(this).addClass('yellow-bg')
+    })
     $('#v').click(function(){
-        $('.card').css('display','none');
+        $('.donate').css('display','none');
         $('.join').css('display','block');
-        $('#card-title').text('志工');
-        TweenMax.to('.content',1,{
-            display: 'flex',
-            opacity: 1,
-        })
     })
     $('#f').click(function(){
-        $('.card').css('display','none');
+        $('.join').css('display','none');
         $('.donate').css('display','block');
-        $('#card-title').text('捐款');
-        TweenMax.to('.content',1,{
-            display: 'flex',
-            opacity: 1,
-        })
     })
     $('#v-f').click(function(){
-        $('.card').css('display','none');
         $('.join').css('display','block');
         $('.donate').css('display','block');
-        $('#card-title').html('志工 + 捐款');
-        TweenMax.to('.content',1,{
-            display: 'flex',
-            opacity: 1,
-        })
     })
-    $('#cancel').click(function(e){
-        $('.join').css('display','none');
-        $('.donate').css('display','none');
-        $('.content').css('display','none');
-        $('.card').css('display','block');
-        TweenMax.to('.content',0,{
-            opacity: 0,
+
+    function show(jsonStr){
+        let infoRow = JSON.parse(jsonStr);
+        console.log(infoRow);
+
+        $('#actname').text(`${infoRow[1][0].ACTNAME}`);
+        $('#memname').val(`${infoRow[0][0].MBRNAME}`);
+
+        $('#submitbtn').click(function(){
+            if(infoRow[2]==""){
+                let cellphone = $('#cellphone').val();
+                let emcon = $('#emcon').val();
+                let emrnumber = $('#emrnumber').val();
+                let amount = $('#amount').val();
+                let cardno = $('#cardno').val();
+                let cvv = $('#cvv').val();
+                let year = $('#year').val();
+                let month = $('#month').val();
+                let choose;
+
+                function checkV(){
+                    if(cellphone == "" || emcon == "" || emrnumber == "" ){
+                        $('input').css('border','1px solid #07082E');
+                        for(let i=0 ; i < $('input').length ; i++){
+                            if(document.getElementsByTagName('input')[i].value == ''){
+                                document.getElementsByTagName('input')[i].style.border = '1px solid #EF4325';
+                            }
+                        }
+                    }else{
+                        choose = 1; 
+                        var data_info = `amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        xhr1.send(data_info);
+                        alert(`謝謝您的捐款`);
+                        location.href = "./event.html";
+                    }
+                }
+                function checkF(){
+                    if(amount == "" || cardno == "" || cvv == "" || month == "" || year == "" ){
+                        $('input').css('border','1px solid #07082E');
+                        for(let i=0 ; i < $('input').length ; i++){
+                            if(document.getElementsByTagName('input')[i].value == ''){
+                                document.getElementsByTagName('input')[i].style.border = '1px solid #EF4325';
+                            }
+                        }
+                    }else{
+                        choose = 1; 
+                        var data_info = `amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        xhr1.send(data_info);
+                        alert(`謝謝您的捐款`);
+                        location.href = "./event.html";
+                    }
+                }
+                function checkVF(){
+                    if(cellphone == "" || emcon == "" || emrnumber == "" || amount == "" || cardno == "" || cvv == "" || month == "" || year == ""){
+                        $('input').css('border','1px solid #07082E');
+                        for(let i=0 ; i < $('input').length ; i++){
+                            if(document.getElementsByTagName('input')[i].value == ''){
+                                document.getElementsByTagName('input')[i].style.border = '1px solid #EF4325';
+                            }
+                        }
+                    }else{
+                        choose = 3; 
+                        var data_info = `cellphone=${cellphone}&emcon=${emcon}&emrnumber=${emrnumber}&amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        xhr1.send(data_info);
+                        alert(`謝謝您的參與及捐款`);
+                        location.href = "./event.html";
+                    }
+                }
+
+                let xhr1 = new XMLHttpRequest();
+                let url1 = `./php/7/participation.php`;
+                xhr1.open("Post", url1, true);
+                xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                if($('#f').prop('checked')){
+                    checkF();
+                }else if($('#v').prop('checked')){
+                    checkV();
+                }else if($('#v-f').prop('checked')){
+                    checkVF();
+                }
+            }else{
+                let amount = $('#amount').val();
+                let cardno = $('#cardno').val();
+                let cvv = $('#cvv').val();
+                let year = $('#year').val();
+                let month = $('#month').val();
+                let choose;
+                let xhr1 = new XMLHttpRequest();
+                let url1 = `./php/7/participation.php`;
+                xhr1.open("Post", url1, true);
+                xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                if($('#f').prop('checked')){
+                    if(amount == "" || cardno == "" || cvv == "" || month == "" || year == "" ){
+                        $('input').css('border','1px solid #07082E');
+                        for(let i=0 ; i < $('input').length ; i++){
+                            if(document.getElementsByTagName('input')[i].value == ''){
+                                document.getElementsByTagName('input')[i].style.border = '1px solid #EF4325';
+                            }
+                        }
+                    }else{
+                        choose = 1; 
+                        var data_info = `amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        xhr1.send(data_info);
+                        alert(`謝謝您的捐款`);
+                        location.href = "./event.html";
+                    }
+                }else if($('#v').prop('checked')){
+                    alert(`您已報名過本活動志工，您可選擇僅捐款或回到活動平台查看其他活動，謝謝您。`)
+                }else if($('#v-f').prop('checked')){
+                    alert(`您已報名過本活動志工，請改選"捐款"，謝謝您。`)
+                }
+            }
         })
-        e.preventDefault();
-        $('#checkbox1')[0].checked = false;
-        $('#checkbox2')[0].checked = false;
-    })
+    }
+
+    function get(){
+        let joinHref = location.href;
+        let actno = joinHref.split('?')[1].split('=')[1];
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            if(xhr.status ==200){
+                show(xhr.responseText);
+            }else{
+                alert(xhr.status);
+            }
+        }
+        let url = `./php/7/participation.php?actno=${actno}`;
+        xhr.open("Get",url,true);
+        xhr.send(null);
+    }
+    get();
+
 })

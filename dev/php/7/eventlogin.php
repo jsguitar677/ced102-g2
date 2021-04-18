@@ -1,7 +1,8 @@
 <?php
 session_start();
+$_SESSION["mbrno"] = "1";
 try{
-    require_once("../../../connect_ced102g2.php");
+    require_once("../../connect_ced102g2.php");
     $mbrinfo_sql = "select MBRNO , MBREXP from mbr where MBRNO = :mbrno";
 
     if(isset( $_SESSION["mbrno"])){

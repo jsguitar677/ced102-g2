@@ -381,7 +381,7 @@ div.menu-div {
 
     @media (min-width:768px) and (max-width:991px) {
       li {
-        margin: 0px 60px;
+        margin: 0px 20px;
       }
     }
 
@@ -391,18 +391,11 @@ div.menu-div {
       }
     }
 
-    @media (min-width:350px) and (max-width:575px) {
+    @media (max-width:575px) {
       li {
-        margin: 0px 15px;
+        margin: 0px;
       }
     }
-
-    @media (max-width:349px) {
-      li {
-        margin: 0px 10px;
-      }
-    }
-
   }
 }
 
@@ -461,7 +454,6 @@ main.event {
         line-height: 18px;
         li{
           font-size: $text-fontSize-hint-575;
-          line-height: 18px;
         }
       }
     }
@@ -521,6 +513,7 @@ main.event {
               height: 100%;
             }
             #taiwan-bg{
+              width: 500px;
               max-height: 650px;
               .st0{fill:none;stroke:#C1C1C1;stroke-miterlimit:10;}
               .st1{fill:none;stroke:#C1C1C1;stroke-miterlimit:10;stroke-dasharray:24.8462,24.8462;}
@@ -529,6 +522,7 @@ main.event {
               .st4{fill:#2E3D5A;stroke:#616D72;stroke-miterlimit:10;}
             }
             #svg2606{
+              width: 500px;
               max-height: 650px;
               position: absolute;
               top: 0px;
@@ -565,6 +559,11 @@ main.event {
                   transition: 0.5s;
               }
               @include city(21);
+            }
+            @media (max-width: 350px){
+              #svg2606,#taiwan-bg{
+                  width: 260px;
+              }
             }
           }
         }
@@ -611,6 +610,7 @@ main.event {
                   p.text{
                     z-index: 0;
                     margin: 0;
+                    padding: 20px;
                   }
 
                   &:nth-child(3n+1) {
@@ -731,6 +731,7 @@ main.event {
                     #weather-btn{
                       display: none;
                       a{
+                        color: map-get($web-color,'white');
                         background-color: map-get($web-color,'blue');
                       }
                     }
@@ -757,7 +758,7 @@ main.event {
                       width: 100%;
                       height:20px;
                       box-shadow: $box-shadow;
-                      // overflow: hidden;
+                      overflow: hidden;
                       position: relative;
 
                       div.icon {
@@ -947,7 +948,6 @@ main.event {
                     div.weather {
                       width: calc(100%/6);
                       text-align: center;
-
                       div.temperature {
                         p {
                           display: inline-block;
@@ -1126,7 +1126,7 @@ main.event {
                   display: block;
                 }
                 div.block{
-                  padding: 15px;
+                  padding: 15px 15px 25px 15px;
                   div.flex{
                     div.left{
                       width: 100%;
@@ -1257,9 +1257,14 @@ main.event {
             top: 95%;
             left: 50%;
             transform: translate(-50%,-100%);
+              div.map-block{
+                #svg2606,#taiwan-bg{
+                  width: 500px;
+                }
+              }
           }
           div.event-info{
-            margin-bottom: 720px;
+            margin-bottom: 880px;
             width: 500px;
             padding: 0;
           }
@@ -1271,6 +1276,11 @@ main.event {
             left: 50%;
             transform: translate(-50%,-100%);
             width: 400px;
+            div.map-block{
+              #svg2606,#taiwan-bg{
+                width: 400px;
+              }
+            }
             h2{
               font-size: $h4;
             }
@@ -1280,7 +1290,7 @@ main.event {
             }
           }
           div.event-info{
-            margin-bottom: 690px;
+            margin-bottom: 710px;
             width: 350px;
             padding: 0;
             div.info-card{
@@ -1298,6 +1308,7 @@ main.event {
                     height: 50px;
                     p.text{
                       font-size: $text-fontSize-575;
+                      line-height: 18px;
                     }
                   }
                 }
@@ -1342,15 +1353,19 @@ main.event {
                 ul {
                   li {
                     height: 50px;
-                    width: calc((100% - 20px) / 2);
-                    &:first-child{
-                      margin-left: 10px;
+                    width: calc((100% - 10px) / 2);
+                    // &:first-child{
+                    //   margin-left: 0px;
+                    // }
+                    &:nth-child(odd) {
+                      margin: 0 10px 10px 0;
                     }
-                    &:nth-child(3n+1) {
-                      margin-left: 10px;
+                    &:nth-child(even) {
+                      margin: 0 0 10px 0;
                     }
                     p.text{
                       font-size: $text-fontSize-575;
+                      line-height: 18px;
                     }
                   }
                 }
@@ -1521,7 +1536,6 @@ main.event {
                   margin-top: 10px;
                   a{
                     font-size: $text-fontSize-575;
-                    padding: 5px;
                   }
                 }
               }
@@ -1630,20 +1644,17 @@ main.event {
             @include btn-module-red();
             div.start-btn{
               margin: 20px 0 60px 0;
-              a{
-                padding-left: 40px;
-                padding-right: 40px;
-              }
+              padding-left: 40px;
+              padding-right: 40px;
+              font-weight: bold;
             }
             @media (max-width:575px) {
               div.start-btn{
                 left: 5px; 
                 width: 100px;
                 margin-top: 10px;
-                a{
-                  font-size: $text-fontSize-575;
-                  padding: 5px;
-                }
+                font-size: $text-fontSize-575;
+                padding: 0px;
               }
             }
           }
@@ -1824,10 +1835,16 @@ main.event {
                     }
                   }
                 }
+                @media (min-width:576px) and (max-width:991px){
+                  div.thanks-card{
+                    margin: 0 10px;
+                  }
+                }
                 @media (min-width:460px) and (max-width:575px){
                   div.thanks-card{
                     padding: 30px;
                     flex-wrap: wrap;
+                    margin: 0 10px;
                     div.thanks-title{
                       width: 100%;
                       flex-shrink: 0;
@@ -1846,6 +1863,7 @@ main.event {
                 @media (max-width:459px){
                   div.thanks-card{
                     padding: 20px 15px;
+                    margin: 0 10px;
                     flex-wrap: wrap;
                     div.thanks-title{
                       width: 100%;

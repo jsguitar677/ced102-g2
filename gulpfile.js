@@ -22,6 +22,9 @@ function movePagePhp15() {
 function movePagePhp7() {
     return src('dev/php/7/*.php').pipe(dest('dist/php/7/'));
 }
+function movePhpconnect() {
+    return src('dev/*.php').pipe(dest('dist/'));
+}
 // -----------------
 
 
@@ -93,7 +96,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(movePagePhp5,movePagePhp7,movePagePhp15,movePhp,moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
+exports.u = series(killDist, parallel(movePhpconnect,movePagePhp5,movePagePhp7,movePagePhp15,movePhp,moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
 
 exports.browser = function browsersync() {
     browserSync.init({
