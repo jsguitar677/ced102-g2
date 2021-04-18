@@ -13,15 +13,24 @@ const reload = browserSync.reload; //browser的方法 更新後~
 function movePhp() {
     return src('dev/php/*.php').pipe(dest('dist/php/'));
 }
+
 function movePagePhp5() {
     return src('dev/php/5/*.php').pipe(dest('dist/php/5/'));
 }
+
 function movePagePhp15() {
     return src('dev/php/15/*.php').pipe(dest('dist/php/15/'));
 }
+
 function movePagePhp7() {
     return src('dev/php/7/*.php').pipe(dest('dist/php/7/'));
 }
+
+function movePagePhp8() {
+    return src('dev/php/8/*.php').pipe(dest('dist/php/8/'));
+}
+
+
 // -----------------
 
 
@@ -93,7 +102,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(movePagePhp5,movePagePhp7,movePagePhp15,movePhp,moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
+exports.u = series(killDist, parallel(movePagePhp5, movePagePhp7, movePagePhp8, movePagePhp15, movePhp, moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
 
 exports.browser = function browsersync() {
     browserSync.init({
@@ -103,7 +112,7 @@ exports.browser = function browsersync() {
         // browser: "chrome",
         server: {
             baseDir: './dist', //跟目錄設定
-            index:index_path,
+            index: index_path,
             injectChanges: false,
         },
     });
