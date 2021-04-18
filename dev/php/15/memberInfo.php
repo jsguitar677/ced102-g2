@@ -1,51 +1,31 @@
 <?php
-include("getMemInfo.php");
-require_once("connect.php");
-
 try{
-    if(isset($_SESSION["MBRNO"])){
-        $userno = $_SESSION["MBRNO"];
-    }else{
-        echo "抓不到資料";
-    }
-    
-    $sql = "select * from `mbr`";
-    $memberData = $pdo->prepare($sql);
-    $memberData->bindValue(1, $userno);
+    require_once("connect.php");
+    $MBRDATA=" SELECT MBRNAME, MBRBIRTH, MBRPIC, MBRBIO,MBREXP, MBRCOIN, DONATE, PARTICIPATE FROM mbr WHERE MBRNO = :MBRNO";
+    $ACTV=" SELECT COUNT(MBRNO) FROM ACTV WHERE MBRNO = :MBRNO";
+    $FUNDRA=" SELECT COUNT(MBRNO) FROM FUNDRA WHERE MBRNO = :MBRNO";
+
+    $memberData = $pdo->prepare($MBRDATA);
+    $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
     $memberData->execute();
+
+    $memberData2 = $pdo->prepare($ACTV);
+    $memberData2->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData2->execute();
+
+    $memberData3 = $pdo->prepare($FUNDRA);
+    $memberData3->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData3->execute();
+
     // 資料庫取回的資料
     $memRow = $memberData->fetch(PDO::FETCH_ASSOC);
+    $memRow2 = $memberData2->fetch(PDO::FETCH_ASSOC);
+    $memRow3 = $memberData3->fetch(PDO::FETCH_ASSOC);
+    
+    echo json_encode([$memRow,$memRow2,$memRow3]); 
 
-    // $res = ["MBRMAIL"=>$memRow["MBRMAIL"], 
-    //         "MBRNAME"=>$memRow["MBRNAME"],
-    //         "MBRBIRTH"=>$memRow["MBRBIRTH"],
-    //         "MBRPSW"=>$memRow["MBRPSW"], 
-    //         "MBRPHONE"=>$memRow["MBRPHONE"],
-    //         "MBRNO"=>$memRow["MBRNO"],
-    //         "MBRMAIL"=>$memRow["MBRMAIL"], 
-    //         "MBRNAME"=>$memRow["MBRNAME"],
-    //         "MBRNO"=>$memRow["MBRNO"].
-    //         "MBRMAIL"=>$memRow["MBRMAIL"], 
-    //         "MBRNAME"=>$memRow["MBRNAME"],
-    //         "MBRNO"=>$memRow["MBRNO"].
-    //         "MBRMAIL"=>$memRow["MBRMAIL"], 
-    //         "MBRNAME"=>$memRow["MBRNAME"],
-    //         "MBRNO"=>$memRow["MBRNO"]
-    // ];
-
-    echo json_encode($memRow); 
 
 }catch(PDOException $e){
-    echo "error :　";
-    echo $e->getMessage();
-    echo "errorLine :　";
-    echo $e->getLine();
+    echo"error:",$e->getMessage(),"****line:",$e->getLine(),"<br>";
 }
-
-// $sql = "select * from mbr where MBRMAIL=?";
-
-// $member = $pdo->prepare($sql);
-// $member->bindValue(1, $_POST["logMemId"]);
-// $member->execute();
-
 ?>

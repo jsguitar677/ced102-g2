@@ -287,6 +287,9 @@ $('document').ready(function(){
                         let progress_money = `${actRow[0][i].Frate}%`;
                         $('#money').css('width',progress_money); 
                         weather(0,i);
+                        $('div.event-info div.info-card #list-card div.block #view-next').click(function(){
+                            $(this).attr('href',`./act_detail.html?actno=${actRow[0][i].ACTNO}`)
+                        })
                     }                     
                 }
             }
