@@ -96,16 +96,6 @@ $('document').ready(function(){
         })
     })
 
-    //點擊活動列表，活動卡片顯示，及其關閉按鈕設定
-    $('ul#list li').click(function(){
-        $('#list-card').css('display','block');
-    })
-
-    $('#list-card > div.closebtn').click(function(){
-        $('#list-card').css('display','none');  
-    })
-
-
     $('.start-btn').click(function(){
         let xhrlogin = new XMLHttpRequest();
         xhrlogin.onload = function (){

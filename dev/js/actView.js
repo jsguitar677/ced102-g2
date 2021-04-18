@@ -295,14 +295,21 @@ $('document').ready(function(){
             }
             function clickli(){
                 $('div.event-info div.list ul#list li').click(function(){
+                    //點擊活動列表，活動卡片顯示，及其關閉按鈕設定
                     if( typeof($(this).attr("class")) == "undefined"){
                     }else{
                         $('div.event-info div.info-card #list-card div.block').css('display','block');
                         actContent(this);
+                        $('#list-card').css('display','block');
                     }
                     liEffect(this);
+                    $('#list-card > div.closebtn').click(function(){
+                        $('#list-card').css('display','none');  
+                    })
                 })
             }
+            
+
             function clickCity(A,i){
                 document.getElementById('all').checked = false;
                 document.getElementById('join').checked = false;
