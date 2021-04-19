@@ -6,7 +6,7 @@
 $english: 'Palatino Linotype';
 $chinese: 'noto sans tc';
 //Header
-$navH:66px;
+$navH:55px;
 $logoW:50px;
 //Footer
 $footerH:500px;
@@ -137,32 +137,6 @@ body {
     background-color: map-get($color_regulation,'white' );
 }
 
-//左側 直向 麵包條
-div.title-block{
-    h5.title {
-        position:absolute;
-        top: $navH;
-        left:0;
-        margin:0;
-        font-size: 20px;
-        font-weight: normal;
-        display: inline-block;
-        white-space: nowrap;
-        padding: 10px;
-        transform: rotate(90deg) translateY(-100%);
-        transform-origin: 0 0;
-        color:map-get($color_regulation,'blue');
-        @media (max-width:575px){
-            font-size: $h7;
-        }
-        span {
-            color:map-get($color_regulation,'gray' );
-        }
-        @media (max-width:575px){
-            font-size: $h7;
-        }
-    }
-}
 
 section.NormalProductPage {
     letter-spacing:$letter-Spacing;
@@ -182,6 +156,32 @@ section.NormalProductPage {
             padding-top: 20px;
             height: 100px;
             background-color: map-get($color_regulation, 'yellow' );
+            //左側 直向 麵包條
+            div.title-block{
+                h5.title {
+                    position:absolute;
+                    top: 100px;
+                    left:0;
+                    margin:0;
+                    font-size: 20px;
+                    font-weight: normal;
+                    display: inline-block;
+                    white-space: nowrap;
+                    padding: 10px;
+                    transform: rotate(90deg) translateY(-100%);
+                    transform-origin: 0 0;
+                    color:map-get($color_regulation,'blue');
+                    @media (max-width:575px){
+                        font-size: $h7;
+                    }
+                    span {
+                        color: map-get($color_regulation,'gray-hint');
+                    }
+                    @media (max-width:575px){
+                        font-size: $h7;
+                    }
+                }
+            }
             p{  
                 color: map-get($color_regulation,'blue');
                 font-size: $p;
@@ -215,6 +215,7 @@ section.NormalProductPage{
             padding:0;
             width:100%;
             div.all{
+                // border:2px solid orange;
                 margin:0 auto;
                 width:100%;
                 padding:0 $reserveSide;
@@ -243,12 +244,12 @@ section.NormalProductPage{
                         //左邊單獨show 1張 (占50%)
                         div.leftarea_blockA_L{
                             cursor: pointer;
-                            width:49%;
+                            width:48.5%;
                             overflow: hidden;
                             border-radius: $borderRadius;
                             position:relative;
                             box-shadow: $box-shadow;
-                            margin-right:1%;
+                            margin-right:1.5%;
                             @media (max-width:520px) {
                                 width:100%;
                                 margin-right: 0;
@@ -284,7 +285,7 @@ section.NormalProductPage{
                                 margin-top: 7px;
                             }
                             div.leftarea_blockA_R1{
-                                width:49%;
+                                width:48%;
                                 overflow: hidden;
                                 display:inline-block;
                                 border-radius: $borderRadius;
@@ -295,7 +296,7 @@ section.NormalProductPage{
                                 }
                                 div.explain{
                                     font-size: $p;
-                                    width:75%;
+                                    width:70%;
                                     height:33px;
                                     line-height: 33px;
                                     text-align: center;
@@ -314,7 +315,7 @@ section.NormalProductPage{
                                 margin-top: 3.2%;
                             }
                             div#NP_ZoomIn3, div#NP_ZoomIn5{
-                                margin-left:1%;
+                                margin-left:2%;
                             }
                         }
                     }
@@ -389,7 +390,6 @@ section.NormalProductPage{
                         div.qty_block{
                             width:100%;
                             font-size: $p;
-                            
                             padding-bottom: 30px;
                             //小標:數量
                             p.stepExplain{
@@ -402,6 +402,46 @@ section.NormalProductPage{
                                     font-size: 12px; 
                                 }
                             }
+                            p.prodNumber{
+                                display:inline-block;
+                                font-size: $p;
+                                color:gray;
+                                @media (max-width:450px) {
+                                    font-size: 12px; 
+                                }
+                            }
+                            p.prodNumberA{
+                                padding-left: 18px;
+                            }
+                            div.tal_block{
+                                width:100%;
+                                font-size: $h6;
+                                font-weight: 550;
+                                color:map-get($color_regulation,'red');
+                                //小標:小計
+                                div.placementOfTal{
+                                    width:98%;
+                                    text-align: right;
+                                    @media (max-width:450px) {
+                                        font-size: 12px; 
+                                    }
+                                    label.thePrice{
+                                        margin-right: 10%;
+                                    }
+                                }
+                                // p.stepExplain{
+                                //     float: left;
+                                //     font-weight: 550;
+                                //     margin:0;
+                                //     @media (max-width:450px) {
+                                //         font-size: 12px; 
+                                //     }
+                                // }
+                            }
+                            // prep{
+                            //     border:1px solid red;
+                            //     color:gray;
+                            // }
                             div.placememtOfQty{
                                 padding-top: 30px;
                                 width:100%;
@@ -424,31 +464,7 @@ section.NormalProductPage{
                                 }
                             }
                         }
-                        //小計區==================================
-                        div.tal_block{
-                            width:100%;
-                            font-size: $p;
-                            color:map-get($color_regulation,'blue');
-                            //小標:小計
-                            p.stepExplain{
-                                float: left;
-                                font-weight: 550;
-                                margin:0;
-                                @media (max-width:450px) {
-                                    font-size: 12px; 
-                                }
-                            }
-                            div.placementOfTal{
-                                width:98%;
-                                text-align: right;
-                                @media (max-width:450px) {
-                                    font-size: 12px; 
-                                }
-                                label.thePrice{
-                                    margin-right: 10%;
-                                }
-                            }
-                        }
+                        //Cart按鈕區==================================
                         div.placeOfSubmit{
                             text-align: center;
                             margin-bottom: 30px;
@@ -460,7 +476,6 @@ section.NormalProductPage{
                     }
                 }
             }
-
             div.all_Bottom{
                 margin:0 auto;
                 width:100%;
@@ -469,21 +484,93 @@ section.NormalProductPage{
                 //底部 推薦商品區======================================================================
                 div.bottomarea{
                     padding-bottom: 40px;
-                    margin-bottom:70px;
-                    margin-top:25px;
+                    //margin-bottom:70px;
+                    margin-top:30px;
+                    padding-top:30px;
+                    border-top: 1px solid black;
                     //標題:熱門推薦商品
+                    p{
+                        font-size: $p;
+                        margin: 0;
+                        text-align: center;
+                        color: map-get($color_regulation,'blue' );
+                    }
                     h5.title_2{
                         font-size: $h5;
+                        margin: 0;
+                        text-align: center;
                         color: map-get($color_regulation,'blue' );
                         @media (max-width:575px){
                             font-size: $h6;
                             padding:20px;
                         }
                     }
+                    div.newProLine{
+                        margin: auto;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+                        width:50px;
+                        height: 8px;
+                        background-color:map-get($color_regulation , 'yellow' );
+                    }
+                    //推薦商品區塊
                     div.bottomareaBoxA{
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-evenly;
+                        //推薦商品卡片
+                        div.product{
+                            margin-bottom: 30px;
+                            width: 275px;
+                            img{
+                                width: 275px;
+                                height: 275px;
+                                box-shadow: $box-shadow;
+                            }
+                            div.productInfo{
+                                color:map-get($color-regulation, 'blue' );
+                                border-left: 8px solid map-get($color-regulation, "yellow" );
+                                padding-left: 10px;
+                                margin-top: 10px;
+                                p.NameAndPrice{  
+                                    font-size: 15px;
+                                    margin: 0;
+                                    line-height: 36px;
+                                    text-align: left;
+                                }
+                                button{
+                                    overflow: hidden;
+                                    padding: 0;
+                                    margin: 0;
+                                    float: right;
+                                    height: 35px;
+                                    width:35px;
+                                    line-height: 35px;
+                                    color: map-get($color-regulation,'blue');
+                                    background-color: map-get($color-regulation, 'yellow' );
+                                    border:none;
+                                    box-shadow: $box-shadow;
+                                    white-space:nowrap;
+                                    transition: all 0.3s ease 0s;
+                                    i{
+                                        display: inline-block;
+                                    }
+                                    p{  
+                                        opacity: 0;
+                                        margin: 0;
+                                        display: none;
+                                    }
+                                    &:hover{
+                                        transition: all 0.3s ease 0s;
+                                        width: 150px;
+                                        p{
+                                            opacity: 1;
+                                            display: inline-block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -494,6 +581,7 @@ section.NormalProductPage{
 //燈箱
 section.NormalProductPage{
     div#NP_lightBox{
+        z-index:2;
         display:none;
         position: fixed;
         top:$navH;
@@ -527,60 +615,6 @@ section.NormalProductPage{
                 position:absolute;
                 top: #{-$closeBtn};
                 right:#{-$closeBtn};
-            }
-        }
-    }
-}
-
-
-
-
-.product{
-    margin-bottom: 30px;
-    width: 275px;
-    img{
-        width: 275px;
-        height: 275px;
-    }
-    .productInfo{
-        color:map-get($color-regulation, 'blue' );
-        border-left: 8px solid map-get($color-regulation, "yellow" );
-        padding-left: 10px;
-        margin-top: 10px;
-        p{  
-            font-size: 15px;
-            margin: 0;
-            line-height: 36px;
-        }
-        button{
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-            float: right;
-            height: 35px;
-            width:35px;
-            line-height: 35px;
-            color: map-get($color-regulation,'blue');
-            background-color: map-get($color-regulation, 'yellow' );
-            border:none;
-            box-shadow: $box-shadow;
-            white-space:nowrap;
-            transition: all 0.3s ease 0s;
-            i{
-                display: inline-block;
-            }
-            p{  
-                opacity: 0;
-                margin: 0;
-                display: none;
-            }
-            &:hover{
-                transition: all 0.3s ease 0s;
-                width: 150px;
-                p{
-                    opacity: 1;
-                    display: inline-block;
-                }
             }
         }
     }

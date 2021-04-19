@@ -5,39 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/all.css">
+    <!-- <link rel="stylesheet" href="./css/all.css"> -->
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css'/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- 本機端css連結用下列: -->
-    <!-- <link rel="stylesheet" href="./css/Mall2.css"> -->
+    <!-- <link rel="stylesheet" href="./css/Mall3.css"> -->
     <!-- git css連結用下列: -->
-    <link rel="stylesheet" href="./css/pages/Mall2.css">
+    <link rel="stylesheet" href="./css/pages/Mall3.css">
 
     <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css' /> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script> -->
-    
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- 排序 -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
-
-    <title>商城</title>
-
-    <style>
-        .shortten2{
-            overflow: hidden;        
-            text-overflow: ellipsis; 
-            display: -webkit-box;
-            -webkit-line-clamp: 2;   
-            -webkit-box-orient: vertical;
-        }
-    </style>
+    <title>商城Mall2.html</title>
 </head>
 
 <body>
@@ -46,21 +39,44 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
 
-    <div class="titleBlock">
+    <!-- =====麵包條===== -->
+    <!-- <div class="titleBlock">
        <span>首頁/</span>
-       <span>商城</span>
-       
-    </div>
+       <span class="currentPage">商城</span>
+    </div> -->
 
     <section>
         <div class="content_Mall">
-            <!-- =======================客製商品區//========================== -->
+            <!-- =======================BANNER : 客製商品區========================== -->
+            <!-- =======================BANNER : 客製商品區========================== -->
+            <!-- =======================BANNER : 客製商品區========================== -->
             <div class="homePage4__customerBlock">
+                    <!-- =====麵包條===== -->
+                    <div class="titleBlock">
+                        <span>首頁/</span>
+                        <span class="currentPage">商城</span>
+                    </div>
                 <div class="sizeBox">
                     <div id="swiper3" class="swiper-container">
                         <div class="swiper-wrapper">
+                            <!-- ============================= -->
                             <div class="swiper-slide cusSwiper" >
-                                <div class="product">
+                                <div class="productBanner">
+                                    <a href=""><img src="./img/mall/bag1.jpg"></a>
+                                </div>
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>快來訂製專屬自己的環保購物包吧</h5>
+                                    <p>主要原材料為天然棉布、帆布、和麻混紡而成。因應環保概念，購物袋已經成為時尚潮流，欣賞獨特設計作品的同時，也快來訂製專屬於自己的潮流環保購物包吧!</p>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                            </div>
+                            <!-- ============================= -->
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="productBanner">
                                     <a href=""><img src="./img/mall/bag1.jpg"></a>
                                 </div>
                                 <div class="page4RightText">
@@ -73,9 +89,9 @@
                                     <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
                                 </div>
                             </div>
-                            <!-- ---------------- -->
+                            <!-- ============================= -->
                             <div class="swiper-slide cusSwiper" >
-                                <div class="product">
+                                <div class="productBanner">
                                     <a href=""><img src="./img/mall/bag1.jpg"></a>
                                 </div>
                                 <div class="page4RightText">
@@ -88,8 +104,9 @@
                                     <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
                                 </div>
                             </div>
+                            <!-- ============================= -->
                             <div class="swiper-slide cusSwiper" >
-                                <div class="product">
+                                <div class="productBanner">
                                     <a href=""><img src="./img/mall/bag1.jpg"></a>
                                 </div>
                                 <div class="page4RightText">
@@ -102,196 +119,112 @@
                                     <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
                                 </div>
                             </div>
-                            <div class="swiper-slide cusSwiper" >
-                                <div class="product">
-                                    <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                </div>
-                                <div class="page4RightText">
-                                    <div class="page4Title">
-                                        <p>CUSTOMIZED PRODUCTS</p>
-                                        <h5>客製化商品</h5>
-                                    </div>
-                                    <h5>挑選你喜愛的顏色吧</h5>
-                                    <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
-                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
-                                </div>
-                            </div>
+                            <!-- ============================= -->
                         </div>
                         <!-- Add Arrows -->
                         <div id="cusSwipersBtnR" class="swiper-button-next"></div>
                         <div id="cusSwipersBtnL" class="swiper-button-prev"></div>
                     </div>
                 </div>
-                
             </div>
             
             <!-- ====================== 一般商品區 =========================== -->
-
-
-            <!-- ==================================排序區================================== -->
-            <!-- ==================================排序區================================== -->
-            <!-- ==================================排序區================================== -->
+            <!-- ====================== 一般商品區 =========================== -->
+            <!-- ====================== 一般商品區 =========================== -->
+            <!-- ========標題======== -->
             <div class="newsPorTitle">
                 <p>PORDUCTS</p>
                 <h5>一般商品</h5>
                 <div class="newProLine"></div>
             </div>
-            <div class="sizeBox">
+
+            <div class="sizeBoxB">
                 <div class="productBlock" id="user">
+                    <!-- ==================================篩選區================================== -->
                     <div class="productType">
-                        <div class="typeTitle"><span>商品種類</span></div>
-                        <button class="type">客製化商品</button>
-                        <button class="type">一般商品</button>
-                        <button class="type">衣服</button>
-                        <button class="type">上衣</button>
-                        <button class="type">帽子</button>
+                        <div class="typeTitle"><span>一般商品種類</span></div>
+                        <button class="type" id="allNormalProd">所有一般商品</button>
+                        <button class="type" id="ShopingBagProd">購物袋</button>
+                        <button class="type" id="CupsetProd">杯套</button>
+                        <button class="type" id="FacemaskProd">口罩</button>
+                        <button class="type" id="PhonecaseProd">手機殼</button>
+                        <button class="type" id="TshirtProd">上衣</button>
+                        <button class="type" id="HatProd">帽子</button>
                     </div>
+
                     <div class="allProduct" >
-                        <!-- 塞選選擇欄位 -->
+                        <!-- ==============================排序區================================== -->
                         <div class="theWayOfSort">
                             <select class="select_sort_way" name="select_sort_way">
-                                <option class="sortWay" value="sortWay" selected><div class="sort_0">請選擇排序方式</div></option>
-                                <option class="sortWay" value="sortByHot"><div class="sort_0 sort_by_hot">熱門商品</div></option>
-                                <option class="sortWay" value="sortByUpdate"><div class="sort_0 sort_by_update">新品上市</div></option>
+                                <!-- <option class="sortWay" selected disabled><div class="sortByProdNo">請選擇排序方式</div></option> -->
+                                <option class="sort sortbyProdNo" selected>請選擇排序方式</option>
+                                <!-- <option class="sort sortbyListedDate">新品上市</option> -->
+                                <option class="sort sortByPriceAsc" data-sort="price">價格低至高</option>
+                                <option class="sort sortByPriceDesc">價格高至低</option>
                             </select>
                         </div>
-                        <!-- 一般區 -->
+
+                        <!--================= 一般商品卡片 =================-->
                         <div class="normalBlack">
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p>   
+                            <!-- =================放置動態「一般商品」的卡片================= -->
+                            <!-- <div id="app" class="addDivForVue"> -->
+                            <div id="app" class="addDivForVue">
+                                <div v-for="prodRow in prodRows" v-bind:class="[name1, name2, 'category'+prodRow.PRODCLNO]" v-bind:id="prodRow.PRODNO">
+                                    <a href="NormalProduct_RWD.html">
+                                        <img :src="prodRow.PRODPIC_1" >
+                                    </a>
+                                    <div class="productInfo">
+                                        <p class="NameAndPrice">{{prodRow.PRODNAME}}</p>
+                                        <p class="NameAndPrice">NT$
+                                            <span class="price">{{prodRow.PRODPRICE}}</span>
+                                            <button class="CartBtnOfMall" v-bind:id="'a'+prodRow.PRODNO">
+                                            <!-- <button class="CartBtnOfMall" v-bind:id="'a'+prodRow.PRODNO"> -->
+                                                <i class="fas fa-shopping-cart fa-1x"></i>
+                                                <p>加入購物車</p>
+                                            </button>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
+                            <!-- =================放置動態「一般商品」的卡片//=============== -->
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- ==================================排序區//================================== -->
-            <!-- ==================================排序區//================================== -->
-            <!-- ==================================排序區//================================== -->
-            
+
+            <!-- ====================== 推薦商品(最新商品) =========================== -->
+            <!-- ====================== 推薦商品(最新商品) =========================== -->
+            <!-- ====================== 推薦商品(最新商品) =========================== -->
+            <!-- ========標題======== -->
             <div class="newsPorTitle">
                 <p>NEWS PORDUCTS</p>
                 <h5>最新商品</h5>
                 <div class="newProLine"></div>
             </div>
-            <div class="sizeBox">
+            <div class="sizeBoxC">
                 <div class="homePage4__generalBlock">
-                    <div class="product">
-                        <a href=""><img src="./img/mall/bag1.jpg"></a>
-                        <div class="productInfo">
-                            <p class="NameAndPrice">環保杯套</p>
-                            <p class="NameAndPrice">NT$
-                                <span class="price">500</span>
-                                <button>
-                                    <i class="fas fa-shopping-cart fa-1x"></i>
-                                    <p>加入購物車</p>
-                                </button>
-                            </p> 
+                    <!--================= 推薦商品卡片 =================-->
+                    <div id="appNewProd" class="addDivForVue">
+                        <!-- =================放置動態「推薦商品」的卡片================= -->
+                        <div v-for="NewProdRow in NewProdRows" class="product" v-bind:id="NewProdRow.PRODNO">
+                            <a href="NormalProduct_RWD.html">
+                                <img :src="NewProdRow.PRODPIC_1">
+                            </a>
+                            <div class="productInfo">
+                                <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
+                                <p class="NameAndPrice">NT$
+                                    <span class="price">{{NewProdRow.PRODNAME}}</span>
+                                    <button class="CartBtnOfMall" v-bind:id="'a'+NewProdRow.PRODNO">
+                                        <i class="fas fa-shopping-cart fa-1x"></i>
+                                        <p>加入購物車</p>
+                                    </button>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="product">
-                        <a href=""><img src="./img/mall/bag1.jpg"></a>
-                        <div class="productInfo">
-                            <p class="NameAndPrice">環保杯套</p>
-                            <p class="NameAndPrice">NT$
-                                <span class="price">500</span>
-                                <button>
-                                    <i class="fas fa-shopping-cart fa-1x"></i>
-                                    <p>加入購物車</p>
-                                </button>
-                            </p> 
-                        </div>
-                    </div>
-                    <div class="product">
-                        <a href=""><img src="./img/mall/bag1.jpg"></a>
-                        <div class="productInfo">
-                            <p class="NameAndPrice">環保杯套</p>
-                            <p class="NameAndPrice">NT$
-                                <span class="price">500</span>
-                                <button>
-                                    <i class="fas fa-shopping-cart fa-1x"></i>
-                                    <p>加入購物車</p>
-                                </button>
-                            </p> 
-                        </div>
+                        <!-- =================放置動態「推薦商品」的卡片//================= -->
                     </div>
                 </div>
             </div>
-            
         </div>
     </section> 
 
@@ -302,46 +235,223 @@
     <script src="./js/swiper-bundle.js"></script>
     <!-- Initialize Swiper -->
     <script src="./js/swiper-all.js"></script>
+
     <script>
-    var swiper3 = new Swiper('#swiper3', {
-        slidesPerView:1,
-        breakpoints:{
-            
-        },
-        // mousewheel: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-            effect: 'fade',
-        },
-    });
+        var swiper3 = new Swiper('#swiper3', {
+            slidesPerView:1,
+            breakpoints:{
+            },
+            // mousewheel: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                effect: 'fade',
+            },
+        });
     </script>
+
     <script>
         $(function(){
-
-        // 點擊
-        $(".productType").on("click", function(){
-        
-        // -open 的樣式切換
-        $(".type").closest(".type").toggleClass("-open");
-        
-        });
-
-        });
-    </script>
-    <!-- ==================================這段測試中(還沒辦法有動態)================================== -->
-    <!-- <script>
-        $(document).ready(function(){
-            $('#design_area').focus(function(){
-                $('#showDesignIcon').css('border-color', 'black');
+            // 點擊
+            $(".productType").on("click", function(){
+            // -open 的樣式切換
+            $(".type").closest(".type").toggleClass("-open");
             });
         });
+    </script>
+
+    <!-- 排序套件 -->
+    <!-- <script>
+        var options = {
+            valueNames: ['price']
+        };
+        var userList = new List('user',options);
     </script> -->
 
+    <!-- ==================================篩選一般商品種類================================== -->
+    <!-- ==================================篩選一般商品種類================================== -->
+    <script>
+        $(function(){
+            // 點擊[所有一般商品]，可以所有商品都顯示
+            $('#allNormalProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','block');
+            });
+            // 點擊[購物袋]，只顯示購物袋 種類category=0購物袋
+            $('#ShopingBagProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','none');
+                $('.category0').css('display','block');
+            });
+            // 點擊[杯套]，只顯示杯套 種類category=1杯套
+            $('#CupsetProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','none');
+                $('.category1').css('display','block');
+            });
+            // 點擊[口罩]，只顯示口罩 種類category=2口罩
+            $('#FacemaskProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','none');
+                $('.category2').css('display','block');
+            });
+            // 點擊[手機殼]，只顯示手機殼 種類category=3手機殼
+            $('#PhonecaseProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','none');
+                $('.category3').css('display','block');
+            });
+            // 點擊[上衣]，只顯示上衣 種類category=4上衣
+            $('#TshirtProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','none');
+                $('.category4').css('display','block');
+            });
+            // 點擊[帽子]，只顯示帽子 種類category=5帽子
+            $('#HatProd').click(function(){
+                $('.type').css('background-color','#FFFFFF');
+                $(this).css('background-color','#FFD241');
+                $('.productDisplay').css('display','none');
+                $('.category5').css('display','block');
+            });
+        });
+     </script>
+    <!-- ==============================篩選一般商品種類//================================ -->
+    <!-- ==============================篩選一般商品種類//================================ -->
+    
+    
 
+    <!-- ==========================資料庫取資料 / 存id到session========================== -->
+    <!-- ==========================資料庫取資料 / 存id到session========================== -->
+    <script>
+    // ------------------------到資料庫撈取「商城卡片」要的資料------------------------
+    function getProducts(){
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function(){
+            prodRows = JSON.parse(xhr.responseText);
+            //console.log(prodRows);
+            app.prodRows = prodRows;
+        }
+        xhr.open("get", "./php/mall/getProducts.php", true);
+        xhr.send(null);
+    };
+    // ------------把撈取到的一般商品動態渲染到「一般商品卡片」-------------
+    // ------------把click到的商品id記錄到seccion (以便商品頁能取值)-------
+    // ------------把click到的CartBtn記錄到seccion(以便購物車能取值)-------
+    var app = new Vue({
+        el: '#app',
+        data: {
+            prodRows: [],
+            name1 : 'product',
+            name2 : 'productDisplay',
+        },
+        mounted(){
+            let storage = sessionStorage;
+            //ItemId : for商城記錄click到哪個商品
+            if(storage['ItemId'] == null){
+                storage['ItemId'] = '';
+            }
+            //addItemList : for購物車記錄把哪個商品加到購物車
+            if(storage['addItemList'] == null){
+                storage['addItemList'] = '';
+            }
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%
+            //cart : for購物車記錄把哪個商品加到購物車
+            let cart = [];
+            if(storage['cart'] == null){
+                storage['cart'] = '';
+            }
+
+            function updateSession(){
+                storage["cart"] = JSON.stringify(cart);
+            }
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%
+      
+            setTimeout(()=>{
+                //幫每張卡片(一般商品+推薦商品)建立事件聆聽功能
+                let prodCard = document.querySelectorAll('.product');
+                for(let i = 0; i < prodCard.length; i++){
+                    prodCard[i].addEventListener('click',function(){
+                        theId = this.id;
+                        //click後 就把theId = this.id存入session(下列三種寫法都可以)
+                        storage.setItem('ItemId',theId);
+                        // storage['ItemId'] = theId;
+                        // storage['ItemId'] = `${theId}`;
+                    });
+                }
+                // ********click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)********
+                //幫每個購物車btn建立事件聆聽功能
+                let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                
+                for(let i = 0; i < CartBtn.length; i++){
+                    
+
+                    CartBtn[i].addEventListener('click',function(){
+                        
+                        theBtnId = this.id;
+                        //click後 就把theBtnId = this.id存入session
+                        storage['addItemList'] += `${theBtnId}, `;
+                        //alert(`${theBtnId}`);
+                        //這個程式沒有要清掉addItemList的value, 何時清掉addItemList的value要寫在購物車(應該是這樣)
+                        
+                    });
+                    // CartBtnOfMall
+                    // CartBtn[i].onclick = function(){
+                    //     alert('s231');
+                    // }
+                }
+
+                // ************************************************************************************
+            },50)
+        },
+    });
+
+    // ------------------------到資料庫撈取「推薦商品卡片」要的資料---------------------
+    function getNewProducts(){
+        let xhrNewProuct = new XMLHttpRequest();
+        xhrNewProuct.onload = function(){
+            NewProdRows = JSON.parse(xhrNewProuct.responseText);
+            //console.log(xhrNewProuct.responseText);
+            //console.log(NewProdRows);
+            appNewProd.NewProdRows = NewProdRows;
+        }
+        xhrNewProuct.open("get", "./php/mall/getNewProducts.php", true);
+        xhrNewProuct.send(null);
+    }
+    // ------------------------把撈取到的推薦商品動態渲染到「推薦商品卡片」-------------
+    var appNewProd = new Vue({
+        el: '#appNewProd',
+        data: {
+            NewProdRows: [],
+        },
+    });
+    // ------------------------------------------------------------------------------
+    window.addEventListener("load", function(){
+        // 執行:撈取「一般商品」函式
+        getProducts();  
+        // 執行:撈取「推薦商品」函式
+        getNewProducts();
+    })
+    </script>
+    <!-- ==========================資料庫取資料 / 存id到session//======================== -->
+    <!-- ==========================資料庫取資料 / 存id到session//======================== -->
+    
+    <!-- 也可以用這種方式連到商品頁，再解析網址上的id值，去資料庫撈資料 -->
+    <!-- <script>
+        let id = $('#test').attr('id')
+        $('#test').click(function(){
+            location.href=`NormalProduct_RWD.html?id=${id}`;
+        })
+    </script> -->
 </body>
 </html>
