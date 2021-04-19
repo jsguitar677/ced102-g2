@@ -1063,8 +1063,35 @@ div#appMemberBriefIntro{
         display: none;
     }
 }
-
-
+.comBtn3{
+    cursor: pointer;
+    outline: none;
+    color: map-get($color_regulation,'white');
+    height: 35px;
+    border: none;
+    // border-left: 4px solid  map-get($color_regulation,'yellow');
+    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+    font-size: 15px;
+    background-color: map-get($color_regulation,'memberGray');
+    // padding: 0px 30px;
+    line-height:35px;
+    transition: all 0.3s ease 0s;
+    width: 90px;
+}
+.comBtn4{
+    cursor: pointer;
+    outline: none;
+    color: map-get($color_regulation,'blue');
+    height: 35px;
+    border:none!important;
+    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+    font-size: 15px;
+    background-color: map-get($color_regulation,'yellow');
+    padding: 0px 30px;
+    line-height:35px;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+}
 
 .memInfoBottom{
     display: none;
@@ -1259,6 +1286,9 @@ div#appMemberBriefIntro{
 }
 
 @media all and (max-width:655px){
+    .comBtn3{
+        padding: 0px 10px;
+    }
     div#participateRecord{
         div.participateRecordCon{
             table.participateRecordTable{

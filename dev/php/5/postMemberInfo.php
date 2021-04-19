@@ -1,12 +1,20 @@
 <?php
 try{
+  include("getMemInfo.php");
+  
   require_once("../connect_ced102g2.php");
-  $sql = "SELECT mbrname, mbrcoin FROM mbr ";
+  $sql = "SELECT mbrname, mbrcoin FROM mbr where MBRNO = :MBRNO ";
+  // $sql = "SELECT mbrname, mbrcoin FROM mbr";
 //   $delete = "delete from adm where ADMNO =:admno";
 //   $add = "insert into adm(ADMNAME, ADMACC, ADMPSW) values (:admname,:admacc,:admpws)";
   $ord = $pdo->prepare($sql);
+  $ord->bindValue(":MBRNO", "MBRNO");
   $ord->execute();
 
+  if(isset($_SESSION["MBRNO"])){
+    $MBRNOO = $_SESSION["MBRNO"];
+  }
+  
   if( $ord->rowCount() == 0 ){
     echo "{}";
   }else{

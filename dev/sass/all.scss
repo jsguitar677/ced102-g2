@@ -54,6 +54,7 @@ body>*{
     background-color: map-get($color_regulation,'yellow');
     padding: 0px 30px;
     line-height:35px;
+    transition: all 0.3s ease 0s;
 }
 
 .comBtn2{
@@ -67,7 +68,7 @@ body>*{
     background-color: map-get($color_regulation,'blue');
     padding: 0px 30px;
     line-height:35px;
-
+    transition: all 0.3s ease 0s;
 }
 //=========================        header new =========
 @mixin LogRegBtn {

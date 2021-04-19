@@ -432,8 +432,12 @@ function checkACFT(e){
         e.preventDefault();
         return;
     }
+    var numRegex = /\D/g;
     let logMemPsw = document.getElementById("logMemPsw");
     let logMemPswCheck = document.getElementById("logMemPswCheck");
+    logMemMobileCheck.value = logMemMobileCheck.value.replace(numRegex,'');
+
+
     if( logMemPsw.value.length < 6){
         alert("密碼長度必須為6-15位");
         e.preventDefault();

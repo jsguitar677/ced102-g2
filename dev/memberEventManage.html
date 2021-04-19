@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="./css/pages/member.css">
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-    <!-- 引用owl & jQuery -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
-    
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
@@ -146,37 +141,26 @@
 
                     <div class="participateRecordCon">
                         <table class="eventManagementTable">
-                            <tr class="eventManagementRow1">
-                                <th>活動日期</th>
-                                <th>活動編號</th>
-                                <th>活動狀態</th>
-                                <th>管理</th>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>延期中</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>進行中</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>失敗</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>成功</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            
+                            <thead>
+                                <tr class="eventManagementRow1">
+                                    <th>活動編號</th>
+                                    <th>活動名稱</th>
+                                    <th>活動狀態</th>
+                                    <th>報名截止日</th>
+                                    <th>是否需要延期</th>
+                                    <th>活動下架</th>
+                                </tr>
+                            </thead>
+                            <tbody id="manageTable">
+                                <tr class="eventManagementContent">
+                                    <td is="actNo">1</td>
+                                    <td id="actName" style="text-overflow:ellipsis;overflow:hidden;max-width: 60px;">nnamenamenamenamenamenameame</td>
+                                    <td id="actSdate">延期中</td>
+                                    <td id="actStat">2021-04-14</td>
+                                    <td><button id="delay" class="comBtn3 CancelLink" style="white-space:nowrap">未到期</button></td>
+                                    <td><button id="actCancel" class="comBtn4 CancelLink" >取消</button></td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     
@@ -186,43 +170,15 @@
     </div>
     
     @@include('./layout/footer.html')
-    
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
-    
-    
     <!-- 樣板 footer -->
-    <script src="./js/member.js"></script>
     <script src="./js/login.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <!-- Swiper JS -->
-    <!-- <script src="./js/swiper-bundle.js"></script> -->
-    <script src="js/swiper-all.js"></script>
+    <!-- 共同會員的js -->
+    <script src="./js/member.js"></script>
+    <!-- 這個頁面的js -->
+    <script src="./js/memberEventManage.js"></script>
 
-    <script>
-
-        // function showMbr(jsonStr){
-
-        //     var mbrRow = JSON.parse(jsonStr);
-        //     console.log(mbrRow);
-        // }
-
-        // function getMbr(){
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.onload = function (){
-        //         if( xhr.status == 200 ){
-        //             showMbr(xhr.responseText)
-        //         }else{
-        //             alert( xhr.status );
-        //         }
-        //     }  
-        //     var url = "./php/15/memberInfo.php";
-        //     xhr.open("Get", url, true);
-        //     xhr.send( null );
-        // }
-        // getMbr();
-
-    </script>
 </body>
 
 </html>
