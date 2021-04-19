@@ -46,9 +46,10 @@
      <div class="title-block">
           <h1 class="title">購物車</h1>
      </div>
-    <section  class="paymentSection">
-       
+    <section  id="app"  class="paymentSection">
+        
         <div class="paymentContent " >
+
           <div class="card">
             <div class="card-header" id="headingOne">
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -150,7 +151,7 @@
               </div>
           </div>
           <div class="perDetailTitle"><h2>填寫資料</h2></div>
-          
+        
           <main class="form_wrapper" v-else-if="progress.steps[progress.currentStep] === 'payment'" key="payment">
             <section class="step step2">
               <div class="step_title_box">
@@ -161,11 +162,13 @@
               <form class="creadDetail" novalidate @submit.prevent="validateBeforeSubmit('payment')">
                 <div class="form-group row">
                   <label class="label">持卡人:</label>
-                  <input class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'">
+                  <input class="form-control form " type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" required>
+                  <span class="text-danger"></span>
                 </div>
                 <div class="form-group row">
                   <label class="label">持卡人身分證字號:</label>
-                  <input class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'">
+                  <input class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" :class="classes" required>
+                  <span class="text-danger"></span>
                 </div>
                 <div class="form-group row">
                   <label class="label ">卡號:</label>
@@ -175,6 +178,7 @@
                     </div> -->
                     <div class="col " v-if="isMobile">
                       <input class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" required>
+                      <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col " v-if="isMobile">
                       <input class="form-control form" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)">
@@ -197,9 +201,10 @@
                   <div class="form-row  label ">
                     <div class="input-group " >
                       <input class="form-control form" type="text" name="expiredMonth" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02" required>
+                      <span class="text-danger"></span>
                       
                       <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27" required>
-                      
+                      <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col-6 col-md-3 input-group row">
                       <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'">
@@ -212,6 +217,7 @@
                   <div class="form-row">
                     <div class="col-md-3">
                       <input placeholder="卡片背面末三碼" class="form-control form" type="text" name="cvv" v-model="formPayment.cvv" v-validate="'required|numeric|length:3'">
+                      <span class="text-danger"></span>
                     </div>
                   </div>
                 </div>
@@ -235,12 +241,13 @@
               <input type="radio" name="block" class="memberblock" >同會員資料
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
-                  <input type="text" class="form-control empty form" id="owner">
+                  <input type="text" class="form-control empty form" id="owner" required>
+                  <span class="text-danger"></span>
                </div>
                <div class="row" id="card-number-field">
                   <label class="label" for="cellPhone">手機號碼：</label>
                   <input type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
-                      id="cellPhone">
+                      id="cellPhone" required>
                </div>
                <!-- <div class="row" >
                 <label class="label" for="phone">市話：</label>
@@ -266,6 +273,7 @@
                       <option value="11">雲林縣</option>
                       <option value="12">嘉義縣</option>
                 </select>
+                <span class="text-danger"></span>
                 <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
                   <option value="01">郵遞區號</option>
                     <option value="01">101</option>
@@ -276,6 +284,7 @@
                     <option value="06">106</option>
                     <option value="07">107</option>
                 </select>
+                <span class="text-danger"></span>
                 <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
                   <option value="01">鄉鎮縣市</option>
                     <option value="01">大安區</option>
@@ -285,7 +294,8 @@
                     <option value="05">北投區</option>
                     <option value="06">南港區</option>
                     <option value="07">萬華區</option>
-                </select>      
+                </select>   
+                <span class="text-danger"></span>   
                </div>
                <div class="row" >
                 <label class="label" for="phone"></label>
@@ -298,11 +308,13 @@
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
                   <input type="text" class="form-control empty form" id="owner">
+                  <span class="text-danger"></span>
                </div>
                <div class="row" id="card-number-field">
                   <label class="label" for="cellPhone">手機號碼：</label>
                   <input  type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
                       id="cellPhone">
+                  <span class="text-danger"></span>
                </div>
                <!-- <div class="row" >
                 <label class="label" for="Phone">市話：</label>
@@ -342,6 +354,7 @@
                       <option value="11">雲林縣</option>
                       <option value="12">嘉義縣</option>
                 </select>
+                <span class="text-danger"></span>
                 <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
                   <option value="01">郵遞區號</option>
                     <option value="01">101</option>
@@ -352,6 +365,7 @@
                     <option value="06">106</option>
                     <option value="07">107</option>
                 </select>
+                <span class="text-danger"></span>
                 <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
                   <option value="01">鄉鎮縣市</option>
                     <option value="01">大安區</option>
@@ -361,16 +375,17 @@
                     <option value="05">北投區</option>
                     <option value="06">南港區</option>
                     <option value="07">萬華區</option>
-                </select>      
+                </select>   
+                <span class="text-danger"></span>   
                </div>
                <div class="row" >
                 <label class="label" for="phone"></label>
                 <!-- <input  type="text" name="creditCard" class="form-control form" maxlength="20" placeholder="請輸入郵寄地址"> -->
-                <input type='text' name='adrs' id='my_adrs'>
+                <input type='text' name='adrs' id='my_adrs' required>
                 <input type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
                </div>
               </div> 
-            </form>
+
           </section>
           </main>
          
@@ -442,6 +457,7 @@
           <button onclick="location.href='./cart.html'" class="btn btn_primary " type="submit" >回上一頁</button>
           <button class="finshbtn btn" type="submit">確認付款</button>
           </div>
+        </form>
       </div>
       
     </section>
@@ -469,12 +485,12 @@ $('.full-screen').css('display','block');
 });
 
 // $("#twzipcode").twzipcode();
-new TwCitySelector({
-    el: '.city-selector-set',
-    elCounty: '.county', // 在 el 裡查找 element
-    elDistrict: '.district', // 在 el 裡查找 element
-    elZipcode: '.zipcode' // 在 el 裡查找 element
-  });
+// new TwCitySelector({
+//     el: '.city-selector-set',
+//     elCounty: '.county', // 在 el 裡查找 element
+//     elDistrict: '.district', // 在 el 裡查找 element
+//     elZipcode: '.zipcode' // 在 el 裡查找 element
+//   });
 
 new Cleave(".creadNum",{
   creditCard: true,
@@ -497,12 +513,34 @@ var cleave = new Cleave( ".Phone", {
   }
   });
 
-
-
-
-  
-
   </script>
+  <script>
+  // 將 VeeValidate input 驗證工具載入 作為全域註冊
+  Vue.component('ValidationProvider', VeeValidate.ValidationProvider);
+// 將 VeeValidate 完整表單 驗證工具載入 作為全域註冊
+  Vue.component('ValidationObserver', VeeValidate.ValidationObserver);
+
+    var app = new Vue({
+el:'#app',
+data:{
+    products: [],
+    itemList:[],
+    form:{
+      name:'',
+
+
+
+
+    },
+methods:{
+    
+},
+computed:{
+   
+},
+}
+})
+</script>
 
  
   

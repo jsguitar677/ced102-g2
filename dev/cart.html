@@ -56,10 +56,10 @@
                 <h2 class="sub-title">確認訂單明細</h1>
                 <div class="sub-title-line"></div>
             </div>
-            <form id="app">
+            <form id="app" action="payment.html">
                 <table class="table wrap">
-                    <div  class="item_body space_box" style="padding: 20px; display: none;">
-                        <p style="margin: 0 auto;">您還沒挑選任何商品，歡迎到商城逛逛唷！</p>
+                    <div  class="item_body space_box" style="padding: 20px;">
+                        <p style="margin: 0 auto; text-align: center;">您還沒挑選任何商品，歡迎到商城逛逛唷！</p>
                     </div>
                     <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id" >
                         <div class=" item_body prodInfo">
@@ -89,42 +89,41 @@
                   
                 </table>
             
-            <div class="total_body">
-                <div class="total-title">
-                    <h7 class="detail">結帳明細</h7>
-                </div>
-                <div class="row">
-                    <span class="label">商品總金額:</span>
-                    <div class="formw totalAmount">$<span id="subtotal">{{totalPrice}}</span></div>
-                    <!-- <span class="formw"><input type="text" size="25" /></span> -->
-                </div>
-                <div class="row recordPoint">
-                    <span class="label point">您目前持有點數:</span>
-                    <div id="getPoint" class="formw ">0</div>
-                </div>
-                <div class="row">
-                    <span class="label usePointsP">使用環保幣折扣:</span>
-                    <div class="formw loginbutton"><button class="button">請登入會員</button></div>
-                    <input class="formw discount"  type="text" name="usePointShow" value="0">
-                </div>
-                
-                
-                
-                <div class="orderCount">
+                <div class="total_body">
+                    <div class="total-title">
+                        <h7 class="detail">結帳明細</h7>
+                    </div>
+                    <div class="row">
+                        <span class="label">商品總金額:</span>
+                        <div class="formw totalAmount">$<span id="subtotal">{{totalPrice}}</span></div>
+                        <!-- <span class="formw"><input type="text" size="25" /></span> -->
+                    </div>
+                    <div class="row recordPoint">
+                        <span class="label point">您目前持有點數:</span>
+                        <div id="getPoint" class="formw ">0</div>
+                    </div>
+                    <div class="row">
+                        <span class="label usePointsP">使用環保幣折扣:</span>
+                        <div class="formw"><button class="button loginbutton" type="button">請登入會員</button></div>
+                        <input class="formw discount"  type="text" name="usePointShow" value="0">
+                    </div>
                     
-                    <!-- <p>總計：${{subtotal[index]}}</p> -->
-                    <p class="orderCount-subtotal ">總計：<span id="lastTotal">${{totalPrice}}</span></p>
-                    <input type="hidden" name="orderTotal" value="">
-                    <input type="hidden" name="usePoint" value="">
-                    <input type="hidden" name="leftPoints" value="">
+                    
+                    
+                    <div class="orderCount">
+                        
+                        <!-- <p>總計：${{subtotal[index]}}</p> -->
+                        <p class="orderCount-subtotal ">總計：<span id="lastTotal">${{totalPrice}}</span></p>
+                        <input type="hidden" name="orderTotal" value="">
+                        <input type="hidden" name="usePoint" value="">
+                        <input type="hidden" name="leftPoints" value="">
+                    </div>
                 </div>
-
-            </div>
-            <div class="butSection">
-                <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
-                <button onclick="location.href='./payment.html'" class="button button-pay thebill submit"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
-                
-            </div>
+                <div class="butSection">
+                    <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
+                    <button onclick="location.href='./payment.html'" class="button button-pay thebill submit"><span id="btnPay" style="color: #07082E;" href='./payment.html'>進行結帳</span></button>
+                    
+                </div>
             
             </form>
         </div>
@@ -140,7 +139,6 @@
     @@include('./layout/footer.html')
 
     <script src="./js/login.js"></script>
-    <script src="./js/spacecar.js"></script>
     <script src="./js/orderCoin.js"></script>
     <script src="./js/vue.js"></script>
     <script>
@@ -189,10 +187,12 @@
     methods:{
         addCount: function(item){
             item.count++;
+            updateCart(item.prodNo, item.count);
         },
         lessCount: function(item){
             if(item.count>1){
-            item.count--;                
+                item.count--;  
+                updateCart(item.prodNo, item.count);          
             }
         
         },
@@ -201,9 +201,17 @@
             this.itemList.splice(index,1);
         },
         getId(index){
-        sessionStorage.setItem("id", index+1);
-
-}
+            sessionStorage.setItem("id", index+1);
+        },
+        updateCart(prodNo, count){
+            for(let i=0; i<cart.length; i++){
+                if(cart[i].prodNo == prodNo){
+                    cart[i].count = count;
+                    break;
+                }
+            }
+            storage["cart"] = JSON.stringify(cart);
+        }
     },
     computed:{
         totalPrice(){
@@ -218,50 +226,58 @@
     },
 })
 
-
+let cart = [];
 let storage = sessionStorage;
-// function doFirst(){
-// 	let itemString = storage.getItem('addItemList');   //A1001, A1005, A1006, A1002, 
-//     let items = itemString.substr(0,itemString.length - 2).split(', ');
-//     console.log(items);   //["A1001", "A1005", "A1006", "A1002"]
-//     app.itemList = items;
-// }
 
-// addToStorage(total_price) {
-//                 // storage['total'] += `${this.total_price} `;
-//                 if (storage['total']) {
-//                     // console.log('000');
-//                     storage.setItem('total', `${this.total_price}`);
-//                     // storage['total'] += `${this.total_price} `;
-//                 } else {
-//                     storage['total'] += `${this.total_price} `;
-//                 }
-//             },
 function doFirst(){
+	showCart();
+}
+function showCart(){
+	cart = JSON.parse(storage["cart"]);
+	app.itemList = cart
+}
+
+$(function (){
+    $(".loginbutton").on("click", function(){
+        console.log("===click");
+        //$('#wholeScreenOverlay3').css('display','block');
+    });
+    $("#btnPay").on("click", function(){
+        document.getElementById("app").submit();
+    })
     $('.discount').hide()
     $('.loginbutton').show()
      if(LogInMemId.textContent != ''){
         $('.discount').show()
         $('.recordPoint').show()
         $('.loginbutton').hide()
+        // document.querySelector(".loginbutton").style.display = "none";
     }else{
         $('.discount').hide()
         $('.recordPoint').hide()
         $('.loginbutton').show()
+        // document.querySelector(".loginbutton").style.display = "";
     }   
 
 // window.addEventListener("load",showdiscount)
-}
+})
 
 $(function(){
-$(".loginbutton").on("click", function(){
-$('#wholeScreenOverlay3').css('display','block');
-});
+    $(".loginbutton").on("click", function(){
+        
+        $('#wholeScreenOverlay3').css('display','block');
+    });
 
 });
 
 window.addEventListener("load",doFirst)
 </script>    
+<script>
+    // $('.space_box').css('display','none');
+</script>
+
+
+<script src="./js/spacecar.js"></script>
 </body>
 
 </html>

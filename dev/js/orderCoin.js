@@ -1,7 +1,6 @@
 var lastTotal = document.getElementById('lastTotal');
-
             $.ajax({
-                url: 'postMemberInfo.php',
+                url: 'php/5/postMemberInfo.php',
                 type: 'POST',
                 success: function (data) {
                     let result = JSON.parse(data);
