@@ -1,6 +1,6 @@
 <?php
 try {
-require_once "../connect_ced102g2.php";
+require_once "../../connect_ced102g2.php";
 
 $sql = "SELECT * FROM prod
 WHERE prodno = :prodno

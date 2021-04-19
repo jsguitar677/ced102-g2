@@ -1,6 +1,6 @@
 <?php
 try{
-  require_once("../connect_ced102g2.php");
+  require_once("../../connect_ced102g2.php");
   $sql = "select o.orderno ,o.orderdate, o.mbrno, m.mbrname, o.CONSIG,o.CONSIGADD,o.CONSIGTEL,o.POSTCODE  from orders o join mbr m on o. mbrno= m. mbrno ;";
 //   $delete = "delete from adm where ADMNO =:admno";
 //   $add = "insert into adm(ADMNAME, ADMACC, ADMPSW) values (:admname,:admacc,:admpws)";

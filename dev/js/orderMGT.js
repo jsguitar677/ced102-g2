@@ -73,9 +73,9 @@ $(document).ready(function(){
                 </form>
 
             `)
-            $('div.cancel-btn').click(function(){
-                $('.alert-block-view').css('display','none');
-            });
+            // $('div.cancel-btn').click(function(){
+            //     $('.alert-block-view').css('display','none');
+            // });
         })
     
         var options = {valueNames: [ 'ord-num','mem-num','mem-name']};
