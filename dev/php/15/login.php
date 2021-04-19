@@ -17,9 +17,10 @@ try{
     $_SESSION["MBRMAIL"] = $memRow["MBRMAIL"];
     $_SESSION["MBRNAME"] = $memRow["MBRNAME"];
     $_SESSION["MBRNO"] = $memRow["MBRNO"];
+    $_SESSION["MBRPIC"] = $memRow["MBRPIC"];
 
     //送出登入者的姓名資料
-    $res = ["MBRMAIL"=>$memRow["MBRMAIL"], "MBRNAME"=>$memRow["MBRNAME"],"MBRNO"=>$memRow["MBRNO"]];
+    $res = ["MBRMAIL"=>$memRow["MBRMAIL"], "MBRNAME"=>$memRow["MBRNAME"],"MBRNO"=>$memRow["MBRNO"], "MBRPIC"=>$memRow["MBRPIC"]];
 
     echo json_encode($memRow); //輸出json
   }

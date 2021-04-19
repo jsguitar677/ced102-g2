@@ -291,6 +291,8 @@ let memberText;
                     LogConfirmY.style.display = 'none';
                     LogConfirmN.style.display = 'none';
                     LogInMemIdPhoto.style.display = 'flex';
+                    //寫入照片 .src = MBRPERID[0].MBRPIC;
+                    $id('proHook').src = memberText.MBRPIC;
                     //寫入會員的姓名
                     LogInMemId.textContent = memberText.MBRNAME;
                     // 登入後綠色球球出現
@@ -405,6 +407,12 @@ function getMemInfo(){
         LogConfirmY.style.display = 'none';
         LogConfirmN.style.display = 'none';
         LogInMemIdPhoto.style.display = 'flex';
+        // 註冊消失
+        $id('AccountListReg').style.display = "none";
+        // 登入後綠色球球出現
+        $id('memberBell').style.display="block";
+        //寫入照片 .src = MBRPERID[0].MBRPIC;
+        $id('proHook').src = memberText.MBRPIC;
         LogInMemId.textContent = memberText.MBRNAME;
         $id('All_RListUL').style.marginTop = '0px';
         //清除登入燈箱資訊
@@ -415,7 +423,6 @@ function getMemInfo(){
         AccountList.style.opacity = '0';
         //解鎖螢幕
         document.body.style.overflow = 'auto';
-        
       }
     }
     xhr.open("get", "php/15/getMemInfo.php", true);
@@ -437,14 +444,13 @@ function checkACFT(e){
     let logMemPswCheck = document.getElementById("logMemPswCheck");
     logMemMobileCheck.value = logMemMobileCheck.value.replace(numRegex,'');
 
-
-    if( logMemPsw.value.length < 6){
-        alert("密碼長度必須為6-15位");
+    if( logMemPsw.value.length < 5){
+        alert("密碼長度必須為5-15位");
         e.preventDefault();
         return;
     }
-    if( logMemPswCheck.value.length < 6){
-        alert("密碼長度必須為6-15位");
+    if( logMemPswCheck.value.length < 5){
+        alert("密碼長度必須為5-15位");
         e.preventDefault();
         return;
     }
