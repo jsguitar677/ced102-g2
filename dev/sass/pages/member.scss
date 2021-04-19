@@ -659,10 +659,10 @@ thead#memberTableLowBlock{
     background-color: map-get($color_regulation,'pink2')!important;
 }
 
-div.participateRecordCon{
-    display: flex;
-    justify-content: center;
-}
+// div.participateRecordCon{
+//     display: flex;
+//     justify-content: center;
+// }
 .participateRecordCon{
     width: 90%;
     margin:30px auto;
@@ -691,6 +691,72 @@ div#eventManagement{
 }
 div#memPage{
     position: relative;
+    #delatRemindBlackBox{
+        top: 0;
+        left: 0;
+        display: none;
+        position: absolute;
+        background-color: rgba(0,0,0,.6);
+        height: 100%;
+        width: 100%;
+        z-index: 10;
+        #delatRemindBox{
+            border-left: 8px solid map-get($color_regulation,'yellow');
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: map-get($map: $color_regulation, $key: 'white');
+            color: map-get($map: $color_regulation, $key: 'blue');
+            font-size: 18px;
+            width: 40%;
+            height: 30%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 2%;
+            align-items: center;
+            box-shadow: $box-shadow;
+            @include mobileL{
+                width: 60%;
+            }
+            @include mobileS{
+                width: 80%;
+            }
+            .btnCho{
+                display: flex;
+                justify-content: space-around;
+                font-size: 18px;
+                @include mobileL{
+                    flex-direction: column-reverse;
+                }
+                #delayYes{
+                    background-color:map-get($color_regulation,'yellow' );
+                    color:map-get($color_regulation, 'black' );
+                    height: 35px;
+                    width: 100px;
+                    border: none;
+                    box-shadow: $box-shadow;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    @include mobileL{
+                        margin-left: 0px;
+                        margin-bottom: 30px;
+                    }
+                }  
+                #delayNo{
+                    background-color: map-get($color_regulation, 'black' );
+                    color:map-get($color_regulation, 'white');
+                    height: 35px;
+                    width: 100px;
+                    border: none;
+                    box-shadow: $box-shadow;
+                    cursor: pointer;
+                }
+            }
+            
+        }
+    }
     div#eventManagementCancelModalCon{
         display: none;
         position: absolute;
@@ -698,52 +764,102 @@ div#memPage{
         height: 100%;
         width: 100%;
         z-index: 10;
+        top: 0;
+        left: 0;
         div#eventManagementCancelModal{
             background-color: map-get($map: $color_regulation, $key: 'white');
             color: map-get($map: $color_regulation, $key: 'blue');
             font-size: $p;
-            width: 650px;
+            width: 60%;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 2%;
+            @include mobileL{
+                width: 80%;
+            }
+            @include mobileL{
+                width: 90%;
+            
+            }
+            .titleReasonBox{
+                padding-top: 10px;
+                height: 40px;
+                background-color: map-get($color_regulation , 'memberGray');
+                @include mobileL{
+                    padding: 10px;
+                    height: auto;
+
+                }
+                .titleReason{
+                    color: map-get($color_regulation, 'white' );
+                    margin: 0;
+                    border-left: 8px solid;
+                    padding-left: 10px;
+                    border-color: map-get($color_regulation, 'yellow' );
+                    font-size: 18px;
+                    line-height: 30px;
+                    margin-left: 50px;
+                    @include mobileL{
+                        margin-left: 10px;
+                        font-size: 15px;
+                    }
+                }
+            }
+            
             form{
+                margin: 30px;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                label{
-                    vertical-align: top;
+                justify-content: space-around;
+                @include pad{
+                    flex-direction: column;
+                }
+                .CancelReasonTitle{
+                    justify-content: center;
+                    display: flex;
+                    flex-direction: column;
+                    label{
+                        margin: 10px;
+                        border-left: 8px solid yellow;
+                        padding-left: 10px;
+                    }
+                    #eventManagementCancelReason{
+                        border: 1px solid map-get($color_regulation, 'blue' );
+                    }
                 }
                 
+                
                 div#eventManagementBtnCon{
-                    align-self: flex-end;
+                    align-self: center;
                     justify-content: space-around;
-                    width: 20%;
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     flex-wrap: nowrap;
                     button#eventManagementCancel{
-                        display: inline-block;
+                        width: 100px;
+                        // display: inline-block;
                         margin-right: 15%;
                         border:1px solid map-get($map: $color_regulation, $key: 'blue');
                         outline: none;
                         color: map-get($map: $color_regulation, $key: 'blue');
                         background-color: map-get($map: $color_regulation, $key: 'white');
                         cursor: pointer;
-                        padding: 5%;
+                        height: 35px;
                     }
                     button#eventManagementSubmit{
-                        display: inline-block;
+
+                        width: 100px;
+                        margin-bottom: 30px;
                         border:1px solid map-get($map: $color_regulation, $key: 'blue');
                         outline: none;
-                        padding-right: 5%;
                         color: map-get($map: $color_regulation, $key: 'white');
                         background-color: map-get($map: $color_regulation, $key: 'blue');
                         cursor: pointer;
-                        padding: 5%;
+                        height: 35px;
+                        @include pad{
+                            margin-top: 30px;
 
+                        }
                     }
                 }
             }

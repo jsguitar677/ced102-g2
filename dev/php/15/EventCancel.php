@@ -5,13 +5,15 @@ try{
     $memberData = $pdo->prepare($PDOO);
     $memberData->execute();
 
-    $MBRDATA=" UPDATE `actv` SET `ACTSTAT` = 3  WHERE MBRNO=:MBRNO and ACTNO=:ACTNO";
+    $MBRDATA=" UPDATE `actv` SET `ACTSTAT` = 3 , `CANPROP` = :REASON  WHERE MBRNO=:MBRNO and ACTNO =:ACTNO";
     // UPDATE `資料表` SET `欄位2` = '資料2'  WHERE `欄位1` = '資料1'  ;
    
 
     $memberData = $pdo->prepare($MBRDATA);
     $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
     $memberData->bindValue(":ACTNO", $_POST["ACTNOO"]);
+    $memberData->bindValue(":REASON", $_POST["REASON"]);
+
     $memberData->execute();
 
     // // 資料庫取回的資料

@@ -145,22 +145,23 @@
                     <div class="participateRecordCon">
                         <table class="participateRecordTable">
                             <tr id="participateRecordRow1">
-                                <th>活動日期</th>
-                                <th>活動名稱</th>
-                                <th>活動地點</th>
-                                <th>贊助金額</th>
                                 <th>活動編號</th>
-                                <th>查詢活動連結</th>
+                                <th>活動名稱</th>
+                                <th>贊助編號</th>
+                                <th>贊助日期</th>
+                                <th>贊助金額</th>
                             </tr>
-                            <tr id="participateRecordCont">
-                                <td>2013/03/30</td>
-                                <td>一起去打寶</td>
-                                <td>桃園永安漁港</td>
-                                <td>$400</td>
-                                <td>@313313</td>
-                                <th><button class="comBtn ActLink">活動連結</button></th>
-                            </tr>
+                            <tbody id="participateHook">
+                                <!-- <tr id="participateRecordCont">
+                                    <td id="Factno">1</td>
+                                    <td id="Factname">"戀戀海洋金山淨灘活動"</td>
+                                    <td id="FFdaNo">1</td>
+                                    <td id="FFdaDate">"2021-04-08"</td>
+                                    <td id="FFdaPrice">$400</td>
+                                </tr> -->
+                            </tbody>
                         </table>
+                        <h6 id="fundraWarn" style="display: none;text-align: center;">查無資料</h6>
                     </div>
 
                     <div class="participateTitle">
@@ -172,27 +173,19 @@
                     <div class="participateRecordCon">
                         <table class="participateRecordTable">
                             <tr id="participateRecordRow1">
-                                <th>活動日期</th>
-                                <th>活動名稱</th>
-                                <th>活動地點</th>
                                 <th>活動編號</th>
-                                <th>查詢活動連結</th>
+                                <th>活動名稱</th>
+                                <th>活動日期</th>
                             </tr>
-                            <tr id="participateRecordCont" class="participateRecordContent">
-                                <td>2013/03/30</td>
-                                <td>一起去打寶</td>
-                                <td>桃園永安漁港</td>
-                                <td>@313313</td>
-                                <th><button class="comBtn ActLink">活動連結</button></th>
-                            </tr>
-                            <tr class="participateRecordContent">
-                                <td>2013/03/30</td>
-                                <td>我只想撿回收</td>
-                                <td>新金山海灣</td>
-                                <td>@313313</td>
-                                <th><button class="comBtn ActLink">活動連結</button></th>
-                            </tr>
+                            <tbody id="participateHook2">
+                                <!-- <tr id="participateRecordCont" class="participateRecordContent">
+                                    <td>"1"</td>
+                                    <td>"戀戀海洋金山淨灘活動"</td>
+                                    <td>2021-04-10</td>
+                                </tr> -->
+                            </tbody>
                         </table>
+                        <h6 id="actvWarn" style="display: none; text-align: center;">查無資料</h6>
                     </div>
                     <p>感謝您的支持。</p>
                 </div>
@@ -202,42 +195,15 @@
     
     @@include('./layout/footer.html')
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
     
-    
-    <!-- 樣板 footer -->
-    <script src="./js/member.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <!-- Swiper JS -->
-    <!-- <script src="./js/swiper-bundle.js"></script> -->
-    <script src="js/swiper-all.js"></script>
-
-    <script>
-
-        // function showMbr(jsonStr){
-
-        //     var mbrRow = JSON.parse(jsonStr);
-        //     console.log(mbrRow);
-        // }
-
-        // function getMbr(){
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.onload = function (){
-        //         if( xhr.status == 200 ){
-        //             showMbr(xhr.responseText)
-        //         }else{
-        //             alert( xhr.status );
-        //         }
-        //     }  
-        //     var url = "./php/15/memberInfo.php";
-        //     xhr.open("Get", url, true);
-        //     xhr.send( null );
-        // }
-        // getMbr();
-
-    </script>
+     <!-- jQuery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- 樣板 footer -->
+     <script src="./js/login.js"></script>
+     <!-- 共同會員的js -->
+     <script src="./js/member.js"></script>
+     <!-- 這個頁面的js -->
+     <script src="./js/memberPartiRecord.js"></script>
 </body>
 
 </html>

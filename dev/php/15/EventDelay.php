@@ -6,9 +6,9 @@ try{
     $memberData->execute();
 
     // $MBRDATA=" UPDATE `actv` SET ADDDATE(actsdate,interval 14 day)  WHERE MBRNO=:MBRNO and ACTNO=:ACTNO";
-    $MBRDATA="UPDATE `actv` SET `actsdate`= ADDDATE(`actsdate`,interval 14 day) WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
+    $MBRDATA="UPDATE `actv` SET `actdline`= ADDDATE(`actdline`,interval 14 day) WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
     // $MBRDATA2=" SELECT `actv` SET `actsdate`= ADDDATE(`actsdate`,interval 14 day) WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
-    $MBRDATA2="SELECT `actsdate` FROM `actv` WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
+    $MBRDATA2="SELECT `actdline` FROM `actv` WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
 
     //  UPDATE `actv` SET `actsdate`= ADDDATE(`actsdate`,interval 14 day)  WHERE 1 and 1 ;
    
@@ -18,7 +18,7 @@ try{
     $memberData->bindValue(":ACTNO", $_POST["ACTNOO"]);
     $memberData->execute();
 
-    $memberData2 = $pdo->prepare($MBRDATA);
+    $memberData2 = $pdo->prepare($MBRDATA2);
     $memberData2->bindValue(":MBRNO", $_POST["MBRNO"]);
     $memberData2->bindValue(":ACTNO", $_POST["ACTNOO"]);
     $memberData2->execute();

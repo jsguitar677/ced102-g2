@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
     // ReceiveCoin();
     
     //-------------------------活動管理跳窗
-    eventManagementModal();
+    // eventManagementModal();
     
 });
 
@@ -79,21 +79,6 @@ memInfoBoxs.forEach(function(memInfoBox){
 
 
 
-//活動管理跳窗
-function eventManagementModal(){
-    var a = document.getElementsByClassName('eventManagementCancelBtn');
-    for(let i = 0; i < a.length ; i++){
-        a[i].onclick = function(){
-            $id('eventManagementCancelModalCon').style.display = 'block';
-        }
-    }
-    $id('eventManagementCancelModalCloseBtn').onclick = function(){
-        $id('eventManagementCancelModalCon').style.display = '';
-    }
-    $id('eventManagementCancel').onclick = function(){
-        $id('eventManagementCancelModalCon').style.display = '';
-    }
-}
 
 
 
