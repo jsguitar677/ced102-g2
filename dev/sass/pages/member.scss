@@ -381,6 +381,7 @@ body{
         .page3FormBox{
             padding: 30px;
             #page3form{
+                display: none;
                 margin:0;
                 width: 100%;
                 text-align: left;
@@ -1081,6 +1082,13 @@ div#appMemberBriefIntro{
     display: none;
 }
 
+
+
+.alertMessage{
+    color: map-get($color_regulation, 'red');
+    font-size: 15px;
+    font-family: bold;
+}
 
 @media all and (max-width:1024px){
     main{
