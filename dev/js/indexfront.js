@@ -57,6 +57,22 @@ $(document).ready(function() {
 //         return;
 //     }
 // }
+
+//============ 文字跑動
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+  
+  
 //==============  PHP
 //============== 總募款金額 / 總發起活動場次 / 總參與人數 資料抓取
 
@@ -68,7 +84,9 @@ function showActInfo(jsonStr){
     let actvTot = actv["actvTot"];
     console.log(donationTot, recruitTot, actvTot);
     spanShow = document.getElementsByClassName('tal');
-    spanShow[0].setAttribute("data-end", donationTot);
+    animateValue(spanShow[0], 0, donationTot, 1500);
+    animateValue(spanShow[1], 0, actvTot, 1500);
+    animateValue(spanShow[2], 0, recruitTot, 1500);
 }
 
 function getActInfo(){
@@ -87,3 +105,5 @@ function getActInfo(){
 };
 
 window.addEventListener('load', getActInfo);
+
+  
