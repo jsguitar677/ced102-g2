@@ -1,17 +1,24 @@
 @import '../common_backend';
 // ===================================== c1 ============================================================
-// div.bg{
-//     main#backend{
-//         div.content{
-//             section#c1{
-//                 table{
-//                     tr{
-//                         td{
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+div.bg{
+    main#backend{
+        div.content{
+            section#c1{
+                div.alert-block-add{
+                    #adm-add{
+                        span{
+                            font-size: 12px;
+                            font-weight: lighter;
+                            display: block;
+                        }
+                        span.error{
+                            color: map-get($web-color,'red-btn');
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 

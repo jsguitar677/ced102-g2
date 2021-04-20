@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zn-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- 打包連接的css -->
+    <link rel="stylesheet" href="./css/pages/actMGT.css">
+    <!-- 自己開watch sass連接的css，如果不用請把下面註解，上面打開-->
+    <!-- <link rel="stylesheet" href="./css/actMGT.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    <script src="./js/common_backend.js"></script>
+    <script src="./js/actMGT.js"></script>
+</head>
+<body>
+    @@include('./layout/backend_header.html')
+    <div class="bg">
+        <main id="backend">
+            <aside class="tags">
+                <div class="t1 tag"><a href="./admMGT.html"><div class="circle"></div>管理員管理</a></div>
+                <div class="t2 tag"><a href="./memMGT.html"><div class="circle"></div>會員管理</a></div>
+                <div class="t3 tag"><a href="./prodMGT.html"><div class="circle"></div>商品管理</a></div>
+                <div class="t4 tag"><a href="./orderMGT.html"><div class="circle"></div>訂單管理</a></div>
+                <div class="t5 tag"><a href="./rptMGT.html"><div class="circle"></div>檢舉留言管理</a></div>
+                <div class="t6 tag current"><a><div class="circle"></div>活動審核管理</a></div>
+                <div class="t7 tag"><a href="./act_histMGT.html"><div class="circle"></div>活動花絮管理</a></div>
+                <span class="text">© 淨下塑湲 All Rights Reserved. <br>淨下塑湲版權所有不得轉載</span>
+            </aside>
+            <div class="content">
+                <section id="c6">
+                    <h1>活動審核管理</h1>
+                    <div class="flex">
+                        <div class="left">
+                            <div class="top" id="addact">
+                                <h2><span class="circle"></span>新提案</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>編號</th>
+                                            <th>提案日期</th>
+                                            <th>活動日期</th>
+                                            <th>活動名稱</th>
+                                            <th>審核</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="addact-tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bottom" id="cancelact">
+                                <h2><span class="circle"></span>取消案件</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>編號</th>
+                                            <th>活動日期</th>
+                                            <th>活動名稱</th>
+                                            <th>取消原因</th>
+                                            <th>審核</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cancelact-tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="right" id="viewact">
+                            <div class="flex">
+                                <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號或名稱'></div>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>編號</th>
+                                        <th>發起人</th>
+                                        <th>活動日期</th>
+                                        <th>活動名稱</th>
+                                        <th>活動地點</th>
+                                        <th>活動狀態</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="list" id="act-tbody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="alert-block alert-block-view">
+                        <form id="act-view" class="alert">
+                            <div class="top">
+
+                            </div>
+                            <div class="date-block">
+                                <!-- 日期 -->
+                            </div>
+                            <div class="text-block">
+
+                            </div>
+                            <div class="goal-block">
+                                <!-- 志工；、資金 -->
+                            </div>
+                            <div>
+                                <div class="close-view-btn btn">關閉</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="alert-block alert-block-add">
+                        <form id="act-add" class="alert">
+                            <div class="top">
+                                <!-- 活動編號、發起人編號：.... -->
+                            </div>
+                            <div class="text-block">
+                                <!-- 活動內容、創辦理念： -->
+                            </div>
+                            <input type="text" name="addactno" id="addactno" hidden>
+                            <input type="radio" value="1" name="addact" id="addact-nopass"><label for="addact-nopass">退件</label>
+                            <input type="radio" value="2" name="addact" id="addact-pass"><label for="addact-pass">通過</label><br>
+                            <div class="addact-cancel-btn btn">取消</div>
+                            <div type="submit" class="submit btn" id="addsubmit">確認</div>
+                        </form>
+                    </div>
+                    <div class="alert-block alert-block-cancel">
+                        <form id="act-cancel" class="alert">
+                            <div class="top">
+
+                            </div>
+                            <div class="text-block">
+                                <!-- 取消原因 -->
+                            </div>
+                            <input type="text" name="cclactno" id="cclactno" hidden>
+                            <input type="radio" value="2" name="cancelact" id="cclact-nopass"><label for="cclact-nopass">退件</label>
+                            <input type="radio" value="4" name="cancelact" id="cclact-pass"><label for="cclact-pass">通過</label><br>
+                            <div class="cancelact-cancel-btn btn">取消</div>
+                            <div class="submit btn" id="cclsubmit">確認</div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
