@@ -10,7 +10,7 @@ try{
     $result = array();
     foreach($memRows as $i => $memRow){
       foreach($memRow as $data){
-        $result["$i"] = array("MBRNAME"=>$memRows["$i"]["MBRNAME"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRMAIL"=>$memRows["$i"]["MBRMAIL"], "MBRBIRTH"=>$memRows["$i"]["MBRBIRTH"], "mbrcoin"=>$memRows["$i"]["mbrcoin"], "MBRPHONE"=>$memRows["$i"]["MBRPHONE"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRSTAT"=>$memRows["$i"]["MBRSTAT"]);
+        $result["$i"] = array("MBRNAME"=>$memRows["$i"]["MBRNAME"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRMAIL"=>$memRows["$i"]["MBRMAIL"], "MBRBIRTH"=>$memRows["$i"]["MBRBIRTH"], "MBRCOIN"=>$memRows["$i"]["MBRCOIN"], "MBRPHONE"=>$memRows["$i"]["MBRPHONE"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRSTAT"=>$memRows["$i"]["MBRSTAT"]);
       }
     }
     echo json_encode($result);
