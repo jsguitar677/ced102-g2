@@ -915,6 +915,24 @@ div#eventManagementCancelModalCloseBtn{
 
 .eventSaveBox{
     padding: 30px;
+    .warmSaveCard{
+        display: none;
+        h6{
+            display: inline-block;
+        }
+        a{  
+            i{
+                margin-left: 5px;
+            }  
+            box-shadow: $box-shadow;
+            color: map-get($color_regulation, "blue" );
+            padding: 10px 30px;
+            background-color: map-get($color_regulation, 'yellow' );
+            float: right;
+            margin-bottom: 30px;
+            text-decoration:none;
+        }
+    }
     @include pc{
         display: flex;
         flex-wrap: wrap;
@@ -931,33 +949,21 @@ div#eventManagementCancelModalCloseBtn{
     --font-serif: "Cardo", serif;
 }
 .page5Card{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../../img/act_hist/beach1.jpg);
     position: relative;
     display: inline-block;
     align-items: flex-end;
     overflow: hidden;
     width: 30.33%;
     height: 260px;
-    // width: 300px;
     margin-right: 1.15%;
     margin-left: 1.15%;
     margin-bottom:2%;
-    @include pc{
-        width: 180px;
-        height: 240px;
+    @include mobileL{
+        width: 100%;
     }
-    @include pad{
-        width: 135px;
-        height: 180px;
-    }
-    // @include mobileL{
-    //     width: 90px;
-    //     height: 120px;
-    //     margin-right: 5px;
-    // }
-    // @include mobileS(){
-    //     width: 60px;
-    //     height: 90px;
-    // }
     text-align: center;
     color:map-get( $color_regulation, 'blue');
     background-color: whitesmoke;
@@ -988,55 +994,40 @@ div#eventManagementCancelModalCloseBtn{
         transition: transform calc(var(--d) * 2) var(--e);
     }
     .content {
+        padding: 20px 10px;
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        // padding: 1rem;
         transition: transform var(--d) var(--e);
         z-index: 1;
         color: map-get($color_regulation, 'white' );
         .title {
-            font-size: 1.3rem;
+            // white-space:pre-wrap;
+            font-size: 18px;
             font-weight: bold;
-            line-height: 1.2;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; //行數
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            overflow: hidden;
         }
-        // .membtn{
-        //     @include pc{
-        //         margin: 0;
-
-        //     }
-        // }
         .copy {
+
             font-family: var(--font-serif);
-            font-size: 1.125rem;
-            font-style: italic;
-            line-height: 1.35;
-            @include pc{
-                margin: 0 !important;
-                display: -webkit-box;
-                -webkit-line-clamp: 4; //行數
-                -webkit-box-orient: vertical;
-                white-space: normal;
-                overflow: hidden;
-            }
-            @include pad{
-                // display: none;
-            }
+            font-size: 15px;
+            line-height: 35px;
+            height: 70px;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; //行數
+            -webkit-box-orient: vertical;
+            white-space: normal;
+            overflow: hidden;
         }
         
         .btn {
-            @include pcL{
-                margin-top:0;
-            }
-            @include pc{
-                margin-top:10px;
-            }
-            @include pad{
-                margin-top:0;
-
-            }
+            width: 140px;
             cursor: pointer;
             margin-top: 1.5rem;
             height: 30px;
@@ -1048,11 +1039,29 @@ div#eventManagementCancelModalCloseBtn{
             color: white;
             background-color: map-get($color_regulation, 'blue' );
             border: none;
-        }
-        .btn:focus {
-            outline: 1px dashed yellow;
+            &:hover{
+            outline: 1px dashed  map-get($color_regulation, 'red' );
             outline-offset: 3px;
-        }        
+            }
+        }  
+        .btn2{
+            width: 140px;
+            cursor: pointer;
+            margin-top: 10px;
+            height: 30px;
+            padding: 0 30px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            letter-spacing: 0.025rem;
+            text-transform: uppercase;
+            color: white;
+            background-color:map-get($color_regulation, 'yellow' );
+            border: none;
+            &:hover{
+                outline: 1px dashed  map-get($color_regulation, 'red' );
+            outline-offset: 3px;
+            }
+        }
     }
     .content>*+* {
         margin-top: 1rem;
@@ -1062,29 +1071,11 @@ div#eventManagementCancelModalCloseBtn{
     }
 }
 
-.page5Card:before {
-    background-image: url(../../img/act_hist/beach1.jpg);
-}
-.page5Card:before {
-    background-image: url(../../img/act_hist/beach2.jpg);
-}
-.page5Card:before {
-    background-image: url(../../img/act_hist/beach4.jpg);
-}
-.page5Card:before {
-    background-image: url(../../img/act_hist/beach3.jpg);
-}
-.page5Card:before {
-    background-image: url(../../img/act_hist/beach1.jpg);
-}
-.page5Card:before {
-    background-image: url(../../img/act_hist/beach2.jpg);
-}
 
 
 
 
-@media (hover: hover) and (min-width: 1200px) {
+// @media (hover: hover) and (min-width: 1200px) {
     .page5Card:after {
         transform: translateY(0);
     }
@@ -1124,7 +1115,7 @@ div#eventManagementCancelModalCloseBtn{
     .page5Card:focus-within .content>*:not(.title) {
         transition-duration: 0.3s;
     }
-}
+// }
 
 div#memberContentId{
     color: map-get($color_regulation, 'blue' );
