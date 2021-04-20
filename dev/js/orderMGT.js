@@ -10,20 +10,68 @@ $(document).ready(function(){
                 <td>${ordRow[0][i].orderdate}</td>
                 <td class="mem-num">${ordRow[0][i].mbrno}</td>
                 <td class="mem-name">${ordRow[0][i].mbrname}</td>
-                <td>處理中</td>
-                <td>已付款</td>
-                <td>備貨中</td>
-                <td>
-                    <label class="toggle-btn" for="shipment">
-                        <input type="checkbox" id="shipment" hidden>
-                        <span class="slider"></span>
-                    </label>
-                </td>
+                <td id="orderstatus${i}">${ordRow[0][i].orderstatus}</td>
+                <td id="paystat${i}">${ordRow[0][i].paystat}</td>
+                <td id="shipstat${i}">${ordRow[0][i].shipstat}</td>
+
                 <td>
                     <div class="view-icon"><i class="fas fa-paste"></i></div>
                 </td>
                 </tr>
             `)
+            var orderstatus = ordRow[0][i].orderstatus;//訂單狀態
+            switch (orderstatus){
+                case "0":
+                    $(`#orderstatus${i}`).text("備貨中");
+                    break;
+                case "1":
+                    $(`#orderstatus${i}`).text("已出貨");
+                    break;
+                case "2":
+                    $(`#orderstatus${i}`).text("退貨");
+                    break;
+                // default:
+                //     alert('備貨中');
+            }
+            
+            var paystat = ordRow[0][i].paystat;//訂單狀態
+            switch (paystat){
+                case "0":
+                    $(`#paystat${i}`).text("未付款");
+                    break;
+                case "1":
+                    $(`#paystat${i}`).text("付款失敗");
+                    break;
+                case "2":
+                    $(`#paystat${i}`).text("超過付款時間");
+                    break;
+                case "3":
+                    $(`#paystat${i}`).text("已付款");
+                    break;
+                case "4":
+                    $(`#orderstatus${i}`).text("退款中");
+                    break;
+                case "5":
+                    $('#paystat').text("已退款");
+                    break;
+                // default:
+                //     alert('備貨中');
+            }
+            var shipstat = ordRow[0][i].shipstat;//訂單狀態
+            switch (shipstat){
+                case "0":
+                    $(`#shipstat${i}`).text("備貨中");
+                    break;
+                case "1":
+                    $(`#shipstat${i}`).text("發貨中");
+                    break;
+                case "2":
+                    $(`#shipstat${i}`).text("已發貨");
+                    break;
+                // default:
+                //     alert('備貨中');
+            }
+            
         }
         
         $('.view-icon').click(function(){
@@ -86,9 +134,11 @@ $(document).ready(function(){
 
             }
             
+            
             $('div.cancel-btn').click(function(){
                 $('.alert-block-view').css('display','none');
             });
+
         })
     
         var options = {valueNames: [ 'ord-num','mem-num','mem-name']};
