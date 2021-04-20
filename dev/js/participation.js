@@ -26,6 +26,7 @@ $('document').ready(function(){
         $('#memname').val(`${infoRow[0][0].MBRNAME}`);
 
         $('#submitbtn').click(function(){
+            let actno = location.href.split('?')[1].split('=')[1];
             if(infoRow[2]==""){
                 let cellphone = $('#cellphone').val();
                 let emcon = $('#emcon').val();
@@ -46,10 +47,10 @@ $('document').ready(function(){
                             }
                         }
                     }else{
-                        choose = 1; 
-                        var data_info = `amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        choose = 2; 
+                        var data_info = `actno=${actno}&cellphone=${cellphone}&emcon=${emcon}&emrnumber=${emrnumber}&choose=${choose}`;
                         xhr1.send(data_info);
-                        alert(`謝謝您的捐款`);
+                        alert(`謝謝您的參與`);
                         location.href = "./event.html";
                     }
                 }
@@ -63,7 +64,7 @@ $('document').ready(function(){
                         }
                     }else{
                         choose = 1; 
-                        var data_info = `amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        var data_info = `actno=${actno}&amount=${amount}&cardno=${cardno}&choose=${choose}`;
                         xhr1.send(data_info);
                         alert(`謝謝您的捐款`);
                         location.href = "./event.html";
@@ -79,7 +80,7 @@ $('document').ready(function(){
                         }
                     }else{
                         choose = 3; 
-                        var data_info = `cellphone=${cellphone}&emcon=${emcon}&emrnumber=${emrnumber}&amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        var data_info = `actno=${actno}&cellphone=${cellphone}&emcon=${emcon}&emrnumber=${emrnumber}&amount=${amount}&cardno=${cardno}&choose=${choose}`;
                         xhr1.send(data_info);
                         alert(`謝謝您的參與及捐款`);
                         location.href = "./event.html";
@@ -87,7 +88,7 @@ $('document').ready(function(){
                 }
 
                 let xhr1 = new XMLHttpRequest();
-                let url1 = `./php/7/participation.php`;
+                let url1 = `./php/7/participation.php?actno=${actno}`;
                 xhr1.open("Post", url1, true);
                 xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
                 if($('#f').prop('checked')){
@@ -97,7 +98,8 @@ $('document').ready(function(){
                 }else if($('#v-f').prop('checked')){
                     checkVF();
                 }
-            }else{
+            }
+            if(infoRow[2]!=""){
                 let amount = $('#amount').val();
                 let cardno = $('#cardno').val();
                 let cvv = $('#cvv').val();
@@ -105,7 +107,7 @@ $('document').ready(function(){
                 let month = $('#month').val();
                 let choose;
                 let xhr1 = new XMLHttpRequest();
-                let url1 = `./php/7/participation.php`;
+                let url1 = `./php/7/participation.php?actno=${actno}`;
                 xhr1.open("Post", url1, true);
                 xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
                 if($('#f').prop('checked')){
@@ -118,10 +120,10 @@ $('document').ready(function(){
                         }
                     }else{
                         choose = 1; 
-                        var data_info = `amount=${amount}&cardno=${cardno}&choose=${choose}`;
+                        var data_info = `actno=${actno}&amount=${amount}&cardno=${cardno}&choose=${choose}`;
                         xhr1.send(data_info);
                         alert(`謝謝您的捐款`);
-                        location.href = "./event.html";
+                        // location.href = "./event.html";
                     }
                 }else if($('#v').prop('checked')){
                     alert(`您已報名過本活動志工，您可選擇僅捐款或回到活動平台查看其他活動，謝謝您。`)

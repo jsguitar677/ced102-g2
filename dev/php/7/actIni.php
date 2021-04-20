@@ -2,10 +2,11 @@
 try{
   require_once("../../connect_ced102g2.php");
   $mbr_info_sql = "select MBRNO , MBRPIC , MBRNAME , MBRBIO from mbr";
-  $f_sql = "select f.MBRNO , f.fnum , f.ftotal , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO from (select MBRNO , count(*) fnum , sum(amount) ftotal from fundra group by MBRNO order by ftotal desc) f join mbr m on (m.MBRNO = f.MBRNO) order by f.ftotal desc;";
+  $f_sql = "select f.MBRNO , f.fnum , f.ftotal , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO from (select MBRNO , count(*) fnum , sum(amount) ftotal from fundra group by MBRNO order by ftotal desc) f join mbr m on (m.MBRNO = f.MBRNO);";
 //   $f_sql = "select MBRNO , count(*) fnum , sum(amount) ftotal from fundra group by MBRNO order by ftotal desc limit 5";
-  $j_sql = "select j.MBRNO , j.jnum , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO from (select MBRNO , count(*) jnum from actvap group by MBRNO order by jnum desc) j join mbr m on (m.MBRNO = j.MBRNO) order by j.jnum desc";
+  $j_sql = "select j.MBRNO , j.jnum , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO from (select MBRNO , count(*) jnum from actvap group by MBRNO order by jnum desc) j join mbr m on (m.MBRNO = j.MBRNO)";
 //   $j_sql = "select MBRNO , count(*) jnum from actvap group by MBRNO order by jnum desc limit 5";
+
   $i_sql = "select MBRNO , count(*) inum from actv group by MBRNO";
 
   $mbr_info = $pdo->prepare($mbr_info_sql);

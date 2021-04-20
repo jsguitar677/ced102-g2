@@ -110,10 +110,10 @@ $('document').ready(function(){
                         $('#wholeScreenOverlay3').css('display','none');
                         $('body').css('overflow','auto');
                     })
-                }else if(res[0].MBREXP < 1000){
+                }else if(res[0].MBREXP < 100){
                     //須為資深會員
                     alert('抱歉您尚未解鎖發起提案功能，請繼續努力升級吧~');
-                }else if((res[0].MBREXP >= 1000)){
+                }else if((res[0].MBREXP >= 100)){
                     //連結事前須知頁面
                     location.href="./initiation_agreement.html";
                 }
