@@ -225,6 +225,25 @@
         },
     },
 })
+let storage = sessionStorage;
+function doFirst(){
+	let itemString = storage.getItem('addItemList');   //A1001, A1005, A1006, A1002, 
+    let items = itemString.substr(0,itemString.length - 2).split(', ');
+    console.log(items);   //["A1001", "A1005", "A1006", "A1002"]
+    app.itemList = items;
+
+
+// addToStorage(total_price) {
+//                 // storage['total'] += `${this.total_price} `;
+//                 if (storage['total']) {
+//                     // console.log('000');
+//                     storage.setItem('total', `${this.total_price}`);
+//                     // storage['total'] += `${this.total_price} `;
+//                 } else {
+//                     storage['total'] += `${this.total_price} `;
+//                 }
+//             },
+
 
 let cart = [];
 let storage = sessionStorage;
@@ -270,6 +289,7 @@ $(function(){
     });
 
 });
+}
 
 window.addEventListener("load",doFirst)
 </script>    
