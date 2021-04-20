@@ -177,7 +177,7 @@
                                         <p class="NameAndPrice">{{prodRow.PRODNAME}}</p>
                                         <p class="NameAndPrice">NT$
                                             <span class="price">{{prodRow.PRODPRICE}}</span>
-                                            <button class="CartBtnOfMall" v-bind:id="'a'+prodRow.PRODNO">
+                                            <button class="CartBtnOfMall" v-bind:id="prodRow.PRODNO">
                                             <!-- <button class="CartBtnOfMall" v-bind:id="'a'+prodRow.PRODNO"> -->
                                                 <i class="fas fa-shopping-cart fa-1x"></i>
                                                 <p>加入購物車</p>
@@ -214,7 +214,8 @@
                                 <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
                                 <p class="NameAndPrice">NT$
                                     <span class="price">{{NewProdRow.PRODNAME}}</span>
-                                    <button class="CartBtnOfMall" v-bind:id="'a'+NewProdRow.PRODNO">
+                                    <button class="CartBtnOfMall" v-bind:id="NewProdRow.PRODNO">
+                                    <!-- <button class="CartBtnOfMall" v-bind:id="'a'+NewProdRow.PRODNO"> -->
                                         <i class="fas fa-shopping-cart fa-1x"></i>
                                         <p>加入購物車</p>
                                     </button>
