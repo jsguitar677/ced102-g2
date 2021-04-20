@@ -1,9 +1,7 @@
 <?php
 try{
   require_once("./connectBooks.php");
-
   $sql = "select MBRNAME, MBREXP, MBRMAIL, MBRBIRTH, MBRCOIN, MBRPHONE, MBREXP, MBRSTAT from mbr ";
-  //不用從前端送資料到Server>使用query即可，使用prepare()也不知道要bindValue什麼
   $member = $pdo->query($sql);
   if( $member->rowCount() == 0 ){ 
     echo "{}";//傳回看起來空空的物件之JSON字串

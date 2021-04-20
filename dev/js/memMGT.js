@@ -61,7 +61,7 @@
         }
         
         function getMember(){
-          var xhr = new XMLHttpRequest();//1.使用Ajax必須使用此物件
+            var xhr = new XMLHttpRequest();//1.使用Ajax必須使用此物件
           xhr.onload=function (){
                if( xhr.status == 200 ){
                 //modify here
