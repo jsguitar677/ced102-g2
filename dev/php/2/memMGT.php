@@ -1,9 +1,7 @@
 <?php
 try{
   require_once("./connectBooks.php");
-
   $sql = "select MBRNAME, MBREXP, MBRMAIL, MBRBIRTH, MBRCOIN, MBRPHONE, MBREXP, MBRSTAT from mbr ";
-  //不用從前端送資料到Server>使用query即可，使用prepare()也不知道要bindValue什麼
   $member = $pdo->query($sql);
   if( $member->rowCount() == 0 ){ 
     echo "{}";//傳回看起來空空的物件之JSON字串
@@ -12,7 +10,7 @@ try{
     $result = array();
     foreach($memRows as $i => $memRow){
       foreach($memRow as $data){
-        $result["$i"] = array("MBRNAME"=>$memRows["$i"]["MBRNAME"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRMAIL"=>$memRows["$i"]["MBRMAIL"], "MBRBIRTH"=>$memRows["$i"]["MBRBIRTH"], "mbrcoin"=>$memRows["$i"]["mbrcoin"], "MBRPHONE"=>$memRows["$i"]["MBRPHONE"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRSTAT"=>$memRows["$i"]["MBRSTAT"]);
+        $result["$i"] = array("MBRNAME"=>$memRows["$i"]["MBRNAME"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRMAIL"=>$memRows["$i"]["MBRMAIL"], "MBRBIRTH"=>$memRows["$i"]["MBRBIRTH"], "MBRCOIN"=>$memRows["$i"]["MBRCOIN"], "MBRPHONE"=>$memRows["$i"]["MBRPHONE"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRSTAT"=>$memRows["$i"]["MBRSTAT"]);
       }
     }
     echo json_encode($result);

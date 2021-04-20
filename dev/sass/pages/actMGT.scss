@@ -1,18 +1,245 @@
 @import '../common_backend';
 
+%table-style{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: $border-radius;
+    thead{
+        tr{
+            th{
+                color: map-get($web-color,'table-title');
+                font-size: $text-fontSize-small;
+                height: 50px;
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                font-size: $text-fontSize-small;
+                text-align: center;
+                height: 80px;
+                div.no-block{
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    background-color: map-get($web-color,'number-bg');
+                    border-radius: 50%;
+                    box-shadow: $box-shadow;
+                }
+                div.edit-icon{
+                    &:hover{
+                        border: 1px solid map-get($web-color, 'number-bg');
+                    }
+                    @extend %i-block;
+                }
+                div.view-icon{
+                    &:hover{
+                        border: 1px solid map-get($web-color, 'red-btn');
+                    }
+                    @extend %i-block;
+                }
+                
+            }
+            &:nth-child(1){
+                td{
+                    &:nth-child(1){
+                        border-top-left-radius: $border-radius;
+                    }
+                    &:last-child{
+                        border-top-right-radius: $border-radius;
+                    }
+                }
+            }
+            &:nth-child(odd){
+                background-color: map-get($web-color,'table-block-1');
+            }
+            &:nth-child(even){
+                background-color: map-get($web-color,'hover');
+            }
+        }
+    }
+}
 // 結構(右邊部分)
-// div.bg{
-//     main#backend{
-//         div.content{
-//             section#c6{
-//                 table{
-//                     tr{
-//                         td{
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+div.bg{
+    main#backend{
+        div.content{
+            section#c6{
+                h1{
+                    margin-bottom: 20px
+                }
+                div.flex{
+                    @extend %flex;
+                    align-items: flex-start;
+                    div.left,div.right{
+                        overflow: auto;
+                    }
+                    div.left{
+                        width: 43%;
+                        div.top,div.bottom{
+                            width: 100%;
+                            height: 270px;
+                            background-color: map-get($web-color,'blue-dark');
+                            border-radius: $border-radius;
+                            padding: 0px 20px 5px 20px;
+                            margin-top: 10px;
+                            overflow: auto;
+                            -ms-overflow-style: none;
+                            overflow: -moz-scrollbars-none;
+                            h2{
+                                background-color: map-get($web-color,'blue-dark');
+                                font-size: $text-fontSize;
+                                font-weight: lighter;
+                                position: sticky;
+                                margin: 0;
+                                padding: 16px 0 13px 0;
+                                top: 0;
+                                left: 0;
+                                span{
+                                    display: inline-block;
+                                    width: 13px;
+                                    height: 13px;
+                                    border-radius: 50%;
+                                    background-color: map-get($web-color,'yellow');
+                                    margin-right: 8px;
+                                }   
+                            }
+                            table{
+                                tr{
+                                    td{
+                                        height: 40px;
+                                        span{
+                                            display: inline-block;
+                                            width: 100px;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        div.top::-webkit-scrollbar { width: 0 !important }
+                        div.bottom::-webkit-scrollbar { width: 0 !important }
+                    }
+                    div.right{
+                        // background-color: red;
+                        padding: 0 5px;
+                        width: 50%;
+                        height: 555px;
+                        overflow: auto;
+                        -ms-overflow-style: none;
+                        overflow: -moz-scrollbars-none;
+                        div.flex{
+                            width: 100%;
+                            justify-content: flex-end;
+                            height: 50px;
+                            background-color: map-get($web-color,'blue');
+                            position: sticky;
+                            top: 0;
+                            left: 0;
+                        }
+                        table{
+                            @extend %table-style;
+                            tbody{
+                                tr{
+                                    &:hover{
+                                        border:1px solid map-get($web-color,'yellow');
+                                    }
+                                    td{
+                                        cursor: pointer;
+                                        height: 50px;
+                                        span{
+                                            display: inline-block;
+                                            width: 100px;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    div.right::-webkit-scrollbar { width: 0 !important }
+                }
+                div.alert-block{
+                    // display: block;
+                    #act-view{
+                        width: 600px;
+                        max-height: 78%;
+                        overflow: auto;
+                        -ms-overflow-style: none;
+                        overflow: -moz-scrollbars-none;
+                        @extend %flex;
+                        div.top{
+                            text-align: left;
+                            width: 60%;
+                        }
+                        div.date-block{
+                            text-align: right;
+                            width: 40%;
+                        }
+                        div.goal-block,div.text-block{
+                            text-align: left;
+                            width: 50%;
+                            h3{
+                                font-size: $text-fontSize-small;
+                                font-weight: lighter;
+                                margin: 0;
+                            }
+                            pre{
+                                white-space: pre-wrap;
+                                font-size: $text-fontSize-small;
+                                margin: 5px 0;
+                            }
+                        }
+                        div.goal-block{
+                            text-align: right;
+                        }
+                        div.top,div.goal-block,div.date-block,div.text-block{
+                            label,p{
+                                display: inline-block;
+                            }
+                        }
+                    }
+                    #act-view::-webkit-scrollbar { width: 0 !important }
+                    #act-add,#act-cancel{
+                        width: 400px;
+                        max-height: 78%;
+                        overflow: auto;
+                        -ms-overflow-style: none;
+                        overflow: -moz-scrollbars-none;
+                        div.top,div.text-block{
+                            text-align: left;
+                            label,p{
+                                display: inline-block;
+                            }
+                            pre{
+                                white-space: pre-wrap;
+                                font-size: $text-fontSize-small;
+                                margin: 5px 0;
+                            }
+                        }
+                        div.text-block{
+                            margin-bottom: 20px;
+                        }
+                        input[type=radio],label{
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        input[type=radio]{
+                            margin: 0 3px 0 5px;
+                        }
+                    }
+                    #act-add::-webkit-scrollbar { width: 0 !important }
+                    #act-cancel::-webkit-scrollbar { width: 0 !important }
+                }
+            }
+        }
+    }
+}
 

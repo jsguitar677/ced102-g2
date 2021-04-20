@@ -30,7 +30,7 @@
                             <td id="BCMBRMAIL">${member[i]["MBRMAIL"]}</td>
                             <td id="BCMBRBIRTH">${member[i]["MBRBIRTH"]}</td>
                             <td id="BCMBRPHONE">${member[i]["MBRPHONE"]}</td>
-                            <td id="BCMBRCOIN"${member[i]["mbrcoin"]}</td>
+                            <td id="BCMBRCOIN">${member[i]["MBRCOIN"]}</td>
                             <td id="BCMBREXP">${member[i]["MBREXP"]}</td>
                             <td id="BCMBRSTATE">${member[i]["MBRSTAT"]}</td>
                             
@@ -61,7 +61,7 @@
         }
         
         function getMember(){
-          var xhr = new XMLHttpRequest();//1.使用Ajax必須使用此物件
+            var xhr = new XMLHttpRequest();//1.使用Ajax必須使用此物件
           xhr.onload=function (){
                if( xhr.status == 200 ){
                 //modify here

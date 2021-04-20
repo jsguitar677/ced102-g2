@@ -132,7 +132,7 @@ $(function(){
                 console.log(res);
                 if(res[0]=='nologin'){ 
                     location.href="./event.html";
-                }else if(res[0].MBREXP < 1000){
+                }else if(res[0].MBREXP < 100){
                     //須為資深會員
                     alert('抱歉您尚未解鎖發起提案功能，請繼續努力升級吧~');
                     location.href="./event.html";
