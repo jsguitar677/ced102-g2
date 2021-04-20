@@ -253,8 +253,7 @@ main.event{
                                 width: 100%;
                                 margin: 0 auto;
                                 .infoTitleBox{
-                                    padding: 15px 0 0 30px;
-                                    height: 65px;
+                                    padding: 15px 30px;
                                     background-color: map-get($color_regulation, 'memberGray' );
                                     margin-bottom: 30px;
                                     h2{
@@ -263,8 +262,18 @@ main.event{
                                         padding-left: 10px;
                                         border-left: 8px solid map-get($color_regulation, 'yellow');
                                         color: map-get($color_regulation, 'white' );
-                                        margin-bottom: 25px;
                                         font-size: $text-fontSize-subtitle;
+                                    }
+                                }
+                                @media (max-width:575px){
+                                    .infoTitleBox{
+                                        padding: 10px;
+                                        margin-bottom: 10px;
+                                        h2{
+                                            padding-left: 5px;
+                                            border-left: 6px solid map-get($color_regulation, 'yellow');
+                                            font-size: $text-fontSize;
+                                        }
                                     }
                                 }
                                 
@@ -444,6 +453,7 @@ main.event{
                                 div.description{
                                     width: 100%;
                                     margin: 0 auto;
+                                    padding: 20px 10px 30px 10px;
                                     h2,span{
                                         font-size: 16px;
                                         margin: 0 0 10px 0;

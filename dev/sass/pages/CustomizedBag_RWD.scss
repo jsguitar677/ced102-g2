@@ -6,7 +6,7 @@
 $english: 'Palatino Linotype';
 $chinese: 'noto sans tc';
 //Header
-$navH:66px;
+$navH:55px;
 $logoW:50px;
 //Footer
 $footerH:500px;
@@ -101,7 +101,6 @@ $color_regulation:(
 //=============共用規格設定如上=============
 @mixin cartIcon(){
     color: map-get($color_regulation,'blue');
-    // float: right;
     background-color: map-get($color_regulation,'yellow');
     height: 35px;
     padding: 0;
@@ -123,34 +122,6 @@ body {
     background-color: map-get($color_regulation,'white' );
 }
 
-//左側 直向 麵包條
-div.title-block{
-    h5.title {
-        // z-index: 10px!important;
-        position:absolute;
-        top: $navH;
-        left:0;
-        margin:0;
-        font-size: 20px;
-        font-weight: normal;
-        display: inline-block;
-        white-space: nowrap;
-        padding: 10px;
-        transform: rotate(90deg) translateY(-100%);
-        transform-origin: 0 0;
-        color:map-get($color_regulation,'blue');
-        @media (max-width:575px){
-            font-size: $h7;
-        }
-        span {
-            color:map-get($color_regulation,'gray' );
-        }
-        @media (max-width:575px){
-            font-size: $h7;
-        }
-    }
-}
-
 section.CustomizedBagPage {
     letter-spacing:$letter-Spacing;
     margin:0 auto;
@@ -164,39 +135,66 @@ section.CustomizedBagPage {
         display: inline-block;
         vertical-align: top;
         width: 100%;
-        //標題:客製化 - 購物袋
-        .customizedTotleBox{
+        //標題 & 麵包條
+        div.customizedTotleBox{
             margin: auto;
             padding: 10px;
             padding-top: 20px;
             height: 100px;
             background-color: map-get($color_regulation, 'yellow' );
+            //左側 直向 麵包條
+            div.title-block{
+                h5.title {
+                    position:absolute;
+                    top: 100px;
+                    left:0;
+                    margin:0;
+                    font-size: 20px;
+                    font-weight: normal;
+                    display: inline-block;
+                    white-space: nowrap;
+                    padding: 10px;
+                    transform: rotate(90deg) translateY(-100%);
+                    transform-origin: 0 0;
+                    color:map-get($color_regulation,'blue');
+                    @media (max-width:575px){
+                        font-size: $h7;
+                    }
+                    span {
+                        color: map-get($color_regulation,'gray-hint');
+                    }
+                    @media (max-width:575px){
+                        font-size: $h7;
+                    }
+                }
+            }
+            // 英文標題
             p{  
                 color: map-get($color_regulation,'blue');
                 font-size: $p;
                 text-align: center;
                 margin: 0;
             }
+            // 中文標題
             h5.title_2{
                 font-size: $h5;
                 color: map-get($color_regulation,'blue');
                 text-align: center;
                 margin: 0;
                 padding:0;
-                
             }
-            .yellowLine{
-                margin:10px auto;
-                width: 40px;
-                height: 8px;
-                background-color: map-get($color_regulation,'white' );
-            }
+            // .yellowLine{
+            //     margin:10px auto;
+            //     width: 40px;
+            //     height: 8px;
+            //     // background-color: map-get($color_regulation,'white' );
+            //     background-color: map-get($color_regulation,'red' );
+            // }
         }
-        
     }
 }
 
-
+// 左側客製圖區
 section.CustomizedBagPage{
     div.content_costomizedBag{
         div.container{
@@ -249,13 +247,12 @@ section.CustomizedBagPage{
                             width:100%;
                             margin:0 auto;
                             margin: 30px 0;
-                            background-color: rgba(255, 255, 255, 0.7);
+                            // background-color: rgba(255, 255, 255, 0.7);
                             text-align: center;
                             overflow: hidden;
                             img.customized_img{
                                 width:100%;
                             }
-
                             //正面圖案放置的位置框
                             div.image_front{
                                 width:26%;
@@ -352,7 +349,7 @@ section.CustomizedBagPage{
                         font-size: $h6;
                         color:map-get($color_regulation,'blue');
                         margin:0 auto;
-                        padding: 30px 0;
+                        padding: 20px 0;
                         text-align: center;
                         @media (max-width:767px){
                             font-size: $h7;
@@ -364,7 +361,7 @@ section.CustomizedBagPage{
                         // 選色區=================================
                         div.color_block{
                             width:100%;
-                            margin-bottom: 50px;
+                            margin-bottom: 20px;
                             //小標:請選擇商品商色
                             p.stepExplain{
                                 font-size: $p;
@@ -382,7 +379,7 @@ section.CustomizedBagPage{
                                 flex-direction: row;
                                 flex-wrap: wrap;
                                 justify-content: flex-start;
-                                margin:15px auto 30px auto;
+                                margin:15px auto 0 auto;
                                 div.ProductColor{
                                     font-size: $p;
                                     color:map-get($color_regulation,'blue');
@@ -390,7 +387,7 @@ section.CustomizedBagPage{
                                     height:120px;
                                     box-shadow: $box-shadow;
                                     overflow: hidden;
-                                    margin-bottom: 18px;
+                                    margin-bottom: 20px;
                                     margin-right:3%;
                                     @media (min-width:768px) and (max-width:991px) {
                                         width:13%;
@@ -444,7 +441,7 @@ section.CustomizedBagPage{
                             font-size: $p;
                             color:map-get($color_regulation,'blue');
                             font-weight: 550;
-                            padding-bottom: 50px;
+                            padding-bottom: 20px;
                             @media (max-width:991px) {
                                 padding-bottom: 0;
                             }
@@ -503,14 +500,14 @@ section.CustomizedBagPage{
                         div.qty_block{
                             width:100%;
                             font-size: $p;
-                            padding-bottom: 50px;
+                            padding-bottom: 15px;
                             //小標:數量
                             p.stepExplain{
                                 color: map-get($color_regulation, 'blue' );
                                 font-size: $p;
                                 font-weight: bold;
                                 margin:0;
-                                padding-top:50px;
+                                padding-top:15px;
                                 padding-bottom:10px;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
@@ -543,8 +540,11 @@ section.CustomizedBagPage{
                         div.tal_block{
                             display: flex;
                             // width:100%;
-                            font-size: $p;
-                            color:map-get($color_regulation,'blue');
+                            font-size: $h6;
+                            font-weight: 550;
+                            color:map-get($color_regulation,'red');
+                            // font-size: $p;
+                            // color:map-get($color_regulation,'blue');
                             //小標:小計
                             p.stepExplain{
                                 white-space:nowrap;
@@ -556,8 +556,9 @@ section.CustomizedBagPage{
                             }
                             div.placementOfTal{
                                 width:100%;
-                                color: map-get($color_regulation,'blue');
-
+                                font-size: $h6;
+                                font-weight: 550;
+                                color:map-get($color_regulation,'red');
                                 text-align: right;
                                 @media (max-width:450px) {
                                     font-size: 12px; 
@@ -569,7 +570,7 @@ section.CustomizedBagPage{
                         }
                         div.placeOfSubmit{
                             text-align: center;
-                            margin-bottom: 50px;
+                            margin-bottom: 30px;
                             button.btn_shopping_cart{
                                 outline: none;
                                 i{
@@ -589,87 +590,107 @@ section.CustomizedBagPage{
                     }
                 }
             }
-            div.all2{
+            div.all2_Bottom{
                 margin:0 auto;
                 width:100%;
-                //底部 推薦商品區======================================================================
-                //底部 推薦商品區======================================================================
-                //底部 推薦商品區======================================================================
+                // 底部 推薦商品區======================================================================
+                // 底部 推薦商品區======================================================================
+                // 底部 推薦商品區======================================================================
                 div.bottomarea{
-                    margin:0 atuo;
                     padding-bottom: 40px;
-                    margin-bottom:70px;
-                    margin-top:25px;
+                    margin-top:30px;
+                    padding-top:30px;
+                    border-top: 1px solid black;
                     //標題:熱門推薦商品
+                    p{
+                        font-size: $p;
+                        margin: 0;
+                        text-align: center;
+                        color: map-get($color_regulation,'blue' );
+                    }
                     h5.title_2{
                         font-size: $h5;
+                        margin: 0;
+                        text-align: center;
                         color: map-get($color_regulation,'blue' );
                         @media (max-width:575px){
                             font-size: $h6;
                             padding:20px;
                         }
                     }
-                    div.bottomareaBoxA{
-                        display: flex;
+                    div.newProLine{
+                        margin: auto;
+                        margin-top: 10px;
+                        margin-bottom: 30px;
+                        width:50px;
+                        height: 8px;
+                        background-color:map-get($color_regulation , 'yellow' );
+                    }
+                    //推薦商品區塊
+                    div.addDivForVue{
+                        padding: 0 30px;
+                        margin: 30px 0;
                         flex-wrap: wrap;
+                        display: flex;
                         justify-content: space-evenly;
-                        
+                        //推薦商品卡片
+                        div.product{
+                            margin-bottom: 30px;
+                            width: 275px;
+                            a{
+                                img{
+                                    width: 275px;
+                                    height: 275px;
+                                    box-shadow: $box-shadow;
+                                }
+                            }
+                            div.productInfo{
+                                color:map-get($color-regulation, 'blue' );
+                                border-left: 8px solid map-get($color-regulation, "yellow" );
+                                padding-left: 10px;
+                                margin-top: 10px;
+                                p.NameAndPrice{  
+                                    font-size: 15px;
+                                    margin: 0;
+                                    line-height: 36px;
+                                    text-align: left;
+                                }
+                                button{
+                                    overflow: hidden;
+                                    padding: 0;
+                                    margin: 0;
+                                    float: right;
+                                    height: 35px;
+                                    width:35px;
+                                    line-height: 35px;
+                                    color: map-get($color-regulation,'blue');
+                                    background-color: map-get($color-regulation, 'yellow' );
+                                    border:none;
+                                    box-shadow: $box-shadow;
+                                    white-space:nowrap;
+                                    transition: all 0.3s ease 0s;
+                                    i{
+                                        display: inline-block;
+                                    }
+                                    p{  
+                                        opacity: 0;
+                                        margin: 0;
+                                        display: none;
+                                    }
+                                    &:hover{
+                                        transition: all 0.3s ease 0s;
+                                        width: 150px;
+                                        p{
+                                            opacity: 1;
+                                            display: inline-block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
 } 
-
-
-
-.product{
-    margin-bottom: 30px;
-    width: 275px;
-    img{
-        width: 275px;
-        height: 275px;
-    }
-    .productInfo{
-        color:map-get($color-regulation, 'blue' );
-        border-left: 8px solid map-get($color-regulation, "yellow" );
-        padding-left: 10px;
-        margin-top: 10px;
-        p{  
-            font-size: 15px;
-            margin: 0;
-            line-height: 36px;
-        }
-        button{
-            overflow: hidden;
-            padding: 0;
-            margin: 0;
-            float: right;
-            height: 35px;
-            width:35px;
-            line-height: 35px;
-            color: map-get($color-regulation,'blue');
-            background-color: map-get($color-regulation, 'yellow' );
-            border:none;
-            box-shadow: $box-shadow;
-            white-space:nowrap;
-            transition: all 0.3s ease 0s;
-            i{
-                display: inline-block;
-            }
-            p{  
-                opacity: 0;
-                margin: 0;
-                display: none;
-            }
-            &:hover{
-                transition: all 0.3s ease 0s;
-                width: 150px;
-                p{
-                    opacity: 1;
-                    display: inline-block;
-                }
-            }
-        }
-    }
-}

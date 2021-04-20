@@ -1,5 +1,36 @@
 $(document).ready(function(){
-
+    // 登入中
+    function login(){
+        let xhrlogin = new XMLHttpRequest();
+        xhrlogin.onload = function (){
+            if( xhrlogin.status == 200 ){
+                let nameinfo = JSON.parse(xhrlogin.responseText);
+                console.log(nameinfo);
+                if( nameinfo == "" || nameinfo == null){
+                    location.href="./backend_login.html";
+                }else{
+                    $('#username').text(`${nameinfo}`);
+                }
+            }else{
+                alert( xhrlogin.status );
+            }
+        }  
+        let urllogin = `./php/7/backend_header.php`;
+        xhrlogin.open("Get", urllogin, true);
+        xhrlogin.send(null);
+    }
+    login();
+    // 登出中
+    function logout(){
+        let xhrlogout = new XMLHttpRequest();  
+        let urllogout = `./php/7/backend_logout.php`;
+        xhrlogout.open("Get", urllogout, true);
+        xhrlogout.send(null);
+    }
+    $('#sign-out').click(function(){
+        logout();
+        location.href="./backend_login.html";
+    })
     //====================================管理員管理============================================
     //取消按鈕案件
     $('div.cancel-btn').click(function(){
