@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="./css/pages/member.css">
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-    <!-- 引用owl & jQuery -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
-    
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
@@ -139,74 +134,25 @@
                 
                 <div id="eventSave" class="tabContent">
                     <div class="participateTitle">
-                        <div class="sdada">
+                        <div>
                             <h6>活動收藏</h6>
                         </div>
                     </div>
-                    <div class="eventSaveBox">
-                        <div class="page5Card">
+                    <div id="saveCardHook" class="eventSaveBox">
+                        <div id="warmSaveCard" class="warmSaveCard">
+                            <h6>您無任何收藏活動</h6>
+                            <a href="./event.html">前往查看更多活動<i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                        <!-- <div class="page5Card">
                             <div class="content">
                                 <h2 class="title">桃園-永安漁港</h2>
                                 <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
+                                <button class="btn">See More</button>
+                                <button class="btn2">取消收藏</button>
                             </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
+                        </div> -->
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -215,42 +161,15 @@
     
     @@include('./layout/footer.html')
     
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
-    
-    
     <!-- 樣板 footer -->
-    <script src="./js/member.js"></script>
     <script src="./js/login.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <!-- Swiper JS -->
-    <!-- <script src="./js/swiper-bundle.js"></script> -->
-    <script src="js/swiper-all.js"></script>
+    <!-- 共同會員的js -->
+    <script src="./js/member.js"></script>
+    <!-- 這個頁面的js -->
+    <script src="./js/memberEventSave.js"></script>
 
-    <script>
-
-        // function showMbr(jsonStr){
-
-        //     var mbrRow = JSON.parse(jsonStr);
-        //     console.log(mbrRow);
-        // }
-
-        // function getMbr(){
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.onload = function (){
-        //         if( xhr.status == 200 ){
-        //             showMbr(xhr.responseText)
-        //         }else{
-        //             alert( xhr.status );
-        //         }
-        //     }  
-        //     var url = "./php/15/memberInfo.php";
-        //     xhr.open("Get", url, true);
-        //     xhr.send( null );
-        // }
-        // getMbr();
-
-    </script>
 </body>
 
 </html>

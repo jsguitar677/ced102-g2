@@ -18,6 +18,9 @@
     <!-- git css連結用下列: -->
     <link rel="stylesheet" href="./css/pages/CustomizedBag_RWD.css">
 
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/CustomizedBag.js"></script>
     <title>R客製商品</title>
@@ -29,20 +32,19 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
 
-    <!-- 左方麵包條 -->
-    <div class="title-block">
-        <h5 class="title"><span>首頁/商城/</span>客製化商品</h5>
-    </div>
-
     <section class="CustomizedBagPage">
         <div class="content_costomizedBag">
             <!-- header底下裝飾背景圖 -->
             <div class="customizedTotleBox">
+                <!-- 左方麵包條 -->
+                <div class="title-block">
+                    <h5 class="title"><span>首頁/商城/</span>客製化商品</h5>
+                </div>
+                 <!-- 標題 -->
                 <p>CUSTOMIZED BAG</p>
                 <h5 class="title_2">客製化 - 購物袋</h5>
-                <div class="yellowL"></div>
+                <!-- <div class="yellowL"></div> -->
             </div>
-            
 
             <!-- 頁面上半部:左側圖區  右側購物選單 -->
             <div class="container">
@@ -55,7 +57,7 @@
                             <!-- ============空白圖片區============ -->
                             <!-- ============空白圖片區============ -->
                             <!-- ============空白圖片區============ -->
-                            <img src="./img/mall/bgimg_02.jpg" class="customizedBg_img">
+                            <img src="./img/mall/bgimg.jpg" class="customizedBg_img">
                             <h6 class="urstyle">印上個人風格吧!</h6>
 
                             <div class="customized_area">
@@ -80,10 +82,7 @@
                             <h6 class="aboutProducts">商品簡介</h6>
                             <img src="./img/mall/bottom.png" id="showInfo">
                             <div class="leftarea_block" id="showInforHere">
-                                <p class="textaboutProducts">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae consequuntur doloremque minus, aperiam doloribus mollitia facere fuga est excepturi hic suscipit veniam iste atque esse ab eum ratione ipsam ea soluta quos
-                                    voluptas corrupti nesciunt! Soluta eveniet consequatur aliquam repellat animi, porro sed, totam inventore laudantium officiis praesentium in cumque possimus explicabo odit. Culpa ex perspiciatis impedit soluta dolorum voluptatibus
-                                    earum quo eum eveniet animi sunt enim placeat eligendi error rerum ad, corporis accusantium beatae in praesentium architecto possimus alias fuga. Illo provident et deleniti aliquam sed voluptates minus quod sequi. Corporis
-                                    neque, alias ut quis aperiam enim explicabo quod.</p>
+                                <p class="textaboutProducts">材質100％ 棉。輕薄的材質，收折方便且好攜帶。可手提、可肩背的設計增加便利性。可依喜好印製圖案，增加個人風格。</p>
                             </div>
                         </div>
                     </div>
@@ -92,14 +91,14 @@
                     <!-- ====================================右上側 選色選圖區==================================== -->
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-11 rightarea">
                         <h6>訂製個人專屬商品吧!</h6>
-                        <form action="" method="get" class="inforOfTheForm">
+                        <form action="" method="post" class="inforOfTheForm">
                             <!-- ==============選色區============== -->
                             <!-- ==============選色區============== -->
                             <!-- ==============選色區============== -->
                             <div class="color_block">
                                 
                                 <p class="stepExplain">STEP.1 - 請選擇商品顏色</p>
-                                <p class="stepExplain">( 選色不需加價 )</p>
+                                <!-- <p class="stepExplain">( 選色不需加價 )</p> -->
                                 <div class="color_block1">
                                     <!-- 顏色色塊 -->
                                     <div class="ProductColor" id="color_btn_1">
@@ -134,18 +133,18 @@
                             <div class="picture_block">
                                 <p class="stepExplain">STEP.2 - 上傳圖片至指定位置</p>
                                 <p class="stepExplain stepExplain1">* 每個指定位置只能上一張圖片</p>
-                                <p class="stepExplain stepExplain1">* 每上傳一張圖片需加價NT$100</p>
+                                <!-- <p class="stepExplain stepExplain1">* 每上傳一張圖片需加價NT$100</p> -->
     
                                 <div class="picture_block2">
                                     <div class="placement_of_product">
-                                        <label class="placement">正面位置(+NT$100) :</lable>
+                                        <label class="placement">正面圖片:</lable>
                                         <div class="placememtOfInput">
                                             <input type="file" id="theFile1" class="theFileBtn">
                                         </div>
                                     </div>
     
                                     <div class="placement_of_product">
-                                        <label class="placement">背面位置(+NT$100) :</lable>
+                                        <label class="placement">背面圖片:</lable>
                                         <div class="placememtOfInput">
                                             <input type="file" id="theFile2" class="theFileBtn">
                                         </div>
@@ -187,13 +186,9 @@
                             <!-- =============小計區=============== -->
                             <!-- =============小計區=============== -->
                             <div class="tal_block">
-                                    <p class="stepExplain">小計</p>
+                                    <p class="stepExplain"></p>
                                     <div class="placementOfTal">
-                                        <label class="thePrice">商品價格</label><label>NT$500</label>
-                                        <br>
-                                        <label class="thePrice">圖片加價</label><label>NT$200</label>
-                                        <br>
-                                        <label class="thePrice">小計金額</label><label>NT$700</label>
+                                        <label class="thePrice"></label><label>NT$<span>500</span></label>
                                     </div>
                                 </div>
     
@@ -205,62 +200,41 @@
                         </form>
                         <!-- </div> -->
                     </div>
-                    
                 </div>
                 <!-- =====================================下側 推薦商品區===================================== -->
                 <!-- =====================================下側 推薦商品區===================================== -->
-                <!-- =====================================下側 推薦商品區===================================== -->
-                <div class="row all2 justify-content-center">
+                <!-- ========標題======== -->
+                <div class="row all2_Bottom justify-content-center">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-10 bottomarea">
+                        <p>HOT PRODUCTS</p>
                         <h5 class="title_2">熱門推薦商品</h5>
-                        <div class="bottomareaBoxA">
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
+                        <div class="newProLine"></div>
+                        <!-- ====================放置動態「推薦商品」的卡片==================== -->
+                        <div id="appNewProd" class="addDivForVue">
+                            <!-- ================= -->
+                            <div v-for="NewProdRow in NewProdRows" class="product" v-bind:id="NewProdRow.PRODNO">
+                                <a href="NormalProduct_RWD.html">
+                                    <img :src="NewProdRow.PRODPIC_1">
+                                </a>
                                 <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
+                                    <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
                                     <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
+                                        <span class="price">{{NewProdRow.PRODPRICE}}</span>
+                                        <button class="CartBtnOfMall" v-bind:id="NewProdRow.PRODNO">
                                             <i class="fas fa-shopping-cart fa-1x"></i>
                                             <p>加入購物車</p>
                                         </button>
-                                    </p> 
+                                    </p>
                                 </div>
                             </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
+                            <!-- =================放置動態「推薦商品」的卡片//================= -->
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>            
+        </div>
     </section>
-
 
     <script>
         //切換衣服顏色
@@ -300,6 +274,62 @@
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
 
+    <script>
+        // ------------------------到資料庫撈取「推薦商品卡片」要的資料---------------------
+        function getNewProducts(){
+            let xhrNewProuct = new XMLHttpRequest();
+            xhrNewProuct.onload = function(){
+                NewProdRows = JSON.parse(xhrNewProuct.responseText);
+                appNewProd.NewProdRows = NewProdRows;
+            }
+            xhrNewProuct.open("get", "./php/mall/getNewProducts.php", true);
+            xhrNewProuct.send(null);
+        }
+        // ------------------------把撈取到的推薦商品動態渲染到「推薦商品卡片」-------------
+        var appNewProd = new Vue({
+            el: '#appNewProd',
+            data: {
+                NewProdRows: [],
+            },
+            mounted(){
+                let storage = sessionStorage;
+                //ItemId : for商城記錄click到哪個商品
+                if(storage['ItemId'] == null){
+                    storage['ItemId'] = '';
+                }
+                //addItemList : for購物車記錄把哪個商品加到購物車
+                if(storage['addItemList'] == null){
+                    storage['addItemList'] = '';
+                }
+                setTimeout(()=>{
+                    //幫每張卡片(一般商品+推薦商品)建立事件聆聽功能
+                    let prodCard = document.querySelectorAll('.product');
+                    for(let i = 0; i < prodCard.length; i++){
+                        prodCard[i].addEventListener('click',function(){
+                            theId = this.id;
+                            storage.setItem('ItemId',theId);
+                        });
+                    }
+                    // ********click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)********
+                    //幫每個購物車btn建立事件聆聽功能
+                    let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                    for(let i = 0; i < CartBtn.length; i++){
+                        CartBtn[i].addEventListener('click',function(){
+                            theBtnId = this.id;
+                            //click後 就把theBtnId = this.id存入session
+                            storage['addItemList'] += `${theBtnId}, `;
+                        });
+                    }
+                    // ************************************************************************************
+                },50)
+            },
+        });
+        // ------------------------------------------------------------------------------
+        window.addEventListener("load", function(){
+            // 執行:撈取「推薦商品」函式
+            getNewProducts();
+        })
+    </script>
 </body>
 </html>
 

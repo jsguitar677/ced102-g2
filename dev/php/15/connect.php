@@ -1,5 +1,5 @@
 <?php
-    $dbname = '淨下塑源';
+    $dbname = '淨下塑湲';
     $user = 'root';
     $password = '11111';
     $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8";
