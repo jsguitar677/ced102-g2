@@ -1,3 +1,4 @@
+
 var lastTotal = document.getElementById('lastTotal');
             $.ajax({
                 url: 'php/5/postMemberInfo.php',
@@ -67,3 +68,7 @@ var lastTotal = document.getElementById('lastTotal');
                 },
 
             });
+
+
+
+ window.addEventListener("onload",doFirst)

@@ -16,8 +16,6 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
     <script src="./js/common_backend.js"></script>
     <script src="./js/memMGT.js"></script>
-
-    
 </head>
 <body>
     @@include('./layout/backend_header.html')
@@ -39,7 +37,7 @@
                     <div class="flex">
                         <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號或名稱'></div>
                     </div>
-                    <table>
+                    <!-- <table>
                         <thead>
                             <tr>
                                 <th>編號</th>
@@ -57,15 +55,15 @@
                         </thead>
                         <tbody class="list" id="mem-tbody">
                             <tr id="mem1">
-                                <td><div class="no-block mem-num">1</div></td>
-                                <td class="mem-name">Herry Chen</td>
-                                <td>一般會員</td>
-                                <td>Herry123</td>
-                                <td>2000/09/09</td>
-                                <td>0945090909</td>
-                                <td>66</td>
-                                <td>203</td>
-                                <td>停權</td>
+                                <td><div class="no-block mem-num" id="BCMBRNO">1</div></td>
+                                <td class="mem-name" id="BCMBRNAME">Herry Chen</td>
+                                <td id="BCMLEVEL">一般會員</td>
+                                <td id="BCMBRMAIL">Herry123</td>
+                                <td id="BCMBRBIRTH">2000/09/09</td>
+                                <td id="BCMBRPHONE">0945090909</td>
+                                <td id="BCMBRCOIN">66</td>
+                                <td id="BCMBREXP">203</td>
+                                <td id="BCMBRSTATE">停權</td>
                                 <td>
                                     <label class="toggle-btn" for="suspension1">
                                         <input type="checkbox" id="suspension1" checked hidden>
@@ -97,7 +95,8 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> -->
+                    <div id="showPanel"></div>
                     <div class="alert-block alert-block-delete">
                         <form id="mem-delete" class="alert">
                             <input type="text" name="mbrno" hidden>
@@ -120,5 +119,6 @@
             </div>
         </main>
     </div>
+    
 </body>
 </html>
