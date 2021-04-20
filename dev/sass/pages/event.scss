@@ -1326,6 +1326,11 @@ main.event {
             box-shadow: none;
             background-color: map-get($web-color,'white-bg');
             padding-top: 10px;
+            div.map-block{
+              #svg2606,#taiwan-bg{
+                width: 260px;
+              }
+            }
             h2{
               font-size: $h4;
             }
