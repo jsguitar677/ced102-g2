@@ -8,15 +8,6 @@ try{
   if( $member->rowCount() == 0 ){ 
     echo "{}";//傳回看起來空空的物件之JSON字串
   }else{ //找得到
-    //用fetch取回一筆資料，然後送到前端最前列馬上顯示
-    //================
-    // for($i=0;$i< ($member->rowCount());$i++){
-    //   $memRow = $member->fetch(PDO::FETCH_ASSOC);
-    //   $result = ["MBRNAME"=>$memRow["MBRNAME"], "MBREXP"=>$memRow["MBREXP"], "MBRMAIL"=>$memRow["MBRMAIL"], "MBRBIRTH"=>$memRow["MBRBIRTH"], "MBRCOIN"=>$memRow["MBRCOIN"], "MBRPHONE"=>$memRow["MBRPHONE"], "MBREXP"=>$memRow["MBREXP"], "MBRSTAT"=>$memRow["MBRSTAT"]];//不丟全部值，丟部分
-    //   echo json_encode($result); //送回result字串
-    //   }
-    // }
-    //=================
     $memRows = $member->fetchAll(PDO::FETCH_ASSOC);
     $result = array();
     foreach($memRows as $i => $memRow){
