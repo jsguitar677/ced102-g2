@@ -87,32 +87,3 @@ window.addEventListener("load", function(){
 })
 
 
-
-
-//活動管理跳窗
-// function eventManagementModal(){
-//     var a = document.getElementsByClassName('eventManagementCancelBtn');
-//     a.onclick = function(){
-//             $id('eventManagementCancelModalCon').style.display = 'block';
-//         }
-//     }
-//     $id('eventManagementCancelModalCloseBtn').onclick = function(){
-//         $id('eventManagementCancelModalCon').style.display = '';
-//     }
-//     $id('eventManagementCancel').onclick = function(){
-//         $id('eventManagementCancelModalCon').style.display = '';
-    
-// }
-
-// 4/14 須完成 
-
-// 經驗值兌換  ex 點擊才拉取資料
-// 1 解決會員綠色圈圈問題
-// 2 問題 跳轉完才能夠跳燈箱 顯示 Line:184
-
-// 4/15 做後半段
-// 參與募款與志工紀錄
-// 發起活動管理
-
-// 4/16 做後半段
-// 發起活動管理
