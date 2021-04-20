@@ -21,7 +21,7 @@ function getDetail(){
                     <td is="actNo">${MBRDETAIL[i].ACTNO}</td>
                     <td id="actName" style="text-overflow:ellipsis;overflow:hidden;max-width: 60px;">${MBRDETAIL[i].ACTNAME}</td>
                     <td id="actSdate${i}"></td>
-                    <td id="actStat">${MBRDETAIL[i].ACTSDATE}</td>
+                    <td id="actStat${[i]}">${MBRDETAIL[i].ACTSDATE}</td>
                     <td><button value="${MBRDETAIL[i].ACTNO}" id="delay${[i]}" class="comBtn3 CancelLink" style="white-space:nowrap">需要</button></td>
                     <td><button value="${MBRDETAIL[i].ACTNO}" id="actCancel${[i]}" class="comBtn4 CancelLink">取消</button></td>
                 </tr>
@@ -51,7 +51,7 @@ function getDetail(){
                     default:
                         alert('提交審核中');
                 }
-
+                var eventManagementCancelReason = document.getElementById('eventManagementCancelReason');
                 // ACTSDATE
                 let ACTSDATE = MBRDETAIL[i].ACTSDATE;
                 console.log(ACTSDATE);
@@ -68,32 +68,60 @@ function getDetail(){
                     document.getElementById(`delay${i}`).style.cursor = "unset";
                 }
                 document.getElementById(`actCancel${i}`).onclick = function (){
-                    let xhr2 = new XMLHttpRequest(); 
-                    xhr2.onload = function(){
-                        document.getElementById(`actCancel${i}`).textContent="審核下架中";
-                        document.getElementById(`actSdate${i}`).textContent="取消審核中";
-                        alert("已提交到後台審核中");
+                    document.getElementById('eventManagementCancelModalCon').style.display = "block";
+                    document.getElementById('eventManagementSubmit').onclick = function() {
+                        let xhr2 = new XMLHttpRequest(); 
+                        xhr2.onload = function(){
+                            document.getElementById(`actCancel${i}`).textContent="審核下架中";
+                            document.getElementById(`actSdate${i}`).textContent="取消審核中";
+                            document.getElementById('eventManagementCancelModalCon').style.display = "none";
+                            document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
+                        }
+                        xhr2.open("post","php/15/EventCancel.php", true);
+                        xhr2.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
+                        let canActvNo = `ACTNOO=${document.getElementById(`actCancel${i}`).value} & MBRNO=${ordRow.MBRNO} & REASON=${eventManagementCancelReason.value}`;
+                        xhr2.send(canActvNo);
+                        
+                        // alert("已送出提交表單等候審核通知");
+                        
 
                     }
-                    xhr2.open("post","php/15/EventCancel.php", true);
-                    xhr2.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
-                    let canActvNo = `ACTNOO=${document.getElementById(`actCancel${i}`).value} & MBRNO=${ordRow.MBRNO}`;
-                    xhr2.send(canActvNo);
+                    document.getElementById("eventManagementCancel").onclick = function (){
+                        document.getElementById('eventManagementCancelModalCon').style.display = "none";
+                    }
+                    document.getElementById("eventManagementCancelModalCloseBtn").onclick = function (){
+                        document.getElementById('eventManagementCancelModalCon').style.display = "none";
+
+                    }
 
                     // `MBRNO=${ordRow.MBRNO}&ORDERNO=${j}`;
                 };
                 document.getElementById(`delay${i}`).onclick = function(){
-                    let xhr3 = new XMLHttpRequest(); 
-                    xhr3.onload = function(){
-                        alert("已確認更改活動日期");
-                        // let MBRDETAIL2 = JSON.parse(xhr3.responseText);
-                        console.log(xhr3.responseText);
+                    document.getElementById('delatRemindBlackBox').style.display = 'block';
+                    //delayYes 送資料
+                    document.getElementById('delayYes').onclick = function(){
+                        let xhr3 = new XMLHttpRequest(); 
+                        xhr3.onload = function(){
+                            alert("系統已確認更改活動日期");
+                            let MBRDETAIL3 = JSON.parse(xhr3.responseText);
+                            console.log(MBRDETAIL3);
+                            document.getElementById(`actStat${[i]}`).textContent=MBRDETAIL3[0].actdline;
+                            document.getElementById(`actStat${[i]}`).style.color="red";
+                            document.getElementById(`delay${i}`).setAttribute("disabled","true");
+                            document.getElementById(`delay${i}`).textContent = '已延期';
+                            document.getElementById('delatRemindBlackBox').style.display = 'none';
 
+                        }
+                        xhr3.open("post","php/15/EventDelay.php", true);
+                        xhr3.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
+                        let canActvNo = `ACTNOO=${document.getElementById(`actCancel${i}`).value} & MBRNO=${ordRow.MBRNO}`;
+                        xhr3.send(canActvNo);
                     }
-                    xhr3.open("post","php/15/EventDelay.php", true);
-                    xhr3.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
-                    let canActvNo = `ACTNOO=${document.getElementById(`actCancel${i}`).value} & MBRNO=${ordRow.MBRNO}`;
-                    xhr3.send(canActvNo);
+                    //delayNo 取消就關閉
+                    document.getElementById('delayNo').onclick = function(){
+                    document.getElementById('delatRemindBlackBox').style.display = 'none';
+                        
+                    }
                 };
 
                 
@@ -135,6 +163,23 @@ window.addEventListener("load", function(){
     getDetail();
 })
 
+
+
+
+//活動管理跳窗
+// function eventManagementModal(){
+//     var a = document.getElementsByClassName('eventManagementCancelBtn');
+//     a.onclick = function(){
+//             $id('eventManagementCancelModalCon').style.display = 'block';
+//         }
+//     }
+//     $id('eventManagementCancelModalCloseBtn').onclick = function(){
+//         $id('eventManagementCancelModalCon').style.display = '';
+//     }
+//     $id('eventManagementCancel').onclick = function(){
+//         $id('eventManagementCancelModalCon').style.display = '';
+    
+// }
 
 // 4/14 須完成 
 

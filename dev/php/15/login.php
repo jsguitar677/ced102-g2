@@ -17,9 +17,10 @@ try{
     $_SESSION["MBRMAIL"] = $memRow["MBRMAIL"];
     $_SESSION["MBRNAME"] = $memRow["MBRNAME"];
     $_SESSION["MBRNO"] = $memRow["MBRNO"];
+    $_SESSION["MBRPIC"] = $memRow["MBRPIC"];
 
     //送出登入者的姓名資料
-    $res = ["MBRMAIL"=>$memRow["MBRMAIL"], "MBRNAME"=>$memRow["MBRNAME"],"MBRNO"=>$memRow["MBRNO"]];
+    $res = ["MBRMAIL"=>$memRow["MBRMAIL"], "MBRNAME"=>$memRow["MBRNAME"],"MBRNO"=>$memRow["MBRNO"], "MBRPIC"=>$memRow["MBRPIC"]];
 
     echo json_encode($memRow); //輸出json
   }
@@ -30,20 +31,20 @@ try{
 
 
 
-$mbr_info_sql = "select MBRNO , MBRPIC , MBRNAME , MBRBIO from mbr";
-$f_sql = "select f.MBRNO , f.fnum , f.ftotal , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO 
-from (select MBRNO , count(*) fnum , sum(amount) ftotal 
-from fundra group by MBRNO order by ftotal desc) f join mbr m on (m.MBRNO = f.MBRNO);";
-
-$j_sql = "select j.MBRNO , j.jnum , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO rom (select MBRNO , count(*) jnum from actvap group by MBRNO order by jnum desc) j join mbr m on (m.MBRNO = j.MBRNO)";
-
-$i_sql = "select MBRNO , count(*) inum from actv group by MBRNO";
 
 
+// $mbr_info_sql = "select MBRNO , MBRPIC , MBRNAME , MBRBIO from mbr";
+// $f_sql = "select f.MBRNO , f.fnum , f.ftotal , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO 
+// from (select MBRNO , count(*) fnum , sum(amount) ftotal 
+// from fundra group by MBRNO order by ftotal desc) f join mbr m on (m.MBRNO = f.MBRNO);";
 
+// $j_sql = "select j.MBRNO , j.jnum , m.MBRNO , m.MBRPIC , m.MBRNAME , m.MBRBIO rom (select MBRNO , count(*) jnum from actvap group by MBRNO order by jnum desc) j join mbr m on (m.MBRNO = j.MBRNO)";
 
-
+// $i_sql = "select MBRNO , count(*) inum from actv group by MBRNO";
 
 
 ?>
+
+
+
 

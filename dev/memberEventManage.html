@@ -33,26 +33,35 @@
     <div id="memPage">
         <div id="eventManagementCancelModalCon">
             <div id="eventManagementCancelModal">
-                <div id="eventManagementCancelModalCloseBtn">
-                    <span></span>
-                    <span></span>
+               
+                <div class="titleReasonBox">
+                    <div></div>
+                    <p class="titleReason">如需取消活動，須經由官方審核說明原因</p>
                 </div>
-                <p>如需取消活動，須經由官方審核說明原因</p>
                 <form action="#">
-                    <div>
+                    <div class="CancelReasonTitle">
                         <label for="eventManagementCancelReason">
-                            理由
+                            原因:
                         </label>
-                        <textarea id="textarea2" name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
+                        <textarea  name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
                     </div>
                     <div id="eventManagementBtnCon">
-                        <button id="eventManagementCancel">取消</button>
                         <button id="eventManagementSubmit">提交審核</button>
+                        <button id="eventManagementCancel">取消</button>
                     </div>
                 </form>
             </div>
         </div>
-        
+        <div id="delatRemindBlackBox">
+            <div id="delatRemindBox">
+                <div>確定需要延期嗎?</div>
+                <div class="btnCho">
+                    <button id="delayNo">取消</button>
+                    <button id="delayYes">確定</button>
+                </div>
+                
+            </div>
+        </div>
         <main>
             <div class="genInfor">
                 <!-- 上block -->
@@ -163,6 +172,7 @@
                             </tbody>
                         </table>
                     </div>
+                    
                     
                 </div>
             </div>
