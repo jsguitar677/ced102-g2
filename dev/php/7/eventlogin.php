@@ -1,13 +1,13 @@
 <?php
 session_start();
-$_SESSION["mbrno"] = "1";
+// $_SESSION["MBRNO"] = "1";
 try{
     require_once("../../connect_ced102g2.php");
     $mbrinfo_sql = "select MBRNO , MBREXP from mbr where MBRNO = :mbrno";
 
-    if(isset( $_SESSION["mbrno"])){
+    if(isset( $_SESSION["MBRNO"])){
         $mbrinfo = $pdo->prepare($mbrinfo_sql);
-        $mbrinfo->bindValue(":mbrno",$_SESSION["mbrno"]);
+        $mbrinfo->bindValue(":mbrno",$_SESSION["MBRNO"]);
         $mbrinfo->execute(); //取得會員編號、會員經驗值
         if( $mbrinfo->rowCount() == 0 ){
             echo json_encode(['nologin']);

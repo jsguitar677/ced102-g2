@@ -291,6 +291,9 @@ let memberText;
                     LogConfirmY.style.display = 'none';
                     LogConfirmN.style.display = 'none';
                     LogInMemIdPhoto.style.display = 'flex';
+                    // 錢錢出來
+                    $id('tokenHook').style.display = 'inline-block';
+                    $id('token').textContent = "環保幣"+memberText.MBRCOIN;
                     //寫入照片 .src = MBRPERID[0].MBRPIC;
                     $id('proHook').src = memberText.MBRPIC;
                     //寫入會員的姓名
@@ -407,6 +410,9 @@ function getMemInfo(){
         LogConfirmY.style.display = 'none';
         LogConfirmN.style.display = 'none';
         LogInMemIdPhoto.style.display = 'flex';
+        // 錢錢出來
+        $id('tokenHook').style.display = 'inline-block';
+        $id('token').textContent = "環保幣"+ memberText.MBRCOIN;
         // 註冊消失
         $id('AccountListReg').style.display = "none";
         // 登入後綠色球球出現
