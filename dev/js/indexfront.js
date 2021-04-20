@@ -59,3 +59,31 @@ $(document).ready(function() {
 // }
 //==============  PHP
 //============== 總募款金額 / 總發起活動場次 / 總參與人數 資料抓取
+
+function showActInfo(jsonStr){
+    let actv = JSON.parse(jsonStr);
+    // console.log("donationTot:",actv["donationTot"]);
+    let donationTot = actv["donationTot"];
+    let recruitTot = actv["recruitTot"];
+    let actvTot = actv["actvTot"];
+    console.log(donationTot, recruitTot, actvTot);
+    spanShow = document.getElementsByClassName('tal');
+    spanShow[0].setAttribute("data-end", donationTot);
+}
+
+function getActInfo(){
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        if(xhr.status == 200){
+            // console.log("xhr.reponseText",xhr.responseText);
+            showActInfo(xhr.responseText);
+        }else{
+            alert(xhr.status);
+        }
+    }
+    var url = "./php/2/indexfront.php";
+    xhr.open("Get", url, true);
+    xhr.send(null);
+};
+
+window.addEventListener('load', getActInfo);

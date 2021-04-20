@@ -8,6 +8,7 @@ $(document).ready(function(){
             $('.total_box').remove();
             $('.button-pay').remove();
     }
+    console.log(11)
 })
 
         
