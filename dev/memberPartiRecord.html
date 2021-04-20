@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 共用css -->
+    <!-- <link rel="stylesheet" href="./css/all.css"> -->
+    <!-- 會員css -->
+    <link rel="stylesheet" href="./css/pages/member.css">
+    <!-- 輪播圖 -->
+    <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <!-- 引用owl & jQuery -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
+    
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+    <!-- TweenMax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    
+</head>
+
+<body>
+    <!-- 樣板 header   -->
+    @@include('./layout/header.html')
+    <!-- 會員登入 -->
+    @@include('./layout/login.html')
+    <!-- 會員頁面 -->
+    <h5 class="pageBreak">會員中心</h5>
+    <div id="memPage">
+        <div id="eventManagementCancelModalCon">
+            <div id="eventManagementCancelModal">
+                <div id="eventManagementCancelModalCloseBtn">
+                    <span></span>
+                    <span></span>
+                </div>
+                <p>如需取消活動，須經由官方審核說明原因</p>
+                <form action="#">
+                    <div>
+                        <label for="eventManagementCancelReason">
+                            理由
+                        </label>
+                        <textarea id="textarea2" name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
+                    </div>
+                    <div id="eventManagementBtnCon">
+                        <button id="eventManagementCancel">取消</button>
+                        <button id="eventManagementSubmit">提交審核</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <main>
+            <div class="genInfor">
+                <!-- 上block -->
+                @@include('./layout/memberProf.html')
+                <!-- 下block -->
+                <div class="cumulativeBlcok comShape" id="underNoBorder">
+                    <button onclick="self.location.href='./member.html'" class="tabLinks" id="defaultOpen">
+                        <div class="btnDisCon" id="btnDisCon1">
+                            <span>
+                                <i class="fas fa-user-alt"></i>
+                                <span class="btnText" id=" MemSpanEnSmall">會員資訊</span>
+                            </span>
+                            <span>
+                                &gt
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="self.location.href='./memberEXP.html'" id="expExch">
+                        <div class="btnDisCon" id="btnDisCon2">
+                            <span>
+                                <i class="fas fa-exchange-alt"></i>
+                                <span class="btnText" id="ExpSpannSmall">經驗值兌換</span>
+                            </span>
+                            <span>
+                                &gt
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="self.location.href='./memberOrderRecord.html'" >
+                        <div class="btnDisCon" id="btnDisCon3">
+                            <span>
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="btnText" id="ShopSpanEnSmall">商城消費紀錄</span>
+                            </span>
+                            <span>
+                                &gt
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="self.location.href='./memberPartiRecord.html'" style="background-color:#FFD241;">
+                        <div class="btnDisCon" id="btnDisCon4">
+                            <span>
+                                <i class="fas fa-chart-bar"></i>
+                                <span class="btnText" id="VolunSpanEnSmall">參與募款與志工紀錄</span>
+                            </span>
+                            <span>
+                                &gt
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="self.location.href='./memberEventManage.html'">
+                        <div class="btnDisCon" id="btnDisCon5">
+                            <span>
+                                <i class="fas fa-fist-raised"></i>
+                                <span class="btnText" id="ActSpanEnSmall">活動發起管理</span>
+                            </span>
+                            <span>
+                                &gt
+                            </span>
+                        </div>
+                    </button>
+                    <button class="tabLinks " onclick="self.location.href='./memberEventSave.html'" >
+                        <div class="btnDisCon" id="btnDisCon6">
+                            <span>
+                                <i class="far fa-heart"></i>
+                                <span class="btnText" id="ActCollectSpanEnSmall">活動收藏</span>
+                            </span>
+                            <span>
+                                &gt
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+        <!-- ---------------------------------------------- -->
+
+            <div class="memberContent comShape" id="memberContentId">
+                <div id="participateRecord" class="tabContent">
+                    <div class="participateTitle">
+                        <h6>參與募款</h6>
+                    </div>
+                    
+                    
+                    <div class="participateRecordCon">
+                        <table class="participateRecordTable">
+                            <tr id="participateRecordRow1">
+                                <th>活動編號</th>
+                                <th>活動名稱</th>
+                                <th>贊助編號</th>
+                                <th>贊助日期</th>
+                                <th>贊助金額</th>
+                            </tr>
+                            <tbody id="participateHook">
+                                <!-- <tr id="participateRecordCont">
+                                    <td id="Factno">1</td>
+                                    <td id="Factname">"戀戀海洋金山淨灘活動"</td>
+                                    <td id="FFdaNo">1</td>
+                                    <td id="FFdaDate">"2021-04-08"</td>
+                                    <td id="FFdaPrice">$400</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <h6 id="fundraWarn" style="display: none;text-align: center;">查無資料</h6>
+                    </div>
+
+                    <div class="participateTitle">
+                        <div class="sdada">
+                            <h6>志工紀錄</h6>
+                        </div>
+                    </div>
+
+                    <div class="participateRecordCon">
+                        <table class="participateRecordTable">
+                            <tr id="participateRecordRow1">
+                                <th>活動編號</th>
+                                <th>活動名稱</th>
+                                <th>活動日期</th>
+                            </tr>
+                            <tbody id="participateHook2">
+                                <!-- <tr id="participateRecordCont" class="participateRecordContent">
+                                    <td>"1"</td>
+                                    <td>"戀戀海洋金山淨灘活動"</td>
+                                    <td>2021-04-10</td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <h6 id="actvWarn" style="display: none; text-align: center;">查無資料</h6>
+                    </div>
+                    <p>感謝您的支持。</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    @@include('./layout/footer.html')
+    
+    
+     <!-- jQuery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <!-- 樣板 footer -->
+     <script src="./js/login.js"></script>
+     <!-- 共同會員的js -->
+     <script src="./js/member.js"></script>
+     <!-- 這個頁面的js -->
+     <script src="./js/memberPartiRecord.js"></script>
+</body>
+
+</html>

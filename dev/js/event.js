@@ -1,8 +1,8 @@
 $('document').ready(function(){
     //預設
-    // $('section').css('display','none');
-    // $(`#section1`).css('display','');
-    // $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
+    $('section').css('display','none');
+    $(`section#section1`).css('display','block');
+    $('ul.menu >li:nth-child(1)').addClass('maincurrent');
 
     //點擊選單，切換畫面
     for(let i=1; i<=3; i++){
@@ -11,33 +11,36 @@ $('document').ready(function(){
             $(`#section${i}`).css('display','');
             $('ul.menu >li').css('fontWeight','');
             $(this).css('fontWeight','bolder');
+            $('ul.menu >li').removeClass('maincurrent');
+            $(this).addClass('maincurrent');
         })
     };
-    //首頁連接至section2
-    let storage = sessionStorage;
-    if(storage['btnId'] == null){
-        storage['btnId'] = '';
-    }
-    let itemString = storage.getItem('btnId');
-    let n1 = itemString.charAt(0);
-    if (n1 == "A"){
-        $('section').css('display','none');
-        $(`#section2`).css('display','');
-        $('ul.menu >li:nth-child(2)').css('fontWeight','bolder');
-        storage['btnId'] = '';
-    }else{
-        $('section').css('display','none');
-        $(`#section1`).css('display','');
-        $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
-    }
+    // 首頁連接至section2
+    // let storage = sessionStorage;
+    // if(storage['btnId'] == null){
+    //     storage['btnId'] = '';
+    // }
+    // let itemString = storage.getItem('btnId');
+    // let n1 = itemString.charAt(0);
+    // if (n1 == "A"){
+    //     $('section').css('display','none');
+    //     $(`#section2`).css('display','');
+    //     $('ul.menu >li:nth-child(2)').css('fontWeight','bolder');
+    //     storage['btnId'] = '';
+    // }else{
+    //     $('section').css('display','none');
+    //     $(`#section1`).css('display','');
+    //     $('ul.menu >li:nth-child(1)').css('fontWeight','bolder');
+    // }
 
     //點擊id="section1"的發起活動按鈕
     $('#problem-btn').click(function(){
         $('section').css('display','none');
-        $('ul.menu >li').css('fontWeight','lighter');
         $(`#section2`).css('display','');
+        $('ul.menu >li').removeClass('maincurrent');
+        $('ul.menu >li:nth-child(2)').addClass('maincurrent');
+        $('ul.menu >li').css('fontWeight','lighter');
         $('ul.menu >li:nth-child(2)').css('fontWeight','bolder');
-        // $('html,body').animate({scrollTop:0}, 333);
         $('html,body').scrollTop(360);
     });
 
@@ -68,99 +71,7 @@ $('document').ready(function(){
         $('ul.menu >li:nth-child(2)').text('與我們一起 (發起活動)');    
     }
 
-    function rankCard(){
-        if($(document).width() < 992){
-            $('.small-card').removeClass('effect');
-        }else{
-            $('.small-card').click(function(){
-                $('.small-card').removeClass('effect');
-                $(this).addClass('effect');
-            })
-            for(i=1;i<4;i++){
-                $(`#people-rank div.TOP${i}`).click(function(){
-                    let color = $(this).css('background-color');
-                    $('#people-rank div.big-card').css('background-color',`${color}`);
-                    $('#people-rank div.big-card p').css('color',`#fafafa`);
-                    $('#people-rank div.big-card div.donation-total').css('color',`#fafafa`);
-                    $('#people-rank div.big-card h3').css('color',`#fafafa`);
-                })
-            }
-            for(i=4;i<6;i++){
-                $(`#people-rank div.TOP${i}`).click(function(){
-                    let color = $(this).css('background-color');
-                    $('#people-rank div.big-card').css('background-color',`${color}`);
-                    $('#people-rank div.big-card p').css('color',`#1D1E4C`);
-                    $('#people-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
-                    $('#people-rank div.big-card h3').css('color',`#1D1E4C`);
-                })
-            }
-            for(i=1;i<4;i++){
-                $(`#money-rank div.TOP${i}`).click(function(){
-                    let color = $(this).css('background-color');
-                    $('#money-rank div.big-card').css('background-color',`${color}`);
-                    $('#money-rank div.big-card p').css('color',`#fafafa`);
-                    $('#money-rank div.big-card div.donation-total').css('color',`#fafafa`);
-                    $('#money-rank div.big-card h3').css('color',`#fafafa`);
-                })
-            }
-            for(i=4;i<6;i++){
-                $(`#money-rank div.TOP${i}`).click(function(){
-                    let color = $(this).css('background-color');
-                    $('#money-rank div.big-card').css('background-color',`${color}`);
-                    $('#money-rank div.big-card p').css('color',`#1D1E4C`);
-                    $('#money-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
-                    $('#money-rank div.big-card h3').css('color',`#1D1E4C`);
-                })
-            }
-        }
-    }
-    rankCard();
 
-    function slider(){
-        var isclick = true;
-        $('#btn-right').click(function(){
-            if(isclick){
-                isclick = false;
-                let card_length = $('ul.slides').length;
-                let left = parseFloat($('ul.slides').css('left'));
-                let width = parseFloat($('ul.slides').width());
-                if(left > -width*(card_length-1)){
-                    $('ul.slides').animate({left: left - width},300);
-                }
-            
-            }
-            setTimeout(function(){
-                isclick = true;
-            },800);
-        })
-        $('#btn-left').click(function(){
-            if(isclick){
-                isclick = false;
-                let left = parseFloat($('ul.slides').css('left'));
-                let width = parseFloat($('ul.slides').width());
-                if(left <= -width){
-                    $('ul.slides').animate({left: left + width},300);
-                }
-            }
-            setTimeout(function(){
-                isclick = true;
-            },800);
-        })
-    }
-    slider();
-
-
-    $(window).resize(function(){
-        if($(document).width()<=767){
-            $('ul.menu >li:nth-child(1)').text('助環境一力');
-            $('ul.menu >li:nth-child(2)').text('與我們一起');
-        }else{
-            $('ul.menu >li:nth-child(1)').text('助環境一力 (參與活動)');
-            $('ul.menu >li:nth-child(2)').text('與我們一起 (發起活動)');    
-        }
-        $('ul.slides').css({left:0});
-        rankCard();
-    })
 
     $('p.more').click(function(){
         $(this).text('');
@@ -170,9 +81,6 @@ $('document').ready(function(){
         $(this).text('');
         $("#instructions").removeClass('shorten2');
     })
-
-
-
 
     //close btn
     $('#standard-btn').click(function(){
@@ -188,397 +96,319 @@ $('document').ready(function(){
         })
     })
 
-    //點擊活動列表，活動卡片顯示，及其關閉按鈕設定
-    $('ul#list li').click(function(){
-        $('#list-card').css('display','block');
-    })
-
-    $('#list-card > div.closebtn').click(function(){
-        $('#list-card').css('display','none');  
-    })
-    //點擊查看天氣資訊按鈕，及其關閉按鈕
-    $('#weather-btn').click(function(){
-        $('div.weather-div').css('display','block');
-    })
-    $('#weather-div-btn').click(function(){
-        $('div.weather-div').css('display','none');  
-    })
-    //===========================================================
-    
-    let date = $('div.weather-div p.date');
-    let description = $('div.weather-div p.description');
-    let temperature_hight = $('div.temperature p.hight');
-    let temperature_low = $('div.temperature p.low');
-    let locationName = '桃園市'; //之後替換成點選的活動地區
-    for(let i=0; i<7; i++){
-        let day = new Date();
-        day.setTime(day.getTime()+(24*60*60*1000)*i); 
-        day2 = (day.getMonth()+1) + "/" + day.getDate(); 
-        date[i].innerText = day2;
-    }
-
-    $.ajax({
-        url:"https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWB-6A5D1FA0-3C09-4FF7-9D3B-7FD3C9EB3C52&limit=1000&offset=0&format=JSON",
-        method:'get',
-        dataType:'json',
-        data:{},
-    }).done(function(res){
-        console.log(res);
-        let A =res.records.locations[0];
-        for(i=0;i<A.location.length;i++){
-            if(A.location[i].locationName == locationName){
-                let k=1;
-                description[0].innerText = A.location[i].weatherElement[6].time[0].elementValue[0].value;
-                temperature_hight[0].innerText = A.location[i].weatherElement[12].time[0].elementValue[0].value +'°C';
-                temperature_low[0].innerText = A.location[i].weatherElement[8].time[0].elementValue[0].value +'°C';
-                let iconValue = A.location[i].weatherElement[6].time[0].elementValue[1].value;
-                let weatherIcon1 = document.getElementById(`weatherIcon1`);
-                if(iconValue == 1 || iconValue==24){
-                    weatherIcon1.src = "./img/event/weather/sun.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/sun2.jpg")');
-                }else if(iconValue == 4 || iconValue==5 || iconValue==6 || iconValue==7 || iconValue==27 || iconValue==28){
-                    weatherIcon1.src = "./img/event/weather/cloudy.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/clouds2.jpg")');
-                }else if(iconValue == 2 || iconValue==3 || iconValue==25 || iconValue==26){
-                    weatherIcon1.src = "./img/event/weather/太陽雲.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/sun2.jpg")');
-                }else if( (iconValue =>8  && iconValue <= 14) || (iconValue =>29  && iconValue <=32) || iconValue==39 || iconValue==38 || iconValue==20){
-                    weatherIcon1.src = "./img/event/weather/rainy.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/rain2.jpg")');
-                }else if( (iconValue =>15  && iconValue <= 18) || (iconValue =>33  && iconValue <=36) || iconValue==41 || iconValue==22){
-                    weatherIcon1.src = "./img/event/weather/雨雷.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/lightning2.jpg")');
-                }else if(iconValue == 19){
-                    weatherIcon1.src = "./img/event/weather/太陽雲雨.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/rain2.jpg")');
-                }else if(iconValue == 21){
-                    weatherIcon1.src = "./img/event/weather/太陽打雷雨.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/lightning2.jpg")');
-                }else if(iconValue == 23 || iconValue == 37 || iconValue == 42){
-                    weatherIcon1.src = "./img/event/weather/snowing.svg";
-                    $('div.weather-div').css('backgroundImage','url("../img/event/weather/snow2.jpg")');
+    $('.start-btn').click(function(){
+        let xhrlogin = new XMLHttpRequest();
+        xhrlogin.onload = function (){
+            if( xhrlogin.status == 200 ){
+                let res = JSON.parse(xhrlogin.responseText)
+                console.log(res);
+                if(res[0]=='nologin'){ 
+                    //請先登入
+                    $('#wholeScreenOverlay3').css('display','block');
+                    $('body').css('overflow','hidden');
+                    $('#LogRegClsBtn3').click(function(){
+                        $('#wholeScreenOverlay3').css('display','none');
+                        $('body').css('overflow','auto');
+                    })
+                }else if(res[0].MBREXP < 1000){
+                    //須為資深會員
+                    alert('抱歉您尚未解鎖發起提案功能，請繼續努力升級吧~');
+                }else if((res[0].MBREXP >= 1000)){
+                    //連結事前須知頁面
+                    location.href="./initiation_agreement.html";
                 }
-                for(let j=2; j<=13; j=j+2){
-                    if(A.location[i].weatherElement[6].time[j].elementValue[0].value != ' '){
-                        description[k].innerText = A.location[i].weatherElement[6].time[j].elementValue[0].value;
-                    }
-                    if(A.location[i].weatherElement[12].time[j].elementValue[0].value != ' '){
-                        temperature_hight[k].innerText = A.location[i].weatherElement[12].time[j].elementValue[0].value +'°C';
-                    }
-                    if(A.location[i].weatherElement[8].time[j].elementValue[0].value != ' '){
-                        temperature_low[k].innerText = A.location[i].weatherElement[8].time[j].elementValue[0].value +'°C';
-                    }
-                    let iconValue = A.location[i].weatherElement[6].time[j].elementValue[1].value;
-                    if(iconValue == 1 || iconValue==24){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/sun.svg";
-                    }else if(iconValue == 4 || iconValue==5 || iconValue==6 || iconValue==7 || iconValue==27 || iconValue==28){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/cloudy.svg";
-                    }else if(iconValue == 2 || iconValue==3 || iconValue==25 || iconValue==26){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/太陽雲.svg";
-                    }else if( (iconValue =>8  && iconValue <= 14) || (iconValue =>29  && iconValue <=32) || iconValue==39 || iconValue==38 || iconValue==20){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/rainy.svg";
-                    }else if( (iconValue =>15  && iconValue <= 18) || (iconValue =>33  && iconValue <=36) || iconValue==41 || iconValue==22){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/雨雷.svg";
-                    }else if(iconValue == 19){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/太陽雲雨.svg";
-                    }else if(iconValue == 21){
-                        document.getElementById(`weatherIcon${k+1}`).src = "./img/event/weather/太陽打雷雨.svg";
-                    }else if(iconValue == 23 || iconValue == 37 || iconValue == 42){
-                        document.getElementById('weatherIcon1').src = "./img/event/weather/snowing.svg";
-                    }
-                    k++;
-                }
+            }else{
+                alert( xhrlogin.status );
             }
         }
-    }).fail(function(err){
-        console.log(err)
+        let urllogin = "./php/7/eventlogin.php";
+        xhrlogin.open("Get", urllogin, true);
+        xhrlogin.send( null );
     });
 
 
-    // progress bar
-    // let progress_people = (抓取目前報名人數/目標志工人數)*100+'%' ;
-    let progress_people = '35%';
-    $('#people').css('width',progress_people);
-    // let progress_money = (抓取目前募款資金/目標募款金額)*100+'%' ;
-    let progress_money = '50%';
-    $('#money').css('width',progress_money);
- 
-    let arrLocation_current = [['L2', 0, 'M15'],['L10', 1, 'M17'],['L3', 0, 'M15'],['L6', 1, 'M16'],['L9', 1, 'M14'],['L7', 0, 'M5']];
-    let M_coordinate = [
-        {
-            x:23.686074,
-            y:120.430481,
-            M:'M0',
-        },
-        {
-            x:23.865906,
-            y: 120.987748,
-            M:'M1',
-        },
-        {
-            x:22.926451,
-            y:121.092937,
-            M:'M3',
-        },
-        {
-            x:24.589162,
-            y:121.660455,
-            M:'M5',
-        },
-        {
-            x:22.541248,
-            y: 120.648516,
-            M:'M6',
-        },
-        {
-            x:24.493358,
-            y:120.932175,
-            M:'M7',
-        },
-        {
-            x:23.572181,
-            y: 119.638578,
-            M:'M8',
-        },
-        {
-            x:25.046107,
-            y:121.581882,
-            M:'M9',
-        },
-        {
-            x:24.688897,
-            y:121.179726,
-            M:'M10',
-        },
-        {
-            x:23.790893,
-            y: 121.419469,
-            M:'M11',
-        },
-        {
-            x:23.007087,
-            y:120.617372,
-            M:'M12',
-        },
-        {
-            x:23.949142,
-            y:120.472990,
-            M:'M13',
-        },
-        {
-            x:24.784282,
-            y:120.944678,
-            M:'M14',
-        },
-        {
-            x:24.910631,
-            y: 121.486100,
-            M:'M15',
-        },
-        {
-            x:25.088912,
-            y:121.748856,
-            M:'M16',
-        },
-        {
-            x:24.204040,
-            y:120.744637,
-            M:'M17',
-        },
-        {
-            x:23.169436,
-            y:120.350915,
-            M:'M18',
-        },
-        {
-            x:24.950062,
-            y:121.268050,
-            M:'M19',
-        },
-        {
-            x:23.452674,
-            y:120.731225,
-            M:'M20',
-        },
-        {
-            x:23.470012,
-            y:120.451537,
-            M:'M21',
-        }
 
-    ]
-
-
-    $('#all').click(function(){
-        let image = document.getElementsByTagName('image');
-        for(let j=0 ; j<image.length ; j++){
-            image[j].style.display='none';
-        }
-        for(let j=0 ; j<22 ; j++){
-            $(`.M${j}`).removeClass('north');
-            $(`.M${j}`).removeClass('central');
-            $(`.M${j}`).removeClass('south');
-            $(`.M${j}`).removeClass('east');
-            $(`.M${j}`).removeClass('outlying');
-        }
-        for(let k =0; k<arrLocation_current.length; k++){
-            let location = arrLocation_current[k][2];
-            let M = document.getElementsByClassName(`${location}Mark`);
-            M[0].style.display = '';
-            let i = location.charAt(1)+location.charAt(2)
-            if(i==5 || i==9 || i==10 || i==14 || i==15 || i==16 || i==19){
-                $(`.${location}`).addClass('north');
-            }else if(i==0 || i==1 || i==7 || i==13 || i==17){
-                $(`.${location}`).addClass('central');
-            }else if(i==6 || i==12 || i==18 || i==20 || i==21){
-                $(`.${location}`).addClass('south');
-            }else if(i==3 || i==11){
-                $(`.${location}`).addClass('east');
-            }else if(i==2 || i==4 || i==8){
-                $(`.${location}`).addClass('outlying');
+    //====================================感謝有你=================================
+    function showRank(jsonStr){
+        let rankRow = JSON.parse(jsonStr);
+        console.log(rankRow);
+        function fbigcard(num){
+            for(let i=0 ; i<rankRow[0].length ; i++){
+                if(rankRow[0][i].MBRNO == rankRow[1][num].MBRNO){
+                    // rankRow[0][i].MBRNO
+                    $('#section3 #money-rank div.big-card-left').html("");
+                    $('#section3 #money-rank div.big-card-left').append(`
+                        <div class="pic"><img src="${rankRow[0][i].MBRPIC}"></div>
+                        <p class="description">簡介：${rankRow[0][i].MBRBIO}</p>
+                    `)
+                }
+            }
+            for(let r=0 ; r<rankRow[0].length ; r++){
+                if(rankRow[0][r].MBRNO == rankRow[1][num].MBRNO){
+                    var jnum = 0;
+                    var inum = 0;
+                    for(let j=0 ; j<rankRow[2].length ; j++){
+                        if(rankRow[2][j].MBRNO == rankRow[1][num].MBRNO){
+                            var jnum = rankRow[2][j].jnum;
+                            
+                        }
+                    }
+                    for(let k=0 ; k<rankRow[3].length ; k++){
+                        if(rankRow[3][k].MBRNO == rankRow[1][num].MBRNO){
+                            var inum = rankRow[3][k].inum;
+                        }
+                    }
+    
+                    $('#section3 #money-rank div.big-card-right').html("");
+                    $('#section3 #money-rank div.big-card-right').append(`
+                         <div class="donation-title">
+                            <div class="img">
+                                <img src="./img/event/icon/icon_chart-dots.png">
+                            </div>
+                            <h3>捐款累計金額</h3>
+                        </div>
+                        <div class="donation-total">$${rankRow[1][num].ftotal}</div>
+                        <p class="text">贊助活動次數</p>
+                        <p class="text donation-number">${rankRow[1][num].fnum}次</p>
+                        <p class="text">活動志工參與次數</p>
+                        <p class="text volunteer-number">${jnum}次</p>
+                        <p class="text">活動募款發起次數</p>
+                        <p class="text initiation-number">${inum}次</p>
+                    `);
+                }
             }
         }
-    })
-    $('#join').click(function(){
-        for(let j=0 ; j<22 ; j++){
-            $(`.M${j}`).removeClass('north');
-            $(`.M${j}`).removeClass('central');
-            $(`.M${j}`).removeClass('south');
-            $(`.M${j}`).removeClass('east');
-            $(`.M${j}`).removeClass('outlying');
-        }
-        let image = document.getElementsByTagName('image');
-        for(let j=0 ; j<image.length ; j++){
-            image[j].style.display='none';
-        }
-        for(let k =0; k<arrLocation_current.length; k++){
-            if(arrLocation_current[k][1] ==0){
-                let location = arrLocation_current[k][2];
-                let M = document.getElementsByClassName(`${location}Mark0`);
-                M[0].style.display = '';
-                let i = location.charAt(1)+location.charAt(2)
-                if(i==5 || i==9 || i==10 || i==14 || i==15 || i==16 || i==19){
-                    $(`.${location}`).addClass('north');
-                }else if(i==0 || i==1 || i==7 || i==13 || i==17){
-                    $(`.${location}`).addClass('central');
-                }else if(i==6 || i==12 || i==18 || i==20 || i==21){
-                    $(`.${location}`).addClass('south');
-                }else if(i==3 || i==11){
-                    $(`.${location}`).addClass('east');
-                }else if(i==2 || i==4 || i==8){
-                    $(`.${location}`).addClass('outlying');
+        function vbigcard(num){
+            $('#section3 #people-rank div.big-card-left').html("");
+            $('#section3 #people-rank div.big-card-left').append(`
+                <div class="pic"><img src="${rankRow[2][num].MBRPIC}"></div>
+                <p class="description">簡介：${rankRow[2][num].MBRBIO}</p>
+            `)
+            var fnum = 0;
+            var ftotal = 0;
+            var inum = 0;
+            for(let j=0 ; j<rankRow[1].length ; j++){
+                if(rankRow[1][j].MBRNO == rankRow[2][num].MBRNO){
+                    fnum = rankRow[1][j].fnum;
+                    ftotal = rankRow[1][j].ftotal;
                 }
+            }
+            for(let k=0 ; k<rankRow[3].length ; k++){
+                if(rankRow[3][k].MBRNO == rankRow[2][num].MBRNO){
+                    inum = rankRow[3][k].inum;
+                }
+            }
+            $('#section3 #people-rank div.big-card-right').html("");
+            $('#section3 #people-rank div.big-card-right').append(`
+                <div class="donation-title">
+                    <div class="img">
+                        <img src="./img/event/icon/icon_chart-dots.png">
+                    </div>
+                    <h3>志工參與次數</h3>
+                </div>
+                <div class="volunteer-number">${rankRow[2][num].jnum}次</div>
+                <p class="text">贊助活動次數</p>
+                <p class="text donation-number">${fnum}次</p>
+                <p class="text">捐款累計金額</p>
+                <p class="text donation-total">$${ftotal}</p>
+                <p class="text">活動募款發起次數</p>
+                <p class="text initiation-number">${inum}次</p>
+            `);
+        }
+        fbigcard(0);
+        vbigcard(0);
+        
+        $('#section3 #money-rank div.right').html("");
+        $('#section3 #people-rank div.right').html("");
+        for(let z=0 ; z<5 ; z++){
+            var jnum = 0;
+            var inum = 0;
+            for(let j=0 ; j<rankRow[2].length ; j++){
+                if(rankRow[2][j].MBRNO == rankRow[1][z].MBRNO){
+                    var jnum = rankRow[2][j].jnum;
+                    
+                }
+            }
+            for(let k=0 ; k<rankRow[3].length ; k++){
+                if(rankRow[3][k].MBRNO == rankRow[1][z].MBRNO){
+                    var inum = rankRow[3][k].inum;
+                }
+            }
+            $('#section3 #money-rank div.right').append(`
+                <div class="small-card TOP${z+1}">
+                    <div class="flex">
+                        <div class="TOP">${z+1}</div>
+                        <div class="pic"><img src="${rankRow[1][z].MBRPIC}"></div>
+                        <div class="text">
+                            <p>捐款人</p>
+                            <p id="name">${rankRow[1][z].MBRNAME}</p>
+                        </div>
+                        <div class="text">
+                            <p>累計金額</p>
+                            <p class="donation-total">$${rankRow[1][z].ftotal}</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <p class="text description shorten2">簡介：${rankRow[1][z].MBRBIO}</p>
+                        <p class="text more">more</p>
+                        <p class="text">贊助活動次數<span class="donation-total">${rankRow[1][z].fnum}次</span></p>
+                        <p class="text">活動志工參與次數<span class="volunteer-number">${jnum}次</span></p>
+                        <p class="text">活動募款發起次數<span class="initiation-number">${inum}次</span></p>
+                    </div>
+                </div>
+            `)
+            $('p.more').click(function(){
+                $(this).text('');
+                $(this).parent().children("p:first-child").removeClass('shorten2');
+            })
+        }
+        for(let y=0 ; y<5 ; y++){
+            var fnum = 0;
+            var ftotal = 0;
+            var inum = 0;
+            for(let j=0 ; j<rankRow[1].length ; j++){
+                if(rankRow[1][j].MBRNO == rankRow[2][y].MBRNO){
+                    fnum = rankRow[1][j].fnum;
+                    ftotal = rankRow[1][j].ftotal;
+                    
+                }
+            }
+            for(let k=0 ; k<rankRow[3].length ; k++){
+                if(rankRow[3][k].MBRNO == rankRow[2][y].MBRNO){
+                    inum = rankRow[3][k].inum;
+                }
+            }
+            $('#section3 #people-rank div.right').append(`
+                <div class="small-card TOP${y+1}">
+                    <div class="flex">
+                        <div class="TOP">${y+1}</div>
+                        <div class="pic"><img src="${rankRow[2][y].MBRPIC}"></div>
+                        <div class="text">
+                            <p>志工</p>
+                            <p id="name">${rankRow[2][y].MBRNAME}</p>
+                        </div>
+                        <div class="text">
+                            <p>累計次數</p>
+                            <p class="volunteer-number">${rankRow[2][y].jnum}次</p>
+                        </div>
+                    </div>
+                    <div class="detail">
+                        <p class="text description shorten2">簡介：${rankRow[2][y].MBRBIO}</p>
+                        <p class="text more">more</p>
+                        <p class="text">贊助活動次數<span class="donation-number">${fnum}次</span></p>
+                        <p class="text">捐款累計金額<span class="donation-total">$${ftotal}元</span></p>
+                        <p class="text">活動募款發起次數<span class="initiation-number">${inum}次</span></p>
+                    </div>
+                </div>
+            `)
+            $('p.more').click(function(){
+                $(this).text('');
+                $(this).parent().children("p:first-child").removeClass('shorten2');
+            })
+        }
+
+
+        function frankCard(){
+            if($(document).width() < 992){
+                $('#money-rank .small-card').removeClass('effect');
+            }else{
+                $('#money-rank .small-card').click(function(){
+                    $('#money-rank .small-card').removeClass('effect');
+                    $(this).addClass('effect');
+                    let top = $(this).find('div.TOP').text()-1;
+                    fbigcard(top);
+                })
+                for(i=1;i<4;i++){
+                    $(`#money-rank div.TOP${i}`).click(function(){
+                        let color = $(this).css('background-color');
+                        $('#money-rank div.big-card').css('background-color',`${color}`);
+                        $('#money-rank div.big-card p').css('color',`#fafafa`);
+                        $('#money-rank div.big-card div.donation-total').css('color',`#fafafa`);
+                        $('#money-rank div.big-card h3').css('color',`#fafafa`);
+                        $('#money-rank div.img img').attr('src','./img/event/icon/icon_chart-dots.png');
+                    })
+                }
+                for(i=4;i<6;i++){
+                    $(`#money-rank div.TOP${i}`).click(function(){
+                        let color = $(this).css('background-color');
+                        $('#money-rank div.big-card').css('background-color',`${color}`);
+                        $('#money-rank div.big-card p').css('color',`#1D1E4C`);
+                        $('#money-rank div.big-card div.donation-total').css('color',`#1D1E4C`);
+                        $('#money-rank div.big-card h3').css('color',`#1D1E4C`);
+                        $('#money-rank div.img img').attr('src','./img/event/icon/icon_chart-dots-blue.png');
+                    })
+                }
+            }
+        }
+        function vrankCard(){
+            if($(document).width() < 992){
+                $('#people-rank .small-card').removeClass('effect');
+            }else{
+                $('#people-rank .small-card').click(function(){
+                    $('#people-rank .small-card').removeClass('effect');
+                    $(this).addClass('effect');
+                    let top = $(this).find('div.TOP').text()-1;
+                    vbigcard(top);
+                })
+                for(i=1;i<4;i++){
+                    $(`#people-rank div.TOP${i}`).click(function(){
+                        let color = $(this).css('background-color');
+                        $('#people-rank div.big-card').css('background-color',`${color}`);
+                        $('#people-rank div.big-card p').css('color',`#fafafa`);
+                        $('#people-rank div.big-card div.volunteer-number').css('color',`#fafafa`);
+                        $('#people-rank div.big-card h3').css('color',`#fafafa`);
+                        $('#people-rank div.img img').attr('src','./img/event/icon/icon_chart-dots.png');
+                    })
+                }
+                for(i=4;i<6;i++){
+                    $(`#people-rank div.TOP${i}`).click(function(){
+                        let color = $(this).css('background-color');
+                        $('#people-rank div.big-card').css('background-color',`${color}`);
+                        $('#people-rank div.big-card p').css('color',`#1D1E4C`);
+                        $('#people-rank div.big-card h3').css('color',`#1D1E4C`);
+                        $('#people-rank div.big-card div.volunteer-number').css('color',`#1D1E4C`);
+                        $('#people-rank div.img img').attr('src','./img/event/icon/icon_chart-dots-blue.png');
+                    })
+                }
+            }
+        }
+        frankCard();
+        vrankCard();
+
+
+        $(window).resize(function(){
+            if($(document).width()<=767){
+                $('ul.menu >li:nth-child(1)').text('助環境一力');
+                $('ul.menu >li:nth-child(2)').text('與我們一起');
+            }else{
+                $('ul.menu >li:nth-child(1)').text('助環境一力 (參與活動)');
+                $('ul.menu >li:nth-child(2)').text('與我們一起 (發起活動)');    
+            }
+            $('ul.slides').css({left:0});
+            frankCard();
+            vrankCard();
+        })
+
+
+
+    }
+
+    function getRank(){
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function (){
+            if( xhr.status == 200 ){
+            // console.log(xhr.responseText);
+            showRank(xhr.responseText)
+            }else{
+                alert( xhr.status );
             }
         }
         
-    })
-    $('#coming').click(function(){
-        for(let j=0 ; j<22 ; j++){
-            $(`.M${j}`).removeClass('north');
-            $(`.M${j}`).removeClass('central');
-            $(`.M${j}`).removeClass('south');
-            $(`.M${j}`).removeClass('east');
-            $(`.M${j}`).removeClass('outlying');
-        }
-        let image = document.getElementsByTagName('image');
-        for(let j=0 ; j<image.length ; j++){
-            image[j].style.display='none';
-        }
-        for(let k =0; k<arrLocation_current.length; k++){
-            if(arrLocation_current[k][1] ==1){
-                let location = arrLocation_current[k][2];
-                let M = document.getElementsByClassName(`${location}Mark1`);
-                M[0].style.display = '';
-                let i = location.charAt(1)+location.charAt(2)
-                if(i==5 || i==9 || i==10 || i==14 || i==15 || i==16 || i==19){
-                    $(`.${location}`).addClass('north');
-                }else if(i==0 || i==1 || i==7 || i==13 || i==17){
-                    $(`.${location}`).addClass('central');
-                }else if(i==6 || i==12 || i==18 || i==20 || i==21){
-                    $(`.${location}`).addClass('south');
-                }else if(i==3 || i==11){
-                    $(`.${location}`).addClass('east');
-                }else if(i==2 || i==4 || i==8){
-                    $(`.${location}`).addClass('outlying');
-                }
-            }
-        }
-    })
-
-    let svgNS = 'http://www.w3.org/2000/svg';
-    let svg = document.getElementById('svg2606');
-    for(let i=0 ; i<M_coordinate.length ; i++){
-        let latitude = M_coordinate[i].x;
-        let x = 1200 - (( latitude - 21.7963923927 ) / 0.0030401102);
-        let longitude = M_coordinate[i].y;
-        let y = ( longitude - 119.172349167 ) / 0.0034174113;
-        let img = document.createElementNS(svgNS, 'image');
-        // img.setAttribute({x:`${y-70}`},{y:`${x-90}`},{width:'100'},{height:'100'},{class:'all'});
-        img.setAttribute('x', `${y-55}`);
-        img.setAttribute('y', `${x-105}`);
-        img.setAttribute('width', '100');
-        img.setAttribute('height', '100');
-        img.setAttribute('class', `all ${M_coordinate[i].M}Mark`);
-        img.setAttribute('style', `display:none;`);
-        img.href.baseVal = "./img/event/icon/mark_red.png";
-        svg.appendChild(img);
-        let img2 = document.createElementNS(svgNS, 'image');
-        img2.setAttribute('x', `${y-55}`);
-        img2.setAttribute('y', `${x-105}`);
-        img2.setAttribute('width', '100');
-        img2.setAttribute('height', '100');
-        img2.setAttribute('class', `join ${M_coordinate[i].M}Mark0`);
-        img2.setAttribute('style', `display:none;`);
-        img2.href.baseVal = "./img/event/icon/mark_green.png";
-        svg.appendChild(img2);
-        let img3 = document.createElementNS(svgNS, 'image');
-        img3.setAttribute('x', `${y-55}`);
-        img3.setAttribute('y', `${x-105}`);
-        img3.setAttribute('width', '100');
-        img3.setAttribute('height', '100');
-        img3.setAttribute('class', `coming ${M_coordinate[i].M}Mark1`);
-        img3.setAttribute('style', `display:none;`);
-        img3.href.baseVal = "./img/event/icon/mark_yellow.png";
-        svg.appendChild(img3);
+        var url = "./php/7/thanks.php";
+        xhr.open("Get", url, true);
+        xhr.send( null );
     }
 
-
-    for(let i = 0 ; i < 22 ; i++){
-        $(`.M${i}`).click(function(){
-            document.getElementById('all').checked = false;
-            document.getElementById('join').checked = false;
-            document.getElementById('coming').checked = false;
-            let image = document.getElementsByTagName('image');
-            for(let j=0; j< image.length ;j++){
-                image[j].style.display = 'none';
-            }
-            let M = document.getElementsByClassName(`M${i}Mark`);
-            for(let k=0 ; k< M.length ;k++){
-                M[k].style.display = '';
-            }
-            for(let j=0 ; j<22 ; j++){
-                $(`.M${j}`).removeClass('north');
-                $(`.M${j}`).removeClass('central');
-                $(`.M${j}`).removeClass('south');
-                $(`.M${j}`).removeClass('east');
-                $(`.M${j}`).removeClass('outlying');
-            }
-            if(i==5 || i==9 || i==10 || i==14 || i==15 || i==16 || i==19){
-                $(`.M${i}`).addClass('north');
-            }else if(i==0 || i==1 || i==7 || i==13 || i==17){
-                $(`.M${i}`).addClass('central');
-            }else if(i==6 || i==12 || i==18 || i==20 || i==21){
-                $(`.M${i}`).addClass('south');
-            }else if(i==3 || i==11){
-                $(`.M${i}`).addClass('east');
-            }else if(i==2 || i==4 || i==8){
-                $(`.M${i}`).addClass('outlying');
-            }
-            
-        })
-    }
-    $(`.M7`).addClass('central');
-    document.getElementsByClassName(`M7Mark`)[0].style.display = '';
-
+    getRank();
     
 })

@@ -84,7 +84,7 @@
 <!-- 帳戶選單登入燈箱 -->
 <ul id="AccountList" style="top: -200px; opacity: 0;">
     <!-- style="top:-300px" -->
-    <li id="LogInMemIdPhoto" style="display:none;"><img src="./img/selfieEG.jpg" alt="" ><span id="LogInMemId"></span></li>
+    <li id="LogInMemIdPhoto" style="display:none;"><img id="proHook" src="./img/selfieEG.jpg"><span id="LogInMemId"></span></li>
     <li id="GoMemberCenter"><a id="member_hook" href="./member.html">前往會員中心</a></li>
     <li id="hrline"><div></div></li>
     <li id="AccountListReg"><button id="AccountListRegBtn">註冊</button></li>
@@ -117,7 +117,7 @@
                     </div>
                     <div>
                         <label for="logMemPsw">設定密碼</label>
-                        <input type="password" id="logMemPsw" name="logMemPsw" placeholder="密碼長度必須為6-15位" maxlength="15" required size="30">
+                        <input type="password" id="logMemPsw" name="logMemPsw" placeholder="密碼長度必須為5-15位" maxlength="15" required size="30">
                     </div>
                     <div>
                         <label for="logMemPswCheck">確認密碼</label>
@@ -135,16 +135,9 @@
                         <label for="logMemMobileCheck">輸入電話</label>
                         <input type="text" id="logMemMobileCheck" name="logMemMobileCheck" placeholder="請輸入手機號碼" maxlength="10" required size="30">
                     </div>
-                    <!-- <div id="logCertificationDis">
-                        <label for="logCertificationNme">請輸入驗證碼</label>
-                        <div id="logCertificationNmeRow">
-                            <input type="text" id="logCertificationNme" name="logCertificationNme" placeholder="請輸入六位驗證碼" maxlength="6" required size="12">
-                        <button id="RegSendCertificationCode">發送驗證碼</button>
-                        </div>
-                    </div> -->
                     <label for="createAgree" id="IAgreeLabel" class="ModalRadioStyle"> <input type="radio" id="createAgree" name="createAgree" value="yes" required>我同意客戶服務條款與客戶隱私政策</label> 
                     <span id="createRemind"style="font-size: 13px;color:red;" >請先檢查帳號</span>
-                    <input disabled id="createNewAcc" type="submit" value="建立帳號" class="createNewAcc LowestBtn">
+                    <input disabled id="createNewAcc" type="button" value="建立帳號" class="createNewAcc LowestBtn">
                     
                 </form>
                 <div class="yellowSidePart"></div>
@@ -181,7 +174,7 @@
         <div class="whiteMainPart whiteMainPart2">
             <div class="yellowDecoBar DecoSide"></div>
         <div class="yellowDecoBar DecoBot"></div>
-            <h2 class="yellowBotBar">登入</h2>
+            <h2 class="yellowBotBar" style="text-align: center;">登入</h2>
             <form action="#" id="Overlay3Form">
                 <div>
                     <label for="MBRMAIL">輸入帳號</label>
@@ -194,9 +187,9 @@
                     <!-- <input type="password" id="LogInModalMemPsw" name="LogInModalMemPsw" required size="30" placeholder="6-15位英數混合，英文需區分大小寫"> -->
                 </div>
             </form>
-            <label for="LogInModalRememberMem"><input type="radio" id="LogInModalRememberMem" name="LogInModalRememberMem" value="RememberMem">記住我的帳號</label>
+            <label for="LogInModalRememberMem" style="margin: 0 auto;"><input type="radio" id="LogInModalRememberMem" name="LogInModalRememberMem" value="RememberMem">記住我的帳號</label>
             <button id="LogInModalLogInBtn" class="LowestBtn">登入</button>
-            <p id="ForgetPsw" class="ModalRedAlert">忘記密碼?</p>
+            <p id="ForgetPsw" class="ModalRedAlert" style="text-align: right;">忘記密碼?</p>
         </div>
         <div class="blackMinorPart" id="flexChange">
             <div class="flexBoxModel" >
@@ -225,8 +218,8 @@
         </div>
         <div class="whiteMainPart whiteMainPart4">
             <div>
-                <h2>忘記密碼</h2>
-                <div class="botEnSmallBar"></div>
+                <h2 style="text-align: center; padding-bottom:10px;">忘記密碼</h2>
+                <div class="botEnSmallBar" style="margin-bottom: 30px;"></div>
             </div>
             <form action="#" id="Overlay4Form">
                 <div>
@@ -235,7 +228,7 @@
                 </div>
             </form>
             <button id="SendPswToMailBtn" class="LowestBtn">送出密碼至信箱</button>
-            <p id="ForgetPswB2LogIn" class="ModalRedAlert">返回登入</p>
+            <p id="ForgetPswB2LogIn" class="ModalRedAlert" style="text-align: right;">返回登入</p>
         </div>
        
     </div>

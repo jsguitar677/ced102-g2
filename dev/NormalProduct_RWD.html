@@ -18,9 +18,11 @@
     <!-- git css連結用下列: -->
     <link rel="stylesheet" href="./css/pages/NormalProduct_RWD.css">
 
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
-    <title>R一般商品</title>
+    <title>一般商品www</title>
 </head>
 
 <body>
@@ -30,22 +32,28 @@
     @@include('./layout/login.html')
 
     <!-- 左方麵包條 -->
-    <div class="title-block">
+    <!-- <div class="title-block">
         <h5 class="title"><span>首頁/商城/</span>一般商品</h5>
-    </div>
+    </div> -->
 
     <section class="NormalProductPage">
         <div class="content_normalProduct">
             <!-- header底下裝飾背景圖 -->
             <div class="customizedTotleBox">
-                <p>CUSTOMIZED BAG</p>
-                <h5 class="title_2">客製化 - 購物袋</h5>
+                <!-- 左方麵包條 -->
+                <div class="title-block">
+                    <h5 class="title"><span>首頁/商城/</span>一般商品</h5>
+                </div>
+                <!-- 標題 -->
+                <p>Normal Product</p>
+                <h5 class="title_2">一般商品</h5>
                 <div class="yellowL"></div>
             </div>
 
             <!-- 頁面上半部:左側圖區  右側購物選單 -->
             <div class="container">
-                <div class="row all justify-content-center">
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~以下商品資訊區塊用vue渲染~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="row all justify-content-center" id="app">
                     <!-- ====================================左上側 商品展示區==================================== -->
                     <!-- ====================================左上側 商品展示區==================================== -->
                     <!-- ====================================左上側 商品展示區==================================== -->
@@ -53,43 +61,36 @@
                         <div class="leftarea_blockA">
                         <!-- ============展示圖片區============ -->
                         <!-- ============展示圖片區============ -->
-                        <!-- ============展示圖片區============ -->
-                            <div class="leftarea_blockA_L" id="NP_ZoomIn1">
-                                <img src="./img/mall/bag11.jpg" alt="">
-                                <div class="explain">正面</div>
+                            <div class="leftarea_blockA_L" id="NP_ZoomIn1" @click.stop="getURL">
+                                <img :src="theProdRow.PRODPIC_1">
+                                <div class="explain">放大檢視</div>
                             </div>
-    
+                            <!-- ------------------- -->
                             <div class="leftarea_blockA_R">
                                 <div class="leftarea_blockA_R1" id="NP_ZoomIn2">
-                                    <img src="./img/mall/bag12.jpg" alt="">
-                                    <div class="explain">側面</div>
+                                    <img :src="theProdRow.PRODPIC_2" @click.stop="getURL">
+                                    <div class="explain">放大檢視</div>
                                 </div>
                                 <div class="leftarea_blockA_R1" id="NP_ZoomIn3">
-                                    <img src="./img/mall/bag14.jpg" alt="">
-                                    <div class="explain">俯視</div>
+                                    <img :src="theProdRow.PRODPIC_4" @click.stop="getURL">
+                                    <div class="explain">放大檢視</div>
                                 </div>
                                 <div class="leftarea_blockA_R1 leftarea_blockA_R11" id="NP_ZoomIn4">
-                                    <img src="./img/mall/bag13.jpg" alt="">
-                                    <div class="explain">背面</div>
+                                    <img :src="theProdRow.PRODPIC_3" @click.stop="getURL">
+                                    <div class="explain">放大檢視</div>
                                 </div>
                                 <div class="leftarea_blockA_R1 leftarea_blockA_R11" id="NP_ZoomIn5">
-                                    <img src="./img/mall/bag15.jpg" alt="">
-                                    <div class="explain">平放</div>
+                                    <img :src="theProdRow.PRODPIC_5" @click.stop="getURL">
+                                    <div class="explain">放大檢視</div>
                                 </div>
                             </div>
                         </div>
                         <!-- ============商品簡介區============ -->
                         <!-- ============商品簡介區============ -->
-                        <!-- ============商品簡介區============ -->
                         <div class="leftarea_blockB" >
                             <h6 class="aboutProducts">商品簡介</h6>
                             <img src="./img/mall/bottom.png" id="showInfo">
-                            <p class="textaboutProducts" id="showInforHere">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae consequuntur doloremque minus, aperiam doloribus mollitia facere fuga est excepturi hic suscipit veniam iste atque esse ab eum ratione ipsam ea soluta quos
-                                voluptas corrupti nesciunt! Soluta eveniet consequatur aliquam repellat animi, porro sed, totam inventore laudantium officiis praesentium in cumque possimus explicabo odit. Culpa ex perspiciatis impedit soluta dolorum voluptatibus
-                                earum quo eum eveniet animi sunt enim placeat eligendi error rerum ad, corporis accusantium beatae in praesentium architecto possimus alias fuga. Illo provident et deleniti aliquam sed voluptates minus quod sequi. Corporis
-                                neque, alias ut quis aperiam enim explicabo quod.
-                            </p>
+                            <p class="textaboutProducts" id="showInforHere">{{theProdRow.PRODBIO}}</p>
                         </div>
                     </div>
                     <!-- ====================================右上側 選購數量區==================================== -->
@@ -97,12 +98,24 @@
                     <!-- ====================================右上側 選購數量區==================================== -->
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-11 rightarea">
                         <!-- ============================== -->
-                        <form action="" method="get" class="inforOfTheForm">
-                            <!-- ===========選擇數量區============= -->
-                            <!-- ===========選擇數量區============= -->
-                            <!-- ===========選擇數量區============= -->
+                        <form action="cart.html" method="get" class="inforOfTheForm" id="theForm">
+                            <!-- ===========商品選購區============= -->
+                            <!-- ===========商品選購區============= -->
                             <div class="qty_block">
                                 <p class="stepExplain">請選擇購買數量</p>
+                                <!-- <p>商品編號:</p><span>{{theProdRow.PRODNO}}</span> -->
+                                <p class="prodNumber prodNumberA">(商品編號:</p> <p class="prodNumber" id="prodNo">{{theProdRow.PRODNO}}</p> <p class="prodNumber">)</p>
+                                <!-- ========價格區(小計先拿掉)======== -->
+                                <!-- ========價格區(小計先拿掉)======== -->
+                                <div class="tal_block">
+                                    <!-- <p class="stepExplain">小計</p> -->
+                                    <div class="placementOfTal">
+                                        <label class="thePrice">NT$</label><label>{{theProdRow.PRODPRICE}}</label>
+                                        <br>
+                                    </div>
+                                </div>
+                                <!-- ===========選擇數量區============= -->
+                                <!-- ===========選擇數量區============= -->
                                 <div class="placememtOfQty">
                                     <label class="style_qty">數量</label>
                                     <select class="select_qty_pcs" name="select_qty_pcs">
@@ -129,151 +142,217 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- =============小計區=============== -->
-                            <!-- =============小計區=============== -->
-                            <!-- =============小計區=============== -->
-                            <div class="tal_block">
-                                <p class="stepExplain">小計</p>
-                                <div class="placementOfTal">
-                                    <label class="thePrice">商品價格</label><label>NT$500</label>
-                                    <br>
-                                    <label class="thePrice">小計金額</label><label>NT$500</label>
-                                </div>
-                            </div>
-                            
+                            <!-- ===========CART按鈕區============= -->
+                            <!-- ===========CART按鈕區============= -->
                             <div class="placeOfSubmit">
                                 <a href="">
-                                    <button type="submit" name="shopping_cart" class="btn_shopping_cart">加入購物車
+                                    <button type="submit" name="shopping_cart" class="btn_shopping_cart" id="'a'+submitToCart">加入購物車
                                         <i class="fas fa-shopping-cart fa-1x"></i>
                                     </button>
                                 </a>
                             </div>
                         </form>
                     </div>
-                </div>
-                <!-- =====================================下側 推薦商品區===================================== -->
-                <!-- =====================================下側 推薦商品區===================================== -->
-                <!-- =====================================下側 推薦商品區===================================== -->
-                <div class="row all_Bottom justify-content-center">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-10 bottomarea">
-                        <h5 class="title_2">熱門推薦商品</h5>
-                        <div class="bottomareaBoxA">
+                    <!-- =======================燈箱 : 商品放大展示================================ -->
+                    <!-- =======================燈箱 : 商品放大展示================================ -->
+                    <!-- =======================燈箱 : 商品放大展示================================ -->
 
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
-                            <div class="product">
-                                <a href=""><img src="./img/mall/bag1.jpg"></a>
-                                <div class="productInfo">
-                                    <p class="NameAndPrice">環保杯套</p>
-                                    <p class="NameAndPrice">NT$
-                                        <span class="price">500</span>
-                                        <button>
-                                            <i class="fas fa-shopping-cart fa-1x"></i>
-                                            <p>加入購物車</p>
-                                        </button>
-                                    </p> 
-                                </div>
-                            </div>
+                    <div class="NP_showBox_bg" id="NP_lightBox">
+                        <div class="NP_showBox">
+                            <img :src="theImage" class="NP_showHere" id="NP_showImgHere">
+                            <img src="./img/mall/x_white.png" class="NP_turnOffBtn" id="NPtheTurnOffBtn" @click="closeBox">
                         </div>
                     </div>
+
                 </div>
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~以上商品資訊區塊用vue渲染//~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                
+                
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~以下建薦商品區塊用vue渲染~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <!-- ===========================「推薦商品」的卡片=========================== -->
+                <!-- ===========================「推薦商品」的卡片=========================== -->
+                <div class="row all_Bottom justify-content-center">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-10 bottomarea">
+                        <p>HOT PRODUCTS</p>
+                        <h5 class="title_2">熱門推薦商品</h5>
+                        <div class="newProLine"></div>
+                        <!-- ====================放置動態「推薦商品」的卡片==================== -->
+                        <div id="appNewProd" class="bottomareaBoxA">
+                            <!-- --------- -->
+                            <div v-for="NewProdRow in NewProdRows" class="product" v-bind:id="NewProdRow.PRODNO">
+                                <img :src="NewProdRow.PRODPIC_1">
+                                <div class="productInfo">
+                                    <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
+                                    <p class="NameAndPrice">NT$
+                                        <span class="price">{{NewProdRow.PRODPRICE}}</span>
+                                        <button class="CartBtnOfMall" v-bind:id="'a'+NewProdRow.PRODNO">
+                                            <i class="fas fa-shopping-cart fa-1x"></i>
+                                            <p>加入購物車</p>
+                                        </button>
+                                    </p> 
+                                </div>
+                            </div>
+                            <!-- --------- -->
+                        </div>
+                        <!-- ====================放置動態「推薦商品」的卡片//================== -->
+                    </div>
+                </div>
+                <!-- ===========================「推薦商品」的卡片//========================= -->
+                <!-- ===========================「推薦商品」的卡片//========================= -->
+                <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~以上建薦商品區塊用vue渲染~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             </div>
         </div>
-
-        <!-- =======================燈箱 : 商品放大展示======================= -->
-        <!-- =======================燈箱 : 商品放大展示======================= -->
-        <!-- =======================燈箱 : 商品放大展示======================= -->
-        <div class="NP_showBox_bg" id="NP_lightBox">
-            <div class="NP_showBox">
-                <img src="./img/mall/bag11.jpg" class="NP_showHere" id="NP_showImgHere">
-                <img src="./img/mall/x_white.png" class="NP_turnOffBtn" id="NPtheTurnOffBtn">
-                <!-- <button class="round-cxl-add" ><i class="fas fa-times-circle"></i></button> -->
-            </div>
-        </div>
-
     </section> 
 
-
-    <script>
-        //===========燈箱圖片 切換===========:
-        //===========燈箱圖片 切換===========:
-        //===========燈箱圖片 切換===========:
-        $(document).ready(function(){
-            //click第一圖 跳出燈箱
-            $('#NP_ZoomIn1').click(function(){
-                $('#NP_lightBox').css('display','block');
-                $('#NP_showImgHere').attr('src','./img/mall/bag11.jpg');
-            });
-            //click第二圖 跳出燈箱
-            $('#NP_ZoomIn2').click(function(){
-                $('#NP_lightBox').css('display','block');
-                $('#NP_showImgHere').attr('src','./img/mall/bag12.jpg');
-            });
-            //click第三圖 跳出燈箱
-            $('#NP_ZoomIn3').click(function(){
-                $('#NP_lightBox').css('display','block');
-                $('#NP_showImgHere').attr('src','./img/mall/bag14.jpg');
-            });
-            //click第四圖 跳出燈箱
-            $('#NP_ZoomIn4').click(function(){
-                $('#NP_lightBox').css('display','block');
-                $('#NP_showImgHere').attr('src','./img/mall/bag13.jpg');
-            });
-            //click第五圖 跳出燈箱
-            $('#NP_ZoomIn5').click(function(){
-                $('#NP_lightBox').css('display','block');
-                $('#NP_showImgHere').attr('src','./img/mall/bag15.jpg');
-            });
-
-            //click "X" 關閉燈箱
-            $('#NPtheTurnOffBtn').click(function(){
-                $('#NP_lightBox').css('display','none');
-            });
-        });
-    </script>
-    
-    <!-- ================================================================= -->
-
     <script>
         //===========商品簡介 切換===========:
         //===========商品簡介 切換===========:
-        //===========商品簡介 切換===========:
-        $(document).ready(function(){
+        $(function(){
             $('#showInfo').click(function(){
                     $('#showInforHere').slideToggle();
             })
         });
     </script>
+    <!-- ?????????? 測試傳資訊到cart.html ?????????? -->
+    <script>
+        let prodNo = $('#prodNo').attr('prodNo');
+        $('#submitToCart').click(function(){
+            location.href=`cart.html?prodNo=${prodNo}`;
+        })
+    </script>
+    <!-- ?????????????????????????????????????????? -->
 
 
+    <script>
+        // ================(A1) 先到session取值，判斷(前一頁)商城是哪個商品被click========
+        // ================(A1) 先到session取值，判斷(前一頁)商城是哪個商品被click========
+        let id;
+        function doFirst(){
+            let storage = sessionStorage;
+            if(storage['ItemId'] == null){
+                storage['ItemId'] = '';
+            }
+            let showTheProd = storage.getItem('ItemId');
+            //console.loge(showTheProd);
+            id = showTheProd;
+            // alert(id );
+            storage['ItemId'] = '';
+        }
+        // ================(B1) 依照從session上取到的值(即商品編號)去抓資料庫=============
+        // ================(B1) 依照從session上取到的值(即商品編號)去抓資料庫=============
+        function showProd(){
+            let xhrShowProd = new XMLHttpRequest();
+            xhrShowProd.onload = function(){
+                theProdRow = JSON.parse(xhrShowProd.responseText);
+                //console.log(theProdRow);
+                app.theProdRow = theProdRow;
+                // alert(theProdRow);
+            }
+            xhrShowProd.open("get", `./php/mall/showTheProduct.php?id=${id}`, true);
+            xhrShowProd.send(null);
+        }
+        // ================(C1) 把資料庫抓到的指定商品渲染到頁面上========================
+        // ================(C1) 把資料庫抓到的指定商品渲染到頁面上========================
+        var app = new Vue({
+            el: '#app',
+            data: {
+                theProdRow: [],
+                theImage: '',
+            },
+            methods:{
+                getURL(e){
+                    $('#NP_lightBox').css('display','block');
+                    this.theImage = e.target.src;
+                },
+                closeBox(){
+                    $('#NP_lightBox').css('display','none');
+                },
+            },
+         });
 
+        // ================(A2) 到資料庫取資料放到「推薦商品區」=============
+        // ================(A2) 到資料庫取資料放到「推薦商品區」=============
+        function getNewProducts(){
+            let xhrNewProuct = new XMLHttpRequest();
+            xhrNewProuct.onload = function(){
+                NewProdRows = JSON.parse(xhrNewProuct.responseText);
+                //console.log(xhrNewProuct.responseText);
+                //console.log(NewProdRows);
+                appNewProd.NewProdRows = NewProdRows;
+            }
+            xhrNewProuct.open("get", "./php/mall/showHotProduct.php", true);
+            xhrNewProuct.send(null);
+        }
+        // ================(B2) 把資料庫取得的資料渲染到「推薦商品區」=======
+        // ================(B2) 把資料庫取得的資料渲染到「推薦商品區」=======
+        var appNewProd = new Vue({
+            el: '#appNewProd',
+            data: {
+                NewProdRows: [],
+            },
+
+            // click本頁面下方的「推薦商品」後，上方「展示區」要顯示被click到的「推薦商品」
+            mounted(){
+                let storage = sessionStorage;
+
+                //ItemId : for商城記錄click到哪個商品
+                if(storage['ItemId'] == null){
+                    storage['ItemId'] = '';
+                }
+                //addItemList : for購物車記錄把哪個商品加到購物車
+                if(storage['addItemList'] == null){
+                    storage['addItemList'] = '';
+                }
+
+                setTimeout(()=>{
+                    //先幫每張推薦商品卡片建立事件聆聽功能
+                    let prodCard = document.querySelectorAll('.product');
+                    for(let i = 0; i < prodCard.length; i++){
+                        prodCard[i].addEventListener('click',function(){
+                            theId = this.id;
+                            storage.setItem('ItemId',theId);
+                            let showTheProd = storage.getItem('ItemId');
+                            //取出session的值
+                            id = showTheProd;
+                            //執行function showProd()
+                            showProd();
+                            //把session裡key為ItemId的值清掉
+                            storage['ItemId'] = '';
+                            // ------------
+                        });
+                    }
+                    // **************click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)**************
+                    // **************click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)**************
+                    //幫每個購物車btn建立事件聆聽功能
+                    let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                    for(let i = 0; i < CartBtn.length; i++){
+                        CartBtn[i].addEventListener('click',function(){
+                            theBtnId = this.id;
+                            //click後 就把theBtnId = this.id存入session
+                            storage['addItemList'] += `${theBtnId}, `;
+                            //這個程式沒有要清掉addItemList的value, 何時清掉addItemList的value要寫在購物車(應該是這樣)
+                        });
+                    }
+                    // ************************************************************************************************
+                    // ************************************************************************************************
+                },50)
+            }
+        });
+
+
+        // ----------------------------------------------------------------------------
+        window.addEventListener("load", function(){
+        // 執行:撈取「session裡的value」函式
+        doFirst();  
+        // 執行:依session的值去抓資料庫
+        showProd();
+        // 執行:撈取「推薦商品」函式
+        getNewProducts();
+    })
+    </script>
 
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
-    <!-- <script src="./js/login.js"></script> -->
+    <script src="./js/login.js"></script>
 </body>
 </html>

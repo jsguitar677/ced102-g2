@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="./css/pages/member.css">
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
-    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
-    <!-- 引用owl & jQuery -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"> -->
-    
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
@@ -48,11 +43,11 @@
                         <label for="eventManagementCancelReason">
                             理由
                         </label>
-                        <textarea id="textarea2" name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
+                        <textarea  name="eventManagementCancelReason" id="eventManagementCancelReason" cols="30" rows="10" placeholder="取消活動原因..."></textarea>
                     </div>
                     <div id="eventManagementBtnCon">
                         <button id="eventManagementCancel">取消</button>
-                        <button id="eventManagementSubmit">提交審核</button>
+                        <input type="submit" id="eventManagementSubmit">提交審核</button>
                     </div>
                 </form>
             </div>
@@ -61,36 +56,12 @@
         <main>
             <div class="genInfor">
                 <!-- 上block -->
-                <div class="personBlock comShape">
-                    <div class="proTopBlock">
-                        <img src="https://fakeimg.pl/135x135/" alt="">
-                        <button>
-                            <i class="fas fa-camera-retro fa-2x"></i>
-                        </button>
-                        <span>
-                            <h7>Carman Li</h7>
-                            <p>生日:1993/01/01</p>
-                        </span>
-                    </div>
-                    <div class="proBtnBlock">
-                        <div id="appMemberBriefIntro">
-                            <span>
-                                <h6>Carman Li</h6>
-                                <p>生日:1993/01/01</p>
-                            </span>
-                            <!-- <input class="comInput" type="text" placeholder="輸入自我介紹吧!"> -->
-                            <p>{{MemberBriefIntroMessage}}</p>
-                            <textarea class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5" v-model="MemberBriefIntroMessage"></textarea>
-                            <button id="editBreifIntro">
-                                <i class="far fa-edit fa-2x"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                @@include('./layout/memberProf.html')
+                
                 <!-- 下block -->
                 <div class="cumulativeBlcok comShape" id="underNoBorder">
-                    <button class="tabLinks " onclick="openPage(event, 'memInfo')" id="defaultOpen">
-                        <div class="btnDisCon" id="btnDisCon1">
+                    <button onclick="self.location.href='./member.html'" class="tabLinks" id="defaultOpen" style="background-color:#FFD241;" >
+                        <div class="btnDisCon" id="btnDisCon1" >
                             <span>
                                 <i class="fas fa-user-alt"></i>
                                 <span class="btnText" id=" MemSpanEnSmall">會員資訊</span>
@@ -100,7 +71,7 @@
                             </span>
                         </div>
                     </button>
-                    <button class="tabLinks " onclick="openPage(event, 'memExp')" id="expExch">
+                    <button class="tabLinks " onclick="self.location.href='./memberEXP.html'" id="expExch">
                         <div class="btnDisCon" id="btnDisCon2">
                             <span>
                                 <i class="fas fa-exchange-alt"></i>
@@ -111,7 +82,7 @@
                             </span>
                         </div>
                     </button>
-                    <button class="tabLinks " onclick="openPage(event, 'orderRecord')" >
+                    <button class="tabLinks " onclick="self.location.href='./memberOrderRecord.html'" >
                         <div class="btnDisCon" id="btnDisCon3">
                             <span>
                                 <i class="fas fa-shopping-bag"></i>
@@ -122,7 +93,7 @@
                             </span>
                         </div>
                     </button>
-                    <button class="tabLinks " onclick="openPage(event, 'participateRecord')">
+                    <button class="tabLinks " onclick="self.location.href='./memberPartiRecord.html'">
                         <div class="btnDisCon" id="btnDisCon4">
                             <span>
                                 <i class="fas fa-chart-bar"></i>
@@ -133,7 +104,7 @@
                             </span>
                         </div>
                     </button>
-                    <button class="tabLinks " onclick="openPage(event, 'eventManagement')">
+                    <button class="tabLinks " onclick="self.location.href='./memberEventManage.html'">
                         <div class="btnDisCon" id="btnDisCon5">
                             <span>
                                 <i class="fas fa-fist-raised"></i>
@@ -144,7 +115,7 @@
                             </span>
                         </div>
                     </button>
-                    <button class="tabLinks " onclick="openPage(event, 'eventSave')">
+                    <button class="tabLinks " onclick="self.location.href='./memberEventSave.html'">
                         <div class="btnDisCon" id="btnDisCon6">
                             <span>
                                 <i class="far fa-heart"></i>
@@ -160,7 +131,7 @@
 
         <!-- ---------------------------------------------- -->
 
-            <div class="memberContent comShape" id="memberContentId">
+            <div class="memberContent comShape btnConMemInfo" id="memberContentId">
                 <div id="memInfo" class="tabContent ">
                     <div class="participateTitle">
                         <div class="sdada">
@@ -171,7 +142,7 @@
                         <div class="memInfoBox">
                             <div class="memInfoTop">
                                 <div class="memrInfoLeft">會員等級</div>
-                                <div class="memrInfoMiddle">資深會員</div>
+                                <div class="memrInfoMiddle" id="memLevel"></div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -188,7 +159,7 @@
                         <div class="memInfoBox">
                             <div class="memInfoTop">
                                 <div class="memrInfoLeft">累計環保幣</div>
-                                <div class="memrInfoMiddle">50P</div>
+                                <div class="memrInfoMiddle" id="mbrToken">0P</div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -203,8 +174,8 @@
                         </div>
                         <div class="memInfoBox">
                             <div class="memInfoTop">
-                                <div  class="memrInfoLeft">累計經驗值</div>
-                                <div class="memrInfoMiddle">150 exp</div>
+                                <div  class="memrInfoLeft" >累計經驗值</div>
+                                <div class="memrInfoMiddle" id="memInfoExp">150 exp</div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -221,7 +192,7 @@
                         <div class="memInfoBox">
                             <div class="memInfoTop">
                                 <div  class="memrInfoLeft">贊助累計金額</div>
-                                <div class="memrInfoMiddle">$1300</div>
+                                <div class="memrInfoMiddle" id="sponsorTotalMoney">$0</div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -237,7 +208,7 @@
                         <div class="memInfoBox">
                             <div class="memInfoTop">
                                 <div  class="memrInfoLeft">贊助次數</div>
-                                <div class="memrInfoMiddle">3次</div>
+                                <div class="memrInfoMiddle" id="sponsorTotalTime">0次</div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -253,7 +224,7 @@
                         <div class="memInfoBox">
                             <div class="memInfoTop">
                                 <div  class="memrInfoLeft">參與活動次數</div>
-                                <div class="memrInfoMiddle">3次</div>
+                                <div class="memrInfoMiddle" id="actTime">0次</div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -269,7 +240,7 @@
                         <div class="memInfoBox">
                             <div class="memInfoTop">
                                 <div  class="memrInfoLeft">活動發起次數</div>
-                                <div class="memrInfoMiddle">1次</div>
+                                <div class="memrInfoMiddle" id="hostActTime">0次</div>
                                 <button class="infoBtn">
                                     <span class="plusIcon"><i class="far fa-plus-square fa-2x"></i></span>
                                     <span class="minusIcon"><i class="far fa-minus-square fa-2x"></i></span>
@@ -284,390 +255,20 @@
                         </div>
                     </div>
                 </div>
-                <div id="memExp" class="tabContent ">
-                    <div class="participateTitle">
-                        <div class="sdada">
-                            <h6>經建值對話</h6>
-                        </div>
-                    </div>
-                    <div class="expContent">
-                        <div class="expDescription">
-                            <p>
-                                <b>晉升資深會員，超多好康等著你</b><br>
-                                會員進行以下活動可取得相對應的經驗值，成功發起活動:100，參加活動:25，募資捐款(每捐助100元可換5點經驗值，一次最高換取25點)，分享活動:5(一個活動
-                                限領取一次)，留言:5(一個活動限領取一次)。
-                            </p>
-                        </div>
-                        <div class="expExchange">
-                            <div class="excBlcok">
-                                <div class="expPart expRight">
-                                    
-                                    <p>累積100經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                                    
-                                </div>
-                                <div class="expPart expRight">
-                                    
-                                    <p>累積200經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                                
-                                </div>
-                                <div class="expPart expRight">
-                                
-                                    <p>累積300經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                            
-                                </div>
-                                <div class="expPart expRight">
-                            
-                                    <p>累積400經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                            
-                                </div>
-                                <div class="expPart expRight">
-                                
-                                    <p>累積500經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                            
-                                </div>
-                                <div class="expPart expRight">
-                            
-                                    <p>累積600經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                            
-                                </div>
-                                <div class="expPart expRight">
-                        
-                                    <p>累積700經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                            
-                                </div>
-                                <div class="expPart expRight">
-                                
-                                    <p>累積800經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                        
-                                </div>
-                                <div class="expPart expRight">
-                        
-                                    <p>累積900經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                            
-                                </div>
-                                <div class="expPart expRight">
-                    
-                                    <p>累積1000經驗值</p>
-                                    <button class="comBtn2">領取50環保幣</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>        
-                </div>
-                
-                <div id="orderRecord" class="tabContent">
-                    <div class="participateTitle">
-                        <h6>商城消費紀錄</h6>
-                    </div>
-                    <div class="orderBlock">
-                        <div class="orderSelect">
-                            <p>選擇日期</p>
-                            <select>
-                                <option>請選擇訂單日期</option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                                <option></option>
-                            </select>
-                        </div>
-                        <div class="page3FormBox">
-                            <form action="">
-                                <table id="page3form">
-                                    <thead >
-                                        <tr id="memberTableTitle">
-                                            <td>活動日期</td>
-                                            <td>訂單編號</td>
-                                            <td>訂單狀態</td>
-                                            <td>送貨狀態</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="memberTableTopBorder">
-                                        <tr>
-                                            <td>2013/03/24</td>
-                                            <td>#332345</td>
-                                            <td>已取貨</td>
-                                            <td>備貨中</td>
-                                        </tr>
-                                    </tbody>
-            
-                                    <thead>
-                                        <tr id="memberTableRowBorder">
-                                            <th>商品圖片</th>
-                                            <th>商品名稱</th>
-                                            <th>數量</th>
-                                            <th>商品單價</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="proItemDetail">
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                        <tr>
-                                            <td><img  src="https://fakeimg.pl/40x40/" alt=""></td>
-                                            <td>客製化</td>
-                                            <td>1</td>
-                                            <td>100$</td>
-                                        </tr>
-                                    </tbody>
-                                    <thead class="thead" id="memberTableLowBlock">
-                                        <tr><th colspan="4">商品總金額 300$</th></tr>
-                                        <tr><th colspan="4">使用環保幣折扣 -30$</th></tr>
-                                        <tr><th colspan="4">總價270$</th></tr>
-                                    </thead>
-                                </table> 
-                            </form>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div id="participateRecord" class="tabContent">
-                    <div class="participateTitle">
-                        <h6>參與募款</h6>
-                    </div>
-                    
-                    
-                    <div class="participateRecordCon">
-                        <table class="participateRecordTable">
-                            <tr id="participateRecordRow1">
-                                <th>活動日期</th>
-                                <th>活動名稱</th>
-                                <th>活動地點</th>
-                                <th>贊助金額</th>
-                                <th>活動編號</th>
-                                <th>查詢活動連結</th>
-                            </tr>
-                            <tr id="participateRecordCont">
-                                <td>2013/03/30</td>
-                                <td>一起去打寶</td>
-                                <td>桃園永安漁港</td>
-                                <td>$400</td>
-                                <td>@313313</td>
-                                <th><button class="comBtn ActLink">活動連結</button></th>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="participateTitle">
-                        <div class="sdada">
-                            <h6>志工紀錄</h6>
-                        </div>
-                    </div>
-
-                    <div class="participateRecordCon">
-                        <table class="participateRecordTable">
-                            <tr id="participateRecordRow1">
-                                <th>活動日期</th>
-                                <th>活動名稱</th>
-                                <th>活動地點</th>
-                                <th>活動編號</th>
-                                <th>查詢活動連結</th>
-                            </tr>
-                            <tr id="participateRecordCont" class="participateRecordContent">
-                                <td>2013/03/30</td>
-                                <td>一起去打寶</td>
-                                <td>桃園永安漁港</td>
-                                <td>@313313</td>
-                                <th><button class="comBtn ActLink">活動連結</button></th>
-                            </tr>
-                            <tr class="participateRecordContent">
-                                <td>2013/03/30</td>
-                                <td>我只想撿回收</td>
-                                <td>新金山海灣</td>
-                                <td>@313313</td>
-                                <th><button class="comBtn ActLink">活動連結</button></th>
-                            </tr>
-                        </table>
-                    </div>
-                    <p>感謝您的支持。</p>
-                </div> 
-                <div id="eventManagement" class="tabContent">
-                    <div class="participateTitle">
-                        <div class="sdada">
-                            <h6>活動發起管理</h6>
-                        </div>
-                    </div>
-
-                    <div class="participateRecordCon">
-                        <table class="eventManagementTable">
-                            <tr class="eventManagementRow1">
-                                <th>活動日期</th>
-                                <th>活動編號</th>
-                                <th>活動狀態</th>
-                                <th>管理</th>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>延期中</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>進行中</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>失敗</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            <tr class="eventManagementContent">
-                                <td>2021/01/21 13:00</td>
-                                <td>編號#2222222活動由系統下架!</td>
-                                <td>成功</td>
-                                <td><button class="comBtn CancelLink">取消</button></td>
-                            </tr>
-                            
-                        </table>
-                    </div>
-                    
-                </div>
-                <div id="eventSave" class="tabContent">
-                    <div class="participateTitle">
-                        <div class="sdada">
-                            <h6>活動收藏</h6>
-                        </div>
-                    </div>
-                    <div class="eventSaveBox">
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                        <div class="page5Card">
-                            <div class="content">
-                                <h2 class="title">桃園-永安漁港</h2>
-                                <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
-                                <button class="btn membtn">See More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </main>
     </div>
     
     @@include('./layout/footer.html')
-    
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
-    
-    
     <!-- 樣板 footer -->
-    <script src="./js/member.js"></script>
     <script src="./js/login.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <!-- Swiper JS -->
-    <!-- <script src="./js/swiper-bundle.js"></script> -->
-    <script src="js/swiper-all.js"></script>
+    <!-- 共同會員的js -->
+    <script src="./js/member.js"></script>
+    <!-- 這個頁面的js -->
+    <script src="./js/memberInfo.js"></script>
+
 </body>
 
 </html>

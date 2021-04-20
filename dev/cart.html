@@ -56,17 +56,16 @@
                 <h2 class="sub-title">確認訂單明細</h1>
                 <div class="sub-title-line"></div>
             </div>
-            <form id="app">
+            <form id="app" action="payment.html">
                 <table class="table wrap">
-                    <!-- <div id="emptycart" class="item_body" style="padding: 20px;">
-                        <p style="margin: 0 auto;">您還沒挑選任何商品，歡迎到商城逛逛唷！</p>
-                    </div> -->
-                    <!-- <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id"> -->
-                        <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id" >
+                    <div  class="item_body space_box" style="padding: 20px;">
+                        <p style="margin: 0 auto; text-align: center;">您還沒挑選任何商品，歡迎到商城逛逛唷！</p>
+                    </div>
+                    <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id" >
                         <div class=" item_body prodInfo">
                             <div class="item_detail">
                                 <!-- <img v-bind:src="item.imgUrl" alt=""> -->
-                                <div class="img prodPic"></div>
+                                <div class="img prodPic"><img v-bind:src="item.imgUrl" alt="" style="max-width:100% "></div>
                                 <!-- <div class="name">{{item.itemName}}</div> -->
                                 <div class="prodName name"><span>品名:</span>{{item.itemName}}</div>
                                 <div class="size prodSize"><span>尺寸:</span>{{item.size}}</div>
@@ -90,33 +89,41 @@
                   
                 </table>
             
-            <div class="total_body">
-                <div class="total-title">
-                    <h7 class="detail">結帳明細</h7>
-                </div>
-                <div class="row">
-                    <span class="label">商品總金額:</span>
-                    <div class="formw totalAmount">$<span id="subtotal">{{totalPrice}}</span></div>
-                    <!-- <span class="formw"><input type="text" size="25" /></span> -->
-                </div>
-                <div class="row">
-                    <span class="label">使用環保幣折扣:</span>
-                    <input class="formw discount"  value="登入會員才能折抵" readonly style="outline: none;border:none;font-size: 16px; " >
-                </div>
-                
-                
-                <div class="orderCount">
+                <div class="total_body">
+                    <div class="total-title">
+                        <h7 class="detail">結帳明細</h7>
+                    </div>
+                    <div class="row">
+                        <span class="label">商品總金額:</span>
+                        <div class="formw totalAmount">$<span id="subtotal">{{totalPrice}}</span></div>
+                        <!-- <span class="formw"><input type="text" size="25" /></span> -->
+                    </div>
+                    <div class="row recordPoint">
+                        <span class="label point">您目前持有點數:</span>
+                        <div id="getPoint" class="formw ">0</div>
+                    </div>
+                    <div class="row">
+                        <span class="label usePointsP">使用環保幣折扣:</span>
+                        <div class="formw"><button class="button loginbutton" type="button">請登入會員</button></div>
+                        <input class="formw discount"  type="text" name="usePointShow" value="0">
+                    </div>
                     
-                    <!-- <p>總計：${{subtotal[index]}}</p> -->
-                    <p class="orderCount-subtotal ">總計：<span id="allTotal">{{totalPrice}}</span></p>
+                    
+                    
+                    <div class="orderCount">
+                        
+                        <!-- <p>總計：${{subtotal[index]}}</p> -->
+                        <p class="orderCount-subtotal ">總計：<span id="lastTotal">${{totalPrice}}</span></p>
+                        <input type="hidden" name="orderTotal" value="">
+                        <input type="hidden" name="usePoint" value="">
+                        <input type="hidden" name="leftPoints" value="">
+                    </div>
                 </div>
-
-            </div>
-            <div class="butSection">
-                <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
-                <button onclick="location.href='./payment.html'" class="button button-pay thebill"><a style="color: #07082E;" href='./payment.html'>進行結帳</a></button>
-                
-            </div>
+                <div class="butSection">
+                    <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
+                    <button onclick="location.href='./payment.html'" class="button button-pay thebill submit"><span id="btnPay" style="color: #07082E;" href='./payment.html'>進行結帳</span></button>
+                    
+                </div>
             
             </form>
         </div>
@@ -132,12 +139,13 @@
     @@include('./layout/footer.html')
 
     <script src="./js/login.js"></script>
-    <script>src="./js/cartvue.vue"</script>
+    <script src="./js/orderCoin.js"></script>
     <script src="./js/vue.js"></script>
     <script>
         var app = new Vue({
     el:'#app',
     data:{
+        products: [],
         itemList:[
           {
             id:'1',
@@ -145,7 +153,7 @@
             imgUrl:'https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
             size: 'XXL',
             price:'500',
-            count:'2'
+            count:'1'
           },
           {
             id:'2',
@@ -153,14 +161,14 @@
             imgUrl:'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
             size: 'XXL',
             price:'790',
-            count:'3'
+            count:'1'
           },
           {
             id:'3',
             itemName:'超時尚牛仔庫',
             imgUrl:'https://images.unsplash.com/photo-1529391409740-59f2cea08bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1124&q=80',
             size: 'XXL',
-            price:'1200',
+            price:'120',
             count:'1'
           },
           {
@@ -168,26 +176,41 @@
             itemName:'質感褐色系大衣服',
             imgUrl:'https://images.unsplash.com/photo-1491998664548-0063bef7856c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
             size: 'XXL',
-            price:'2300',
+            price:'230',
             count:'1'
           },
         ],
-        // totalPrice: 0,
+        
     
     },
     // itemList:[],
     methods:{
         addCount: function(item){
             item.count++;
+            updateCart(item.prodNo, item.count);
         },
         lessCount: function(item){
             if(item.count>1){
-            item.count--;                
+                item.count--;  
+                updateCart(item.prodNo, item.count);          
             }
+        
         },
         del: function(index){
             console.log(this);
             this.itemList.splice(index,1);
+        },
+        getId(index){
+            sessionStorage.setItem("id", index+1);
+        },
+        updateCart(prodNo, count){
+            for(let i=0; i<cart.length; i++){
+                if(cart[i].prodNo == prodNo){
+                    cart[i].count = count;
+                    break;
+                }
+            }
+            storage["cart"] = JSON.stringify(cart);
         }
     },
     computed:{
@@ -203,16 +226,59 @@
     },
 })
 
-
+let cart = [];
 let storage = sessionStorage;
+
 function doFirst(){
-	let itemString = storage.getItem('addItemList');   //A1001, A1005, A1006, A1002, 
-    let items = itemString.substr(0,itemString.length - 2).split(', ');
-    console.log(items);   //["A1001", "A1005", "A1006", "A1002"]
-    app.itemList = items;
+	showCart();
+    
 }
+function showCart(){
+	cart = JSON.parse(storage["cart"]);
+	app.itemList = cart
+}
+
+$(function (){
+    $(".loginbutton").on("click", function(){
+        console.log("===click");
+        //$('#wholeScreenOverlay3').css('display','block');
+    });
+    $("#btnPay").on("click", function(){
+        document.getElementById("app").submit();
+    })
+    $('.discount').hide()
+    $('.loginbutton').show()
+     if(LogInMemId.textContent != ''){
+        $('.discount').show()
+        $('.recordPoint').show()
+        $('.loginbutton').hide()
+        // document.querySelector(".loginbutton").style.display = "none";
+    }else{
+        $('.discount').hide()
+        $('.recordPoint').hide()
+        $('.loginbutton').show()
+        // document.querySelector(".loginbutton").style.display = "";
+    }   
+
+// window.addEventListener("load",showdiscount)
+})
+
+$(function(){
+    $(".loginbutton").on("click", function(){
+        
+        $('#wholeScreenOverlay3').css('display','block');
+    });
+
+});
+
 window.addEventListener("load",doFirst)
 </script>    
+<script>
+    // $('.space_box').css('display','none');
+</script>
+
+
+<script src="./js/spacecar.js"></script>
 </body>
 
 </html>

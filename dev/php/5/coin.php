@@ -1,5 +1,5 @@
 <?php
-    include("../connect.php");
+    include("../../connect_ced102g2.php");
     $sql ='SELECT * FROM `mbrno`';
     $result = $pdo->query($sql);
     $result->execute();

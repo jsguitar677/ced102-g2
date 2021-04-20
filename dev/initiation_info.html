@@ -20,7 +20,7 @@
     <!-- 樣板 header   -->
     @@include('./layout/header.html')
     <!-- 會員登入 -->
-    @@include('./layout/login.html')
+    <!-- @@include('./layout/login.html') -->
     <main class="event">
         <div class="bread">
             <ul>
@@ -31,7 +31,7 @@
         </div>
         <div class="content">
             <section id="section1">
-                <form action="./initiation_success.html">
+                <form>
                     <div class="container">
                         <div class="row  justify-content-center">
                             <div class="col-lg-6 col-md-8 col-sm-10 col-11 part">
@@ -39,23 +39,20 @@
                                     <div class="infoTitleBox">
                                         <h2>填寫活動資訊</h2>
                                     </div>
-                                    <label><span>*</span>挑選地點</label><select class="location">
-                                        <option disabled selected hidden>縣市</option>
-                                        <option>桃園市</option>
-                                        <option>苗栗縣</option>
+                                    <label><span>*</span>活動名稱</label><input type="text" maxlength="10" id="actname"><br>
+                                    <label><span>*</span>挑選地點</label><select class="location" id="city" >
+                                        <!-- <option disabled selected hidden>縣市</option> -->
                                     </select>
-                                    <select class="location">
+                                    <select class="location" id="loc">
                                         <option disabled selected hidden>地點</option>
-                                        <option>永安漁港</option>
-                                        <option>外澳海灘</option>
                                     </select>
                                     <br>
-                                    <label><span>*</span>活動日期</label><input type="date"><br>
-                                    <label id="sign"><span>*</span>活動報名<br>&nbsp截止日期</label><input type="date"><br>
-                                    <label><span>*</span>募資目標</label><input type="number" min="0" placeholder="請提出合理募資款項"><br>
-                                    <label><span>*</span>需求人數</label><input type="number" min="0" placeholder="請提出合理需求人數"><br>
-                                    <label><span>*</span>創辦理念</label><textarea cols="20" rows="2" maxlength="200" placeholder="至多200字"></textarea><br>
-                                    <label><span>*</span>活動內容</label><textarea cols="20" rows="4" maxlength="500" placeholder="至多500字"></textarea><br>
+                                    <label><span>*</span>活動日期</label><input type="date" id="actsdate"><br>
+                                    <label id="sign"><span>*</span>活動報名<br>&nbsp截止日期</label><input id="actdline" type="date"><br>
+                                    <label><span>*</span>募資目標</label><input id="dntgoal" type="number" min="0" placeholder="請提出合理募資款項"><br>
+                                    <label><span>*</span>需求人數</label><input id="recpgoal" type="number" min="0" placeholder="請提出合理需求人數"><br>
+                                    <label><span>*</span>創辦理念</label><textarea id="vision" cols="20" rows="2" maxlength="200" placeholder="至多200字"></textarea><br>
+                                    <label><span>*</span>活動內容</label><textarea id="actcon" cols="20" rows="4" maxlength="500" placeholder="至多500字"></textarea><br>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-8 col-sm-10 col-11 part">
@@ -65,7 +62,7 @@
                                     <div class="checkbox-block">
                                         <input type="checkbox" name="agreement" id="agreement"><label for="agreement">已瞭解說明(點選視同同意)</label>
                                     </div>
-                                    <button class="btn" type="submit" id="agree-btn">同意並提交</button>
+                                    <div class="btn" type="submit" id="agree-btn">同意並提交</div>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +74,7 @@
 
     <!-- 樣板 footer -->
     @@include('./layout/footer.html')
-    <script src="./js/login.js"></script>
+    <!-- <script src="./js/login.js"></script> -->
 
 </body>
 </html>
