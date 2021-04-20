@@ -24,7 +24,7 @@
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- 排序 -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script> -->
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     
@@ -213,9 +213,8 @@
                             <div class="productInfo">
                                 <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
                                 <p class="NameAndPrice">NT$
-                                    <span class="price">{{NewProdRow.PRODNAME}}</span>
+                                    <span class="price">{{NewProdRow.PRODPRICE}}</span>
                                     <button class="CartBtnOfMall" v-bind:id="NewProdRow.PRODNO">
-                                    <!-- <button class="CartBtnOfMall" v-bind:id="'a'+NewProdRow.PRODNO"> -->
                                         <i class="fas fa-shopping-cart fa-1x"></i>
                                         <p>加入購物車</p>
                                     </button>
@@ -367,15 +366,14 @@
                 storage['addItemList'] = '';
             }
             // %%%%%%%%%%%%%%%%%%%%%%%%%%%
-            //cart : for購物車記錄把哪個商品加到購物車
-            let cart = [];
-            if(storage['cart'] == null){
-                storage['cart'] = '';
-            }
-
-            function updateSession(){
-                storage["cart"] = JSON.stringify(cart);
-            }
+            // cart : for購物車記錄把哪個商品加到購物車
+            // let cart = [];
+            // if(storage['cart'] == null){
+            //     storage['cart'] = '';
+            // }
+            // function updateSession(){
+            //     storage["cart"] = JSON.stringify(cart);
+            // }
             // %%%%%%%%%%%%%%%%%%%%%%%%%%%
       
             setTimeout(()=>{
@@ -411,7 +409,6 @@
                     //     alert('s231');
                     // }
                 }
-
                 // ************************************************************************************
             },50)
         },
