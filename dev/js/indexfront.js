@@ -142,7 +142,7 @@ window.addEventListener('load', getContributeRank);
 
 
 // ====================== 志工次數排行榜
-function showContributeRank(jsonStr){
+function showContributeCrewRank(jsonStr){
     var rankTimes = JSON.parse(jsonStr);
     let donateRankPic = document.getElementsByClassName('donateRankPic');
     let donateName = document.getElementsByClassName('donateRankName');
@@ -158,7 +158,7 @@ function getContributeCrew(){
     xhrCC.onload = function(){
         if(xhrCC.status == 200){
             // console.log("風雲榜: ",xhrC.responseText);
-            showContributeRank(xhrCC.responseText);
+            showContributeCrewRank(xhrCC.responseText);
         }else{
             alert(xhrCC.status);
         }
