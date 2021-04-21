@@ -1,6 +1,8 @@
 <?php
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
     $MBRDATA=" SELECT ORDERDATE ,SHIPSTAT ,ORDERSTATUS, PROPRICETOTAL,DISCOUNT, ORDERTOAL FROM orders WHERE MBRNO = :MBRNO AND ORDERNO = :ORDERNO";
     //ORDERDATE 訂單日期 // SHIPSTAT 送貨狀態 // ORDERSTATUS 訂單狀態 //PROPRICETOTAL 商品的金額 //DISCOUNT 折扣環保幣金額 // ORDERTOAL 折扣後總價
 

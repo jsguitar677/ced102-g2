@@ -1,6 +1,8 @@
 <?php
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
     $Fundra=" SELECT a.ACTNO, b.ACTNAME, a.FUNDDATE, a.FUNDSN, a.AMOUNT 
               FROM fundra a join actv b on a.actno = b.actno
               WHERE a.MBRNO = :MBRNO";

@@ -1,6 +1,8 @@
 <?php
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
     $sql = "INSERT INTO `mbr` (`MBRMAIL`, `MBRPSW`, `MBRNAME`, `MBRBIRTH`, `MBRPHONE`) VALUES ( ?,?,?,?,? )";
 
     $member = $pdo->prepare($sql);

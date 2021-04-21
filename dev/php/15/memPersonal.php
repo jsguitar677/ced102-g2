@@ -2,7 +2,9 @@
  include("getMemInfoFIX.php");
 
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+    require_once("../../connect_ced102g2.php");
+
     $pdoO="SELECT MBRNAME, MBRBIRTH, MBRPIC, MBRBIO FROM mbr WHERE MBRNO =:MBRNO";
 
     $memberData = $pdo->prepare($pdoO);

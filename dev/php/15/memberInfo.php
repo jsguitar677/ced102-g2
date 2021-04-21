@@ -1,6 +1,8 @@
 <?php
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
     $MBRDATA=" SELECT MBREXP, MBRCOIN, DONATE, PARTICIPATE FROM mbr WHERE MBRNO = :MBRNO";
     $ACTV=" SELECT COUNT(MBRNO) FROM ACTV WHERE MBRNO = :MBRNO";
     $FUNDRA=" SELECT COUNT(MBRNO) FROM FUNDRA WHERE MBRNO = :MBRNO";

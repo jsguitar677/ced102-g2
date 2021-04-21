@@ -18,10 +18,10 @@ function ReceiveCoin(){
     let xhr = new XMLHttpRequest(); 
     xhr.onload = function(){
         var MBRDETAIL = JSON.parse(xhr.responseText);  //MBRCOINLV: "1"   MBREXP: "100"
-        console.log(MBRDETAIL);
+        // console.log(MBRDETAIL);
         let coinLV= parseInt(MBRDETAIL.MBRCOINLV);
         var coinExp= parseInt(MBRDETAIL.MBREXP);
-        console.log(typeof coinLV);
+        // console.log(typeof coinLV);
             
         for(let i=1; i<=(coinExp/100);i++){
             $('#expBlockHook').append(`

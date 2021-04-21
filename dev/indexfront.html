@@ -544,29 +544,29 @@
     <script src='https://assets.codepen.io/16327/gsap-latest-beta.min.js'></script>
     <script src='https://assets.codepen.io/16327/ScrollTrigger.min.js?v=40'></script>
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-        let start = {
-            val: 0
-        };
-        gsap.utils.toArray('.tal').forEach((label) => {
-            start.val = 0;
-            gsap.to(start, {
-                delay: 1,
-                duration: 1,
-                ease: "power4.out",
-                y: -500,
-                scrollTrigger: {
-                    trigger: label,
-                    toggleActions: "play none none none",
-                    markers: false,
-                },
-                val: label.dataset.end,
-                onUpdate: (() => {
-                    label.innerHTML = start.val.toFixed(1)
-                    label.innerHTML = Math.floor(Number(start.val))
-                })
-            });
-        });
+        // gsap.registerPlugin(ScrollTrigger);
+        // let start = {
+        //     val: 0
+        // };
+        // gsap.utils.toArray('.tal').forEach((label) => {
+        //     start.val = 0;
+        //     gsap.to(start, {
+        //         delay: 1,
+        //         duration: 1,
+        //         ease: "power4.out",
+        //         y: -500,
+        //         scrollTrigger: {
+        //             trigger: label,
+        //             toggleActions: "play none none none",
+        //             markers: false,
+        //         },
+        //         val: label.dataset.end,
+        //         onUpdate: (() => {
+        //             label.innerHTML = start.val.toFixed(1)
+        //             label.innerHTML = Math.floor(Number(start.val))
+        //         })
+        //     });
+        // });
     </script>
     
 </body>

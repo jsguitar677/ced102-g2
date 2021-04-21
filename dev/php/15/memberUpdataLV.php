@@ -2,7 +2,9 @@
 include("getMemInfoFIX.php");
 
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
      
     $PDOO = "SET SQL_SAFE_UPDATES=0";
     $memberData = $pdo->prepare($PDOO);

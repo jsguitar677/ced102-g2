@@ -445,10 +445,8 @@ function checkACFT(e){
         e.preventDefault();
         return;
     }
-    var numRegex = /\D/g;
     let logMemPsw = document.getElementById("logMemPsw");
     let logMemPswCheck = document.getElementById("logMemPswCheck");
-    logMemMobileCheck.value = logMemMobileCheck.value.replace(numRegex,'');
 
     if( logMemPsw.value.length < 5){
         alert("密碼長度必須為5-15位");
@@ -482,6 +480,7 @@ function checkACFT(e){
         let memberText = xhr.responseText;
         if(memberText == 1){
             alert("已成功註冊!");
+            document.getElementById('RegToLog').click();
         }else{
             alert("失敗!");
         }

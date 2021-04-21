@@ -1,6 +1,8 @@
 <?php
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
     $MBRDATA=" SELECT ORDERNO, ORDERDATE FROM orders WHERE MBRNO = :MBRNO";
 
     // ORDERNO 訂單編號
