@@ -2,4 +2,3 @@ node_modules
 dist
 indexpath.js
 dev/php/connect.php
-dev/connect_ced102g2.php
