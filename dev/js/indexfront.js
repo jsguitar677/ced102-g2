@@ -169,4 +169,32 @@ function getContributeCrew(){
 }
 document.getElementById('people-rank-btn').addEventListener('click', getContributeCrew);
 
+// ==================== 最新活動抓取
+function showLatestActv(jsonStr){
+    var latestActv = JSON.parse(jsonStr);
+    let latestActvPic = document.getElementsByClassName('targetData');
+    // let donateName = document.getElementsByClassName('donateRankName');
+    // let donateMoney = document.getElementsByClassName('donateMoney');
+    for(let i=0; i<6; i++){
+        latestActvPic[i].setAttribute("src", latestActv[i]["LOCPIC"]);
+        // donateName[i].innerHTML = rankTimes[i]["MBRNAME"];
+        // donateMoney[i].innerHTML = rankTimes[i]["PARTICIPATE"];
+    }
+}
+function getLatestActv(){
+    var xhrLa = new XMLHttpRequest();
+    xhrLa.onload = function(){
+        if(xhrLa.status == 200){
+            console.log("最新活動",xhrLa.responseText);
+            showLatestActv(xhrLa.responseText);
+        }else{
+            alert(xhrLa.status);
+        }
+    }
+    var urlLa = "./php/2/indexfront_latestAct.php";
+    xhrLa.open("Get", urlLa, true);
+    xhrLa.send(null);
+}
+window.addEventListener('load',getLatestActv);
+
 
