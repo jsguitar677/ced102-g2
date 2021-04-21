@@ -547,7 +547,7 @@ main.event {
                   transition: 0.5s;
               }
               .east{
-                  fill:#C76175;
+                  fill:#C76175 !important;
                   filter: drop-shadow(3px 3px 5px rgba(255, 255, 255, 0.541));
                   transform: translate(0px,0px);
                   transition: 0.5s;
