@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- 本機端css連結用下列: -->
-    <!-- <link rel="stylesheet" href="./css/Mall3.css"> -->
+    <link rel="stylesheet" href="./css/Mall3.css">
     <!-- git css連結用下列: -->
-    <link rel="stylesheet" href="./css/pages/Mall3.css">
+    <!-- <link rel="stylesheet" href="./css/pages/Mall3.css"> -->
 
     <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css' /> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -335,6 +335,8 @@
     <!-- ==========================資料庫取資料 / 存id到session========================== -->
     <script>
     // ------------------------到資料庫撈取「商城卡片」要的資料------------------------
+    let cart=[];
+    let storage = sessionStorage;
     function getProducts(){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
@@ -356,7 +358,7 @@
             name2 : 'productDisplay',
         },
         mounted(){
-            let storage = sessionStorage;
+            //let storage = sessionStorage;
             //ItemId : for商城記錄click到哪個商品
             if(storage['ItemId'] == null){
                 storage['ItemId'] = '';
@@ -382,6 +384,7 @@
                 for(let i = 0; i < prodCard.length; i++){
                     prodCard[i].addEventListener('click',function(){
                         theId = this.id;
+                        console.log("=========",theId);
                         //click後 就把theId = this.id存入session(下列三種寫法都可以)
                         storage.setItem('ItemId',theId);
                         // storage['ItemId'] = theId;
@@ -390,27 +393,65 @@
                 }
                 // ********click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)********
                 //幫每個購物車btn建立事件聆聽功能
-                let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                // let CartBtn = document.querySelectorAll('.CartBtnOfMall');
                 
-                for(let i = 0; i < CartBtn.length; i++){
+                // for(let i = 0; i < CartBtn.length; i++){
                     
 
-                    CartBtn[i].addEventListener('click',function(){
+                //     CartBtn[i].addEventListener('click',function(){
                         
-                        theBtnId = this.id;
-                        //click後 就把theBtnId = this.id存入session
-                        storage['addItemList'] += `${theBtnId}, `;
-                        //alert(`${theBtnId}`);
-                        //這個程式沒有要清掉addItemList的value, 何時清掉addItemList的value要寫在購物車(應該是這樣)
+                //         theBtnId = this.id;
+                //         //click後 就把theBtnId = this.id存入session
+                //         storage['addItemList'] += `${theBtnId}, `;
+                //         //alert(`${theBtnId}`);
+                //         //這個程式沒有要清掉addItemList的value, 何時清掉addItemList的value要寫在購物車(應該是這樣)
                         
-                    });
-                    // CartBtnOfMall
-                    // CartBtn[i].onclick = function(){
-                    //     alert('s231');
-                    // }
-                }
+                //     });
+                //     // CartBtnOfMall
+                //     // CartBtn[i].onclick = function(){
+                //     //     alert('s231');
+                //     // }
+                // }//for
                 // ************************************************************************************
-            },50)
+                //------------------------更新storage的購物資訊
+                function updateCart(){
+                    storage["cart"] = JSON.stringify(cart);
+                    console.log(cart);
+                    console.log("-------",JSON.stringify(cart));
+                }
+                //-----------------------------註冊放入購物車
+                let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                for(let i=0; i<CartBtn.length; i++){
+                    CartBtn[i].onclick = function(e){
+                        let prodNo = e.target.id;
+                        //---------檢查商品是否已在cart中
+                        let exist = false;
+                        for(let i=0; i<cart.length; i++){
+                            if(cart[i].prodNo == prodNo){
+                                exist = true;
+                                break;
+                            }
+                        }
+                        //---------
+                        if(exist){
+                            alert("already exists");
+                        }else{
+                            let item = {};
+                            //---------
+                            //------------
+                            item.prodNo = prodNo;
+                            item.prodName = e.target.parentNode.previousElementSibling.innerText;
+                            item.src = e.target.parentNode.parentNode.parentNode.querySelector("img").src;
+                            item.price = e.target.previousElementSibling.innerText;
+                            item.count = 1;
+                            cart.push(item);
+                            updateCart(); 
+                        }
+                    }
+
+                }
+                //-------------------------
+            },500)
         },
     });
 
@@ -434,11 +475,19 @@
         },
     });
     // ------------------------------------------------------------------------------
+    function getCart(){
+        if(storage["cart"] != undefined){ //有cart
+           cart = JSON.parse(storage["cart"]);
+        }
+    }
     window.addEventListener("load", function(){
         // 執行:撈取「一般商品」函式
         getProducts();  
         // 執行:撈取「推薦商品」函式
         getNewProducts();
+
+        //=============cart
+        getCart();
     })
     </script>
     <!-- ==========================資料庫取資料 / 存id到session//======================== -->
