@@ -21,7 +21,7 @@ p{font-size: 15px;}
     background-size: cover;
 }
 .btnDisCon2Sty{
-    background-image: url('../../img/MemberBgImg.png'),linear-gradient(map-get($map: $color_regulation, $key: 'red'),map-get($map: $color_regulation, $key: 'blue'));
+    background-image: url('../../img/MemberBgImg.png'),linear-gradient(#e27764 ,map-get($color_regulation, 'blue'));
     background-origin: border-box;
     background-repeat: no-repeat;
     background-position: left bottom;
@@ -315,19 +315,17 @@ body{
                     align-self: flex-start;
                 }
                 .expExchange{
+                    border: 1px solid map-get($color_regulation, 'yellow' );
+                    box-shadow: 2px 2px 14px #ffdb6663;
                     width: 60%;
-                    height:450px;
-                    // overflow: auto;
-                    margin-top: 5%;
-                    padding-right: 10px;
-                    overflow: auto;
                     .excBlcok{
-                        background-color: #A2A2A2;
+                        padding: 20px 0px;
+                        background-color: map-get($color_regulation,'memberGray' );
                         position: relative;
                         max-width: 800px;
                         margin: 0 auto;
-                        // 直線
                             &::after{
+                                box-shadow: 2px 2px 14px #ffefbd8c;
                                 content: '';
                                 position: absolute;
                                 width: 6px;
@@ -336,15 +334,17 @@ body{
                                 bottom: 0;
                                 left: 20%;
                                 margin-left: -3px;
-                                box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+                                // box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
 
                             }
                         .expPart{
+                            color: map-get($color_regulation, 'white' );
                             padding: 1px 40px;
                             position: relative;
                             background-color: inherit;
                             width: 50%;
                             &::after{
+                                box-shadow: 2px 2px 14px #ffdb6678;
                                 content: '';
                                 position: absolute;
                                 width: 25px;
@@ -355,13 +355,14 @@ body{
                                 top: 15px;
                                 border-radius: 50%;
                                 z-index: 1;
-                                box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+                                // box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
                             }
                             button.comBtn2{
                                 background-color: map-get($map: $color_regulation, $key: 'blue');
                                 color: map-get($map: $color_regulation, $key: 'white');
                                 outline: none;
                                 cursor: pointer;
+
                             }
                         }
                     }
@@ -1143,31 +1144,25 @@ div#memberContentId{
     background: #1D1E4C; 
     border-radius: 5px;
   }
-#memExp{
-    .expContent{
-        .expExchange{
-            .excBlcok{
-                .expPartReceived{
-                    padding: 1px 40px;
-                    position: relative;
-                    background-color: inherit;
-                    width: 50%;
-                    &::after{
-                        content: '';
-                        position: absolute;
-                        width: 25px;
-                        height: 25px;
-                        right: -17px;
-                        background-color: #EF4325;
-                        border: 4px solid #EF4325;
-                        top: 15px;
-                        border-radius: 50%;
-                        z-index: 1;
-                        box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-                    }
-                }
-            }
-        }
+
+.expPartReceived{
+    padding: 1px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    color: map-get($color_regulation,'footerGray' );
+    &::after{
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: #EF4325;
+        border: 4px solid #EF4325;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+        box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
     }
 }
 button:disabled {

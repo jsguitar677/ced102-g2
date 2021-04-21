@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-    <script type="text/javascript" src="http://zip5.5432.tw/js/zip5.js"></script> -->
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script> -->
+    <script type="text/javascript" src="http://zip5.5432.tw/js/zip5.js"></script>
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
 </head>
 
@@ -68,7 +68,7 @@
                                   <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
                                   <!-- <div class="name">{{item.itemName}}</div> -->
                                   <div class="name"><span>品名:</span>{{item.itemName}}</div>
-                                  <div class="size"><span>尺寸:</span>{{item.size}}</div>
+                                  <!-- <div class="size"><span>尺寸:</span>{{item.size}}</div> -->
                               </div>
                               
                               <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
@@ -162,12 +162,12 @@
               <form class="creadDetail" novalidate @submit.prevent="validateBeforeSubmit('payment')">
                 <div class="form-group row">
                   <label class="label">持卡人:</label>
-                  <input class="form-control form " type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" required>
+                  <input id="name" class="form-control form name" type="text" name="name" maxlength="16" v-model="formPayment.name" v-validate="'required|min:1'" required>
                   <span class="text-danger"></span>
                 </div>
                 <div class="form-group row">
                   <label class="label">持卡人身分證字號:</label>
-                  <input class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" :class="classes" required>
+                  <input id="idnumber" class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" :class="classes" required>
                   <span class="text-danger"></span>
                 </div>
                 <div class="form-group row">
@@ -177,7 +177,7 @@
                       <input class="form-control" type="text" :name="`cardNumber${index}`" ref="cardNumber" v-model="formPayment.cardNumber[index]" v-validate="'required|numeric|length:4'" @input="checkCardNumberInput(formPayment.cardNumber[index], index)">
                     </div> -->
                     <div class="col " v-if="isMobile">
-                      <input class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" required>
+                      <input id="cardnumber" class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" required>
                       <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col " v-if="isMobile">
@@ -200,10 +200,10 @@
                   <label class="label">到期日期:</label>
                   <div class="form-row  label ">
                     <div class="input-group " >
-                      <input class="form-control form" type="text" name="expiredMonth" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02" required>
+                      <input  id="month" class="form-control form" type="text" name="month" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02"    required>
                       <span class="text-danger"></span>
                       
-                      <input class="form-control form" type="text" name="expiredYear" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27" required>
+                      <input id="year" class="form-control form" type="text" name="year" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27" required>
                       <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col-6 col-md-3 input-group row">
@@ -216,7 +216,7 @@
                   <label class="label">CVV:</label>
                   <div class="form-row">
                     <div class="col-md-3">
-                      <input placeholder="卡片背面末三碼" class="form-control form" type="text" name="cvv" v-model="formPayment.cvv" v-validate="'required|numeric|length:3'">
+                      <input id="safe" placeholder="卡片背面末三碼" class="form-control form" type="text" name="cvv" v-model="formPayment.cvv" v-validate="'required|numeric|length:3'">
                       <span class="text-danger"></span>
                     </div>
                   </div>
@@ -241,7 +241,7 @@
               <input type="radio" name="block" class="memberblock" >同會員資料
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
-                  <input type="text" class="form-control empty form" id="owner" required>
+                  <input type="text" class="form-control empty form name" id="owner" required>
                   <span class="text-danger"></span>
                </div>
                <div class="row" id="card-number-field">
@@ -258,7 +258,7 @@
                <div class="row" >
                 <label class="label add" for="add">地址：</label>
                 <div id="twzipcode"></div>
-                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;"  >
+                <!-- <select  id="county" type="select" name="creditCard" class="form-control add form" style="width: auto;"  >
                     <option value="01" >請選擇縣市</option>
                       <option value="01">基隆</option>
                       <option value="02">台北市</option>
@@ -296,11 +296,13 @@
                     <option value="07">萬華區</option>
                 </select>   
                 <span class="text-danger"></span>   
-               </div>
-               <div class="row" >
-                <label class="label" for="phone"></label>
-                <input  type="text" name="phone" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址">
-               </div>
+               </div> -->
+               <!-- <div class="row" > -->
+                <!-- <label class="label" for="phone"></label> -->
+                <input type='text' name='adrs' id='my_adrs' class="form-control form address"required>
+                <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
+                <!-- <input  type="text" name="phone" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址"> -->
+               <!-- </div> -->
               </div>
     
               <div class="addAddress">
@@ -339,7 +341,7 @@
                     <input class="zipcode" type="text" size="3" readonly placeholder="郵遞區號">
                   </div>
                 </div> -->
-                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
+                <!-- <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
                     <option value="01">請選擇縣市</option>
                       <option value="01">基隆</option>
                       <option value="02">台北市</option>
@@ -377,13 +379,13 @@
                     <option value="07">萬華區</option>
                 </select>   
                 <span class="text-danger"></span>   
-               </div>
-               <div class="row" >
-                <label class="label" for="phone"></label>
-                <!-- <input  type="text" name="creditCard" class="form-control form" maxlength="20" placeholder="請輸入郵寄地址"> -->
-                <input type='text' name='adrs' id='my_adrs' required>
-                <input type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
-               </div>
+               </div> -->
+               <!-- <div class="row" > -->
+                <!-- <label class="label" for="phone"></label> -->
+                <!-- <input  id='my_adrs' type="text" name="creditCard" class="form-control form" maxlength="20" placeholder="請輸入郵寄地址"> -->
+                <input type='text' name='adrs' id='my_adrs' class="form-control  form address" required>
+                <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
+               <!-- </div> -->
               </div> 
 
           </section>
@@ -500,51 +502,67 @@ var cleave = new Cleave( ".Phone", {
   		phone: true, // 電話模式
   		phoneRegionCode: "tw"
   	});
- 
+
 </script>
 <script>
-  fetch("./php/5/getcartNo.php").then(res => res.json())
-  .then(data => {
-  vm.itemList = data;
-  for(let i=0 ; i<data.length ; i++){
-  let url = `./php/5/getcartNo.php?infoNo=${data[i].id}`;
-  vm.itemList[i].url = url;
-  // console.log(vm.products[i].url);
-  }
-  });
+// function send() {
 
-  </script>
-  <script>
-  // 將 VeeValidate input 驗證工具載入 作為全域註冊
-  Vue.component('ValidationProvider', VeeValidate.ValidationProvider);
-// 將 VeeValidate 完整表單 驗證工具載入 作為全域註冊
-  Vue.component('ValidationObserver', VeeValidate.ValidationObserver);
-
-    var app = new Vue({
-el:'#app',
-data:{
-    products: [],
-    itemList:[],
-    form:{
-      name:'',
+// 姓名電話地址 信用卡 年月 安全碼
+let name = document.getElementsById('name').value;
+let id = document.getElementById('idnumber').value;
+let cardnumber = document.getElementsId('cardnumber').value;
+let month = document.getElementById('month').value;
+let year = document.getElementById('year').value;
+let safe = document.getElementById('safe').value
 
 
+if (name == '' || id == '' || cardnumber == '' || month == '' || year == '' || safe == '' ) {
+  Swal.fire({
+    icon: 'warning',
+    text: '請輸入正確的資料！',
+  })
+}   
+</script> 
 
 
-    },
-methods:{
+ <script>
+//   fetch("./php/5/getcartNo.php").then(res => res.json())
+//   .then(data => {
+//   vm.itemList = data;
+//   for(let i=0 ; i<data.length ; i++){
+//   let url = `./php/5/getcartNo.php?infoNo=${data[i].id}`;
+//   vm.itemList[i].url = url;
+//   // console.log(vm.products[i].url);
+//   }
+//   });
+
+//   </script>
+//   <script>
+//   // 將 VeeValidate input 驗證工具載入 作為全域註冊
+//   Vue.component('ValidationProvider', VeeValidate.ValidationProvider);
+// // 將 VeeValidate 完整表單 驗證工具載入 作為全域註冊
+//   Vue.component('ValidationObserver', VeeValidate.ValidationObserver);
+
+//   var app = new Vue({
+// el:'#app',
+// data:{
+//     products: [],
+//     itemList:[],
+//   },
+// methods:{
     
-},
-computed:{
+// },
+// computed:{
    
-},
-}
-})
-</script>
+// },
+// // action:{
+// //   async fetchLocations({commit}){
+// //     const json = await fetch('https://raw.githubusercontent.com/kurotanshi/mask-map/master/raw/area-location.json').then((res)) =>res.json());
+// //     commit ('setAreaLoc',json);
+// //   },
+// // }
 
- 
-  
-  
-  
+// })
+// </script>  
 
 </html>

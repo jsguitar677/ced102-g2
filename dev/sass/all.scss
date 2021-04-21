@@ -14,6 +14,7 @@ body>*{
     cursor: pointer;
 }
 
+
 // 以下為自訂共用組件-john新增---------------------------------------
 ::-webkit-scrollbar {
     width: 12px;
@@ -850,8 +851,11 @@ div.whiteMainPart5{
     i{
         transition: all .5s;
     }
-}
 
+}
+// #tokenIcon{
+//     color: ($color_regulation,'blue');
+// }
 
 // =========== header滑出RWD
 
@@ -1031,6 +1035,11 @@ div.whiteMainPart5{
     body header{
         padding: 0px 15px;
     }
+    #All_Logo{
+        display: none;
+
+    }
+
 }
 
 ul#AccountList{
