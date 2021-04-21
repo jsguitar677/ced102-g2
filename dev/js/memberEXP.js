@@ -27,12 +27,14 @@ function ReceiveCoin(){
             $('#expBlockHook').append(`
              <div class="expPart expRight">
                  <p>已累積${i}00經驗值</p>
-                 <button id="btnExp${i}" class="comBtn2">領取50環保幣</button>
+                 <button disabled id="btnExp${i}" class="comBtn2">領取50環保幣</button>
              </div>
              `)
         };
+        $('.comBtn2').css('background-color','red');
         if(coinExp - coinLV*100 >= 100){
-            $(`btnExp${coinLV+1}`).removeAttr('disabled');
+            $(`#btnExp${coinLV+1}`).removeAttr('disabled');
+            $(`#btnExp${coinLV+1}`).css('backgroundColor','blue');
         }
         $('.comBtn2').click(function(){
             $(this).attr('disabled');
@@ -43,15 +45,16 @@ function ReceiveCoin(){
                 let NewCoinLvV = parseInt(NewCoinLv.MBRCOINLV);
                 console.log(NewCoinLvV);
 
-                if((500 - NewCoinLvV*100) < 100){
+                if((coinExp - NewCoinLvV*100) < 100){
                     console.log("qqq");
-
-                    $(this).attr('disabled');
-                }else if((900 - NewCoinLvV*100) >= 100){
+                    $('.comBtn2').attr('disabled');
+                    $('.comBtn2').css('background-color','red');
+                }else if((coinExp - NewCoinLvV*100) >= 100){
                     console.log("aaa");
-
-                    $(this).attr('disabled');
-                    $(`btnExp${coinLV+1}`).removeAttr('disabled');
+                    $('.comBtn2').attr('disabled');
+                    $('.comBtn2').css('backgroundColor','red');
+                    $(`#btnExp${NewCoinLvV+1}`).removeAttr('disabled');
+                    $(`#btnExp${NewCoinLvV+1}`).css('backgroundColor','blue');
                 }
             }
             xhr1.open("post", "php/15/memberUpdataLV.php", true); //連結伺服端程式

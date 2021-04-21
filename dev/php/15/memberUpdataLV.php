@@ -17,7 +17,7 @@ try{
     $memberData->bindValue(":MBRNO", $_SESSION["MBRNO"]);
     $memberData->execute();
 
-    $memberData2 = $pdo->prepare($MBRDATA);
+    $memberData2 = $pdo->prepare($MBRDATA2);
     $memberData2->bindValue(":MBRNO", $_SESSION["MBRNO"]);
     $memberData2->execute();
 

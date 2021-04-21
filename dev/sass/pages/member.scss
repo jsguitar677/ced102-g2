@@ -379,6 +379,7 @@ body{
     }
 }
 
+
 #orderRecord{
     .orderBlock{
         color: map-get($color_regulation,'blue');
@@ -1224,8 +1225,6 @@ div#appMemberBriefIntro{
 .show-text .plusIcon{
     display: none;
 }
-
-
 
 .alertMessage{
     color: map-get($color_regulation, 'red');
