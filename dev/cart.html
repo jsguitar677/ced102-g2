@@ -31,8 +31,8 @@
               <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}">1
                 <p style="color:#FFD241;" class="progress__text">確認訂單</p>
               </li>
-              <li class="progress progress_group_bar"  >
-                <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"  ></div>
+              <li class="progress progress_group_bar" style="color:#FFD241;" >
+                <div class="progress-bar" role="progressbar" :class="{done:progress.payby}" style="color:#FFD241;" ></div>
               </li>
               <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 1}">2
                 <p class="progress__text ">填寫訂購資料</p>
@@ -152,7 +152,7 @@
           {
             id:'1',
             itemName:'環保購物袋',
-            imgUrl:'./img/mall/bag1.jpg',
+            imgUrl:'./img/mall/bag_a1.jpg',
             // size: 'XXL',
             price:'290',
             count:'1'
