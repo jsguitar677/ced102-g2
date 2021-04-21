@@ -9,6 +9,7 @@
         // print_r($donateRows);
         echo json_encode($donateRows);
     }catch(PDOException $e){    
-        echo $e->getMessage();
+        $result = ["errMsg" => $e->getMessage()];
+        echo json_encode($result);
     }
 ?>
