@@ -9,6 +9,7 @@
         // print_r($LatestActvRows);
         echo json_encode($LatestActvRows);
     }catch(PDOException $e){    
-        echo $e->getMessage();
+        $result = ["errMsg" => $e->getMessage()];
+        echo json_encode($result);
     }
 ?>
