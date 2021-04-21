@@ -1,5 +1,7 @@
 <?php
-require_once("connect.php");
+// require_once("connect.php");
+require_once("../../connect_ced102g2.php");
+
 try{
     $PDOO = "SET SQL_SAFE_UPDATES=0";
     $memberData = $pdo->prepare($PDOO);

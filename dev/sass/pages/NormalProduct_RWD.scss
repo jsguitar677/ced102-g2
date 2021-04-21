@@ -1,5 +1,5 @@
-//@import '../var';
-//@import '../all.scss';
+@import '../var';
+@import '../all.scss';
 //=========================================
 //=============共用規格設定如下=============
 //font-family
@@ -98,8 +98,6 @@ $color_regulation:(
         @content;
     }
 }
-//=============共用規格設定如上=============
-
 //=============共用規格設定如上=============
 @mixin cartIcon2(){
     color: map-get($color_regulation, 'blue');
@@ -484,7 +482,6 @@ section.NormalProductPage{
                 //底部 推薦商品區======================================================================
                 div.bottomarea{
                     padding-bottom: 40px;
-                    //margin-bottom:70px;
                     margin-top:30px;
                     padding-top:30px;
                     border-top: 1px solid black;

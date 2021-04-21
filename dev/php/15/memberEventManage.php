@@ -1,5 +1,7 @@
 <?php
-require_once("connect.php");
+// require_once("connect.php");
+require_once("../../connect_ced102g2.php");
+
 try{
     $MBRDATA=" SELECT ACTNAME , ACTNO , ACTSDATE, ACTSTAT FROM actv WHERE MBRNO =:MBRNO";
 

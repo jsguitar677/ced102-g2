@@ -82,11 +82,11 @@ function showActInfo(jsonStr){
     let donationTot = actv["donationTot"];
     let recruitTot = actv["recruitTot"];
     let actvTot = actv["actvTot"];
-    console.log(donationTot, recruitTot, actvTot);
+    // console.log(donationTot, recruitTot, actvTot);
     spanShow = document.getElementsByClassName('tal');
-    animateValue(spanShow[0], 0, donationTot, 1500);
-    animateValue(spanShow[1], 0, actvTot, 1500);
-    animateValue(spanShow[2], 0, recruitTot, 1500);
+    animateValue(spanShow[0], 0, donationTot, 1300);
+    animateValue(spanShow[1], 0, actvTot, 1300);
+    animateValue(spanShow[2], 0, recruitTot, 1300);
 }
 
 function getActInfo(){
@@ -106,4 +106,67 @@ function getActInfo(){
 
 window.addEventListener('load', getActInfo);
 
-  
+
+
+
+
+//============== 募款排行榜 資料抓取
+function showContributeRank(jsonStr){
+    var rank = JSON.parse(jsonStr);
+    // console.log("第一個: ",rank[0]["MBRPIC"]);
+    let donateRankPic = document.getElementsByClassName('donateRankPic');
+    let donateName = document.getElementsByClassName('donateRankName');
+    let donateMoney = document.getElementsByClassName('donateMoney');
+    for(let i=0; i<3; i++){
+        donateRankPic[i].setAttribute("src", rank[i]["MBRPIC"]);
+        donateName[i].innerHTML = rank[i]["MBRNAME"];
+        donateMoney[i].innerHTML = rank[i]["DONATE"]+"$";
+    }
+}
+function getContributeRank(){
+    var xhrC = new XMLHttpRequest();
+    xhrC.onload = function(){
+        if(xhrC.status == 200){
+            // console.log("風雲榜: ",xhrC.responseText);
+            showContributeRank(xhrC.responseText);
+        }else{
+            alert(xhrC.status);
+        }
+    }
+    var urlC = "./php/2/indexfront_donation.php";
+    xhrC.open("Get", urlC, true);
+    xhrC.send(null);
+};
+
+window.addEventListener('load', getContributeRank);
+
+
+// ====================== 志工次數排行榜
+function showContributeCrewRank(jsonStr){
+    var rankTimes = JSON.parse(jsonStr);
+    let donateRankPic = document.getElementsByClassName('donateRankPic');
+    let donateName = document.getElementsByClassName('donateRankName');
+    let donateMoney = document.getElementsByClassName('donateMoney');
+    for(let i=0; i<3; i++){
+        donateRankPic[i].setAttribute("src", rankTimes[i]["MBRPIC"]);
+        donateName[i].innerHTML = rankTimes[i]["MBRNAME"];
+        donateMoney[i].innerHTML = rankTimes[i]["PARTICIPATE"];
+    }
+}
+function getContributeCrew(){
+    var xhrCC = new XMLHttpRequest();
+    xhrCC.onload = function(){
+        if(xhrCC.status == 200){
+            // console.log("風雲榜: ",xhrC.responseText);
+            showContributeCrewRank(xhrCC.responseText);
+        }else{
+            alert(xhrCC.status);
+        }
+    }
+    var urlCC = "./php/2/indexfront_donationCC.php";
+    xhrCC.open("Get", urlCC, true);
+    xhrCC.send(null);
+}
+document.getElementById('people-rank-btn').addEventListener('click', getContributeCrew);
+
+

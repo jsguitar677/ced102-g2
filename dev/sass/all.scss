@@ -14,6 +14,7 @@ body>*{
     cursor: pointer;
 }
 
+
 // 以下為自訂共用組件-john新增---------------------------------------
 ::-webkit-scrollbar {
     width: 12px;
@@ -237,12 +238,12 @@ body{
 // ==============================================  漢堡選單按鈕 JohnLing
 
             div#All_BgBtn{
-                width: 35px;
-                height: 50px;
+                // width: 35px;
+                // height: 50px;
                 cursor: pointer;
                 z-index: 3;
                 div{
-                    width: 30px;
+                    width: 20px;
                     height: 2px;
                     border-radius: 5px;
                     background-color: map-get($map: $color_regulation, $key: 'blue')!important;
@@ -256,7 +257,8 @@ body{
                         transform: translateY(-50%);
                     }
                     &:last-child{
-                        bottom:16px;
+                        bottom:17px;
+                        height: 3px;
                     }
                     &:nth-child(n){
                         transition: all .4s;
@@ -850,8 +852,11 @@ div.whiteMainPart5{
     i{
         transition: all .5s;
     }
-}
 
+}
+// #tokenIcon{
+//     color: ($color_regulation,'blue');
+// }
 
 // =========== header滑出RWD
 
@@ -1031,6 +1036,11 @@ div.whiteMainPart5{
     body header{
         padding: 0px 15px;
     }
+    #All_Logo{
+        display: none;
+
+    }
+
 }
 
 ul#AccountList{
@@ -1577,6 +1587,11 @@ div#footerMiddle{
 }
 i.fab{
     color: map-get($map: $color_regulation, $key: 'white');
+    &:hover{
+        color: map-get($map: $color_regulation, $key: 'yellow');
+        text-shadow: $box-shadow2;
+            
+    }
 }
 
 div#footerBottom{

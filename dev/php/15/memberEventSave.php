@@ -3,7 +3,9 @@
 include("getMemInfoFIX.php");
 
 try{
-    require_once("connect.php");
+    // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
     $pdoo="SELECT b.actname, b.vision , c.locpic ,b.actno
            FROM eventc a join actv b on a.actno = b.actno
                          join `location` c on b.actloc = c.locname

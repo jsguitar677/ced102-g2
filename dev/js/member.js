@@ -33,7 +33,7 @@ function getTopDetail(){
     xhr4.onload = function(){
         // MBRPERID = parse (xhr2.responseText);
         let MBRPERID = JSON.parse(xhr4.responseText);
-        console.log(MBRPERID); 
+        // console.log(MBRPERID); 
          // 大頭貼
         $id('proIdImg').src = MBRPERID[0].MBRPIC;
         

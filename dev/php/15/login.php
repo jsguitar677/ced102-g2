@@ -1,7 +1,9 @@
 <?php
 session_start();
 try{
-  require_once("connect.php");
+  // require_once("connect.php");
+  require_once("../../connect_ced102g2.php");
+
   $sql = "select * from `mbr` where MBRMAIL=:MBRMAIL and MBRPSW=:MBRPSW"; 
 
   $member = $pdo->prepare($sql);

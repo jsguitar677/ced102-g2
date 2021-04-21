@@ -34,6 +34,10 @@ function movePagePhp8() {
     return src('dev/php/8/*.php').pipe(dest('dist/php/8/'));
 }
 
+function movePagePhp2() {
+    return src('dev/php/2/*.php').pipe(dest('dist/php/2/'));
+}
+
 function movePhpconnect() {
     return src('dev/*.php').pipe(dest('dist/'));
 }
@@ -108,7 +112,7 @@ function killDist() {
 }
 
 exports.kill = killDist;
-exports.u = series(killDist, parallel(movePhpconnect, movePagePhp5,movePagePhpMall, movePagePhp7, movePagePhp8, movePagePhp15, movePhp, moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
+exports.u = series(killDist, parallel(movePhpconnect, movePagePhp5, movePagePhpMall, movePagePhp7, movePagePhp2, movePagePhp8, movePagePhp15, movePhp, moveImg, moveJS, commonStyle, pageStyle, includeHTML, plugIn));
 
 exports.browser = function browsersync() {
     browserSync.init({
