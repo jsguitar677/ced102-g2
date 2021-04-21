@@ -1,6 +1,7 @@
 <?php
 try{
-    require_once("./connectBooks.php");
+    // require_once("./connectBooks.php");
+    require_once("../../connect_ced102g2.php");
     //抓取actv table 中的  DNTNOW RECRNOW 整列的ROW數 for 發起活動場次
     $sql = "select DNTNOW, RECRNOW from actv";
     $actv = $pdo->query($sql);

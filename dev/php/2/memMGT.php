@@ -1,6 +1,7 @@
 <?php
 try{
-  require_once("./connectBooks.php");
+  // require_once("./connectBooks.php");
+  require_once("../../connect_ced102g2.php");
   $sql = "select MBRNAME, MBREXP, MBRMAIL, MBRBIRTH, MBRCOIN, MBRPHONE, MBREXP, MBRSTAT from mbr ";
   $member = $pdo->query($sql);
   if( $member->rowCount() == 0 ){ 
