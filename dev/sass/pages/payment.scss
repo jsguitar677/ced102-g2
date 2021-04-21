@@ -42,8 +42,8 @@ div.progress__bar {
 
       .progress__item {
          &:nth-child(2) {
-            color: map-get($map: $color_regulation, $key:'blue');
-            background-color: map-get($map:$color_regulation, $key:'yellow');
+            color: map-get($color_regulation,'blue');
+            // background-color: map-get($color_regulation, 'yellow');
             z-index: 1;
          }
 

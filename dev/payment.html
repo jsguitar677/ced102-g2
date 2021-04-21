@@ -26,14 +26,14 @@
     <!-- ------------------------------------------------------- -->
     <div class=" col-lg-6 d-flex justify-content-start progress__bar">
       <ul class="progress ">
-        <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}">1
-          <p class="progress__text ">確認訂單</p>
+        <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}" style="background-color:#FFD241">1
+          <p class="progress__text " style="color:#FFD241"></slot>確認訂單</p>
         </li>
-        <li class="progress progress_group_bar">
-          <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
+        <li class="progress progress_group_bar" style="background-color:#FFD241">
+          <div class="progress-bar" role="progressbar" :class="{done:progress.payby}" style="background-color:#FFD241"></div>
         </li>
-        <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 1}">2
-          <p class="progress__text ">填寫訂購資料</p>
+        <li class="progress__item  " :class=" { 'progress__item--active' : current_section>= 1}"  style="background-color:#FFD241;z-index: 1">2
+          <p class="progress__text " style="color:#FFD241;;" >填寫訂購資料</p>
         </li>
         <li class="progress progress_group_bar">
           <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
@@ -53,7 +53,7 @@
           <div class="card">
             <div class="card-header" id="headingOne">
               <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h2 class="btntext"><p>訂單總金額NT$</p>{{amount}}</h2>
+                  <h2 class="btntext"><p>訂單總金額NT$2160</p></h2>
               </button>
               
             </div>
@@ -67,20 +67,20 @@
                                   <!-- <img v-bind:src="item.imgUrl" alt=""> -->
                                   <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
                                   <!-- <div class="name">{{item.itemName}}</div> -->
-                                  <div class="name"><span>品名:</span>{{item.itemName}}</div>
+                                  <div class="name"><span>品名:</span>環保購物袋</div>
                                   <!-- <div class="size"><span>尺寸:</span>{{item.size}}</div> -->
                               </div>
                               
                               <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
                               <!-- <div class="price"><span>$</span>500</div> -->
-                              <div class="item_detail count">{{item.count}
+                              <div class="item_detail count">1
                               </div> 
                               <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                              <div class="item_detail amount">{{item.price * item.count}}</div>
+                              <div class="item_detail amount">290</div>
                               <!-- <div class="operate">
                                   <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
                               </div> -->
-                      </div>
+                    </div>
                   </a> 
                 </div>
                 <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
@@ -89,8 +89,8 @@
                               <!-- <img v-bind:src="item.imgUrl" alt=""> -->
                               <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
                               <!-- <div class="name">{{item.itemName}}</div> -->
-                              <div class="name"><span>品名:</span>優質短袖白T</div>
-                              <div class="size"><span>尺寸:</span>F</div>
+                              <div class="name"><span>品名:</span>環保印花上衣</div>
+                              <!-- <div class="size"><span>尺寸:</span>F</div> -->
                           </div>
                           
                           <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
@@ -102,7 +102,7 @@
                               <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
                           </div> 
                           <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                          <div class="item_detail amount">500</div>
+                          <div class="item_detail amount">590</div>
                           <!-- <div class="operate">
                               <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
                           </div> -->
@@ -114,8 +114,8 @@
                           <!-- <img v-bind:src="item.imgUrl" alt=""> -->
                           <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
                           <!-- <div class="name">{{item.itemName}}</div> -->
-                          <div class="name"><span>品名:</span>優質短袖白T</div>
-                          <div class="size"><span>尺寸:</span>F</div>
+                          <div class="name"><span>品名:</span>個性帽款</div>
+                          <!-- <div class="size"><span>尺寸:</span>F</div> -->
                       </div>
                       
                       <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
@@ -127,7 +127,7 @@
                           <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
                       </div> 
                       <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                      <div class="item_detail amount">500</div>
+                      <div class="item_detail amount">1280</div>
                       <!-- <div class="operate">
                           <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
                       </div> -->
@@ -138,15 +138,15 @@
               <div class="payment-totalbody">
                 <div class="row">
                   <span class="label">商品總金額:</span>
-                  <div class="formw totalAmount"><span>$</span>{{total}}</div>
+                  <div class="formw totalAmount"><span>$</span>2160</div>
                 </div>
                 <div class="row">
                   <span class="label">使用環保幣折扣:</span>
-                  <input class="formw discount"  value="登入會員才能折抵" readonly style="outline: none;border:none;font-size: 16px; " >
+                  <input class="formw discount"  value="請登入會員" readonly style="outline: none;border:none;font-size: 16px; " >
                 </div>
                 <div class="row">
                   <span class="label">總計：</span>
-                  <div class="formw subtotal"><span>$</span>{{amount}}</div>
+                  <div class="formw subtotal"><span>$</span>2160</div>
                 </div>
               </div>
           </div>
@@ -162,12 +162,12 @@
               <form class="creadDetail" novalidate @submit.prevent="validateBeforeSubmit('payment')">
                 <div class="form-group row">
                   <label class="label">持卡人:</label>
-                  <input id="name" class="form-control form name" type="text" name="name" maxlength="16" v-model="formPayment.name" v-validate="'required|min:1'" required>
+                  <input id="name1" class="form-control form name" type="text" name="name" maxlength="16" v-model="formPayment.name" v-validate="'required|min:1'" >
                   <span class="text-danger"></span>
                 </div>
                 <div class="form-group row">
                   <label class="label">持卡人身分證字號:</label>
-                  <input id="idnumber" class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" :class="classes" required>
+                  <input id="idnumber" class="form-control form" type="text" name="name" v-model="formPayment.name" v-validate="'required|min:1'" :class="classes" >
                   <span class="text-danger"></span>
                 </div>
                 <div class="form-group row">
@@ -177,7 +177,7 @@
                       <input class="form-control" type="text" :name="`cardNumber${index}`" ref="cardNumber" v-model="formPayment.cardNumber[index]" v-validate="'required|numeric|length:4'" @input="checkCardNumberInput(formPayment.cardNumber[index], index)">
                     </div> -->
                     <div class="col " v-if="isMobile">
-                      <input id="cardnumber" class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" required>
+                      <input id="cardnumber" class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" >
                       <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col " v-if="isMobile">
@@ -200,10 +200,10 @@
                   <label class="label">到期日期:</label>
                   <div class="form-row  label ">
                     <div class="input-group " >
-                      <input  id="month" class="form-control form" type="text" name="month" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  placeholder="月,ex:2月,請輸入02"    required>
+                      <input  id="month" class="form-control form" type="text" name="month" v-model="formPayment.expiredMonth" v-validate="'required|numeric|min_value:1|max_value:12'"  >
                       <span class="text-danger"></span>
                       
-                      <input id="year" class="form-control form" type="text" name="year" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27" required>
+                      <input id="year" class="form-control form" type="text" name="year" v-model="formPayment.expiredYear" v-validate="'required|numeric|min_value:20|max_value:30'" placeholder="年,ex:2027,請輸入27" >
                       <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col-6 col-md-3 input-group row">
@@ -238,16 +238,16 @@
             </div>
             <form class="consignee">
               <div class="member">
-              <input type="radio" name="block" class="memberblock" >同會員資料
+              <input type="radio" name="block" class="memberblock" id="B1" >同會員資料
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
-                  <input type="text" class="form-control empty form name" id="owner" required>
+                  <input type="text" class="form-control empty form name" id="owner" >
                   <span class="text-danger"></span>
                </div>
                <div class="row" id="card-number-field">
                   <label class="label" for="cellPhone">手機號碼：</label>
                   <input type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
-                      id="cellPhone" required>
+                      id="cellPhone" >
                </div>
                <!-- <div class="row" >
                 <label class="label" for="phone">市話：</label>
@@ -299,14 +299,14 @@
                </div> -->
                <!-- <div class="row" > -->
                 <!-- <label class="label" for="phone"></label> -->
-                <input type='text' name='adrs' id='my_adrs' class="form-control form address"required>
+                <input type='text' name='adrs' id='my_adrs' class="form-control form address">
                 <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
                 <!-- <input  type="text" name="phone" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址"> -->
                <!-- </div> -->
               </div>
     
               <div class="addAddress">
-              <input type="radio" name="block" class="memberblock">新增收件人資訊
+              <input type="radio" name="block" class="memberblock" id="B2">新增收件人資訊
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
                   <input type="text" class="form-control empty form" id="owner">
@@ -383,7 +383,7 @@
                <!-- <div class="row" > -->
                 <!-- <label class="label" for="phone"></label> -->
                 <!-- <input  id='my_adrs' type="text" name="creditCard" class="form-control form" maxlength="20" placeholder="請輸入郵寄地址"> -->
-                <input type='text' name='adrs' id='my_adrs' class="form-control  form address" required>
+                <input type='text' name='adrs' id='my_adrs' class="form-control  form address" >
                 <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
                <!-- </div> -->
               </div> 
@@ -457,7 +457,7 @@
             <!-- </div> --> 
           <div class="btn_group">  
           <button onclick="location.href='./cart.html'" class="btn btn_primary " type="submit" >回上一頁</button>
-          <button class="finshbtn btn" type="submit">確認付款</button>
+          <div class="finshbtn btn" type="submit" style="background-color:#FFD241;  color: #07082E;">確認付款</div>
           </div>
         </form>
       </div>
@@ -481,10 +481,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.1.1/cleave.min.js"></script>
 
 <script>
-  $('.finshbtn').click(function(){
-$('.full-screen').css('display','block');
 
-});
 
 // $("#twzipcode").twzipcode();
 // new TwCitySelector({
@@ -508,20 +505,35 @@ var cleave = new Cleave( ".Phone", {
 // function send() {
 
 // 姓名電話地址 信用卡 年月 安全碼
-let name = document.getElementsById('name').value;
-let id = document.getElementById('idnumber').value;
-let cardnumber = document.getElementsId('cardnumber').value;
-let month = document.getElementById('month').value;
-let year = document.getElementById('year').value;
-let safe = document.getElementById('safe').value
+$('.finshbtn').click(function(){
+  let name1 = $('#name1').val();
+  let id = $('#id').val();
+  let cardnumber = $('#cardnumber').val();
+  let month = $('#month').val();
+  let year = $('#year').val();
+  let safe = $('#safe').val();
+    if (name1 == '' || id == '' || cardnumber == '' || month == '' || year == '' || safe == '') {
+      alert('請輸入正確資料');
+      alert(`${name1}+${id}+${cardnumber}+${month}+${year}+${safe}`)
+    
+
+    // }else{
+    //       alert('請輸入正確資料');
+    //       // $('.full-screen').css('display','block');
+    //       // alert('請輸入正確資料');
+    // };
+    }else{
+      if( $('#B1').prop('checked') || $('#B2').prop('checked')){
+          $('.full-screen').css('display','block');
+      alert(`${name1}+${id}+${cardnumber}+${month}+${year}+${safe}`)
+
+          // alert('請輸入正確資料');
+          // alert('A')
+      }
+    }
 
 
-if (name == '' || id == '' || cardnumber == '' || month == '' || year == '' || safe == '' ) {
-  Swal.fire({
-    icon: 'warning',
-    text: '請輸入正確的資料！',
-  })
-}   
+});
 </script> 
 
 
