@@ -14,7 +14,33 @@ body>*{
     cursor: pointer;
 }
 
-
+// -----------------------------------------
+@mixin pcL {
+    @media(max-width:1200px){
+        @content;
+      }
+}
+@mixin pc{
+    @media(max-width:1024px){
+        @content;
+    }
+}
+@mixin pad{
+    @media(max-width:768px){
+        @content;
+    }
+}
+@mixin mobileL{
+    @media(max-width:576px){
+        @content;
+    }
+}
+@mixin mobileS{
+    @media(max-width:375px){
+        @content;
+    }
+}
+// ---
 // 以下為自訂共用組件-john新增---------------------------------------
 ::-webkit-scrollbar {
     width: 12px;
@@ -242,6 +268,7 @@ body{
                 // height: 50px;
                 cursor: pointer;
                 z-index: 3;
+                width: calc(100% / 3);
                 div{
                     width: 20px;
                     height: 2px;
@@ -283,6 +310,8 @@ body{
 
 
             div#All_Logo{
+                width: calc(100% / 3);
+                text-align: center;
                 height: 50px;
                 img{
                     height: 50px;
@@ -297,6 +326,8 @@ body{
             div#All_RList{
                 display: flex;
                 align-items: center;
+                width: calc(100% / 3);
+                justify-content: flex-end;
                 ul{
                     list-style-type: none;
                     display: inline-block;
@@ -832,6 +863,11 @@ div.whiteMainPart5{
 #All_RListUL{
     display: flex;
     align-items: center;
+    #tokenHook{
+        @include pad{
+            display: none;
+        }
+    }
     li#LogInMemIdPhoto{
         padding-top: 5px !important;
         border: none !important;
@@ -1035,10 +1071,6 @@ div.whiteMainPart5{
     }
     body header{
         padding: 0px 15px;
-    }
-    #All_Logo{
-        display: none;
-
     }
 
 }
