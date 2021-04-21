@@ -26,13 +26,13 @@
     <!-- ------------------------------------------------------- -->
     <div class=" col-lg-6 d-flex justify-content-start progress__bar">
       <ul class="progress ">
-        <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}" style="background-color:#FFD241">1
+        <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}" style="background-color:#FFD241; color:#07082E;">1
           <p class="progress__text " style="color:#FFD241"></slot>確認訂單</p>
         </li>
         <li class="progress progress_group_bar" style="background-color:#FFD241">
           <div class="progress-bar" role="progressbar" :class="{done:progress.payby}" style="background-color:#FFD241"></div>
         </li>
-        <li class="progress__item  " :class=" { 'progress__item--active' : current_section>= 1}"  style="background-color:#FFD241;z-index: 1">2
+        <li class="progress__item  " :class=" { 'progress__item--active' : current_section>= 1}"  style="background-color:#FFD241;z-index: 1;color: #07082E;">2
           <p class="progress__text " style="color:#FFD241;;" >填寫訂購資料</p>
         </li>
         <li class="progress progress_group_bar">
@@ -514,7 +514,7 @@ $('.finshbtn').click(function(){
   let safe = $('#safe').val();
     if (name1 == '' || id == '' || cardnumber == '' || month == '' || year == '' || safe == '') {
       alert('請輸入正確資料');
-      alert(`${name1}+${id}+${cardnumber}+${month}+${year}+${safe}`)
+      // alert(`${name1}+${id}+${cardnumber}+${month}+${year}+${safe}`)
     
 
     // }else{
@@ -525,7 +525,7 @@ $('.finshbtn').click(function(){
     }else{
       if( $('#B1').prop('checked') || $('#B2').prop('checked')){
           $('.full-screen').css('display','block');
-      alert(`${name1}+${id}+${cardnumber}+${month}+${year}+${safe}`)
+      // alert(`${name1}+${id}+${cardnumber}+${month}+${year}+${safe}`)
 
           // alert('請輸入正確資料');
           // alert('A')
