@@ -182,13 +182,13 @@ function showLatestActv(jsonStr){
     for(let i=0; i<latestActvPic.length; i++){
         latestActvPic[i].setAttribute("src", latestActv[i]["LOCPIC"]);
     }
-    //====  展示預設資料
+    //====  展示預設最新活動資料
     RECRGOAL.innerHTML = latestActv[0]["RECRGOAL"];
     RECRNOW.innerHTML = latestActv[0]["RECRNOW"];
     DNTGOAL.innerHTML = latestActv[0]["DNTGOAL"];
     DNTNOW.innerHTML = latestActv[0]["DNTNOW"];
     ACTDLINE.innerHTML = latestActv[0]["ACTDLINE"];
-    ACTNAME.innerHTML = latestActv[0]["ACTNAME"];
+    ACTNAME.value = latestActv[0]["ACTNAME"];
     
     //====== 點按不同輪播圖更新資料
     $(".targetData").bind("click", function(){
@@ -200,8 +200,8 @@ function showLatestActv(jsonStr){
         DNTGOAL.innerHTML = latestActv[curIdx]["DNTGOAL"];
         DNTNOW.innerHTML = latestActv[curIdx]["DNTNOW"];
         ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
-        ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
-
+        ACTNAME.value = latestActv[curIdx]["ACTNAME"];
+        console.log(latestActv[curIdx]["ACTNAME"]);
     });
     
 
@@ -222,8 +222,23 @@ function getLatestActv(){
 }
 window.addEventListener('load',getLatestActv);
 
+//====================== 決定跳轉的最新活動頁面
+
 function getLatestActvInfo(){
-    
+    let linkActvData = document.getElementById('linkActvData');
+    linkActvData.onclick = function(){
+        console.log(linkActvData.value);
+    }
+    let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        actv = JSON.parse(xhr.responseText);
+        if(actv.ACTNAME){
+          //有抓到值
+          console.log(actv.ACTNAME);
+        }
+      }
+      xhr.open("get", "./php/2/clickedLatestActv.php", true);
+      xhr.send(null);
 }
 
 window.addEventListener('load',getLatestActvInfo);

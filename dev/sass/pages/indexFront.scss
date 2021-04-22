@@ -968,11 +968,17 @@ table.rankBox{
 }
 
 
-a#linkActvData{
-    color: map-get($map: $color_regulation, $key: $newBlue);
+input#linkActvData{
+    color: map-get($map: $color_regulation, $key: 'newBlue');
     text-decoration: none;
     background-color: #ffd241;
     padding: 10px;
+    font-weight: bold;
+    display: inline-block;
+    width: 278px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
     &::after{
         content: '， 前往活動詳情';
     }
