@@ -172,7 +172,7 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 // ==================== 最新活動抓取
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
-    console.log(latestActv);
+    // console.log(latestActv);
     let latestActvPic = document.getElementsByClassName('targetData');
     let RECRGOAL  = document.getElementById('neededVolunteer');
     let  RECRNOW = document.getElementById('singUpVolunteer');
@@ -204,7 +204,7 @@ function showLatestActv(jsonStr){
         ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
         ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
         ACTNAME.setAttribute("href",actDetailUrl+latestActv[curIdx]["ACTNO"]);
-        console.log(latestActv[curIdx]["ACTNAME"]);
+        // console.log(latestActv[curIdx]["ACTNAME"]);
     });
     
 
@@ -213,7 +213,7 @@ function getLatestActv(){
     var xhrLa = new XMLHttpRequest();
     xhrLa.onload = function(){
         if(xhrLa.status == 200){
-            console.log("最新活動",xhrLa.responseText);
+            // console.log("最新活動",xhrLa.responseText);
             showLatestActv(xhrLa.responseText);
         }else{
             alert(xhrLa.status);
@@ -229,16 +229,16 @@ window.addEventListener('load',getLatestActv);
 
 function getLatestActvInfo(){
     let linkActvData = document.getElementById('linkActvData');
-    linkActvData.onclick = function(){
-        console.log(linkActvData.value);
-    }
+    // linkActvData.onclick = function(){
+    //     console.log(linkActvData.value);
+    // }
     let xhr = new XMLHttpRequest();
       xhr.onload = function(){
         actv = JSON.parse(xhr.responseText);
-        if(actv.ACTNAME){
-          //有抓到值
-          console.log(actv.ACTNAME);
-        }
+        // if(actv.ACTNAME){
+        //   //有抓到值
+        //   console.log(actv.ACTNAME);
+        // }
       }
       xhr.open("get", "./php/2/clickedLatestActv.php", true);
       xhr.send(null);
