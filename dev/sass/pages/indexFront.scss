@@ -968,7 +968,7 @@ table.rankBox{
 }
 
 
-input#linkActvData{
+a#linkActvData{
     color: map-get($map: $color_regulation, $key: 'newBlue');
     text-decoration: none;
     background-color: #ffd241;
