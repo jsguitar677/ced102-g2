@@ -18,8 +18,6 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/3.6.2/vuex.min.js"></script> -->
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </head>
 
 <body>
@@ -67,10 +65,10 @@
                     <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id" >
                         <div class=" item_body prodInfo">
                             <div class="item_detail">
-                                <!-- <img v-bind:src="item.imgUrl" alt=""> -->
-                                <div class="img prodPic"><img v-bind:src="item.imgUrl" alt="" style="max-width:100% "></div>
+                                <img v-bind:src="item.imgUrl" alt="" style="max-width:100%" >
+                                <!-- <div class="img prodPic"><img v-bind:src="{item.imgUrl}}" alt="" style="max-width:100% "></div> -->
                                 <!-- <div class="name">{{item.itemName}}</div> -->
-                                <div class="prodName name"><span>品名:</span>{{item.itemName}}</div>
+                                <div class="prodName name"><span>品名:</span>{{item.prodName}}</div>
                                 <!-- <div class="size prodSize"><span>尺寸:</span>{{item.size}}</div> -->
                             </div>
 
@@ -144,9 +142,7 @@
     <script src="./js/login.js"></script>
     <script src="./js/spacecar.js"></script>
     <script src="./js/orderCoin.js"></script>
-    <!-- <script src="./js/vue.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-
+    <script src="./js/vue.js"></script>
     <script>
         var app = new Vue({
     el:'#app',
@@ -177,14 +173,14 @@
         //     price:'1280',
         //     count:'1'
         //   },
-        // //   {
-        // //     id:'4',
-        // //     itemName:'質感褐色系大衣服',
-        // //     imgUrl:'https://images.unsplash.com/photo-1491998664548-0063bef7856c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-        // //     size: 'XXL',
-        // //     price:'230',
-        // //     count:'1'
-        // //   },
+        //   {
+        //     id:'4',
+        //     itemName:'質感褐色系大衣服',
+        //     imgUrl:'https://images.unsplash.com/photo-1491998664548-0063bef7856c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+        //     size: 'XXL',
+        //     price:'230',
+        //     count:'1'
+        //   },
         // ],
         itemList:[],
         
@@ -235,16 +231,37 @@
 
 let cart = [];
 let storage = sessionStorage;
-
 function doFirst(){
-	getCart();
-    
+let cart = storage.getItem('cart');
+if(JSON.parse(cart) == null){
+    $('.space_box').css('display','block');
+            $('.total_body').remove();
+            $('.total_box').remove();
+            $('.button-pay').remove(); 
+
+}else if(JSON.parse(cart) != ""){
+    app.itemList = JSON.parse(cart) ; 
 }
+}
+
+// getCart();
+
+// function doFirst(){
+//     $('.space_box').css('display','none');
+//     if ($('').length == 0) {
+//             $('.space_box').css('display','block');
+//             $('.total_body').remove();
+//             $('.total_box').remove();
+//             $('.button-pay').remove();
+//     }else{
+//         getCart();
+//     }
+    
+// }
 function getCart(){
     if(storage["cart"] != undefined){
         cart = JSON.parse(storage["cart"]);
-        app.itemList = cart ;  
-        console.log("+++++++++++", cart);     
+        app.itemList = cart ;       
     }
 
 }
@@ -283,8 +300,10 @@ $(function(){
 });
 
 window.addEventListener("load",doFirst)
-</script>      
-
+</script>    
+<script>
+    // $('.space_box').css('display','none');
+</script>
 
 
 
