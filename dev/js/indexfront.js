@@ -172,6 +172,7 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 // ==================== 最新活動抓取
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
+    console.log(latestActv);
     let latestActvPic = document.getElementsByClassName('targetData');
     let RECRGOAL  = document.getElementById('neededVolunteer');
     let  RECRNOW = document.getElementById('singUpVolunteer');
@@ -188,19 +189,21 @@ function showLatestActv(jsonStr){
     DNTGOAL.innerHTML = latestActv[0]["DNTGOAL"];
     DNTNOW.innerHTML = latestActv[0]["DNTNOW"];
     ACTDLINE.innerHTML = latestActv[0]["ACTDLINE"];
-    ACTNAME.value = latestActv[0]["ACTNAME"];
+    ACTNAME.innerHTML = latestActv[0]["ACTNAME"];
     
     //====== 點按不同輪播圖更新資料
     $(".targetData").bind("click", function(){
         var divs = $(".targetData");
         var curIdx = divs.index($(this));
+        var actDetailUrl = "./act_detail.html?actno=";
         latestActvPic[curIdx].setAttribute("src", latestActv[curIdx]["LOCPIC"]);
         RECRGOAL.innerHTML = latestActv[curIdx]["RECRGOAL"];
         RECRNOW.innerHTML = latestActv[curIdx]["RECRNOW"];
         DNTGOAL.innerHTML = latestActv[curIdx]["DNTGOAL"];
         DNTNOW.innerHTML = latestActv[curIdx]["DNTNOW"];
         ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
-        ACTNAME.value = latestActv[curIdx]["ACTNAME"];
+        ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
+        ACTNAME.setAttribute("href",actDetailUrl+latestActv[curIdx]["ACTNO"]);
         console.log(latestActv[curIdx]["ACTNAME"]);
     });
     
