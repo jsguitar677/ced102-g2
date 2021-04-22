@@ -173,13 +173,38 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
     let latestActvPic = document.getElementsByClassName('targetData');
-    // let donateName = document.getElementsByClassName('donateRankName');
-    // let donateMoney = document.getElementsByClassName('donateMoney');
-    for(let i=0; i<6; i++){
+    let RECRGOAL  = document.getElementById('neededVolunteer');
+    let  RECRNOW = document.getElementById('singUpVolunteer');
+    let  DNTGOAL = document.getElementById('donateGoal');
+    let  DNTNOW = document.getElementById('donateNow');
+    let ACTDLINE = document.getElementById('actvDue');
+    let ACTNAME = document.getElementById('linkActvData');
+    for(let i=0; i<latestActvPic.length; i++){
         latestActvPic[i].setAttribute("src", latestActv[i]["LOCPIC"]);
-        // donateName[i].innerHTML = rankTimes[i]["MBRNAME"];
-        // donateMoney[i].innerHTML = rankTimes[i]["PARTICIPATE"];
     }
+    //====  展示預設資料
+    RECRGOAL.innerHTML = latestActv[0]["RECRGOAL"];
+    RECRNOW.innerHTML = latestActv[0]["RECRNOW"];
+    DNTGOAL.innerHTML = latestActv[0]["DNTGOAL"];
+    DNTNOW.innerHTML = latestActv[0]["DNTNOW"];
+    ACTDLINE.innerHTML = latestActv[0]["ACTDLINE"];
+    ACTNAME.innerHTML = latestActv[0]["ACTNAME"];
+    
+    //====== 點按不同輪播圖更新資料
+    $(".targetData").bind("click", function(){
+        var divs = $(".targetData");
+        var curIdx = divs.index($(this));
+        latestActvPic[curIdx].setAttribute("src", latestActv[curIdx]["LOCPIC"]);
+        RECRGOAL.innerHTML = latestActv[curIdx]["RECRGOAL"];
+        RECRNOW.innerHTML = latestActv[curIdx]["RECRNOW"];
+        DNTGOAL.innerHTML = latestActv[curIdx]["DNTGOAL"];
+        DNTNOW.innerHTML = latestActv[curIdx]["DNTNOW"];
+        ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
+        ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
+
+    });
+    
+
 }
 function getLatestActv(){
     var xhrLa = new XMLHttpRequest();
@@ -196,5 +221,14 @@ function getLatestActv(){
     xhrLa.send(null);
 }
 window.addEventListener('load',getLatestActv);
+
+function getLatestActvInfo(){
+    
+}
+
+window.addEventListener('load',getLatestActvInfo);
+
+
+
 
 
