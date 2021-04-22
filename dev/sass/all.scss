@@ -281,18 +281,16 @@ body{
             width: 100%;
             display: flex;
             justify-content: space-between;
-            // @include spacil440px{
-            //     width: 0%;
-            // }
+            
 // ==============================================  漢堡選單按鈕 JohnLing
 
             div#All_BgBtn{
                 @include spacil356px{
                 width: 0;
-
                 }
+                width: calc(100% / 3);
                 // width: 35px;
-                // height: 50px;
+                height: 50px;
                 cursor: pointer;
                 z-index: 3;
                 div{
@@ -359,10 +357,14 @@ body{
             }
             div#All_RList{
                 display: flex;
-                align-items: center;
+                justify-content: flex-end;
+                width: calc(100% / 3);
                 ul{
                     list-style-type: none;
                     display: inline-block;
+                    @include spacilpad{
+                        display: flex;
+                    }
                     padding: 0px;
                     margin: 0px;
                     li{
@@ -1103,10 +1105,6 @@ div.whiteMainPart5{
     }
     body header{
         padding: 0px 15px;
-    }
-    #All_Logo{
-        display: none;
-
     }
 
 }
