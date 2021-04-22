@@ -1,4 +1,6 @@
 <?php
+include("getMemInfoFIX.php");
+
 // require_once("connect.php");
 require_once("../../connect_ced102g2.php");
 
@@ -12,15 +14,12 @@ try{
    
 
     $memberData = $pdo->prepare($MBRDATA);
-    $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData->bindValue(":MBRNO",  $_SESSION["MBRNO"]);
     $memberData->bindValue(":ACTNO", $_POST["ACTNOO"]);
     $memberData->bindValue(":REASON", $_POST["REASON"]);
 
     $memberData->execute();
 
-    // // 資料庫取回的資料
-    // $memRow = $memberData->fetchAll(PDO::FETCH_ASSOC);
-    
     echo 2; 
 
     $PDOO = "SET SQL_SAFE_UPDATES=1";
