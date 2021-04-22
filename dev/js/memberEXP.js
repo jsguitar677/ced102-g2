@@ -17,11 +17,9 @@ function ReceiveCoin(){
    
     let xhr = new XMLHttpRequest(); 
     xhr.onload = function(){
-        var MBRDETAIL = JSON.parse(xhr.responseText);  //MBRCOINLV: "1"   MBREXP: "100"
-        // console.log(MBRDETAIL);
+        var MBRDETAIL = JSON.parse(xhr.responseText);  
         let coinLV= parseInt(MBRDETAIL.MBRCOINLV);
-        var coinExp= parseInt(MBRDETAIL.MBREXP);
-        // console.log(typeof coinLV);
+        var coinExp= 1000; // parseInt(MBRDETAIL.MBREXP);
             
         for(let i=1; i<=(coinExp/100);i++){
             $('#expBlockHook').append(`
@@ -31,10 +29,11 @@ function ReceiveCoin(){
              </div>
              `)
         };
-        $('.comBtn2').css('background-color','red');
+        $('.comBtn2').css('background-color','gray');
         if(coinExp - coinLV*100 >= 100){
             $(`#btnExp${coinLV+1}`).removeAttr('disabled');
-            $(`#btnExp${coinLV+1}`).css('backgroundColor','blue');
+            $(`#btnExp${coinLV+1}`).css('backgroundColor','#07082E');
+            $(`#btnExp${coinLV+1}`).css('color','#FFFFFF');
         }
         $('.comBtn2').click(function(){
             $(this).attr('disabled');
@@ -46,15 +45,15 @@ function ReceiveCoin(){
                 console.log(NewCoinLvV);
 
                 if((coinExp - NewCoinLvV*100) < 100){
-                    console.log("qqq");
                     $('.comBtn2').attr('disabled');
-                    $('.comBtn2').css('background-color','red');
+                    $('.comBtn2').css('background-color','gray');
                 }else if((coinExp - NewCoinLvV*100) >= 100){
-                    console.log("aaa");
                     $('.comBtn2').attr('disabled');
-                    $('.comBtn2').css('backgroundColor','red');
+                    $('.comBtn2').css('backgroundColor','gray');
                     $(`#btnExp${NewCoinLvV+1}`).removeAttr('disabled');
-                    $(`#btnExp${NewCoinLvV+1}`).css('backgroundColor','blue');
+                    $(`#btnExp${NewCoinLvV+1}`).css('backgroundColor','#07082E');
+                    $(`#btnExp${NewCoinLvV+1}`).css('color','#FFFFFF');
+                    
                 }
             }
             xhr1.open("post", "php/15/memberUpdataLV.php", true); //連結伺服端程式
@@ -66,8 +65,5 @@ function ReceiveCoin(){
     xhr.open("post", "php/15/memberExp.php", true); //連結伺服端程式
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
     xhr.send(null);
-
-
-
 }
 

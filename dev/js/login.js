@@ -501,7 +501,6 @@ function checkACFT(e){
         let createRemind = document.getElementById('createRemind')
         let createNewAcc = document.getElementById('createNewAcc')
         xhr.onload = function(){//server端已執行完畢
-            console.log("onload : ", xhr.readyState);
             if(xhr.status == 200){//http status is OK
                 if(xhr.responseText == 2 && logMemId.value != null){
                     createNewAcc.disabled = false;
@@ -509,8 +508,8 @@ function checkACFT(e){
                     alert("此帳號可使用");
                 }else{
                     createNewAcc.disabled=true
-                    alert("此帳號已存在, 不可用");
                     createRemind.style.opacity = 1;
+                    alert("此帳號已存在, 不可用");
                 }
             }else{
                 alert(xhr.status);

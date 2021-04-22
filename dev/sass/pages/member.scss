@@ -25,7 +25,8 @@ p{font-size: 15px;}
     background-origin: border-box;
     background-repeat: no-repeat;
     background-position: left bottom;
-    background-size: 40%, 100%;
+    background-size: 46%, 85%;
+    background-size: 25%, 100%;
 }
 
 
@@ -219,8 +220,11 @@ body{
                                 color: map-get($color_regulation,'white');
                                 background-color:transparent;
                                 right: 0px;
-                                bottom: -26px;
+                                bottom: 100px;
                                 border-bottom: 2px solid map-get($color_regulation, 'yellow' );
+                                @include pc{
+                                    bottom: -29px;
+                                }
                                 @include pad{
                                     right: 16px;
                                     bottom: 12px;
@@ -306,6 +310,7 @@ body{
                     @include pad{
                         width:100%;
                         margin-right: 0px;
+                        margin-top: 10px;
                     }
                     font-size: $p;
                     line-height: $lineHeight;
@@ -373,6 +378,7 @@ body{
 }
 
 .expRight {
+    margin-bottom: 10px;
     left: 20%;
     &::after{
         left: -16px;
@@ -385,12 +391,21 @@ body{
         color: map-get($color_regulation,'blue');
         .orderSelect{
             background-color: #CCCCCC;
+            background-image: url('../../img/mbr/memberOrder.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
             padding: 30px;
-            p{
-                margin: 0;
+            .h7{
+                display: inline-block;
+                margin-right: 10px;
+                color: map-get($color_regulation, 'white' );
             }
             select{
-                border:1px solid #1D1E4C;
+                display: inline-block;
+                box-shadow: 1px 1px 6px rgba(255, 255, 255, 0.548);
+                border:none;
                 outline: none;
             }
         }
@@ -426,7 +441,9 @@ table {
     }
 }
 
-
+#selectDate{
+    padding: 7px;
+}
 
 
 #memInfo{
@@ -550,6 +567,7 @@ div#memInfo{
             text-align: left;
         }
         .memInfoBox{
+            transition: $transition;
             background-color: rgba(255, 255, 255, 0.753);
             width: 100%;
             .infoBtn{
@@ -564,8 +582,12 @@ div#memInfo{
                 &:hover{
                     transform: rotate(90deg);
                 }
+                i{
+                    line-height: 30px;
+                }
             }
             .memInfoTop{
+                box-shadow: $box-shadow;
                 line-height: 30px;
                 display: flex;
                 justify-content: space-between;
@@ -580,7 +602,6 @@ div#memInfo{
                 }
             }
             .memInfoBottom{
-                border-top: 1px solid #fafafa;
                 padding:5px 15px;
                 margin-bottom: 15px;
 
@@ -783,6 +804,8 @@ div#memPage{
         top: 0;
         left: 0;
         div#eventManagementCancelModal{
+            box-shadow: $box-shadow;
+
             background-color: map-get($map: $color_regulation, $key: 'white');
             color: map-get($map: $color_regulation, $key: 'blue');
             font-size: $p;
@@ -840,7 +863,18 @@ div#memPage{
                         padding-left: 10px;
                     }
                     #eventManagementCancelReason{
+                        box-shadow: $box-shadow;
                         border: 1px solid map-get($color_regulation, 'blue' );
+                        color: map-get($color_regulation, 'blue' );
+                        padding: 6px;
+                        resize:none;
+                        transition: $transition;
+
+                        &:focus{
+                            box-shadow: 1px 1px 17px rgba(0, 0, 0, 0.342);
+                            transition: $transition;
+                            outline: -webkit-focus-ring-color auto 0px;
+                        }
                     }
                 }
                 
@@ -852,8 +886,8 @@ div#memPage{
                     flex-direction: column;
                     flex-wrap: nowrap;
                     button#eventManagementCancel{
+                        box-shadow: $box-shadow;
                         width: 100px;
-                        // display: inline-block;
                         margin-right: 15%;
                         border:1px solid map-get($map: $color_regulation, $key: 'blue');
                         outline: none;
@@ -863,13 +897,13 @@ div#memPage{
                         height: 35px;
                     }
                     button#eventManagementSubmit{
-
+                        box-shadow: $box-shadow;
                         width: 100px;
                         margin-bottom: 30px;
-                        border:1px solid map-get($map: $color_regulation, $key: 'blue');
+                        border:none;
                         outline: none;
-                        color: map-get($map: $color_regulation, $key: 'white');
-                        background-color: map-get($map: $color_regulation, $key: 'blue');
+                        color: map-get($map: $color_regulation, $key: 'blue');
+                        background-color: map-get($map: $color_regulation, $key: 'yellow');
                         cursor: pointer;
                         height: 35px;
                         @include pad{
@@ -918,9 +952,11 @@ div#eventManagementCancelModalCloseBtn{
 .eventSaveBox{
     padding: 30px;
     .warmSaveCard{
-        display: none;
+        width: 100%;
+        margin-bottom: 30px;
         h6{
             display: inline-block;
+            line-height: 44px;
         }
         a{  
             i{
@@ -931,7 +967,8 @@ div#eventManagementCancelModalCloseBtn{
             padding: 10px 30px;
             background-color: map-get($color_regulation, 'yellow' );
             float: right;
-            margin-bottom: 30px;
+            
+            margin-left: 10px;
             text-decoration:none;
         }
     }
@@ -953,7 +990,7 @@ div#eventManagementCancelModalCloseBtn{
 .page5Card{
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../../img/act_hist/beach1.jpg);
+    background-image: url('../../img/act_hist/beach1.jpg');
     position: relative;
     display: inline-block;
     align-items: flex-end;

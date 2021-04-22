@@ -72,10 +72,17 @@ function getDetail(){
                     document.getElementById('eventManagementSubmit').onclick = function() {
                         let xhr2 = new XMLHttpRequest(); 
                         xhr2.onload = function(){
-                            document.getElementById(`actCancel${i}`).textContent="審核下架中";
-                            document.getElementById(`actSdate${i}`).textContent="取消審核中";
-                            document.getElementById('eventManagementCancelModalCon').style.display = "none";
-                            document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
+                            console.log(xhr2.responseText)
+                            if(xhr2.responseText == 2){
+                                document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
+                                document.getElementById(`actCancel${i}`).textContent="審核下架中";
+                                document.getElementById(`actSdate${i}`).textContent="取消審核中";
+                                document.getElementById('eventManagementCancelModalCon').style.display = "none";
+                                alert('已申請成功');
+                            }else{
+                                alert("正在申請");
+                            }
+
                         }
                         xhr2.open("post","php/15/EventCancel.php", true);
                         xhr2.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
@@ -89,10 +96,10 @@ function getDetail(){
                     document.getElementById("eventManagementCancel").onclick = function (){
                         document.getElementById('eventManagementCancelModalCon').style.display = "none";
                     }
-                    document.getElementById("eventManagementCancelModalCloseBtn").onclick = function (){
-                        document.getElementById('eventManagementCancelModalCon').style.display = "none";
+                    // document.getElementById("eventManagementCancelModalCloseBtn").onclick = function (){
+                    //     document.getElementById('eventManagementCancelModalCon').style.display = "none";
 
-                    }
+                    // }
 
                     // `MBRNO=${ordRow.MBRNO}&ORDERNO=${j}`;
                 };
