@@ -1,6 +1,6 @@
 <?php
+include("getMemInfoFIX.php");
 try{
-    // require_once("connect.php");
   require_once("../../connect_ced102g2.php");
 
     $MBRDATA=" SELECT ORDERDATE ,SHIPSTAT ,ORDERSTATUS, PROPRICETOTAL,DISCOUNT, ORDERTOAL FROM orders WHERE MBRNO = :MBRNO AND ORDERNO = :ORDERNO";
@@ -11,7 +11,7 @@ try{
 
 
     $memberData = $pdo->prepare($MBRDATA);
-    $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData->bindValue(":MBRNO", $_SESSION["MBRNO"]);
     $memberData->bindValue(":ORDERNO", $_POST["ORDERNO"]);
     $memberData->execute();
 

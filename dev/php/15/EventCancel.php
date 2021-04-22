@@ -21,7 +21,7 @@ try{
     // // 資料庫取回的資料
     // $memRow = $memberData->fetchAll(PDO::FETCH_ASSOC);
     
-    // echo json_encode($memRow); 
+    echo 2; 
 
     $PDOO = "SET SQL_SAFE_UPDATES=1";
     $memberData = $pdo->prepare($PDOO);

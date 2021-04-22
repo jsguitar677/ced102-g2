@@ -1,4 +1,6 @@
 <?php
+include("getMemInfoFIX.php");
+
 try{
     // require_once("connect.php");
   require_once("../../connect_ced102g2.php");
@@ -11,7 +13,7 @@ try{
     // SHIPSTAT 送貨狀態 
 
     $memberData = $pdo->prepare($MBRDATA);
-    $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData->bindValue(":MBRNO", $_SESSION["MBRNO"]);
     $memberData->execute();
 
 

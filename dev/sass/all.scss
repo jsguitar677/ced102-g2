@@ -41,6 +41,27 @@ body>*{
     }
 }
 // ---
+
+@mixin spacilpad{
+    @media(max-width:730px){
+        @content;
+    }
+}
+@mixin spacil440px{
+    @media(max-width:440px){
+        @content;
+    }
+}
+@mixin spacil385px{
+    @media(max-width:385px){
+        @content;
+    }
+}
+@mixin spacil356px{
+    @media(max-width:356px){
+        @content;
+    }
+}
 // 以下為自訂共用組件-john新增---------------------------------------
 ::-webkit-scrollbar {
     width: 12px;
@@ -260,10 +281,16 @@ body{
             width: 100%;
             display: flex;
             justify-content: space-between;
-
+            // @include spacil440px{
+            //     width: 0%;
+            // }
 // ==============================================  漢堡選單按鈕 JohnLing
 
             div#All_BgBtn{
+                @include spacil356px{
+                width: 0;
+
+                }
                 // width: 35px;
                 // height: 50px;
                 cursor: pointer;
@@ -294,6 +321,7 @@ body{
             }
 
            div.BgBtnClickedEffect{
+
                div{
                     &:first-child{
                         transform: rotate(45deg) translateY(10px);
@@ -310,6 +338,9 @@ body{
 
 
             div#All_Logo{
+                @include spacil440px{
+                    width: 180px;
+                }
                 width: calc(100% / 3);
                 text-align: center;
                 height: 50px;
@@ -318,6 +349,10 @@ body{
                 }
                 svg{
                     height: 50px;
+                    @include spacil385px{
+                        padding-top: 7.5px;
+                        height: 35px;
+                    }
                     .st0{
                         transition: all .5s;
                     }
@@ -864,8 +899,8 @@ div.whiteMainPart5{
     display: flex;
     align-items: center;
     #tokenHook{
-        @include pad{
-            display: none;
+        @include spacilpad{
+            display: none!important;
         }
     }
     li#LogInMemIdPhoto{
@@ -1077,12 +1112,10 @@ div.whiteMainPart5{
 
 ul#AccountList{
     position: absolute;
-    // top:-200px;
     right: 0px;
-    // display: none;
     opacity: 0;
     list-style-type: none;
-    background-color: #fff;
+    background-color: #a0ecdc;
     padding-left: 0px;
     width: 230px;
     display: inline-flex;
@@ -1091,7 +1124,7 @@ ul#AccountList{
     margin: 0px;
     transition: all 1s;
     border: 2px solid map-get($map: $color_regulation, $key: 'blue');
-    
+    box-shadow: $box-shadow;
     li{
         &:last-child, &:first-child{
             padding-bottom: 0px;
@@ -1110,7 +1143,7 @@ ul#AccountList{
 
     }
     li#LogInMemIdPhoto{
-        border: 1px solid map-get($map: $color_regulation, $key: 'blue');
+        
         color: map-get($map: $color_regulation, $key: 'blue');   
         display: flex;
         align-items: center;
@@ -1128,11 +1161,7 @@ ul#AccountList{
             color: white;
         }
     }
-    li#hrline{
-        width: 100%;
-        background-color: map-get($map: $color_regulation, $key: 'blue');   
-        height: 3px;
-    }
+   
 }
 
 .yellowLeftBar{
