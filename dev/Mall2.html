@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/all.css">
+    <!-- <link rel="stylesheet" href="./css/all.css"> -->
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css'/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,7 +19,6 @@
     <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css' /> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script> -->
 
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -30,7 +29,7 @@
     
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
-    <title>商城Mall2.html</title>
+    <title>淨下塑湲|商城</title>
 </head>
 
 <body>
@@ -39,15 +38,8 @@
     <!-- 會員登入 -->
     @@include('./layout/login.html')
 
-    <!-- =====麵包條===== -->
-    <!-- <div class="titleBlock">
-       <span>首頁/</span>
-       <span class="currentPage">商城</span>
-    </div> -->
-
     <section>
         <div class="content_Mall">
-            <!-- =======================BANNER : 客製商品區========================== -->
             <!-- =======================BANNER : 客製商品區========================== -->
             <!-- =======================BANNER : 客製商品區========================== -->
             <div class="homePage4__customerBlock">
@@ -130,7 +122,6 @@
             
             <!-- ====================== 一般商品區 =========================== -->
             <!-- ====================== 一般商品區 =========================== -->
-            <!-- ====================== 一般商品區 =========================== -->
             <!-- ========標題======== -->
             <div class="newsPorTitle">
                 <p>PORDUCTS</p>
@@ -158,40 +149,37 @@
                             <select class="select_sort_way" name="select_sort_way">
                                 <!-- <option class="sortWay" selected disabled><div class="sortByProdNo">請選擇排序方式</div></option> -->
                                 <option class="sort sortbyProdNo" selected>請選擇排序方式</option>
-                                <!-- <option class="sort sortbyListedDate">新品上市</option> -->
+                                <option class="sort sortbyListedDate">新品上市</option>
                                 <option class="sort sortByPriceAsc" data-sort="price">價格低至高</option>
-                                <option class="sort sortByPriceDesc">價格高至低</option>
+                                <!-- <option class="sort sortByPriceDesc"></option> -->
                             </select>
                         </div>
 
                         <!--================= 一般商品卡片 =================-->
                         <div class="normalBlack">
-                            <!-- =================放置動態「一般商品」的卡片================= -->
-                            <!-- <div id="app" class="addDivForVue"> -->
                             <div id="app" class="addDivForVue">
-                                <div v-for="prodRow in prodRows" v-bind:class="[name1, name2, 'category'+prodRow.PRODCLNO]" v-bind:id="prodRow.PRODNO">
+                                <!-- =================放置動態「一般商品」的卡片================= -->
+                                <div v-for="prodRow in prodRows" v-bind:id="prodRow.PRODNO" v-bind:class="[name1, name2, 'category'+prodRow.PRODCLNO]" >
                                     <a href="NormalProduct_RWD.html">
-                                        <img :src="prodRow.PRODPIC_1" >
+                                        <img :src="prodRow.PRODPIC_1" class="theImg">
                                     </a>
                                     <div class="productInfo">
                                         <p class="NameAndPrice">{{prodRow.PRODNAME}}</p>
                                         <p class="NameAndPrice">NT$
                                             <span class="price">{{prodRow.PRODPRICE}}</span>
-                                            <button class="CartBtnOfMall" v-bind:id="prodRow.PRODNO">
-                                            <!-- <button class="CartBtnOfMall" v-bind:id="'a'+prodRow.PRODNO"> -->
+                                            <button class="CartBtnOfMall" class="theImg">
                                                 <i class="fas fa-shopping-cart fa-1x"></i>
                                                 <p>加入購物車</p>
                                             </button>
                                         </p>
                                     </div>
                                 </div>
+                                <!-- =================放置動態「一般商品」的卡片//=============== -->
                             </div>
-                            <!-- =================放置動態「一般商品」的卡片//=============== -->
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- ====================== 推薦商品(最新商品) =========================== -->
             <!-- ====================== 推薦商品(最新商品) =========================== -->
             <!-- ====================== 推薦商品(最新商品) =========================== -->
@@ -208,13 +196,13 @@
                         <!-- =================放置動態「推薦商品」的卡片================= -->
                         <div v-for="NewProdRow in NewProdRows" class="product" v-bind:id="NewProdRow.PRODNO">
                             <a href="NormalProduct_RWD.html">
-                                <img :src="NewProdRow.PRODPIC_1">
+                                <img :src="NewProdRow.PRODPIC_1" class="theImg">
                             </a>
                             <div class="productInfo">
                                 <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
                                 <p class="NameAndPrice">NT$
                                     <span class="price">{{NewProdRow.PRODPRICE}}</span>
-                                    <button class="CartBtnOfMall" v-bind:id="NewProdRow.PRODNO">
+                                    <button class="CartBtnOfMall" class="theImg">
                                         <i class="fas fa-shopping-cart fa-1x"></i>
                                         <p>加入購物車</p>
                                     </button>
@@ -263,14 +251,6 @@
             });
         });
     </script>
-
-    <!-- 排序套件 -->
-    <!-- <script>
-        var options = {
-            valueNames: ['price']
-        };
-        var userList = new List('user',options);
-    </script> -->
 
     <!-- ==================================篩選一般商品種類================================== -->
     <!-- ==================================篩選一般商品種類================================== -->
@@ -331,15 +311,16 @@
     
     
 
-    <!-- ==========================資料庫取資料 / 存id到session========================== -->
-    <!-- ==========================資料庫取資料 / 存id到session========================== -->
+    <!-- =====================資料庫取資料 / 取資料 / 存id到session====================== -->
     <script>
-    // ------------------------到資料庫撈取「商城卡片」要的資料------------------------
+        let cart=[];
+        let storage = sessionStorage;
+        
+    // ---------到資料庫撈取「商城卡片」要的資料---------
     function getProducts(){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
             prodRows = JSON.parse(xhr.responseText);
-            //console.log(prodRows);
             app.prodRows = prodRows;
         }
         xhr.open("get", "./php/mall/getProducts.php", true);
@@ -356,71 +337,66 @@
             name2 : 'productDisplay',
         },
         mounted(){
-            let storage = sessionStorage;
             //ItemId : for商城記錄click到哪個商品
             if(storage['ItemId'] == null){
                 storage['ItemId'] = '';
             }
-            //addItemList : for購物車記錄把哪個商品加到購物車
-            if(storage['addItemList'] == null){
-                storage['addItemList'] = '';
-            }
-            // %%%%%%%%%%%%%%%%%%%%%%%%%%%
-            // cart : for購物車記錄把哪個商品加到購物車
-            // let cart = [];
-            // if(storage['cart'] == null){
-            //     storage['cart'] = '';
-            // }
-            // function updateSession(){
-            //     storage["cart"] = JSON.stringify(cart);
-            // }
-            // %%%%%%%%%%%%%%%%%%%%%%%%%%%
-      
             setTimeout(()=>{
                 //幫每張卡片(一般商品+推薦商品)建立事件聆聽功能
-                let prodCard = document.querySelectorAll('.product');
+                let prodCard = document.querySelectorAll('.theImg');
                 for(let i = 0; i < prodCard.length; i++){
                     prodCard[i].addEventListener('click',function(){
-                        theId = this.id;
+                        // theId = this.id;(原寫法)
+                        var theId = this.parentNode.parentNode.id;
                         //click後 就把theId = this.id存入session(下列三種寫法都可以)
                         storage.setItem('ItemId',theId);
                         // storage['ItemId'] = theId;
                         // storage['ItemId'] = `${theId}`;
                     });
                 }
-                // ********click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)********
-                //幫每個購物車btn建立事件聆聽功能
-                let CartBtn = document.querySelectorAll('.CartBtnOfMall');
-                
-                for(let i = 0; i < CartBtn.length; i++){
-                    
-
-                    CartBtn[i].addEventListener('click',function(){
-                        
-                        theBtnId = this.id;
-                        //click後 就把theBtnId = this.id存入session
-                        storage['addItemList'] += `${theBtnId}, `;
-                        //alert(`${theBtnId}`);
-                        //這個程式沒有要清掉addItemList的value, 何時清掉addItemList的value要寫在購物車(應該是這樣)
-                        
-                    });
-                    // CartBtnOfMall
-                    // CartBtn[i].onclick = function(){
-                    //     alert('s231');
-                    // }
+                //--------session記錄購物資訊-----更新storage的購物資訊
+                function updateCart(){
+                    storage["cart"] = JSON.stringify(cart);
                 }
-                // ************************************************************************************
-            },50)
+                // ********click「Cart Btn」, 就把 那個產品資訊存入Session********
+                //-----------------------------註冊放入購物車
+                let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                for(let i=0; i<CartBtn.length; i++){
+                    CartBtn[i].onclick = function(e){
+                        // let prodNo = e.target.id;(原寫法)
+                        let prodNo = this.parentNode.parentNode.parentNode.id;
+                        //---------檢查商品是否已在cart中
+                        let exist = false;
+                        for(let i=0; i<cart.length; i++){
+                            if(cart[i].prodNo == prodNo){
+                                exist = true;
+                                break;
+                            }
+                        }
+                        //---------
+                        if(exist){
+                            alert("購物車內已有此商品囉!");
+                        }else{
+                            let item = {};
+                            item.prodNo = prodNo;
+                            item.prodName = e.target.parentNode.parentNode.parentNode.firstChild.innerText;
+                            item.src = e.target.parentNode.parentNode.parentNode.previousElementSibling.firstChild.src;
+                            item.price = e.target.parentNode.previousElementSibling.innerText;
+                            item.count = 1;
+                            cart.push(item);
+                            updateCart(); 
+                        }
+                    }
+                }
+                //----------------------------
+            },100)
         },
     });
-
     // ------------------------到資料庫撈取「推薦商品卡片」要的資料---------------------
     function getNewProducts(){
         let xhrNewProuct = new XMLHttpRequest();
         xhrNewProuct.onload = function(){
             NewProdRows = JSON.parse(xhrNewProuct.responseText);
-            //console.log(xhrNewProuct.responseText);
-            //console.log(NewProdRows);
             appNewProd.NewProdRows = NewProdRows;
         }
         xhrNewProuct.open("get", "./php/mall/getNewProducts.php", true);
@@ -434,16 +410,20 @@
         },
     });
     // ------------------------------------------------------------------------------
+    function getCart(){
+        if(storage["cart"] != undefined){
+           cart = JSON.parse(storage["cart"]);
+        }
+    }
     window.addEventListener("load", function(){
         // 執行:撈取「一般商品」函式
         getProducts();  
         // 執行:撈取「推薦商品」函式
         getNewProducts();
+        //=============cart
+        getCart();
     })
     </script>
-    <!-- ==========================資料庫取資料 / 存id到session//======================== -->
-    <!-- ==========================資料庫取資料 / 存id到session//======================== -->
-    
     <!-- 也可以用這種方式連到商品頁，再解析網址上的id值，去資料庫撈資料 -->
     <!-- <script>
         let id = $('#test').attr('id')
