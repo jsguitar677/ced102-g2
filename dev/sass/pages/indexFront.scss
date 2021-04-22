@@ -404,12 +404,12 @@ p{font-size: 15px;}
                 margin: 0;
                 margin-bottom: 30px;
             }
-            .rank{
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                color: map-get($color-regulation,'blue');
-            }
+            // .rank{
+            //     display: flex;
+            //     justify-content: space-around;
+            //     align-items: center;
+            //     color: map-get($color-regulation,'blue');
+            // }
             &__no1{
                 height: 80px;
                 background-color:map-get($color_regulation, 'rankGray');
@@ -954,7 +954,26 @@ span.tal{
     font-size: 22px;
     font-weight: bolder;
     text-decoration: underline;
+    color: #ffd241;
+}
+
+table.rankBox{
+    width: 80%;
+    border-spacing: 0;
+    td{
+        // border: 1px solid black;
+        width: 25%;
+        text-align: center;
+    }
 }
 
 
-
+a#linkActvData{
+    color: map-get($map: $color_regulation, $key: $newBlue);
+    text-decoration: none;
+    background-color: #ffd241;
+    padding: 10px;
+    &::after{
+        content: '， 前往活動詳情';
+    }
+}
