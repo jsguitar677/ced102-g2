@@ -191,6 +191,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- ====================== 推薦商品(最新商品) =========================== -->
             <!-- ====================== 推薦商品(最新商品) =========================== -->
             <!-- ====================== 推薦商品(最新商品) =========================== -->
@@ -330,16 +331,15 @@
     
     
 
-    <!-- =====================資料庫取資料 / 取資料 / 存id到session====================== -->
+    <!-- ==========================資料庫取資料 / 存id到session========================== -->
+    <!-- ==========================資料庫取資料 / 存id到session========================== -->
     <script>
-        let cart=[];
-        let storage = sessionStorage;
-        
-    // ---------到資料庫撈取「商城卡片」要的資料---------
+    // ------------------------到資料庫撈取「商城卡片」要的資料------------------------
     function getProducts(){
         let xhr = new XMLHttpRequest();
         xhr.onload = function(){
             prodRows = JSON.parse(xhr.responseText);
+            //console.log(prodRows);
             app.prodRows = prodRows;
         }
         xhr.open("get", "./php/mall/getProducts.php", true);
@@ -356,10 +356,26 @@
             name2 : 'productDisplay',
         },
         mounted(){
+            let storage = sessionStorage;
             //ItemId : for商城記錄click到哪個商品
             if(storage['ItemId'] == null){
                 storage['ItemId'] = '';
             }
+            //addItemList : for購物車記錄把哪個商品加到購物車
+            if(storage['addItemList'] == null){
+                storage['addItemList'] = '';
+            }
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%
+            // cart : for購物車記錄把哪個商品加到購物車
+            // let cart = [];
+            // if(storage['cart'] == null){
+            //     storage['cart'] = '';
+            // }
+            // function updateSession(){
+            //     storage["cart"] = JSON.stringify(cart);
+            // }
+            // %%%%%%%%%%%%%%%%%%%%%%%%%%%
+      
             setTimeout(()=>{
                 //幫每張卡片(一般商品+推薦商品)建立事件聆聽功能
                 let prodCard = document.querySelectorAll('.product');
@@ -372,43 +388,32 @@
                         // storage['ItemId'] = `${theId}`;
                     });
                 }
-                //--------session記錄購物資訊-----更新storage的購物資訊
-                function updateCart(){
-                    storage["cart"] = JSON.stringify(cart);
-                }
-                // ********click「Cart Btn」, 就把 那個產品資訊存入Session********
-                //-----------------------------註冊放入購物車
+                // ********click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)********
+                //幫每個購物車btn建立事件聆聽功能
                 let CartBtn = document.querySelectorAll('.CartBtnOfMall');
-                for(let i=0; i<CartBtn.length; i++){
-                    CartBtn[i].onclick = function(e){
-                        let prodNo = e.target.id;
-                        //---------檢查商品是否已在cart中
-                        let exist = false;
-                        for(let i=0; i<cart.length; i++){
-                            if(cart[i].prodNo == prodNo){
-                                exist = true;
-                                break;
-                            }
-                        }
-                        //---------
-                        if(exist){
-                            alert("already exists");
-                        }else{
-                            let item = {};
-                            item.prodNo = prodNo;
-                            item.prodName = e.target.parentNode.previousElementSibling.innerText;
-                            item.src = e.target.parentNode.parentNode.parentNode.querySelector("img").src;
-                            item.price = e.target.previousElementSibling.innerText;
-                            item.count = 1;
-                            cart.push(item);
-                            updateCart(); 
-                        }
-                    }
+                
+                for(let i = 0; i < CartBtn.length; i++){
+                    
+
+                    CartBtn[i].addEventListener('click',function(){
+                        
+                        theBtnId = this.id;
+                        //click後 就把theBtnId = this.id存入session
+                        storage['addItemList'] += `${theBtnId}, `;
+                        //alert(`${theBtnId}`);
+                        //這個程式沒有要清掉addItemList的value, 何時清掉addItemList的value要寫在購物車(應該是這樣)
+                        
+                    });
+                    // CartBtnOfMall
+                    // CartBtn[i].onclick = function(){
+                    //     alert('s231');
+                    // }
                 }
-                //----------------------------
-            },1000)
+                // ************************************************************************************
+            },50)
         },
     });
+
     // ------------------------到資料庫撈取「推薦商品卡片」要的資料---------------------
     function getNewProducts(){
         let xhrNewProuct = new XMLHttpRequest();
@@ -429,20 +434,16 @@
         },
     });
     // ------------------------------------------------------------------------------
-    function getCart(){
-        if(storage["cart"] != undefined){
-           cart = JSON.parse(storage["cart"]);
-        }
-    }
     window.addEventListener("load", function(){
         // 執行:撈取「一般商品」函式
         getProducts();  
         // 執行:撈取「推薦商品」函式
         getNewProducts();
-        //=============cart
-        getCart();
     })
     </script>
+    <!-- ==========================資料庫取資料 / 存id到session//======================== -->
+    <!-- ==========================資料庫取資料 / 存id到session//======================== -->
+    
     <!-- 也可以用這種方式連到商品頁，再解析網址上的id值，去資料庫撈資料 -->
     <!-- <script>
         let id = $('#test').attr('id')

@@ -103,17 +103,17 @@
                     <div class="homePage2Data">
                         <div class="data1">
                             <div class="iconBox"><i class="fas fa-users"></i></div>
-                            <h7 id="personTarget">需求志工人數 人</h7>
-                            <h7 id="personNow">已報名志工人數 人</h7>
+                            <h7 id="personTarget">需求志工人數<span id="neededVolunteer"></span>人</h7>
+                            <h7 id="personNow">已報名志工人數<span id="singUpVolunteer"></span>人</h7>
                         </div>
                         <div class="data2">
                             <div class="iconBox"><i class="fas fa-file-invoice-dollar"></i></i></div>
-                            <h7 id="moneyTarget">目標募款金額 萬</h7>
-                            <h7 id="moneyNow">已達募款金額 </h7>
+                            <h7 id="moneyTarget">目標募款金額<span id="donateGoal"></span></h7>
+                            <h7 id="moneyNow">已達募款金額<span id="donateNow"></span></h7>
                         </div>
                         <div class="data3">
                             <div class="iconBox"><i class="far fa-clock"></i></i></div>
-                            <h7 id="deadline">活動截止日 天</h7>
+                            <h7 id="deadline">活動截止日<span id="actvDue"></span></h7>
                         </div>
                         <div class="data4">
                             <div class="iconBox"><i class="fas fa-exclamation-circle"></i></div>
@@ -124,6 +124,7 @@
                             <p>活動確定成行</p>
                         </div>
                     </div>
+                    <a id="linkActvData" href=""></a>
                 </div>
             </div>
 
@@ -404,26 +405,26 @@
                             <div class="text text2 toggle-text-effect" id="people-rank-btn">志工次數排行榜</div>
                         </div>
                     </div>
-                    <div class="rankBox">
-                        <div class="homePage3__right__no1 rank">
-                            <div>1</div>
-                            <img width="60px" height="60px" src="./img/indexFront/indexImg6.jpg" alt="" class="donateRankPic">
-                            <div class="donateRankName ">a4927763</div>
-                            <div class="donateMoney">900$</div>
-                        </div>
-                        <div class="homePage3__right__no2 rank">
-                            <div>2</div>
-                            <img width="40px" height="40px" src="./img/indexFront/indexImg6.jpg" alt="" class="donateRankPic">
-                            <div class="donateRankName ">a4927763</div>
-                            <div class="donateMoney">900$</div>
-                        </div>
-                        <div class="homePage3__right__no3 rank">
-                            <div>3</div>
-                            <img width="40px" height="40px" src="./img/indexFront/indexImg6.jpg" alt="" class="donateRankPic">
-                            <div class="donateRankName ">a4927763</div>
-                            <div class="donateMoney">900$</div>
-                        </div>
-                    </div>
+                    <table class="rankBox">
+                        <tr class="homePage3__right__no1 rank">
+                            <td>1</td>
+                            <td><img width="60px" height="60px" src="./img/indexFront/indexImg6.jpg" alt="" class="donateRankPic"></td>
+                            <td class="donateRankName ">a4927763</td>
+                            <td class="donateMoney">900$</td>
+                        </tr>
+                        <tr class="homePage3__right__no2 rank">
+                            <td>2</td>
+                            <td><img width="40px" height="40px" src="./img/indexFront/indexImg6.jpg" alt="" class="donateRankPic"></td>
+                            <td class="donateRankName ">a4927763</td>
+                            <td class="donateMoney">900$</td>
+                        </tr>
+                        <tr class="homePage3__right__no3 rank">
+                            <td>3</td>
+                            <td><img width="40px" height="40px" src="./img/indexFront/indexImg6.jpg" alt="" class="donateRankPic"></td>
+                            <td class="donateRankName ">a4927763</td>
+                            <td class="donateMoney">900$</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

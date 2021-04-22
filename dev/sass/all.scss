@@ -295,7 +295,6 @@ body{
                 // height: 50px;
                 cursor: pointer;
                 z-index: 3;
-                width: calc(100% / 3);
                 div{
                     width: 20px;
                     height: 2px;
@@ -361,8 +360,6 @@ body{
             div#All_RList{
                 display: flex;
                 align-items: center;
-                width: calc(100% / 3);
-                justify-content: flex-end;
                 ul{
                     list-style-type: none;
                     display: inline-block;
@@ -1106,6 +1103,10 @@ div.whiteMainPart5{
     }
     body header{
         padding: 0px 15px;
+    }
+    #All_Logo{
+        display: none;
+
     }
 
 }
