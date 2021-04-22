@@ -10,9 +10,9 @@ function getDetail(){
         let MBRPERID = JSON.parse(xhr1.responseText);
         console.log(MBRPERID); 
         var getdataLenghth  = MBRPERID.length
-        if( getdataLenghth == 0){
-            $id('warmSaveCard').style.display = 'block';
-        }
+        // if( getdataLenghth == 0){
+        //     $id('warmSaveCard').style.display = 'block';
+        // }
         for(var i=0; i<getdataLenghth; i++){
             $('#saveCardHook').append(`
             <div class="page5Card" id="page5Card${MBRPERID[i].actno}" style="background-image:url(${MBRPERID[i].locpic});">
@@ -30,10 +30,7 @@ function getDetail(){
             cancelLike.onclick = function (){
                 let xhr2 = new XMLHttpRequest(); 
                 xhr2.onload = function(){
-                    
-                    // console.log(xhr2.responseText);
                     $(page5Cardid).remove();
-                
                 };
                 xhr2.open("post", "php/15/memberDeleteLike.php", true); //連結伺服端程式
                 xhr2.setRequestHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8"); 

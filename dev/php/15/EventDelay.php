@@ -1,4 +1,5 @@
 <?php
+include("getMemInfoFIX.php");
 // require_once("connect.php");
 require_once("../../connect_ced102g2.php");
 
@@ -16,12 +17,12 @@ try{
    
 
     $memberData = $pdo->prepare($MBRDATA);
-    $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData->bindValue(":MBRNO",  $_SESSION["MBRNO"]);
     $memberData->bindValue(":ACTNO", $_POST["ACTNOO"]);
     $memberData->execute();
 
     $memberData2 = $pdo->prepare($MBRDATA2);
-    $memberData2->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData2->bindValue(":MBRNO",  $_SESSION["MBRNO"]);
     $memberData2->bindValue(":ACTNO", $_POST["ACTNOO"]);
     $memberData2->execute();
 
