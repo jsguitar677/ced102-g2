@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./css/all.css"> -->
+    <link rel="stylesheet" href="./css/all.css">
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css'/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,11 +22,8 @@
 
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <!-- 排序 -->
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script> -->
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
-    
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
     <title>淨下塑湲|商城</title>
@@ -148,9 +145,9 @@
                         <div class="theWayOfSort">
                             <select class="select_sort_way" name="select_sort_way">
                                 <!-- <option class="sortWay" selected disabled><div class="sortByProdNo">請選擇排序方式</div></option> -->
-                                <option class="sort sortbyProdNo" selected>請選擇排序方式</option>
-                                <option class="sort sortbyListedDate">新品上市</option>
-                                <option class="sort sortByPriceAsc" data-sort="price">價格低至高</option>
+                                <option class="sort sortbyProdNo" value="0" id="BtnSortByProdNo" selected disabled>請選擇排序方式</option>
+                                <option class="sort sortbyListedDate" value="1" id="BtnSortByListedDate">新品上市</option>
+                                <option class="sort sortByPriceAsc" value="2" data-sort="price" id="BtnSortByPrice">價格低至高</option>
                                 <!-- <option class="sort sortByPriceDesc"></option> -->
                             </select>
                         </div>
@@ -167,7 +164,7 @@
                                         <p class="NameAndPrice">{{prodRow.PRODNAME}}</p>
                                         <p class="NameAndPrice">NT$
                                             <span class="price">{{prodRow.PRODPRICE}}</span>
-                                            <button class="CartBtnOfMall" class="theImg">
+                                            <button class="CartBtnOfMall">
                                                 <i class="fas fa-shopping-cart fa-1x"></i>
                                                 <p>加入購物車</p>
                                             </button>
@@ -202,7 +199,7 @@
                                 <p class="NameAndPrice">{{NewProdRow.PRODNAME}}</p>
                                 <p class="NameAndPrice">NT$
                                     <span class="price">{{NewProdRow.PRODPRICE}}</span>
-                                    <button class="CartBtnOfMall" class="theImg">
+                                    <button class="CartBtnOfMall">
                                         <i class="fas fa-shopping-cart fa-1x"></i>
                                         <p>加入購物車</p>
                                     </button>
@@ -308,14 +305,43 @@
      </script>
     <!-- ==============================篩選一般商品種類//================================ -->
     <!-- ==============================篩選一般商品種類//================================ -->
-    
-    
+
+        
+    <!-- ====================================商城排序====================================-->
+    <script>
+        var select = document.getElementsByClassName("select_sort_way")[0];
+        select.onchange = function(e){
+            // alert(select.value);
+            // 選到1，用「上市日期」排序(新到舊)
+            if(select.value == 1){
+                let xhrSortByDate = new XMLHttpRequest();
+                xhrSortByDate.onload = function(){
+                    prodRows = JSON.parse(xhrSortByDate.responseText);
+                    app.prodRows = prodRows;
+                }
+                xhrSortByDate.open("get", "./php/mall/getProductsSortByListedDate.php", true);
+                xhrSortByDate.send(null);
+            // 選到2，用「商品價格」排序(低到高)
+            }else if(select.value == 2){
+                let xhrSortByPrice = new XMLHttpRequest();
+                xhrSortByPrice.onload = function(){
+                    prodRows = JSON.parse(xhrSortByPrice.responseText);
+                    app.prodRows = prodRows;
+                }
+                xhrSortByPrice.open("get", "./php/mall/getProductsSortByPriceAsc.php", true);
+                xhrSortByPrice.send(null);
+            }
+        };
+    </script>
+    <!-- ====================================商城排序//==================================-->
+
 
     <!-- =====================資料庫取資料 / 取資料 / 存id到session====================== -->
     <script>
-        let cart=[];
-        let storage = sessionStorage;
         
+    let cart=[];
+    let storage = sessionStorage;
+
     // ---------到資料庫撈取「商城卡片」要的資料---------
     function getProducts(){
         let xhr = new XMLHttpRequest();
