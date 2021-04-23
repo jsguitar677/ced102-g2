@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script> -->
     <script type="text/javascript" src="http://zip5.5432.tw/js/zip5.js"></script>
+    <script src="./js/getOrderinfo.js"></script>
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
 </head>
 
@@ -26,19 +27,19 @@
     <!-- ------------------------------------------------------- -->
     <div class=" col-lg-6 d-flex justify-content-start progress__bar">
       <ul class="progress ">
-        <li class="progress__item" :class=" { 'progress__item--active' : current_section>= 0}" style="background-color:#FFD241; color:#07082E;">1
+        <li class="progress__item"  style="background-color:#FFD241; color:#07082E;">1
           <p class="progress__text " style="color:#FFD241"></slot>確認訂單</p>
         </li>
         <li class="progress progress_group_bar" style="background-color:#FFD241">
-          <div class="progress-bar" role="progressbar" :class="{done:progress.payby}" style="background-color:#FFD241"></div>
+          <div class="progress-bar" role="progressbar" style="background-color:#FFD241"></div>
         </li>
-        <li class="progress__item  " :class=" { 'progress__item--active' : current_section>= 1}"  style="background-color:#FFD241;z-index: 1;color: #07082E;">2
+        <li class="progress__item  "   style="background-color:#FFD241;z-index: 1;color: #07082E;">2
           <p class="progress__text " style="color:#FFD241;;" >填寫訂購資料</p>
         </li>
         <li class="progress progress_group_bar">
-          <div class="progress-bar" role="progressbar" :class="{done:progress.payby}"></div>
+          <div class="progress-bar" role="progressbar"></div>
         </li>
-        <li class="progress__item " :class=" { 'progress__item--active' : current_section>= 2}">3
+        <li class="progress__item " >3
           <p class="progress__text ">完成訂單</p>
         </li>
       </ul>
@@ -52,91 +53,31 @@
 
           <div class="card">
             <div class="card-header" id="headingOne">
-              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  <h2 class="btntext"><p>訂單總金額NT$2160</p></h2>
-              </button>
+              <!-- <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h2 class="btntext"><p>訂單總金額NT$</p></h2> -->
+              <!-- </button> -->
               
             </div>
             
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <form action="" id='orderInfo'>            
-                <div class="item_container" v-for="(item, index) in itemList" :key="item.id" v-bind="itemList">
-                  <a :href="itemList.url">   
-                  <div class="item_header ">
-                              <div class="item_detail">
-                                  <!-- <img v-bind:src="item.imgUrl" alt=""> -->
-                                  <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
-                                  <!-- <div class="name">{{item.itemName}}</div> -->
-                                  <div class="name"><span>品名:</span>環保購物袋</div>
-                                  <!-- <div class="size"><span>尺寸:</span>{{item.size}}</div> -->
-                              </div>
-                              
-                              <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
-                              <!-- <div class="price"><span>$</span>500</div> -->
-                              <div class="item_detail count">1
-                              </div> 
-                              <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                              <div class="item_detail amount">290</div>
-                              <!-- <div class="operate">
-                                  <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
-                              </div> -->
-                    </div>
-                  </a> 
-                </div>
-                <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
-                  <div class="item_header ">
-                          <div class="item_detail">
-                              <!-- <img v-bind:src="item.imgUrl" alt=""> -->
-                              <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
-                              <!-- <div class="name">{{item.itemName}}</div> -->
-                              <div class="name"><span>品名:</span>環保印花上衣</div>
-                              <!-- <div class="size"><span>尺寸:</span>F</div> -->
-                          </div>
-                          
-                          <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
-                          <!-- <div class="price"><span>$</span>500</div> -->
-                          <div class="item_detail count">
-                              <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
-                              1
-                              <!-- {{item.count}} -->
-                              <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
-                          </div> 
-                          <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                          <div class="item_detail amount">590</div>
-                          <!-- <div class="operate">
-                              <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
-                          </div> -->
-                  </div>
-                </div>
-                <div class="item_container" v-for="(item, index) in itemList" :key="item.id" >
-                 <div class="item_header ">
-                      <div class="item_detail">
-                          <!-- <img v-bind:src="item.imgUrl" alt=""> -->
-                          <!-- <img src="https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt=""> -->
-                          <!-- <div class="name">{{item.itemName}}</div> -->
-                          <div class="name"><span>品名:</span>個性帽款</div>
-                          <!-- <div class="size"><span>尺寸:</span>F</div> -->
-                      </div>
-                      
-                      <!-- <div class="price"><span>$</span>{{item.price}}</div> -->
-                      <!-- <div class="price"><span>$</span>500</div> -->
-                      <div class="item_detail count">
-                          <!-- <button class="round less"  @click="handleSub(item)">-</button> -->
-                          1
-                          <!-- {{item.count}} -->
-                          <!-- <button class="round add"  @click="handlePlus(item)">+</button> -->
-                      </div> 
-                      <!-- <div class="amount">{{item.price * item.count}}</div> -->
-                      <div class="item_detail amount">1280</div>
-                      <!-- <div class="operate">
-                          <button class="round-cxl add  @click="handledelete(index)" ><i class="fas fa-trash fa-1x "></i></button>
+                <form action="" id='orderInfo'>            
+                    <div  class="item_container"  v-for="(item, index) in itemList" :key="item.id">
+                      <!-- <div class="item_header ">
+                                  <div class="item_detail">
+                                      <div class="name">
+                                        <span>品名:</span>
+                                        <span type="text" id="prodName"></span>
+                                      </div> 
+                                  </div>
+                                  <div class="item_detail count"><span type="text" id="count"></span></div>
+                                  
+                                  <div class="item_detail amount"><span type="text" id="price"></span></div>
                       </div> -->
-                 </div>
-                </div>            
-              </div>
-            </form> 
-              <div class="payment-totalbody">
-                <div class="row">
+                  </div>
+              </form>
+            </div> 
+              <div class="payment-totalbody" >
+                <!-- <div class="row">
                   <span class="label">商品總金額:</span>
                   <div class="formw totalAmount"><span>$</span>2160</div>
                 </div>
@@ -147,7 +88,7 @@
                 <div class="row">
                   <span class="label">總計：</span>
                   <div class="formw subtotal"><span>$</span>2160</div>
-                </div>
+                </div> -->
               </div>
           </div>
           <div class="perDetailTitle"><h2>填寫資料</h2></div>
@@ -230,7 +171,7 @@
               </form>
             </section>
           </main>
-          <main class="form_wrapper" v-else-if="progress.steps[progress.currentStep] === 'payment'" key="payment">
+          <main class="form_wrapper" >
           <section class="step step3">
             <div class="step_title_box">
               <h2 class="step_title">收貨人資料</h2>
@@ -465,7 +406,7 @@
     </section>
 
     <section class="finsh wrapper full-screen">
-    <main id="finsh_wrapper " v-else>
+    <main id="finsh_wrapper " >
       <div class="modal__text disc">
         <h1 class="step_done_title step_title">您的訂單已完成付款</h1><span class="step_done_message">恭喜您成功完成訂單，稍後將寄送詳細資訊至您的E-mail。</span>
         <a href="../dist/indexfront.html"><button class="step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button></a>
@@ -480,29 +421,23 @@
 <!-- <script src="vendor/jQuery/jquery-3.5.1.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.1.1/cleave.min.js"></script>
 
+
+
 <script>
-
-
-// $("#twzipcode").twzipcode();
-// new TwCitySelector({
-//     el: '.city-selector-set',
-//     elCounty: '.county', // 在 el 裡查找 element
-//     elDistrict: '.district', // 在 el 裡查找 element
-//     elZipcode: '.zipcode' // 在 el 裡查找 element
-//   });
 
 new Cleave(".creadNum",{
   creditCard: true,
   delimiter: "-",
 })
-var cleave = new Cleave( ".Phone", {
-  		phone: true, // 電話模式
-  		phoneRegionCode: "tw"
-  	});
+// var cleave = new Cleave( ".Phone", {
+//   		phone: true, // 電話模式
+//   		phoneRegionCode: "tw"
+//   	});
 
 </script>
+
 <script>
-// function send() {
+
 
 // 姓名電話地址 信用卡 年月 安全碼
 $('.finshbtn').click(function(){
@@ -536,45 +471,5 @@ $('.finshbtn').click(function(){
 });
 </script> 
 
-
- <script>
-//   fetch("./php/5/getcartNo.php").then(res => res.json())
-//   .then(data => {
-//   vm.itemList = data;
-//   for(let i=0 ; i<data.length ; i++){
-//   let url = `./php/5/getcartNo.php?infoNo=${data[i].id}`;
-//   vm.itemList[i].url = url;
-//   // console.log(vm.products[i].url);
-//   }
-//   });
-
-//   </script>
-//   <script>
-//   // 將 VeeValidate input 驗證工具載入 作為全域註冊
-//   Vue.component('ValidationProvider', VeeValidate.ValidationProvider);
-// // 將 VeeValidate 完整表單 驗證工具載入 作為全域註冊
-//   Vue.component('ValidationObserver', VeeValidate.ValidationObserver);
-
-//   var app = new Vue({
-// el:'#app',
-// data:{
-//     products: [],
-//     itemList:[],
-//   },
-// methods:{
-    
-// },
-// computed:{
-   
-// },
-// // action:{
-// //   async fetchLocations({commit}){
-// //     const json = await fetch('https://raw.githubusercontent.com/kurotanshi/mask-map/master/raw/area-location.json').then((res)) =>res.json());
-// //     commit ('setAreaLoc',json);
-// //   },
-// // }
-
-// })
-// </script>  
 
 </html>
