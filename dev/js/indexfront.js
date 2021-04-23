@@ -172,6 +172,8 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 // ==================== 最新活動抓取
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
+    // console.log(latestActv);
+    // console.log("latestActv:",latestActv);
     let latestActvPic = document.getElementsByClassName('targetData');
     let RECRGOAL  = document.getElementById('neededVolunteer');
     let  RECRNOW = document.getElementById('singUpVolunteer');
@@ -182,7 +184,7 @@ function showLatestActv(jsonStr){
     for(let i=0; i<latestActvPic.length; i++){
         latestActvPic[i].setAttribute("src", latestActv[i]["LOCPIC"]);
     }
-    //====  展示預設資料
+    //====  展示預設最新活動資料
     RECRGOAL.innerHTML = latestActv[0]["RECRGOAL"];
     RECRNOW.innerHTML = latestActv[0]["RECRNOW"];
     DNTGOAL.innerHTML = latestActv[0]["DNTGOAL"];
@@ -194,6 +196,7 @@ function showLatestActv(jsonStr){
     $(".targetData").bind("click", function(){
         var divs = $(".targetData");
         var curIdx = divs.index($(this));
+        var actDetailUrl = "./act_detail.html?actno=";
         latestActvPic[curIdx].setAttribute("src", latestActv[curIdx]["LOCPIC"]);
         RECRGOAL.innerHTML = latestActv[curIdx]["RECRGOAL"];
         RECRNOW.innerHTML = latestActv[curIdx]["RECRNOW"];
@@ -201,7 +204,8 @@ function showLatestActv(jsonStr){
         DNTNOW.innerHTML = latestActv[curIdx]["DNTNOW"];
         ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
         ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
-
+        ACTNAME.setAttribute("href",actDetailUrl+latestActv[curIdx]["ACTNO"]);
+        // console.log(latestActv[curIdx]["ACTNAME"]);
     });
     
 
@@ -210,7 +214,7 @@ function getLatestActv(){
     var xhrLa = new XMLHttpRequest();
     xhrLa.onload = function(){
         if(xhrLa.status == 200){
-            console.log("最新活動",xhrLa.responseText);
+            console.log(xhrLa.responseText);
             showLatestActv(xhrLa.responseText);
         }else{
             alert(xhrLa.status);
@@ -222,8 +226,23 @@ function getLatestActv(){
 }
 window.addEventListener('load',getLatestActv);
 
+//====================== 決定跳轉的最新活動頁面
+
 function getLatestActvInfo(){
-    
+    let linkActvData = document.getElementById('linkActvData');
+    // linkActvData.onclick = function(){
+    //     console.log(linkActvData.value);
+    // }
+    let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        actv = JSON.parse(xhr.responseText);
+        // if(actv.ACTNAME){
+        //   //有抓到值
+        //   console.log(actv.ACTNAME);
+        // }
+      }
+      xhr.open("get", "./php/2/clickedLatestActv.php", true);
+      xhr.send(null);
 }
 
 window.addEventListener('load',getLatestActvInfo);

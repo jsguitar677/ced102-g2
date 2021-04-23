@@ -26,13 +26,12 @@
             <p>活動募款平台</p>
             <div class="ad_inner_content">
                 <div class="content-left">
-                    <h1 id="acttitle">一瓶的海岸線</h1>
-                    <h2>地點：<span id="loc">苗栗外澳海灘</span></h2>
+                    <h1 id="acttitle">隘門淨灘活動</h1>
+                    <h2>地點：<span id="loc">澎湖縣隘門沙灘</span></h2>
                     <h2>日期：<span id="actsdate">2020/03/31</span></h2>
                     <h2 class="rw_founder">活動發起人: <span class="ininame">富力士</span></h2>
                     <p id="vision">
-                        &nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！ ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。 淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。
-                        您可以透過淨灘，與荒野共同減少廢棄物進入大海的機會。
+                        &nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！ ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。 淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。 您可以透過淨灘，與荒野共同減少廢棄物進入大海的機會。
                     </p>
                     <p id="actcontent">
                     </p>
@@ -59,7 +58,7 @@
         </button>
                 </div>
                 <div class="right_pic">
-                    <img id="imgsrc" src="./img/act_detail/maldives-5939710_1280.jpg" alt=""><button id="join">參加活動</button>
+                    <img id="imgsrc" src="./img/act_detail/maldives-5939710_1280.jpg" alt=""><button id="join"><a href="./participation.html">參加活動</a></button>
                     <button id="share"><h4>分享活動</h4>
         </button></div>
             </div>
@@ -208,7 +207,8 @@
     <script>
         let joinHref = location.href;
         let actNum = joinHref.split('?')[1].split('=')[1];
-        function actinfo(){
+
+        function actinfo() {
             let xhrInfo = new XMLHttpRequest();
             xhrInfo.onload = function() {
                 if (xhrInfo.status == 200) {
@@ -224,14 +224,14 @@
                     $('#fgoal').text(`${res[0].DNTGOAL}`);
                     $('#fnow').text(`${res[0].DNTNOW}`);
                     $('#vnow').text(`${res[0].RECRNOW}`);
-                    $('#imgsrc').attr('src',`${res[0].LOCPIC}`);
+                    $('#imgsrc').attr('src', `${res[0].LOCPIC}`);
                     $('#actcontent').text(`${res[0].ACTCON}`);
                     let day = new Date();
-                    let today = day.getFullYear()+"-"+(day.getMonth()+1)+"-"+ day.getDate();
+                    let today = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
                     var ACTDLINE = `${res[0].ACTDLINE}`;
-                    if ( (Date.parse(ACTDLINE)).valueOf() <= (Date.parse(today)).valueOf()){
-                        $('#join').css('display','none');
-                        $('#join1').css('display','none');
+                    if ((Date.parse(ACTDLINE)).valueOf() <= (Date.parse(today)).valueOf()) {
+                        $('#join').css('display', 'none');
+                        $('#join1').css('display', 'none');
                     }
 
                 } else {

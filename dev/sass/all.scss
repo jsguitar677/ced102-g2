@@ -191,7 +191,7 @@ body{
                 list-style-type: none;
                 padding: 0px;
                 padding-top: 50px;
-                height: calc(100vh) !important;
+                height: calc(100vh - 50px) !important;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -361,7 +361,6 @@ body{
                 width: calc(100% / 3);
                 ul{
                     list-style-type: none;
-                    display: inline-block;
                     @include spacilpad{
                         display: flex;
                     }
@@ -1788,3 +1787,10 @@ div#footerBottom{
 }
   
   /* =============================================================================================== */
+  div#FooterClaim{
+      color: map-get($map: $color_regulation, $key: 'white') !important;
+      background-color: black;
+      font-size: $p;
+      padding: 20px 50px;
+      text-align: center;
+  }

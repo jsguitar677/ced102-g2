@@ -10,8 +10,8 @@ try{
     $memberData = $pdo->prepare($PDOO);
     $memberData->execute();
 
-    $MBRDATA=" UPDATE mbr SET MBRCOINLV = MBRCOINLV + 1 WHERE MBRNO = :MBRNO";
-    $MBRDATA2 =" SELECT MBRCOINLV FROM mbr WHERE MBRNO = :MBRNO";
+    $MBRDATA=" UPDATE mbr SET MBRCOINLV = MBRCOINLV + 1 , MBRCOIN = MBRCOIN+ 50 WHERE MBRNO = :MBRNO";
+    $MBRDATA2 =" SELECT MBRCOINLV , MBRCOIN FROM mbr WHERE MBRNO = :MBRNO";
 
     $memberData = $pdo->prepare($MBRDATA);
     $memberData->bindValue(":MBRNO", $_SESSION["MBRNO"]);

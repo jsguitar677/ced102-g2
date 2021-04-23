@@ -1,5 +1,5 @@
 <?php
-    // $dbname = 'tebamefe_ced102g2';
+    // $dbname = 'tibamefe_ced102g2';
     // $user = 'tibamefe_since2021';
     // $password = 'vwRBSb.j&K#E';
     $dbname = 'jingshafinal';

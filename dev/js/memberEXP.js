@@ -19,7 +19,7 @@ function ReceiveCoin(){
     xhr.onload = function(){
         var MBRDETAIL = JSON.parse(xhr.responseText);  
         let coinLV= parseInt(MBRDETAIL.MBRCOINLV);
-        var coinExp= 1000; // parseInt(MBRDETAIL.MBREXP);
+        var coinExp= MBRDETAIL.MBREXP; // parseInt(MBRDETAIL.MBREXP);
             
         for(let i=1; i<=(coinExp/100);i++){
             $('#expBlockHook').append(`
@@ -35,7 +35,8 @@ function ReceiveCoin(){
             $(`#btnExp${coinLV+1}`).css('backgroundColor','#07082E');
             $(`#btnExp${coinLV+1}`).css('color','#FFFFFF');
         }
-        $('.comBtn2').click(function(){
+        $('.comBtn2').click(function(e){
+            
             $(this).attr('disabled');
             let xhr1 = new XMLHttpRequest(); 
             xhr1.onload = function(){
@@ -43,7 +44,8 @@ function ReceiveCoin(){
                 console.log(NewCoinLv);
                 let NewCoinLvV = parseInt(NewCoinLv.MBRCOINLV);
                 console.log(NewCoinLvV);
-
+                // $id('token').textContent = "環保幣"+memberText.MBRCOIN;
+                $('#token').text(`${"環保幣"+NewCoinLv.MBRCOIN}`);
                 if((coinExp - NewCoinLvV*100) < 100){
                     $('.comBtn2').attr('disabled');
                     $('.comBtn2').css('background-color','gray');
@@ -59,6 +61,7 @@ function ReceiveCoin(){
             xhr1.open("post", "php/15/memberUpdataLV.php", true); //連結伺服端程式
             xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
             xhr1.send(null);
+            e.preventDefault();
             
         })
     }

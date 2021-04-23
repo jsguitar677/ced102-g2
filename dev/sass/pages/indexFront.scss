@@ -969,11 +969,32 @@ table.rankBox{
 
 
 a#linkActvData{
-    color: map-get( $color_regulation, 'blue');
+    color: map-get($map: $color_regulation, $key: 'newBlue');
     text-decoration: none;
     background-color: #ffd241;
     padding: 10px;
+    font-weight: bold;
+    display: inline-block;
+    width: 278px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: all .5s;
     &::after{
         content: '， 前往活動詳情';
+    }
+    &:hover{
+    background-color: map-get($map: $color_regulation, $key: 'newBlue');
+    color: #ffd241;
+    }
+}
+a.btn{
+    text-decoration: none;
+    background-color: #ffd241 !important;
+    color: map-get($map: $color_regulation, $key: 'newBlue') !important;
+    transition: all .5s !important;
+    &:hover{
+    color: #ffd241 !important;
+    background-color: map-get($map: $color_regulation, $key: 'newBlue') !important;
     }
 }

@@ -10,14 +10,6 @@ $(function(){
         }
     })
 
-    $('#agree-btn').click(function(e){
-        if($('#agreement').prop("checked") == false){
-            $('div.part > div.description > div.checkbox-block > label').css('color','red');
-            e.preventDefault();
-            return;
-        }
-    })
-
     function showLoc(jsonStr){
         let locRow = JSON.parse(jsonStr);
         console.log(locRow);
@@ -65,8 +57,9 @@ $(function(){
             let actloc  = $('#loc').val();// ACTLOC活動地點 
             let dntgoal = $('#dntgoal').val();// DNTGOAL募資目標
             let recpgoal = $('#recpgoal').val();// RECRGOAL募志工目標 
-            if( actname == '' || actsdate == '' || actdline == '' || vision == '' || actcon == '' || $('#loc').val() == null || $("#city").val() == null || dntgoal == '' || recpgoal == ''){
+            if( actname == '' || actsdate == '' || actdline == '' || vision == '' || actcon == '' || $('#loc').val() == null || $("#city").val() == null || dntgoal == '' || recpgoal == '' || $('#agreement').prop("checked") == false){
                 $('input').css('border','1px solid #07082E');
+                $('div.part > div.description > div.checkbox-block > label').css('color','#19192F');
                 for(let i=0 ; i < $('input').length ; i++){
                     if(document.getElementsByTagName('input')[i].value == ''){
                         document.getElementsByTagName('input')[i].style.border = '1px solid #EF4325';
@@ -84,6 +77,9 @@ $(function(){
                 }                    
                 if($("#city").val() == null){
                     $("#city").css('border' , '1px solid #EF4325');
+                }
+                if($('#agreement').prop("checked") == false){
+                    $('div.part > div.description > div.checkbox-block > label').css('color','red');
                 }
             }else{
                 let xhr1 = new XMLHttpRequest();

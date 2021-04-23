@@ -24,11 +24,10 @@ p{font-size: 15px;}
     background-image: url('../../img/MemberBgImg.png'),linear-gradient(#e27764 ,map-get($color_regulation, 'blue'));
     background-origin: border-box;
     background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 46%, 85%;
+    background-position: 43%  55%;
     background-size: 25%, 100%;
+    background-attachment: fixed;
 }
-
 
 // -----------------------------------------
 @mixin pcL {

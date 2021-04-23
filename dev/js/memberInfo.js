@@ -2,11 +2,7 @@ function $id(id){
 	return document.getElementById(id);
 }
 
-// function getDetail(){
 function show(){
-    // var ordRow = JSON.parse(jsonStr);
-    // console.log(ordRow.MBRNO);  //4
-    // ---------------------
     let xhr1 = new XMLHttpRequest(); 
     xhr1.onload = function(){
         let MBRDETAIL = JSON.parse(xhr1.responseText);
@@ -37,31 +33,7 @@ function show(){
     xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
     xhr1.send();
 }
-//     function IfNotMemberTransefer(){
-//         var memberHook = document.getElementById('member_hook');
-//         let xhr = new XMLHttpRequest(); 
-//         xhr.onload = function(){
-//             show(xhr.responseText);
-//             let MBRDETAIL = JSON.parse(xhr.responseText);
-//             if( MBRDETAIL === 50 ){
-//                 alert('請先登入會員帳號');
-//                 window.location.href='./indexfront.html';
-//                 memberHook.href="./member.html";
-//                 return;
-//             } else{
-//                 memberHook.innerHTML="返回首頁";
-//                 memberHook.href="./indexfront.html";
-//                 // let memid = MBRDETAIL.MBRNO
-//                 // document.cookie = `memId=${memid}`; 
-//                 return;
-//             }
-//         }
-//         xhr.open("get","php/15/getMemInfo.php", true);
-//         xhr.send(null);
-//     };
-//     IfNotMemberTransefer();
 
-// }
 
 window.addEventListener("load", function(){
     show();
