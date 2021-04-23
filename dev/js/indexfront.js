@@ -173,6 +173,7 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
     // console.log(latestActv);
+    // console.log("latestActv:",latestActv);
     let latestActvPic = document.getElementsByClassName('targetData');
     let RECRGOAL  = document.getElementById('neededVolunteer');
     let  RECRNOW = document.getElementById('singUpVolunteer');
@@ -213,7 +214,7 @@ function getLatestActv(){
     var xhrLa = new XMLHttpRequest();
     xhrLa.onload = function(){
         if(xhrLa.status == 200){
-            // console.log("最新活動",xhrLa.responseText);
+            console.log(xhrLa.responseText);
             showLatestActv(xhrLa.responseText);
         }else{
             alert(xhrLa.status);

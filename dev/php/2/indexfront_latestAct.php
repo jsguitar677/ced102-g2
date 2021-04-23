@@ -9,7 +9,7 @@ session_start();
         $LatestActvRows = $LatestActvRow->fetchAll(PDO::FETCH_ASSOC);
         // $_SESSION["ACTNAME"] = $LatestActvRows["ACTNAME"];
         // foreach($LatestActvRows as $i => $LatestActvRow){
-        //         echo $LatestActvRows[$i]["ACTNAME"],"<br>";
+                // echo $LatestActvRows[$i]["ACTNAME"];
         // }
         // print_r($LatestActvRows);
         echo json_encode($LatestActvRows);

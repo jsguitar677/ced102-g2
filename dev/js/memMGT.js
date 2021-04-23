@@ -25,14 +25,14 @@ function showMember(jsonStr){
             tbodyLeftTot += `<tbody class="list">
                 <tr id="mem1">
                     <td><div class="no-block mem-num" id="BCMBRNO${i+1}">${i+1}</div></td>
-                    <td class="mem-name" id="BCMBRNAME">${member[i]["MBRNAME"]}</td>
-                    <td id="BCMLEVEL" class="LevelJudge">${member[i]["MBREXP"]}</td>
-                    <td id="BCMBRMAIL">${member[i]["MBRMAIL"]}</td>
-                    <td id="BCMBRBIRTH">${member[i]["MBRBIRTH"]}</td>
-                    <td id="BCMBRPHONE">${member[i]["MBRPHONE"]}</td>
-                    <td id="BCMBRCOIN">${member[i]["MBRCOIN"]}</td>
-                    <td id="BCMBREXP">${member[i]["MBREXP"]}</td>
-                    <td id="BCMBRSTATE">${member[i]["MBRSTAT"]}</td>
+                    <td class="mem-name" id="BCMBRNAME${i+1}">${member[i]["MBRNAME"]}</td>
+                    <td id="BCMLEVEL${i+1}" class="LevelJudge">${member[i]["MBREXP"]}</td>
+                    <td id="BCMBRMAIL${i+1}">${member[i]["MBRMAIL"]}</td>
+                    <td id="BCMBRBIRTH${i+1}">${member[i]["MBRBIRTH"]}</td>
+                    <td id="BCMBRPHONE${i+1}">${member[i]["MBRPHONE"]}</td>
+                    <td id="BCMBRCOIN${i+1}">${member[i]["MBRCOIN"]}</td>
+                    <td id="BCMBREXP${i+1}">${member[i]["MBREXP"]}</td>
+                    <td id="BCMBRSTATE${i+1}">${member[i]["MBRSTAT"]}</td>
                     
                     <td>
                         <label class="toggle-btn" for="suspension1">
@@ -41,7 +41,7 @@ function showMember(jsonStr){
                         </label>
                     </td>
                     <td>
-                        <div class="delete-icon"><i class="fas fa-trash"></i></div>
+                        <div class="delete-icon" id="deleteIcon${i+1}"><i class="fas fa-trash"></i></div>
                     </td>
                 </tr>
             </tbody>`;
@@ -77,3 +77,35 @@ function getMember(){
     xhr.send( null );
 }
 window.addEventListener('load', getMember);
+
+//================= form common_backend.js
+// $('#c2 div.delete-icon').click(function(){
+//     $('#c2 div.alert-block-delete').css('display','block');
+//     let mbrno = $(this).parent().parent().attr("id");
+//     $('#mem-delete .mbrno').text(`${mbrno.substr(3)}`);
+//     $('#mem-delete input[name="mbrno"]').val(`${mbrno.substr(3).trim()}`);
+// })
+// $('#c2 label.toggle-btn').click(function(){
+//     let mbrno = $(this).parent().parent().attr("id");
+//     $('#c2 div.alert-block-stop').css('display','block');
+//     $('#mem-stop .mbrno').text(`${mbrno.substr(3)}`);
+//     $('#mem-stop input[name="mbrno"]').val(`${mbrno.substr(3).trim()}`);
+//     if($(this).find('input').prop("checked")){
+//         $('#c2 #stop-text').text('停權?');
+//         $('#stop-cancel').click(function(){
+//             let val = $(this).parent().find('input').val();
+//             $(`#c2 #mem${val} input`).prop('checked',false);
+//             $('#c2 div.alert-block-stop').css('display','none');
+//         })
+//     }else{
+//         $('#c2 #stop-text').text('復權?');
+//         $('#stop-cancel').click(function(){
+//             let val = $(this).parent().find('input').val();
+//             $(`#c2 #mem${val} input`).prop("checked",true);
+//             $('#c2 div.alert-block-stop').css('display','none');
+//         })
+//     }
+// })
+
+// var options = {valueNames: [ 'mem-num','mem-name']};
+// userList_mem = new List('c2', options);

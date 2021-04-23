@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     try{
         require_once('../../connect_ced102g2.php');
         $sql = "select ACTNAME from actv where ACTNAME=:ACTNAME";
