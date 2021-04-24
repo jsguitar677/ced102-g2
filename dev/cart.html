@@ -59,13 +59,13 @@
             </div>
             <form id="app" action="payment.html">
                 <table class="table wrap">
-                    <div  class="item_body space_box" style="padding: 20px;">
+                    <!-- <div  class="item_body space_box" style="padding: 20px;">
                         <p style="margin: 0 auto; text-align: center;">您還沒挑選任何商品，歡迎到商城逛逛唷！</p>
-                    </div>
+                    </div> -->
                     <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id" >
                         <div class=" item_body prodInfo">
                             <div class="item_detail" style="display: inline-flex;" >
-                                <img v-bind:src="item.src" alt="" style="max-width:20%;" >
+                                <img v-bind:src="item.src" alt="" style="max-width:20%; max-height: 20%;"  >
                                 <!-- <div class="img prodPic"><img v-bind:src="{item.imgUrl}}" alt="" style="max-width:100% "></div> -->
                                 <!-- <div class="name">{{item.itemName}}</div> -->
                                 <div class="prodName name" style="vertical-align:center; padding-left: 20px;" ><span>品名:</span>{{item.prodName}}</div>
@@ -121,8 +121,8 @@
                     </div>
                 </div>
                 <div class="butSection">
-                    <button  class=" button button-buy more"><a style="color: white;" href='./Mall2.html'>繼續購物</a></button>
-                    <button onclick="location.href='./payment.html'" class="button button-pay thebill submit"><span id="btnPay" style="color: #07082E;" href='./payment.html'>進行結帳</span></button>
+                    <button  class=" button button-buy more"><a style="color: white; text-decoration:none;" href='./Mall2.html' >繼續購物</a></button>
+                    <button onclick="location.href='./payment.html'" class="button button-pay thebill submit"><span id="btnPay" style="color: #07082E;" href='./payment.html' >進行結帳</span></button>
                     
                 </div>
             
@@ -140,7 +140,7 @@
     @@include('./layout/footer.html')
 
     <script src="./js/login.js"></script>
-    <script src="./js/spacecar.js"></script>
+    <!-- <script src="./js/spacecar.js"></script> -->
     <script src="./js/orderCoin.js"></script>
     <script src="./js/vue.js"></script>
     <script>
@@ -153,40 +153,6 @@
         tempStorage : 0,
 
         products: [],
-        // itemList:[
-        //   {
-        //     id:'1',
-        //     itemName:'環保購物袋',
-        //     imgUrl:'./img/mall/bag_a1.jpg',
-        //     // size: 'XXL',
-        //     price:'290',
-        //     count:'1'
-        //   },
-        //   {
-        //     id:'2',
-        //     itemName:'環保印花上衣',
-        //     imgUrl:'./img/mall/tshirt_a1.jpg',
-        //     // size: 'XXL',
-        //     price:'590',
-        //     count:'1'
-        //   },
-        //   {
-        //     id:'3',
-        //     itemName:'個性帽款',
-        //     imgUrl:'./img/mall/hat_a1.jpg',
-        //     // size: 'XXL',
-        //     price:'1280',
-        //     count:'1'
-        //   },
-        //   {
-        //     id:'4',
-        //     prodName:'質感褐色系大衣服',
-        //     src:'https://images.unsplash.com/photo-1491998664548-0063bef7856c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
-
-        //     price:'230',
-        //     count:'1'
-        //   },
-        // ],
         itemList:[],
         
         
@@ -286,7 +252,9 @@ $('.space_box').css('display','block');
 
 $(".button-pay").click(function(){
     let X = $('#lastTotal').text()
+    let y = $('.discount').val()
     sessionStorage.setItem("lastTota", X);
+    sessionStorage.setItem("discount", y);
 });
 
 
@@ -311,43 +279,82 @@ function getCart(){
 }
 
 $(function (){
-    $(".loginbutton").on("click", function(){
-        console.log("===click");
-        //$('#wholeScreenOverlay3').css('display','block');
-    });
-    $("#btnPay").on("click", function(){
-        document.getElementById("app").submit();
-    })
-    $('.discount').hide()
-    $('.loginbutton').show()
-     if(LogInMemId.textContent != ''){
-        $('.discount').show()
-        $('.recordPoint').show()
-        $('.loginbutton').hide()
-        // document.querySelector(".loginbutton").style.display = "none";
-    }else{
-        $('.discount').hide()
-        $('.recordPoint').hide()
-        $('.loginbutton').show()
-        // document.querySelector(".loginbutton").style.display = "";
-    }   
+    // $(".loginbutton").on("click", function(){
+    //     console.log("===click");
+    //     //$('#wholeScreenOverlay3').css('display','block');
+    // });
+    // $("#btnPay").on("click", function(){
+    //     document.getElementById("app").submit();
+    // })
+    // $('.discount').hide()
+    // $('.loginbutton').show()
+    //  if(LogInMemId.textContent != ''){
+    //     $('.discount').show()
+    //     $('.recordPoint').show()
+    //     $('.loginbutton').hide()
+    //     // document.querySelector(".loginbutton").style.display = "none";
+    // }else{
+    //     $('.discount').hide()
+    //     $('.recordPoint').hide()
+    //     $('.loginbutton').show()
+    //     // document.querySelector(".loginbutton").style.display = "";
+    // }   
 
 // window.addEventListener("load",showdiscount)
 })
 
 $(function(){
-    $(".loginbutton").on("click", function(){
-        
-        $('#wholeScreenOverlay3').css('display','block');
+    $('.discount').hide()
+    $('.loginbutton').show()
+    $('.fa-shopping-cart').click(function(){
+        let xhrlogin = new XMLHttpRequest();
+        xhrlogin.onload = function (){
+            if( xhrlogin.status == 200 ){
+                let res = JSON.parse(xhrlogin.responseText)
+                console.log(res);
+                if(res[0]=='nologin'){ 
+                    //請先登入
+                    $('#wholeScreenOverlay3').css('display','block');
+                    $('body').css('overflow','hidden');
+                    $('#LogRegClsBtn3').click(function(){
+                        $('#wholeScreenOverlay3').css('display','none');
+                        $('body').css('overflow','auto');
+                    })
+                }
+            }else{
+                alert( xhrlogin.status );
+            }
+        }
+
+    });
+    $('.loginbutton').click(function(){
+        let xhrlogin = new XMLHttpRequest();
+        xhrlogin.onload = function (){
+            if( xhrlogin.status == 200 ){
+                let res = JSON.parse(xhrlogin.responseText)
+                console.log(res);
+                if(res[0]=='nologin'){ 
+                    //請先登入
+                    $('#wholeScreenOverlay3').css('display','block');
+                    $('body').css('overflow','hidden');
+                    $('#LogRegClsBtn3').click(function(){
+                        $('#wholeScreenOverlay3').css('display','none');
+                        $('body').css('overflow','auto');
+                    })
+                }
+            }else{
+                alert( xhrlogin.status );
+            }
+        }
+        let urllogin = "./php/5/postMemberInfo.php";
+        xhrlogin.open("Get", urllogin, true);
+        xhrlogin.send( null );
     });
 
 });
 
 window.addEventListener("load",doFirst)
 </script>    
-<script>
-    // $('.space_box').css('display','none');
-</script>
 
 
 

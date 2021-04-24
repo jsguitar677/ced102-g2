@@ -236,6 +236,19 @@ div.title-block {
                   height: $line-height*2;
                   align-items: center;
                   vertical-align: middle;
+                  @media (min-width:576px) and (max-width:767px) {
+                     height: $line-height*3;
+                     // width: 99%;
+                     // margin: 5px auto;
+                     // justify-content: center;
+                  }
+      
+                  @media (max-width:575px) {
+                     height: $line-height*4;
+                     // width: 99%;
+                     // margin: 5px auto;
+                     // justify-content: center;
+                  }
 
                   .item_header div {
                      width: 150px;
