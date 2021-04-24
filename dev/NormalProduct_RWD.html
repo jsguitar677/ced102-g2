@@ -211,9 +211,7 @@
                 storage['ItemId'] = '';
             }
             let showTheProd = storage.getItem('ItemId');
-            //console.loge(showTheProd);
             id = showTheProd;
-            // alert(id );
             storage['ItemId'] = '';
         }
         // ================(A2) 依照從session上取到的值(即商品編號)去抓資料庫=============
@@ -292,8 +290,17 @@
                     }
                     // ********click「Cart Btn」, 就把 那個產品資訊存入Session********
                     //-----------------------------註冊放入購物車
-                    let cart=[];
+                    let cart;
+                    if(storage.getItem('cart') == null){
+                        cart = [];
+                    }else{
+                        cart = JSON.parse(storage['cart']);
+                    }
                     let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                            //--------session記錄購物資訊-----更新storage的購物資訊
+                    function updateCart(){
+                        storage["cart"] = JSON.stringify(cart);
+                    }
                     for(let i=0; i<CartBtn.length; i++){
                         CartBtn[i].onclick = function(e){
                             // let prodNo = e.target.id;(原寫法)
@@ -319,14 +326,10 @@
                                 cart.push(item);
                                 updateCart(); 
                             }
-                            //--------session記錄購物資訊-----更新storage的購物資訊
-                            function updateCart(){
-                                storage["cart"] = JSON.stringify(cart);
-                            }
                         }
                     }
                     //----------------------------
-                },50)
+                },1000)
             }
         });
         // ----------------------------------------------------------------------------

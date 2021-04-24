@@ -310,18 +310,48 @@
                             storage.setItem('ItemId',theId);
                         });
                     }
-                    // ********click「Cart Btn」, 就把 那個產品的id(即商品編號)存入Session (For Fany)********
-                    //幫每個購物車btn建立事件聆聽功能
-                    let CartBtn = document.querySelectorAll('.CartBtnOfMall');
-                    for(let i = 0; i < CartBtn.length; i++){
-                        CartBtn[i].addEventListener('click',function(){
-                            theBtnId = this.id;
-                            //click後 就把theBtnId = this.id存入session
-                            storage['addItemList'] += `${theBtnId}, `;
-                        });
-                    }
+                    // ********click「Cart Btn」, 就把 那個產品資訊存入Session********
+                    //-----------------------------註冊放入購物車
                     // ************************************************************************************
-                },50)
+                    let cart;
+                    if(storage.getItem('cart') == null){
+                        cart = [];
+                    }else{
+                        cart = JSON.parse(storage['cart']);
+                    }
+                    let CartBtn = document.querySelectorAll('.CartBtnOfMall');
+                            //--------session記錄購物資訊-----更新storage的購物資訊
+                    function updateCart(){
+                        storage["cart"] = JSON.stringify(cart);
+                    }
+                    for(let i=0; i<CartBtn.length; i++){
+                        CartBtn[i].onclick = function(e){
+                            // let prodNo = e.target.id;(原寫法)
+                            let prodNo = this.parentNode.parentNode.parentNode.id;
+                            //---------檢查商品是否已在cart中
+                            let exist = false;
+                            for(let i=0; i<cart.length; i++){
+                                if(cart[i].prodNo == prodNo){
+                                    exist = true;
+                                    break;
+                                }
+                            }
+                            //---------
+                            if(exist){
+                                alert("購物車內已有此商品囉!");
+                            }else{
+                                let item = {};
+                                item.prodNo = prodNo;
+                                item.prodName = e.target.parentNode.parentNode.parentNode.firstChild.innerText;
+                                item.src = e.target.parentNode.parentNode.parentNode.parentNode.querySelector("img").src;
+                                item.price = e.target.parentNode.previousElementSibling.innerText;
+                                item.count = 1;
+                                cart.push(item);
+                                updateCart(); 
+                            }
+                        }
+                    }
+                },1000)
             },
         });
         // ------------------------------------------------------------------------------
