@@ -14,14 +14,14 @@ function getDetail(){
         // }
         for(var i=0; i<getdataLenghth; i++){
             $('#saveCardHook').append(`
-            <div class="page5Card" id="page5Card${MBRPERID[i].actno}" style="background-image:url(${MBRPERID[i].locpic});">
-                <div class="content">
-                    <h2 class="title">${MBRPERID[i].actname}</h2>
-                    <p class="copy">${MBRPERID[i].vision}</p>
-                    <button value="${MBRPERID[i].actno}" class="btn membtn">See More</button>
-                    <button value="${MBRPERID[i].actno}" id="cancelLike${MBRPERID[i].actno}" class="btn2">取消收藏</button>
-                </div>
-            </div>`
+                <div class="page5Card" id="page5Card${MBRPERID[i].actno}" style="background-image:url(${MBRPERID[i].locpic});">
+                    <div class="content">
+                        <h2 class="title">${MBRPERID[i].actname}</h2>
+                        <p class="copy">${MBRPERID[i].vision}</p>
+                        <button value="${MBRPERID[i].actno}" class="btn membtn">See More</button>
+                        <button value="${MBRPERID[i].actno}" id="cancelLike${MBRPERID[i].actno}" class="btn2">取消收藏</button>
+                    </div>
+                </div>`
             )
             let cancelLike = document.getElementById(`cancelLike${MBRPERID[i].actno}`)
             let page5Cardid = document.getElementById(`page5Card${MBRPERID[i].actno}`)
