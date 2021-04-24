@@ -427,19 +427,7 @@ section.NormalProductPage{
                                         margin-right: 10%;
                                     }
                                 }
-                                // p.stepExplain{
-                                //     float: left;
-                                //     font-weight: 550;
-                                //     margin:0;
-                                //     @media (max-width:450px) {
-                                //         font-size: 12px; 
-                                //     }
-                                // }
                             }
-                            // prep{
-                            //     border:1px solid red;
-                            //     color:gray;
-                            // }
                             div.placememtOfQty{
                                 padding-top: 30px;
                                 width:100%;
@@ -448,18 +436,39 @@ section.NormalProductPage{
                                 @media (max-width:450px) {
                                     font-size: 12px; 
                                 }
-                                select.select_qty_pcs{
-                                    outline: none;
-                                    border-color: map-get($color_regulation , 'blue' )!important;
-                                    color: map-get($color_regulation,'blue')!important;
-                                    width:100px;
-                                    height: 30px;
-                                    padding-left: 30px;
-                                    border-radius: $inputRadius;
-                                    @media (max-width:450px) {
-                                        font-size: 12px; 
+                                input.qtyBtn{
+                                    border-radius: 50%;
+                                    border:none;
+                                    background-color: map-get($color-regulation,'gray-hint' );
+                                    margin-left: 5px;
+                                    height:27px;
+                                    width:27px;
+                                    font-size:$h7;
+                                    &:hover{
+                                        background-color: map-get($color-regulation,'yellow' );
+                                        color: map-get($color-regulation,'blue' );
+                                        transition: all 0.3s ease;
                                     }
                                 }
+                                input.qty{
+                                    height:28px;
+                                    width:50px;
+                                    font-size:$p;
+
+                                    text-align: center;
+                                }
+                                // select.select_qty_pcs{
+                                //     outline: none;
+                                //     border-color: map-get($color_regulation , 'blue' )!important;
+                                //     color: map-get($color_regulation,'blue')!important;
+                                //     width:100px;
+                                //     height: 30px;
+                                //     padding-left: 30px;
+                                //     border-radius: $inputRadius;
+                                //     @media (max-width:450px) {
+                                //         font-size: 12px; 
+                                //     }
+                                // }
                             }
                         }
                         //Cart按鈕區==================================
@@ -517,7 +526,8 @@ section.NormalProductPage{
                         justify-content: space-evenly;
                         //推薦商品卡片
                         div.product{
-                            margin-bottom: 30px;
+                            border:2px solid red;
+                            margin-bottom: 60px;
                             width: 275px;
                             img{
                                 width: 275px;
