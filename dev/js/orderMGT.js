@@ -96,7 +96,7 @@ $(document).ready(function(){
                 </div>
                 <div class="bottom">
                     <label class="left">收貨人：</label><p>${ordRow[0][j].CONSIG}</p><br>
-                    <label class="left">收貨地址：</label><p>${ordRow[0][j].POSTCODE}${ordRow[0][j].CONSIGADD}</p><br>
+                    <label class="left">收貨地址：</label><p>${ordRow[0][j].CONSIGADD}</p><br>
                     <label class="left">收貨人電話：</label><p>${ordRow[0][j].CONSIGTEL}</p><br>
                 </div>
                 <div class="cancel-btn btn">關閉</div>
