@@ -251,3 +251,39 @@ window.addEventListener('load',getLatestActvInfo);
 
 
 
+
+
+$('#c2 div.delete-icon').click(function(){
+    $('#c2 div.alert-block-delete').css('display','block');
+    let mbrno = $(this).parent().parent().attr("id");
+    $('#mem-delete .mbrno').text(`${mbrno.substr(3)}`);
+    $('#mem-delete input[name="mbrno"]').val(`${mbrno.substr(3).trim()}`);
+})
+$('div.cancel-btn').click(function(){
+    $(this).parent().parent().css('display','none');
+    $(this).parent().find('input').val('');
+});
+$('#c2 label.toggle-btn').click(function(){
+    let mbrno = $(this).parent().parent().attr("id");
+    $('#c2 div.alert-block-stop').css('display','block');
+    $('#mem-stop .mbrno').text(`${mbrno.substr(3)}`);
+    $('#mem-stop input[name="mbrno"]').val(`${mbrno.substr(3).trim()}`);
+    if($(this).find('input').prop("checked")){
+        $('#c2 #stop-text').text('停權?');
+        $('#stop-cancel').click(function(){
+            let val = $(this).parent().find('input').val();
+            $(`#c2 #mem${val} input`).prop('checked',false);
+            $('#c2 div.alert-block-stop').css('display','none');
+        })
+    }else{
+        $('#c2 #stop-text').text('復權?');
+        $('#stop-cancel').click(function(){
+            let val = $(this).parent().find('input').val();
+            $(`#c2 #mem${val} input`).prop("checked",true);
+            $('#c2 div.alert-block-stop').css('display','none');
+        })
+    }
+})
+
+var options = {valueNames: [ 'mem-num','mem-name']};
+userList_mem = new List('c2', options);
