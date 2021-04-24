@@ -1,7 +1,6 @@
 function $id(id){
 	return document.getElementById(id);
 }
-
 function getDetail(){
 
     let xhr1 = new XMLHttpRequest(); 
