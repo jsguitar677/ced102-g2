@@ -5,7 +5,7 @@ function $id(id){
 }
 
 window.addEventListener("load", function(){
-  
+
     ReceiveCoin();
 })
 

@@ -134,38 +134,82 @@ body{
                     margin-top: 15px;
                     .proTopHook{
                         position: relative;
+                        
                         img{
                             margin:10px;
                             margin-top:10px;
                             border-radius: 50%;
                             box-shadow:2px 2px 14px #ffdb6663;
                         }
-                        button{
-                            @include pad{
-                            }
-                            font-size: 9px;
-                            position:absolute;
+                        // label{
+                        //     position: relative;
+                        // }
+                        // #fileinp{
+                        //     position: absolute;
+                        //     left: 0;
+                        //     top: 0;
+                        //     opacity: 0;
+                        // }
+                        // #btn{
+                        //     margin-right: 5px;
+                        // }
+                        label{
+                            position: relative;
+                        }
+                        #fileinp{
+                            cursor: pointer;
+                            position: absolute;
+                            left: 0;
+                            top: -13px;
+                            opacity: 0;
+                            padding: 0;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }
+                        #btn{
+                            background-color: map-get($color_regulation, 'yellow' );
+                            padding: 0;
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            border: none;
+                            outline: none;
+                        }
+                        .filePosition{
+                            position: absolute;
                             bottom: 15px;
                             right: 11px;
-                            border-radius: 50%;
-                            width: 30px;
-                            height:30px;
-                            border:none;
-                            cursor: pointer;
-                            background-color: map-get($color_regulation, 'yellow' );
-                            color:map-get($color_regulation, 'blue');
-                            box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-                            &:hover{
-                                box-shadow:1px 1px 6px rgba(255, 255, 255, 0.541);
-                                color:map-get($color_regulation, 'white');
-
-                            }
                         }
+                        // input{
+                        //     @include pad{
+                        //     }
+                        //     font-size: 9px;
+                        //     position:absolute;
+                        //     bottom: 15px;
+                        //     right: 11px;
+                        //     border-radius: 50%;
+                        //     width: 30px;
+                        //     height:30px;
+                        //     border:none;
+                        //     cursor: pointer;
+                        //     background-color: map-get($color_regulation, 'yellow' );
+                        //     color:map-get($color_regulation, 'blue');
+                        //     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+                        //     &:hover{
+                        //         box-shadow:1px 1px 6px rgba(255, 255, 255, 0.541);
+                        //         color:map-get($color_regulation, 'white');
+
+                        //     }
+                        //     .imgchange{
+                        //         opacity: 0;
+                        //     }
+                        // }
                     }
                     
                     span{
                         padding-left: 10px;
-                        border-left: 1px solid yellow;
+                        border-left: 2px solid map-get($color_regulation, 'yellow' );
                         font-size: $h7;
                         @mixin pc{
                             margin-left: 30px;
@@ -201,14 +245,14 @@ body{
                                 width: 250px;
                                 padding: 5px;
                                 margin-right: 10%;
-                                outline: none;
+                                // outline: none;
                                 resize:none;
                                 color: map-get($color_regulation, 'white' );
                                 border:1px solid map-get($color_regulation, 'yellow');
                                 background-color: map-get($color_regulation,  'memberGray');
                                 box-shadow:2px 2px 14px #ffdb6663;
                             }
-                            button{
+                            .submitStyle{
                                 position: absolute;
                                 border: none;
                                 appearance: none;
@@ -230,8 +274,9 @@ body{
                                 }
                                 &:hover{
                                     color: map-get($color_regulation, 'blue' );
-                                    box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-                                    background-color: map-get($color_regulation, 'yellow' )
+                                    box-shadow:$box-shadow2;
+                                    background-color: map-get($color_regulation, 'yellow' );
+                                    
                                 }
                             }
                         }
