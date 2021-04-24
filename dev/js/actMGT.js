@@ -64,7 +64,7 @@ $(document).ready(function(){
 
         var options = {valueNames: ['act-num','mem-name','act-name','act-loc']};
         userList_act = new List('c6', options);
-
+        
         //點擊查看活動資訊
         $('#c6 #viewact tbody tr').click(function(){
             $('#c6 div.alert-block-view').css('display','block');
@@ -131,7 +131,6 @@ $(document).ready(function(){
         $('#c6 div.close-view-btn').click(function(){
             $('#c6 div.alert-block-view').css('display','none');
         })
-
         //點擊: 審核新提案
         $('#c6 #addact div.edit-icon').click(function(){
             $('#c6 div.alert-block-add').css('display','block');
@@ -163,33 +162,11 @@ $(document).ready(function(){
             }
         })
 
-        $('#addsubmit').click(function(){
-            let addactno = $('#addactno').val();
-            let xhr = new XMLHttpRequest();
-            if($('#addact-nopass').prop('checked')){
-                let addact = 1;
-                let url = `./php/7/getAct_JSON.php?addactno=${addactno}&addact=${addact}`;
-                xhr.open("Get", url, true);
-                xhr.send( null );
-                location.href='./actMGT.html';
-            }else if($('#addact-pass').prop('checked')){
-                let addact = 2;
-                let url = `./php/7/getAct_JSON.php?addactno=${addactno}&addact=${addact}`;
-                xhr.open("Get", url, true);
-                xhr.send( null );
-                location.href='./actMGT.html';
-            }else{
-                alert('請選擇通過或退件');
-            }
-        })
-
-
         //點擊: 關掉新提案
         $('#c6 div.addact-cancel-btn').click(function(){
             $(this).parent().parent().css('display','none');
             $(`#c6 #act-add input`).prop('checked',false);
         })
-
         //點擊: 審核欲取消提案
         $('#c6 #cancelact div.edit-icon').click(function(){
             $('#c6 div.alert-block-cancel').css('display','block');
@@ -221,25 +198,6 @@ $(document).ready(function(){
             $(this).parent().parent().css('display','none');
             $(`#c6 #act-cancel input`).prop('checked',false);
         })
-        $('#cclsubmit').click(function(){
-            let cclactno = $('#cclactno').val();
-            let xhr = new XMLHttpRequest();
-            if($('#cclact-nopass').prop('checked')){
-                let cancelact = 2;
-                let url = `./php/7/getAct_JSON.php?cclactno=${cclactno}&cancelact=${cancelact}`;
-                xhr.open("Get", url, true);
-                xhr.send( null );
-                location.href='./actMGT.html';
-            }else if($('#cclact-pass').prop('checked')){
-                let cancelact = 4;
-                let url = `./php/7/getAct_JSON.php?cclactno=${cclactno}&cancelact=${cancelact}`;
-                xhr.open("Get", url, true);
-                xhr.send( null );
-                location.href='./actMGT.html';
-            }else{
-                alert('請選擇通過或退件')
-            }
-        })
     }
 
     function getAct(){
@@ -259,6 +217,47 @@ $(document).ready(function(){
     }
 
     getAct();
+
+    $('#cclsubmit').click(function(){
+        let cclactno = $('#cclactno').val();
+        let xhr = new XMLHttpRequest();
+        if($('#cclact-nopass').prop('checked')){
+            let cancelact = 2;
+            let url = `./php/7/getAct_JSON.php?cclactno=${cclactno}&cancelact=${cancelact}`;
+            xhr.open("Get", url, true);
+            xhr.send( null );
+            location.href='./actMGT.html';
+        }else if($('#cclact-pass').prop('checked')){
+            let cancelact = 4;
+            let url = `./php/7/getAct_JSON.php?cclactno=${cclactno}&cancelact=${cancelact}`;
+            xhr.open("Get", url, true);
+            xhr.send( null );
+            location.href='./actMGT.html';
+        }else{
+            alert('請選擇通過或退件')
+        }
+    })
+
+    $('#addsubmit').click(function(){
+        let addactno = $('#addactno').val();
+        let xhr = new XMLHttpRequest();
+        if($('#addact-nopass').prop('checked')){
+            let addact = 1;
+            let url = `./php/7/getAct_JSON.php?addactno=${addactno}&addact=${addact}`;
+            xhr.open("Get", url, true);
+            xhr.send( null );
+            location.href='./actMGT.html';
+        }else if($('#addact-pass').prop('checked')){
+            let addact = 2;
+            let url = `./php/7/getAct_JSON.php?addactno=${addactno}&addact=${addact}`;
+            xhr.open("Get", url, true);
+            xhr.send( null );
+            location.href='./actMGT.html';
+        }else{
+            alert('請選擇通過或退件');
+        }
+    })
+
 
 })
 

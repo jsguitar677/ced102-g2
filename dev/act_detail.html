@@ -256,14 +256,14 @@
                 if (xhrlogin.status == 200) {
                     let res = JSON.parse(xhrlogin.responseText)
                     console.log(res);
-                    if (res[0] == 'nologin') {
+                    if(res[0] == 'nologin') {
                         //請先登入
                         alert("請先登入再進行報名，謝謝。")
-                    } else {
+                    }else{
                         //連結報名參加頁面
                         location.href = `./participation.html?actno=${actNum}`;
                     }
-                } else {
+                }else {
                     alert(xhrlogin.status);
                 }
             }
@@ -277,10 +277,10 @@
                 if (xhrlogin.status == 200) {
                     let res = JSON.parse(xhrlogin.responseText)
                     console.log(res);
-                    if (res[0] == 'nologin') {
+                    if(res[0] == 'nologin') {
                         //請先登入
                         alert("請先登入再進行報名，謝謝。")
-                    } else {
+                    }else{
                         //連結報名參加頁面
                         location.href = `./participation.html?actno=${actNum}`;
                     }
