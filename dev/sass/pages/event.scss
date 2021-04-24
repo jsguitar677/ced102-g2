@@ -249,6 +249,7 @@ div.banner {
             img {
               @include center();
               max-width: none;
+              min-width: 100%;
               height: 100%;
             }
           }
@@ -616,16 +617,6 @@ main.event {
                   &:nth-child(3n+1) {
                     margin-left: 0px;
                   }
-
-                  // &:nth-child(1) {
-                  //   opacity: 1;
-                  //   font-weight: bolder;
-                  //   div.bg {
-                  //     img {
-                  //       filter: blur(15px);
-                  //     }
-                  //   }
-                  // }
                   &:hover {
                     font-weight: bolder;
                     div.bg {
@@ -653,7 +644,9 @@ main.event {
               position: relative;
               overflow: hidden;
               div.opacity {
-                height: 100%;
+                // height: 100%;
+                min-width: 100%;
+                min-height: 100%;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -662,7 +655,8 @@ main.event {
                 img {
                   filter: blur(20px);
                   z-index: -1;
-                  height: 100%;
+                  min-width: 100%;
+                  min-height: 100%;
                   max-width: none;
                 }
               }
@@ -697,15 +691,6 @@ main.event {
                       margin: 12px 0px;
                       color: map-get($web-color, 'blue');
                     }
-                    // p#instructions{
-                    //   margin-bottom: 0;
-                    // }
-                    // p#instructions-more{
-                    //   line-height: 12px;
-                    //   padding-right: 30px;
-                    //   margin: 0 0 10px 0;
-                    //   text-align: right;
-                    // }
                   }
 
                   div.right {
@@ -724,6 +709,8 @@ main.event {
                         left: 50%;
                         transform: translate(-50%, -50%);
                         max-width: none;
+                        min-height: 100%;
+                        min-width: 100%;
                         height: 100%;
                       }
                     }
@@ -858,7 +845,6 @@ main.event {
                   line-height: 20px;
                   margin: 10px 0 0 0;
                 }
-
                 div.weather-div {
                   font-weight: lighter;
                   background-color: #1a1345cd;
@@ -872,7 +858,8 @@ main.event {
                   margin-top: 15px;
                   padding: 16px;
                   font-size: 12px;
-                  overflow: hidden;
+                  -ms-overflow-style: none;
+                  overflow: auto;
                   position: relative;
                   div.update-text{
                     line-height: 15px;
@@ -999,6 +986,9 @@ main.event {
                     display: none;
                   }
                 }
+                div.weather-div::-webkit-scrollbar {
+                  display: none;
+                }
               }
               div.closebtn{
                 width: $width-close-btn;
@@ -1116,7 +1106,103 @@ main.event {
                 }
               }
             }
-            @media (max-width:489px){
+            @media (min-width:375px) and (max-width:490px){
+              div.card{
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 50%;
+                transform: translatex(-50%);
+                width: 340px;
+                background-color: map-get($web-color,'white');
+                div.closebtn{
+                  display: block;
+                }
+                div.block{
+                  padding: 15px;
+                  div.flex{
+                    div.left{
+                      width: 100%;
+                      h2{
+                        font-size: $h7;
+                      }
+                      p{
+                        font-size: $text-fontSize-575;
+                        line-height: 20px;
+                        margin: 5px 0;
+                      }
+                    }
+                    div.right{
+                      width: 100%;
+                      text-align: right;
+                      div.img{
+                        display: none;
+                      }
+                      div.btn{
+                        position: relative;
+                        margin-top: 10px;
+                        width: 100px;
+                        a{
+                          font-size: $text-fontSize-575;
+                          padding: 5px;
+                        }
+                      }
+                    }
+                  }
+                  div.weather-div{
+                    padding: 10px;
+                    div.title{
+                      font-size: $text-fontSize;
+                    }
+                    div.today{
+                      div{
+                        p.location,p.date{
+                          font-size: $text-fontSize;
+                        }
+                      }
+                      div.icon{
+                        width: 30px;
+                        margin: 0;
+                      }
+                      div.temperature{
+                        margin: 0px 5px;
+                        p.hight{
+                          font-size: $text-fontSize;
+                          margin-right: 0;
+                        }
+                        p.low{
+                          font-size: $text-fontSize-575;
+                        }
+                      }
+                      p.description{
+                        font-size: $text-fontSize;
+                      }
+                    }
+                    div.flex{
+                      div.weather{
+                        p.date{
+                          font-size: $text-fontSize-575;
+                          line-height: 20px;
+                          margin: 0;
+                        }
+                        div.icon{
+                          width: 20px;
+                          line-height: 20px;
+                        }
+                        div.temperature{
+                          line-height: 10px;
+                        }
+                        p.description{
+                          margin: 5px 0;
+                          line-height: 20px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            @media (max-width:374px){
               div.card{
                 display: none;
                 position: absolute;
@@ -1453,7 +1539,7 @@ main.event {
               }
             }
             div.flex{
-              padding: 30px 80px 30px 60px;
+              padding: 30px 70px 30px 50px;
               margin: 0 auto;
               width: 70%;
               background-color: map-get($web-color,'white');
@@ -1465,7 +1551,7 @@ main.event {
               align-items: center;
               margin-bottom: 20px;
               div.step{
-                padding-right: 30px;
+                padding-right: 20px;
                 width: 15%;
                 font-size: $h3;
                 font-weight: bolder;
@@ -1485,7 +1571,7 @@ main.event {
                 }
               }
               div.content3{
-                width: calc(100% - 15% - 108px);
+                width: calc(100% - 15% - 110px);
               }
               @include btn-module-blue();
               div.btn{
@@ -1494,7 +1580,7 @@ main.event {
                 }
               }
               div.btn{
-                width: 108px;
+                width: 110px;
                 position: relative;
                 left: 20px; 
                 margin: 0;   
