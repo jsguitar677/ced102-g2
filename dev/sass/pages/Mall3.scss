@@ -19,108 +19,100 @@ $h4:38px;
 $h5:28px;
 $h6:22px;
 $h7:18px;
-p {
-    font-size: $p;
-}
 
-h1 {
-    font-size: $h1;
-}
+p{font-size: $p;}
+h1{font-size: $h1;}
+h2{font-size: $h2;}
+h3{font-size: $h3;}
+h4{font-size: $h4;}
+h5{font-size: $h5;}
+h6{font-size: $h6;}
+.h7{font-size: $h7;}
 
-h2 {
-    font-size: $h2;
-}
-
-h3 {
-    font-size: $h3;
-}
-
-h4 {
-    font-size: $h4;
-}
-
-h5 {
-    font-size: $h5;
-}
-
-h6 {
-    font-size: $h6;
-}
-
-.h7 {
-    font-size: $h7;
-}
-
-$letter-Spacing:2px; //文字間距
-$padding-hint:10px; //頁面提示字padding
+$letter-Spacing:2px;//文字間距
+$padding-hint:10px;//頁面提示字padding
 //Others
-$pageW:1200px; //網頁寬
-$reserveSide:30px; //左右預留寬度
+$pageW:1200px;//網頁寬
+$reserveSide:30px;//左右預留寬度
 //Radius
-$contentTxt:15px; //內文字體大小
-$btnTxt:15px; //按鈕字體大小
-$regionTxt:28px; //區域性字體
-$contentSubTit:22px; //內文副標題
-$navTxt:15px; //導覽列文字
-$lineHeight:35px; //文字行高
+$contentTxt:15px;   //內文字體大小
+$btnTxt:15px;   //按鈕字體大小
+$regionTxt:28px;//區域性字體
+$contentSubTit:22px;//內文副標題
+$navTxt:15px;//導覽列文字
+$lineHeight:35px;//文字行高
 $borderRadius:0px;
 $btnRadius:0px;
 $inputRadius:0px;
 //box-shadow
 $box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
+
 //敬航
-$closeBtn:27px; //關閉紐大小
+$closeBtn:27px;//關閉紐大小
 // header
 $navH:66px;
 $logoW:50px;
 //Footer
 $footerH:500px;
+
 //new color
-$color_regulation:( 'red':#EF4325, 'pink':#FF498C, 'orange':#FFAE41, 'lake':#09E4C7, 'blue':#07082E, 'black':#1E1E1E, 'white':#FFFFFF, 'white-bg':#EEEEEE, 'gray-hint':#C6C6C6, 'green-coin':#0e6d41, 'gray-input-hint':#C2C2C2, 'blue-input-border':#07082E, 'blue-activity-nav':#24324B, 'yellow':#FFD241, 'rankGray':#E3E3EA, 'memberGray':#181919, );
+$color_regulation:(
+    'red':#EF4325,
+    'pink':#FF498C,
+    'orange':#FFAE41,
+    'lake':#09E4C7,
+    'blue':#07082E,
+    'black':#1E1E1E,
+    'white':#FFFFFF,
+    'white-bg':#EEEEEE,
+    'gray-hint':#C6C6C6,
+    'green-coin':#0e6d41,
+    'gray-input-hint':#C2C2C2,
+    'blue-input-border':#07082E,
+    'blue-activity-nav':#24324B,
+    'yellow':#FFD241,
+    'rankGray':#E3E3EA,
+    'memberGray':#181919,
+);
 // ==============RWD==============
 @mixin pcL {
-    @media(max-width: 1200px) {
+    @media(max-width:1200px){
+        @content;
+      }
+}
+@mixin pc{
+    @media(max-width:1024px){
+      @content;
+    }
+}
+@mixin pad{
+    @media(max-width:768px){
+      @content;
+    }
+}
+@mixin mobileL{
+    @media(max-width:576px){
         @content;
     }
 }
-
-@mixin pc {
-    @media(max-width: 1024px) {
+@mixin mobileS{
+    @media(max-width:375px){
         @content;
     }
 }
-
-@mixin pad {
-    @media(max-width: 768px) {
-        @content;
-    }
-}
-
-@mixin mobileL {
-    @media(max-width: 576px) {
-        @content;
-    }
-}
-
-@mixin mobileS {
-    @media(max-width: 375px) {
-        @content;
-    }
-}
-
 // -------------for cusblock-------------
-@mixin customSize {
-    @media(max-width: 850px) {
+@mixin customSize{
+    @media(max-width:850px){
         @content;
     }
 }
 
-@mixin cartIcon() {
-    color: map-get($color_regulation, 'blue');
-    background-color: map-get($color_regulation, 'yellow');
+@mixin cartIcon(){
+    color: map-get($color_regulation,'blue');
+    background-color: map-get($color_regulation,'yellow');
     height: 35px;
     padding: 0;
-    border: none;
+    border: none ;
     outline: none;
     cursor: pointer;
     padding: 0 10px;
@@ -128,40 +120,39 @@ $color_regulation:( 'red':#EF4325, 'pink':#FF498C, 'orange':#FFAE41, 'lake':#09E
     line-height: 35px;
 }
 
-@mixin card() {
-    width: 260px;
-    height: 300px;
+@mixin card(){
+    width:260px;
+    height:300px;
     position: relative;
     background-size: cover;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
-button {
+button{
     outline: none;
 }
-
-.type.-open {
+.type.-open{
     transition: all 0.3s ease;
     display: block!important;
-    top: 0;
+    top:0;
     left: 0;
 }
-
 //=============共用規格設定如上=============
+
 body {
     box-sizing: border-box;
     margin: 0;
     font-family: $english, $chinese;
-    background-color: map-get($color_regulation, 'white');
+    background-color: map-get($color_regulation,'white');
 }
 
-section {
-    div.content_Mall {
+section{
+    div.content_Mall{
         //=====banner區塊============================================
-        div.homePage4__customerBlock {
+        div.homePage4__customerBlock{
             position: relative;
-            margin: 0 0 50px 0;
-            margin-top: $navH;
+            margin:0 0 50px 0;
+            margin-top:$navH;
             padding: 50px;
             //GIT圖片位置
             background-image: url('../../img/mall/mall-banner.jpg');
@@ -171,92 +162,101 @@ section {
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: bottom;
-            @include customSize {
-                .cusSwiper {
+            @include customSize{
+                .cusSwiper{
                     flex-direction: column-reverse;
                     align-items: center;
                 }
-                #cusSwipersBtnR,
-                #cusSwipersBtnL {
-                    top: 75%;
+                #cusSwipersBtnR,#cusSwipersBtnL{
+                    top:75%;
                 }
             }
             //=====左側麵包條=====
-            div.titleBlock {
+            div.titleBlock{
                 position: absolute;
                 padding: 10px;
                 left: -31px;
-                bottom: -85px;
+                bottom:-85px;
                 font-size: 20px;
                 transform: rotate(90deg);
-                span {
-                    color: map-get($color_regulation, 'gray-hint');
+                span{
+                    color: map-get($color_regulation,'gray-hint');
                 }
-                .currentPage {
-                    color: black;
+                .currentPage{
+                    color:black;    
                 }
             }
-            div.sizeBox {
-                padding: 0 30px;
+
+            div.sizeBox{
+                padding:0 30px;
                 max-width: 1200px;
                 margin: auto;
-                div.swiper-container {
-                    div.swiper-wrapper {
-                        .swiper-slide {
-                            display: flex;
-                            div.productBanner {
+                @media (max-width:849px){
+                    padding:0;           
+                }
+                div.swiper-container{
+                    div.swiper-wrapper{
+                        .swiper-slide{
+                            display:flex;
+                            
+                            div.productBanner{
                                 margin-bottom: 30px;
                                 width: 275px;
-                                a {
-                                    img {
+                                a{
+                                    img{
                                         width: 275px;
                                         height: 275px;
-                                        border-radius: 3px;
+                                        border-radius:3px;
                                         box-shadow: $box-shadow;
                                     }
                                 }
                             }
-                            div.page4RightText {
+                            div.page4RightText{
                                 padding: 10px 20px 30px 30px;
                                 width: 60%;
                                 text-align: left;
-                                @include customSize {
+                                @include customSize{
                                     width: 80%;
                                     padding-right: 10px;
                                 }
-                                div.page4Title {
-                                    color: map-get($color_regulation, 'blue');
-                                    p {
-                                        margin: 0;
-                                    }
-                                    h5 {
-                                        font-size: $h5;
+                                color: map-get($color_regulation, 'blue' );
+                                p{  
+                                    margin: 0;
+                                }
+                                h5{
+                                    font-size: $h5;
+                                    margin-top: 0;
+                                    div.page4Title{
                                         margin: 0;
                                     }
                                     padding-left: 10px;
-                                    border-left: 8px solid map-get($color-regulation,
-                                    'yellow');
+                                    border-left: 8px solid map-get($color-regulation, 'yellow' );
                                 }
-                                h5 {
-                                    color: map-get($color_regulation, 'blue');
+                                h5{
+                                    color: map-get($color_regulation, 'blue' );
                                     font-size: $h5;
                                     margin: 0;
                                 }
-                                p {
-                                    margin-bottom: 50px;
+                                p{
+                                    margin-bottom: 30px;
+                                    width:80%; 
+                                    margin-top: 5px;
+                                    @media (max-width:849px){
+                                        width: 100%;
+                                    }
                                 }
-                                a {
-                                    background-color: map-get($color-regulation, 'blue');
-                                    color: map-get($color-regulation, 'white');
-                                    text-decoration: none;
+                                a{  
+                                    background-color: map-get($color-regulation,'blue' );
+                                    color: map-get($color-regulation,'white' );
+                                    text-decoration:none;
                                     float: right;
-                                    padding: 5px 20px;
+                                    padding:5px 20px;
                                     text-align: center;
                                     margin-right: 15px;
                                     transition: all 0.3s ease;
-                                    &:hover {
-                                        background-color: map-get($color-regulation, 'yellow');
-                                        color: map-get($color-regulation, 'blue');
+                                    &:hover{
+                                        background-color: map-get($color-regulation,'yellow' );
+                                        color: map-get($color-regulation,'blue' );
                                         transition: all 0.3s ease;
                                     }
                                 }
@@ -267,46 +267,45 @@ section {
             }
         }
         //===標題區 : 一般商品 & 推薦商品===
-        div.newsPorTitle {
+        div.newsPorTitle{
             margin: 0 auto;
             text-align: center;
             margin-top: 30px;
-            p {
+            p{  
                 font-size: $p;
                 margin: 0;
-                color: map-get($color_regulation, 'blue');
+                color: map-get($color_regulation , 'blue' );
             }
-            h5 {
+            h5{
                 font-size: $h5;
                 margin: 0;
-                color: map-get($color_regulation, 'blue');
+                color: map-get($color_regulation , 'blue' );
             }
-            div.newProLine {
+            div.newProLine{
                 margin: auto;
                 margin-top: 10px;
                 margin-bottom: 30px;
-                width: 50px;
+                width:50px;
                 height: 8px;
-                background-color: map-get($color_regulation, 'yellow');
+                background-color:map-get($color_regulation , 'yellow' );
             }
         }
         //=====一般商品區============================================
         //一般商品區(含篩選)
-        div.sizeBoxB {
+        div.sizeBoxB{
             padding: 0 30px;
             max-width: 1200px;
             margin: auto;
-            div.productBlock {
-                @include pad {
+            div.productBlock{
+                @include pad{
                     position: relative;
                     justify-content: center;
                 }
-                border-bottom: 1px solid map-get($color-regulation,
-                memberGray);
+                border-bottom: 1px solid map-get($color-regulation, memberGray );
                 display: flex;
                 //===左邊篩選「商品種類」===
-                div.productType {
-                    @include pad {
+                div.productType{
+                    @include pad{
                         cursor: pointer;
                         position: absolute;
                         z-index: 1;
@@ -319,48 +318,47 @@ section {
                     display: flex;
                     flex-direction: column;
                     margin-right: 15px;
-                    div.typeTitle {
-                        @include pc {
+                    div.typeTitle{
+                        @include pc{
                             padding-left: 20px;
                         }
-                        @include pad {
-                            span {
-                                &:hover {
+                        @include pad{
+                            span{
+                                &:hover{
                                     //transition: all 0.3s ease;
-                                    border-bottom: 2px solid map-get($color-regulation, "yellow");
+                                    border-bottom: 2px solid map-get($color-regulation,"yellow" );
+                                    }
                                 }
-                            }
                         }
                         height: 50px;
-                        background-color: map-get($color-regulation,
-                        'memberGray');
+                        background-color: map-get($color-regulation, 'memberGray');
                         border:1px solid black;
                         width: 100%;
                         line-height: 50px;
                         font-weight: bold;
                         padding-left: 30px;
-                        span {
+                        span{
                             font-size: 18px;
-                            color: map-get($color-regulation, 'white');
+                            color:map-get($color-regulation, 'white');
                             padding-left: 10px;
                             border-left: 8px solid map-get($color-regulation, 'yellow');
                         }
                     }
-                    button {
-                        &:hover {
+                    button{
+                        &:hover{
                             transition: all 0.3s ease;
                             background-color: map-get($color-regulation, 'yellow');
                             box-shadow: $box-shadow;
                         }
-                        @include pad {
+                        @include pad{
                             transition: all 0.3s ease;
                             display: none;
                         }
-                        @include pc {
+                        @include pc{
+            
                             padding-left: 30px;
                         }
-                        background-color: map-get($color-regulation,
-                        'white');
+                        background-color: map-get($color-regulation, 'white');
                         cursor: pointer;
                         padding-left: 40px;
                         text-align: left;
@@ -369,12 +367,11 @@ section {
                         border-radius:0;
                         border:none;
                         border:1px solid black;
-                        border-top:none;
-                    }
+                        border-top:none;                                         }
                 }
                 //===右邊 所有商品 & 「排序」===
-                div.allProduct {
-                    @include pad {
+                div.allProduct{
+                    @include pad{
                         padding-top: 70px;
                         width: 100%;
                     }
@@ -382,15 +379,15 @@ section {
                     width: 82%;
                     padding-top: 50px;
                     //===排序===
-                    div.theWayOfSort {
-                        select.select_sort_way {
+                    div.theWayOfSort{
+                        select.select_sort_way{
                             box-shadow: $box-shadow;
                             width: 150px;
                             height: 35px;
-                            border: none;
+                            border:none;
                             padding: 0 10px;
                             background-color: map-get($color-regulation, 'yellow');
-                            option {
+                            option{
                                 font-size: 15px;
                                 color: map-get($color-regulation, 'blue');
                                 background-color: map-get($color-regulation, 'white');
@@ -400,59 +397,61 @@ section {
                         right: 0;
                         top: 0;
                     }
-                    div.normalBlack {
-                        div.addDivForVue {
+
+                    div.normalBlack{
+                        div.addDivForVue{
                             display: flex;
                             flex-wrap: wrap;
                             justify-content: space-evenly;
                             //=====商品卡片=====
-                            div.product {
-                                margin-bottom: 30px;
+                            div.product{
+                                margin-bottom: 60px;
                                 width: 275px;
-                                a {
-                                    img {
+                                // border:2px solid red;
+                                a{
+                                    img{
                                         width: 275px;
                                         height: 275px;
                                         box-shadow: $box-shadow;
                                     }
                                 }
-                                div.productInfo {
-                                    color: map-get($color-regulation, 'blue');
-                                    border-left: 8px solid map-get($color-regulation, "yellow");
+                                div.productInfo{
+                                    color:map-get($color-regulation, 'blue' );
+                                    border-left: 8px solid map-get($color-regulation, "yellow" );
                                     padding-left: 10px;
                                     margin-top: 10px;
-                                    p.NameAndPrice {
+                                    p.NameAndPrice{  
                                         margin: 0;
                                         line-height: 36px;
                                         // span.price{
                                         // }
                                     }
-                                    button {
+                                    button{
                                         overflow: hidden;
                                         padding: 0;
                                         margin: 0;
                                         float: right;
                                         height: 35px;
-                                        width: 35px;
+                                        width:35px;
                                         line-height: 35px;
-                                        color: map-get($color-regulation, 'blue');
-                                        background-color: map-get($color-regulation, 'yellow');
-                                        border: none;
+                                        color: map-get($color-regulation,'blue');
+                                        background-color: map-get($color-regulation, 'yellow' );
+                                        border:none;
                                         box-shadow: $box-shadow;
-                                        white-space: nowrap;
+                                        white-space:nowrap;
                                         transition: all 0.3s ease 0s;
-                                        i {
+                                        i{
                                             display: inline-block;
                                         }
-                                        p {
+                                        p{  
                                             opacity: 0;
                                             margin: 0;
                                             display: none;
                                         }
-                                        &:hover {
+                                        &:hover{
                                             transition: all 0.3s ease 0s;
                                             width: 150px;
-                                            p {
+                                            p{
                                                 opacity: 1;
                                                 display: inline-block;
                                             }
@@ -467,65 +466,65 @@ section {
             }
         }
         //=====推薦商品區(最新商品)==================================
-        div.sizeBoxC {
+        div.sizeBoxC{
             padding: 0 30px;
             max-width: 1200px;
             margin: auto;
-            div.homePage4__generalBlock {
-                div.addDivForVue {
+            div.homePage4__generalBlock{
+                div.addDivForVue{
                     padding: 0 30px;
                     margin: 30px 0;
                     flex-wrap: wrap;
                     display: flex;
                     justify-content: space-evenly;
                     //=====推薦商品卡片=====
-                    div.product {
-                        margin-bottom: 30px;
+                    div.product{
+                        margin-bottom: 60px;
                         width: 275px;
-                        a {
-                            img {
+                        a{
+                            img{
                                 width: 275px;
                                 height: 275px;
                                 box-shadow: $box-shadow;
                             }
                         }
-                        div.productInfo {
-                            color: map-get($color-regulation, 'blue');
-                            border-left: 8px solid map-get($color-regulation, "yellow");
+                        div.productInfo{
+                            color:map-get($color-regulation, 'blue' );
+                            border-left: 8px solid map-get($color-regulation, "yellow" );
                             padding-left: 10px;
                             margin-top: 10px;
-                            p.NameAndPrice {
+                            p.NameAndPrice{  
                                 margin: 0;
                                 line-height: 36px;
                                 // span.price{
                                 // }
                             }
-                            button {
+                            button{
                                 overflow: hidden;
                                 padding: 0;
                                 margin: 0;
                                 float: right;
                                 height: 35px;
-                                width: 35px;
+                                width:35px;
                                 line-height: 35px;
-                                color: map-get($color-regulation, 'blue');
-                                background-color: map-get($color-regulation, 'yellow');
-                                border: none;
+                                color: map-get($color-regulation,'blue');
+                                background-color: map-get($color-regulation, 'yellow' );
+                                border:none;
                                 box-shadow: $box-shadow;
-                                white-space: nowrap;
+                                white-space:nowrap;
                                 transition: all 0.3s ease 0s;
-                                i {
+                                i{
                                     display: inline-block;
                                 }
-                                p {
+                                p{  
                                     opacity: 0;
                                     margin: 0;
                                     display: none;
                                 }
-                                &:hover {
+                                &:hover{
                                     transition: all 0.3s ease 0s;
                                     width: 150px;
-                                    p {
+                                    p{
                                         opacity: 1;
                                         display: inline-block;
                                     }

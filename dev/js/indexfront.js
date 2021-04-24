@@ -172,6 +172,8 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 // ==================== 最新活動抓取
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
+    // console.log(latestActv);
+    // console.log("latestActv:",latestActv);
     let latestActvPic = document.getElementsByClassName('targetData');
     let RECRGOAL  = document.getElementById('neededVolunteer');
     let  RECRNOW = document.getElementById('singUpVolunteer');
@@ -182,7 +184,7 @@ function showLatestActv(jsonStr){
     for(let i=0; i<latestActvPic.length; i++){
         latestActvPic[i].setAttribute("src", latestActv[i]["LOCPIC"]);
     }
-    //====  展示預設資料
+    //====  展示預設最新活動資料
     RECRGOAL.innerHTML = latestActv[0]["RECRGOAL"];
     RECRNOW.innerHTML = latestActv[0]["RECRNOW"];
     DNTGOAL.innerHTML = latestActv[0]["DNTGOAL"];
@@ -194,6 +196,7 @@ function showLatestActv(jsonStr){
     $(".targetData").bind("click", function(){
         var divs = $(".targetData");
         var curIdx = divs.index($(this));
+        var actDetailUrl = "./act_detail.html?actno=";
         latestActvPic[curIdx].setAttribute("src", latestActv[curIdx]["LOCPIC"]);
         RECRGOAL.innerHTML = latestActv[curIdx]["RECRGOAL"];
         RECRNOW.innerHTML = latestActv[curIdx]["RECRNOW"];
@@ -201,7 +204,8 @@ function showLatestActv(jsonStr){
         DNTNOW.innerHTML = latestActv[curIdx]["DNTNOW"];
         ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
         ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
-
+        ACTNAME.setAttribute("href",actDetailUrl+latestActv[curIdx]["ACTNO"]);
+        // console.log(latestActv[curIdx]["ACTNAME"]);
     });
     
 
@@ -210,7 +214,7 @@ function getLatestActv(){
     var xhrLa = new XMLHttpRequest();
     xhrLa.onload = function(){
         if(xhrLa.status == 200){
-            console.log("最新活動",xhrLa.responseText);
+            console.log(xhrLa.responseText);
             showLatestActv(xhrLa.responseText);
         }else{
             alert(xhrLa.status);
@@ -222,8 +226,23 @@ function getLatestActv(){
 }
 window.addEventListener('load',getLatestActv);
 
+//====================== 決定跳轉的最新活動頁面
+
 function getLatestActvInfo(){
-    
+    let linkActvData = document.getElementById('linkActvData');
+    // linkActvData.onclick = function(){
+    //     console.log(linkActvData.value);
+    // }
+    let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        actv = JSON.parse(xhr.responseText);
+        // if(actv.ACTNAME){
+        //   //有抓到值
+        //   console.log(actv.ACTNAME);
+        // }
+      }
+      xhr.open("get", "./php/2/clickedLatestActv.php", true);
+      xhr.send(null);
 }
 
 window.addEventListener('load',getLatestActvInfo);
@@ -232,3 +251,39 @@ window.addEventListener('load',getLatestActvInfo);
 
 
 
+
+
+$('#c2 div.delete-icon').click(function(){
+    $('#c2 div.alert-block-delete').css('display','block');
+    let mbrno = $(this).parent().parent().attr("id");
+    $('#mem-delete .mbrno').text(`${mbrno.substr(3)}`);
+    $('#mem-delete input[name="mbrno"]').val(`${mbrno.substr(3).trim()}`);
+})
+$('div.cancel-btn').click(function(){
+    $(this).parent().parent().css('display','none');
+    $(this).parent().find('input').val('');
+});
+$('#c2 label.toggle-btn').click(function(){
+    let mbrno = $(this).parent().parent().attr("id");
+    $('#c2 div.alert-block-stop').css('display','block');
+    $('#mem-stop .mbrno').text(`${mbrno.substr(3)}`);
+    $('#mem-stop input[name="mbrno"]').val(`${mbrno.substr(3).trim()}`);
+    if($(this).find('input').prop("checked")){
+        $('#c2 #stop-text').text('停權?');
+        $('#stop-cancel').click(function(){
+            let val = $(this).parent().find('input').val();
+            $(`#c2 #mem${val} input`).prop('checked',false);
+            $('#c2 div.alert-block-stop').css('display','none');
+        })
+    }else{
+        $('#c2 #stop-text').text('復權?');
+        $('#stop-cancel').click(function(){
+            let val = $(this).parent().find('input').val();
+            $(`#c2 #mem${val} input`).prop("checked",true);
+            $('#c2 div.alert-block-stop').css('display','none');
+        })
+    }
+})
+
+var options = {valueNames: [ 'mem-num','mem-name']};
+userList_mem = new List('c2', options);

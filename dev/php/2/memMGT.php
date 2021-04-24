@@ -2,7 +2,7 @@
 try{
   // require_once("./connectBooks.php");
   require_once("../../connect_ced102g2.php");
-  $sql = "select MBRNAME, MBREXP, MBRMAIL, MBRBIRTH, MBRCOIN, MBRPHONE, MBREXP, MBRSTAT from mbr ";
+  $sql = "select MBRNO, MBRNAME, MBREXP, MBRMAIL, MBRBIRTH, MBRCOIN, MBRPHONE, MBREXP, MBRSTAT from mbr ";
   $member = $pdo->query($sql);
   if( $member->rowCount() == 0 ){ 
     echo "{}";//傳回看起來空空的物件之JSON字串
@@ -11,7 +11,7 @@ try{
     $result = array();
     foreach($memRows as $i => $memRow){
       foreach($memRow as $data){
-        $result["$i"] = array("MBRNAME"=>$memRows["$i"]["MBRNAME"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRMAIL"=>$memRows["$i"]["MBRMAIL"], "MBRBIRTH"=>$memRows["$i"]["MBRBIRTH"], "MBRCOIN"=>$memRows["$i"]["MBRCOIN"], "MBRPHONE"=>$memRows["$i"]["MBRPHONE"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRSTAT"=>$memRows["$i"]["MBRSTAT"]);
+        $result["$i"] = array("MBRNAME"=>$memRows["$i"]["MBRNAME"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRMAIL"=>$memRows["$i"]["MBRMAIL"], "MBRBIRTH"=>$memRows["$i"]["MBRBIRTH"], "MBRCOIN"=>$memRows["$i"]["MBRCOIN"], "MBRPHONE"=>$memRows["$i"]["MBRPHONE"], "MBREXP"=>$memRows["$i"]["MBREXP"], "MBRSTAT"=>$memRows["$i"]["MBRSTAT"], "MBRNO"=>$memRows["$i"]["MBRNO"]);
       }
     }
     echo json_encode($result);

@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js'></script>
-    <script src="./js/common_backend.js"></script>
+    <!-- <script src="./js/common_backend.js"></script> -->
     <script src="./js/memMGT.js"></script>
 </head>
 <body>
@@ -37,9 +37,9 @@
                     <div class="flex">
                         <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號或名稱'></div>
                     </div>
-                    <!-- <table>
-                        <thead>
-                            <tr>
+                    <!-- <table> -->
+                        <!-- <thead> -->
+                            <!-- <tr>
                                 <th>編號</th>
                                 <th>姓名</th>
                                 <th>等級</th>
@@ -51,10 +51,10 @@
                                 <th>狀態</th>
                                 <th>違規停權</th>
                                 <th>刪除</th>
-                            </tr>
-                        </thead>
-                        <tbody class="list" id="mem-tbody">
-                            <tr id="mem1">
+                            </tr> -->
+                        <!-- </thead> -->
+                        <!-- <tbody class="list" id="mem-tbody"> -->
+                            <!-- <tr id="mem1">
                                 <td><div class="no-block mem-num" id="BCMBRNO">1</div></td>
                                 <td class="mem-name" id="BCMBRNAME">Herry Chen</td>
                                 <td id="BCMLEVEL">一般會員</td>
@@ -73,8 +73,8 @@
                                 <td>
                                     <div class="delete-icon"><i class="fas fa-trash"></i></div>
                                 </td>
-                            </tr>
-                            <tr id="mem2">
+                            </tr> -->
+                            <!-- <tr id="mem2">
                                 <td><div class="no-block mem-num">2</div></td>
                                 <td class="mem-name">Amy Lin</td>
                                 <td>一般會員</td>
@@ -93,9 +93,9 @@
                                 <td>
                                     <div class="delete-icon"><i class="fas fa-trash"></i></div>
                                 </td>
-                            </tr>
-                        </tbody>
-                    </table> -->
+                            </tr> -->
+                        <!-- </tbody> -->
+                    <!-- </table> -->
                     <div id="showPanel"></div>
                     <div class="alert-block alert-block-delete">
                         <form id="mem-delete" class="alert">
@@ -103,7 +103,7 @@
                             <p>您確定要將會員編號<span class="mbrno"></span>刪除?</p>
                             <p class="highlight">一經刪除便無法復原</p>
                             <div class="cancel-btn btn">取消</div>
-                            <button type="submit" class="submit btn">確認</button>
+                            <button type="submit" class="submit btn" id="deleteConfirm">確認</button>
                         </form>
                     </div>
                     <div class="alert-block alert-block-stop">
@@ -112,7 +112,7 @@
                             <p>您確定要將會員編號<span class="mbrno"></span><span id="stop-text">停權?</span></p>
                             <p class="highlight">請確認會員違規情形</p>
                             <div class="btn" id="stop-cancel">取消</div>
-                            <button type="submit" class="submit btn">確認</button>
+                            <button type="submit" class="submit btn" id="stopConfirm" name="mbrstat">確認</button>
                         </form>
                     </div>
                 </section>

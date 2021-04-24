@@ -17,6 +17,9 @@ $('document').ready(function(){
         $('.join').css('display','block');
         $('.donate').css('display','block');
     })
+    $('#LogConfirmY').click(function(){
+        location.href="event.html";
+    })
 
     function show(jsonStr){
         let infoRow = JSON.parse(jsonStr);
