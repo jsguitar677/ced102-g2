@@ -45,7 +45,9 @@ function showMember(jsonStr){
                     </td>
                 </tr>
             </tbody>`;
+
             }
+
     html = html + tbodyLeftTot + `</table>`;
     //將從Server端抓取的資料展示到"showPanel"裡
     document.getElementById("showPanel").innerHTML = html;
@@ -63,8 +65,10 @@ function showMember(jsonStr){
     for(let i=0; i<Mbrstate.length; i++){
         if (Mbrstate[i].innerHTML == 0){
         Mbrstate[i].innerHTML = "正常";
+        $(`#suspension${i+1}`).prop('checked',false);
         }else{
         Mbrstate[i].innerHTML = "停權中";
+        $(`#suspension${i+1}`).prop('checked',true);
         }
     }
     $('#c2 label.toggle-btn').click(function(){
@@ -105,6 +109,14 @@ function showMember(jsonStr){
         $(this).parent().parent().css('display','none');
         $(this).parent().find('input').val('');
     });
+    $('#deleteConfirm').click(function(){
+        let mbrno = $("span.mbrno").text();
+        var xhr_d = new XMLHttpRequest();//1.使用Ajax必須使用此物件
+        var url_d = `./php/2/memMGT_del.php?mbrno=${mbrno}`;
+        xhr_d.open("Get", url_d, true);
+        xhr_d.send( null );
+        location.href = "./memMGT.html";
+    })
     //停權會員
     $('#stopConfirm').click(function(){
         var parent = $(this).parent().children('.mbrno');
@@ -113,12 +125,21 @@ function showMember(jsonStr){
         var status = $('#stop-text').text();
         var nowStatus = status.substr(0,2);
         // console.log(nowStatus);
+        let mbrstat;
+        let mbrno = number;
+        var xhr_c = new XMLHttpRequest();//1.使用Ajax必須使用此物件
         if(nowStatus == '停權'){
             $(`td#BCMBRSTATE${number}`).text('停權中');
+            mbrstat = 1;
             // console.log(`${number}`);
         }else{
             $(`td#BCMBRSTATE${number}`).text('正常');
+            mbrstat = 0;
         }
+        var url_c = `./php/2/memMGT_stop.php?mbrstat=${mbrstat}&mbrno=${mbrno}`;
+        xhr_c.open("Get", url_c, true);
+        xhr_c.send( null );
+
     })
     //刪除會員
         
@@ -140,48 +161,29 @@ function getMember(){
     xhr.open("Get", url, true);
     xhr.send( null );
 }
-window.addEventListener('load', getMember);
+window.addEventListener('load', function(){
+    getMember();
+});
 
 
 //停權會員
 
-function stopMember(){
-    var xhrS = new XMLHttpRequest();
-    xhrS.onload=function (){
-        if( xhrS.status == 200){
-        show = JSON.parse(xhrS.responseText);
-        alert('成功');
-        location.href = "./memMGT.html";
+// function stopMember(){
+//     var xhrS = new XMLHttpRequest();
+//     xhrS.onload=function (){
+//         if( xhrS.status == 200){
+//         show = JSON.parse(xhrS.responseText);
+//         alert('成功');
+//         location.href = "./memMGT.html";
 
-        }else{
-            // alert( xhrS.status );
-        }
-    }
+//         }else{
+//             // alert( xhrS.status );
+//         }
+//     }
     
-    var url = "./php/2/memMGT_stop.php";
-    xhrS.open("Get", url, true);
-    xhrS.send( null );
-}
-window.addEventListener('load', stopMember);
+//     var url = "./php/2/memMGT_stop.php";
+//     xhrS.open("Get", url, true);
+//     xhrS.send( null );
 
-
-
-
-//刪除會員
-function DelMember(){
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function(){
-        if( xhr.status == 200){
-            console.log(xhr.status,"Ok");
-            location.href = "./memMGT.html";
-        }else{
-            console.log(xhr.status,"Prob");
-            
-        }
-    }
-    var url = './php/2/memMGT_del.php';
-    xhr.open("get",url,true);
-    xhr.send(null);
-}
-
-window.addEventListener('load',DelMember);
+// }
+// window.addEventListener('load', stopMember);

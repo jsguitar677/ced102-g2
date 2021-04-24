@@ -98,16 +98,16 @@
                     <!-- </table> -->
                     <div id="showPanel"></div>
                     <div class="alert-block alert-block-delete">
-                        <form id="mem-delete" class="alert" method="GET" action="php/2/memMGT_del.php">
+                        <form id="mem-delete" class="alert">
                             <input type="text" name="mbrno" hidden>
                             <p>您確定要將會員編號<span class="mbrno"></span>刪除?</p>
                             <p class="highlight">一經刪除便無法復原</p>
                             <div class="cancel-btn btn">取消</div>
-                            <button type="submit" class="submit btn">確認</button>
+                            <button type="submit" class="submit btn" id="deleteConfirm">確認</button>
                         </form>
                     </div>
                     <div class="alert-block alert-block-stop">
-                        <form id="mem-stop" class="alert" method="GET" action="./php/2/memMGT_stop.php">
+                        <form id="mem-stop" class="alert">
                             <input type="text" name="mbrno" hidden>
                             <p>您確定要將會員編號<span class="mbrno"></span><span id="stop-text">停權?</span></p>
                             <p class="highlight">請確認會員違規情形</p>
