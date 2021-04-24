@@ -138,6 +138,9 @@ $(document).ready(function(){
             $('div.cancel-btn').click(function(){
                 $('.alert-block-view').css('display','none');
             });
+            $('form.alert').click(function(e){
+                e.stopPropagation();
+            });
 
         })
     
