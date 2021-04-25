@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
+    <!-- 購物提小燈箱 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>淨下塑湲|商城</title>
 </head>
 
@@ -393,7 +395,14 @@
                             item.price = e.target.parentNode.previousElementSibling.innerText;
                             item.count = 1;
                             cart.push(item);
-                            updateCart(); 
+                            updateCart();
+                            Swal.fire({
+                                position: 'center-center',
+                                title: '商品已成功加入購物車！',
+                                icon: 'success',
+                                showConfirmButton: false,
+                                timer: 1500
+                            }) 
                         }
                     }
                 }
