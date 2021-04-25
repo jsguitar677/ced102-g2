@@ -50,6 +50,8 @@ function actinfo() {
             $('span.ininame').text(`${res[0].MBRNAME}`);
             $('#acttitle').text(`${res[0].ACTNAME}`);
             $('#loc').text(`${res[0].loc}`);
+            $('#donateNum').text(`${res[0].DNTGOAL}`);
+            $('#joinNum').text(`${res[0].RECRGOAL}`);
             $('#actsdate').text(`${res[0].ACTSDATE}`);
             $('#vision').text(`${res[0].VISION}`);
             $('#actdline').text(`${res[0].ACTDLINE}`);
@@ -66,6 +68,10 @@ function actinfo() {
                 $('#join').css('display', 'none');
                 $('#join1').css('display', 'none');
             }
+            let donate_rate = Math.round(parseInt(res[0].DNTNOW)/parseInt(res[0].DNTGOAL)*100);
+            let join_rate = Math.round(parseInt(res[0].RECRNOW)/parseInt(res[0].RECRGOAL)*100);
+            $('.progress-bar').css('width',`${donate_rate}%`)
+            $('.progress-bar2').css('width',`${join_rate}%`)
 
         } else {
             alert(xhrInfo.status);
