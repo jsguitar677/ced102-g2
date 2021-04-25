@@ -153,44 +153,39 @@
             <div class="banner_box">
                 <h1>如有專案相關提問，請聯絡提案</h1>
             </div>
-            <div class="ad_board">
-                <div class="chat 1">
+            <div id="messageHook" class="ad_board">
+                <!-- <div class="chat">
                     <div class="message_box">
                         <img src="./img/act_detail/person1.png">
                         <h1>2021/03/28</h1>
-                        <h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-                            藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-                            讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3>
-                        <h2>留言編號#2323231</h2>
+                        <h3>淨灘活動，其實不單純只是到海邊打掃沙眉角角</h3>
+                        <h6 class="mbrname">會員姓名::XXXXXX<h6>
+
+                        <div class="mbrno">留言編號#2323231</div>
                     </div>
-                    
-                </div>
-                <!-- <div class="chat 2">
-                    <div class="message_box">
-                        <h1>2021/03/28</h1>
-                        <h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-                            藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-                            讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2>
-                    </div><img src="./img/act_detail/person1.png"></div>
-                <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-                    藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-                    讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-                <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>    -->
+                </div> -->
             </div>
+
             <div class="comment_section">
                 <input type="hidden" id="pid" value="999" />
 
                 <!-- (C) COMMENTS WILL LOAD HERE -->
 
                 <div id="cwrap"></div>
-
                 <!-- (D) ADD NEW COMMENT -->
-                <form id="cadd" onsubmit="return comments.add(this)">
+                <form id="cadd" action="php/8/actAddMessage.php" method="post" enctype="multipart/form-data">
                     <h1>請留下訊息</h1>
-                    <input type="text" id="cname" placeholder="暱稱" required/>
-                    <textarea id="cmsg" placeholder="想說的話" required></textarea>
+                    <!-- <input type="text" id="cname" placeholder="暱稱" required/> -->
+                    <input id="getActNo" type="hidden" name="ACTNO" value="">
+                    <textarea form="cadd"  id="cmsg" placeholder="想說的話" name="MESSAGE"></textarea>
                     <input type="submit" value="送出" />
                 </form>
+                <div id="MessageLimitHook" class="memMessageLimit">
+                    <div>
+                        <h5>請先登入</h5>
+                        <button id="blocktoLogon">登入</button>
+                    </div>
+                </div>
             </div>
 
         </div>
