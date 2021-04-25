@@ -23,6 +23,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/CustomizedBag.js"></script>
+    <!-- 購物提小燈箱 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>淨下塑湲|客製商品</title>
 </head>
 
@@ -164,7 +166,7 @@
                                     </select> -->
 
                                     <input type='button' value='-' class='select_qty_pcs qtyminus qtyBtn' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='select_qty_pcs qty' />
+                                    <input type='text' name='quantity' value='1' class='select_qty_pcs qty' />
                                     <input type='button' value='+' class='select_qty_pcs qtyplus qtyBtn' field='quantity' />
                                     
                                     </div>
@@ -359,7 +361,15 @@
                                 item.price = e.target.parentNode.previousElementSibling.innerText;
                                 item.count = 1;
                                 cart.push(item);
+                                updateCart();
                                 updateCart(); 
+                                    Swal.fire({
+                                    position: 'center-center',
+                                    title: '商品已成功加入購物車！',
+                                    icon: 'success',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                }) 
                             }
                         }
                     }
