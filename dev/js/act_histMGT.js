@@ -24,7 +24,7 @@ function getactHist(){
                         </div>
                     </td>
                     <td>
-                        <div class="edit-icon"><i class="fas fa-marker"></i></div>
+                        <div class="edit-icon" id="edit${actHist[i].ACTNO}"><i class="fas fa-marker"></i></div>
                     </td>
                 </tr>`;
                 tbodyContent += tRow; 
@@ -43,3 +43,16 @@ function getactHist(){
 window.addEventListener('load',function(){
     getactHist();
 });
+
+
+//編輯花絮
+    //點擊編輯花絮
+    $('#c7 div.edit-icon').click(function(){
+        $('#c7 div.alert-block-edit').css('display','block');
+    })
+    //取消按鈕
+    $('#c7 div.edit-cancel-btn').click(function(){
+        $(this).parent().parent().parent().css('display','none');
+    });
+    var options = {valueNames: ['ah-num','ah-name','ah-loc']};
+    userList_ah = new List('c7', options);
