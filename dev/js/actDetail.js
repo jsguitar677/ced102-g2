@@ -1,45 +1,92 @@
+// --------
 function $id(id){
 	return document.getElementById(id);
 }
+
+// --------
+let joinHref = location.href;
+let actNum = joinHref.split('?')[1].split('=')[1];
+
+// --------網頁載入
 window.addEventListener("load", function(){
-    getActHistDetail();
-
+    getMessageDetail();
+    // addMessage();
+    MessageLimitHook();
+    
+    getActNo();
 });
+// --------blocktoLogon
 
-function getActHistDetail(){
-    let xhr = new XMLHttpRequest(); 
-    xhr.onload = function(){
-        let ACTDETAIL = JSON.parse(xhr.responseText);  
-        console.log(ACTDETAIL);
-        actCount = ACTDETAIL.length; //活動張數
+$id('blocktoLogon').onclick = function(){
+    AccountListLogBtn.onclick ();
+}
 
-        // for(let i=0; i<actCount; i++){
-        //     $('#actHook').append(`
-        //     <div class="page5Card" id="page5Card${ACTDETAIL[i].actno}" style="background-image:url(${ACTDETAIL[i].locpic});">
-        //         <div class="content">
-        //             <h2 class="title">${ACTDETAIL[i].actname}</h2>
-        //             <p class="copy">${ACTDETAIL[i].actsdate}</p>
-        //             <button id="ACT${ACTDETAIL[i].actno}" value="${ACTDETAIL[i].actno}" class="btn membtn">See More</button>
-        //         </div>
-        //     </div>
-        //     `)
-            
-        //     let actvLine = document.getElementById(`ACT${ACTDETAIL[i].actno}`).value;
-        //     document.getElementById(`ACT${ACTDETAIL[i].actno}`).onclick = function (){
-        //         sessionStorage.removeItem('ACT');
-        //         localStorage.setItem('ACT', actvLine);
-        //         window.location.href="./act_hist_detail.html";
-        //     }
-        // }
+function getActNo(){
+    $id('getActNo').value = actNum;
+    // console.log($id('getActNo').value);
+}
+
+// MessageLimitHook
+// AccountListLogBtn.onclick ()
+function MessageLimitHook(){
+    let xhr2 = new XMLHttpRequest(); 
+    xhr2.onload = function(){
+        // let getmem50 = JSON.parse(xhr2.responseText);
+        if(xhr2.responseText != 50){
+            $id('MessageLimitHook').style.display = "none";
+        }else{
+            $id('MessageLimitHook').style.display = "block";
+        }
     }
-    xhr.open("post", "php/8/actHist.php", true); //連結伺服端程式
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8"); 
-    xhr.send(null);
+    xhr2.open("post", "php/8/getMemInfoFIX.php", true); //連結伺服端程式
+    xhr2.setRequestHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8");
+    xhr2.send(null);
 }
 
 
-let joinHref = location.href;
-let actNum = joinHref.split('?')[1].split('=')[1];
+
+// function addMessage(){
+
+//     let xhrAddMessage = new XMLHttpRequest(); 
+//     xhrAddMessage.onload = function(){
+
+
+//     }
+//     xhrAddMessage.open("post", "php/8/actAddMessage.php", true); //連結伺服端程式
+//     xhrAddMessage.setRequestHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8"); 
+//     let actnoO = `ACTNO=${actNum}&ACTNO=${actNum}&ACTNO=${actNum}&ACTNO=${actNum}`;
+//     xhrAddMessage.send(actnoO);
+// }
+// --------
+function getMessageDetail(){
+    let xhr1 = new XMLHttpRequest(); 
+    xhr1.onload = function(){
+        let message = JSON.parse(xhr1.responseText);  
+        let messageLen = message.length
+        console.log(message);
+        
+        for(let i=0; i<messageLen; i++){
+            $('#messageHook').append(`
+                <div class="chat">
+                    <div class="message_box">
+                        <img src="${message[i].mbrpic}">
+                        <h1>${message[i].timestamp}</h1>
+                        <h3>${message[i].message}</h3>
+                        <h6 class="mbrname">${message[i].mbrname}<h6>
+                        <div class="mbrno">留言編號${message[i].commNo}</div>
+                    </div>
+                </div>
+             `)
+        }
+    }
+    xhr1.open("post", "php/8/actComment.php", true); //連結伺服端程式
+    xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8"); 
+    let actnoO = `ACTNO=${actNum}`;
+    xhr1.send(actnoO);
+}
+
+
+
 
 function actinfo() {
     let xhrInfo = new XMLHttpRequest();

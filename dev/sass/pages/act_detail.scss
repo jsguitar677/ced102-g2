@@ -377,8 +377,9 @@ div.sticky_container {
 }
 
 div.ad_tab {
+    color: map-get($color-regulation, 'blue' );
     width: 100%;
-    // border: 1px solid red;
+    box-shadow: $box-shadow;
     height: 80px;
     background-color: #EEEEEE;
     padding: 10px;
@@ -651,12 +652,13 @@ div.outer_board {
 
 div.banner_box {
     color: black;
-    background-color: #EEEEEE;
+    background-color: map-get($color-regulation, 'yellow' );
     max-width: 1200px;
     margin: 0 auto;
     height: 50px;
     padding: 10px;
     text-align: center;
+    box-shadow: $box-shadow;
 }
 
 div.banner_box>h1 {
@@ -664,14 +666,12 @@ div.banner_box>h1 {
     margin-top: 10px;
     padding: 0;
     font-weight: 300;
+    color: map-get($color-regulation, 'blue' );
 }
 
 div.ad_board {
     margin: 0 auto;
-    // display: grid;
-    // border: 1px solid orange;
-    // width: 80%;
-    height: 1050px;
+    // height: 1050px;
     grid-auto-rows: 200px;
     font-size: 12px;
     text-align: center;
@@ -679,41 +679,58 @@ div.ad_board {
     max-width: 1200px;
 }
 
+div.ad_board>.chat:nth-child(even){
+    background-color: #EEEEEE;
+}
+
 div.message_box {
-    background-color: white;
-    height: 150px;
-    width: 80%;
+    width: 95%;
+    padding: 30px;
+    padding-bottom: 0px;
     margin: 0 auto;
     display: inline-block;
     text-align: left;
+    color: map-get($color-regulation, 'blue' );
+
 }
 
 div.message_box>h1 {
-    margin-top: 10px;
-    margin-left: 20px;
+    font-size: 13px;
+    margin: 0px;
+}
+div.message_box>.mbrname {
+    font-size: 13px;
+    margin: 0px;
+    float: right;
 }
 
-div.message_box>h2 {
-    color: #C2C2C2;
+div.message_box>.mbrno {
+    color: map-get($color-regulation, 'blue' );
+    font-size: 13px;
     margin-left: 20px;
+    float: right;
+    margin: 0;
+    line-height: 13px;
 }
 
 div.message_box>h3 {
+    font-size: 15px;
     width: 80%;
-    margin-left: 100px;
     font-weight: 300;
 }
 
 div.chat {
-    border-bottom: 1px solid #707070;
+    box-shadow: $box-shadow;
+    width: 95%;
+    margin: auto;
     margin-top: 10px;
 }
 
 div.chat>.message_box>img {
     width: 70px;
-    // margin-right: 20px;
-    // margin-top: 2%;
+    height: 70px;
     float: right;
+    border-radius: 50%;
 }
 
 #tt_board {
@@ -758,10 +775,7 @@ button.submmit {
 @media (max-width: 1233px) {
     div.ad_board {
         grid-auto-rows: 300px;
-        height: 1350px;
-    }
-    div.message_box {
-        height: 200px
+        // height: 1350px;
     }
 }
 
@@ -772,9 +786,6 @@ button.submmit {
 }
 
 @media (max-width: 518px) {
-    div.message_box {
-        height: 250px
-    }
     #tt_board {
         margin-bottom: 10px;
         padding: 5px;
@@ -821,7 +832,7 @@ button.submmit {
 #cadd {
     background: #f2f2f2;
     border: 1px solid #ccc;
-    padding: 15px;
+    padding: 30px;
 }
 
 #cadd h1 {
@@ -853,8 +864,35 @@ div.comment_section {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 20px;
-    margin-bottom: 20px;
     font-size: 16px;
     font-family: 'noto sans tc';
     text-align: left;
+    position: relative;
+    .memMessageLimit{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.795);
+    top: 0;
+        div{
+            h5{
+                font-size: 22px;
+                text-align: center;
+                color: map-get($color-regulation,'white');
+            }
+            button{
+                margin: 0 auto;
+                display: inherit;
+                width: 140px;
+                padding: 0 30px;
+                height: 35px;
+                background-color: map-get($color-regulation,'yellow' );
+                color: map-get($color-regulation,'blue');
+                border: none;
+                box-shadow: $box-shadow;
+            }
+        }
+        
+    }
 }
