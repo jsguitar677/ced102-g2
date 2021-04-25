@@ -23,7 +23,7 @@ $(document).ready(function(){
                     <td>${proRow[i].PRODSTAT}</td>
                     <td>${proRow[i].LISTEDDATE}</td>
                     <td>
-                        <label class="toggle-btn" for="suspension${i}">
+                        <label class="toggle-btn prodOnOrOff" for="suspension${i}">
                             <input type="checkbox" id="suspension${i}" hidden>
                             <span class="slider"></span>
                         </label>
@@ -42,6 +42,29 @@ $(document).ready(function(){
                 $(`#suspension${i}`).val('1');
             }
         }
+        if( $('.prodOnOrOff').find('input').val() == '0' ){
+            $('.prodOnOrOff').click(function(){
+                $(this).find('input').val('1');
+                var prodno1 = $(this).parent().parent().attr("id");
+                var xhr_changeStat1 = new XMLHttpRequest();
+                var url11 = `./php/mall/prodChangeStat_JSON.php?prodstat=1&prodno=${prodno1}`;
+                xhr_changeStat1.open("Get", url11, true);
+                xhr_changeStat1.send( null );
+            })
+        }
+
+        if( $('.prodOnOrOff').find('input').val() == '1'){
+            $('.prodOnOrOff').click(function(){
+                $(this).find('input').val('0');
+                var prodno = $(this).parent().parent().attr("id");
+                var xhr_changeStat = new XMLHttpRequest();
+                var url1 = `./php/mall/prodChangeStat_JSON.php?prodstat=0&prodno=${prodno}`;
+                xhr_changeStat.open("Get", url1, true);
+                xhr_changeStat.send( null );
+            })
+        }
+        var options = {valueNames: [ 'prod-num','prod-name']};
+        userList_mem = new List('c3', options);
 
         //點擊新增商品=====================================================================
         // %%%%%%%%%%%%%%%%%%%%%%%%5
@@ -59,28 +82,7 @@ $(document).ready(function(){
         // %%%%%%%%%%%%%%%%%%%%%%%%5
         
         
-        //直接調整上架與下架狀態
-        $('.prodOnOrOff').click(function(){
-            if( $(this).find('input').val() == '0' ){
-                $(this).find('input').val('1');
-                var prodno1 = $(this).parent().parent().attr("id");
-                var xhr_changeStat1 = new XMLHttpRequest();
-                var url11 = `./php/mall/prodChangeStat_JSON.php?prodstat=1&prodno=${prodno1}`;
-                xhr_changeStat1.open("Get", url11, true);
-                xhr_changeStat1.send( null );
-            }
-            
-            if( $(this).find('input').val() == '1'){
-                $(this).find('input').val('0');
-                var prodno = $(this).parent().parent().attr("id");
-                var xhr_changeStat = new XMLHttpRequest();
-                var url1 = `./php/mall/prodChangeStat_JSON.php?prodstat=0&prodno=${prodno}`;
-                xhr_changeStat.open("Get", url1, true);
-                xhr_changeStat.send( null );
-             }
-         })
-        var options = {valueNames: [ 'prod-num','prod-name']};
-        userList_mem = new List('c3', options);
+
     }
 
     function getPro(){
