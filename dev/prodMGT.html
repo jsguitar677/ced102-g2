@@ -95,14 +95,6 @@
                             <input type="text" id="PRODPIC_3"><br>
                             <input type="text" id="PRODPIC_4"><br>
                             <input type="text" id="PRODPIC_5"><br>
-                            <!-- <label class="left">上架日期：</label><br>
-                            <input type="date" id="LISTEDDATE" placeholder="2000/1/30"><br> -->
-
-                            <!-- <label class="addimg-btn" for="uploadimg1">+</label><input type="file" id="uploadimg1" hidden name="PRODPIC_1"><div class="img"><img src=""></div><br>
-                            <label class="addimg-btn" for="uploadimg2">+</label><input type="file" id="uploadimg2" hidden name="PRODPIC_2"><div class="img"><img src=""></div><br>
-                            <label class="addimg-btn" for="uploadimg3">+</label><input type="file" id="uploadimg3" hidden name="PRODPIC_3"><div class="img"><img src=""></div><br>
-                            <label class="addimg-btn" for="uploadimg4">+</label><input type="file" id="uploadimg4" hidden name="PRODPIC_4"><div class="img"><img src=""></div><br>
-                            <label class="addimg-btn" for="uploadimg5">+</label><input type="file" id="uploadimg5" hidden name="PRODPIC_5"><div class="img"><img src=""></div><br> -->
                             <div class="btn-group">
                                 <div class="add-cancel-btn btn">取消</div>
                                 <div class="submit btn" id="addProdToMGT">新增</div>
@@ -110,7 +102,7 @@
                         </form>
                     </div>
                     
-                    <!-- 修改列表區塊 -->
+                    <!-- 修改商品燈箱 -->
                     <div class="alert-block alert-block-edit">
                         <form id="pro-edit" class="alert" method="post">
                             <label class="left">商品類別：</label>
@@ -124,21 +116,18 @@
                                 <option>6客製商品</option>
                             </select>
                             <br>
-                            <label class="left">商品名稱：</label><input type="text" name="PRODNAME" id="PRODNAME"><br>
-                            <label class="left">商品單價：</label><input type="text" name="PRODPRICE" id="PRODPRICE"><br>
-                            <label class="left des">商品簡介：</label><textarea maxlength="150" id="PRODBIO"></textarea><br>
-                            <!-- <label class="left">商品狀態：</label>
-                            <input type="radio" value="0" name="PRODSTAT" id="prodstat-edit"><label for="prodstat-edit" class="right">下架</label>
-                            <input type="radio" value="1" name="PRODSTAT" id="prodstat1-edit"><label for="prodstat1-edit" class="right">上架</label><br> -->
+                            <label class="left">商品名稱：</label><input type="text" name="PRODNAME" id="PRODNAME_updated"><br>
+                            <label class="left">商品單價：</label><input type="text" name="PRODPRICE" id="PRODPRICE_updated"><br>
+                            <label class="left des">商品簡介：</label><textarea maxlength="150" id="PRODBIO_updated"></textarea><br>
                             <label class="left">客製商品：</label>                   
-                            <input type="radio" value="0" name="PRODCA" id="prodca-edit"><label for="prodca-edit" class="right">是</label>
-                            <input type="radio" value="1" name="PRODCA" id="prodca1-edit"><label for="prodca1-edit" class="right">否</label><br>
-                            <label class="left">商品圖片：</label><br>
-                            <label class="editimg-btn" for="editimg1">+</label><input type="file" id="editimg1" hidden><div class="img"><img src=""></div><br>
-                            <label class="editimg-btn" for="editimg2">+</label><input type="file" id="editimg2" hidden><div class="img"><img src=""></div><br>
-                            <label class="editimg-btn" for="editimg3">+</label><input type="file" id="editimg3" hidden><div class="img"><img src=""></div><br>
-                            <label class="editimg-btn" for="editimg4">+</label><input type="file" id="editimg4" hidden><div class="img"><img src=""></div><br>
-                            <label class="editimg-btn" for="editimg5">+</label><input type="file" id="editimg5" hidden><div class="img"><img src=""></div><br>
+                            <input type="radio" value="0" name="prodca" id="prodca0_updated"><label for="prodca0"class="right">是</label>
+                            <input type="radio" value="1" name="prodca" id="prodca1_updated"><label for="prodca1" class="right">否</label><br>
+                            <label class="left">圖片路徑：</label><br>
+                            <input type="text" id="PRODPIC_1_updated"><br>
+                            <input type="text" id="PRODPIC_2_updated"><br>
+                            <input type="text" id="PRODPIC_3_updated"><br>
+                            <input type="text" id="PRODPIC_4_updated"><br>
+                            <input type="text" id="PRODPIC_5_updated"><br>
                             <div class="btn-group">
                                 <div class="edit-cancel-btn btn">取消</div>
                                 <div type="submit" class="submit btn" id="updatedProdToMGT">修改</div>

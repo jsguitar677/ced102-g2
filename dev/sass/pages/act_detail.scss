@@ -68,13 +68,24 @@ div.right_pic>img {
     margin: 0;
     width: fit-content;
 }
-
 .content-left>h2 {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
+@media (max-width:450px) {
+    .content-left {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        >h1 {
+            font-size: 20px;
+        }
+        >h2 {
+            font-size: 15px;
+        }
+    }
+}
 h2.rw_founder {
     display: none;
 }
@@ -85,6 +96,11 @@ h2.rw_founder {
     letter-Spacing: 2px;
     margin-top: 0px;
     padding-right: 20px;
+}
+@media (max-width:450px) {
+    .content-left>p {
+        padding: 0;
+    }
 }
 
 div.clock {
@@ -101,7 +117,19 @@ div.clock {
 // }
 div.clock>#Icon_ionic-md-time {
     margin: 0;
+    margin-right: 5px;
     vertical-align: middle;
+}
+@media (max-width:450px) {
+    div.clock {
+        font-size: 15px;
+        border-bottom: 0px solid map-get($color-regulation, 'yellow');
+        text-align: left;
+        height: 30px;
+        #Icon_ionic-md-time{
+            display: none;
+        }
+    }
 }
 
 @media (max-width: 1350px) {
@@ -224,16 +252,20 @@ div.ad_grid_content>div.ad_box4 {
     font-weight: bolder;
     text-align: center;
     box-shadow: 0 0 5px #00000081;
+    overflow: hidden;
+    position: relative;
 }
 
 .progress-bg2 {
     font-size: 0;
     margin-top: 40px;
+    overflow: hidden;
     width: 95%;
     height: 25px;
     font-weight: bolder;
     text-align: center;
     box-shadow: 0 0 5px #00000081;
+    position: relative;
 }
 
 .progress-bar {
@@ -248,7 +280,7 @@ div.ad_grid_content>div.ad_box4 {
     box-shadow: 0 0 5px #00000081;
     height: 100%;
     float: left;
-    background-color: map-get($color-regulation, 'yellow');
+    background-color: map-get($color-regulation, 'btnRed');
     width: 40%;
 }
 
@@ -280,11 +312,17 @@ div.ad_grid_content>div.ad_box4 {
     color: #fff;
     padding: 0 20px 0 0;
     height: 20px;
+    position: absolute;
+    top: 0;
+    left: 10px;
 }
 
 .progress-bg h3.goal {
     color: black;
     text-align: center;
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
 
 .progress-bg2 h3.raised {
@@ -292,11 +330,24 @@ div.ad_grid_content>div.ad_box4 {
     padding: 0 25px 0 0;
     padding-bottom: 20px;
     height: 20px;
+    position: absolute;
+    top: 0;
+    left: 10px;
 }
 
 .progress-bg2 h3.goal {
     color: black;
     text-align: center;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+@media (max-width:450px) {
+    .progress-bg h3.goal,
+    .progress-bg2 h3.goal {
+        display: none;
+    }
 }
 
 body .progress-bg h3.raised {

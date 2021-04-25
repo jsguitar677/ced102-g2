@@ -1,8 +1,11 @@
 $(document).ready(function(){
-    //c1-管理員管理
+
     function showAct(jsonStr){
         var actvRow = JSON.parse(jsonStr);
         console.log(actvRow);
+        $('#addact-tbody').html("");
+        $('#cancelact-tbody').html("");
+        $('#act-tbody').html("");
         for( var i=0 ; i<actvRow.length ; i++){
             // console.log(actvRow[i].ACTSDATE)
             if(actvRow[i].ACTSTAT == 0){
@@ -226,13 +229,15 @@ $(document).ready(function(){
             let url = `./php/7/getAct_JSON.php?cclactno=${cclactno}&cancelact=${cancelact}`;
             xhr.open("Get", url, true);
             xhr.send( null );
-            location.href='./actMGT.html';
+            $(this).parent().parent().css('display','none');
+            setTimeout(getAct,1000);
         }else if($('#cclact-pass').prop('checked')){
             let cancelact = 4;
             let url = `./php/7/getAct_JSON.php?cclactno=${cclactno}&cancelact=${cancelact}`;
             xhr.open("Get", url, true);
             xhr.send( null );
-            location.href='./actMGT.html';
+            $(this).parent().parent().css('display','none');
+            setTimeout(getAct,1000);
         }else{
             alert('請選擇通過或退件')
         }
@@ -246,13 +251,15 @@ $(document).ready(function(){
             let url = `./php/7/getAct_JSON.php?addactno=${addactno}&addact=${addact}`;
             xhr.open("Get", url, true);
             xhr.send( null );
-            location.href='./actMGT.html';
+            $(this).parent().parent().css('display','none');
+            setTimeout(getAct,1000);
         }else if($('#addact-pass').prop('checked')){
             let addact = 2;
             let url = `./php/7/getAct_JSON.php?addactno=${addactno}&addact=${addact}`;
             xhr.open("Get", url, true);
             xhr.send( null );
-            location.href='./actMGT.html';
+            $(this).parent().parent().css('display','none');
+            setTimeout(getAct,1000);
         }else{
             alert('請選擇通過或退件');
         }
