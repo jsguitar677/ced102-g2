@@ -5,7 +5,7 @@ $(document).ready(function(){
         xhrlogin.onload = function (){
             if( xhrlogin.status == 200 ){
                 let nameinfo = JSON.parse(xhrlogin.responseText);
-                console.log(nameinfo);
+                // console.log(nameinfo);
                 if( nameinfo == "" || nameinfo == null){
                     location.href="./backend_login.html";
                 }else{
