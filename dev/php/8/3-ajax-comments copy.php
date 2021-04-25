@@ -1,11 +1,11 @@
 <?php
 // (A) CONNECT TO DATABASE
 // ! CHANGE SETTINGS TO YOUR OWN !
-// $dbhost = 'localhost';
-// $dbname = '淨下塑源';
-// $dbchar = 'utf8';
-// $dbuser = 'root';
-// $dbpass = 'arowana1508';
+$dbhost = 'localhost';
+$dbname = '淨下塑源';
+$dbchar = 'utf8';
+$dbuser = 'root';
+$dbpass = '11111';
 require_once("../../connect_ced102g2.php");
 try {
   $pdo = new PDO(

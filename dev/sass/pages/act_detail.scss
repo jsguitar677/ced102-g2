@@ -706,13 +706,13 @@ div.message_box>h3 {
 
 div.chat {
     border-bottom: 1px solid #707070;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
-div.chat>img {
-    width: 7%;
-    margin-right: 20px;
-    margin-top: 2%;
+div.chat>.message_box>img {
+    width: 70px;
+    // margin-right: 20px;
+    // margin-top: 2%;
     float: right;
 }
 
