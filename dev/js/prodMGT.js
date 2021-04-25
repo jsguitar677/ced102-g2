@@ -43,12 +43,12 @@ $(document).ready(function(){
             }
         }
 
-        //點擊新增商品=====================================================================
-        // %%%%%%%%%%%%%%%%%%%%%%%%5
+        //「新增按鈕&燈箱」& 「編輯按鈕&燈箱」=====================================================================
+        // %%%%%%%%%%%%%%%%%%%%%%%%
+        // 點擊「新增」則燈箱出現
         $('#c3 div.add').click(function(){
             $('#c3 div.alert-block-add').css('display','block');
         })
-
         //新增商品取消按鈕案件
         $('#c3 div.add-cancel-btn').click(function(){
             $(this).parent().parent().parent().css('display','none');
@@ -56,6 +56,16 @@ $(document).ready(function(){
             $(this).parent().parent().find('textarea').val('');
             $(this).parent().parent().find('input').prop('checked',false);
         });
+        // 點擊「編輯」則燈箱出現
+        $('#c3 div.edit-icon').click(function(){
+            $('#c3 div.alert-block-edit').css('display','block');
+        })
+        $('#c3 div.edit-cancel-btn').click(function(){
+            $(this).parent().parent().parent().css('display','none');
+        });
+    
+        var options = {valueNames: [ 'prod-num','prod-name']};
+        userList_mem = new List('c3', options);
         // %%%%%%%%%%%%%%%%%%%%%%%%5
 
 
@@ -125,28 +135,21 @@ $(document).ready(function(){
 
             location.href = "./prodMGT.html";
         })
-
-
-
-
-
         
         // 點擊「修改」商品=====================================================================
-        // 這一段不會寫 @@ =====================================================================
-
         // ????????????????????????????????????????
         // ????????????????????????????????????????
-        $('#updatedProdToMGT').click(function(){
-            $('div.alert-block-edit').css('display','block');
-        })
+        // $('#updatedProdToMGT').click(function(){
+        //     $('div.alert-block-edit').css('display','block');
+        // })
 
-        //修改商品取消按鈕案件
-        $('div.edit-cancel-btn').click(function(){
-            $(this).parent().parent().parent().css('display','none');
-            $(this).parent().parent().find('input').val('');
-            $(this).parent().parent().find('textarea').val('');
-            $(this).parent().parent().find('input').prop('checked',false);
-        });
+        // //修改商品取消按鈕案件
+        // $('div.edit-cancel-btn').click(function(){
+        //     $(this).parent().parent().parent().css('display','none');
+        //     $(this).parent().parent().find('input').val('');
+        //     $(this).parent().parent().find('textarea').val('');
+        //     $(this).parent().parent().find('input').prop('checked',false);
+        // });
         // ????????????????????????????????????????
         // ????????????????????????????????????????
 
@@ -162,24 +165,23 @@ $(document).ready(function(){
             let prodpic_4 = $('#PRODPIC_4_updated').val();
             let prodpic_5 = $('#PRODPIC_5_updated').val();
             let prodca
-            if($('#prodca_updated0').prop('checked')){
+            if($('#prodca0_updated').prop('checked')){
                 prodca = 0;
             }
-            if($('#prodca_updated1').prop('checked')){
+            if($('#prodca1_updated1').prop('checked')){
                 prodca = 1;
             }
             // alert('A')
             // alert(`${parseInt(prodclno)}+${prodname}+${prodprice}+${prodbio}+${prodca}+${prodpic_1}`)
             var xhr_updatedprod = new XMLHttpRequest();
-            var xhr_updatedprod = `./php/mall/updatedProdToMGT.php`;
-            xhr_updatedprod.open("Post", xhr_updatedprod, true);
+            var url_updatedprod = `./php/mall/updatedProdToMGT.php`;
+            xhr_updatedprod.open("Post", url_updatedprod, true);
             xhr_updatedprod.setRequestHeader("content-type","application/x-www-form-urlencoded");
             let data_info_updated = `PRODCLNO=${prodclno}&PRODNAME=${prodname}&PRODPRICE=${prodprice}&PRODBIO=${prodbio}&PRODPIC_1=${prodpic_1}&PRODPIC_2=${prodpic_2}&PRODPIC_3=${prodpic_3}&PRODPIC_4=${prodpic_4}&PRODPIC_5=${prodpic_5}&PRODCA=${prodca}`;
             xhr_updatedprod.send(data_info_updated);
 
             location.href = "./prodMGT.html";
         })
-
     }
     getPro();
 
