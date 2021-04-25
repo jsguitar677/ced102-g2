@@ -221,7 +221,7 @@ div.title-block {
                         div.img {
                             width: 100px;
                             height: 100px;
-                            background-image: url(https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);
+                            // background-image: url(https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);
                             // border-radius: 10px;
                             overflow: hidden;
                             /* margin-top: 10px; */
@@ -232,8 +232,8 @@ div.title-block {
 
                             }
                             @media (min-width:768px) and (max-width:991px){
-                                width: 80px;
-                                height: 80px;
+                                width: 100px;
+                                // height: 80px;
                                 margin: 10px 30px 10px 30px;
                             }
                             @media (min-width:576px) and (max-width:767px){
@@ -252,6 +252,7 @@ div.title-block {
                         .name,.size {
                             margin: 20px auto;
                             padding: 0px 50px 0 200px;
+                            align-items: center;
                             @media (min-width:992px) and (max-width:1199px){
                                 margin: 20px auto;
                                 padding: 0px 50px 0 200px;
@@ -343,10 +344,34 @@ div.title-block {
             div.add {
                 font-size: 20px;
                 text-align: center;
+                @media (min-width:576px) and (max-width:767px){
+                    font-size: 15px;  
+                    padding: 0px;
+                    width: 23px;
+                    height: 23px;
+                }
+                @media (max-width:575px){
+                    font-size: 15px;
+                    padding: 0px;
+                    width: 23px;
+                    height: 23px;
+                }
             }
             div.less {
                 font-size: 20px;
                 text-align: center;
+                @media (min-width:576px) and (max-width:767px){
+                    font-size: 15px;  
+                    padding: 0px;
+                    width: 23px;
+                    height: 23px;
+                }
+                @media (max-width:575px){
+                    font-size: 15px;
+                    padding: 0px;
+                    width: 23px;
+                    height: 23px;
+                }
             }
             div.round-cxl {
                 border-radius: 50%;

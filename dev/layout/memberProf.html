@@ -1,37 +1,35 @@
 
 <!-- 上block -->
 <div class="personBlock comShape">
-    <div class="proTopBlock">
-        <div class="proTopHook">
-            <img id="proIdImg" src="./img/mbr/Propic/p1.jpg" width ="140px" height="140px" alt="">
-            <button>
-                <i class="fas fa-camera-retro fa-2x"></i>
-            </button>
-        </div>
-        
-        <span>
-            <input type="hidden" id="custId" name="custId" value="">
-            <h7 id="memNAME"></h7>
-            <p id="memBirth"></p>
-        </span>
-    </div>
-    <div class="proBtnBlock">
-        <div id="appMemberBriefIntro">
-            <span>
-                <h6>Carman Li</h6>
-                <p>生日:1993/01/01</p>
-            </span>
-            <!-- <input class="comInput" type="text" placeholder="輸入自我介紹吧!"> -->
-            <!-- <p>{{MemberBriefIntroMessage}}</p> -->
-            <div class="textareaHook">
-                <textarea disabled id="memBIO" class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5"></textarea>
-                <button id="editBreifIntro">
-                    編輯<i style="margin-left:10px" class="far fa-edit fa-1x"></i>
-                </button>
+    <form id="personForm" action="./php/15/memberChangeImg.php" method="post" enctype="multipart/form-data">
+        <div class="proTopBlock">
+            <div class="proTopHook">
+                <img id="proIdImg" src="./img/mbr/Propic/p1.jpg" width ="140px" height="140px" alt="">
+                <div class="filePosition">
+                    
+                        <label for="fileinp">
+                            <button type="button" id="btn"><i class="fas fa-camera-retro fa-2x"></i></button>
+                            <input type="file" id="fileinp"name="upFile" accept="image/gif, image/jpeg, image/png"/>
+                        </label>
+                        
+                </div>
             </div>
-            
+            <span>
+                <input type="hidden" id="custId" name="custId" value="">
+                <h7 id="memNAME"></h7>
+                <p id="memBirth"></p>
+            </span>
         </div>
-    </div>
+        <div class="proBtnBlock">
+            <div id="appMemberBriefIntro">
+                <div class="textareaHook">
+                    <textarea form="personForm" id="memBIO" name="contact_intro" class="comInput" placeholder="輸入自我介紹吧!" cols="50" rows="5"></textarea>
+                    <input class="submitStyle" type="submit" value="提交修改">
+                </div>
+                
+            </div>
+        </div>
+    </form>
 </div>
 
     

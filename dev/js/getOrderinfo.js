@@ -46,7 +46,7 @@
                 </div>
                 <div class="row">
                   <span class="label">使用環保幣折扣:</span>
-                  <input class="formw discount"  value="請登入會員" readonly style="outline: none;border:none;font-size: 16px; " >
+                  <input class="formw discount"   readonly style="outline: none;border:none;font-size: 16px; " >${sessionStorage.getItem("discount")}
                 </div>
                 <div class="row">
                   <span class="label">總計：</span>

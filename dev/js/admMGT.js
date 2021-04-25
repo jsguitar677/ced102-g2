@@ -14,6 +14,9 @@ $(document).ready(function(){
             `)
         }
 
+        var options = {valueNames: [ 'adm-num','adm-name']};
+        userList_adm = new List('c1', options);
+
         // 點擊刪除管理員(垃圾桶圖示)
         $('#c1 div.delete-icon').click(function(){
             $('#c1 div.alert-block-delete').css('display','block');
@@ -21,18 +24,6 @@ $(document).ready(function(){
             $('#adm-delete .admno').text(`${admno.substr(3)}`);
             $('#adm-delete input[name="admno"]').val(`${admno.substr(3).trim()}`);
         })
-        // 刪除管理員 - 點擊刪除(確認)按鈕
-        $('#deletebtn').click(function(){
-            let admno = $('#admno').val().trim();
-            let xhr = new XMLHttpRequest();
-            var url = `./php/7/getAdm_JSON.php?admno=${admno}`;
-            xhr.open("Get", url, true);
-            xhr.send(null);
-            location.href = "./admMGT.html";
-        })
-
-        var options = {valueNames: [ 'adm-num','adm-name']};
-        userList_adm = new List('c1', options);
     }
 
     function getAdm(){
@@ -104,6 +95,16 @@ $(document).ready(function(){
         $('#c1 #adm-add input').css('border','1px solid #4E4E6A');
         $('#id-repeat').css('display','none');
     });
+
+    // 刪除管理員 - 點擊刪除(確認)按鈕
+    $('#deletebtn').click(function(){
+        let admno = $('#admno').val().trim();
+        let xhr = new XMLHttpRequest();
+        var url = `./php/7/getAdm_JSON.php?admno=${admno}`;
+        xhr.open("Get", url, true);
+        xhr.send(null);
+        location.href = "./admMGT.html";
+    })
 
     $('#admacc').change(function(){
         let admacc = $(this).val();

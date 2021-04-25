@@ -26,7 +26,34 @@ window.addEventListener("load", function(){
     //-------------------------活動管理跳窗
     // eventManagementModal();
     
+    // $id("fileinp").addEventListener("click",preImg);
+
 });
+
+// editBreifIntro
+
+$("#fileinp").change(function(){
+    readURL(this);    
+});
+function readURL(input){
+
+    if(input.files && input.files[0]){
+  
+      var reader = new FileReader();
+  
+      reader.onload = function (e) {
+         $("#proIdImg").attr('src', e.target.result);
+         $("#proHook").attr('src', e.target.result);
+  
+      }
+  
+      reader.readAsDataURL(input.files[0]);
+    }
+}
+$('.proIdImg').change(function() {
+    $('.proIdImg').attr(scr)
+  });
+
 
 function getTopDetail(){
     let xhr4 = new XMLHttpRequest(); 

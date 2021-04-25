@@ -20,10 +20,15 @@ div.article_container {
 div.left_part {
     max-width: 800px;
     // border: 1px solid red;
+    padding: 30px;
 }
 
 div.head_line {
-    border-bottom: 5px solid black;
+    border-bottom: 3px solid map-get($color-regulation, 'blue' );
+    .actDateStyle{
+        font-size: 22PX;
+        color: map-get($color-regulation, 'blue' );
+    }
 }
 
 .img_container {
@@ -64,24 +69,25 @@ div.inner_article1>img {
 // 熱門精選----------------
 div.right_part {
     // border: 1px solid red;
-    width: 400px;
+    width: 300px;
     height: 700px;
     position: sticky;
     top: 3.5rem;
+    box-shadow: $box-shadow;
 }
 
 h1.rp_title {
     text-align: center;
     margin: 0%;
     margin-top: 20px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid map-get($color-regulation, 'blue' );
 }
 
 div.rp_pop {
     width: 100%;
     display: grid;
     margin-top: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 4fr;
     text-decoration: none;
     height: 122px;
@@ -127,6 +133,7 @@ div.outer_container {
     width: 100%;
     height: 100%;
     position: relative;
+    color: map-get($color-regulation,'blue' );
 }
 
 div.bread {
