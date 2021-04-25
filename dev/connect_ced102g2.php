@@ -2,7 +2,7 @@
     $dbname = 'tebamefe_ced102g2';
     $user = 'tibamefe_since2021';
     $password = 'vwRBSb.j&K#E';
-    // $dbname = '淨下塑源';
+    // $dbname = '淨下溯元';
     // $user = 'root';
     // $password = '11111';
     $dsn = "mysql:host=localhost;port=3306;dbname=$dbname;charset=utf8";
