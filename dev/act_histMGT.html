@@ -82,9 +82,15 @@
                             <label class="left">活動地點：</label><p id="actloc">花蓮縣南濱公園</p><br>
                             <label class="left des">活動文章：</label><textarea maxlength="400" id="actart" name="actart"></textarea><br>
                             <label class="left actimg">活動圖片：</label><br>
-                            <label class="editimg-btn" for="uploadimg1">+</label><input type="file" id="uploadimg1"  name="upFile1"><!--<div class="img"><img src="">/div>--><br>
-                            <label class="editimg-btn" for="uploadimg2">+</label><input type="file" id="uploadimg2"  name="upFile2"><!--<div class="img"><img src=""></div>--><br>
-                            <label class="editimg-btn" for="uploadimg3">+</label><input type="file" id="uploadimg3"  name="upFile3"><!--<div class="img"><img src=""></div>--><br>
+                            <div class="upFigGroup">
+                                <label class="editimg-btn" for="uploadimg1"><i class="fas fa-images"></i>上傳圖片1</label><input type="file" id="uploadimg1"  name="upFile1" hidden><span id="showFileName1"></span><!--<div class="img"><img src="">/div>--><br>
+                            </div>
+                            <div class="upFigGroup">
+                                <label class="editimg-btn" for="uploadimg2"><i class="fas fa-images"></i>上傳圖片2</label><input type="file" id="uploadimg2"  name="upFile2" hidden><span id="showFileName2"></span><!--<div class="img"><img src=""></div>--><br>
+                            </div>
+                            <div class="upFigGroup">
+                                <label class="editimg-btn" for="uploadimg3"><i class="fas fa-images"></i>上傳圖片3</label><input type="file" id="uploadimg3"  name="upFile3" hidden><span id="showFileName3"></span><!--<div class="img"><img src=""></div>--><br>
+                            </div>
                             <div class="btn-group">
                                 <div class="edit-cancel-btn btn">取消</div>
                                 <button type="submit" class="submit btn" id="editBtn">確認</button>

@@ -110,9 +110,27 @@ function getactHist(){
 //     xhre.send(data_info);
 // }
 
+function showFileName(){
+    var uploadimg1 = document.getElementById('uploadimg1');
+    var uploadimg2 = document.getElementById('uploadimg2');
+    var uploadimg3 = document.getElementById('uploadimg3');
+    uploadimg1.onchange = function(){
+        let showFileName1 = document.getElementById('showFileName1');
+        showFileName1.innerText = uploadimg1.value;
+    }
+    uploadimg2.onchange = function(){
+        let showFileName2 = document.getElementById('showFileName2');
+        showFileName2.innerText = uploadimg2.value;
+    }
+    uploadimg3.onchange = function(){
+        let showFileName3 = document.getElementById('showFileName3');
+        showFileName3.innerText = uploadimg3.value;
+    }
+}
 
 window.addEventListener('load',function(){
     getactHist();
+    showFileName();
     // document.getElementById('editBtn').onclick = editAct;
 });
 
