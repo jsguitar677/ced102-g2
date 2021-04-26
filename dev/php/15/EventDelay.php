@@ -9,7 +9,7 @@ try{
     $memberData->execute();
 
     // $MBRDATA=" UPDATE `actv` SET ADDDATE(actsdate,interval 14 day)  WHERE MBRNO=:MBRNO and ACTNO=:ACTNO";
-    $MBRDATA="UPDATE `actv` SET `actdline`= ADDDATE(`actdline`,interval 14 day) WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
+    $MBRDATA="UPDATE `actv` SET `actdline`= ADDDATE(`actdline`,interval 14 day), `actstat` = 5 WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
     // $MBRDATA2=" SELECT `actv` SET `actsdate`= ADDDATE(`actsdate`,interval 14 day) WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
     $MBRDATA2="SELECT `actdline` FROM `actv` WHERE MBRNO=:MBRNO  and ACTNO=:ACTNO";
 

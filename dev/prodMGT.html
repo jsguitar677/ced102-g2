@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backend</title>
+    <title>Backend_Kay</title>
     <!-- icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- 打包連接的css -->
@@ -18,6 +18,11 @@
     <script src= "./js/prodMGT.js"></script>
     <script src= "./js/addProdMGT.js"></script>
 
+    <style>
+        .imgHidden{
+            display:hidden;
+        }
+    </style>
 </head>
 <body>
     @@include('./layout/backend_header.html')
@@ -50,7 +55,7 @@
                             <tr>
                                 <th>編號</th>
                                 <th>類別</th>
-                                <th>名稱</th>
+                                <th>商品名稱</th>
                                 <th>單價</th>
                                 <th>簡介</th>
                                 <th>商品圖</th>
@@ -61,40 +66,14 @@
                             </tr>
                         </thead>
                         <tbody class="list" id="prod-tbody">
-                            <tr>
-                                <td><div class="no-block prod-num">1</div></td>
-                                <td>環保袋</td>
-                                <td class="prod-name">美麗的環保袋</td>
-                                <td>$100</td>
-                                <td class="des"><p>美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋美麗的環保袋</p></td>
-                                <td>
-                                    <div id="imgs">
-                                        <div class="img"><img src="./img/mall/bag1.JPG"></div>
-                                        <div class="img"><img src="./img/mall/bag1.JPG"></div>
-                                        <div class="img"><img src="./img/mall/bag13.JPG"></div>
-                                        <div class="img"><img src="./img/mall/bag15.JPG"></div>
-                                        <div class="img"><img src="./img/mall/bag14.JPG"></div>
-                                    </div>
-                                </td>
-                                <td>是</td>
-                                <td>03/01</td>
-                                <td>
-                                    <label class="toggle-btn" for="suspension1">
-                                        <input type="checkbox" id="suspension1" checked hidden>
-                                        <span class="slider"></span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <div class="edit-icon"><i class="fas fa-marker"></i></div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
-                    <!-- 新增商品燈箱 =================================================================-->
+
+                    <!-- 新增商品燈箱 -->
                     <div class="alert-block alert-block-add">
-                        <form id="pro-add" class="alert">
+                        <form id="pro-add" class="alert" method="post">
                             <label class="left">商品類別：</label>
-                            <select>
+                            <select id="PRODCLNO">
                                 <option>0購物袋</option>
                                 <option>1杯套</option>
                                 <option>2口罩</option>
@@ -110,7 +89,7 @@
                             <label class="left">客製商品：</label>                   
                             <input type="radio" value="0" name="prodca" id="prodca0"><label for="prodca0" class="right">是</label>
                             <input type="radio" value="1" name="prodca" id="prodca1"><label for="prodca1" class="right">否</label><br>
-                            <label class="left">商品圖片：</label><br>
+                            <label class="left">圖片路徑：</label><br>
                             <input type="text" id="PRODPIC_1"><br>
                             <input type="text" id="PRODPIC_2"><br>
                             <input type="text" id="PRODPIC_3"><br>
@@ -118,15 +97,16 @@
                             <input type="text" id="PRODPIC_5"><br>
                             <div class="btn-group">
                                 <div class="add-cancel-btn btn">取消</div>
-                                <button type="submit" class="submit btn" id="addProdToMGT">新增</button>
+                                <div class="submit btn" id="addProdToMGT">新增</div>
                             </div>
                         </form>
                     </div>
-                    <!-- 編輯商品燈箱 =================================================================-->
+                    
+                    <!-- 修改商品燈箱 -->
                     <div class="alert-block alert-block-edit">
-                        <form id="pro-edit" class="alert">
+                        <form id="pro-edit" class="alert" method="post">
                             <label class="left">商品類別：</label>
-                            <select>
+                            <select id="PRODCLNO">
                                 <option>0購物袋</option>
                                 <option>1杯套</option>
                                 <option>2口罩</option>
@@ -136,16 +116,13 @@
                                 <option>6客製商品</option>
                             </select>
                             <br>
-                            <label class="left">商品名稱：</label><input type="text"><br>
-                            <label class="left">商品單價：</label><input type="text"><br>
-                            <label class="left des">商品簡介：</label><textarea maxlength="150"></textarea><br>
-                            <!-- <label class="left">商品狀態：</label>
-                            <input type="radio" value="0" name="PRODSTAT" id="prodstat-edit"><label for="prodstat-edit" class="right">下架</label>
-                            <input type="radio" value="1" name="PRODSTAT" id="prodstat1-edit"><label for="prodstat1-edit" class="right">上架</label><br> -->
+                            <label class="left">商品名稱：</label><input type="text" name="PRODNAME" id="PRODNAME_updated"><br>
+                            <label class="left">商品單價：</label><input type="text" name="PRODPRICE" id="PRODPRICE_updated"><br>
+                            <label class="left des">商品簡介：</label><textarea maxlength="150" id="PRODBIO_updated"></textarea><br>
                             <label class="left">客製商品：</label>                   
-                            <input type="radio" value="0" name="PRODCA" id="prodca-edit"><label for="prodca-edit" class="right">是</label>
-                            <input type="radio" value="1" name="PRODCA" id="prodca1-edit"><label for="prodca1-edit" class="right">否</label><br>
-                            <label class="left">商品圖片：</label><br>
+                            <input type="radio" value="0" name="prodca" id="prodca0_updated"><label for="prodca0"class="right">是</label>
+                            <input type="radio" value="1" name="prodca" id="prodca1_updated"><label for="prodca1" class="right">否</label><br>
+                            <label class="left">圖片路徑：</label><br>
                             <input type="text" id="PRODPIC_1_updated"><br>
                             <input type="text" id="PRODPIC_2_updated"><br>
                             <input type="text" id="PRODPIC_3_updated"><br>
@@ -153,7 +130,7 @@
                             <input type="text" id="PRODPIC_5_updated"><br>
                             <div class="btn-group">
                                 <div class="edit-cancel-btn btn">取消</div>
-                                <button type="submit" class="submit btn">修改</button>
+                                <div type="submit" class="submit btn" id="updatedProdToMGT">修改</div>
                             </div>
                         </form>
                     </div>

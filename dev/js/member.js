@@ -7,10 +7,11 @@ function $id(id){
 window.addEventListener("load", function(){
 
     // ------------------------如果在會員區登出 跳轉回首頁
-    $id("LogConfirmY").addEventListener("click",IfMemberLogOut);
+    // $id("LogConfirmY").addEventListener("click",IfMemberLogOut);
+    IfMemberLogOut();
     
     //-------------------------募款與志工活動連結按鈕字樣縮減
-    AttendEnSmallBtnTxt()
+    AttendEnSmallBtnTxt();
     
     //-------------------------寬度小於650px >> "領取環保幣"字樣縮減至"領取" // 大於650px >> 回復
     receiveCoinTextReduce();
@@ -145,10 +146,18 @@ function AttendEnSmallBtnTxt(){
 }
 
 // -------------4/14-------------------------------
-
+//判斷會員在會員畫面登出
 function IfMemberLogOut(){
-    alert("您已登出將回到首頁");
-    window.location.href='./indexfront.html';
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+      let memberText = JSON.parse(xhr.responseText);
+        if(memberText == 50){
+            alert("您已登出將回到首頁");
+            window.location.href='./indexfront.html';
+        }
+    }
+    xhr.open("get", "php/15/getMemInfo.php", true);
+    xhr.send(null);
 };
 
 

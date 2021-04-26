@@ -1,4 +1,6 @@
 <?php
+include("getMemInfoFIX.php");
+
 try{
     // require_once("connect.php");
   require_once("../../connect_ced102g2.php");
@@ -12,11 +14,11 @@ try{
               WHERE a.MBRNO = :MBRNO";
 
     $memberData = $pdo->prepare($Fundra);
-    $memberData->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData->bindValue(":MBRNO", $_SESSION["MBRNO"]);
     $memberData->execute();
 
     $memberData2 = $pdo->prepare($Actvap);
-    $memberData2->bindValue(":MBRNO", $_POST["MBRNO"]);
+    $memberData2->bindValue(":MBRNO", $_SESSION["MBRNO"]);
     $memberData2->execute();
     
     // 資料庫取回的資料

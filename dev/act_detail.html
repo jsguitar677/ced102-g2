@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>一瓶的海岸線</title>
     <link rel="stylesheet" href="./css/all.css">
+
     <link rel="stylesheet" href="./css/pages/act_detail.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script src="./js/1c-comments.js"></script>
+    <!-- <script src="./js/1c-comments.js"></script> -->
 </head>
 
 <body>
@@ -30,6 +34,8 @@
                     <h2>地點：<span id="loc">澎湖縣隘門沙灘</span></h2>
                     <h2>日期：<span id="actsdate">2020/03/31</span></h2>
                     <h2 class="rw_founder">活動發起人: <span class="ininame">富力士</span></h2>
+                    <h2>目標志工：<span id="joinNum"></span>人</h2>
+                    <h2>目標資金：$<span id="donateNum"></span></h2>
                     <p id="vision">
                         &nbsp;&nbsp;&nbsp;&nbsp;在海邊遊玩，不只帶走自己的垃圾，讓我們順手撿起沙灘上的垃圾！ ​​淨灘可以是一場光鮮亮麗的形象活動、一天飆汗過癮的工作假期、一堂深刻體驗的教育課程；甚至是一個啟發環境意識、重整生活態度的全新契機。 淨灘，不是停止垃圾汙染的終點，卻是每個人親海、愛海與守護海洋的最佳起點。 淨下塑源與企業、政府、民眾合作，透過「產業創新、公民守護、政策改革」三大策略，希望可以逐年減少海洋廢棄物的數量，留給子孫可以赤腳奔跑的潔白沙灘、魚群自在優游的透澈藍海。 您可以透過淨灘，與荒野共同減少廢棄物進入大海的機會。
                     </p>
@@ -38,7 +44,7 @@
                     <div class="clock"><svg id="Icon_ionic-md-time" data-name="Icon ionic-md-time" xmlns="http://www.w3.org/2000/svg" width="28.87" height="28.87" viewBox="0 0 28.87 28.87">
               <path id="Path_27" data-name="Path 27" d="M17.8,3.375A14.435,14.435,0,1,0,32.245,17.81,14.43,14.43,0,0,0,17.8,3.375Zm.014,25.983A11.548,11.548,0,1,1,29.358,17.81,11.548,11.548,0,0,1,17.81,29.358Z" transform="translate(-3.375 -3.375)" fill="#07082e"/>
               <path id="Path_28" data-name="Path 28" d="M18.7,10.688H16.537v8.661l7.578,4.546L25.2,22.118l-6.5-3.852Z" transform="translate(-3.546 -3.47)" fill="#07082e"/>
-            </svg>&nbsp;&nbsp;&nbsp;活動報名截止日期:<span id="actdline"></span></div>
+            </svg>報名截止日期:<span id="actdline"></span></div>
                     <div class="progress-bg">
                         <div class="progress-bar">
                             <h3 class="raised">目前募資金額$<span id="fnow">9000</span></h3>
@@ -149,32 +155,39 @@
             <div class="banner_box">
                 <h1>如有專案相關提問，請聯絡提案</h1>
             </div>
-            <!-- <div class="ad_board">
-              <div class="chat 1"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-              <div class="chat 2"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-              <div class="chat 3"><div class="message_box"><h1>2021/03/28</h1><h3>淨灘活動，其實不單純只是到海邊打掃沙灘、撿撿垃圾的勞動服務；
-                藉由事前的淨灘報告，來說明活動的安全事項，並正確辨識什麼是該撿的垃圾，
-                讓大家知道淨灘背後，也是有許多需要注意眉眉角角</h3><h2>留言編號#2323231</h2></div><img src="./img/act_detail/person1.png"></div>
-              <div class="chat4"><img src="./img/act_detail/person1.png" ><textarea id="tt_board" cols="30" rows="10"></textarea><button class="submmit">送出</button></div>   
-            </div> -->
+            <div id="messageHook" class="ad_board">
+                <!-- <div class="chat">
+                    <div class="message_box">
+                        <img src="./img/act_detail/person1.png">
+                        <h1>2021/03/28</h1>
+                        <h3>淨灘活動，其實不單純只是到海邊打掃沙眉角角</h3>
+                        <h6 class="mbrname">會員姓名::XXXXXX<h6>
+
+                        <div class="mbrno">留言編號#2323231</div>
+                    </div>
+                </div> -->
+            </div>
+
             <div class="comment_section">
                 <input type="hidden" id="pid" value="999" />
 
                 <!-- (C) COMMENTS WILL LOAD HERE -->
 
                 <div id="cwrap"></div>
-
                 <!-- (D) ADD NEW COMMENT -->
-                <form id="cadd" onsubmit="return comments.add(this)">
+                <form id="cadd" action="php/8/actAddMessage.php" method="post" enctype="multipart/form-data">
                     <h1>請留下訊息</h1>
-                    <input type="text" id="cname" placeholder="暱稱" required/>
-                    <textarea id="cmsg" placeholder="想說的話" required></textarea>
+                    <!-- <input type="text" id="cname" placeholder="暱稱" required/> -->
+                    <input id="getActNo" type="hidden" name="ACTNO" value="">
+                    <textarea form="cadd"  id="cmsg" placeholder="想說的話" name="MESSAGE"></textarea>
                     <input type="submit" value="送出" />
                 </form>
+                <div id="MessageLimitHook" class="memMessageLimit">
+                    <div>
+                        <h5>請先登入</h5>
+                        <button id="blocktoLogon">登入</button>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -184,115 +197,13 @@
     @@include('./layout/footer.html')
     <script src="./js/login.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="./js/actDetail.js"></script>
+    
     <script>
         AOS.init();
     </script>
-    <script>
-        function openQa(evt, cityName) {
-            var i, outer_board, tablinks;
-            outer_board = document.getElementsByClassName("outer_board");
-            for (i = 0; i < outer_board.length; i++) {
-                outer_board[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
-
-    <!-- 活動內頁串資料 -->
-    <script>
-        let joinHref = location.href;
-        let actNum = joinHref.split('?')[1].split('=')[1];
-
-        function actinfo() {
-            let xhrInfo = new XMLHttpRequest();
-            xhrInfo.onload = function() {
-                if (xhrInfo.status == 200) {
-                    let res = JSON.parse(xhrInfo.responseText)
-                    console.log(res);
-                    $('span.ininame').text(`${res[0].MBRNAME}`);
-                    $('#acttitle').text(`${res[0].ACTNAME}`);
-                    $('#loc').text(`${res[0].loc}`);
-                    $('#actsdate').text(`${res[0].ACTSDATE}`);
-                    $('#vision').text(`${res[0].VISION}`);
-                    $('#actdline').text(`${res[0].ACTDLINE}`);
-                    $('#vgoal').text(`${res[0].RECRGOAL}`);
-                    $('#fgoal').text(`${res[0].DNTGOAL}`);
-                    $('#fnow').text(`${res[0].DNTNOW}`);
-                    $('#vnow').text(`${res[0].RECRNOW}`);
-                    $('#imgsrc').attr('src', `${res[0].LOCPIC}`);
-                    $('#actcontent').text(`${res[0].ACTCON}`);
-                    let day = new Date();
-                    let today = day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate();
-                    var ACTDLINE = `${res[0].ACTDLINE}`;
-                    if ((Date.parse(ACTDLINE)).valueOf() <= (Date.parse(today)).valueOf()) {
-                        $('#join').css('display', 'none');
-                        $('#join1').css('display', 'none');
-                    }
-
-                } else {
-                    alert(xhrInfo.status);
-                }
-            }
-            let urlInfo = `./php/7/act_detail.php?actno=${actNum}`;
-            xhrInfo.open("Get", urlInfo, true);
-            xhrInfo.send(null);
-        }
-        actinfo();
-    </script>
-
-
-
-
-    <!-- 點擊參加活動 -->
-    <script>
-        $('#join').click(function() {
-            let xhrlogin = new XMLHttpRequest();
-            xhrlogin.onload = function() {
-                if (xhrlogin.status == 200) {
-                    let res = JSON.parse(xhrlogin.responseText)
-                    console.log(res);
-                    if(res[0] == 'nologin') {
-                        //請先登入
-                        alert("請先登入再進行報名，謝謝。")
-                    }else{
-                        //連結報名參加頁面
-                        location.href = `./participation.html?actno=${actNum}`;
-                    }
-                }else {
-                    alert(xhrlogin.status);
-                }
-            }
-            let urllogin = "./php/7/eventlogin.php";
-            xhrlogin.open("Get", urllogin, true);
-            xhrlogin.send(null);
-        })
-        $('#join1').click(function() {
-            let xhrlogin = new XMLHttpRequest();
-            xhrlogin.onload = function() {
-                if (xhrlogin.status == 200) {
-                    let res = JSON.parse(xhrlogin.responseText)
-                    console.log(res);
-                    if(res[0] == 'nologin') {
-                        //請先登入
-                        alert("請先登入再進行報名，謝謝。")
-                    }else{
-                        //連結報名參加頁面
-                        location.href = `./participation.html?actno=${actNum}`;
-                    }
-                } else {
-                    alert(xhrlogin.status);
-                }
-            }
-            let urllogin = "./php/7/eventlogin.php";
-            xhrlogin.open("Get", urllogin, true);
-            xhrlogin.send(null);
-        })
-    </script>
+    
 </body>
 
 </html>

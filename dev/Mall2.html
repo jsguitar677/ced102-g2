@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- 輪播圖 -->
     <link rel="stylesheet" href="./plugin/swiper-bundle.css" />
+    <!-- 購物提小燈箱 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <title>淨下塑湲|商城</title>
 </head>
 
@@ -66,6 +68,36 @@
                             <!-- ============================= -->
                             <div class="swiper-slide cusSwiper" >
                                 <div class="productBanner">
+                                    <a href=""><img src="./img/mall/ad_2.jpg"></a>
+                                </div>
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>快來訂製專屬自己的環保購物包吧</h5>
+                                    <p>主要原材料為天然棉布、帆布、和麻混紡而成。因應環保概念，購物袋已經成為時尚潮流，欣賞獨特設計作品的同時，也快來訂製專屬於自己的潮流環保購物包吧!</p>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                            </div>
+                            <!-- ============================= -->
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="productBanner">
+                                    <a href=""><img src="./img/mall/ad_3.jpg"></a>
+                                </div>
+                                <div class="page4RightText">
+                                    <div class="page4Title">
+                                        <p>CUSTOMIZED PRODUCTS</p>
+                                        <h5>客製化商品</h5>
+                                    </div>
+                                    <h5>快來訂製專屬自己的環保購物包吧</h5>
+                                    <p>主要原材料為天然棉布、帆布、和麻混紡而成。因應環保概念，購物袋已經成為時尚潮流，欣賞獨特設計作品的同時，也快來訂製專屬於自己的潮流環保購物包吧!</p>
+                                    <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
+                                </div>
+                            </div>
+                            <!-- ============================= -->
+                            <div class="swiper-slide cusSwiper" >
+                                <div class="productBanner">
                                     <a href=""><img src="./img/mall/ad_4.jpg"></a>
                                 </div>
                                 <div class="page4RightText">
@@ -81,15 +113,15 @@
                             <!-- ============================= -->
                             <div class="swiper-slide cusSwiper" >
                                 <div class="productBanner">
-                                    <a href=""><img src="./img/mall/bag1.jpg"></a>
+                                    <a href=""><img src="./img/mall/ad_5.jpg"></a>
                                 </div>
                                 <div class="page4RightText">
                                     <div class="page4Title">
                                         <p>CUSTOMIZED PRODUCTS</p>
                                         <h5>客製化商品</h5>
                                     </div>
-                                    <h5>挑選你喜愛的顏色吧</h5>
-                                    <p>主要原材料包括無紡布、天然棉布、帆布、牛仔布和麻等製成的，也有用特製的紙製成。因應環保概念，環保購物袋已經成為時尚潮流。世界各地時尚品牌紛紛推出不同款式環保袋。</p>
+                                    <h5>快來訂製專屬自己的環保購物包吧</h5>
+                                    <p>主要原材料為天然棉布、帆布、和麻混紡而成。因應環保概念，購物袋已經成為時尚潮流，欣賞獨特設計作品的同時，也快來訂製專屬於自己的潮流環保購物包吧!</p>
                                     <a class="comBtn2" href="./CustomizedBag_RWD.html">前往客製化更多</a>
                                 </div>
                             </div>
@@ -393,7 +425,15 @@
                             item.price = e.target.parentNode.previousElementSibling.innerText;
                             item.count = 1;
                             cart.push(item);
-                            updateCart(); 
+                            updateCart();
+                            alert("已成功加入購入車囉!");
+                            // Swal.fire({
+                            //     position: 'center-center',
+                            //     title: '商品已成功加入購物車！',
+                            //     icon: 'success',
+                            //     showConfirmButton: false,
+                            //     timer: 1500
+                            // }) 
                         }
                     }
                 }

@@ -2185,11 +2185,6 @@ main.event {
                     div.TOP{
                       padding: 55px 30px;
                     }
-                    div.text{
-                      p:nth-child(2n){
-                        font-size: $text-fontSize-subtitle;
-                      }
-                    }
                   }
                 }
                 @media (min-width:576px) and (max-width:991px) {
@@ -2232,6 +2227,7 @@ main.event {
               top: 0;
               padding: 0px 15px;
               left: 100%;
+              width: 100%;
             }
           }
         }

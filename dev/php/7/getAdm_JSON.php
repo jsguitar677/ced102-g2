@@ -6,12 +6,13 @@ try{
   $add = "insert into adm(ADMNAME, ADMACC, ADMPSW) values (:admname,:admacc,:admpws)";
   $adm = $pdo->query($sql);
 
-  if(isset($_GET["admno"])){
+  if(isset($_POST["admno"])){
     $adm_delete = $pdo->prepare($delete);
-    $adm_delete->bindValue(":admno",$_GET["admno"]);
+    $adm_delete->bindValue(":admno",$_POST["admno"]);
     $adm_delete->execute();
+    // echo "good";
   }else{
-      // echo"無提供，故無法刪除<br>";
+      // echo"無提供，故無法刪除";
   }
 
   if(isset($_POST["admname"])){

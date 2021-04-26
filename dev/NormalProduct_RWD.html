@@ -21,6 +21,9 @@
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 購物提小燈箱 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
     <title>淨下塑湲|一般商品</title>
 </head>
 
@@ -78,6 +81,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- let src = this.parentNode.parentNode.parentNode.parentNode.firstChild.firstChild.firstChild.firstChild.src; -->
                         <!-- ============商品簡介區============ -->
                         <!-- ============商品簡介區============ -->
                         <div class="leftarea_blockB" >
@@ -91,41 +95,46 @@
                     <!-- ====================================右上側 選購數量區==================================== -->
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-11 rightarea">
                         <!-- ============================== -->
-                        <form action="cart.html" method="get" class="inforOfTheForm" id="theForm">
+                        <!-- <form method="get" class="inforOfTheForm" id="theForm"> -->
+                        <form action="Mall2.html" method="get" class="inforOfTheForm" id="theForm">
                             <!-- ===========商品選購區============= -->
                             <!-- ===========商品選購區============= -->
                             <div class="qty_block">
                                 <p class="stepExplain">請選擇購買數量</p>
-                                <!-- <p>商品編號:</p><span>{{theProdRow.PRODNO}}</span> -->
-                                <p class="prodNumber prodNumberA">(商品編號:</p> <p class="prodNumber" id="prodNo">{{theProdRow.PRODNO}}</p> <p class="prodNumber">)</p>
+                                <p class="prodNumber prodNumberA">(商品名稱:</p> 
+                                <p class="prodNumber" id="prodName">{{theProdRow.PRODNAME}}</p> 
+                                <p class="prodNumber">)</p>
+                                <br>
+                                <p class="prodNumber prodNumberA">(商品編號:</p> 
+                                <p class="prodNumber" id="prodNo">{{theProdRow.PRODNO}}</p> 
+                                <p class="prodNumber">)</p>
                                 <!-- ========價格區(小計先拿掉)======== -->
                                 <!-- ========價格區(小計先拿掉)======== -->
                                 <div class="tal_block">
-                                    <!-- <p class="stepExplain">小計</p> -->
                                     <div class="placementOfTal">
-                                        <label class="thePrice">NT$</label><label>{{theProdRow.PRODPRICE}}</label>
+                                        <label class="thePrice">NT$</label>
+                                        <label>{{theProdRow.PRODPRICE}}</label>
                                         <br>
                                     </div>
                                 </div>
+
                                 <!-- ===========選擇數量區============= -->
                                 <!-- ===========選擇數量區============= -->
-                                <div class="placememtOfQty">
-                                    <label class="style_qty">數量</label>
-
-                                    <input type='button' value='-' class='select_qty_pcs qtyminus qtyBtn' field='quantity' />
-                                    <input type='text' name='quantity' value='0' class='select_qty_pcs qty' />
-                                    <input type='button' value='+' class='select_qty_pcs qtyplus qtyBtn' field='quantity' />
-
+                                <div class="placememtOfQty" id="qty">
+                                    <label class="style_qty" id="00">數量</label>
+                                    <input type='button' value='-' class='select_qty_pcs qtyminus qtyBtn' field='quantity' id="02" />
+                                    <input type='text' name='quantity' value='1' class='select_qty_pcs qty' id="04" />
+                                    <input type='button' value='+' class='select_qty_pcs qtyplus qtyBtn' field='quantity' id="06" />
                                 </div>
                             </div>
                             <!-- ===========CART按鈕區============= -->
                             <!-- ===========CART按鈕區============= -->
                             <div class="placeOfSubmit">
-                                <a href="">
-                                    <button type="submit" name="shopping_cart" class="btn_shopping_cart" id="'a'+submitToCart">加入購物車
+                                <!-- <a href="Mall2.html"> -->
+                                    <button type="submit" name="shopping_cart" class="btn_shopping_cart" id="submitToCart">加入購物車
                                         <i class="fas fa-shopping-cart fa-1x"></i>
                                     </button>
-                                </a>
+                                <!-- </a> -->
                             </div>
                         </form>
                     </div>
@@ -304,7 +313,7 @@
                         cart = JSON.parse(storage['cart']);
                     }
                     let CartBtn = document.querySelectorAll('.CartBtnOfMall');
-                            //--------session記錄購物資訊-----更新storage的購物資訊
+                    //--------session記錄購物資訊-----更新storage的購物資訊
                     function updateCart(){
                         storage["cart"] = JSON.stringify(cart);
                     }
@@ -331,10 +340,60 @@
                                 item.price = e.target.parentNode.previousElementSibling.innerText;
                                 item.count = 1;
                                 cart.push(item);
-                                updateCart(); 
+                                updateCart();
+                                alert("已成功加入購入車囉!");
+                            //     Swal.fire({
+                            //         position: 'center-center',
+                            //         title: '商品已成功加入購物車！',
+                            //         icon: 'success',
+                            //         showConfirmButton: false,
+                            //         timer: 1500
+                            //     })
                             }
                         }
                     }
+                    // ???????????????????????????????????????????????????測試一般商品的購物車按鈕
+                    // ???????????????????????????????????????????????????測試一般商品的購物車按鈕
+                    let submitToCartBtn = document.getElementById('submitToCart');
+                    submitToCartBtn.onclick = function(){
+                        let prodNo = this.parentNode.parentNode.firstChild.childNodes[12].innerText;
+                        //---------檢查商品是否已在cart中
+                        let exist = false;
+                        for(let i=0; i<cart.length; i++){
+                            if(cart[i].prodNo == prodNo){
+                                exist = true;
+                                break;
+                            }
+                        }
+                        //---------
+                        if(exist){
+                            alert("購物車內已有此商品囉!");
+                        }else{
+                            let item = {};
+                            item.prodNo = prodNo;
+                            item.prodName = this.parentNode.parentNode.firstChild.childNodes[4].innerText;
+                            item.src = this.parentNode.parentNode.parentNode.parentNode.firstChild.firstChild.firstChild.firstChild.src;
+                            item.price = this.parentNode.parentNode.firstChild.childNodes[16].firstChild.childNodes[2].innerText;
+                            item.count = this.parentNode.parentNode.firstChild.childNodes[18].childNodes[4].value;
+                            cart.push(item);
+                            updateCart(); 
+                            alert("已成功加入購入車，歡迎到商城繼續逛逛喔!");
+                            // Swal.fire({
+                            //     position: 'center-center',
+                            //     title: '商品已成功加入購物車！',
+                            //     icon: 'success',
+                            //     showConfirmButton: false,
+                            //     timer: 10000
+                            // })
+                        }
+                        // let prodName = this.parentNode.parentNode.firstChild.childNodes[4].innerText;
+                        // let prodNo = this.parentNode.parentNode.firstChild.childNodes[12].innerText;
+                        // let price = this.parentNode.parentNode.firstChild.childNodes[16].firstChild.childNodes[2].innerText;
+                        // let count = this.parentNode.parentNode.firstChild.childNodes[18].childNodes[4].value;
+                        // let src = this.parentNode.parentNode.parentNode.parentNode.firstChild.firstChild.firstChild.firstChild.src;
+                    }
+                    // ???????????????????????????????????????????????????測試一般商品的購物車按鈕
+                    // ???????????????????????????????????????????????????測試一般商品的購物車按鈕
                     //----------------------------
                 },1000)
             }

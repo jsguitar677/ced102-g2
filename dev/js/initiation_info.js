@@ -95,7 +95,9 @@ $(function(){
                 xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
                 let data_info = `actname=${actname}&actsdate=${actsdate}&actdline=${actdline}&vision=${vision}&actcon=${actcon}&actloc=${actloc}&actcity=${actcity}&dntgoal=${dntgoal}&recpgoal=${recpgoal}`;
                 xhr1.send(data_info);
-                location.href = "./initiation_success.html";
+                setTimeout(function(){
+                    location.href = "./initiation_success.html";
+                },1000);
             }
         })
     

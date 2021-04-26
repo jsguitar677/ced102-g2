@@ -63,21 +63,37 @@ function show2(){
                 document.getElementById(`delay${i}`).textContent = "已結束";
                 document.getElementById(`delay${i}`).style.cursor = "unset";
             }
+
+            // 判斷狀態是取消審核中的話就要DISABLED
+            if(document.getElementById(`actSdate${i}`).textContent == "取消審核中" || document.getElementById(`actSdate${i}`).textContent == "未通過" ){
+                document.getElementById(`delay${i}`).setAttribute("disabled","true");
+                document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
+            }
+            // 判斷狀態是延期的話就要DISABLED
+            if(document.getElementById(`actSdate${i}`).textContent == "延期"){
+                document.getElementById(`delay${i}`).setAttribute("disabled","true");
+                document.getElementById(`actStat${[i]}`).style.color="red";
+            }
+
+            if(document.getElementById(`actSdate${i}`).textContent == "提案中"){
+                document.getElementById(`delay${i}`).setAttribute("disabled","true");
+                document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
+            }
+
             document.getElementById(`actCancel${i}`).onclick = function (e){
-                
                 document.getElementById('eventManagementCancelModalCon').style.display = "block";
                 document.getElementById('eventManagementSubmit').onclick = function(e) {
                     let xhr2 = new XMLHttpRequest(); 
                     xhr2.onload = function(){
                         console.log(xhr2.responseText)
                         if(xhr2.responseText == 2){
-
+                            document.getElementById(`delay${i}`).setAttribute("disabled","true");
                             document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
                             document.getElementById(`actCancel${i}`).textContent="審核下架中";
                             document.getElementById(`actSdate${i}`).textContent="取消審核中";
                             document.getElementById('eventManagementCancelModalCon').style.display = "none";
                             alert('已申請成功');
-                            
+                            window.location.reload();
                         }else{
                             alert("失敗");
                         }
@@ -121,8 +137,6 @@ function show2(){
                     
                 }
             };
-
-            
         };
         
     }
@@ -131,6 +145,10 @@ function show2(){
     xhr1.send(null);
 }
 
+
+
 window.addEventListener("load", function(){
     show2();
+
+    stillCancel();
 })

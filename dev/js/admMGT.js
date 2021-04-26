@@ -3,6 +3,7 @@ $(document).ready(function(){
     function showAdm(jsonStr){
         var admRow = JSON.parse(jsonStr);
         console.log(admRow);
+        $('#adm-tbody').html("");
         for( var i=0 ; i<admRow.length ; i++){
             $('#adm-tbody').append(`
                 <tr id="adm${admRow[i].ADMNO}">
@@ -98,12 +99,15 @@ $(document).ready(function(){
 
     // 刪除管理員 - 點擊刪除(確認)按鈕
     $('#deletebtn').click(function(){
-        let admno = $('#admno').val().trim();
-        let xhr = new XMLHttpRequest();
-        var url = `./php/7/getAdm_JSON.php?admno=${admno}`;
-        xhr.open("Get", url, true);
-        xhr.send(null);
-        location.href = "./admMGT.html";
+        let admno_d = $('#admno').val().trim();
+        let xhr_d = new XMLHttpRequest();
+        var url_d = `./php/7/getAdm_JSON.php`;
+        xhr_d.open("Post", url_d, true);
+        xhr_d.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        let data_info1 = `admno=${admno_d}`;
+        xhr_d.send(data_info1);
+        $('#c1 div.alert-block-delete').css('display','none');
+        setTimeout(getAdm,1000);
     })
 
     $('#admacc').change(function(){

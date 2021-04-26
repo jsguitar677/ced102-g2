@@ -103,7 +103,7 @@ body{
             min-width:30%;
             .personBlock{
                 background: map-get($color_regulation,'memberGray' );
-                height:40vh;
+                height:45vh;
                 margin-right: 13px;
                 margin-bottom:13px;
                 padding: 10px;
@@ -168,6 +168,10 @@ body{
                             border-radius: 50%;
                         }
                         #btn{
+                            i{
+                                cursor: pointer;
+                            }
+                            cursor: pointer;
                             background-color: map-get($color_regulation, 'yellow' );
                             padding: 0;
                             height: 40px;
@@ -181,30 +185,6 @@ body{
                             bottom: 15px;
                             right: 11px;
                         }
-                        // input{
-                        //     @include pad{
-                        //     }
-                        //     font-size: 9px;
-                        //     position:absolute;
-                        //     bottom: 15px;
-                        //     right: 11px;
-                        //     border-radius: 50%;
-                        //     width: 30px;
-                        //     height:30px;
-                        //     border:none;
-                        //     cursor: pointer;
-                        //     background-color: map-get($color_regulation, 'yellow' );
-                        //     color:map-get($color_regulation, 'blue');
-                        //     box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
-                        //     &:hover{
-                        //         box-shadow:1px 1px 6px rgba(255, 255, 255, 0.541);
-                        //         color:map-get($color_regulation, 'white');
-
-                        //     }
-                        //     .imgchange{
-                        //         opacity: 0;
-                        //     }
-                        // }
                     }
                     
                     span{
@@ -221,8 +201,11 @@ body{
                     }
                 }
                 .proBtnBlock{
-                    margin-top: 25px;
-
+                    margin-top: 30px;
+                    @include pc{
+                        margin-top: 5px;
+        
+                    }
                     #appMemberBriefIntro{
                         @include pad{
                             width: auto;
@@ -239,6 +222,7 @@ body{
                                 }
                                 @include pad{
                                     width: 96%;
+                                    margin-bottom: 30px;
                                 }
                                 overflow: auto;
                                 // height:100px;
@@ -266,11 +250,12 @@ body{
                                 bottom: 100px;
                                 border-bottom: 2px solid map-get($color_regulation, 'yellow' );
                                 @include pc{
-                                    bottom: -29px;
+                                    bottom: -25px;
+                                    right: 3px;
                                 }
                                 @include pad{
-                                    right: 16px;
-                                    bottom: 12px;
+                                    bottom: 0px;
+                                    right: 3px;
                                 }
                                 &:hover{
                                     color: map-get($color_regulation, 'blue' );
@@ -377,12 +362,12 @@ body{
                                 box-shadow: 2px 2px 14px #ffefbd8c;
                                 content: '';
                                 position: absolute;
-                                width: 6px;
+                                width: 3px;
                                 background-color: white;
                                 top: 0;
                                 bottom: 0;
                                 left: 20%;
-                                margin-left: -3px;
+                                margin-left: 0px;
                                 // box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
 
                             }

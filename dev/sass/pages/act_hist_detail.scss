@@ -20,10 +20,15 @@ div.article_container {
 div.left_part {
     max-width: 800px;
     // border: 1px solid red;
+    padding: 30px;
 }
 
 div.head_line {
-    border-bottom: 5px solid black;
+    border-bottom: 3px solid map-get($color-regulation, 'blue' );
+    .actDateStyle{
+        font-size: 22PX;
+        color: map-get($color-regulation, 'blue' );
+    }
 }
 
 .img_container {
@@ -64,29 +69,31 @@ div.inner_article1>img {
 // 熱門精選----------------
 div.right_part {
     // border: 1px solid red;
-    width: 400px;
+    width: 300px;
     height: 700px;
     position: sticky;
     top: 3.5rem;
+    box-shadow: $box-shadow;
 }
 
 h1.rp_title {
     text-align: center;
     margin: 0%;
     margin-top: 20px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid map-get($color-regulation, 'blue' );
 }
 
 div.rp_pop {
     width: 100%;
     display: grid;
     margin-top: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 4fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr;
     text-decoration: none;
     height: 122px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.37);
     color: black;
+    padding-bottom: 10px;
 }
 
 .a {
@@ -98,9 +105,9 @@ div.rp_pop>H3 {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
-    grid-row-end: 2;
+    grid-row-end: 3;
     margin-left: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-decoration: none;
 }
 
@@ -109,7 +116,7 @@ div.rp_pop>H4 {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
     margin-left: 5px;
 }
 
@@ -118,8 +125,8 @@ div.rp_pop>img {
     width: 150px;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
@@ -127,6 +134,7 @@ div.outer_container {
     width: 100%;
     height: 100%;
     position: relative;
+    color: map-get($color-regulation,'blue' );
 }
 
 div.bread {
@@ -152,4 +160,20 @@ li.current {
     line-height: 20px;
     font-weight: bolder;
     color: map-get($color-regulation, 'blue');
+}
+
+.rp_pop>button{
+border: none;
+width: 100px;
+margin: 0 auto;
+height: 30px;
+grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+background-color:map-get($color-regulation, 'yellow');
+font-family: 'noto sans tc';
+font-weight: 400;
+outline: none;
+ box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
