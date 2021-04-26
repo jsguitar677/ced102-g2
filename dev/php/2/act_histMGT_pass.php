@@ -118,7 +118,7 @@ try{
     $memberData = $pdo->prepare($PDOO);
     $memberData->execute();
     
-    // // echo "<script>window.history.back()</script>"; 
+    echo "<script>window.history.back()</script>"; 
     // $location = "javascript:location.href=";
     // $link = "act_histMGT.html"
     // // setTimeout("javascript:location.href='act_histMGT.html'", 2000)

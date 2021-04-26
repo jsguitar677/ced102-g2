@@ -78,7 +78,7 @@ function animateValue(obj, start, end, duration) {
 
 function showActInfo(jsonStr){
     let actv = JSON.parse(jsonStr);
-    console.log(actv);
+    // console.log(actv);
     // console.log("donationTot:",actv["donationTot"]);
     let donationTot = actv["donationTot"];
     let recruitTot = actv["recruitTot"];
@@ -115,7 +115,7 @@ window.addEventListener('load', getActInfo);
 function showContributeRank(jsonStr){
     var rank = JSON.parse(jsonStr);
     // console.log("第一個: ",rank[0]["MBRPIC"]);
-    console.log(rank);
+    // console.log(rank);
     let donateRankPic = document.getElementsByClassName('donateRankPic');
     let donateName = document.getElementsByClassName('donateRankName');
     let donateMoney = document.getElementsByClassName('donateMoney');
@@ -129,7 +129,7 @@ function getContributeRank(){
     var xhrC = new XMLHttpRequest();
     xhrC.onload = function(){
         if(xhrC.status == 200){
-            console.log("風雲榜: ",xhrC.responseText);
+            // console.log("風雲榜: ",xhrC.responseText);
             showContributeRank(xhrC.responseText);
         }else{
             alert(xhrC.status);
@@ -175,7 +175,7 @@ document.getElementById('people-rank-btn').addEventListener('click', getContribu
 function showLatestActv(jsonStr){
     var latestActv = JSON.parse(jsonStr);
     // console.log(jsonStr);
-    console.log(latestActv);
+    // console.log(latestActv);
     // console.log("latestActv:",latestActv);
     let latestActvPic = document.getElementsByClassName('targetData');
     let RECRGOAL  = document.getElementById('neededVolunteer');
@@ -250,6 +250,26 @@ window.addEventListener('load',getLatestActv);
 // }
 
 // window.addEventListener('load',getLatestActvInfo);
+
+function getLatestProducts(){
+    var productJs = new XMLHttpRequest();
+    productJs.onload = function(){
+        productJsRow = JSON.parse(productJs.responseText);
+        // console.log(productJsRow[0].PRODNAME);
+        for(let i=0; i<productJsRow.length;i++){
+            let latestProPic = document.getElementsByClassName('latestProPic');
+            latestProPic[i].src = `${productJsRow[i].PRODPIC_1}`;
+            let prodName = document.getElementsByClassName('ProdName');
+            prodName[i].innerHTML = `${productJsRow[i].PRODNAME}`;
+            let price = document.getElementsByClassName('price');
+            price[i].innerHTML = `${productJsRow[i].PRODPRICE}`;
+        }
+    }
+    productJs.open("get","./php/2/indexfront_LatestPro.php",true);
+    productJs.send(null);
+}
+
+window.addEventListener('load',getLatestProducts);
 
 
 

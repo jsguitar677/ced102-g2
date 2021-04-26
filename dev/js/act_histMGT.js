@@ -35,7 +35,6 @@ function getactHist(){
                 $('#alert-block').css('display','block');
                 //抓到current Id
                 let curId = $(this).attr('id').substr(4);
-                console.log
                 // console.log(curId);
                 //抓到current class index
                 let curIndex = $('div.edit-icon').index($(this));
@@ -64,6 +63,28 @@ function getactHist(){
                 let data_info = new FormData(document.getElementById('ah-edit'))
                 xhre.send(data_info);
                 // getactHist;
+
+
+                
+                //取消按鈕
+                $('#c7 div.edit-cancel-btn').click(function(){
+                    $(this).parent().parent().parent().css('display','none');
+                    let curId = $(this).attr('id').substr(4);
+                // console.log(curId);
+                //抓到current class index
+                let curIndex = $('div.edit-icon').index($(this));
+                let actno = document.getElementById('actno');
+                let actdate = document.getElementById('actdate');
+                let actname = document.getElementById('actname');
+                let actloc = document.getElementById('actloc');
+                let actart = document.getElementById('actart');
+                actno.innerHTML = `${actHist[curIndex].ACTNO}`;
+                actdate.innerHTML = `${actHist[curIndex].ACTSDATE}`;
+                actname.innerHTML = `${actHist[curIndex].ACTNAME}`;
+                actloc.innerHTML = `${actHist[curIndex].ACTLOC}`;
+                actart.innerHTML = `${actHist[curIndex].RESULT}`;
+                $('input[name=ACTNO]').attr("value",`${actHist[curIndex].ACTNO}`);
+                });
             })
 
         }else{
