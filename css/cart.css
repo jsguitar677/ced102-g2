@@ -1769,7 +1769,7 @@ div#FooterClaim {
 }
 
 div.progress__bar {
-  margin-top: 66px;
+  margin-top: 50px;
   margin-bottom: 0px;
   box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
   -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
@@ -1821,6 +1821,13 @@ div.progress__bar .progress .progress__item p.progress__text {
   color: #07082E;
   font-size: 18px;
   font-family: "noto sans tc";
+}
+
+@media (max-width: 575px) {
+  div.progress__bar .progress .progress__item p.progress__text {
+    width: 120px;
+    font-size: 12px;
+  }
 }
 
 div.progress__bar .progress .progress_group_bar {
@@ -1955,7 +1962,7 @@ div.title-block h1.title {
 
 @media (max-width: 575px) {
   .Cart div.content #app .item_body .item_body div {
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 
@@ -1964,7 +1971,20 @@ div.title-block h1.title {
   display: inline-block;
 }
 
-.Cart div.content #app .item_body .item_detail div.img {
+@media (min-width: 576px) and (max-width: 767px) {
+  .Cart div.content #app .item_body .item_detail {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .Cart div.content #app .item_body .item_detail {
+    display: block;
+    font-size: 12px;
+  }
+}
+
+.Cart div.content #app .item_body .item_detail img {
   width: 100px;
   height: 100px;
   overflow: hidden;
@@ -1975,14 +1995,14 @@ div.title-block h1.title {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .Cart div.content #app .item_body .item_detail div.img {
+  .Cart div.content #app .item_body .item_detail img {
     width: 100px;
     margin: 10px 30px 10px 30px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .Cart div.content #app .item_body .item_detail div.img {
+  .Cart div.content #app .item_body .item_detail img {
     width: 70px;
     height: 70px;
     font-size: 15px;
@@ -1991,10 +2011,8 @@ div.title-block h1.title {
 }
 
 @media (max-width: 575px) {
-  .Cart div.content #app .item_body .item_detail div.img {
-    width: 65px;
-    height: 65px;
-    margin: 10px 5px 10px 5px;
+  .Cart div.content #app .item_body .item_detail img {
+    display: none;
   }
 }
 
@@ -2029,7 +2047,7 @@ div.title-block h1.title {
 @media (max-width: 575px) {
   .Cart div.content #app .item_body .item_detail .name, .Cart div.content #app .item_body .item_detail .size {
     margin: 10px auto;
-    padding: 0px 5px 0 10px;
+    padding: 0px 1px 0px 1px;
     font-size: 15px;
   }
 }
@@ -2248,6 +2266,7 @@ div.title-block h1.title {
 .Cart div.content #app .total_body div.row input.discount {
   border: 1px solid #07082E;
   line-height: 35px;
+  font-size: 18px;
 }
 
 .Cart div.content #app .total_body div.orderCount p {

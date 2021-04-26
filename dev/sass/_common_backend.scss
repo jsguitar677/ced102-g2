@@ -71,15 +71,15 @@ $web-color:(
     margin: 0 auto;
 }
 %add{
-    margin-left: 40px;
-    font-size: 18px;
+    margin-left: 69px;
+    font-size: 13px;
     text-align: center;
-    line-height: 28px;
+    line-height: 30px;
     display: inline-block;
     vertical-align: top;
-    width: 30px;
+    width: 115px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 5px;
     background-color: map-get($web-color,"hover");
     border: 1px solid map-get($web-color,"input-border");
     transition: 0.5s;
@@ -485,3 +485,11 @@ div.bg{
     }
 }
 
+div.upFigGroup{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#showFileName1, #showFileName2, #showFileName3{
+    margin-left: 5px;
+}

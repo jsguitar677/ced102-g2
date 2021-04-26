@@ -32,9 +32,9 @@
                   <span type="text">${data[i].prodName}</span>
                 </div> 
             </div>
-            <div class="item_detail count"><span type="text">${data[i].count}</span></div>
+            <div class="item_detail count" style="text-align: center;"><span type="text">${data[i].count}</span></div>
             
-            <div class="item_detail amount"><span type="text">${data[i].price}</span></div>
+            <div class="item_detail amount"><span type="text">$${data[i].price}</span></div>
           </div>
         `)
 
@@ -42,15 +42,15 @@
        $('.payment-totalbody').append(`
                 <div class="row">
                   <span class="label">商品總金額:</span>
-                  <div class="formw totalAmount"><span></span>${sessionStorage.getItem("lastTota")}</div>
+                  <div class="formw totalAmount"><span>${sessionStorage.getItem("lastTota")}</span></div>
                 </div>
                 <div class="row">
                   <span class="label">使用環保幣折扣:</span>
-                  <input class="formw discount"   readonly style="outline: none;border:none;font-size: 16px; " >${sessionStorage.getItem("discount")}
+                  <div class="formw"><span class="discount"   readonly style="outline: none;border:none;font-size: 16px; " >${sessionStorage.getItem("discount")}</span></div>
                 </div>
                 <div class="row">
                   <span class="label">總計：</span>
-                  <div class="formw subtotal"><span></span>${sessionStorage.getItem("lastTota")}</div>
+                  <div class="formw subtotal"><span>${sessionStorage.getItem("lastTota")}</span></div>
                 </div>
               </div>
       `)

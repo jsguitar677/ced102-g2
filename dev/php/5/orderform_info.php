@@ -1,32 +1,44 @@
 <?php
+include("getMemInfoFIX.php");
+
 session_start();
-// $_SESSION["MBRNO"] = 1;
+$_SESSION["mbrno"] = 1;
 try{
   require_once("../../connect_ced102g2.php");
-  $ini_loc_sql = "select l1.CITYNO , c.CITYNAME , group_concat(l1.LOCNAME separator ',') LOCNAME from location l1 join city c on (c.CITYNO = l1.CITYNO) where NOT exists (select l.CITYNO , c.CITYNAME , l.LOCNAME from location l join (select * from actv where actstat in (2,3,4,5)) a on (a.ACTLOC = l.LOCNAME) join city c on (c.CITYNO = l.CITYNO) where l1.LOCNAME = l.LOCNAME) group by l1.CITYNO";
-  $ini_add_sql = "insert into `actv` (`MBRNO`, `LACHDATE`, `ACTNAME`, `ACTSDATE`, `ACTDLINE`, `ACTSTAT`, `VISION`, `ACTCON` , `ACTLOC` , `ACTCITY` , `DNTGOAL` , `RECRGOAL`, `DNTNOW` , `RECRNOW` ) values (:mbrno, curdate() , :actname , :actsdate , :actdline , '0' , :vision , :actcon , :actloc , :actcity , :dntgoal , :recpgoal , 0 , 0)";
+  $ini_ord_sql1 =  "select o.orderno ,o.orderdate, o.mbrno,o.orderstatus,o.paystat,o.cardno,o.shipstat, m.mbrname, o.CONSIG,o.CONSIGADD,o.CONSIGTEL,o.ordertoal,o.discount,o.ordertoal-discount as propricttotal  from orders o join mbr m on o. mbrno= m. mbrno order by orderno asc;";
+  $ini_ord_sql2 ="select i.odrsn,i.orderno ,p.prodname, i.price, i.itemqun, i.itemoic from `order item` i join prod p on i. prodno= p. prodno";
+  $ini_add_sql = "insert into `orders` ( `mbrno`, `orderdate`, `orderstatus`, `consig`, `consigadd` , `CONSIGTEL`, `cardno`, `paystat` , `shipstat` , `discount` , `propricetotal`,`ordertoal` ,`POSTCODE`) values ( 1, curdate() , 0 , :consig , :consigadd , :CONSIGTEL , :cardno , 3 , 0 , :discount , :propricttotal,:ordertoal,320)";
 
-  $ini_loc = $pdo->prepare($ini_loc_sql);
-  $ini_loc->execute(); //可選擇的發起活動地點
+  // insert into `orders` ( `mbrno`, `orderdate`, `orderstatus`, `consig`, `consigadd` , `CONSIGTEL`, `cardno`, `paystat` , `shipstat` , `discount` , `propricetotal`,`ordertoal` ,`POSTCODE`) 
+  // values ( 1, curdate() , 0 , :consig , :consigadd , :CONSIGTEL , :cardno , 3 , 0 , :discount , :propricttotal,:ordertoal,:POSTCODE)
 
-  if( $ini_loc->rowCount() == 0 ){
+  $ini_ord = $pdo->prepare($ini_ord_sql1);
+  $ini_ord->execute(); 
+  $ini_ord = $pdo->prepare($ini_ord_sql2);
+  $ini_ord->execute(); 
+
+  if( $ini_ord_sql1->rowCount() == 0 ){
     echo "{}";
-  }else{
+  }elseif( $ini_ord_sql2->rowCount() == 0 ){
+    echo "{}";
+  }
+  else{
     $iniLocRow = $ini_loc->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($iniLocRow);
   }	
-  if(isset($_POST["actname"])){
+  if(isset($_POST["orderno"])){
     $ini_add = $pdo->prepare($ini_add_sql);
-    $ini_add->bindValue(":mbrno",$_SESSION["MBRNO"]);
-    $ini_add->bindValue(":actname",$_POST["actname"]);
-    $ini_add->bindValue(":actsdate",$_POST["actsdate"]);
-    $ini_add->bindValue(":actdline",$_POST["actdline"]);
-    $ini_add->bindValue(":vision",$_POST["vision"]);
-    $ini_add->bindValue(":actcon",$_POST["actcon"]);
-    $ini_add->bindValue(":actloc",$_POST["actloc"]);
-    $ini_add->bindValue(":actcity",$_POST["actcity"]);
-    $ini_add->bindValue(":dntgoal",$_POST["dntgoal"]);
-    $ini_add->bindValue(":recpgoal",$_POST["recpgoal"]);
+    $ini_add->bindValue(":mbrno",$_SESSION["mbrno"]);
+    $ini_add->bindValue(":consig",$_POST["consig"]);
+    $ini_add->bindValue(":consigadd",$_POST["consigadd"]);
+    $ini_add->bindValue(":CONSIGTEL",$_POST["CONSIGTEL"]);
+    $ini_add->bindValue(":cardno",$_POST["cardno"]);
+    $ini_add->bindValue(":POSTCODE",$_POST[":POSTCODE"]);
+    $ini_add->bindValue(":discount",$_POST["discount"]);
+    $ini_add->bindValue(":shipstat",$_POST["shipstat"]);
+    $ini_add->bindValue(":ordertoal",$_POST["ordertoal"]);
+    $ini_add->bindValue(":discountl",$_POST["discountl"]);
+    $ini_add->bindValue(":propricttotal",$_POST["propricttotal"]);
     $ini_add->execute();
     // echo "新增成功<br>";
 

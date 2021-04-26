@@ -16,6 +16,7 @@
     <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script> -->
     <script type="text/javascript" src="http://zip5.5432.tw/js/zip5.js"></script>
     <script src="./js/getOrderinfo.js"></script>
+    <script src="./js/orderform_info.js"></script>
     <!-- <link rel="stylesheet" href="../css/indexFront.css"> -->
 </head>
 
@@ -118,7 +119,7 @@
                       <input class="form-control" type="text" :name="`cardNumber${index}`" ref="cardNumber" v-model="formPayment.cardNumber[index]" v-validate="'required|numeric|length:4'" @input="checkCardNumberInput(formPayment.cardNumber[index], index)">
                     </div> -->
                     <div class="col " v-if="isMobile">
-                      <input id="cardnumber" class="form-control form creadNum" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" >
+                      <input id="cardnumber" class="form-control form creadNum cardno" type="text" name="cardNumber" :value="formPayment.cardNumberInput" v-validate="{ required: true,	regex: /^([0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4})$/}" @input="formatCreditNumber($event)" >
                       <span class="text-danger"></span>
                     </div>
                     <!-- <div class="col " v-if="isMobile">
@@ -182,12 +183,12 @@
               <input type="radio" name="block" class="memberblock" id="B1" >收件人資料
                 <div class="formGroup owner row">
                   <label class="label" for="owner">收件人姓名：</label>
-                  <input type="text" class="form-control empty form name" id="owner" >
+                  <input type="text" class="form-control empty form name consig" id="owner" >
                   <span class="text-danger"></span>
                </div>
                <div class="row" id="card-number-field">
                   <label class="label" for="cellPhone">手機號碼：</label>
-                  <input type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
+                  <input type="text" name="cellPhone" class="form-control Phone form CONSIGTEL" maxlength="20"
                       id="cellPhone" >
                </div>
                <!-- <div class="row" >
@@ -197,7 +198,7 @@
                </div> -->
                <!-- 地區跟郵遞區號串中華郵政 -->
                <div class="row" >
-                <label class="label add" for="add">地址：</label>
+                <label class="label add " for="add">地址：</label>
                 <div id="twzipcode"></div>
                 <!-- <select  id="county" type="select" name="creditCard" class="form-control add form" style="width: auto;"  >
                     <option value="01" >請選擇縣市</option>
@@ -240,165 +241,16 @@
                </div> -->
                <!-- <div class="row" > -->
                 <!-- <label class="label" for="phone"></label> -->
-                <input type='text' name='adrs' id='my_adrs' class="form-control form address">
-                <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' />
+                <input type='text' name='adrs' id='my_adrs' class="form-control form address consigadd">
+                <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")'  value='查詢' />
                 <!-- <input  type="text" name="phone" class="form-control phone form" maxlength="20" placeholder="請輸入郵寄地址"> -->
                <!-- </div> -->
               </div>
-    
-              <!-- <div class="addAddress">
-              <input type="radio" name="block" class="memberblock" id="B2">新增收件人資訊
-                <div class="formGroup owner row">
-                  <label class="label" for="owner">收件人姓名：</label>
-                  <input type="text" class="form-control empty form" id="owner">
-                  <span class="text-danger"></span>
-               </div>
-               <div class="row" id="card-number-field">
-                  <label class="label" for="cellPhone">手機號碼：</label>
-                  <input  type="text" name="cellPhone" class="form-control Phone form" maxlength="20"
-                      id="cellPhone">
-                  <span class="text-danger"></span>
-               </div> -->
-               <!-- <div class="row" >
-                <label class="label" for="Phone">市話：</label>
-                <input  type="text" name="creditCard" class="form-control homePhone form" maxlength="20"
-                    id="Phone">
-
-               </div> -->
-               <!-- 地區跟郵遞區號串中華郵政 -->
-               <!-- <div class="row" >
-                <label class="label add" for="add">地址：</label> -->
-                <!-- <div class="city-selector-set">
-                  <div>
-
-                    <select class="county"></select>
-                  </div>
-                  <div>
-
-                    <select class="district"></select>
-                  </div>
-                  <div>
-
-                    <input class="zipcode" type="text" size="3" readonly placeholder="郵遞區號">
-                  </div>
-                </div> -->
-                <!-- <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
-                    <option value="01">請選擇縣市</option>
-                      <option value="01">基隆</option>
-                      <option value="02">台北市</option>
-                      <option value="03">新北市</option>
-                      <option value="04">桃園市</option>
-                      <option value="05">新竹市</option>
-                      <option value="06">新竹縣</option>
-                      <option value="07">苗栗縣</option>
-                      <option value="08">台中市</option>
-                      <option value="09">彰化縣</option>
-                      <option value="10">南投縣</option>
-                      <option value="11">雲林縣</option>
-                      <option value="12">嘉義縣</option>
-                </select>
-                <span class="text-danger"></span>
-                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
-                  <option value="01">郵遞區號</option>
-                    <option value="01">101</option>
-                    <option value="02">102</option>
-                    <option value="03">103</option>
-                    <option value="04">104</option>
-                    <option value="05">105</option>
-                    <option value="06">106</option>
-                    <option value="07">107</option>
-                </select>
-                <span class="text-danger"></span>
-                <select  type="select" name="creditCard" class="form-control add form" style="width: auto;" >
-                  <option value="01">鄉鎮縣市</option>
-                    <option value="01">大安區</option>
-                    <option value="02">中山區</option>
-                    <option value="03">松山區</option>
-                    <option value="04">信義區</option>
-                    <option value="05">北投區</option>
-                    <option value="06">南港區</option>
-                    <option value="07">萬華區</option>
-                </select>   
-                <span class="text-danger"></span>   
-               </div> -->
-               <!-- <div class="row" > -->
-                <!-- <label class="label" for="phone"></label> -->
-                <!-- <input  id='my_adrs' type="text" name="creditCard" class="form-control form" maxlength="20" placeholder="請輸入郵寄地址"> -->
-                <!-- <input type='text' name='adrs' id='my_adrs' class="form-control  form address" >
-                <input id="memberadd" type='button' onclick='get_zip6_adrs("my_adrs")' value='查詢' /> -->
-               <!-- </div> -->
-              <!-- </div>  -->
-
           </section>
           </main>
-         
-          <!-- <main class="form_wrapper" v-else>
-            <section class="step_done">
-              <h2 class="step_done_title">您的訂單已完成付款</h2><img class="step_done_img img-fluid my-5" src="./img/2nd-week4/icon-done.png"><span class="step_done_message">恭喜您成功完成訂單，稍後將寄送詳細資訊至您的E-mail。</span>
-              <button class="step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button>
-            </section>
-          </main> -->
-          
-          <!-- <form class="paymentForm">
-            <div class="creditCardForm ">
-              <h5 class="writeForm">填寫付款資料</h5>
-              <div class="formGroup owner row">
-                  <label class="labell" for="owner">持卡人姓名：</label>
-                  <input type="text" class="formControl empty formm" id="owner">
-              </div>
-              <div class="creditInfo1 row" id="card-number-field">
-                  <label class="labell" for="cardNumber">信用卡卡號：</label>
-                  <input  type="text" name="creditCard" class="creditCard formm" maxlength="20"
-                      id="cardNumber">
-              </div>
-              <div class="creditInfo2">
-                  <div class="formGroup row" id="expirationDate">
-                      <label class="labell labell">有 效 日 期：</label>
-                      <select class="expMonth formm">
-                          <option value="01">01</option>
-                          <option value="02">02</option>
-                          <option value="03">03</option>
-                          <option value="04">04</option>
-                          <option value="05">05</option>
-                          <option value="06">06</option>
-                          <option value="07">07</option>
-                          <option value="08">08</option>
-                          <option value="09">09</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                      </select>
-                      <label class="labell">月</label>
-                      <select class="expYear formm">
-                          <option value="20"> 2021</option>
-                          <option value="21"> 2022</option>
-                          <option value="22"> 2023</option>
-                          <option value="23"> 2024</option>
-                          <option value="24"> 2025</option>
-                          <option value="25"> 2026</option>
-                          <option value="26"> 2027</option>
-                          <option value="27"> 2028</option>
-                          <option value="28"> 2029</option>
-                          <option value="29"> 2030</option>
-                          <option value="30"> 2031</option>
-                      </select>
-                      <label class="labell">年</label>
-                  </div>
-              </div>
-              <div id="securityCodeBlock" class="formGroup CVV row">
-                      <label class="labell" for="cvv" class="securityCode">背面末三碼：</label>
-                      <input  type="text" name="securityCode" class="securityCode1 empty formm" maxlength="3"
-                          id="cvv">
-              </div>
-                   <div class="formGroup" id="creditCards">
-                      <img src="../img/16/VISA_300x200.png" id="visa">
-                      <img src="../img/16/Master_300x200.png" id="mastercard">
-                      <img src="../img/16/AE_300x200.png" id="amex">
-                  </div> -->
-            <!-- </div> --> 
           <div class="btn_group">  
           <button onclick="location.href='./cart.html'" class="btn btn_primary " type="submit" >回上一頁</button>
-          <div class="finshbtn btn" type="submit" style="background-color:#FFD241;  color: #07082E;">確認付款</div>
+          <a class="finshbtn btn" style="background-color:#FFD241;  color: #07082E;">確認付款</a>
           </div>
         </form>
       </div>
@@ -409,7 +261,7 @@
     <main id="finsh_wrapper " >
       <div class="modal__text disc">
         <h1 class="step_done_title step_title">您的訂單已完成付款</h1><span class="step_done_message">恭喜您成功完成訂單，稍後將寄送詳細資訊至您的E-mail。</span>
-        <a href="../dist/indexfront.html"><button class="step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button></a>
+        <a href="./indexfront.html"step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button></a>
       </div>
     </main>
   </section>
@@ -420,6 +272,7 @@
 </body>
 <!-- <script src="vendor/jQuery/jquery-3.5.1.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.1.1/cleave.min.js"></script>
+<script src="./js/orderform_info.js"></script>
 
 
 
@@ -466,6 +319,38 @@ $('.finshbtn').click(function(){
 
 
 });
+// $(".finshbtn").click(function(){
+//     let X = $('#lastTotal').text()
+//     let cardno = $('#cardnumber').val()
+//     let consig = $('.consig').val()
+//     let consigadd = $('.consigadd').val()
+//     let CONSIGTEL = $('.CONSIGTEL').val()
+//     let ordertoal = $('.ordertoal').val()
+//     let discount = $('.discount').val()
+    // alert(123)
+
+    
+    // sessionStorage.setItem("cardno", cardno);
+    // sessionStorage.setItem("consig", consig);
+    // sessionStorage.setItem("consigtel", consigtel);
+    // sessionStorage.setItem("consigadd", consigadd);
+    // sessionStorage.setItem("lastTota", X);
+//     let xhr1 = new XMLHttpRequest();
+//     let url1 = `./php/5/orderform_info.php`;
+//     xhr1.onload = function (){
+//       if( xhr1.status == 200 ){
+//         console.log(xhr1.responseText);
+//         }else{
+//         alert( xhr1.status );
+//       }
+//     }
+//     xhr1.open("Post", url1, true);
+//     xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
+//     let data_info = `ordertoal=${ordertoal}&consig=${consig}&consigadd=${consigadd}&CONSIGTEL=${CONSIGTEL}&cardno=${cardno}&discount=${discount}}&propricetotal=${propricetota}`;
+//     xhr1.send(data_info);
+//       // location.href = "./initiation_success.html";
+
+// });
 </script> 
 
 

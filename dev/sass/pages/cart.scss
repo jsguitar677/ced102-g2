@@ -21,7 +21,7 @@
 
 // 流程// 
 div.progress__bar{
-    margin-top: 66px ;
+    margin-top: 50px ;
     margin-bottom: 0px;
     box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
     -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.171) inset;
@@ -70,6 +70,11 @@ div.progress__bar{
             color: map-get($map: $color_regulation, $key: 'blue');
             font-size: $h7;
             font-family: $chinese;
+            @media (max-width:575px) {
+                width: 120px;
+                font-size: 12px;
+ 
+             } 
             
         }
      }  
@@ -208,7 +213,7 @@ div.title-block {
                         font-size: $p;
                     }
                     @media (max-width:575px){
-                        font-size: $p;
+                        font-size: 12px;
                     }
                     
 
@@ -217,8 +222,21 @@ div.title-block {
                     .item_detail {
                         width: 50%;
                         display: inline-block;
+                        @media (min-width:992px) and (max-width:1199px){
+                       
+                        }
+                        @media (min-width:768px) and (max-width:991px){
+                            
+                        }
+                        @media (min-width:576px) and (max-width:767px){
+                            font-size: $p;
+                        }
+                        @media (max-width:575px){
+                            display: block;
+                            font-size: 12px;
+                        }
 
-                        div.img {
+                        img {
                             width: 100px;
                             height: 100px;
                             // background-image: url(https://images.unsplash.com/photo-1534961880437-ce5ae2033053?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80);
@@ -243,9 +261,7 @@ div.title-block {
                                 margin: 10px 20px 10px 20px;
                             }
                             @media (max-width:575px){
-                                width: 65px;
-                                height: 65px;
-                                margin: 10px 5px 10px 5px;
+                                display: none;
                             }
                             
                         }
@@ -268,7 +284,7 @@ div.title-block {
                             }
                             @media (max-width:575px){
                                 margin: 10px auto;
-                                padding: 0px 5px 0 10px;
+                                padding: 0px 1px 0px 1px;
                                 font-size: $p;
                                 
                             }
@@ -465,6 +481,7 @@ div.title-block {
                 input.discount {
                     border: 1px solid map-get($map: $color_regulation, $key: 'blue'); 
                     line-height: $lineHeight;
+                    font-size: 18px;
                 }
             }
             div.orderCount {
