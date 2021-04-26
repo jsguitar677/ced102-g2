@@ -194,6 +194,7 @@ function showLatestActv(jsonStr){
     DNTNOW.innerHTML = latestActv[0]["DNTNOW"];
     ACTDLINE.innerHTML = latestActv[0]["ACTDLINE"];
     ACTNAME.innerHTML = latestActv[0]["ACTNAME"];
+    ACTNAME.setAttribute("href","./act_detail.html?actno="+latestActv[0]["ACTNO"]);
     
     //====== 點按不同輪播圖更新資料
     $(".targetData").bind("click", function(){
@@ -207,7 +208,7 @@ function showLatestActv(jsonStr){
         DNTNOW.innerHTML = latestActv[curIdx]["DNTNOW"];
         ACTDLINE.innerHTML = latestActv[curIdx]["ACTDLINE"];
         ACTNAME.innerHTML = latestActv[curIdx]["ACTNAME"];
-        ACTNAME.setAttribute("href",actDetailUrl+latestActv[curIdx]["ACTNO"]);
+        ACTNAME.setAttribute("href",actDetailUrl+latestActv[0]["ACTNO"]);
         // console.log(latestActv[curIdx]["ACTNAME"]);
     });
     

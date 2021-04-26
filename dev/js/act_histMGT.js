@@ -55,11 +55,13 @@ function getactHist(){
                 let xhre = new XMLHttpRequest();
                 var urle ="./php/2/act_histMGT_pass.php";
                 xhre.open("post",urle,true);
-                xhre.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                // xhre.setRequestHeader("content-type", "application/x-www-form-urlencoded");
                 var editactno = $('#actno').text();
                 var content = $('#actart').val();
+                //省略
                 // alert(`${editactno}+${content}`);
-                let data_info = `ACTNO=${editactno}&RESULT=${content}`;
+                // let data_info = `ACTNO=${editactno}&RESULT=${content}`;
+                let data_info = new FormData(document.getElementById('ah-edit'))
                 xhre.send(data_info);
                 // getactHist;
             })
