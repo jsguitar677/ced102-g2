@@ -88,11 +88,12 @@ div.rp_pop {
     display: grid;
     margin-top: 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 4fr;
+    grid-template-rows: 5fr;
     text-decoration: none;
     height: 122px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.37);
     color: black;
+    padding-bottom: 10px;
 }
 
 .a {
@@ -104,9 +105,9 @@ div.rp_pop>H3 {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
-    grid-row-end: 2;
+    grid-row-end: 3;
     margin-left: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     text-decoration: none;
 }
 
@@ -115,7 +116,7 @@ div.rp_pop>H4 {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
     margin-left: 5px;
 }
 
@@ -124,8 +125,8 @@ div.rp_pop>img {
     width: 150px;
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }
 
@@ -159,4 +160,20 @@ li.current {
     line-height: 20px;
     font-weight: bolder;
     color: map-get($color-regulation, 'blue');
+}
+
+.rp_pop>button{
+border: none;
+width: 100px;
+margin: 0 auto;
+height: 30px;
+grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+background-color:map-get($color-regulation, 'yellow');
+font-family: 'noto sans tc';
+font-weight: 400;
+outline: none;
+ box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
 }

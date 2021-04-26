@@ -561,9 +561,10 @@ $('document').ready(function(){
                         <ul class="slides">
                             <li>
                                 <div class="description">
+                                    <p class="text">活動名稱：${actRow[3][i].ACTNAME}</p>
                                     <p class="text">地點：${actRow[3][i].loc}</p>
                                     <p class="text">日期：${actRow[3][i].ACTSDATE}</p>
-                                    <p class="text shorten">活動簡述：${actRow[3][i].VISION}</p>
+                                    <p class="text shorten">創辦理念：${actRow[3][i].VISION}</p>
                                     <p class="text">目前活動狀態：參與率${actRow[3][i].Vrate}% / 募款率${actRow[3][i].Frate}%</p>
                                 </div>
                                 <div class="img">

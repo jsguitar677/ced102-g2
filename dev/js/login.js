@@ -205,7 +205,7 @@ let memberText;
                     // 登出後註冊按鈕就顯現
                     $id('AccountListReg').style.display = "block";
                     $id('tokenHook').style.display = 'none';
-
+                    window.location.reload()
                 }
                 xhr.open("get","php/15/logout.php");
                 xhr.send(null);                
@@ -314,6 +314,7 @@ let memberText;
                     AccountList.style.opacity = '0';
                     //解鎖螢幕
                     document.body.style.overflow = 'auto';
+                    window.location.reload()
                 }else{
                     GeneralModal.textContent = '輸入錯誤請重試'
                     //清除登入燈箱資訊
