@@ -54,7 +54,7 @@ function show2(){
             let day = new Date();
             let today = day.getFullYear()+"-"+(day.getMonth()+1)+"-"+ day.getDate();
             let ScheduleDate = ACTSDATE;
-            if ( (Date.parse(ScheduleDate)).valueOf() > (Date.parse(today)).valueOf())
+            if ( (Date.parse(ScheduleDate)).valueOf() < (Date.parse(today)).valueOf())
             {   
                 document.getElementById(`actCancel${i}`).setAttribute("disabled","true");
                 document.getElementById(`actCancel${i}`).style.cursor = "unset";
@@ -124,6 +124,7 @@ function show2(){
                         document.getElementById(`delay${i}`).setAttribute("disabled","true");
                         document.getElementById(`delay${i}`).textContent = '已延期';
                         document.getElementById('delatRemindBlackBox').style.display = 'none';
+                        window.location.reload();
 
                     }
                     xhr3.open("post","php/15/EventDelay.php", true);

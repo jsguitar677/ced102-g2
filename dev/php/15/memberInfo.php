@@ -6,8 +6,8 @@ try{
   require_once("../../connect_ced102g2.php");
 
     $MBRDATA=" SELECT MBREXP, MBRCOIN, DONATE, PARTICIPATE FROM mbr WHERE MBRNO = :MBRNO";
-    $ACTV=" SELECT COUNT(MBRNO) FROM ACTV WHERE MBRNO = :MBRNO";
-    $FUNDRA=" SELECT COUNT(MBRNO) FROM FUNDRA WHERE MBRNO = :MBRNO";
+    $ACTV=" SELECT COUNT(MBRNO) FROM actv WHERE MBRNO = :MBRNO";
+    $FUNDRA=" SELECT COUNT(MBRNO) FROM fundra WHERE MBRNO = :MBRNO";
 
     $memberData = $pdo->prepare($MBRDATA);
     $memberData->bindValue(":MBRNO", $_SESSION["MBRNO"]);

@@ -528,10 +528,37 @@ function checkACFT(e){
     };
 
 
+    // SendPswToMailBtn   ForgetMemId
+    let logMemId = document.getElementById("ForgetMemId");
 
+    function getPassword(e){
+        xhr.onload = function(){//server端已執行完畢
+            if(xhr.status == 200){//http status is OK
+                if(xhr.responseText == 1){
+                    //擁有這帳號就送出信箱
+                    alert("水喔");
 
+                }else{
+                    alert("查無此帳號信箱");
+                }
+            }else{
+                alert(xhr.status);
+            }
+        } 
+        
+        let url = "php/15/check_AC.php";
+        xhr.open("post", url, true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        let data_AD2 = `ForgetMemId=${$id("ForgetMemId").value}`;
+        xhr.send(data_AD2);
+
+        e.preventDefault();
+    }
     
 window.addEventListener("load", function(){
+    //----------------  檢查有無這信箱 並寄送密碼
+    $id('SendPswToMailBtn').onclick = getPassword;
+
     //----------------  帳戶選單燈箱判斷 "登入/登出按鍵狀態
     IdentifyLorRStatus();
     //----------------  動畫navTlFn

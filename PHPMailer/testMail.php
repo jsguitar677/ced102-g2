@@ -14,7 +14,6 @@ require("class.phpmailer.php");
 // $memberData2->bindValue("account", );
 $account = $_POST["emailAC"];
 
-
 //Send mail using gmail
 $mail = new PHPMailer(true);
     $mail->IsSMTP(); // telling the class to use SMTP

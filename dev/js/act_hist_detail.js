@@ -18,15 +18,15 @@ function getActRecenDetail(){
         for(let i=0; i<popLength; i++){
             $('#rightPart').append(`
             <div class="rp_pop">
-                <img id="${ACTDETAIL2[i].actno}" src="${ACTDETAIL2[i].locpic}">
-                <h4>${ACTDETAIL2[i].actsdate}</h4><br>
-                <h3>${ACTDETAIL2[i].actname}</h3>
-                <button id="toAct${ACTDETAIL2[i].actno}" value="${ACTDETAIL2[i].actno}">查看活動</button>
+                <img id="${ACTDETAIL2[i].ACTNO}" src="${ACTDETAIL2[i].LOCPIC}">
+                <h4>${ACTDETAIL2[i].ACTSDATE}</h4><br>
+                <h3>${ACTDETAIL2[i].ACTNAME}</h3>
+                <button id="toAct${ACTDETAIL2[i].ACTNO}" value="${ACTDETAIL2[i].ACTNO}">查看活動</button>
             </div>
             `)
 
-            let actvLine2 = document.getElementById(`toAct${ACTDETAIL2[i].actno}`).value;
-            document.getElementById(`toAct${ACTDETAIL2[i].actno}`).onclick = function (){
+            let actvLine2 = document.getElementById(`toAct${ACTDETAIL2[i].ACTNO}`).value;
+            document.getElementById(`toAct${ACTDETAIL2[i].ACTNO}`).onclick = function (){
                 sessionStorage.removeItem('ACT');
                 localStorage.setItem('ACT', actvLine2);
                 window.location.href="./act_hist_detail.html";

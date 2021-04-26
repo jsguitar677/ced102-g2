@@ -34,6 +34,9 @@ try{
         $products -> bindValue( ":MBRNO" ,$_SESSION["MBRNO"]);
         $products->execute();
         
+        // $_SESSION["MBRPIC"] = $products["MBRPIC"];
+
+
     }else{
         echo "上傳照片失敗";
     }

@@ -14,6 +14,8 @@ try{
     // 資料庫取回的資料
     $memRow = $memberData->fetch(PDO::FETCH_ASSOC);
     
+  
+
     echo json_encode($memRow); 
 
 

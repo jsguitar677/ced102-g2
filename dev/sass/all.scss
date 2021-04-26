@@ -812,6 +812,7 @@ p#ForgetPsw, p.ModalRedAlert{
     color: map-get($map: $color_regulation, $key: 'red');
     font-size: $p;
     margin-bottom: 40px;
+    display: none;
 }
 div.whiteMainPart2{
     box-sizing: border-box;
@@ -1789,7 +1790,7 @@ div#footerBottom{
   
   /* =============================================================================================== */
   div#FooterClaim{
-      color: map-get($map: $color_regulation, $key: 'white') !important;
+      color: #2A323D !important;
       background-color: black;
       font-size: $p;
       padding: 20px 50px;

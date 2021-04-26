@@ -31,11 +31,24 @@ try{
         $memberData->execute();
     
         $sql = " UPDATE `mbr` SET `MBRPIC`= :saveFile WHERE `MBRNO` =:MBRNO " ;
-        $products = $pdo->prepare( $sql );
+        $sql2 = "SELECT MBRPIC from mbr WHERE `MBRNO` =:MBRNO " ;
+
+        $products = $pdo->prepare($sql);
         $products -> bindValue( ":saveFile" ,$saveFiless);
         $products -> bindValue( ":MBRNO" ,$_SESSION["MBRNO"]);
         $products->execute();
+
+
+        $products2 = $pdo->prepare($sql2);
+        $products2 ->bindValue( ":MBRNO" ,$_SESSION["MBRNO"]);
+        $products2->execute();
+
+        $memRow = $products2->fetch(PDO::FETCH_ASSOC);
+        $_SESSION["MBRPIC"] = $memRow["MBRPIC"];
     
+    
+
+        
     
         $PDOO = "SET SQL_SAFE_UPDATES=1";
         $memberData = $pdo->prepare($PDOO);
@@ -44,10 +57,11 @@ try{
         echo "失敗";
     }
 
-    
+   
 
-    echo "<script>window.history.back()</script>" ; 
-    // echo $saveFiless;
+
+    echo "<script>window.history.back()</script>";
+    // $id('memBIO').textContent = MBRPERID[0].MBRBIO;
 
 }catch(PDOException $e){
     echo"error:",$e->getMessage(),"****line:",$e->getLine(),"<br>";

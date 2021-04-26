@@ -23,8 +23,10 @@ try{
 
     // 資料庫取回的資料
     $memRow = $memberData2->fetch(PDO::FETCH_ASSOC);
-    $_SESSION["MBRNO"] = $memRow["MBRNO"];
-    
+    // $_SESSION["MBRNO"] = $memRow["MBRNO"];
+
+    $_SESSION["MBRCOIN"] = $memRow["MBRCOIN"];
+
     echo json_encode($memRow); 
 
     $PDOO = "SET SQL_SAFE_UPDATES=1";
