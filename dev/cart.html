@@ -65,7 +65,7 @@
                     <div class="item_container listRow" v-for="(item, index) in itemList" :key="item.id" >
                         <div class=" item_body prodInfo">
                             <div class="item_detail" style="display: inline-flex;" >
-                                <img v-bind:src="item.src" alt="" style="max-width:20%; max-height: 20%;"  >
+                                <img v-bind:src="item.src" alt=""   >
                                 <!-- <div class="img prodPic"><img v-bind:src="{item.imgUrl}}" alt="" style="max-width:100% "></div> -->
                                 <!-- <div class="name">{{item.itemName}}</div> -->
                                 <div class="prodName name" style="vertical-align:center; padding-left: 20px;" ><span>品名:</span>{{item.prodName}}</div>
@@ -96,16 +96,16 @@
                     </div>
                     <div class="row">
                         <span class="label">商品總金額:</span>
-                        <div class="formw totalAmount">$<span id="subtotal">{{totalPrice}}</span></div>
+                        <div class="formw totalAmount">$<span id="subtotal" class="ordertoal">{{totalPrice}}</span></div>
                         <!-- <span class="formw"><input type="text" size="25" /></span> -->
                     </div>
                     <div class="row recordPoint">
                         <span class="label point">您目前持有點數:</span>
-                        <div id="getPoint" class="formw ">0</div>
+                        <div id="getPoint" class="formw ">$1000</div>
                     </div>
                     <div class="row">
                         <span class="label usePointsP">使用環保幣折扣:</span>
-                        <div class="formw"><button class="button loginbutton" type="button">請登入會員</button></div>
+                        <!-- <div class="formw"><button class="button loginbutton" type="button">請登入會員</button></div> -->
                         <input class="formw discount"  type="text" name="usePointShow" value="0">
                     </div>
                     
@@ -114,7 +114,7 @@
                     <div class="orderCount">
                         
                         <!-- <p>總計：${{subtotal[index]}}</p> -->
-                        <p class="orderCount-subtotal ">總計：<span id="lastTotal">${{totalPrice}}</span></p>
+                        <p class="orderCount-subtotal ">總計：<span id="lastTotal" class="lastTotal">${{totalPrice}}</span></p>
                         <input type="hidden" name="orderTotal" value="">
                         <input type="hidden" name="usePoint" value="">
                         <input type="hidden" name="leftPoints" value="">
@@ -200,7 +200,7 @@
         },
         del: function(index){
             console.log(this);
-            // this.itemList.splice(index,1);
+            this.itemList.splice(index,1);
             let catCxl = JSON.parse(storage.getItem("cart"));
             catCxl.splice(index,1);
             // console.log(catCxl);
@@ -250,12 +250,7 @@ $('.space_box').css('display','block');
 }
 }
 
-$(".button-pay").click(function(){
-    let X = $('#lastTotal').text()
-    let y = $('.discount').val()
-    sessionStorage.setItem("lastTota", X);
-    sessionStorage.setItem("discount", y);
-});
+
 
 
 // function doFirst(){
@@ -278,80 +273,88 @@ function getCart(){
 
 }
 
-$(function (){
-    // $(".loginbutton").on("click", function(){
-    //     console.log("===click");
-    //     //$('#wholeScreenOverlay3').css('display','block');
-    // });
-    // $("#btnPay").on("click", function(){
-    //     document.getElementById("app").submit();
-    // })
-    // $('.discount').hide()
-    // $('.loginbutton').show()
-    //  if(LogInMemId.textContent != ''){
-    //     $('.discount').show()
-    //     $('.recordPoint').show()
-    //     $('.loginbutton').hide()
-    //     // document.querySelector(".loginbutton").style.display = "none";
-    // }else{
-    //     $('.discount').hide()
-    //     $('.recordPoint').hide()
-    //     $('.loginbutton').show()
-    //     // document.querySelector(".loginbutton").style.display = "";
-    // }   
+// $(function (){
+//     document.getElementById('allTotal').innerText = newPri;
+//         usePointV = parseInt(usePointShow.value);
+//         let gamePoints = parseInt(gamePoint.innerHTML);
+//         var theForm = document.getElementById("theForm");
 
-// window.addEventListener("load",showdiscount)
-})
+//     if (usePointV > gamePoints) {
+//         Swal.fire({
+//         position: 'center-center',
+//         icon: 'warning',
+//         title: '使用點數超過可用點數',
+//         showConfirmButton: false,
+//         timer: 1500
+//     })
 
-$(function(){
-    $('.discount').hide()
-    $('.loginbutton').show()
-    $('.fa-shopping-cart').click(function(){
-        let xhrlogin = new XMLHttpRequest();
-        xhrlogin.onload = function (){
-            if( xhrlogin.status == 200 ){
-                let res = JSON.parse(xhrlogin.responseText)
-                console.log(res);
-                if(res[0]=='nologin'){ 
-                    //請先登入
-                    $('#wholeScreenOverlay3').css('display','block');
-                    $('body').css('overflow','hidden');
-                    $('#LogRegClsBtn3').click(function(){
-                        $('#wholeScreenOverlay3').css('display','none');
-                        $('body').css('overflow','auto');
-                    })
-                }
-            }else{
-                alert( xhrlogin.status );
-            }
-        }
+//     theForm.addEventListener("submit", function () {
+//         return false;
+//     }, false)
+//     } else {
+//     // 計算新的總金額
+//     lastTotal.innerText = parseInt(newPri) - parseInt(usePointV);
+// }),
 
-    });
-    $('.loginbutton').click(function(){
-        let xhrlogin = new XMLHttpRequest();
-        xhrlogin.onload = function (){
-            if( xhrlogin.status == 200 ){
-                let res = JSON.parse(xhrlogin.responseText)
-                console.log(res);
-                if(res[0]=='nologin'){ 
-                    //請先登入
-                    $('#wholeScreenOverlay3').css('display','block');
-                    $('body').css('overflow','hidden');
-                    $('#LogRegClsBtn3').click(function(){
-                        $('#wholeScreenOverlay3').css('display','none');
-                        $('body').css('overflow','auto');
-                    })
-                }
-            }else{
-                alert( xhrlogin.status );
-            }
-        }
-        let urllogin = "./php/5/postMemberInfo.php";
-        xhrlogin.open("Get", urllogin, true);
-        xhrlogin.send( null );
-    });
-
+$(".button-pay").click(function(){
+    let X = $('#lastTotal').text()
+    let y = $('.discount').val()
+    let ordertoal=$('.ordertoal').val()
+    sessionStorage.setItem("ordertoal", y);
+    sessionStorage.setItem("lastTota", X);
+    sessionStorage.setItem("discount", y);
 });
+
+// $(function(){
+//     $('.discount').hide()
+//     $('.loginbutton').show()
+//     $('.fa-shopping-cart').click(function(){
+//         let xhrlogin = new XMLHttpRequest();
+//         xhrlogin.onload = function (){
+//             if( xhrlogin.status == 200 ){
+//                 let res = JSON.parse(xhrlogin.responseText)
+//                 console.log(memberno);
+//                 if(res[0]=='nologin'){ 
+//                    alert(aaaaa)
+//                     //請先登入
+//                     $('#wholeScreenOverlay3').css('display','block');
+//                     $('body').css('overflow','hidden');
+//                     $('#LogRegClsBtn3').click(function(){
+//                         $('#wholeScreenOverlay3').css('display','none');
+//                         $('body').css('overflow','auto');
+//                     })
+//                 }
+//             }else{
+//                 alert( xhrlogin.status );
+//             }
+//         }
+
+//     });
+//     $('.loginbutton').click(function(){
+//         let xhrlogin = new XMLHttpRequest();
+//         xhrlogin.onload = function (){
+//             if( xhrlogin.status == 200 ){
+//                 let res = JSON.parse(xhrlogin.responseText)
+//                 console.log(res);
+//                 if(res[0]=='nologin'){ 
+//                     //請先登入
+//                     $('#wholeScreenOverlay3').css('display','block');
+//                     $('body').css('overflow','hidden');
+//                     $('#LogRegClsBtn3').click(function(){
+//                         $('#wholeScreenOverlay3').css('display','none');
+//                         $('body').css('overflow','auto');
+//                     })
+//                 }
+//             }else{
+//                 alert( xhrlogin.status );
+//             }
+//         }
+//         let urllogin = "./php/5/postMemberInfo.php";
+//         xhrlogin.open("Get", urllogin, true);
+//         xhrlogin.send( null );
+//     });
+
+// });
 
 window.addEventListener("load",doFirst)
 </script>    
