@@ -201,8 +201,11 @@ body{
                     }
                 }
                 .proBtnBlock{
-                    margin-top: 5px;
-
+                    margin-top: 30px;
+                    @include pc{
+                        margin-top: 5px;
+        
+                    }
                     #appMemberBriefIntro{
                         @include pad{
                             width: auto;
@@ -359,12 +362,12 @@ body{
                                 box-shadow: 2px 2px 14px #ffefbd8c;
                                 content: '';
                                 position: absolute;
-                                width: 6px;
+                                width: 3px;
                                 background-color: white;
                                 top: 0;
                                 bottom: 0;
                                 left: 20%;
-                                margin-left: -3px;
+                                margin-left: 0px;
                                 // box-shadow:1px 1px 6px rgba(0, 0, 0, 0.342);
 
                             }

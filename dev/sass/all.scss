@@ -1122,7 +1122,7 @@ ul#AccountList{
     align-items: center;
     margin: 0px;
     transition: all 1s;
-    border: 2px solid map-get($map: $color_regulation, $key: 'blue');
+    border: 1px solid map-get($map: $color_regulation, $key: 'blue');
     box-shadow: $box-shadow;
     li{
         &:last-child, &:first-child{

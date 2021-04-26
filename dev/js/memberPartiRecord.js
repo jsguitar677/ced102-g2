@@ -2,10 +2,10 @@ function $id(id){
 	return document.getElementById(id);
 }
 
-function getDetail(){
-    function show2(jsonStr){
-        var ordRow = JSON.parse(jsonStr);
-        console.log(ordRow.MBRNO);  
+// function getDetail(){
+    function getDetail(){
+        // var ordRow = JSON.parse(jsonStr);
+        // console.log(ordRow.MBRNO);  
         // ---------------------
         $('#participateHook').html("");
         let xhr1 = new XMLHttpRequest(); 
@@ -55,32 +55,32 @@ function getDetail(){
         }
         xhr1.open("post", "php/15/memberPartiRecord.php", true); //連結伺服端程式
         xhr1.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
-        let data_info = `MBRNO=${ordRow.MBRNO}`;
-        xhr1.send(data_info);
+        // let data_info = `MBRNO=${ordRow.MBRNO}`;
+        xhr1.send(null);
     }
 
-    function IfNotMemberTransefer(){
-        var memberHook = document.getElementById('member_hook');
-        let xhr = new XMLHttpRequest(); 
-        xhr.onload = function(){
-            show2(xhr.responseText);
-            let MBRDETAIL = JSON.parse(xhr.responseText);
-            if( MBRDETAIL === 50 ){
-                alert('請先登入會員帳號');
-                window.location.href='./indexfront.html';
-                memberHook.href="./member.html";
-                return;
-            } else{
-                memberHook.innerHTML="返回首頁";
-                memberHook.href="./indexfront.html";
-                return;
-            }
-        }
-        xhr.open("get","php/15/getMemInfo.php", true);
-        xhr.send(null);
-    };
-    IfNotMemberTransefer();
-}
+//     function IfNotMemberTransefer(){
+//         var memberHook = document.getElementById('member_hook');
+//         let xhr = new XMLHttpRequest(); 
+//         xhr.onload = function(){
+//             show2(xhr.responseText);
+//             let MBRDETAIL = JSON.parse(xhr.responseText);
+//             if( MBRDETAIL === 50 ){
+//                 alert('請先登入會員帳號');
+//                 window.location.href='./indexfront.html';
+//                 memberHook.href="./member.html";
+//                 return;
+//             } else{
+//                 memberHook.innerHTML="返回首頁";
+//                 memberHook.href="./indexfront.html";
+//                 return;
+//             }
+//         }
+//         xhr.open("get","php/15/getMemInfo.php", true);
+//         xhr.send(null);
+//     };
+//     IfNotMemberTransefer();
+// }
 
 window.addEventListener("load", function(){
     getDetail();

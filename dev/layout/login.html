@@ -225,13 +225,13 @@
                 <h2 style="text-align: center; padding-bottom:10px;">忘記密碼</h2>
                 <div class="botEnSmallBar" style="margin-bottom: 30px;"></div>
             </div>
-            <form action="#" id="Overlay4Form">
+            <form action="../PHPMailer/testMail.php"  method="post" enctype="multipart/form-data" id="Overlay4Form">
                 <div>
                     <label for="ForgetMemId">輸入信箱</label>
-                    <input type="email" placeholder="Email" id="ForgetMemId" name="ForgetMemId" required size="30">
+                    <input type="email" placeholder="Email" id="ForgetMemId" name="emailAC" size="30">
                 </div>
+                <button type="submit" id="SendPswToMailBtn" class="LowestBtn">送出密碼至信箱</button>
             </form>
-            <button id="SendPswToMailBtn" class="LowestBtn">送出密碼至信箱</button>
             <p id="ForgetPswB2LogIn" class="ModalRedAlert" style="text-align: right;">返回登入</p>
         </div>
        
