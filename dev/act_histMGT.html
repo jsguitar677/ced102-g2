@@ -35,9 +35,9 @@
                 <section id="c7">
                     <h1></h1>活動花絮管理</h1>
                     <div class="flex">
-                        <div class="add-block">
-                            <div class="add">add +</div>
-                        </div>
+                        <!-- <div class="add-block">
+                            <div class="add" id="addBtn">add +</div>
+                        </div> -->
                         <div class="search"><i class="fas fa-search"></i><input class="search" type="text" name="search" placeholder='請輸入編號或名稱'></div>
                     </div>
                     <table>
@@ -72,21 +72,22 @@
                             </tr> -->
                         </tbody>
                     </table>
-                    <div class="alert-block alert-block-edit">
+                    <div class="alert-block alert-block-edit" id="alert-block">
                         <form id="ah-edit" class="alert">
                             <!-- 送出資料時，記得再做一個input判斷為新增花絮或編輯花絮喔~ -->
-                            <label class="left">活動編號：</label><p>1</p><br>
-                            <label class="left">活動日期：</label><p>2020/02/02</p><br>
-                            <label class="left">活動名稱：</label><p>南濱公園淨灘</p><br>
-                            <label class="left">活動地點：</label><p>花蓮縣南濱公園</p><br>
-                            <label class="left des">活動文章：</label><textarea maxlength="400"></textarea><br>
+                            <input type="hidden" name="ACTNO" value="">
+                            <label class="left">活動編號：</label><p id="actno">1</p><br>
+                            <label class="left">活動日期：</label><p id="actdate">2020/02/02</p><br>
+                            <label class="left">活動名稱：</label><p id="actname">南濱公園淨灘</p><br>
+                            <label class="left">活動地點：</label><p id="actloc">花蓮縣南濱公園</p><br>
+                            <label class="left des">活動文章：</label><textarea maxlength="400" id="actart" name="actart"></textarea><br>
                             <label class="left actimg">活動圖片：</label><br>
-                            <label class="editimg-btn" for="uploadimg1">+</label><input type="file" id="uploadimg1" hidden><div class="img"><img src=""></div><br>
-                            <label class="editimg-btn" for="uploadimg2">+</label><input type="file" id="uploadimg2" hidden><div class="img"><img src=""></div><br>
-                            <label class="editimg-btn" for="uploadimg3">+</label><input type="file" id="uploadimg3" hidden><div class="img"><img src=""></div><br>
+                            <label class="editimg-btn" for="uploadimg1">+</label><input type="file" id="uploadimg1"  name="upFile1"><!--<div class="img"><img src="">/div>--><br>
+                            <label class="editimg-btn" for="uploadimg2">+</label><input type="file" id="uploadimg2"  name="upFile2"><!--<div class="img"><img src=""></div>--><br>
+                            <label class="editimg-btn" for="uploadimg3">+</label><input type="file" id="uploadimg3"  name="upFile3"><!--<div class="img"><img src=""></div>--><br>
                             <div class="btn-group">
                                 <div class="edit-cancel-btn btn">取消</div>
-                                <button type="submit" class="submit btn">確認</button>
+                                <button type="submit" class="submit btn" id="editBtn">確認</button>
                             </div>
                         </form>
                     </div>

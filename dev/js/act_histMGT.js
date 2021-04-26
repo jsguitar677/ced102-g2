@@ -5,7 +5,7 @@ function getactHist(){
         if(xhr.status == 200){
             let json = xhr.responseText;
             let actHist = JSON.parse(json);
-            console.log(actHist);
+            // console.log(actHist);
             let tbody = document.getElementById('act_histTbody');
             let tbodyContent = "";
             for(let i=0;i<actHist.length;i++){
@@ -31,6 +31,38 @@ function getactHist(){
             }
             
             tbody.innerHTML = tbodyContent;
+            $('div.edit-icon').click(function(){
+                $('#alert-block').css('display','block');
+                //抓到current Id
+                let curId = $(this).attr('id').substr(4);
+                console.log
+                // console.log(curId);
+                //抓到current class index
+                let curIndex = $('div.edit-icon').index($(this));
+                let actno = document.getElementById('actno');
+                let actdate = document.getElementById('actdate');
+                let actname = document.getElementById('actname');
+                let actloc = document.getElementById('actloc');
+                let actart = document.getElementById('actart');
+                actno.innerHTML = `${actHist[curIndex].ACTNO}`;
+                actdate.innerHTML = `${actHist[curIndex].ACTSDATE}`;
+                actname.innerHTML = `${actHist[curIndex].ACTNAME}`;
+                actloc.innerHTML = `${actHist[curIndex].ACTLOC}`;
+                actart.innerHTML = `${actHist[curIndex].RESULT}`;
+                $('input[name=ACTNO]').attr("value",`${actHist[curIndex].ACTNO}`);
+            })
+            $('#editBtn').click(function(){
+                let xhre = new XMLHttpRequest();
+                var urle ="./php/2/act_histMGT_pass.php";
+                xhre.open("post",urle,true);
+                xhre.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+                var editactno = $('#actno').text();
+                var content = $('#actart').val();
+                // alert(`${editactno}+${content}`);
+                let data_info = `ACTNO=${editactno}&RESULT=${content}`;
+                xhre.send(data_info);
+                // getactHist;
+            })
 
         }else{
             alert(xhr.status);
@@ -40,19 +72,26 @@ function getactHist(){
     xhr.open("get", url, true);
     xhr.send(null);
 }
+
+
+
+// function editAct(){
+//     let xhre = new XMLHttpRequest();
+//     // xhr.onload = function(){
+
+//     // }
+//     var urle ="./php/2/act_histMGT_pass.php";
+//     xhre.open("post",urle,true);
+//     xhre.setRequestHeader("content-type", "application/x-www-form-urlencoded"); 
+//     let data_info = `ACTNO=${actHist[i].ACTNO}`;
+//     xhre.send(data_info);
+// }
+
+
 window.addEventListener('load',function(){
     getactHist();
+    // document.getElementById('editBtn').onclick = editAct;
 });
 
 
-//編輯花絮
-    //點擊編輯花絮
-    $('#c7 div.edit-icon').click(function(){
-        $('#c7 div.alert-block-edit').css('display','block');
-    })
-    //取消按鈕
-    $('#c7 div.edit-cancel-btn').click(function(){
-        $(this).parent().parent().parent().css('display','none');
-    });
-    var options = {valueNames: ['ah-num','ah-name','ah-loc']};
-    userList_ah = new List('c7', options);
+
