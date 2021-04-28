@@ -2,9 +2,9 @@
 try{
   require_once("../../connect_ced102g2.php");
  
-  $MBRDATA="  SELECT a.actno, b.mbrno , b.actname, b.actsdate ,c.locpic
-              FROM  afteract a join actv b ON a.actno = b.actno
-              join `location` c on b.actloc = c.locname
+  $MBRDATA="  SELECT a.ACTNO, b.MBRNO , b.ACTNAME, b.ACTSDATE ,c.LOCPIC
+              FROM  afteract a join actv b ON a.ACTNO = b.ACTNO
+              join `location` c on b.ACTLOC = c.LOCNAME
               order by b.RECRNOW desc
               limit 4 
 ";

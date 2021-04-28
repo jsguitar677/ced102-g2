@@ -805,6 +805,7 @@ div#memPage{
                     box-shadow: $box-shadow;
                     margin-left: 20px;
                     cursor: pointer;
+                    
                     @include mobileL{
                         margin-left: 0px;
                         margin-bottom: 30px;

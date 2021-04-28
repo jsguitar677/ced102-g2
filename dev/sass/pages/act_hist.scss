@@ -454,14 +454,26 @@ div.ah_card_section {
     max-width: 1200px;
     margin: 0 auto;
     font-family: var(--font-sans);
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 1076px) {
     .ah_page-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 911px) {
+    .ah_page-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .ah_page-content {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
 
 .page5Card{
     background-size: cover;
@@ -891,6 +903,7 @@ i.fa.fa-chevron-down {
 }
 
 div.ah_picker {
+    display: none;
     position: relative;
     height: 50px;
     //   text-align: left;

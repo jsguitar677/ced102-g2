@@ -14,17 +14,17 @@ function getDetail(){
         // }
         for(var i=0; i<getdataLenghth; i++){
             $('#saveCardHook').append(`
-                <div class="page5Card" id="page5Card${MBRPERID[i].actno}" style="background-image:url(${MBRPERID[i].locpic});">
+                <div class="page5Card" id="page5Card${MBRPERID[i].ACTNO}" style="background-image: url(${MBRPERID[i].LOCPIC});">
                     <div class="content">
-                        <h2 class="title">${MBRPERID[i].actname}</h2>
-                        <p class="copy">${MBRPERID[i].vision}</p>
-                        <button value="${MBRPERID[i].actno}" class="btn membtn">See More</button>
-                        <button value="${MBRPERID[i].actno}" id="cancelLike${MBRPERID[i].actno}" class="btn2">取消收藏</button>
+                        <h2 class="title">${MBRPERID[i].ACTNAME}</h2>
+                        <p class="copy">${MBRPERID[i].VISION}</p>
+                        <button value="${MBRPERID[i].ACTNO}" class="btn membtn">See More</button>
+                        <button value="${MBRPERID[i].ACTNO}" id="cancelLike${MBRPERID[i].ACTNO}" class="btn2">取消收藏</button>
                     </div>
                 </div>`
             )
-            let cancelLike = document.getElementById(`cancelLike${MBRPERID[i].actno}`)
-            let page5Cardid = document.getElementById(`page5Card${MBRPERID[i].actno}`)
+            let cancelLike = document.getElementById(`cancelLike${MBRPERID[i].ACTNO}`)
+            let page5Cardid = document.getElementById(`page5Card${MBRPERID[i].ACTNO}`)
 
             cancelLike.onclick = function (){
                 let xhr2 = new XMLHttpRequest(); 

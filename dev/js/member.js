@@ -64,7 +64,6 @@ function getTopDetail(){
         // console.log(MBRPERID); 
          // 大頭貼
         $id('proIdImg').src = MBRPERID[0].MBRPIC;
-        
         // 姓名
         $id('memNAME').textContent =MBRPERID[0].MBRNAME;
         //memBirth
@@ -76,7 +75,7 @@ function getTopDetail(){
     xhr4.setRequestHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8"); 
     xhr4.send(null);
 }
-
+getTopDetail(); 
 
 
 const memInfoBoxs = document.querySelectorAll('.memInfoBox');

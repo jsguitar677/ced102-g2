@@ -192,7 +192,7 @@ body{
                 list-style-type: none;
                 padding: 0px;
                 padding-top: 50px;
-                height: calc(100vh - 50px) !important;
+                height: calc(100vh) !important;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-around;
@@ -347,6 +347,9 @@ body{
                 }
                 svg{
                     height: 50px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
                     @include spacil385px{
                         padding-top: 7.5px;
                         height: 35px;
@@ -439,20 +442,19 @@ ul#All_BgBtnListIt{
         a{
             font-size: $h2;
             span{
-                &:first-child{
-                    writing-mode: vertical-lr;
+                // &:first-child{
+                //     writing-mode: vertical-lr;
+                //     position: absolute;
+                //     left: 15%;
+                //     top: 50%;
+                //     transform: translateY(-50%);
+                //     // display: none;
+                // }
                     position: absolute;
-                    left: 15%;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-                &:last-child{
-                    position: absolute;
-                    left: 39%;
-                    top: 50%;
+                    left: 34% ;
+                    top: 50% ;
                     transform: translateY(-50%);
                     line-height: 100%;
-                }
             }
         }
     }
@@ -812,6 +814,7 @@ p#ForgetPsw, p.ModalRedAlert{
     color: map-get($map: $color_regulation, $key: 'red');
     font-size: $p;
     margin-bottom: 40px;
+    display: none;
 }
 div.whiteMainPart2{
     box-sizing: border-box;
@@ -930,25 +933,61 @@ div.whiteMainPart5{
 
 // =========== header滑出RWD
 
-@media all and (max-width:1015px){
+@media all and (max-width:1400px){
     ul#All_BgBtnListIt{
         li{
             a{
                 span{
-                    font-size: $h3;
+                    // font-size: $h3;
+                    left: 32% ;
                 }
             }
         }
     }
 }
-@media all and (max-width:975px){
+@media all and (max-width:1314px){
     ul#All_BgBtnListIt{
         li{
             a{
                 span{
-                    &:first-child{
-                        left:10%;
-                    }
+                    // font-size: $h3;
+                    left: 29% ;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:1228px){
+    ul#All_BgBtnListIt{
+        li{
+            a{
+                span{
+                        font-size: $h3;
+                        left:28%;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:1041px){
+    ul#All_BgBtnListIt{
+        li{
+            a{
+                span{
+                    font-size: $h4;
+                    left:28%;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:960px){
+    ul#All_BgBtnListIt{
+        li{
+            a{
+                span{
+                    font-size: $h4;
+                    left:27%;
                 }
             }
         }
@@ -959,145 +998,160 @@ div.whiteMainPart5{
         li{
             a{
                 span{
-                    font-size: $h4;
+                    left: 29% ;
+ 
                 }
             }
         }
     }
 }
-@media all and (max-width:750px){
+@media all and (max-width:845px){
     ul#All_BgBtnListIt{
         li{
             a{
                 span{
-                    &:last-child{
-                        left:37%;
-                    }
+                    left: 24% ;
+ 
                 }
             }
         }
     }
 }
-
-@media all and (max-width:660px){
+@media all and (max-width:616px){
     ul#All_BgBtnListIt{
         li{
             a{
                 span{
-                    &:last-child{
-                        left:32%;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media all and (max-width:600px){
-    ul#All_BgBtnListIt{
-        li{
-            a{
-                span{
-                    &:last-child{
-                        left:26%;
-                    }
+                        left:21%;
                 }
             }
         }
     }
 }
 
-@media all and (max-width:510px){
+@media all and (max-width:565px){
     ul#All_BgBtnListIt{
         li{
             a{
                 span{
-                    &:first-child{
-                        left: 5%;
-                    }
-                    &:last-child{
-                        left:20%;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media all and (max-width:480px){
-    ul#All_BgBtnListIt{
-        li{
-            a{
-                span{
-                   
-                    &:last-child{
                         left:18%;
-                    }
                 }
             }
         }
     }
 }
 
-@media all and (max-width:460px){
+
+
+@media all and (max-width:500px){
     ul#All_BgBtnListIt{
         li{
             a{
                 span{
-                   font-size: $h5;
-                   &:last-child{
-                       left: 25%;
-                   }
+                        width: 68%;
+                        font-size: 33px;
+                }
+            }
+        }
+    }
+}
+@media all and (max-width:325px){
+    ul#All_BgBtnListIt{
+        li{
+            a{
+                span{
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                 }
             }
         }
     }
 }
 
-@media all and (max-width:382px){
-    ul#All_BgBtnListIt{
-        li{
-            a{
-                span{
-                   font-size: $h5;
-                   &:last-child{
-                       left: 18%;
-                   }
-                }
-            }
-        }
-    }
-}
-@media all and (max-width:382px){
-    ul#All_BgBtnListIt{
-        li{
-            a{
-                span{
-                    &:first-child{
-                        display: none;
-                    }
-                    &:last-child{
-                        left: 30px;
-                    }
-                }
-            }
-        }
-    }
-}
+// @media all and (max-width:530px){
+//     ul#All_BgBtnListIt{
+//         li{
+//             a{
+//                 span{
+                    
+//                         left:15%;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media all and (max-width:320px){
-    ul#All_BgBtnListIt{
-        li{
-            a{
-                span{
-                    &:last-child{
-                        left: 24px;
-                    }
-                }
-            }
-        }
-    }
-}
+// @media all and (max-width:475px){
+//     ul#All_BgBtnListIt{
+//         li{
+//             a{
+//                 span{
+                   
+//                     &:last-child{
+//                         left:11%;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width:460px){
+//     ul#All_BgBtnListIt{
+//         li{
+//             a{
+//                 span{
+//                    font-size: $h5;
+//                        left: 8%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width:442px){
+//     ul#All_BgBtnListIt{
+//         li{
+//             a{
+//                 span{
+//                    font-size: $h5;
+//                     left: 50%;
+//                     transform: translate(-50%, -50%);
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media all and (max-width:382px){
+//     ul#All_BgBtnListIt{
+//         li{
+//             a{
+//                 span{
+//                     // &:first-child{
+//                     //     display: none;
+//                     // }
+//                     &:last-child{
+//                         left: 30px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @media all and (max-width:320px){
+//     ul#All_BgBtnListIt{
+//         li{
+//             a{
+//                 span{
+//                     &:last-child{
+//                         left: 24px;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 @media all and (max-width:500px){
     body header nav div#All_Logo img{
@@ -1789,7 +1843,7 @@ div#footerBottom{
   
   /* =============================================================================================== */
   div#FooterClaim{
-      color: map-get($map: $color_regulation, $key: 'white') !important;
+      color: #2A323D !important;
       background-color: black;
       font-size: $p;
       padding: 20px 50px;

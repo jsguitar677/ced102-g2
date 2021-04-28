@@ -6,9 +6,9 @@ try{
     // require_once("connect.php");
   require_once("../../connect_ced102g2.php");
 
-    $pdoo="SELECT b.actname, b.vision , c.locpic ,b.actno
-           FROM eventc a join actv b on a.actno = b.actno
-                         join `location` c on b.actloc = c.locname
+    $pdoo="SELECT b.ACTNAME, b.VISION , c.LOCPIC , b.ACTNO
+           FROM `eventc` a join `actv` b on a.ACTNO = b.ACTNO
+                         join `location` c on b.ACTLOC = c.LOCNAME
            WHERE a.MBRNO =:MBRNO";
 
     $memberData2 = $pdo->prepare($pdoo);

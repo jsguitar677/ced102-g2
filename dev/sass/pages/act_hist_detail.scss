@@ -4,10 +4,12 @@ div.article_container {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 66px;
-    // border: 1px solid green;
     display: flex;
-    flex-wrap: wrap;
     padding: 30px;
+    @media (max-width: 850px){
+        flex-direction: column;
+
+    }
 }
 
 @media (max-width: 1212px) {
@@ -74,6 +76,7 @@ div.right_part {
     position: sticky;
     top: 3.5rem;
     box-shadow: $box-shadow;
+    padding: 10px;
 }
 
 h1.rp_title {
@@ -139,7 +142,7 @@ div.outer_container {
 
 div.bread {
     position: absolute;
-    top: 0;
+    top: -16px;
     left: 0;
     transform: rotate(90deg) translateY(-100%);
     transform-origin: 0 0;
@@ -176,4 +179,5 @@ font-family: 'noto sans tc';
 font-weight: 400;
 outline: none;
  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.342);
+ margin-left: 10px;
 }

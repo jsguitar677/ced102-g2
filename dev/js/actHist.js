@@ -15,17 +15,17 @@ function getActHistDetail(){
 
         for(let i=0; i<actCount; i++){
             $('#actHook').append(`
-            <div class="page5Card" id="page5Card${ACTDETAIL[i].actno}" style="background-image:url(${ACTDETAIL[i].locpic});">
+            <div class="page5Card" id="page5Card${ACTDETAIL[i].ACTNO}" style="background-image:url(${ACTDETAIL[i].LOCPIC});">
                 <div class="content">
-                    <h2 class="title">${ACTDETAIL[i].actname}</h2>
-                    <p class="copy">${ACTDETAIL[i].actsdate}</p>
-                    <button id="ACT${ACTDETAIL[i].actno}" value="${ACTDETAIL[i].actno}" class="btn membtn">See More</button>
+                    <h2 class="title">${ACTDETAIL[i].ACTNAME}</h2>
+                    <p class="copy">${ACTDETAIL[i].ACTSDATE}</p>
+                    <button id="ACT${ACTDETAIL[i].ACTNO}" value="${ACTDETAIL[i].ACTNO}" class="btn membtn">See More</button>
                 </div>
             </div>
             `)
             
-            let actvLine = document.getElementById(`ACT${ACTDETAIL[i].actno}`).value;
-            document.getElementById(`ACT${ACTDETAIL[i].actno}`).onclick = function (){
+            let actvLine = document.getElementById(`ACT${ACTDETAIL[i].ACTNO}`).value;
+            document.getElementById(`ACT${ACTDETAIL[i].ACTNO}`).onclick = function (){
                 sessionStorage.removeItem('ACT');
                 localStorage.setItem('ACT', actvLine);
                 window.location.href="./act_hist_detail.html";

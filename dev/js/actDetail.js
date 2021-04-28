@@ -87,7 +87,6 @@ function getMessageDetail(){
 
 
 
-
 function actinfo() {
     let xhrInfo = new XMLHttpRequest();
     xhrInfo.onload = function() {

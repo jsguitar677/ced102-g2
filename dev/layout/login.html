@@ -3,13 +3,13 @@
     <div id="All_BgBtnList" style="right:2000px">
         <ul id="All_BgBtnListIt">
             <li id="All_BgBtnListIt1">
-                <a href="./event.html"><span>M</span><span>01 | 活動募款參加平台</span></a>
+                <a href="./event.html"><span id="firstLi">01 | 活動募款參加平台</span></a>
             </li>
             <li id="All_BgBtnListIt2">
-                <a href="./act_hist.html"><span>N</span><span>02 | 歷年活動</span>
+                <a href="./act_hist.html"><span>02 | 歷年活動</span>
                 </a></li>
             <li id="All_BgBtnListIt3">
-                <a href="./Mall2.html"><span>U</span><span>03 | 商城</span></a>
+                <a href="./Mall2.html"><span>03 | 商城</span></a>
             </li>
         </ul>
     </div>
@@ -74,7 +74,7 @@
                     </li>
                 <li id="Log_RegBtn"><a href="#"><i class="fas fa-user"></i><div id="memberBell"></div></a></li>
                 <li><a href="./cart.html"><i class="fas fa-shopping-cart"></i></a></li>
-                <li id="All_RListUL_lastLi"><a href="#"><i class="fas fa-bell"></i></a><div id="notificationDot"></div></li>
+                <!-- <li id="All_RListUL_lastLi"><a href="#"><i class="fas fa-bell"></i></a><div id="notificationDot"></div></li> -->
             </ul>
         </div>
         
@@ -227,7 +227,7 @@
             </div>
             <form action="../PHPMailer/testMail.php"  method="post" enctype="multipart/form-data" id="Overlay4Form">
                 <div>
-                    <label for="ForgetMemId">輸入信箱</label>
+                    <label for="ForgetMemId">輸入帳號信箱</label>
                     <input type="email" placeholder="Email" id="ForgetMemId" name="emailAC" size="30">
                 </div>
                 <button type="submit" id="SendPswToMailBtn" class="LowestBtn">送出密碼至信箱</button>
@@ -277,3 +277,15 @@
        
     </div>
 </div>
+<script>
+    function changeText(){
+        if ($(window).width() < 425) {
+            document.getElementById('firstLi').innerText="01 | 活動平台";
+        }else{
+            document.getElementById('firstLi').innerText="01 | 活動募款參加平台";
+    }
+    }
+    
+    window.addEventListener('resize',changeText);
+    window.addEventListener('load',changeText);
+</script>
