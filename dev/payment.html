@@ -261,7 +261,7 @@
     <main id="finsh_wrapper " >
       <div class="modal__text disc">
         <h1 class="step_done_title step_title">您的訂單已完成付款</h1><span class="step_done_message">恭喜您成功完成訂單，稍後將寄送詳細資訊至您的E-mail。</span>
-        <a href="./indexfront.html"step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button></a>
+        <a href="./indexfront.html"><button class="step_done_btn btn btn_primary" @click="resetAllStep">回首頁</button></a>
       </div>
     </main>
   </section>
@@ -283,6 +283,22 @@ new Cleave(".creadNum",{
   delimiter: "-",
 });
 
+function get_zip6_adrs(a_id) {
+    var adrs = document.getElementById(a_id).value;
+    var regex01 = new RegExp(/^\d/);
+    if ((adrs != "") && (! regex01.test(adrs))) {
+        var zip6_url = "https://zip5.5432.tw/zip5json.py?adrs="+adrs;
+        $.getJSON(zip6_url,
+            function(data) {
+                if (data.zipcode6 != "") {
+                    document.getElementById(a_id).value = data.new_adrs6;
+                } else {
+                    document.getElementById(a_id).value = data.new_adrs;
+                }
+            }
+        )
+    }
+}
 
 </script>
 
@@ -319,14 +335,14 @@ $('.finshbtn').click(function(){
 
 
 });
-// $(".finshbtn").click(function(){
-//     let X = $('#lastTotal').text()
-//     let cardno = $('#cardnumber').val()
-//     let consig = $('.consig').val()
-//     let consigadd = $('.consigadd').val()
-//     let CONSIGTEL = $('.CONSIGTEL').val()
-//     let ordertoal = $('.ordertoal').val()
-//     let discount = $('.discount').val()
+$(".finshbtn").click(function(){
+    let X = $('#lastTotal').text()
+    let cardno = $('#cardnumber').val()
+    let consig = $('.consig').val()
+    let consigadd = $('.consigadd').val()
+    let CONSIGTEL = $('.CONSIGTEL').val()
+    let ordertoal = $('.ordertoal').val()
+    let discount = $('.discount').val()
     // alert(123)
 
     
@@ -344,13 +360,13 @@ $('.finshbtn').click(function(){
 //         alert( xhr1.status );
 //       }
 //     }
-//     xhr1.open("Post", url1, true);
-//     xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
-//     let data_info = `ordertoal=${ordertoal}&consig=${consig}&consigadd=${consigadd}&CONSIGTEL=${CONSIGTEL}&cardno=${cardno}&discount=${discount}}&propricetotal=${propricetota}`;
-//     xhr1.send(data_info);
-//       // location.href = "./initiation_success.html";
+    xhr1.open("Post", url1, true);
+    xhr1.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    let data_info = `ordertoal=${ordertoal}&consig=${consig}&consigadd=${consigadd}&CONSIGTEL=${CONSIGTEL}&cardno=${cardno}&discount=${discount}}&propricetotal=${propricetota}`;
+    xhr1.send(data_info);
+      // location.href = "./initiation_success.html";
 
-// });
+});
 </script> 
 
 
